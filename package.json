@@ -27,8 +27,10 @@
     "test:ember-compatibility": "ember try:one"
   },
   "dependencies": {
+    "@ember/render-modifiers": "^1.0.2",
     "ember-cli-babel": "^7.19.0",
     "ember-cli-htmlbars": "^5.1.2",
+    "ember-did-resize-modifier": "^1.0.0",
     "ember-test-selectors": "^4.1.0"
   },
   "devDependencies": {
