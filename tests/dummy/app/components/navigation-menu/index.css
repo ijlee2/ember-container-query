@@ -1,0 +1,21 @@
+.list {
+  align-items: center;
+  display: flex;
+}
+
+.item a {
+  display: inline-block;
+  font-size: 0.875rem;
+  padding: 0.875rem 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.item a:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+  transition: background-color 0.17s;
+}
+
+.item.active-route {
+  background-color: rgba(255, 255, 255, 0.075);
+}
