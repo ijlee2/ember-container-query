@@ -1,3 +1,17 @@
-<h2 id="title">Welcome to Ember</h2>
+<div local-class="application">
+  <header local-class="header">
+    <NavigationMenu
+      @name="Main Navigation"
+      @menuItems={{array
+        (hash route="index" label="Home")
+        (hash route="album" label="Album")
+      }}
+    />
+  </header>
 
-{{outlet}}
+  <main local-class="main">
+    <div local-class="center">
+      {{outlet}}
+    </div>
+  </main>
+</div>

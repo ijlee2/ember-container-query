@@ -1,0 +1,17 @@
+<nav
+  data-test-nav={{@name}}
+  aria-label={{@name}}
+>
+  <ul local-class="list">
+    {{#each @menuItems as |menuItem|}}
+      <li local-class="item {{if (eq menuItem.route this.rootRoute) "active-route"}}">
+        <LinkTo
+          data-test-link={{menuItem.label}}
+          @route={{menuItem.route}}
+        >
+          {{menuItem.label}}
+        </LinkTo>
+      </li>
+    {{/each}}
+  </ul>
+</nav>

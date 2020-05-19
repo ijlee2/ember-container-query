@@ -1,0 +1,57 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    "album-header"
+    "album-tracks"
+    "track-lyrics";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr 0;
+  height: calc(100% - 3rem);
+  padding: 1.5rem 1rem;
+}
+
+.album-header {
+  grid-area: album-header;
+}
+
+.album-tracks {
+  grid-area: album-tracks;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.track-lyrics {
+  grid-area: track-lyrics;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.track-lyrics .heading-2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.track-lyrics .heading-3 {
+  color: goldenrod;
+}
+
+.track-lyrics .lyrics {
+  font-size: 0.8rem;
+  line-height: 1.75;
+}
+
+.container.with-lyrics {
+  grid-column-gap: 2rem;
+  grid-template-areas:
+    "album-header track-lyrics"
+    "album-tracks track-lyrics";
+  grid-template-columns: 1fr 18rem;
+  grid-template-rows: auto 1fr;
+  overflow-y: hidden;
+}
+
+.container.with-lyrics .album-tracks {
+  margin-bottom: 0;
+  overflow-y: auto;
+}

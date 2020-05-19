@@ -1,0 +1,36 @@
+.application {
+  display: grid;
+  grid-template-areas:
+    ". header ."
+    "main main main";
+  grid-template-columns: 1fr minmax(auto, 75rem) 1fr;
+  grid-template-rows: 2.75rem 1fr;
+  height: 100%;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.header {
+  grid-area: header;
+  overflow-x: auto;
+}
+
+.main {
+  background-color: rgba(255, 255, 255, 0.045);
+  border-bottom: 0.0625rem solid rgba(211, 211, 211, 0.15);
+  border-top: 0.0625rem solid rgba(211, 211, 211, 0.15);
+  grid-area: main;
+
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  overflow-y: hidden;
+}
+
+.main .center {
+  display: flex;
+  flex-direction: column;
+  max-width: 75rem;
+  overflow-y: auto;
+  width: 100%;
+}
