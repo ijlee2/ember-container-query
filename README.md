@@ -42,13 +42,12 @@ It also accepts these arguments:
 | @dataAttributePrefix | No | Prefix for data attributes | string |
 | @debounce | No | Debounce time (ms) for resize | number ≥ 0 |
 
-The component returns a few values that you can consume:
+The component returns two values that you can consume:
 
 | Name | Yielded | Description |
 |--|:--:|--|
 | features | Yes | Container query results |
 | data-container-query-_{featureName}_ | No | Data attributes for CSS selector |
-| data-test-container-query | No | Test selector |
 
 <sup>1. Do refrain from overusing splattributes (e.g. pass a `{{did-insert}}` modifier to fetch data), since the component's API may change and cause unexpected results. Practice separation of concerns when possible. For example, data fetching can be handled by another element or [`@use` decorator](https://github.com/emberjs/rfcs/blob/use-and-resources/text/0567-use-and-resources.md).</sup>
 
