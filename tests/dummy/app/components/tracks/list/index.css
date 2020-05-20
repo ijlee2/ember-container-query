@@ -3,22 +3,22 @@
   display: grid;
   grid-auto-flow: column;
   row-gap: 0.25rem;
-}
 
-.item {
-  align-items: center;
-  display: flex;
-  min-height: 1.5rem;
-  justify-content: space-between;
-  word-break: break-word;
-}
+  .item {
+    align-items: center;
+    display: flex;
+    min-height: 1.5rem;
+    justify-content: space-between;
+    word-break: break-word;
 
-.icon-explicit {
-  fill: rgba(247, 252, 251, 0.9);
-  flex-shrink: 0;
-  margin-left: 0.25rem;
-}
+    .icon-explicit {
+      fill: rgba(247, 252, 251, 0.9);
+      flex-shrink: 0;
+      margin-left: 0.25rem;
+    }
 
-.item:last-of-type {
-  margin-bottom: 0;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 }

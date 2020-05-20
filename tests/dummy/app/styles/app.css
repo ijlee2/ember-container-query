@@ -11,52 +11,51 @@ body {
   height: 100%;
   letter-spacing: 0.03125rem;
   margin: 0;
-}
 
-body * {
-  margin: 0;
-  padding: 0;
-}
+  * {
+    margin: 0;
+    padding: 0;
+  }
 
-body h1 {
-  font-size: 2.25em;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-}
+  h1 {
+    font-size: 2.25em;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
 
-body h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
 
-body h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-}
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
 
-body a {
-  color: rgba(245, 255, 250, 0.88);
-}
+  a {
+    color: rgba(245, 255, 250, 0.88);
+  }
 
-body p {
-  margin-bottom: 0.75rem;
-}
+  p {
+    margin-bottom: 0.75rem;
+  }
 
-body table {
-  border-collapse: collapse;
-  width: 100%;
-}
+  table {
+    border-collapse: collapse;
+    width: 100%;
 
-body table th,
-body table td {
-  border: 0.0625rem solid rgba(112, 128, 144, 1);
-  padding: 0.25rem 0.5rem;
-}
+    th, td {
+      border: 0.0625rem solid rgba(112, 128, 144, 1);
+      padding: 0.25rem 0.5rem;
+    }
+  }
 
-body ul {
-  list-style-type: none;
+  ul {
+    list-style-type: none;
+  }
 }
 
 :global(#ember-testing-container) {

@@ -1,10 +1,16 @@
 'use strict';
 
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+const PostcssNested = require('postcss-nested');
 
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
     // Add options here
+    cssModules: {
+      plugins: {
+        before: [PostcssNested]
+      }
+    }
   });
 
   /*
