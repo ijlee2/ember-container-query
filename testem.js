@@ -42,9 +42,10 @@ const { DEVICE = 'w3-h3' } = process.env;
 
 const filter = encodeURIComponent(FILTERS[DEVICE]);
 const windowSize = WINDOW_SIZES[DEVICE];
+const [width, height] = windowSize.split(',');
 
 module.exports = {
-  test_page: `tests/index.html?filter=${filter}&hidepassed&nolint`,
+  test_page: `tests/index.html?filter=${filter}&width=${width}&height=${height}&hidepassed&nolint`,
   disable_watching: true,
   launch_in_ci: [
     'Chrome'
