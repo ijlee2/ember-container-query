@@ -64,13 +64,11 @@ export default async function takeSnapshot(qunitAssert, options = {}) {
     }
 
     const name = getName(qunitAssert, description);
-    const width = getWidth();
-    const height = getHeight();
+    const { height, width } = getWindowSize();
 
     await percySnapshot(name, {
         widths: [width],
-        minHeight: height,
-        percyCSS: '.application { height: 100vh; }'
+        minHeight: height
     });
 }
 
@@ -119,7 +117,9 @@ function checkInput(qunitAssert, options) {
 
 
 function getDevice() {
-    const windowSize = `${getWidth()},${getHeight()}`;
+    const { height, width } = getWindowSize();
+
+    const windowSize = `${width},${height}`;
     const device = DEVICES[windowSize];
 
     assert(
@@ -155,11 +155,11 @@ function getName(qunitAssert, description) {
 }
 
 
-function getHeight() {
-    return window.innerHeight;
-}
+function getWindowSize() {
+    const queryParams = new URLSearchParams(window.location.search);
 
-
-function getWidth() {
-    return window.innerWidth;
+    return {
+        height: Number(queryParams.get('height')),
+        width: Number(queryParams.get('width'))
+    };
 }

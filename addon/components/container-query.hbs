@@ -1,6 +1,9 @@
 <div
   class="container-query"
   data-test-container-query
+  data-width={{this.width}}
+  data-height={{this.height}}
+  data-aspect-ratio={{this.aspectRatio}}
   {{did-insert this.queryContainer}}
   {{did-resize this.queryContainer debounce=this.debounce}}
   ...attributes

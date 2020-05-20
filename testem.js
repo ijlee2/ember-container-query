@@ -25,26 +25,26 @@ const FILTERS = {
 };
 
 const WINDOW_SIZES = {
-  'w1-h1': '400,300',
-  'w2-h1': '900,300',
-  'w3-h1': '1400,300',
+  'w1-h1': { width: 400, height: 300 },
+  'w2-h1': { width: 900, height: 300 },
+  'w3-h1': { width: 1400, height: 300 },
 
-  'w1-h2': '400,600',
-  'w2-h2': '900,600',
-  'w3-h2': '1400,600',
+  'w1-h2': { width: 400, height: 600 },
+  'w2-h2': { width: 900, height: 600 },
+  'w3-h2': { width: 1400, height: 600 },
 
-  'w1-h3': '400,900',
-  'w2-h3': '900,900',
-  'w3-h3': '1400,900'
+  'w1-h3': { width: 400, height: 900 },
+  'w2-h3': { width: 900, height: 900 },
+  'w3-h3': { width: 1400, height: 900 }
 };
 
 const { DEVICE = 'w3-h3' } = process.env;
 
 const filter = encodeURIComponent(FILTERS[DEVICE]);
-const windowSize = WINDOW_SIZES[DEVICE];
+const { width, height } = WINDOW_SIZES[DEVICE];
 
 module.exports = {
-  test_page: `tests/index.html?filter=${filter}&hidepassed&nolint`,
+  test_page: `tests/index.html?filter=${filter}&width=${width}&height=${height}&hidepassed&nolint`,
   disable_watching: true,
   launch_in_ci: [
     'Chrome'
@@ -63,7 +63,7 @@ module.exports = {
         '--disable-software-rasterizer',
         '--mute-audio',
         '--remote-debugging-port=0',
-        `--window-size=${windowSize}`
+        `--window-size=${width},${height}`
       ].filter(Boolean),
 
       dev: [
@@ -71,7 +71,7 @@ module.exports = {
         '--disable-software-rasterizer',
         '--mute-audio',
         '--remote-debugging-port=0',
-        `--window-size=${windowSize}`
+        `--window-size=${width},${height}`
       ]
     }
   }
