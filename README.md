@@ -41,22 +41,17 @@ It also accepts these arguments:
 | @dataAttributePrefix | No | Prefix for data attributes | string |
 | @debounce | No | Debounce time (ms) for resize | number ≥ 0 |
 
-The component returns several values that you can consume:<sup>3</sup>
+The component returns a few values that you can consume:
 
 | Name | Yielded | Description |
 |--|:--:|--|
 | breakpoints | Yes | Container query results |
-| height | Yes | Container height |
-| width | Yes | Container width |
-| aspectRatio | Yes | Ratio between `width` and `height` |
 | data-container-query-_{breakpointName}_ | No | Data attributes for CSS selector |
 | data-test-container-query | No | Test selector |
 
 <sup>1. Do refrain from overusing splattributes (e.g. pass a `{{did-insert}}` modifier to fetch data), since the component's API may change and cause unexpected results. Practice separation of concerns when possible. For example, data fetching can be handled by another element or [`@use` decorator](https://github.com/emberjs/rfcs/blob/use-and-resources/text/0567-use-and-resources.md).</sup>
 
 <sup>2. The component renders without error when `@breakpoints` isn't provided. In practice, you will always want to set `@breakpoints`.</sup>
-
-<sup>3. In practice, you will likely only use `breakpoints`, `aspectRatio`, and data attributes for CSS selector.</sup>
 
 
 #### `{{cq-aspect-ratio}}`, `{{cq-height}}`,  `{{cq-width}}`

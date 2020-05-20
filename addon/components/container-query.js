@@ -4,9 +4,6 @@ import { tracked } from '@glimmer/tracking';
 
 export default class ContainerQueryComponent extends Component {
   @tracked queryResults = {};
-  @tracked height;
-  @tracked width;
-  @tracked aspectRatio;
 
   get breakpoints() {
     return this.args.breakpoints ?? {};
