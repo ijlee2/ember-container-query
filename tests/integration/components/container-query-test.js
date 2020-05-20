@@ -4,7 +4,7 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('@desktop Integration | Component | container-query', function(hooks) {
+module('Integration | Component | container-query', function(hooks) {
   setupRenderingTest(hooks);
 
   hooks.beforeEach(function(assert) {

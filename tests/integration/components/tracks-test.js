@@ -5,7 +5,7 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('@desktop Integration | Component | tracks', function(hooks) {
+module('Integration | Component | tracks', function(hooks) {
   setupRenderingTest(hooks);
 
   hooks.beforeEach(function() {

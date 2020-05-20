@@ -22,8 +22,16 @@
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
-    "test": "npm-run-all test:ember",
-    "test:ember": "ember test",
+    "test": "npm-run-all --aggregate-output --continue-on-error --parallel test:ember:*",
+    "test:ember:w1-h1": "DEVICE='w1-h1' ember test --test-port=7357",
+    "test:ember:w2-h1": "DEVICE='w2-h1' ember test --test-port=7358",
+    "test:ember:w3-h1": "DEVICE='w3-h1' ember test --test-port=7359",
+    "test:ember:w1-h2": "DEVICE='w1-h2' ember test --test-port=7360",
+    "test:ember:w2-h2": "DEVICE='w2-h2' ember test --test-port=7361",
+    "test:ember:w3-h2": "DEVICE='w3-h2' ember test --test-port=7362",
+    "test:ember:w1-h3": "DEVICE='w1-h3' ember test --test-port=7363",
+    "test:ember:w2-h3": "DEVICE='w2-h3' ember test --test-port=7364",
+    "test:ember:w3-h3": "DEVICE='w3-h3' ember test --test-port=7365",
     "test:ember-compatibility": "ember try:one"
   },
   "dependencies": {
