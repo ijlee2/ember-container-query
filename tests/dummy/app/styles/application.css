@@ -2,9 +2,10 @@
   display: grid;
   grid-template-areas:
     ". header ."
-    "main main main";
+    "main main main"
+    ". footer .";
   grid-template-columns: 1fr minmax(auto, 75rem) 1fr;
-  grid-template-rows: 2.75rem 1fr;
+  grid-template-rows: auto 1fr auto;
   height: 100%;
   overflow: hidden;
   width: 100vw;
@@ -12,6 +13,7 @@
 
 .header {
   grid-area: header;
+  min-height: 2.75rem;
   overflow-x: auto;
 }
 
@@ -33,4 +35,22 @@
   max-width: 75rem;
   overflow-y: auto;
   width: 100%;
+}
+
+.footer {
+  align-items: center;
+  display: flex;
+  grid-area: footer;
+  justify-content: center;
+  min-height: 2.375rem;
+}
+
+.footer .copyright {
+  color: rgba(128, 191, 255, 0.9);
+  font-size: 0.75rem;
+  padding: 0.75rem 0;
+}
+
+.footer .copyright .link {
+  color: rgba(128, 191, 255, 0.9);
 }

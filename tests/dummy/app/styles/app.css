@@ -49,7 +49,8 @@ body table {
   width: 100%;
 }
 
-body table th, td {
+body table th,
+body table td {
   border: 0.0625rem solid rgba(112, 128, 144, 1);
   padding: 0.25rem 0.5rem;
 }

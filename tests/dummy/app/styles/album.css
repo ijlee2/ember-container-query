@@ -10,33 +10,33 @@
   padding: 1.5rem 1rem;
 }
 
-.album-header {
+.container .album-header {
   grid-area: album-header;
 }
 
-.album-tracks {
+.container .album-tracks {
   grid-area: album-tracks;
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
-.track-lyrics {
+.container .track-lyrics {
   grid-area: track-lyrics;
   overflow-y: auto;
   padding-right: 1rem;
 }
 
-.track-lyrics .heading-2 {
+.container .track-lyrics .heading-2 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
 
-.track-lyrics .heading-3 {
+.container .track-lyrics .heading-3 {
   color: goldenrod;
 }
 
-.track-lyrics .lyrics {
+.container .track-lyrics .lyrics {
   font-size: 0.8rem;
   line-height: 1.75;
 }
