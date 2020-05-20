@@ -1,5 +1,5 @@
 <ContainerQuery
-  @breakpoints={{hash
+  @features={{hash
     small=(cq-width max=480)
     medium=(cq-width min=480 max=640)
     large=(cq-width min=640)
@@ -7,7 +7,7 @@
   }}
   as |CQ|
 >
-  {{#if (and CQ.breakpoints.large CQ.breakpoints.tall)}}
+  {{#if (and CQ.features.large CQ.features.tall)}}
     <Tracks::Table
       @tracks={{@tracks}}
     />
@@ -15,8 +15,8 @@
   {{else}}
     <Tracks::List
       @numColumns={{
-        if CQ.breakpoints.small 1
-        (if CQ.breakpoints.medium 2 3)
+        if CQ.features.small 1
+        (if CQ.features.medium 2 3)
       }}
       @tracks={{@tracks}}
     />
