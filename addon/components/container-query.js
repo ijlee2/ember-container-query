@@ -4,7 +4,6 @@ import { tracked } from '@glimmer/tracking';
 
 export default class ContainerQueryComponent extends Component {
   @tracked queryResults = {};
-  @tracked classSelectors = '';
   @tracked height;
   @tracked width;
 
@@ -12,8 +11,8 @@ export default class ContainerQueryComponent extends Component {
     return this.args.breakpoints ?? {};
   }
 
-  get classPrefix() {
-    return this.args.classPrefix ?? 'container-query';
+  get dataAttributePrefix() {
+    return this.args.dataAttributePrefix ?? 'container-query';
   }
 
   get debounce() {
@@ -25,7 +24,7 @@ export default class ContainerQueryComponent extends Component {
     this.width = element.clientWidth;
 
     this.evaluateQueries();
-    this.setClassSelectors();
+    this.setDataAttributes(element);
   }
 
   evaluateQueries() {
@@ -47,16 +46,19 @@ export default class ContainerQueryComponent extends Component {
     this.queryResults = queryResults;
   }
 
-  setClassSelectors() {
-    const classPrefix = this.classPrefix;
-    const classSelectors = [];
+  setDataAttributes(element) {
+    const prefix = this.dataAttributePrefix;
 
     for (const [name, meetsBreakpoint] of Object.entries(this.queryResults)) {
+      const attributeName = `data-${prefix}-${name}`;
+
       if (meetsBreakpoint) {
-        classSelectors.push(`${classPrefix}--${name}`);
+        element.setAttribute(attributeName, '');
+
+      } else {
+        element.removeAttribute(attributeName);
+
       }
     }
-
-    this.classSelectors = classSelectors.join(' ');
   }
 }

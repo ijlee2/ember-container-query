@@ -1,8 +1,9 @@
 <div
-  class="container-query {{this.classSelectors}}"
+  class="container-query"
   data-test-container-query
   {{did-insert this.queryContainer}}
   {{did-resize this.queryContainer debounce=this.debounce}}
+  ...attributes
 >
   {{yield (hash
     breakpoints=this.queryResults
