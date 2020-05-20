@@ -1,4 +1,5 @@
 ![CI](https://github.com/ijlee2/ember-container-query/workflows/CI/badge.svg)
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Isaac/ember-container-query)
 
 ember-container-query
 ==============================================================================

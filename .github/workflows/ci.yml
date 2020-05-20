@@ -8,6 +8,8 @@ on:
 
 env:
   NODE_VERSION: 12.16
+  PERCY_PARALLEL_NONCE: ${{ github.run_id }}-${{ github.run_number }}
+  PERCY_PARALLEL_TOTAL: 9
 
 jobs:
   lint:
@@ -103,7 +105,13 @@ jobs:
           steps.cache-node-modules.outputs.cache-hit != 'true'
 
       - name: Test
-        run: yarn test:ember:${{ matrix.width }}-${{ matrix.height }}
+        uses: percy/exec-action@v0.3.0
+        with:
+          custom-command: yarn test:ember:${{ matrix.width }}-${{ matrix.height }}
+        env:
+          PERCY_PARALLEL_NONCE: ${{ env.PERCY_PARALLEL_NONCE }}
+          PERCY_PARALLEL_TOTAL: ${{ env.PERCY_PARALLEL_TOTAL }}
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
 
   test-compatibility:
