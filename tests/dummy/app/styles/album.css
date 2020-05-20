@@ -10,38 +10,38 @@
   padding: 1.5rem 1rem;
 }
 
-.container .album-header {
+.album-header {
   grid-area: album-header;
 }
 
-.container .album-tracks {
+.album-tracks {
   grid-area: album-tracks;
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
-.container .track-lyrics {
+.track-lyrics {
   grid-area: track-lyrics;
   overflow-y: auto;
   padding-right: 1rem;
 }
 
-.container .track-lyrics .heading-2 {
+.track-lyrics .heading-2 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
 
-.container .track-lyrics .heading-3 {
+.track-lyrics .heading-3 {
   color: goldenrod;
 }
 
-.container .track-lyrics .lyrics {
+.track-lyrics .lyrics {
   font-size: 0.8rem;
   line-height: 1.75;
 }
 
-.container.with-lyrics {
+.with-lyrics {
   grid-column-gap: 2rem;
   grid-template-areas:
     "album-header track-lyrics"
@@ -51,7 +51,7 @@
   overflow-y: hidden;
 }
 
-.container.with-lyrics .album-tracks {
+.with-lyrics .album-tracks {
   margin-bottom: 0;
   overflow-y: auto;
 }

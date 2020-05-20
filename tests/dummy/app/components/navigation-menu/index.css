@@ -3,7 +3,11 @@
   display: flex;
 }
 
-.item a {
+.item.active-route {
+  background-color: rgba(255, 255, 255, 0.075);
+}
+
+.link {
   display: inline-block;
   font-size: 0.875rem;
   padding: 0.875rem 1rem;
@@ -11,11 +15,7 @@
   white-space: nowrap;
 }
 
-.item a:hover {
+.link:hover {
   background-color: rgba(255, 255, 255, 0.075);
   transition: background-color 0.17s;
-}
-
-.item.active-route {
-  background-color: rgba(255, 255, 255, 0.075);
 }
