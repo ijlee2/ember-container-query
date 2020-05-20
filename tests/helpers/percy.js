@@ -68,7 +68,13 @@ export default async function takeSnapshot(qunitAssert, options = {}) {
 
     await percySnapshot(name, {
         widths: [width],
-        minHeight: height
+        minHeight: height,
+        percyCSS: `
+            .application {
+                height: ${height}px;
+                width: ${width}px;
+            }
+        `
     });
 }
 
