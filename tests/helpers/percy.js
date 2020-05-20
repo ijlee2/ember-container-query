@@ -66,15 +66,18 @@ export default async function takeSnapshot(qunitAssert, options = {}) {
     const name = getName(qunitAssert, description);
     const { height, width } = getWindowSize();
 
+    let container = document.getElementById('ember-testing-container');
+    container.style.height = `${height}px`;
+    container.style.width = `${width}px`;
+
+    let testing = document.getElementById('ember-testing');
+    testing.removeAttribute('id');
+    testing.style.height = '100%';
+    testing.style.width = '100%';
+
     await percySnapshot(name, {
         widths: [width],
-        minHeight: height,
-        percyCSS: `
-            .application {
-                height: ${height}px;
-                width: ${width}px;
-            }
-        `
+        minHeight: height
     });
 }
 
