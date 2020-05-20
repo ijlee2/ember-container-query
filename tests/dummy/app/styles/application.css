@@ -11,13 +11,13 @@
   width: 100vw;
 }
 
-.application .header {
+.header {
   grid-area: header;
   min-height: 2.75rem;
   overflow-x: auto;
 }
 
-.application .main {
+.main {
   background-color: rgba(255, 255, 255, 0.045);
   border-bottom: 0.0625rem solid rgba(211, 211, 211, 0.15);
   border-top: 0.0625rem solid rgba(211, 211, 211, 0.15);
@@ -29,7 +29,7 @@
   overflow-y: hidden;
 }
 
-.application .main .center {
+.center {
   display: flex;
   flex-direction: column;
   max-width: 75rem;
@@ -37,7 +37,7 @@
   width: 100%;
 }
 
-.application .footer {
+.footer {
   align-items: center;
   display: flex;
   grid-area: footer;
@@ -45,12 +45,12 @@
   min-height: 2.375rem;
 }
 
-.application .footer .copyright {
+.copyright {
   color: rgba(128, 191, 255, 0.9);
   font-size: 0.75rem;
   padding: 0.75rem 0;
 }
 
-.application .footer .copyright .link {
+.copyright .link {
   color: rgba(128, 191, 255, 0.9);
 }
