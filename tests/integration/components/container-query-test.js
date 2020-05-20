@@ -1,4 +1,4 @@
-import { render } from '@ember/test-helpers';
+import { find, render } from '@ember/test-helpers';
 import resizeWindow from 'dummy/tests/helpers/resize-window';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
@@ -22,10 +22,39 @@ module('@desktop Integration | Component | container-query', function(hooks) {
         }
       }
     };
+
+    assert.areDimensionsCorrect = (expectedWidth, expectedHeight) => {
+      assert.dom('[data-test-physical-size]')
+        .hasText(
+          `${expectedWidth} x ${expectedHeight}`,
+          'Width and height are correct.'
+        );
+
+      const aspectRatio = Number(find('[data-test-aspect-ratio]').textContent.trim());
+      const expectedAspectRatio = expectedWidth / expectedHeight;
+      const tolerance = 0.001;
+
+      if (expectedAspectRatio === Infinity) {
+        assert.strictEqual(
+          aspectRatio === expectedAspectRatio,
+          true,
+          'Aspect ratio is correct.'
+        );
+
+      } else {
+        assert.strictEqual(
+          Math.abs(aspectRatio - expectedAspectRatio) / Math.abs(expectedAspectRatio) < tolerance,
+          true,
+          'Aspect ratio is correct.'
+        );
+
+      }
+    };
   });
 
   hooks.afterEach(function(assert) {
     delete assert.areBreakpointsCorrect;
+    delete assert.areDimensionsCorrect;
   });
 
 
@@ -36,24 +65,32 @@ module('@desktop Integration | Component | container-query', function(hooks) {
           <ContainerQuery
             as |CQ|
           >
-            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
             <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
             <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
             <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
             <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
             <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+            <p data-test-breakpoint="ratio-type-A">{{CQ.breakpoints.ratio-type-A}}</p>
+            <p data-test-breakpoint="ratio-type-B">{{CQ.breakpoints.ratio-type-B}}</p>
+            <p data-test-breakpoint="ratio-type-C">{{CQ.breakpoints.ratio-type-C}}</p>
+            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
+            <p data-test-aspect-ratio>{{CQ.aspectRatio}}</p>
           </ContainerQuery>
         </div>
       `);
 
-      assert.dom('[data-test-physical-size]').hasText('500 x 800');
       assert.areBreakpointsCorrect({
         small: undefined,
         medium: undefined,
         large: undefined,
         short: undefined,
-        tall: undefined
+        tall: undefined,
+        'ratio-type-A': undefined,
+        'ratio-type-B': undefined,
+        'ratio-type-C': undefined
       });
+
+      assert.areDimensionsCorrect(500, 800);
     });
 
 
@@ -66,57 +103,80 @@ module('@desktop Integration | Component | container-query', function(hooks) {
           <ContainerQuery
             as |CQ|
           >
-            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
             <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
             <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
             <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
             <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
             <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+            <p data-test-breakpoint="ratio-type-A">{{CQ.breakpoints.ratio-type-A}}</p>
+            <p data-test-breakpoint="ratio-type-B">{{CQ.breakpoints.ratio-type-B}}</p>
+            <p data-test-breakpoint="ratio-type-C">{{CQ.breakpoints.ratio-type-C}}</p>
+            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
+            <p data-test-aspect-ratio>{{CQ.aspectRatio}}</p>
           </ContainerQuery>
         </div>
       `);
 
-      assert.dom('[data-test-physical-size]').hasText('250 x 500');
       assert.areBreakpointsCorrect({
         small: undefined,
         medium: undefined,
         large: undefined,
         short: undefined,
-        tall: undefined
+        tall: undefined,
+        'ratio-type-A': undefined,
+        'ratio-type-B': undefined,
+        'ratio-type-C': undefined
       });
+
+      assert.areDimensionsCorrect(250, 500);
+
 
       await resizeWindow(500, 300);
 
-      assert.dom('[data-test-physical-size]').hasText('500 x 300');
       assert.areBreakpointsCorrect({
         small: undefined,
         medium: undefined,
         large: undefined,
         short: undefined,
-        tall: undefined
+        tall: undefined,
+        'ratio-type-A': undefined,
+        'ratio-type-B': undefined,
+        'ratio-type-C': undefined
       });
+
+      assert.areDimensionsCorrect(500, 300);
+
 
       await resizeWindow(800, 400);
 
-      assert.dom('[data-test-physical-size]').hasText('800 x 400');
       assert.areBreakpointsCorrect({
         small: undefined,
         medium: undefined,
         large: undefined,
         short: undefined,
-        tall: undefined
+        tall: undefined,
+        'ratio-type-A': undefined,
+        'ratio-type-B': undefined,
+        'ratio-type-C': undefined
       });
+
+      assert.areDimensionsCorrect(800, 400);
+
 
       await resizeWindow(1000, 600);
 
-      assert.dom('[data-test-physical-size]').hasText('1000 x 600');
       assert.areBreakpointsCorrect({
         small: undefined,
         medium: undefined,
         large: undefined,
         short: undefined,
-        tall: undefined
+        tall: undefined,
+        'ratio-type-A': undefined,
+        'ratio-type-B': undefined,
+        'ratio-type-C': undefined
       });
+
+      assert.areDimensionsCorrect(1000, 600);
     });
   });
 
@@ -132,27 +192,38 @@ module('@desktop Integration | Component | container-query', function(hooks) {
               large=(cq-width min=600 max=900)
               short=(cq-height max=500)
               tall=(cq-height min=500)
+              ratio-type-A=(cq-aspect-ratio min=0.25 max=0.75)
+              ratio-type-B=(cq-aspect-ratio min=0.5 max=1.5)
+              ratio-type-C=(cq-aspect-ratio min=1.25 max=2)
             }}
             as |CQ|
           >
-            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
             <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
             <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
             <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
             <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
             <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+            <p data-test-breakpoint="ratio-type-A">{{CQ.breakpoints.ratio-type-A}}</p>
+            <p data-test-breakpoint="ratio-type-B">{{CQ.breakpoints.ratio-type-B}}</p>
+            <p data-test-breakpoint="ratio-type-C">{{CQ.breakpoints.ratio-type-C}}</p>
+            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
+            <p data-test-aspect-ratio>{{CQ.aspectRatio}}</p>
           </ContainerQuery>
         </div>
       `);
 
-      assert.dom('[data-test-physical-size]').hasText('500 x 800');
       assert.areBreakpointsCorrect({
         small: false,
         medium: true,
         large: false,
         short: false,
-        tall: true
+        tall: true,
+        'ratio-type-A': true,
+        'ratio-type-B': true,
+        'ratio-type-C': false
       });
+
+      assert.areDimensionsCorrect(500, 800);
     });
 
 
@@ -169,60 +240,86 @@ module('@desktop Integration | Component | container-query', function(hooks) {
               large=(cq-width min=600 max=900)
               short=(cq-height max=500)
               tall=(cq-height min=500)
+              ratio-type-A=(cq-aspect-ratio min=0.25 max=0.75)
+              ratio-type-B=(cq-aspect-ratio min=0.5 max=1.5)
+              ratio-type-C=(cq-aspect-ratio min=1.25 max=2)
             }}
             as |CQ|
           >
-            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
             <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
             <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
             <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
             <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
             <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+            <p data-test-breakpoint="ratio-type-A">{{CQ.breakpoints.ratio-type-A}}</p>
+            <p data-test-breakpoint="ratio-type-B">{{CQ.breakpoints.ratio-type-B}}</p>
+            <p data-test-breakpoint="ratio-type-C">{{CQ.breakpoints.ratio-type-C}}</p>
+            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
+            <p data-test-aspect-ratio>{{CQ.aspectRatio}}</p>
           </ContainerQuery>
         </div>
       `);
 
-      assert.dom('[data-test-physical-size]').hasText('250 x 500');
       assert.areBreakpointsCorrect({
         small: true,
         medium: false,
         large: false,
         short: false,
-        tall: true
+        tall: true,
+        'ratio-type-A': true,
+        'ratio-type-B': true,
+        'ratio-type-C': false
       });
+
+      assert.areDimensionsCorrect(250, 500);
+
 
       await resizeWindow(500, 300);
 
-      assert.dom('[data-test-physical-size]').hasText('500 x 300');
       assert.areBreakpointsCorrect({
         small: false,
         medium: true,
         large: false,
         short: true,
-        tall: false
+        tall: false,
+        'ratio-type-A': false,
+        'ratio-type-B': false,
+        'ratio-type-C': true
       });
+
+      assert.areDimensionsCorrect(500, 300);
+
 
       await resizeWindow(800, 400);
 
-      assert.dom('[data-test-physical-size]').hasText('800 x 400');
       assert.areBreakpointsCorrect({
         small: false,
         medium: false,
         large: true,
         short: true,
-        tall: false
+        tall: false,
+        'ratio-type-A': false,
+        'ratio-type-B': false,
+        'ratio-type-C': false
       });
+
+      assert.areDimensionsCorrect(800, 400);
+
 
       await resizeWindow(1000, 600);
 
-      assert.dom('[data-test-physical-size]').hasText('1000 x 600');
       assert.areBreakpointsCorrect({
         small: false,
         medium: false,
         large: false,
         short: false,
-        tall: true
+        tall: true,
+        'ratio-type-A': false,
+        'ratio-type-B': false,
+        'ratio-type-C': true
       });
+
+      assert.areDimensionsCorrect(1000, 600);
     });
   });
 
@@ -241,15 +338,22 @@ module('@desktop Integration | Component | container-query', function(hooks) {
               large=(cq-width min=600 max=900)
               short=(cq-height max=500)
               tall=(cq-height min=500)
+              ratio-type-A=(cq-aspect-ratio min=0.25 max=0.75)
+              ratio-type-B=(cq-aspect-ratio min=0.5 max=1.5)
+              ratio-type-C=(cq-aspect-ratio min=1.25 max=2)
             }}
             as |CQ|
           >
-            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
             <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
             <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
             <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
             <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
             <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+            <p data-test-breakpoint="ratio-type-A">{{CQ.breakpoints.ratio-type-A}}</p>
+            <p data-test-breakpoint="ratio-type-B">{{CQ.breakpoints.ratio-type-B}}</p>
+            <p data-test-breakpoint="ratio-type-C">{{CQ.breakpoints.ratio-type-C}}</p>
+            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
+            <p data-test-aspect-ratio>{{CQ.aspectRatio}}</p>
           </ContainerQuery>
         </div>
       `);
@@ -259,7 +363,11 @@ module('@desktop Integration | Component | container-query', function(hooks) {
         .doesNotHaveAttribute('data-container-query-medium')
         .doesNotHaveAttribute('data-container-query-large')
         .doesNotHaveAttribute('data-container-query-short')
-        .hasAttribute('data-container-query-tall');
+        .hasAttribute('data-container-query-tall')
+        .hasAttribute('data-container-query-ratio-type-A')
+        .hasAttribute('data-container-query-ratio-type-B')
+        .doesNotHaveAttribute('data-container-query-ratio-type-C');
+
 
       await resizeWindow(500, 300);
 
@@ -268,7 +376,11 @@ module('@desktop Integration | Component | container-query', function(hooks) {
         .hasAttribute('data-container-query-medium')
         .doesNotHaveAttribute('data-container-query-large')
         .hasAttribute('data-container-query-short')
-        .doesNotHaveAttribute('data-container-query-tall');
+        .doesNotHaveAttribute('data-container-query-tall')
+        .doesNotHaveAttribute('data-container-query-ratio-type-A')
+        .doesNotHaveAttribute('data-container-query-ratio-type-B')
+        .hasAttribute('data-container-query-ratio-type-C');
+
 
       await resizeWindow(800, 400);
 
@@ -277,7 +389,11 @@ module('@desktop Integration | Component | container-query', function(hooks) {
         .doesNotHaveAttribute('data-container-query-medium')
         .hasAttribute('data-container-query-large')
         .hasAttribute('data-container-query-short')
-        .doesNotHaveAttribute('data-container-query-tall');
+        .doesNotHaveAttribute('data-container-query-tall')
+        .doesNotHaveAttribute('data-container-query-ratio-type-A')
+        .doesNotHaveAttribute('data-container-query-ratio-type-B')
+        .doesNotHaveAttribute('data-container-query-ratio-type-C');
+
 
       await resizeWindow(1000, 600);
 
@@ -286,7 +402,10 @@ module('@desktop Integration | Component | container-query', function(hooks) {
         .doesNotHaveAttribute('data-container-query-medium')
         .doesNotHaveAttribute('data-container-query-large')
         .doesNotHaveAttribute('data-container-query-short')
-        .hasAttribute('data-container-query-tall');
+        .hasAttribute('data-container-query-tall')
+        .doesNotHaveAttribute('data-container-query-ratio-type-A')
+        .doesNotHaveAttribute('data-container-query-ratio-type-B')
+        .hasAttribute('data-container-query-ratio-type-C');
     });
   });
 
@@ -305,16 +424,23 @@ module('@desktop Integration | Component | container-query', function(hooks) {
               large=(cq-width min=600 max=900)
               short=(cq-height max=500)
               tall=(cq-height min=500)
+              ratio-type-A=(cq-aspect-ratio min=0.25 max=0.75)
+              ratio-type-B=(cq-aspect-ratio min=0.5 max=1.5)
+              ratio-type-C=(cq-aspect-ratio min=1.25 max=2)
             }}
             @dataAttributePrefix="cq"
             as |CQ|
           >
-            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
             <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
             <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
             <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
             <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
             <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+            <p data-test-breakpoint="ratio-type-A">{{CQ.breakpoints.ratio-type-A}}</p>
+            <p data-test-breakpoint="ratio-type-B">{{CQ.breakpoints.ratio-type-B}}</p>
+            <p data-test-breakpoint="ratio-type-C">{{CQ.breakpoints.ratio-type-C}}</p>
+            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
+            <p data-test-aspect-ratio>{{CQ.aspectRatio}}</p>
           </ContainerQuery>
         </div>
       `);
@@ -324,7 +450,11 @@ module('@desktop Integration | Component | container-query', function(hooks) {
         .doesNotHaveAttribute('data-cq-medium')
         .doesNotHaveAttribute('data-cq-large')
         .doesNotHaveAttribute('data-cq-short')
-        .hasAttribute('data-cq-tall');
+        .hasAttribute('data-cq-tall')
+        .hasAttribute('data-cq-ratio-type-A')
+        .hasAttribute('data-cq-ratio-type-B')
+        .doesNotHaveAttribute('data-cq-ratio-type-C');
+
 
       await resizeWindow(500, 300);
 
@@ -333,7 +463,11 @@ module('@desktop Integration | Component | container-query', function(hooks) {
         .hasAttribute('data-cq-medium')
         .doesNotHaveAttribute('data-cq-large')
         .hasAttribute('data-cq-short')
-        .doesNotHaveAttribute('data-cq-tall');
+        .doesNotHaveAttribute('data-cq-tall')
+        .doesNotHaveAttribute('data-cq-ratio-type-A')
+        .doesNotHaveAttribute('data-cq-ratio-type-B')
+        .hasAttribute('data-cq-ratio-type-C');
+
 
       await resizeWindow(800, 400);
 
@@ -342,7 +476,11 @@ module('@desktop Integration | Component | container-query', function(hooks) {
         .doesNotHaveAttribute('data-cq-medium')
         .hasAttribute('data-cq-large')
         .hasAttribute('data-cq-short')
-        .doesNotHaveAttribute('data-cq-tall');
+        .doesNotHaveAttribute('data-cq-tall')
+        .doesNotHaveAttribute('data-cq-ratio-type-A')
+        .doesNotHaveAttribute('data-cq-ratio-type-B')
+        .doesNotHaveAttribute('data-cq-ratio-type-C');
+
 
       await resizeWindow(1000, 600);
 
@@ -351,7 +489,10 @@ module('@desktop Integration | Component | container-query', function(hooks) {
         .doesNotHaveAttribute('data-cq-medium')
         .doesNotHaveAttribute('data-cq-large')
         .doesNotHaveAttribute('data-cq-short')
-        .hasAttribute('data-cq-tall');
+        .hasAttribute('data-cq-tall')
+        .doesNotHaveAttribute('data-cq-ratio-type-A')
+        .doesNotHaveAttribute('data-cq-ratio-type-B')
+        .hasAttribute('data-cq-ratio-type-C');
     });
   });
 
@@ -373,6 +514,9 @@ module('@desktop Integration | Component | container-query', function(hooks) {
               large=(cq-width min=600 max=900)
               short=(cq-height max=500)
               tall=(cq-height min=500)
+              ratio-type-A=(cq-aspect-ratio min=0.25 max=0.75)
+              ratio-type-B=(cq-aspect-ratio min=0.5 max=1.5)
+              ratio-type-C=(cq-aspect-ratio min=1.25 max=2)
             }}
 
             class="unique-class-name"
@@ -381,12 +525,16 @@ module('@desktop Integration | Component | container-query', function(hooks) {
 
             as |CQ|
           >
-            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
             <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
             <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
             <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
             <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
             <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+            <p data-test-breakpoint="ratio-type-A">{{CQ.breakpoints.ratio-type-A}}</p>
+            <p data-test-breakpoint="ratio-type-B">{{CQ.breakpoints.ratio-type-B}}</p>
+            <p data-test-breakpoint="ratio-type-C">{{CQ.breakpoints.ratio-type-C}}</p>
+            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
+            <p data-test-aspect-ratio>{{CQ.aspectRatio}}</p>
           </ContainerQuery>
         </div>
       `);

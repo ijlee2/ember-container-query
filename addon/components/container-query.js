@@ -6,6 +6,7 @@ export default class ContainerQueryComponent extends Component {
   @tracked queryResults = {};
   @tracked height;
   @tracked width;
+  @tracked aspectRatio;
 
   get breakpoints() {
     return this.args.breakpoints ?? {};
@@ -22,25 +23,20 @@ export default class ContainerQueryComponent extends Component {
   @action queryContainer(element) {
     this.height = element.clientHeight;
     this.width = element.clientWidth;
+    this.aspectRatio = this.width / this.height;
 
     this.evaluateQueries();
     this.setDataAttributes(element);
   }
 
   evaluateQueries() {
-    const { height, width } = this;
     const queryResults = {};
 
     for (const [name, metadata] of Object.entries(this.breakpoints)) {
       const { dimension, min, max } = metadata;
+      const value = this[dimension];
 
-      if (dimension === 'width') {
-        queryResults[name] = (min <= width && width < max);
-
-      } else if (dimension === 'height') {
-        queryResults[name] = (min <= height && height < max);
-
-      }
+      queryResults[name] = (min <= value && value < max);
     }
 
     this.queryResults = queryResults;

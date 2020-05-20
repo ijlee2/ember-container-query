@@ -19,9 +19,10 @@ ember install ember-container-query
 Usage
 ------------------------------------------------------------------------------
 
-The addon provides 1 Glimmer component and 2 helpers:
+The addon provides 1 Glimmer component and 3 helpers:
 
 - `<ContainerQuery>`
+- `{{cq-aspect-ratio}}`
 - `{{cq-height}}`
 - `{{cq-width}}`
 
@@ -40,13 +41,14 @@ It also accepts these arguments:
 | @dataAttributePrefix | No | Prefix for data attributes | string |
 | @debounce | No | Debounce time (ms) for resize | number ≥ 0 |
 
-The component returns a few values that you can consume:<sup>3</sup>
+The component returns several values that you can consume:<sup>3</sup>
 
 | Name | Yielded | Description |
 |--|:--:|--|
 | breakpoints | Yes | Container query results |
 | height | Yes | Container height |
 | width | Yes | Container width |
+| aspectRatio | Yes | Ratio between `width` and `height` |
 | data-container-query-_{breakpointName}_ | No | Data attributes for CSS selector |
 | data-test-container-query | No | Test selector |
 
@@ -54,20 +56,21 @@ The component returns a few values that you can consume:<sup>3</sup>
 
 <sup>2. The component renders without error when `@breakpoints` isn't provided. In practice, you will always want to set `@breakpoints`.</sup>
 
-<sup>3. In practice, you will likely only use `breakpoints` and data attributes for CSS selector.</sup>
+<sup>3. In practice, you will likely only use `breakpoints`, `aspectRatio`, and data attributes for CSS selector.</sup>
 
-#### `{{cq-height}}`,  `{{cq-width}}`
 
-Both helpers accept these arguments:
+#### `{{cq-aspect-ratio}}`, `{{cq-height}}`,  `{{cq-width}}`
+
+All helpers accept these arguments:
 
 | Name | Required | Description | Type |
 |--|:--:|--|--|
-| min | Yes<sup>1,2</sup> | Lower bound for container size (px) | number ≥ 0 |
-| max | Yes<sup>1,2</sup> | Upper bound for container size (px) | number ≥ 0 |
+| min | Yes<sup>1,2</sup> | Lower bound for dimension | number ≥ 0 |
+| max | Yes<sup>1,2</sup> | Upper bound for dimension | number ≥ 0 |
 
-<sup>1. The helpers use default values of `min = 0` and `max = Infinity`. In practice, you will always want to set `min` or `max` (or both).</sup>
+<sup>1. The helpers use default values of `min = 0` and `max = Infinity`, and assume the inequalities `min ≤ x < max`. In practice, you will always want to set `min` or `max` (or both).</sup>
 
-<sup>2. The helpers assume the inequalities `min ≤ x < max`.</sup>
+<sup>2. Aspect ratio is unitless. Height and width have the unit of pixel.</sup>
 
 
 Example
