@@ -5,8 +5,8 @@ import { tracked } from '@glimmer/tracking';
 export default class ContainerQueryComponent extends Component {
   @tracked queryResults = {};
 
-  get breakpoints() {
-    return this.args.breakpoints ?? {};
+  get features() {
+    return this.args.features ?? {};
   }
 
   get dataAttributePrefix() {
@@ -18,18 +18,21 @@ export default class ContainerQueryComponent extends Component {
   }
 
   @action queryContainer(element) {
+    this.measureDimensions(element);
+    this.evaluateQueries();
+    this.setDataAttributes(element);
+  }
+
+  measureDimensions(element) {
     this.height = element.clientHeight;
     this.width = element.clientWidth;
     this.aspectRatio = this.width / this.height;
-
-    this.evaluateQueries();
-    this.setDataAttributes(element);
   }
 
   evaluateQueries() {
     const queryResults = {};
 
-    for (const [name, metadata] of Object.entries(this.breakpoints)) {
+    for (const [name, metadata] of Object.entries(this.features)) {
       const { dimension, min, max } = metadata;
       const value = this[dimension];
 
@@ -42,10 +45,10 @@ export default class ContainerQueryComponent extends Component {
   setDataAttributes(element) {
     const prefix = this.dataAttributePrefix;
 
-    for (const [name, meetsBreakpoint] of Object.entries(this.queryResults)) {
+    for (const [name, meetsFeature] of Object.entries(this.queryResults)) {
       const attributeName = `data-${prefix}-${name}`;
 
-      if (meetsBreakpoint) {
+      if (meetsFeature) {
         element.setAttribute(attributeName, '');
 
       } else {

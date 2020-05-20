@@ -37,7 +37,7 @@ It also accepts these arguments:
 
 | Name | Required | Description | Type |
 |--|:--:|--|--|
-| @breakpoints | Yes<sup>2</sup> | Container query definitions | POJO |
+| @features | Yes<sup>2</sup> | Container query definitions | POJO |
 | @dataAttributePrefix | No | Prefix for data attributes | string |
 | @debounce | No | Debounce time (ms) for resize | number ≥ 0 |
 
@@ -45,13 +45,13 @@ The component returns a few values that you can consume:
 
 | Name | Yielded | Description |
 |--|:--:|--|
-| breakpoints | Yes | Container query results |
-| data-container-query-_{breakpointName}_ | No | Data attributes for CSS selector |
+| features | Yes | Container query results |
+| data-container-query-_{featureName}_ | No | Data attributes for CSS selector |
 | data-test-container-query | No | Test selector |
 
 <sup>1. Do refrain from overusing splattributes (e.g. pass a `{{did-insert}}` modifier to fetch data), since the component's API may change and cause unexpected results. Practice separation of concerns when possible. For example, data fetching can be handled by another element or [`@use` decorator](https://github.com/emberjs/rfcs/blob/use-and-resources/text/0567-use-and-resources.md).</sup>
 
-<sup>2. The component renders without error when `@breakpoints` isn't provided. In practice, you will always want to set `@breakpoints`.</sup>
+<sup>2. The component renders without error when `@features` isn't provided. In practice, you will always want to set `@features`.</sup>
 
 
 #### `{{cq-aspect-ratio}}`, `{{cq-height}}`,  `{{cq-width}}`
@@ -60,8 +60,8 @@ All helpers accept these arguments:
 
 | Name | Required | Description | Type |
 |--|:--:|--|--|
-| min | Yes<sup>1,2</sup> | Lower bound for dimension | number ≥ 0 |
-| max | Yes<sup>1,2</sup> | Upper bound for dimension | number ≥ 0 |
+| min | Yes<sup>1,2</sup> | Lower bound for feature | number ≥ 0 |
+| max | Yes<sup>1,2</sup> | Upper bound for feature | number ≥ 0 |
 
 <sup>1. The helpers use default values of `min = 0` and `max = Infinity`, and assume the inequalities `min ≤ x < max`. In practice, you will always want to set `min` or `max` (or both).</sup>
 
@@ -79,14 +79,14 @@ When you pair `<ContainerQuery>` with some [CSS](https://github.com/salsify/embe
 {{!-- app/templates/album.hbs --}}
 
 <ContainerQuery
-  @breakpoints={{hash
+  @features={{hash
     large=(cq-width min=960)
     tall=(cq-height min=400)
   }}
   as |CQ|
 >
   {{#let
-    (and CQ.breakpoints.large CQ.breakpoints.tall)
+    (and CQ.features.large CQ.features.tall)
     as |showLyrics|
   }}
     <section local-class="container {{if showLyrics "with-lyrics"}}">
@@ -117,7 +117,7 @@ When you pair `<ContainerQuery>` with some [CSS](https://github.com/salsify/embe
 {{!-- app/components/tracks.hbs --}}
 
 <ContainerQuery
-  @breakpoints={{hash
+  @features={{hash
     small=(cq-width max=480)
     medium=(cq-width min=480 max=640)
     large=(cq-width min=640)
@@ -125,7 +125,7 @@ When you pair `<ContainerQuery>` with some [CSS](https://github.com/salsify/embe
   }}
   as |CQ|
 >
-  {{#if (and CQ.breakpoints.large CQ.breakpoints.tall)}}
+  {{#if (and CQ.features.large CQ.features.tall)}}
     <Tracks::Table
       @tracks={{@tracks}}
     />
@@ -133,8 +133,8 @@ When you pair `<ContainerQuery>` with some [CSS](https://github.com/salsify/embe
   {{else}}
     <Tracks::List
       @numColumns={{
-        if CQ.breakpoints.small 1
-        (if CQ.breakpoints.medium 2 3)
+        if CQ.features.small 1
+        (if CQ.features.medium 2 3)
       }}
       @tracks={{@tracks}}
     />

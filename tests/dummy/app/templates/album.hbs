@@ -1,11 +1,11 @@
 <ContainerQuery
-  @breakpoints={{hash
+  @features={{hash
     large=(cq-width min=960)
     tall=(cq-height min=400)
   }}
   as |CQ|
 >
-  {{#let (and CQ.breakpoints.large CQ.breakpoints.tall) as |showLyrics|}}
+  {{#let (and CQ.features.large CQ.features.tall) as |showLyrics|}}
     <section local-class="container {{if showLyrics "with-lyrics"}}">
       <header local-class="album-header">
         <h1>{{@model.name}}</h1>

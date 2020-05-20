@@ -14,7 +14,7 @@ module('@desktop Integration | Component | tracks', function(hooks) {
 
 
   test('uses container queries to render tracks', async function(assert) {
-    // Breakpoints: small, short
+    // Features: small, short
     await render(hbs`
       <div
         data-test-parent-element
@@ -34,7 +34,7 @@ module('@desktop Integration | Component | tracks', function(hooks) {
       .doesNotExist('We don\'t see a table.');
 
 
-    // Breakpoints: medium, short
+    // Features: medium, short
     await resizeWindow(560, 240);
 
     assert.dom('[data-test-list="Tracks"]')
@@ -45,7 +45,7 @@ module('@desktop Integration | Component | tracks', function(hooks) {
       .doesNotExist('We don\'t see a table.');
 
 
-    // Breakpoints: large, short
+    // Features: large, short
     await resizeWindow(880, 240);
 
     assert.dom('[data-test-list="Tracks"]')
@@ -56,7 +56,7 @@ module('@desktop Integration | Component | tracks', function(hooks) {
       .doesNotExist('We don\'t see a table.');
 
 
-    // Breakpoints: small, tall
+    // Features: small, tall
     await resizeWindow(240, 640);
 
     assert.dom('[data-test-list="Tracks"]')
@@ -67,7 +67,7 @@ module('@desktop Integration | Component | tracks', function(hooks) {
       .doesNotExist('We don\'t see a table.');
 
 
-    // Breakpoints: medium, tall
+    // Features: medium, tall
     await resizeWindow(560, 640);
 
     assert.dom('[data-test-list="Tracks"]')
@@ -78,7 +78,7 @@ module('@desktop Integration | Component | tracks', function(hooks) {
       .doesNotExist('We don\'t see a table.');
 
 
-    // Breakpoints: large, tall
+    // Features: large, tall
     await resizeWindow(880, 640);
 
     assert.dom('[data-test-list="Tracks"]')

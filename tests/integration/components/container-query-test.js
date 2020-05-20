@@ -8,16 +8,16 @@ module('@desktop Integration | Component | container-query', function(hooks) {
   setupRenderingTest(hooks);
 
   hooks.beforeEach(function(assert) {
-    assert.areBreakpointsCorrect = (breakpoints = {}) => {
-      for (const [name, meetsBreakpoint] of Object.entries(breakpoints)) {
-        if (meetsBreakpoint) {
-          assert.dom(`[data-test-breakpoint="${name}"]`).hasText('true');
+    assert.areFeaturesCorrect = (features = {}) => {
+      for (const [name, meetsFeature] of Object.entries(features)) {
+        if (meetsFeature) {
+          assert.dom(`[data-test-feature="${name}"]`).hasText('true');
 
-        } else if (meetsBreakpoint === false) {
-          assert.dom(`[data-test-breakpoint="${name}"]`).hasText('false');
+        } else if (meetsFeature === false) {
+          assert.dom(`[data-test-feature="${name}"]`).hasText('false');
 
-        } else if (!meetsBreakpoint) {
-          assert.dom(`[data-test-breakpoint="${name}"]`).hasNoText();
+        } else if (!meetsFeature) {
+          assert.dom(`[data-test-feature="${name}"]`).hasNoText();
 
         }
       }
@@ -25,32 +25,32 @@ module('@desktop Integration | Component | container-query', function(hooks) {
   });
 
   hooks.afterEach(function(assert) {
-    delete assert.areBreakpointsCorrect;
+    delete assert.areFeaturesCorrect;
   });
 
 
-  module('When @breakpoints is undefined', function() {
+  module('When @features is undefined', function() {
     test('The component renders', async function(assert) {
       await render(hbs`
         <div style="width: 500px; height: 800px;">
           <ContainerQuery
             as |CQ|
           >
-            <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
-            <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
-            <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
+            <p data-test-feature="small">{{CQ.features.small}}</p>
+            <p data-test-feature="medium">{{CQ.features.medium}}</p>
+            <p data-test-feature="large">{{CQ.features.large}}</p>
 
-            <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
-            <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+            <p data-test-feature="short">{{CQ.features.short}}</p>
+            <p data-test-feature="tall">{{CQ.features.tall}}</p>
 
-            <p data-test-breakpoint="ratio-type-A">{{CQ.breakpoints.ratio-type-A}}</p>
-            <p data-test-breakpoint="ratio-type-B">{{CQ.breakpoints.ratio-type-B}}</p>
-            <p data-test-breakpoint="ratio-type-C">{{CQ.breakpoints.ratio-type-C}}</p>
+            <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
+            <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
+            <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
           </ContainerQuery>
         </div>
       `);
 
-      assert.areBreakpointsCorrect({
+      assert.areFeaturesCorrect({
         small: undefined,
         medium: undefined,
         large: undefined,
@@ -63,7 +63,7 @@ module('@desktop Integration | Component | container-query', function(hooks) {
     });
 
 
-    test('The component updates this.breakpoints when it is resized', async function(assert) {
+    test('The component updates this.features when it is resized', async function(assert) {
       await render(hbs`
         <div
           data-test-parent-element
@@ -72,21 +72,21 @@ module('@desktop Integration | Component | container-query', function(hooks) {
           <ContainerQuery
             as |CQ|
           >
-            <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
-            <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
-            <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
+            <p data-test-feature="small">{{CQ.features.small}}</p>
+            <p data-test-feature="medium">{{CQ.features.medium}}</p>
+            <p data-test-feature="large">{{CQ.features.large}}</p>
 
-            <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
-            <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+            <p data-test-feature="short">{{CQ.features.short}}</p>
+            <p data-test-feature="tall">{{CQ.features.tall}}</p>
 
-            <p data-test-breakpoint="ratio-type-A">{{CQ.breakpoints.ratio-type-A}}</p>
-            <p data-test-breakpoint="ratio-type-B">{{CQ.breakpoints.ratio-type-B}}</p>
-            <p data-test-breakpoint="ratio-type-C">{{CQ.breakpoints.ratio-type-C}}</p>
+            <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
+            <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
+            <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
           </ContainerQuery>
         </div>
       `);
 
-      assert.areBreakpointsCorrect({
+      assert.areFeaturesCorrect({
         small: undefined,
         medium: undefined,
         large: undefined,
@@ -100,7 +100,7 @@ module('@desktop Integration | Component | container-query', function(hooks) {
 
       await resizeWindow(500, 300);
 
-      assert.areBreakpointsCorrect({
+      assert.areFeaturesCorrect({
         small: undefined,
         medium: undefined,
         large: undefined,
@@ -114,7 +114,7 @@ module('@desktop Integration | Component | container-query', function(hooks) {
 
       await resizeWindow(800, 400);
 
-      assert.areBreakpointsCorrect({
+      assert.areFeaturesCorrect({
         small: undefined,
         medium: undefined,
         large: undefined,
@@ -128,7 +128,7 @@ module('@desktop Integration | Component | container-query', function(hooks) {
 
       await resizeWindow(1000, 600);
 
-      assert.areBreakpointsCorrect({
+      assert.areFeaturesCorrect({
         small: undefined,
         medium: undefined,
         large: undefined,
@@ -142,12 +142,12 @@ module('@desktop Integration | Component | container-query', function(hooks) {
   });
 
 
-  module('When @breakpoints is passed', function() {
+  module('When @features is passed', function() {
     test('The component renders', async function(assert) {
       await render(hbs`
         <div style="width: 500px; height: 800px;">
           <ContainerQuery
-            @breakpoints={{hash
+            @features={{hash
               small=(cq-width max=300)
               medium=(cq-width min=300 max=600)
               large=(cq-width min=600 max=900)
@@ -159,21 +159,21 @@ module('@desktop Integration | Component | container-query', function(hooks) {
             }}
             as |CQ|
           >
-            <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
-            <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
-            <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
+            <p data-test-feature="small">{{CQ.features.small}}</p>
+            <p data-test-feature="medium">{{CQ.features.medium}}</p>
+            <p data-test-feature="large">{{CQ.features.large}}</p>
 
-            <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
-            <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+            <p data-test-feature="short">{{CQ.features.short}}</p>
+            <p data-test-feature="tall">{{CQ.features.tall}}</p>
 
-            <p data-test-breakpoint="ratio-type-A">{{CQ.breakpoints.ratio-type-A}}</p>
-            <p data-test-breakpoint="ratio-type-B">{{CQ.breakpoints.ratio-type-B}}</p>
-            <p data-test-breakpoint="ratio-type-C">{{CQ.breakpoints.ratio-type-C}}</p>
+            <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
+            <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
+            <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
           </ContainerQuery>
         </div>
       `);
 
-      assert.areBreakpointsCorrect({
+      assert.areFeaturesCorrect({
         small: false,
         medium: true,
         large: false,
@@ -186,14 +186,14 @@ module('@desktop Integration | Component | container-query', function(hooks) {
     });
 
 
-    test('The component updates this.breakpoints when it is resized', async function(assert) {
+    test('The component updates this.features when it is resized', async function(assert) {
       await render(hbs`
         <div
           data-test-parent-element
           style="width: 250px; height: 500px;"
         >
           <ContainerQuery
-            @breakpoints={{hash
+            @features={{hash
               small=(cq-width max=300)
               medium=(cq-width min=300 max=600)
               large=(cq-width min=600 max=900)
@@ -205,21 +205,21 @@ module('@desktop Integration | Component | container-query', function(hooks) {
             }}
             as |CQ|
           >
-            <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
-            <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
-            <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
+            <p data-test-feature="small">{{CQ.features.small}}</p>
+            <p data-test-feature="medium">{{CQ.features.medium}}</p>
+            <p data-test-feature="large">{{CQ.features.large}}</p>
 
-            <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
-            <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+            <p data-test-feature="short">{{CQ.features.short}}</p>
+            <p data-test-feature="tall">{{CQ.features.tall}}</p>
 
-            <p data-test-breakpoint="ratio-type-A">{{CQ.breakpoints.ratio-type-A}}</p>
-            <p data-test-breakpoint="ratio-type-B">{{CQ.breakpoints.ratio-type-B}}</p>
-            <p data-test-breakpoint="ratio-type-C">{{CQ.breakpoints.ratio-type-C}}</p>
+            <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
+            <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
+            <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
           </ContainerQuery>
         </div>
       `);
 
-      assert.areBreakpointsCorrect({
+      assert.areFeaturesCorrect({
         small: true,
         medium: false,
         large: false,
@@ -233,7 +233,7 @@ module('@desktop Integration | Component | container-query', function(hooks) {
 
       await resizeWindow(500, 300);
 
-      assert.areBreakpointsCorrect({
+      assert.areFeaturesCorrect({
         small: false,
         medium: true,
         large: false,
@@ -247,7 +247,7 @@ module('@desktop Integration | Component | container-query', function(hooks) {
 
       await resizeWindow(800, 400);
 
-      assert.areBreakpointsCorrect({
+      assert.areFeaturesCorrect({
         small: false,
         medium: false,
         large: true,
@@ -261,7 +261,7 @@ module('@desktop Integration | Component | container-query', function(hooks) {
 
       await resizeWindow(1000, 600);
 
-      assert.areBreakpointsCorrect({
+      assert.areFeaturesCorrect({
         small: false,
         medium: false,
         large: false,
@@ -283,7 +283,7 @@ module('@desktop Integration | Component | container-query', function(hooks) {
           style="width: 250px; height: 500px;"
         >
           <ContainerQuery
-            @breakpoints={{hash
+            @features={{hash
               small=(cq-width max=300)
               medium=(cq-width min=300 max=600)
               large=(cq-width min=600 max=900)
@@ -295,16 +295,16 @@ module('@desktop Integration | Component | container-query', function(hooks) {
             }}
             as |CQ|
           >
-            <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
-            <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
-            <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
+            <p data-test-feature="small">{{CQ.features.small}}</p>
+            <p data-test-feature="medium">{{CQ.features.medium}}</p>
+            <p data-test-feature="large">{{CQ.features.large}}</p>
 
-            <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
-            <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+            <p data-test-feature="short">{{CQ.features.short}}</p>
+            <p data-test-feature="tall">{{CQ.features.tall}}</p>
 
-            <p data-test-breakpoint="ratio-type-A">{{CQ.breakpoints.ratio-type-A}}</p>
-            <p data-test-breakpoint="ratio-type-B">{{CQ.breakpoints.ratio-type-B}}</p>
-            <p data-test-breakpoint="ratio-type-C">{{CQ.breakpoints.ratio-type-C}}</p>
+            <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
+            <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
+            <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
           </ContainerQuery>
         </div>
       `);
@@ -369,7 +369,7 @@ module('@desktop Integration | Component | container-query', function(hooks) {
           style="width: 250px; height: 500px;"
         >
           <ContainerQuery
-            @breakpoints={{hash
+            @features={{hash
               small=(cq-width max=300)
               medium=(cq-width min=300 max=600)
               large=(cq-width min=600 max=900)
@@ -382,16 +382,16 @@ module('@desktop Integration | Component | container-query', function(hooks) {
             @dataAttributePrefix="cq"
             as |CQ|
           >
-            <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
-            <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
-            <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
+            <p data-test-feature="small">{{CQ.features.small}}</p>
+            <p data-test-feature="medium">{{CQ.features.medium}}</p>
+            <p data-test-feature="large">{{CQ.features.large}}</p>
 
-            <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
-            <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+            <p data-test-feature="short">{{CQ.features.short}}</p>
+            <p data-test-feature="tall">{{CQ.features.tall}}</p>
 
-            <p data-test-breakpoint="ratio-type-A">{{CQ.breakpoints.ratio-type-A}}</p>
-            <p data-test-breakpoint="ratio-type-B">{{CQ.breakpoints.ratio-type-B}}</p>
-            <p data-test-breakpoint="ratio-type-C">{{CQ.breakpoints.ratio-type-C}}</p>
+            <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
+            <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
+            <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
           </ContainerQuery>
         </div>
       `);
@@ -459,7 +459,7 @@ module('@desktop Integration | Component | container-query', function(hooks) {
       await render(hbs`
         <div style="width: 500px; height: 800px;">
           <ContainerQuery
-            @breakpoints={{hash
+            @features={{hash
               small=(cq-width max=300)
               medium=(cq-width min=300 max=600)
               large=(cq-width min=600 max=900)
@@ -476,16 +476,16 @@ module('@desktop Integration | Component | container-query', function(hooks) {
 
             as |CQ|
           >
-            <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
-            <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
-            <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
+            <p data-test-feature="small">{{CQ.features.small}}</p>
+            <p data-test-feature="medium">{{CQ.features.medium}}</p>
+            <p data-test-feature="large">{{CQ.features.large}}</p>
 
-            <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
-            <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+            <p data-test-feature="short">{{CQ.features.short}}</p>
+            <p data-test-feature="tall">{{CQ.features.tall}}</p>
 
-            <p data-test-breakpoint="ratio-type-A">{{CQ.breakpoints.ratio-type-A}}</p>
-            <p data-test-breakpoint="ratio-type-B">{{CQ.breakpoints.ratio-type-B}}</p>
-            <p data-test-breakpoint="ratio-type-C">{{CQ.breakpoints.ratio-type-C}}</p>
+            <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
+            <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
+            <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
           </ContainerQuery>
         </div>
       `);
