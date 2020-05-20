@@ -16,7 +16,7 @@ const DEVICES = {
 };
 
 const supportedDevices = Object.values(DEVICES);
-const supportedFilters = /(@w1\s+|@w2\s+|@w3\s+|@h1\s+|@h2\s+|@w3\s+)/g;
+const supportedFilters = /(@w1\s+|@w2\s+|@w3\s+|@h1\s+|@h2\s+|@h3\s+)/g;
 
 
 /*
@@ -151,7 +151,11 @@ function getName(qunitAssert, description) {
 
   name += ` ◆ ${moduleName}`;
 
-  return `@${getDevice()} ◆ ${name.replace(supportedFilters, '')}`;
+  const appliedFilters = name.match(supportedFilters)
+    .map(appliedFilter => appliedFilter.trim())
+    .join(' ');
+
+  return `${appliedFilters} ◆ ${name.replace(supportedFilters, '')}`;
 }
 
 
