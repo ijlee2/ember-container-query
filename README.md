@@ -30,27 +30,31 @@ The addon provides 1 Glimmer component and 2 helpers:
 
 #### `<ContainerQuery>`
 
-The component accepts these arguments:
+The component uses `...attributes` so that you can pass `class` or `local-class` _for styling_.<sup>1</sup>
+
+It also accepts these arguments:
 
 | Name | Required | Description | Type |
 |--|:--:|--|--|
-| @breakpoints | Yes<sup>1</sup> | Container query definitions | POJO |
-| @classPrefix | No | Prefix for CSS selectors | string |
+| @breakpoints | Yes<sup>2</sup> | Container query definitions | POJO |
+| @dataAttributePrefix | No | Prefix for data attributes | string |
 | @debounce | No | Debounce time (ms) for resize | number ≥ 0 |
 
-It returns a few values that you can consume:<sup>2</sup>
+The component returns a few values that you can consume:<sup>3</sup>
 
 | Name | Yielded | Description |
 |--|:--:|--|
-| breakpoints | Yes | container query results |
-| height | Yes | container height |
-| width | Yes | container width |
-| container-query--_{breakpointName}_ | No | CSS selector(s) |
-| data-test-container-query | No | test selector |
+| breakpoints | Yes | Container query results |
+| height | Yes | Container height |
+| width | Yes | Container width |
+| data-container-query-_{breakpointName}_ | No | Data attributes for CSS selector |
+| data-test-container-query | No | Test selector |
 
-<sup>1. The component renders without error when `@breakpoints` isn't provided. In practice, you will always want to set `@breakpoints`.</sup>
+<sup>1. Do refrain from overusing splattributes (e.g. pass a `{{did-insert}}` modifier to fetch data), since the component's API may change and cause unexpected results. Practice separation of concerns when possible. For example, data fetching can be handled by another element or [`@use` decorator](https://github.com/emberjs/rfcs/blob/use-and-resources/text/0567-use-and-resources.md).</sup>
 
-<sup>2. In practice, you will likely only use `breakpoints` (maybe CSS selectors).</sup>
+<sup>2. The component renders without error when `@breakpoints` isn't provided. In practice, you will always want to set `@breakpoints`.</sup>
+
+<sup>3. In practice, you will likely only use `breakpoints` and data attributes for CSS selector.</sup>
 
 #### `{{cq-height}}`,  `{{cq-width}}`
 

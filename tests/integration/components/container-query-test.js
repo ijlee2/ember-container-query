@@ -227,8 +227,8 @@ module('@desktop Integration | Component | container-query', function(hooks) {
   });
 
 
-  module('When @classPrefix is undefined', function() {
-    test('The component updates this.classSelectors when it is resized', async function(assert) {
+  module('When @dataAttributePrefix is undefined', function() {
+    test('The component updates data attributes when it is resized', async function(assert) {
       await render(hbs`
         <div
           data-test-parent-element
@@ -255,44 +255,44 @@ module('@desktop Integration | Component | container-query', function(hooks) {
       `);
 
       assert.dom('[data-test-container-query]')
-        .hasClass('container-query--small')
-        .doesNotHaveClass('container-query--medium')
-        .doesNotHaveClass('container-query--large')
-        .doesNotHaveClass('container-query--short')
-        .hasClass('container-query--tall');
+        .hasAttribute('data-container-query-small')
+        .doesNotHaveAttribute('data-container-query-medium')
+        .doesNotHaveAttribute('data-container-query-large')
+        .doesNotHaveAttribute('data-container-query-short')
+        .hasAttribute('data-container-query-tall');
 
       await resizeWindow(500, 300);
 
       assert.dom('[data-test-container-query]')
-        .doesNotHaveClass('container-query--small')
-        .hasClass('container-query--medium')
-        .doesNotHaveClass('container-query--large')
-        .hasClass('container-query--short')
-        .doesNotHaveClass('container-query--tall');
+        .doesNotHaveAttribute('data-container-query-small')
+        .hasAttribute('data-container-query-medium')
+        .doesNotHaveAttribute('data-container-query-large')
+        .hasAttribute('data-container-query-short')
+        .doesNotHaveAttribute('data-container-query-tall');
 
       await resizeWindow(800, 400);
 
       assert.dom('[data-test-container-query]')
-        .doesNotHaveClass('container-query--small')
-        .doesNotHaveClass('container-query--medium')
-        .hasClass('container-query--large')
-        .hasClass('container-query--short')
-        .doesNotHaveClass('container-query--tall');
+        .doesNotHaveAttribute('data-container-query-small')
+        .doesNotHaveAttribute('data-container-query-medium')
+        .hasAttribute('data-container-query-large')
+        .hasAttribute('data-container-query-short')
+        .doesNotHaveAttribute('data-container-query-tall');
 
       await resizeWindow(1000, 600);
 
       assert.dom('[data-test-container-query]')
-        .doesNotHaveClass('container-query--small')
-        .doesNotHaveClass('container-query--medium')
-        .doesNotHaveClass('container-query--large')
-        .doesNotHaveClass('container-query--short')
-        .hasClass('container-query--tall');
+        .doesNotHaveAttribute('data-container-query-small')
+        .doesNotHaveAttribute('data-container-query-medium')
+        .doesNotHaveAttribute('data-container-query-large')
+        .doesNotHaveAttribute('data-container-query-short')
+        .hasAttribute('data-container-query-tall');
     });
   });
 
 
-  module('When @classPrefix is passed', function() {
-    test('The component updates this.classSelectors when it is resized', async function(assert) {
+  module('When @dataAttributePrefix is passed', function() {
+    test('The component updates data attributes when it is resized', async function(assert) {
       await render(hbs`
         <div
           data-test-parent-element
@@ -306,7 +306,7 @@ module('@desktop Integration | Component | container-query', function(hooks) {
               short=(cq-height max=500)
               tall=(cq-height min=500)
             }}
-            @classPrefix="my-app-initials"
+            @dataAttributePrefix="cq"
             as |CQ|
           >
             <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
@@ -320,38 +320,80 @@ module('@desktop Integration | Component | container-query', function(hooks) {
       `);
 
       assert.dom('[data-test-container-query]')
-        .hasClass('my-app-initials--small')
-        .doesNotHaveClass('my-app-initials--medium')
-        .doesNotHaveClass('my-app-initials--large')
-        .doesNotHaveClass('my-app-initials--short')
-        .hasClass('my-app-initials--tall');
+        .hasAttribute('data-cq-small')
+        .doesNotHaveAttribute('data-cq-medium')
+        .doesNotHaveAttribute('data-cq-large')
+        .doesNotHaveAttribute('data-cq-short')
+        .hasAttribute('data-cq-tall');
 
       await resizeWindow(500, 300);
 
       assert.dom('[data-test-container-query]')
-        .doesNotHaveClass('my-app-initials--small')
-        .hasClass('my-app-initials--medium')
-        .doesNotHaveClass('my-app-initials--large')
-        .hasClass('my-app-initials--short')
-        .doesNotHaveClass('my-app-initials--tall');
+        .doesNotHaveAttribute('data-cq-small')
+        .hasAttribute('data-cq-medium')
+        .doesNotHaveAttribute('data-cq-large')
+        .hasAttribute('data-cq-short')
+        .doesNotHaveAttribute('data-cq-tall');
 
       await resizeWindow(800, 400);
 
       assert.dom('[data-test-container-query]')
-        .doesNotHaveClass('my-app-initials--small')
-        .doesNotHaveClass('my-app-initials--medium')
-        .hasClass('my-app-initials--large')
-        .hasClass('my-app-initials--short')
-        .doesNotHaveClass('my-app-initials--tall');
+        .doesNotHaveAttribute('data-cq-small')
+        .doesNotHaveAttribute('data-cq-medium')
+        .hasAttribute('data-cq-large')
+        .hasAttribute('data-cq-short')
+        .doesNotHaveAttribute('data-cq-tall');
 
       await resizeWindow(1000, 600);
 
       assert.dom('[data-test-container-query]')
-        .doesNotHaveClass('my-app-initials--small')
-        .doesNotHaveClass('my-app-initials--medium')
-        .doesNotHaveClass('my-app-initials--large')
-        .doesNotHaveClass('my-app-initials--short')
-        .hasClass('my-app-initials--tall');
+        .doesNotHaveAttribute('data-cq-small')
+        .doesNotHaveAttribute('data-cq-medium')
+        .doesNotHaveAttribute('data-cq-large')
+        .doesNotHaveAttribute('data-cq-short')
+        .hasAttribute('data-cq-tall');
+    });
+  });
+
+
+  module('...attributes', function() {
+    test('The component accepts splattributes', async function(assert) {
+      assert.expect(3);
+
+      this.fetchData = () => {
+        assert.ok('{{did-insert}} modifier works. (But we should find a better way to separate concerns!)');
+      };
+
+      await render(hbs`
+        <div style="width: 500px; height: 800px;">
+          <ContainerQuery
+            @breakpoints={{hash
+              small=(cq-width max=300)
+              medium=(cq-width min=300 max=600)
+              large=(cq-width min=600 max=900)
+              short=(cq-height max=500)
+              tall=(cq-height min=500)
+            }}
+
+            class="unique-class-name"
+            local-class="container"
+            {{did-insert this.fetchData}}
+
+            as |CQ|
+          >
+            <p data-test-physical-size>{{CQ.width}} x {{CQ.height}}</p>
+            <p data-test-breakpoint="small">{{CQ.breakpoints.small}}</p>
+            <p data-test-breakpoint="medium">{{CQ.breakpoints.medium}}</p>
+            <p data-test-breakpoint="large">{{CQ.breakpoints.large}}</p>
+            <p data-test-breakpoint="short">{{CQ.breakpoints.short}}</p>
+            <p data-test-breakpoint="tall">{{CQ.breakpoints.tall}}</p>
+          </ContainerQuery>
+        </div>
+      `);
+
+      assert.dom('[data-test-container-query]')
+        .hasClass('unique-class-name', 'Providing a custom CSS class works.')
+        .hasAttribute('local-class', 'container', 'ember-css-modules works.');
     });
   });
 });
