@@ -1,0 +1,8 @@
+.container {
+  background: linear-gradient(36deg, rgba(255, 224, 130, 0.4) 15%, rgba(255, 248, 225, 0.8) 90%);
+  border-radius: 0.1875rem;
+  height: calc(100% - 1.2rem);
+  padding: 0.6rem;
+  width: calc(100% - 1.2rem);
+  word-break: break-word;
+}
