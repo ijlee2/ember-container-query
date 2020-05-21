@@ -13,49 +13,48 @@ body {
   margin: 0;
 }
 
-body * {
+* {
   margin: 0;
   padding: 0;
 }
 
-body h1 {
+h1 {
   font-size: 2.25em;
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
 
-body h2 {
+h2 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
-body h3 {
+h3 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
 
-body a {
+a {
   color: rgba(245, 255, 250, 0.88);
 }
 
-body p {
+p {
   margin-bottom: 0.75rem;
 }
 
-body table {
+table {
   border-collapse: collapse;
   width: 100%;
 }
 
-body table th,
-body table td {
+th, td {
   border: 0.0625rem solid rgba(112, 128, 144, 1);
   padding: 0.25rem 0.5rem;
 }
 
-body ul {
+ul {
   list-style-type: none;
 }
 
