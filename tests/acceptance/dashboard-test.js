@@ -85,9 +85,9 @@ module('Acceptance | dashboard', function(hooks) {
     await visit('/dashboard');
 
     assert.dom('[data-test-widget="1"] [data-test-container-query]')
-      .doesNotHaveAttribute('data-container-query-tall')
+      .hasAttribute('data-container-query-tall')
       .doesNotHaveAttribute('data-container-query-square')
-      .hasAttribute('data-container-query-wide');
+      .doesNotHaveAttribute('data-container-query-wide');
 
     await takeSnapshot(assert);
   });

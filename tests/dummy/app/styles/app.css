@@ -40,6 +40,22 @@ a {
   color: rgba(245, 255, 250, 0.88);
 }
 
+button {
+  background: transparent;
+  border: 0.0625rem solid rgba(247, 252, 251, 0.5);
+  border-radius: 0.15rem;
+  color: rgba(247, 252, 251, 0.9);
+  font-family: "Raleway", sans-serif;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.225);
+  cursor: pointer;
+  transition: background-color 0.17s;
+}
+
 p {
   margin-bottom: 0.75rem;
 }

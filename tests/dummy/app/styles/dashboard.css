@@ -1,6 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  height: calc(100% - 3rem);
   padding: 1.5rem 1rem;
 }
 
@@ -47,6 +48,16 @@
 .widget-5 {
   background: linear-gradient(126deg, #9c27b0 16%, #d05ce3 84%);
   grid-area: widget-5;
+}
+
+
+@media screen and (max-width: 30rem) {
+  @media (min-height: 40rem) {
+    .widgets {
+      grid-template-rows: repeat(4, 75%) 5rem;
+      overflow-y: auto;
+    }
+  }
 }
 
 
