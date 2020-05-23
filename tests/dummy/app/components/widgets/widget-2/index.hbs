@@ -1,0 +1,33 @@
+<ContainerQuery
+  @features={{hash
+    short=(cq-height max=200)
+    tall=(cq-height min=200 max=480)
+    very-tall=(cq-height min=480)
+  }}
+  local-class="container"
+  as |CQ|
+>
+  <header>
+    <h2>Widget 2</h2>
+  </header>
+
+  {{#unless CQ.features.short}}
+    <div
+      data-test-visualization
+      local-class="visualization"
+    >
+      <Widgets::Widget-2::StackedChart
+        @data={{this.data}}
+      />
+    </div>
+  {{/unless}}
+
+  <div
+    data-test-captions
+    local-class="captions"
+  >
+    <Widgets::Widget-2::Captions
+      @summaries={{this.summaries}}
+    />
+  </div>
+</ContainerQuery>

@@ -1,0 +1,82 @@
+<ContainerQuery
+  @features={{hash
+    large=(cq-width min=320)
+    tall=(cq-height min=80)
+  }}
+  as |CQ|
+>
+  <div
+    local-class="container {{unless CQ.features.tall "flat"}}"
+    {{did-insert this.showSummary}}
+    {{did-update this.showSummary this.summaries}}
+  >
+    {{#if this.summary}}
+      <div local-class="summary {{if CQ.features.large "horizontal-layout"}}">
+        <h3
+          data-test-field="Music Format"
+          local-class="music-format {{unless CQ.features.large "small-font-size"}}"
+        >
+          {{!-- template-lint-disable no-inline-styles style-concatenation --}}
+          <span
+            aria-hidden="true"
+            local-class="marker"
+            style={{this.styleForMarker}}
+          >
+            {{~"■"~}}
+          </span>
+          {{!-- template-lint-enable no-inline-styles style-concatenation --}}
+
+          {{this.summary.musicFormat}}
+        </h3>
+
+        <div
+          data-test-field="Annual Revenue"
+          local-class="annual-revenue"
+        >
+          {{#if (or CQ.features.tall CQ.features.large)}}
+            <span>Annual revenue:</span>
+          {{/if}}
+          <span local-class="highlight">
+            {{this.summary.averageRevenue}}
+          </span>
+        </div>
+
+        <div
+          data-test-field="Relevant Years"
+          local-class="relevant-years"
+        >
+          {{#if (or CQ.features.tall CQ.features.large)}}
+            <span>Relevant years:</span>
+          {{/if}}
+          <span local-class="highlight">
+            {{this.summary.relevantYears.min}} - {{this.summary.relevantYears.max}}
+          </span>
+        </div>
+      </div>
+
+      {{#if this.canShowPreviousButton}}
+        <button
+          aria-label="Previous"
+          data-test-button="Previous"
+          local-class="previous-button"
+          type="button"
+          {{on "click" (fn this.showNextSummary -1)}}
+        >
+          {{if CQ.features.tall "Previous" "◀"}}
+        </button>
+      {{/if}}
+
+      {{#if this.canShowNextButton}}
+        <button
+          aria-label="Next"
+          data-test-button="Next"
+          local-class="next-button"
+          type="button"
+          {{on "click" (fn this.showNextSummary 1)}}
+        >
+          {{if CQ.features.tall "Next" "▶"}}
+        </button>
+      {{/if}}
+    {{/if}}
+  </div>
+</ContainerQuery>
