@@ -12,12 +12,15 @@
   >
     {{#if this.summary}}
       <div local-class="summary {{if CQ.features.large "horizontal-layout"}}">
-        <h3 local-class="music-format {{unless CQ.features.large "small-font-size"}}">
+        <h3
+          data-test-field="Music Format"
+          local-class="music-format {{unless CQ.features.large "small-font-size"}}"
+        >
           {{!-- template-lint-disable no-inline-styles style-concatenation --}}
           <span
             aria-hidden="true"
             local-class="marker"
-            style="color: {{this.summary.markerColor}};"
+            style={{this.styleForMarker}}
           >
             {{~"■"~}}
           </span>
@@ -26,7 +29,10 @@
           {{this.summary.musicFormat}}
         </h3>
 
-        <div local-class="annual-revenue">
+        <div
+          data-test-field="Annual Revenue"
+          local-class="annual-revenue"
+        >
           {{#if (or CQ.features.tall CQ.features.large)}}
             <span>Annual revenue:</span>
           {{/if}}
@@ -35,7 +41,10 @@
           </span>
         </div>
 
-        <div local-class="relevant-years">
+        <div
+          data-test-field="Relevant Years"
+          local-class="relevant-years"
+        >
           {{#if (or CQ.features.tall CQ.features.large)}}
             <span>Relevant years:</span>
           {{/if}}
@@ -48,6 +57,7 @@
       {{#if this.canShowPreviousButton}}
         <button
           aria-label="Previous"
+          data-test-button="Previous"
           local-class="previous-button"
           type="button"
           {{on "click" (fn this.showNextSummary -1)}}
@@ -59,6 +69,7 @@
       {{#if this.canShowNextButton}}
         <button
           aria-label="Next"
+          data-test-button="Next"
           local-class="next-button"
           type="button"
           {{on "click" (fn this.showNextSummary 1)}}

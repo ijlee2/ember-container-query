@@ -27,6 +27,21 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
 
+    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist('We don\'t see the previous button.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+      .hasText('Next', 'We see the next button in correct format.');
+
 
     await takeSnapshot(assert);
   });
@@ -49,6 +64,21 @@ module('Acceptance | dashboard', function(hooks) {
 
     assert.dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist('We don\'t see the previous button.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+      .hasText('▶', 'We see the next button in correct format.');
 
 
     await takeSnapshot(assert);
@@ -73,6 +103,21 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
 
+    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist('We don\'t see the previous button.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+      .hasText('▶', 'We see the next button in correct format.');
+
 
     await takeSnapshot(assert);
   });
@@ -95,6 +140,21 @@ module('Acceptance | dashboard', function(hooks) {
 
     assert.dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist('We don\'t see the previous button.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+      .hasText('Next', 'We see the next button in correct format.');
 
 
     await takeSnapshot(assert);
@@ -119,6 +179,21 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
 
+    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist('We don\'t see the previous button.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+      .hasText('▶', 'We see the next button in correct format.');
+
 
     await takeSnapshot(assert);
   });
@@ -141,6 +216,21 @@ module('Acceptance | dashboard', function(hooks) {
 
     assert.dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist('We don\'t see the previous button.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+      .hasText('▶', 'We see the next button in correct format.');
 
 
     await takeSnapshot(assert);
@@ -165,6 +255,21 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
 
+    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist('We don\'t see the previous button.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+      .hasText('Next', 'We see the next button in correct format.');
+
 
     await takeSnapshot(assert);
   });
@@ -188,6 +293,21 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
 
+    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist('We don\'t see the previous button.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+      .hasText('▶', 'We see the next button in correct format.');
+
 
     await takeSnapshot(assert);
   });
@@ -210,6 +330,21 @@ module('Acceptance | dashboard', function(hooks) {
 
     assert.dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist('We don\'t see the previous button.');
+
+    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+      .hasText('▶', 'We see the next button in correct format.');
 
 
     await takeSnapshot(assert);

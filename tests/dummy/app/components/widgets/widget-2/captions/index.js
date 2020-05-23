@@ -1,10 +1,19 @@
 import { action } from '@ember/object';
+import { htmlSafe } from '@ember/template';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
 export default class WidgetsWidget2CaptionsComponent extends Component {
   @tracked summary;
   @tracked currentIndex;
+
+  get styleForMarker() {
+    if (!this.summary) {
+      return htmlSafe('');
+    }
+
+    return htmlSafe(`color: ${this.summary.markerColor};`);
+  }
 
   get summaries() {
     return this.args.summaries ?? [];
