@@ -1,0 +1,14 @@
+.svg-container {
+  background: linear-gradient(36deg, rgba(255, 224, 130, 0.4) 15%, rgba(255, 248, 225, 0.8) 90%);
+  border-radius: 0.1875rem;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.svg {
+  left: 0;
+  position: absolute;
+  top: 0;
+}

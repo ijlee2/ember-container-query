@@ -7,7 +7,9 @@
     data-test-visualization
     local-class="visualization"
   >
-    {{!-- Visualization goes here --}}
+    <Widgets::Widget-2::StackedChart
+      @data={{this.data}}
+    />
   </div>
 
   <div
