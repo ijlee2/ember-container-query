@@ -1,0 +1,59 @@
+<div
+  local-class="container"
+  {{did-insert this.showSummary}}
+  {{did-update this.showSummary this.summaries}}
+>
+  {{#if this.summary}}
+    <div local-class="summary">
+      <h3 local-class="music-format">
+        {{!-- template-lint-disable no-inline-styles style-concatenation --}}
+        <span
+          aria-hidden="true"
+          local-class="marker"
+          style="color: {{this.summary.markerColor}};"
+        >
+          {{~"■"~}}
+        </span>
+        {{!-- template-lint-enable no-inline-styles style-concatenation --}}
+
+        {{this.summary.musicFormat}}
+      </h3>
+
+      <div local-class="annual-revenue">
+        <span>Annual revenue:</span>
+        <span local-class="highlight">
+          {{this.summary.averageRevenue}}
+        </span>
+      </div>
+
+      <div local-class="relevant-years">
+        <span>Relevant years:</span>
+        <span local-class="highlight">
+          {{this.summary.relevantYears.min}} - {{this.summary.relevantYears.max}}
+        </span>
+      </div>
+    </div>
+
+    {{#if this.canShowPreviousButton}}
+      <button
+        aria-label="Previous"
+        local-class="previous-button"
+        type="button"
+        {{on "click" (fn this.showNextSummary -1)}}
+      >
+        Previous
+      </button>
+    {{/if}}
+
+    {{#if this.canShowNextButton}}
+      <button
+        aria-label="Next"
+        local-class="next-button"
+        type="button"
+        {{on "click" (fn this.showNextSummary 1)}}
+      >
+        Next
+      </button>
+    {{/if}}
+  {{/if}}
+</div>

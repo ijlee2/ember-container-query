@@ -1,0 +1,72 @@
+.container {
+  display: grid;
+  grid-gap: 1rem 2.5rem;
+  grid-template-areas:
+    "summary summary"
+    "previous-button next-button";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.summary {
+  color: #455a64;
+  display: grid;
+  font-size: 0.875rem;
+  grid-area: summary;
+  grid-template-areas:
+    "music-format"
+    "annual-revenue"
+    "relevant-years";
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  overflow-y: auto;
+}
+
+.music-format {
+  color: rgba(247, 252, 251, 0.9);
+  font-size: 1rem;
+  grid-area: music-format;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+}
+
+.marker {
+  background-color: rgba(247, 252, 251, 0.9);
+  border-radius: 0.5rem;
+  margin-right: 0.15rem;
+  padding: 0 0.125rem;
+}
+
+.annual-revenue {
+  font-size: 0.8rem;
+  grid-area: annual-revenue;
+}
+
+.relevant-years {
+  font-size: 0.8rem;
+  grid-area: relevant-years;
+}
+
+.highlight {
+  color: rgba(247, 252, 251, 0.9);
+}
+
+.previous-button,
+.next-button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 2rem;
+  margin: 0.25rem;
+}
+
+.previous-button {
+  grid-area: previous-button;
+}
+
+.next-button {
+  grid-area: next-button;
+}
