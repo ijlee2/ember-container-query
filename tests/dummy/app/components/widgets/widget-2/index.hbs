@@ -1,16 +1,26 @@
-<div local-class="container">
+<ContainerQuery
+  @features={{hash
+    short=(cq-height max=200)
+    tall=(cq-height min=200 max=480)
+    very-tall=(cq-height min=480)
+  }}
+  local-class="container"
+  as |CQ|
+>
   <header>
     <h2>Widget 2</h2>
   </header>
 
-  <div
-    data-test-visualization
-    local-class="visualization"
-  >
-    <Widgets::Widget-2::StackedChart
-      @data={{this.data}}
-    />
-  </div>
+  {{#unless CQ.features.short}}
+    <div
+      data-test-visualization
+      local-class="visualization"
+    >
+      <Widgets::Widget-2::StackedChart
+        @data={{this.data}}
+      />
+    </div>
+  {{/unless}}
 
   <div
     data-test-captions
@@ -20,4 +30,4 @@
       @summaries={{this.summaries}}
     />
   </div>
-</div>
+</ContainerQuery>

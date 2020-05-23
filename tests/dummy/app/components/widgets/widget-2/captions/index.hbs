@@ -1,59 +1,71 @@
-<div
-  local-class="container"
-  {{did-insert this.showSummary}}
-  {{did-update this.showSummary this.summaries}}
+<ContainerQuery
+  @features={{hash
+    large=(cq-width min=320)
+    tall=(cq-height min=80)
+  }}
+  as |CQ|
 >
-  {{#if this.summary}}
-    <div local-class="summary">
-      <h3 local-class="music-format">
-        {{!-- template-lint-disable no-inline-styles style-concatenation --}}
-        <span
-          aria-hidden="true"
-          local-class="marker"
-          style="color: {{this.summary.markerColor}};"
+  <div
+    local-class="container {{unless CQ.features.tall "flat"}}"
+    {{did-insert this.showSummary}}
+    {{did-update this.showSummary this.summaries}}
+  >
+    {{#if this.summary}}
+      <div local-class="summary {{if CQ.features.large "horizontal-layout"}}">
+        <h3 local-class="music-format {{unless CQ.features.large "small-font-size"}}">
+          {{!-- template-lint-disable no-inline-styles style-concatenation --}}
+          <span
+            aria-hidden="true"
+            local-class="marker"
+            style="color: {{this.summary.markerColor}};"
+          >
+            {{~"■"~}}
+          </span>
+          {{!-- template-lint-enable no-inline-styles style-concatenation --}}
+
+          {{this.summary.musicFormat}}
+        </h3>
+
+        <div local-class="annual-revenue">
+          {{#if (or CQ.features.tall CQ.features.large)}}
+            <span>Annual revenue:</span>
+          {{/if}}
+          <span local-class="highlight">
+            {{this.summary.averageRevenue}}
+          </span>
+        </div>
+
+        <div local-class="relevant-years">
+          {{#if (or CQ.features.tall CQ.features.large)}}
+            <span>Relevant years:</span>
+          {{/if}}
+          <span local-class="highlight">
+            {{this.summary.relevantYears.min}} - {{this.summary.relevantYears.max}}
+          </span>
+        </div>
+      </div>
+
+      {{#if this.canShowPreviousButton}}
+        <button
+          aria-label="Previous"
+          local-class="previous-button"
+          type="button"
+          {{on "click" (fn this.showNextSummary -1)}}
         >
-          {{~"■"~}}
-        </span>
-        {{!-- template-lint-enable no-inline-styles style-concatenation --}}
+          {{if CQ.features.tall "Previous" "◀"}}
+        </button>
+      {{/if}}
 
-        {{this.summary.musicFormat}}
-      </h3>
-
-      <div local-class="annual-revenue">
-        <span>Annual revenue:</span>
-        <span local-class="highlight">
-          {{this.summary.averageRevenue}}
-        </span>
-      </div>
-
-      <div local-class="relevant-years">
-        <span>Relevant years:</span>
-        <span local-class="highlight">
-          {{this.summary.relevantYears.min}} - {{this.summary.relevantYears.max}}
-        </span>
-      </div>
-    </div>
-
-    {{#if this.canShowPreviousButton}}
-      <button
-        aria-label="Previous"
-        local-class="previous-button"
-        type="button"
-        {{on "click" (fn this.showNextSummary -1)}}
-      >
-        Previous
-      </button>
+      {{#if this.canShowNextButton}}
+        <button
+          aria-label="Next"
+          local-class="next-button"
+          type="button"
+          {{on "click" (fn this.showNextSummary 1)}}
+        >
+          {{if CQ.features.tall "Next" "▶"}}
+        </button>
+      {{/if}}
     {{/if}}
-
-    {{#if this.canShowNextButton}}
-      <button
-        aria-label="Next"
-        local-class="next-button"
-        type="button"
-        {{on "click" (fn this.showNextSummary 1)}}
-      >
-        Next
-      </button>
-    {{/if}}
-  {{/if}}
-</div>
+  </div>
+</ContainerQuery>

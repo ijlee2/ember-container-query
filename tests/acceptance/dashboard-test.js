@@ -22,7 +22,7 @@ module('Acceptance | dashboard', function(hooks) {
 
     // Widget 2
     assert.dom('[data-test-widget="2"] [data-test-visualization]')
-      .exists('We see the visualization.');
+      .doesNotExist('We don\'t see the visualization.');
 
     assert.dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
@@ -91,7 +91,7 @@ module('Acceptance | dashboard', function(hooks) {
 
     // Widget 2
     assert.dom('[data-test-widget="2"] [data-test-visualization]')
-      .exists('We see the visualization.');
+      .doesNotExist('We don\'t see the visualization.');
 
     assert.dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');

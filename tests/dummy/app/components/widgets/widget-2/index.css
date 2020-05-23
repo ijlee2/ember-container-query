@@ -10,5 +10,18 @@
   flex-direction: column;
 }
 
-.captions {
+.container[data-container-query-short] .captions {
+  flex: 1;
+}
+
+.container[data-container-query-tall] .captions {
+  height: 10%;
+  margin-top: 0.6rem;
+  min-height: 3rem;
+}
+
+.container[data-container-query-very-tall] .captions {
+  height: 25%;
+  margin-top: 0.6rem;
+  max-height: 10rem;
 }
