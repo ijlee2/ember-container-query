@@ -1,4 +1,4 @@
-import { render } from '@ember/test-helpers';
+import { find, render } from '@ember/test-helpers';
 import resizeWindow from 'dummy/tests/helpers/resize-window';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
@@ -22,10 +22,39 @@ module('Integration | Component | container-query', function(hooks) {
         }
       }
     };
+
+    assert.areDimensionsCorrect = (expectedWidth, expectedHeight) => {
+      assert.dom('[data-test-width-height]')
+        .hasText(
+          `${expectedWidth} x ${expectedHeight}`,
+          'Width and height are correct.'
+        );
+
+      const aspectRatio = Number(find('[data-test-aspect-ratio]').textContent.trim());
+      const expectedAspectRatio = expectedWidth / expectedHeight;
+      const tolerance = 0.001;
+
+      if (expectedAspectRatio === Infinity) {
+        assert.strictEqual(
+          aspectRatio === expectedAspectRatio,
+          true,
+          'Aspect ratio is correct.'
+        );
+
+      } else {
+        assert.strictEqual(
+          Math.abs(aspectRatio - expectedAspectRatio) / Math.abs(expectedAspectRatio) < tolerance,
+          true,
+          'Aspect ratio is correct.'
+        );
+
+      }
+    };
   });
 
   hooks.afterEach(function(assert) {
     delete assert.areFeaturesCorrect;
+    delete assert.areDimensionsCorrect;
   });
 
 
@@ -46,6 +75,9 @@ module('Integration | Component | container-query', function(hooks) {
             <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
             <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
             <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
+
+            <p data-test-width-height>{{CQ.dimensions.width}} x {{CQ.dimensions.height}}</p>
+            <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
           </ContainerQuery>
         </div>
       `);
@@ -60,6 +92,8 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-B': undefined,
         'ratio-type-C': undefined
       });
+
+      assert.areDimensionsCorrect(500, 800);
     });
 
 
@@ -82,6 +116,9 @@ module('Integration | Component | container-query', function(hooks) {
             <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
             <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
             <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
+
+            <p data-test-width-height>{{CQ.dimensions.width}} x {{CQ.dimensions.height}}</p>
+            <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
           </ContainerQuery>
         </div>
       `);
@@ -97,6 +134,8 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-C': undefined
       });
 
+      assert.areDimensionsCorrect(250, 500);
+
 
       await resizeWindow(500, 300);
 
@@ -110,6 +149,8 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-B': undefined,
         'ratio-type-C': undefined
       });
+
+      assert.areDimensionsCorrect(500, 300);
 
 
       await resizeWindow(800, 400);
@@ -125,6 +166,8 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-C': undefined
       });
 
+      assert.areDimensionsCorrect(800, 400);
+
 
       await resizeWindow(1000, 600);
 
@@ -138,6 +181,8 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-B': undefined,
         'ratio-type-C': undefined
       });
+
+      assert.areDimensionsCorrect(1000, 600);
     });
   });
 
@@ -169,6 +214,9 @@ module('Integration | Component | container-query', function(hooks) {
             <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
             <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
             <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
+
+            <p data-test-width-height>{{CQ.dimensions.width}} x {{CQ.dimensions.height}}</p>
+            <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
           </ContainerQuery>
         </div>
       `);
@@ -183,6 +231,8 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-B': true,
         'ratio-type-C': false
       });
+
+      assert.areDimensionsCorrect(500, 800);
     });
 
 
@@ -215,6 +265,9 @@ module('Integration | Component | container-query', function(hooks) {
             <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
             <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
             <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
+
+            <p data-test-width-height>{{CQ.dimensions.width}} x {{CQ.dimensions.height}}</p>
+            <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
           </ContainerQuery>
         </div>
       `);
@@ -230,6 +283,8 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-C': false
       });
 
+      assert.areDimensionsCorrect(250, 500);
+
 
       await resizeWindow(500, 300);
 
@@ -243,6 +298,8 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-B': false,
         'ratio-type-C': true
       });
+
+      assert.areDimensionsCorrect(500, 300);
 
 
       await resizeWindow(800, 400);
@@ -258,6 +315,8 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-C': false
       });
 
+      assert.areDimensionsCorrect(800, 400);
+
 
       await resizeWindow(1000, 600);
 
@@ -271,6 +330,8 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-B': false,
         'ratio-type-C': true
       });
+
+      assert.areDimensionsCorrect(1000, 600);
     });
   });
 
@@ -305,6 +366,9 @@ module('Integration | Component | container-query', function(hooks) {
             <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
             <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
             <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
+
+            <p data-test-width-height>{{CQ.dimensions.width}} x {{CQ.dimensions.height}}</p>
+            <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
           </ContainerQuery>
         </div>
       `);
@@ -392,6 +456,9 @@ module('Integration | Component | container-query', function(hooks) {
             <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
             <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
             <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
+
+            <p data-test-width-height>{{CQ.dimensions.width}} x {{CQ.dimensions.height}}</p>
+            <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
           </ContainerQuery>
         </div>
       `);
@@ -486,6 +553,9 @@ module('Integration | Component | container-query', function(hooks) {
             <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
             <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
             <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
+
+            <p data-test-width-height>{{CQ.dimensions.width}} x {{CQ.dimensions.height}}</p>
+            <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
           </ContainerQuery>
         </div>
       `);
