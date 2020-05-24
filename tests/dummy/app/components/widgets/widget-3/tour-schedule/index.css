@@ -1,0 +1,112 @@
+.container {
+  height: 100%;
+  padding: 0 0.5rem;
+  width: calc(100% - 1rem);
+
+  display: grid;
+  grid-template-areas:
+    "splash"
+    ".";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0;
+}
+
+.splash {
+  height: 100%;
+  grid-area: splash;
+  width: 100%;
+
+  position: relative;
+}
+
+/* Splash image */
+.splash-image-container {
+  height: 100%;
+  width: 100%;
+}
+
+.placeholder-image {
+  border-radius: 0.25rem;
+  height: 100%;
+  width: 100%;
+}
+
+.image-container {
+  display: grid;
+  height: 100%;
+  width: 100%;
+}
+
+.image {
+  border-radius: 0.25rem;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Concert date */
+.concert-date-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  height: calc(100% - 0.5rem);
+  padding: 0.25rem 0.5rem;
+  width: calc(100% - 1rem);
+}
+
+.concert-date {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Venue name */
+.venue-name-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.concert-link {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  font-size: 4rem;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.venue-name {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.container[data-cq-small] {
+  padding: 0 0.25rem;
+  width: calc(100% - 0.5rem);
+}
+
+.container[data-cq-small] .concert-date {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.container[data-cq-small] .venue-name {
+  font-size: 2.25rem;
+  letter-spacing: 0.125rem;
+}

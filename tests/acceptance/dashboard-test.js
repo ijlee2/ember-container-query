@@ -47,6 +47,9 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
 
+    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist('We don\'t see the placeholder image.');
+
 
     await takeSnapshot(assert);
   });
@@ -89,6 +92,9 @@ module('Acceptance | dashboard', function(hooks) {
     // Widget 3
     assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
+
+    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist('We don\'t see the placeholder image.');
 
 
     await takeSnapshot(assert);
@@ -133,6 +139,9 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
 
+    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist('We don\'t see the placeholder image.');
+
 
     await takeSnapshot(assert);
   });
@@ -175,6 +184,9 @@ module('Acceptance | dashboard', function(hooks) {
     // Widget 3
     assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
+
+    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist('We don\'t see the placeholder image.');
 
 
     await takeSnapshot(assert);
@@ -219,6 +231,9 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
 
+    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist('We don\'t see the placeholder image.');
+
 
     await takeSnapshot(assert);
   });
@@ -261,6 +276,9 @@ module('Acceptance | dashboard', function(hooks) {
     // Widget 3
     assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
+
+    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist('We don\'t see the placeholder image.');
 
 
     await takeSnapshot(assert);
@@ -305,6 +323,9 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
 
+    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist('We don\'t see the placeholder image.');
+
 
     await takeSnapshot(assert);
   });
@@ -348,6 +369,9 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
 
+    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist('We don\'t see the placeholder image.');
+
 
     await takeSnapshot(assert);
   });
@@ -390,6 +414,9 @@ module('Acceptance | dashboard', function(hooks) {
     // Widget 3
     assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
+
+    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist('We don\'t see the placeholder image.');
 
 
     await takeSnapshot(assert);
