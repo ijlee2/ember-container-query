@@ -43,6 +43,11 @@ module('Acceptance | dashboard', function(hooks) {
       .hasText('Next', 'We see the next button in correct format.');
 
 
+    // Widget 3
+    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+      .exists('We see the All tours link.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -79,6 +84,11 @@ module('Acceptance | dashboard', function(hooks) {
 
     assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasNoText('We see the next button in correct format.');
+
+
+    // Widget 3
+    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+      .exists('We see the All tours link.');
 
 
     await takeSnapshot(assert);
@@ -119,6 +129,11 @@ module('Acceptance | dashboard', function(hooks) {
       .hasNoText('We see the next button in correct format.');
 
 
+    // Widget 3
+    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+      .exists('We see the All tours link.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -155,6 +170,11 @@ module('Acceptance | dashboard', function(hooks) {
 
     assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasText('Next', 'We see the next button in correct format.');
+
+
+    // Widget 3
+    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+      .exists('We see the All tours link.');
 
 
     await takeSnapshot(assert);
@@ -195,6 +215,11 @@ module('Acceptance | dashboard', function(hooks) {
       .hasNoText('We see the next button in correct format.');
 
 
+    // Widget 3
+    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+      .exists('We see the All tours link.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -231,6 +256,11 @@ module('Acceptance | dashboard', function(hooks) {
 
     assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasNoText('We see the next button in correct format.');
+
+
+    // Widget 3
+    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+      .exists('We see the All tours link.');
 
 
     await takeSnapshot(assert);
@@ -271,6 +301,11 @@ module('Acceptance | dashboard', function(hooks) {
       .hasText('Next', 'We see the next button in correct format.');
 
 
+    // Widget 3
+    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+      .exists('We see the All tours link.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -309,6 +344,11 @@ module('Acceptance | dashboard', function(hooks) {
       .hasNoText('We see the next button in correct format.');
 
 
+    // Widget 3
+    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+      .exists('We see the All tours link.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -345,6 +385,11 @@ module('Acceptance | dashboard', function(hooks) {
 
     assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasNoText('We see the next button in correct format.');
+
+
+    // Widget 3
+    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+      .exists('We see the All tours link.');
 
 
     await takeSnapshot(assert);
