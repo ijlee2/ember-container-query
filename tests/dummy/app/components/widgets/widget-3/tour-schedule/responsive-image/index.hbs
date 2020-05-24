@@ -1,9 +1,21 @@
-<div local-class="image-container">
-  <img
-    alt=""
-    data-test-image="Concert"
-    local-class="image"
-    role="presentation"
-    src="/images/widgets/widget-3/venue-extra-wide@4x.jpg"
-  />
-</div>
+{{#if @images}}
+  <ContainerQuery
+    @debounce={{300}}
+    as |CQ|
+  >
+    <div
+      local-class="image-container"
+      {{did-update (fn this.setImageSource CQ.dimensions) CQ.dimensions}}
+    >
+      {{#if this.src}}
+        <img
+          alt=""
+          data-test-image="Concert"
+          local-class="image"
+          role="presentation"
+          src={{this.src}}
+        />
+      {{/if}}
+    </div>
+  </ContainerQuery>
+{{/if}}
