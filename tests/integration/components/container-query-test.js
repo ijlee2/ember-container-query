@@ -58,46 +58,8 @@ module('Integration | Component | container-query', function(hooks) {
   });
 
 
-  module('When @features is undefined', function() {
-    test('The component renders', async function(assert) {
-      await render(hbs`
-        <div style="width: 500px; height: 800px;">
-          <ContainerQuery
-            as |CQ|
-          >
-            <p data-test-feature="small">{{CQ.features.small}}</p>
-            <p data-test-feature="medium">{{CQ.features.medium}}</p>
-            <p data-test-feature="large">{{CQ.features.large}}</p>
-
-            <p data-test-feature="short">{{CQ.features.short}}</p>
-            <p data-test-feature="tall">{{CQ.features.tall}}</p>
-
-            <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
-            <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
-            <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
-
-            <p data-test-width-height>{{CQ.dimensions.width}} x {{CQ.dimensions.height}}</p>
-            <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
-          </ContainerQuery>
-        </div>
-      `);
-
-      assert.areFeaturesCorrect({
-        small: undefined,
-        medium: undefined,
-        large: undefined,
-        short: undefined,
-        tall: undefined,
-        'ratio-type-A': undefined,
-        'ratio-type-B': undefined,
-        'ratio-type-C': undefined
-      });
-
-      assert.areDimensionsCorrect(500, 800);
-    });
-
-
-    test('The component updates this.features when it is resized', async function(assert) {
+  module('When @features is undefined', function(hooks) {
+    hooks.beforeEach(async function() {
       await render(hbs`
         <div
           data-test-parent-element
@@ -122,7 +84,10 @@ module('Integration | Component | container-query', function(hooks) {
           </ContainerQuery>
         </div>
       `);
+    });
 
+
+    test('The component renders', async function(assert) {
       assert.areFeaturesCorrect({
         small: undefined,
         medium: undefined,
@@ -135,8 +100,10 @@ module('Integration | Component | container-query', function(hooks) {
       });
 
       assert.areDimensionsCorrect(250, 500);
+    });
 
 
+    test('The component updates features when it is resized', async function(assert) {
       await resizeWindow(500, 300);
 
       assert.areFeaturesCorrect({
@@ -149,8 +116,6 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-B': undefined,
         'ratio-type-C': undefined
       });
-
-      assert.areDimensionsCorrect(500, 300);
 
 
       await resizeWindow(800, 400);
@@ -166,8 +131,6 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-C': undefined
       });
 
-      assert.areDimensionsCorrect(800, 400);
-
 
       await resizeWindow(1000, 600);
 
@@ -181,62 +144,29 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-B': undefined,
         'ratio-type-C': undefined
       });
+    });
+
+
+    test('The component updates dimensions when it is resized', async function(assert) {
+      await resizeWindow(500, 300);
+
+      assert.areDimensionsCorrect(500, 300);
+
+
+      await resizeWindow(800, 400);
+
+      assert.areDimensionsCorrect(800, 400);
+
+
+      await resizeWindow(1000, 600);
 
       assert.areDimensionsCorrect(1000, 600);
     });
   });
 
 
-  module('When @features is passed', function() {
-    test('The component renders', async function(assert) {
-      await render(hbs`
-        <div style="width: 500px; height: 800px;">
-          <ContainerQuery
-            @features={{hash
-              small=(cq-width max=300)
-              medium=(cq-width min=300 max=600)
-              large=(cq-width min=600 max=900)
-              short=(cq-height max=500)
-              tall=(cq-height min=500)
-              ratio-type-A=(cq-aspect-ratio min=0.25 max=0.75)
-              ratio-type-B=(cq-aspect-ratio min=0.5 max=1.5)
-              ratio-type-C=(cq-aspect-ratio min=1.25 max=2)
-            }}
-            as |CQ|
-          >
-            <p data-test-feature="small">{{CQ.features.small}}</p>
-            <p data-test-feature="medium">{{CQ.features.medium}}</p>
-            <p data-test-feature="large">{{CQ.features.large}}</p>
-
-            <p data-test-feature="short">{{CQ.features.short}}</p>
-            <p data-test-feature="tall">{{CQ.features.tall}}</p>
-
-            <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
-            <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
-            <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
-
-            <p data-test-width-height>{{CQ.dimensions.width}} x {{CQ.dimensions.height}}</p>
-            <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
-          </ContainerQuery>
-        </div>
-      `);
-
-      assert.areFeaturesCorrect({
-        small: false,
-        medium: true,
-        large: false,
-        short: false,
-        tall: true,
-        'ratio-type-A': true,
-        'ratio-type-B': true,
-        'ratio-type-C': false
-      });
-
-      assert.areDimensionsCorrect(500, 800);
-    });
-
-
-    test('The component updates this.features when it is resized', async function(assert) {
+  module('When @features is passed', function(hooks) {
+    hooks.beforeEach(async function() {
       await render(hbs`
         <div
           data-test-parent-element
@@ -271,7 +201,10 @@ module('Integration | Component | container-query', function(hooks) {
           </ContainerQuery>
         </div>
       `);
+    });
 
+
+    test('The component renders', async function(assert) {
       assert.areFeaturesCorrect({
         small: true,
         medium: false,
@@ -284,8 +217,10 @@ module('Integration | Component | container-query', function(hooks) {
       });
 
       assert.areDimensionsCorrect(250, 500);
+    });
 
 
+    test('The component updates features when it is resized', async function(assert) {
       await resizeWindow(500, 300);
 
       assert.areFeaturesCorrect({
@@ -298,8 +233,6 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-B': false,
         'ratio-type-C': true
       });
-
-      assert.areDimensionsCorrect(500, 300);
 
 
       await resizeWindow(800, 400);
@@ -315,8 +248,6 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-C': false
       });
 
-      assert.areDimensionsCorrect(800, 400);
-
 
       await resizeWindow(1000, 600);
 
@@ -330,6 +261,21 @@ module('Integration | Component | container-query', function(hooks) {
         'ratio-type-B': false,
         'ratio-type-C': true
       });
+    });
+
+
+    test('The component updates dimensions when it is resized', async function(assert) {
+      await resizeWindow(500, 300);
+
+      assert.areDimensionsCorrect(500, 300);
+
+
+      await resizeWindow(800, 400);
+
+      assert.areDimensionsCorrect(800, 400);
+
+
+      await resizeWindow(1000, 600);
 
       assert.areDimensionsCorrect(1000, 600);
     });
