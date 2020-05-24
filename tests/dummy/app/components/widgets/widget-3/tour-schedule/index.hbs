@@ -8,15 +8,9 @@
   <div local-class="splash">
     <div local-class="splash-image-container">
       {{#if @concert.images}}
-        <div local-class="image-container">
-          <img
-            alt=""
-            data-test-image="Concert"
-            local-class="image"
-            role="presentation"
-            src="/images/widgets/widget-3/venue-extra-wide@4x.jpg"
-          />
-        </div>
+        <Widgets::Widget-3::TourSchedule::ResponsiveImage
+          @images={{@concert.images}}
+        />
 
       {{else}}
         <div

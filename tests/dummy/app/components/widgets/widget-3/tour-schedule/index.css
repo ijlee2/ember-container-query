@@ -31,19 +31,6 @@
   width: 100%;
 }
 
-.image-container {
-  display: grid;
-  height: 100%;
-  width: 100%;
-}
-
-.image {
-  border-radius: 0.25rem;
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
-}
-
 /* Concert date */
 .concert-date-container {
   position: absolute;
