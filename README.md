@@ -40,14 +40,15 @@ It also accepts these arguments:
 |--|:--:|--|--|
 | @features | Yes<sup>2</sup> | Container query definitions | POJO |
 | @dataAttributePrefix | No | Prefix for data attributes | string |
-| @debounce | No | Debounce time (ms) for resize | number ≥ 0 |
+| @debounce | No | Debounce time for resize (ms) | number ≥ 0 |
 
-The component returns two values that you can consume:
+The component returns a few values that you can consume:
 
-| Name | Yielded | Description |
-|--|:--:|--|
-| features | Yes | Container query results |
-| data-container-query-_{featureName}_ | No | Data attributes for CSS selector |
+| Name | Yielded | Description | Type |
+|--|:--:|--|--|
+| features | Yes | Container query results | POJO |
+| dimensions | Yes | Container dimensions | POJO |
+| data-container-query-_{featureName}_ | No | Data attributes for CSS selector | HTML data attribute |
 
 <sup>1. Do refrain from overusing splattributes (e.g. pass a `{{did-insert}}` modifier to fetch data), since the component's API may change and cause unexpected results. Practice separation of concerns when possible. For example, data fetching can be handled by another element or [`@use` decorator](https://github.com/emberjs/rfcs/blob/use-and-resources/text/0567-use-and-resources.md).</sup>
 
@@ -60,8 +61,8 @@ All helpers accept these arguments:
 
 | Name | Required | Description | Type |
 |--|:--:|--|--|
-| min | Yes<sup>1,2</sup> | Lower bound for feature | number ≥ 0 |
-| max | Yes<sup>1,2</sup> | Upper bound for feature | number ≥ 0 |
+| min | Yes<sup>1</sup> | Lower bound for feature<sup>2</sup> | number ≥ 0 |
+| max | Yes<sup>1</sup> | Upper bound for feature<sup>2</sup> | number ≥ 0 |
 
 <sup>1. The helpers use default values of `min = 0` and `max = Infinity`, and assume the inequalities `min ≤ x < max`. In practice, you will always want to set `min` or `max` (or both).</sup>
 

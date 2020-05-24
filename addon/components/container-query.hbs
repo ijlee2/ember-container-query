@@ -7,5 +7,10 @@
 >
   {{yield (hash
     features=this.queryResults
+    dimensions=(hash
+      aspectRatio=this.aspectRatio
+      height=this.height
+      width=this.width
+    )
   )}}
 </div>

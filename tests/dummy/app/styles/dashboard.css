@@ -17,6 +17,7 @@
     "widget-5";
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, minmax(12rem, 75%)) 5rem;
+  margin-bottom: 1.5rem;
 }
 
 .widget-1, .widget-2, .widget-3, .widget-4, .widget-5 {
@@ -55,6 +56,7 @@
   @media (min-height: 40rem) {
     .widgets {
       grid-template-rows: repeat(4, 75%) 5rem;
+      margin-bottom: 0;
       overflow-y: auto;
     }
   }
@@ -79,6 +81,7 @@
 
     .widgets {
       grid-template-rows: 3fr 1fr 2fr 5rem;
+      margin-bottom: 0;
     }
   }
 }
@@ -101,6 +104,7 @@
 
     .widgets {
       grid-template-rows: 4fr 1fr 10rem;
+      margin-bottom: 0;
     }
   }
 }
