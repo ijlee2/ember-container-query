@@ -22,7 +22,10 @@
             local-class="marker"
             style={{this.styleForMarker}}
           >
-            {{~"■"~}}
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M6 6h12v12H6z"></path>
+            </svg>
           </span>
           {{!-- template-lint-enable no-inline-styles style-concatenation --}}
 
@@ -62,7 +65,16 @@
           type="button"
           {{on "click" (fn this.showNextSummary -1)}}
         >
-          {{if CQ.features.tall "Previous" "◀"}}
+          {{#if CQ.features.tall}}
+            Previous
+
+          {{else}}
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" local-class="icon-arrow-back">
+              <path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z" transform="translate(6,0)"></path>
+              <path d="M0 0h24v24H0z" fill="none"></path>
+            </svg>
+
+          {{/if}}
         </button>
       {{/if}}
 
@@ -74,7 +86,16 @@
           type="button"
           {{on "click" (fn this.showNextSummary 1)}}
         >
-          {{if CQ.features.tall "Next" "▶"}}
+          {{#if CQ.features.tall}}
+            Next
+
+          {{else}}
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" local-class="icon-arrow-forward">
+              <path d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"></path>
+              <path d="M0 0h24v24H0z" fill="none"></path>
+            </svg>
+
+          {{/if}}
         </button>
       {{/if}}
     {{/if}}

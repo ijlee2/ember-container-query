@@ -28,7 +28,7 @@ module('Acceptance | dashboard', function(hooks) {
       .exists('We see the captions.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
-      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+      .hasText('8 - Track', 'We see the music format in correct format.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
@@ -66,7 +66,7 @@ module('Acceptance | dashboard', function(hooks) {
       .exists('We see the captions.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
-      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+      .hasText('8 - Track', 'We see the music format in correct format.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
@@ -78,7 +78,7 @@ module('Acceptance | dashboard', function(hooks) {
       .doesNotExist('We don\'t see the previous button.');
 
     assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText('▶', 'We see the next button in correct format.');
+      .hasNoText('We see the next button in correct format.');
 
 
     await takeSnapshot(assert);
@@ -104,7 +104,7 @@ module('Acceptance | dashboard', function(hooks) {
       .exists('We see the captions.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
-      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+      .hasText('8 - Track', 'We see the music format in correct format.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
@@ -116,7 +116,7 @@ module('Acceptance | dashboard', function(hooks) {
       .doesNotExist('We don\'t see the previous button.');
 
     assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText('▶', 'We see the next button in correct format.');
+      .hasNoText('We see the next button in correct format.');
 
 
     await takeSnapshot(assert);
@@ -142,7 +142,7 @@ module('Acceptance | dashboard', function(hooks) {
       .exists('We see the captions.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
-      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+      .hasText('8 - Track', 'We see the music format in correct format.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
@@ -180,7 +180,7 @@ module('Acceptance | dashboard', function(hooks) {
       .exists('We see the captions.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
-      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+      .hasText('8 - Track', 'We see the music format in correct format.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
@@ -192,7 +192,7 @@ module('Acceptance | dashboard', function(hooks) {
       .doesNotExist('We don\'t see the previous button.');
 
     assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText('▶', 'We see the next button in correct format.');
+      .hasNoText('We see the next button in correct format.');
 
 
     await takeSnapshot(assert);
@@ -218,7 +218,7 @@ module('Acceptance | dashboard', function(hooks) {
       .exists('We see the captions.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
-      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+      .hasText('8 - Track', 'We see the music format in correct format.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
@@ -230,7 +230,7 @@ module('Acceptance | dashboard', function(hooks) {
       .doesNotExist('We don\'t see the previous button.');
 
     assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText('▶', 'We see the next button in correct format.');
+      .hasNoText('We see the next button in correct format.');
 
 
     await takeSnapshot(assert);
@@ -256,7 +256,7 @@ module('Acceptance | dashboard', function(hooks) {
       .exists('We see the captions.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
-      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+      .hasText('8 - Track', 'We see the music format in correct format.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
@@ -294,7 +294,7 @@ module('Acceptance | dashboard', function(hooks) {
       .exists('We see the captions.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
-      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+      .hasText('8 - Track', 'We see the music format in correct format.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
@@ -306,7 +306,7 @@ module('Acceptance | dashboard', function(hooks) {
       .doesNotExist('We don\'t see the previous button.');
 
     assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText('▶', 'We see the next button in correct format.');
+      .hasNoText('We see the next button in correct format.');
 
 
     await takeSnapshot(assert);
@@ -332,7 +332,7 @@ module('Acceptance | dashboard', function(hooks) {
       .exists('We see the captions.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
-      .hasText('■ 8 - Track', 'We see the music format in correct format.');
+      .hasText('8 - Track', 'We see the music format in correct format.');
 
     assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
@@ -344,7 +344,7 @@ module('Acceptance | dashboard', function(hooks) {
       .doesNotExist('We don\'t see the previous button.');
 
     assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText('▶', 'We see the next button in correct format.');
+      .hasNoText('We see the next button in correct format.');
 
 
     await takeSnapshot(assert);
