@@ -28,16 +28,22 @@
 .music-format {
   color: rgba(247, 252, 251, 0.9);
   font-size: 1rem;
+  display: flex;
   grid-area: music-format;
   margin-bottom: 0.5rem;
   word-break: break-word;
 }
 
 .marker {
+  align-items: center;
   background-color: rgba(247, 252, 251, 0.9);
   border-radius: 0.5rem;
-  margin-right: 0.15rem;
-  padding: 0 0.125rem;
+  display: flex;
+  height: 1em;
+  justify-content: center;
+  margin-right: 0.25rem;
+  padding: 0.125rem;
+  width: 1rem;
 }
 
 .annual-revenue {
@@ -65,6 +71,11 @@
 
 .previous-button {
   grid-area: previous-button;
+}
+
+.icon-arrow-back,
+.icon-arrow-forward {
+  fill: rgba(247, 252, 251, 0.9);
 }
 
 .next-button {
