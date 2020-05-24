@@ -1,23 +1,9 @@
-{{#if @images}}
-  <ContainerQuery
-    @features={{this.features}}
-    @debounce={{300}}
-    as |CQ|
-  >
-    <div
-      local-class="image-container"
-      {{did-insert this.readImages}}
-      {{did-update (fn this.setImageSource CQ.features) CQ.features}}
-    >
-      {{#if this.src}}
-        <img
-          alt=""
-          data-test-image="Concert"
-          local-class="image"
-          role="presentation"
-          src={{this.src}}
-        />
-      {{/if}}
-    </div>
-  </ContainerQuery>
-{{/if}}
+<div local-class="image-container">
+  <img
+    alt=""
+    data-test-image="Concert"
+    local-class="image"
+    role="presentation"
+    src="/images/widgets/widget-3/venue-extra-wide@4x.jpg"
+  />
+</div>
