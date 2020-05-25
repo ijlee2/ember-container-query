@@ -29,7 +29,7 @@ module('Unit | Utility | widgets/widget-3', function() {
 
     module('When images is an empty array', function() {
       test('returns undefined', function(assert) {
-        assert.deepEqual(
+        assert.strictEqual(
           findBestFittingImage([], this.containerDimensions.get('h100,w100')),
           undefined
         );
@@ -94,7 +94,7 @@ module('Unit | Utility | widgets/widget-3', function() {
         ]);
 
         this.containerDimensions.forEach((containerDimensions, key) => {
-          assert.deepEqual(
+          assert.strictEqual(
             findBestFittingImage(images, containerDimensions),
             expectedUrls.get(key),
             `Container dimensions: ${key}`
@@ -153,7 +153,7 @@ module('Unit | Utility | widgets/widget-3', function() {
         ]);
 
         this.containerDimensions.forEach((containerDimensions, key) => {
-          assert.deepEqual(
+          assert.strictEqual(
             findBestFittingImage(images, containerDimensions),
             expectedUrls.get(key),
             `Container dimensions: ${key}`
