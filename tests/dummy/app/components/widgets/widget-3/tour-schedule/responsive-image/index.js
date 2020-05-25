@@ -1,44 +1,24 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import { findBestFittingImage } from 'dummy/utils/widgets/widget-3';
 
 export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends Component {
   @tracked src;
 
   @action setImageSource(dimensions) {
-    const { aspectRatio, height, width } = dimensions;
+    /*
+      I added a guard just in case <ContainerQuery> has yet to compute
+      the container's width and height. We can check the aspect ratio
+      to determine if all 3 dimensions are defined.
 
-    if (!aspectRatio) {
+      In practice--at least, when I ran the app locally--all dimensions
+      were defined by the time `setImageSource` was called.
+    */
+    if (dimensions.aspectRatio === undefined) {
       return;
     }
 
-    const imagesRanked = this.args.images
-      .map(image => {
-        const { path, fileName, metadata } = image;
-
-        const imageHeight = metadata.height;
-        const imageWidth = metadata.width;
-        const imageAspectRatio = imageWidth / imageHeight;
-
-        const arMetric = Math.abs(imageAspectRatio - aspectRatio);
-        const hwMetric = ((imageHeight - height) ** 3 + (imageWidth - width) ** 3) ** (1/3);
-
-        return {
-          src: `/${path}/${fileName}`,
-          arMetric,
-          hwMetric: Number.isNaN(hwMetric) ? Infinity : hwMetric
-        };
-      })
-      .sort((a, b) => {
-        if (a.arMetric > b.arMetric) return 1;
-        if (a.arMetric < b.arMetric) return -1;
-
-        if (a.hwMetric > b.hwMetric) return 1;
-        if (a.hwMetric < b.hwMetric) return -1;
-
-        return 0;
-      });
-
-    this.src = imagesRanked[0].src;
+    this.src = findBestFittingImage(this.args.images, dimensions);
   }
 }
