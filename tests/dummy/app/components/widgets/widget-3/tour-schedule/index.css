@@ -26,6 +26,7 @@
 }
 
 .placeholder-image {
+  background: linear-gradient(36deg, rgba(255, 224, 130, 0.4) 15%, rgba(255, 248, 225, 0.8) 90%);
   border-radius: 0.25rem;
   height: 100%;
   width: 100%;
