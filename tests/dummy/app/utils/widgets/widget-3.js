@@ -1,8 +1,11 @@
 /*
-  This recommendation system makes 2 assumptions:
+  This recommendation system makes 3 assumptions:
 
   - Users prefer images whose aspect ratio is close to the container's.
   - Users prefer images whose height and width are larger than the container's.
+  - If all images are smaller than the container, users want the image that is
+    the largest of all. In other words, that image's height and width match the
+    container's the closest.
 */
 export function findBestFittingImage(images, containerDimensions) {
   if (images.length === 0) {
@@ -20,11 +23,13 @@ export function findBestFittingImage(images, containerDimensions) {
 
     const arMetric = Math.abs(imageAspectRatio - aspectRatio);
     const hwMetric = ((imageHeight - height) ** 3 + (imageWidth - width) ** 3) ** (1/3);
+    const hwTiebreaker = ((imageHeight - height) ** 2 + (imageWidth - width) ** 2) ** (1/2);
 
     return {
       url,
       arMetric,
-      hwMetric: Number.isNaN(hwMetric) ? Infinity : hwMetric
+      hwMetric: Number.isNaN(hwMetric) ? Infinity : hwMetric,
+      hwTiebreaker
     };
   })
   .sort((a, b) => {
@@ -34,7 +39,7 @@ export function findBestFittingImage(images, containerDimensions) {
     if (a.hwMetric > b.hwMetric) return 1;
     if (a.hwMetric < b.hwMetric) return -1;
 
-    return 0;
+    return a.hwTiebreaker - b.hwTiebreaker;
   });
 
   return imagesRanked[0].url;

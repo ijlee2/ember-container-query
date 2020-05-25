@@ -119,37 +119,37 @@ module('Unit | Utility | widgets/widget-3', function() {
           ['h200,w200', '/images/widgets/widget-3/venue-square@2x.jpg'],
           ['h300,w300', '/images/widgets/widget-3/venue-square@2x.jpg'],
           ['h500,w500', '/images/widgets/widget-3/venue-square@4x.jpg'],
-          ['h800,w800', '/images/widgets/widget-3/venue-square@1x.jpg'], // odd
+          ['h800,w800', '/images/widgets/widget-3/venue-square@4x.jpg'],
 
           ['h100,w150', '/images/widgets/widget-3/venue-square@1x.jpg'],
           ['h200,w300', '/images/widgets/widget-3/venue-square@2x.jpg'],
           ['h300,w450', '/images/widgets/widget-3/venue-wide@2x.jpg'],
           ['h500,w750', '/images/widgets/widget-3/venue-wide@4x.jpg'],
-          ['h800,w1200', '/images/widgets/widget-3/venue-square@1x.jpg'], // odd
+          ['h800,w1200', '/images/widgets/widget-3/venue-wide@4x.jpg'],
 
           ['h100,w200', '/images/widgets/widget-3/venue-wide@1x.jpg'],
           ['h200,w400', '/images/widgets/widget-3/venue-wide@2x.jpg'],
           ['h300,w600', '/images/widgets/widget-3/venue-wide@2x.jpg'],
           ['h500,w1000', '/images/widgets/widget-3/venue-wide@4x.jpg'],
-          ['h800,w1600', '/images/widgets/widget-3/venue-wide@1x.jpg'], // odd
+          ['h800,w1600', '/images/widgets/widget-3/venue-wide@4x.jpg'],
 
           ['h100,w300', '/images/widgets/widget-3/venue-extra-wide@1x.jpg'],
           ['h200,w600', '/images/widgets/widget-3/venue-extra-wide@2x.jpg'],
           ['h300,w900', '/images/widgets/widget-3/venue-extra-wide@2x.jpg'],
           ['h500,w1500', '/images/widgets/widget-3/venue-extra-wide@4x.jpg'],
-          ['h800,w2400', '/images/widgets/widget-3/venue-extra-wide@1x.jpg'], // odd
+          ['h800,w2400', '/images/widgets/widget-3/venue-extra-wide@4x.jpg'],
 
           ['h100,w400', '/images/widgets/widget-3/venue-extra-wide@1x.jpg'],
           ['h200,w800', '/images/widgets/widget-3/venue-extra-wide@2x.jpg'],
           ['h300,w1200', '/images/widgets/widget-3/venue-extra-wide@4x.jpg'],
           ['h500,w2000', '/images/widgets/widget-3/venue-extra-wide@4x.jpg'],
-          ['h800,w3200', '/images/widgets/widget-3/venue-extra-wide@1x.jpg'], // odd
+          ['h800,w3200', '/images/widgets/widget-3/venue-extra-wide@4x.jpg'],
 
           ['h100,w600', '/images/widgets/widget-3/venue-extra-wide@2x.jpg'],
           ['h200,w1200', '/images/widgets/widget-3/venue-extra-wide@4x.jpg'],
           ['h300,w1800', '/images/widgets/widget-3/venue-extra-wide@4x.jpg'],
-          ['h500,w3000', '/images/widgets/widget-3/venue-extra-wide@1x.jpg'], // odd
-          ['h800,w4800', '/images/widgets/widget-3/venue-extra-wide@1x.jpg'], // odd
+          ['h500,w3000', '/images/widgets/widget-3/venue-extra-wide@4x.jpg'],
+          ['h800,w4800', '/images/widgets/widget-3/venue-extra-wide@4x.jpg'],
         ]);
 
         this.containerDimensions.forEach((containerDimensions, key) => {
