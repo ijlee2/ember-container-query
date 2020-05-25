@@ -14,7 +14,7 @@ export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends 
 
     const imagesRanked = this.args.images
       .map(image => {
-        const { path, fileName, metadata } = image;
+        const { url, metadata } = image;
 
         const imageHeight = metadata.height;
         const imageWidth = metadata.width;
@@ -24,7 +24,7 @@ export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends 
         const hwMetric = ((imageHeight - height) ** 3 + (imageWidth - width) ** 3) ** (1/3);
 
         return {
-          src: `/${path}/${fileName}`,
+          src: url,
           arMetric,
           hwMetric: Number.isNaN(hwMetric) ? Infinity : hwMetric
         };
