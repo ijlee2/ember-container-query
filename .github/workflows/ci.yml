@@ -5,6 +5,9 @@ on:
     branches:
       - master
   pull_request:
+  schedule:
+    # Run the workflow every Monday at 7 am CST
+    - cron: '0 11 * * MON'
 
 env:
   NODE_VERSION: 12.16
@@ -123,6 +126,12 @@ jobs:
           - 'ember-lts-3.16'
           - 'ember-release'
           - 'ember-beta'
+        width:
+          - 'w1'
+          - 'w2'
+          - 'w3'
+        height:
+          - 'h3'
     timeout-minutes: 10
     steps:
       - name: Check out a copy of the repo
@@ -159,5 +168,6 @@ jobs:
           steps.cache-yarn-cache.outputs.cache-hit != 'true' ||
           steps.cache-node-modules.outputs.cache-hit != 'true'
 
+      # Test compatibility without Percy
       - name: Test
-        run: yarn test:ember-compatibility ${{ matrix.scenario }}
+        run: yarn test:ember-compatibility ${{ matrix.scenario }} --- yarn test:ember:${{ matrix.width }}-${{ matrix.height }}
