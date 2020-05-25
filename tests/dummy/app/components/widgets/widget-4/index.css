@@ -15,6 +15,7 @@
 
 .memo-highlight {
   grid-area: memo-highlight;
+  overflow: hidden;
 }
 
 .actions {
