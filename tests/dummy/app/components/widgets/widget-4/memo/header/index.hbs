@@ -1,24 +1,29 @@
-<div
-  data-test-memo-header
-  local-class="header {{if @cqFeatures.short "minimal-layout"}}"
->
-  {{#unless @cqFeatures.short}}
-    <div local-class="avatar-container">
-      <img
-        alt=""
-        data-test-image="Avatar"
-        local-class="avatar"
-        role="presentation"
-        src="/images/widgets/widget-4/avatar.jpg"
-      />
+{{#let
+  (or @cqFeatures.small @cqFeatures.short)
+  as |showMinimalLayout|
+}}
+  <div
+    data-test-memo-header
+    local-class="header {{if showMinimalLayout "minimal-layout"}} {{if (and @cqFeatures.large @cqFeatures.short) "horizontal-layout"}}"
+  >
+    {{#unless showMinimalLayout}}
+      <div local-class="avatar-container">
+        <img
+          alt=""
+          data-test-image="Avatar"
+          local-class="avatar"
+          role="presentation"
+          src="/images/widgets/widget-4/avatar.jpg"
+        />
+      </div>
+    {{/unless}}
+
+    <p local-class="name">
+      Isaac Lee
+    </p>
+
+    <div local-class="metadata">
+      <a href="#" local-class="handle">@ijlee2</a> · 38m
     </div>
-  {{/unless}}
-
-  <p local-class="name">
-    Isaac Lee
-  </p>
-
-  <div local-class="metadata">
-    <a href="#" local-class="handle">@ijlee2</a> · 38m
   </div>
-</div>
+{{/let}}
