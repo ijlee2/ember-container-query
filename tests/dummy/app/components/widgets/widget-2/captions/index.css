@@ -73,13 +73,12 @@
   grid-area: previous-button;
 }
 
-.icon-arrow-back,
-.icon-arrow-forward {
-  fill: rgba(247, 252, 251, 0.9);
-}
-
 .next-button {
   grid-area: next-button;
+}
+
+.icon {
+  fill: rgba(247, 252, 251, 0.9);
 }
 
 

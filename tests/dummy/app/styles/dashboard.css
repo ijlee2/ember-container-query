@@ -42,7 +42,7 @@
 }
 
 .widget-4 {
-  background: linear-gradient(126deg, #29b6f6 16%, #73e8ff 84%);
+  background: linear-gradient(126deg, #03a9f4 16%, #67daff 84%);
   grid-area: widget-4;
 }
 
@@ -81,6 +81,7 @@
 
     .widgets {
       grid-template-rows: 3fr 1fr 2fr 5rem;
+      overflow-y: hidden;
       margin-bottom: 0;
     }
   }
@@ -104,6 +105,7 @@
 
     .widgets {
       grid-template-rows: 4fr 1fr 10rem;
+      overflow-y: hidden;
       margin-bottom: 0;
     }
   }
