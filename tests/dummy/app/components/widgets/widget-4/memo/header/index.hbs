@@ -1,13 +1,18 @@
-<div local-class="header">
-  <div local-class="avatar-container">
-    <img
-      alt=""
-      data-test-image="Avatar"
-      local-class="avatar"
-      role="presentation"
-      src="/images/widgets/widget-4/avatar.jpg"
-    />
-  </div>
+<div
+  data-test-memo-header
+  local-class="header {{if @cqFeatures.short "minimal-layout"}}"
+>
+  {{#unless @cqFeatures.short}}
+    <div local-class="avatar-container">
+      <img
+        alt=""
+        data-test-image="Avatar"
+        local-class="avatar"
+        role="presentation"
+        src="/images/widgets/widget-4/avatar.jpg"
+      />
+    </div>
+  {{/unless}}
 
   <p local-class="name">
     Isaac Lee

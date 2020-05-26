@@ -25,3 +25,24 @@
   height: 1.5rem;
   padding: 0 0.5rem;
 }
+
+
+.container[data-container-query-short] {
+  height: calc(100% - 1rem);
+  padding: 0.5rem;
+  width: calc(100% - 1rem);
+}
+
+.container[data-container-query-short] .header-container {
+  margin-bottom: 0.5rem;
+}
+
+.container[data-container-query-short] .body-container {
+  max-height: 9rem;
+}
+
+.container[data-container-query-short] .actions-container {
+  margin-top: 0.25rem;
+  height: 1rem;
+  padding: 0 0.25rem;
+}

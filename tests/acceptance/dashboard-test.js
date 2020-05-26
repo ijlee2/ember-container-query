@@ -61,6 +61,15 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
 
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
+
 
     await takeSnapshot(assert);
   });
@@ -117,6 +126,15 @@ module('Acceptance | dashboard', function(hooks) {
     // Widget 4
     assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
 
 
     await takeSnapshot(assert);
@@ -175,6 +193,15 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
 
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo header doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo body doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
+
 
     await takeSnapshot(assert);
   });
@@ -231,6 +258,15 @@ module('Acceptance | dashboard', function(hooks) {
     // Widget 4
     assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
 
 
     await takeSnapshot(assert);
@@ -289,6 +325,15 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
 
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
+
 
     await takeSnapshot(assert);
   });
@@ -345,6 +390,15 @@ module('Acceptance | dashboard', function(hooks) {
     // Widget 4
     assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo header doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo body doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
 
 
     await takeSnapshot(assert);
@@ -403,6 +457,15 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
 
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo header doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo body doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
+
 
     await takeSnapshot(assert);
   });
@@ -460,6 +523,15 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
 
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
+
 
     await takeSnapshot(assert);
   });
@@ -516,6 +588,15 @@ module('Acceptance | dashboard', function(hooks) {
     // Widget 4
     assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo header doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo body doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
 
 
     await takeSnapshot(assert);

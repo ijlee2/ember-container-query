@@ -20,6 +20,7 @@
 
 .icon {
   fill: #03a9f4;
+  height: 1.25rem;
   width: 1.25rem;
 }
 
@@ -29,4 +30,20 @@
 
 .icon-repost {
   transform: translate(0, 0) scale(-1, 1) rotate(90deg);
+}
+
+
+.actions.minimal-layout .button {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.actions.minimal-layout .button:hover {
+  background: transparent;
+  transition: none;
+}
+
+.actions.minimal-layout .icon {
+  height: 0.875rem;
+  width: 0.875rem;
 }

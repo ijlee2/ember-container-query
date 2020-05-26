@@ -18,3 +18,13 @@
 .message a {
   color: #03a9f4;
 }
+
+
+.body.minimal-layout .message {
+  height: calc(100% - 1rem);
+  padding: 0.5rem;
+  width: calc(100% - 1rem);
+
+  font-size: 0.75rem;
+  line-height: 1.6;
+}

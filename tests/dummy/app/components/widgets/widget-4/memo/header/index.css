@@ -1,6 +1,6 @@
 .header {
   display: grid;
-  grid-gap: 0.25rem 0.5rem;
+  grid-gap: 0.25rem 0;
   grid-template-areas:
     "avatar-container name"
     "avatar-container metadata";
@@ -10,6 +10,7 @@
 
 .avatar-container {
   grid-area: avatar-container;
+  margin-right: 0.5rem;
 
   display: grid;
   height: 2rem;
@@ -40,4 +41,21 @@
 .handle {
   color: #03a9f4;
   text-decoration: none;
+}
+
+
+.header.minimal-layout {
+  grid-gap: 0 0.6rem;
+  grid-template-areas:
+    "name metadata";
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr;
+}
+
+.header.minimal-layout .name {
+  font-size: 0.8rem;
+}
+
+.header.minimal-layout .metadata {
+  font-size: 0.75rem;
 }

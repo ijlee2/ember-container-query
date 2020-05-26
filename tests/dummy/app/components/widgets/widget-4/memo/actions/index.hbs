@@ -1,4 +1,7 @@
-<div local-class="actions">
+<div
+  data-test-memo-actions
+  local-class="actions {{if @cqFeatures.short "minimal-layout"}}"
+>
   <button
     aria-label="Comment"
     local-class="button"
