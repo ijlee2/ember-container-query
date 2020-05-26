@@ -1,0 +1,25 @@
+<ContainerQuery
+  @features={{hash
+    short=(cq-height max=200)
+  }}
+  local-class="container"
+  as |CQ|
+>
+  <div local-class="header-container">
+    <Widgets::Widget-4::Memo::Header
+      @cqFeatures={{CQ.features}}
+    />
+  </div>
+
+  <div local-class="body-container">
+    <Widgets::Widget-4::Memo::Body
+      @cqFeatures={{CQ.features}}
+    />
+  </div>
+
+  <div local-class="actions-container">
+    <Widgets::Widget-4::Memo::Actions
+      @cqFeatures={{CQ.features}}
+    />
+  </div>
+</ContainerQuery>

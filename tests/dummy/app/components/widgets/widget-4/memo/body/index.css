@@ -1,0 +1,30 @@
+.body {
+  background: linear-gradient(126deg, rgba(238, 255, 255, 0.5) 20%, rgba(248, 253, 255, 0.7) 80%);
+  border-radius: 0.1875rem;
+  height: 100%;
+}
+
+.message {
+  overflow-y: auto;
+
+  height: calc(100% - 1.5rem);
+  padding: 0.75rem;
+  width: calc(100% - 1.5rem);
+
+  font-size: 0.8rem;
+  line-height: 1.75;
+}
+
+.message a {
+  color: #03a9f4;
+}
+
+
+.body.minimal-layout .message {
+  height: calc(100% - 1rem);
+  padding: 0.5rem;
+  width: calc(100% - 1rem);
+
+  font-size: 0.75rem;
+  line-height: 1.6;
+}

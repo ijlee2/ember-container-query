@@ -57,6 +57,20 @@ module('Acceptance | dashboard', function(hooks) {
     //   .hasAttribute('src', '/images/widgets/widget-3/venue-wide@2x.jpg', 'We responsively loaded the correct image.');
 
 
+    // Widget 4
+    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+      .exists('We see the All memos link.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -107,6 +121,20 @@ module('Acceptance | dashboard', function(hooks) {
 
     // assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
     //   .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
+
+
+    // Widget 4
+    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+      .exists('We see the All memos link.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
 
 
     await takeSnapshot(assert);
@@ -161,6 +189,20 @@ module('Acceptance | dashboard', function(hooks) {
     //   .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
 
 
+    // Widget 4
+    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+      .exists('We see the All memos link.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo header doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo body doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -211,6 +253,20 @@ module('Acceptance | dashboard', function(hooks) {
 
     // assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
     //   .hasAttribute('src', '/images/widgets/widget-3/venue-wide@2x.jpg', 'We responsively loaded the correct image.');
+
+
+    // Widget 4
+    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+      .exists('We see the All memos link.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
 
 
     await takeSnapshot(assert);
@@ -265,6 +321,20 @@ module('Acceptance | dashboard', function(hooks) {
     //   .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
 
 
+    // Widget 4
+    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+      .exists('We see the All memos link.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -315,6 +385,20 @@ module('Acceptance | dashboard', function(hooks) {
 
     // assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
     //   .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
+
+
+    // Widget 4
+    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+      .exists('We see the All memos link.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo header doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo body doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
 
 
     await takeSnapshot(assert);
@@ -369,6 +453,20 @@ module('Acceptance | dashboard', function(hooks) {
     //   .hasAttribute('src', '/images/widgets/widget-3/venue-square@4x.jpg', 'We responsively loaded the correct image.');
 
 
+    // Widget 4
+    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+      .exists('We see the All memos link.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo header doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo body doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -421,6 +519,20 @@ module('Acceptance | dashboard', function(hooks) {
     //   .hasAttribute('src', '/images/widgets/widget-3/venue-wide@2x.jpg', 'We responsively loaded the correct image.');
 
 
+    // Widget 4
+    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+      .exists('We see the All memos link.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -471,6 +583,20 @@ module('Acceptance | dashboard', function(hooks) {
 
     // assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
     //   .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
+
+
+    // Widget 4
+    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+      .exists('We see the All memos link.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo header doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo body doesn\'t use the minimal layout.');
+
+    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
 
 
     await takeSnapshot(assert);
