@@ -71,6 +71,11 @@ module('Acceptance | dashboard', function(hooks) {
       .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
 
 
+    // Widget 5
+    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+      .hasText('ember-container-query', 'We see the correct call to action.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -135,6 +140,11 @@ module('Acceptance | dashboard', function(hooks) {
 
     assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
       .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
+
+
+    // Widget 5
+    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+      .hasText('ember-container-query', 'We see the correct call to action.');
 
 
     await takeSnapshot(assert);
@@ -203,6 +213,11 @@ module('Acceptance | dashboard', function(hooks) {
       .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
 
 
+    // Widget 5
+    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+      .hasText('What will you create with ember-container-query ?', 'We see the correct call to action.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -267,6 +282,11 @@ module('Acceptance | dashboard', function(hooks) {
 
     assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
       .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
+
+
+    // Widget 5
+    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+      .hasText('ember-container-query', 'We see the correct call to action.');
 
 
     await takeSnapshot(assert);
@@ -335,6 +355,11 @@ module('Acceptance | dashboard', function(hooks) {
       .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
 
 
+    // Widget 5
+    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+      .hasText('ember-container-query', 'We see the correct call to action.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -399,6 +424,11 @@ module('Acceptance | dashboard', function(hooks) {
 
     assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
       .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
+
+
+    // Widget 5
+    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+      .hasText('What will you create with ember-container-query ?', 'We see the correct call to action.');
 
 
     await takeSnapshot(assert);
@@ -467,6 +497,11 @@ module('Acceptance | dashboard', function(hooks) {
       .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
 
 
+    // Widget 5
+    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+      .hasText('ember-container-query', 'We see the correct call to action.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -533,6 +568,11 @@ module('Acceptance | dashboard', function(hooks) {
       .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
 
 
+    // Widget 5
+    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+      .hasText('ember-container-query', 'We see the correct call to action.');
+
+
     await takeSnapshot(assert);
   });
 
@@ -597,6 +637,11 @@ module('Acceptance | dashboard', function(hooks) {
 
     assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
       .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
+
+
+    // Widget 5
+    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+      .hasText('What will you create with ember-container-query ?', 'We see the correct call to action.');
 
 
     await takeSnapshot(assert);
