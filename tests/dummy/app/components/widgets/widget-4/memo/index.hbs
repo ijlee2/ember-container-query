@@ -1,72 +1,13 @@
 <div local-class="container">
-  <div local-class="header">
-    <div local-class="avatar-container">
-      <img
-        alt=""
-        data-test-image="Avatar"
-        local-class="avatar"
-        role="presentation"
-        src="/images/widgets/widget-4/avatar.jpg"
-      />
-    </div>
-
-    <p local-class="name">
-      Isaac Lee
-    </p>
-
-    <div local-class="metadata">
-      <a href="#" local-class="handle">@ijlee2</a> · 38m
-    </div>
+  <div local-class="header-container">
+    <Widgets::Widget-4::Memo::Header />
   </div>
 
-  <div local-class="body">
-    <div local-class="message">
-      <p>
-        <strong>Buffon’s needle</strong> is a classic Monte Carlo simulation that we can conduct in a classroom.
-      </p>
-      <p>
-        We give the students, say 10 needles each, and have them drop the needles on a paper that we provide also.
-      </p>
-      <p>
-        The paper is special, in that it has parallel lines that are separated by the length of a needle.
-      </p>
-      <p>
-        Each student records how many needles intersect one of the lines, then we tally their numbers to arrive at a very special number. (Guess <a href="https://crunchingnumbers.live/2016/02/01/monte-carlo-simulations-buffons-needle/" target="_blank" rel="noopener noreferrer">who</a>?)
-      </p>
-    </div>
+  <div local-class="body-container">
+    <Widgets::Widget-4::Memo::Body />
   </div>
 
-  <div local-class="actions">
-    <button
-      aria-label="Comment"
-      local-class="button"
-      type="button"
-    >
-      {{svg-jar "textsms-outlined-24px" local-class="icon icon-comment"}}
-    </button>
-
-    <button
-      aria-label="Repost"
-      local-class="button"
-      type="button"
-    >
-      {{svg-jar "loop-24px" local-class="icon icon-repost"}}
-    </button>
-
-    <button
-      aria-label="Like"
-      local-class="button"
-      type="button"
-    >
-      {{svg-jar "favorite-outlined-24px" local-class="icon"}}
-    </button>
-
-    <button
-      aria-label="Share"
-      local-class="button"
-      type="button"
-    >
-      {{svg-jar "share-outlined-24px" local-class="icon"}}
-    </button>
+  <div local-class="actions-container">
+    <Widgets::Widget-4::Memo::Actions />
   </div>
 </div>
