@@ -15,6 +15,7 @@
   height: 100%;
   grid-area: splash;
   width: 100%;
+  overflow: hidden;
 
   position: relative;
 }
