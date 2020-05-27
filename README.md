@@ -8,6 +8,8 @@ _Make container queries that harness the power of Ember Octane._
 
 ![Demo of ember-container-query](https://user-images.githubusercontent.com/16869656/82177207-72699c00-989e-11ea-9cb6-2e388c5e98c0.gif)
 
+Open the [demo app](https://ember-container-query.herokuapp.com/) to see `ember-container-query` in action. (There's even a 404 page!)
+
 
 Installation
 ------------------------------------------------------------------------------
@@ -32,7 +34,7 @@ The addon provides 1 Glimmer component and 3 helpers:
 
 #### `<ContainerQuery>`
 
-The component uses `...attributes` so that you can pass `class` or `local-class` _for styling_.<sup>1</sup>
+The component uses `...attributes` so that you can pass `class` or [`local-class`](https://github.com/salsify/ember-css-modules) _for styling_.<sup>1</sup>
 
 It also accepts these arguments:
 
@@ -72,13 +74,12 @@ All helpers accept these arguments:
 Example
 ------------------------------------------------------------------------------
 
-Let's look at the code that created the video demo above. You can see that the album page uses 2 `<ContainerQuery>` components. Rest assured, they act independently of each other.
+Let's look at the code that created the video demo above.
 
-When you pair `<ContainerQuery>` with some [CSS](https://github.com/salsify/ember-css-modules), you can create layouts beyond the dreams of others! 🙌
+<details>
+<summary><code>app/templates/album.hbs</code></summary>
 
 ```handlebars
-{{!-- app/templates/album.hbs --}}
-
 <ContainerQuery
   @features={{hash
     large=(cq-width min=960)
@@ -114,9 +115,12 @@ When you pair `<ContainerQuery>` with some [CSS](https://github.com/salsify/embe
 </ContainerQuery>
 ```
 
-```handlebars
-{{!-- app/components/tracks.hbs --}}
+</details>
 
+<details>
+<summary><code>app/components/tracks.hbs</code></summary>
+
+```handlebars
 <ContainerQuery
   @features={{hash
     small=(cq-width max=480)
@@ -144,6 +148,12 @@ When you pair `<ContainerQuery>` with some [CSS](https://github.com/salsify/embe
 </ContainerQuery>
 ```
 
+</details>
+
+You can see that the album page uses 2 `<ContainerQuery>` components. Rest assured, they act independently of each other. When you pair `<ContainerQuery>` with some CSS, you can create layouts beyond the dreams of others! 🙌
+
+For more examples, I encourage you to check out the code for my demo app. It is located under [`tests/dummy/app`](https://github.com/ijlee2/ember-container-query/tree/master/tests/dummy/app) folder and is structured like a typical Ember app.
+
 
 Compatibility
 ------------------------------------------------------------------------------
@@ -162,7 +172,7 @@ See the [Contributing](CONTRIBUTING.md) guide for details.
 Credits
 ------------------------------------------------------------------------------
 
-Much thanks goes to [Chad Carbert (@chadian)](https://github.com/chadian), who introduced us to container queries at [EmberFest 2019](https://www.youtube.com/watch?v=RIdjk9_RSBY) and created [`ember-fill-up`](https://github.com/chadian/ember-fill-up) 🌟. I modeled the API for `ember-container-query` based on Chad's addon.
+Much thanks goes to [Chad Carbert (@chadian)](https://github.com/chadian), who introduced me to container queries at [EmberFest 2019](https://www.youtube.com/watch?v=RIdjk9_RSBY) and created [`ember-fill-up`](https://github.com/chadian/ember-fill-up) 🌟. I modeled the API for `ember-container-query` based on Chad's addon.
 
 Also to the Ember teams and [Garrett Murphey (@gmurphey)](https://github.com/gmurphey), without whom [`@ember/render-modifiers`](https://github.com/emberjs/ember-render-modifiers) and [`ember-did-resize-modifier`](https://github.com/gmurphey/ember-did-resize-modifier) wouldn't exist.
 
