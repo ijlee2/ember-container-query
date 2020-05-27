@@ -1,6 +1,6 @@
 <div
   data-test-memo-body
-  local-class="body {{if @cqFeatures.short "minimal-layout"}}"
+  local-class="body {{if (or @cqFeatures.small @cqFeatures.short) "minimal-layout"}}"
 >
   <div local-class="message">
     <p>

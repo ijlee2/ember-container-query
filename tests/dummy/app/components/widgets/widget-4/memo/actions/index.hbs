@@ -1,6 +1,6 @@
 <div
   data-test-memo-actions
-  local-class="actions {{if @cqFeatures.short "minimal-layout"}}"
+  local-class="actions {{if (or @cqFeatures.small @cqFeatures.short) "minimal-layout"}}"
 >
   <button
     aria-label="Comment"

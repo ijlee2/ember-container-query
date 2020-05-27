@@ -21,8 +21,8 @@
 }
 
 .actions-container {
-  margin-top: 0.75rem;
-  height: 1.5rem;
+  margin-top: 0.5rem;
+  height: 1.75rem;
   padding: 0 0.5rem;
 }
 
@@ -41,6 +41,7 @@
   max-height: 9rem;
 }
 
+.container[data-container-query-small] .actions-container,
 .container[data-container-query-short] .actions-container {
   margin-top: 0.25rem;
   height: 1rem;
