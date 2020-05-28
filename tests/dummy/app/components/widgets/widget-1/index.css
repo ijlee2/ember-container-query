@@ -8,6 +8,7 @@
   display: grid;
   grid-gap: 0.6rem;
   flex: 1;
+  overflow: hidden;
 }
 
 .item-1 {
