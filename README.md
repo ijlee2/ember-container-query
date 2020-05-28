@@ -19,6 +19,87 @@ ember install ember-container-query
 ```
 
 
+Applications
+------------------------------------------------------------------------------
+
+Where can you use container queries? Here are real-life (and some theoretical) applications!
+
+<details>
+<summary>Create reusable components that are independent of screen size ♻️</summary>
+
+1. Components form a core of an Ember app. We love components!
+
+1. With media queries,
+
+    - A design that looked amazing on 2 or 3 fixed screen sizes can end up looking terrible at a size in-between.
+
+    - Designing the template for specific screen sizes isn't a future-proof solution. You may need to reuse the component under different local width and height constraints.
+
+    - In `ember-qunit` tests, the window is scaled by default. You may end up stubbing a service (fake the window size) to get certain DOM elements to (dis)appear.
+
+1. With container queries,
+
+    - A component only needs to know how much space it has to figure out how to best present data.
+
+    - Since each component can be free to decide how it looks, a webpage may end up with an unexpected combined look. This may be good, may be bad.
+
+    - In tests, you will be driven to have a correct window size. If the window size is correct, then all elements should (dis)appear just like they would on your browser.
+
+</details>
+
+
+<details>
+<summary>To table or not to table? That is the question. 🤔</summary>
+
+1. A table is great for showing structured data. On mobile, with a limited width, not so much.
+
+1. You can use a list to show data vertically. This works until the user rotates the screen and sees only so much at a time.
+
+1. You can use container queries to decide which table columns to show and how many columns to spread the list across.
+
+</details>
+
+
+<details>
+<summary>Create a customizable dashboard 🎛️ 🎚️</summary>
+
+1. It's difficult to create dashboard widgets that can be placed anywhere and look good.
+
+1. As a result, you may artificially constrain your users from customizing their dashboard.
+
+1. If you _combine_ media and container queries, you can better meet the wants of designers, developers, and users.
+</details>
+
+
+<details>
+<summary>Responsive images, videos, and D3 visualizations 🖼️ 📽️ 📈</summary>
+
+1. Currently, you have to use [`srcset`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset) to load images with the optimal file size. Alternatively, you can use container queries to decide which images to load.
+
+2. Similarly, for videos, you could use container queries to decide format and display resolution.
+
+3. D3 components can use container queries to decide what's the best way to show data. Do you show larger chart elements, show legends, allow scrolling, show text summary? etc.
+</details>
+
+
+<details>
+<summary>Create beautiful, printable pages 🖨️</summary>
+
+1. You may be able to compose this addon with others to arrive at something ambitious and unique.
+
+1. For example, [`ember-printable-pages`](https://github.com/forge512/ember-printable-pages) lets us reuse components to make a printable document. The components could focus on presenting data with container queries, while `ember-printable-pages` could focus on deciding page layouts and lazily rendering components.
+</details>
+
+
+<details>
+<summary>Hide secrets in games 🎮</summary>
+
+1. You're designing [a game in Ember](https://www.youtube.com/watch?v=Ld1xnQWkqPU).
+
+1. Maybe a secret, most powerful item appears when the game world is at a certain size? :)
+</details>
+
+
 API
 ------------------------------------------------------------------------------
 
