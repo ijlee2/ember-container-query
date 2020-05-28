@@ -34,6 +34,7 @@
   border: 0.0625rem solid white;;
   border-radius: 0.1875rem;
   height: calc(4.5rem - 2 * (0.2rem + 0.0625rem));
+  width: calc(100% - 2 * (0.5rem + 0.0625rem));
   padding: 0.2rem 0.5rem;
 
   font-family: monospace;

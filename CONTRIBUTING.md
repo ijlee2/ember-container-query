@@ -175,6 +175,8 @@ Here are some suggestions to help you start:
 
     I believe, if we can spend a few extra hours to address these issues, we can better maintain this project on the long run.
 
+1. Please check if the demo app looks correct by resizing the window on Chrome and Firefox. Percy snapshots are taken in these browsers so we have good references. Checking on Safari and Edge are optional but recommended.
+
 1. At any point, if you are unsure of something, don't hesitate to reach out!
 
 </details>
