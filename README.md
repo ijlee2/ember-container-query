@@ -19,7 +19,7 @@ ember install ember-container-query
 ```
 
 
-Usage
+API
 ------------------------------------------------------------------------------
 
 The addon provides 1 Glimmer component and 3 helpers:
@@ -30,9 +30,8 @@ The addon provides 1 Glimmer component and 3 helpers:
 - `{{cq-width}}`
 
 
-### API
-
-#### `<ContainerQuery>`
+<details>
+<summary><code>&lt;ContainerQuery&gt;</code></summary>
 
 The component uses `...attributes` so that you can pass `class` or [`local-class`](https://github.com/salsify/ember-css-modules) _for styling_.<sup>1</sup>
 
@@ -56,8 +55,11 @@ The component returns a few values that you can consume:
 
 <sup>2. The component renders without error when `@features` isn't provided. In practice, you will always want to set `@features`.</sup>
 
+</details>
 
-#### `{{cq-aspect-ratio}}`, `{{cq-height}}`,  `{{cq-width}}`
+
+<details>
+<summary><code>{{cq-aspect-ratio}}</code>, <code>{{cq-height}}</code>, <code>{{cq-width}}</code></summary>
 
 All helpers accept these arguments:
 
@@ -69,6 +71,8 @@ All helpers accept these arguments:
 <sup>1. The helpers use default values of `min = 0` and `max = Infinity`, and assume the inequalities `min ≤ x < max`. In practice, you will always want to set `min` or `max` (or both).</sup>
 
 <sup>2. Aspect ratio is unitless. Height and width have the unit of pixel.</sup>
+
+</details>
 
 
 Example
