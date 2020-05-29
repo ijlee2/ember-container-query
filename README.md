@@ -246,7 +246,7 @@ Compatibility
 * Ember.js v3.16 or above (3.12 - 3.15 may work but won't be supported)
 * Ember CLI v2.13 or above
 * Node.js v10 or above
-* Modern browsers (IE 11 may work but won't be supported)
+* Modern browsers (IE 11 won't be supported)
 
 
 Contributing
