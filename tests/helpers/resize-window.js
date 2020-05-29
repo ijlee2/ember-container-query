@@ -2,13 +2,18 @@ import { assert } from '@ember/debug';
 import { later } from '@ember/runloop';
 import { find } from '@ember/test-helpers';
 
-const timeout = milliseconds => {
+// This is a magic number. It is the time (in ms) for things to `settle`
+// after a resize. It is the time that we need to wait before assertions
+// that should pass will always pass.
+const RERENDER_TIME = 100;
+
+
+export function timeout(milliseconds) {
   return new Promise(resolve => {
     later(resolve, milliseconds);
   });
-};
+}
 
-const rerenderTime = 100;
 
 export default async function resizeWindow(width, height) {
   let parentElement = find('[data-test-parent-element]');
@@ -18,8 +23,11 @@ export default async function resizeWindow(width, height) {
     !!parentElement
   );
 
+  // Since <ContainerQuery> has a style of `height: 100%; width: 100%;`,
+  // we can set its parent element's width and height to cause container
+  // queries to be evaluated.
   parentElement.style.width = `${width}px`;
   parentElement.style.height = `${height}px`;
 
-  await timeout(rerenderTime);
+  await timeout(RERENDER_TIME);
 }
