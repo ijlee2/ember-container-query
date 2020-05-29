@@ -1,3 +1,15 @@
+## 1.0.1 (2020-05-29)
+
+### Internal
+* [#36](https://github.com/ijlee2/ember-container-query/pull/36) Added lerna-changelog ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#36](https://github.com/ijlee2/ember-container-query/pull/36) Added lerna-changelog ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.0.0 (2020-05-29)
 
 ### Bug Fix
