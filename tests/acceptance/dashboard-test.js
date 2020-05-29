@@ -53,8 +53,8 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.');
 
-    // assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
-    //   .hasAttribute('src', '/images/widgets/widget-3/venue-wide@2x.jpg', 'We responsively loaded the correct image.');
+    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+      .hasAttribute('src', '/images/widgets/widget-3/venue-wide@2x.jpg', 'We responsively loaded the correct image.');
 
 
     // Widget 4
@@ -124,8 +124,8 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.');
 
-    // assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
-    //   .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
+    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+      .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
 
 
     // Widget 4
@@ -195,8 +195,8 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.');
 
-    // assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
-    //   .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
+    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+      .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
 
 
     // Widget 4
@@ -266,8 +266,8 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.');
 
-    // assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
-    //   .hasAttribute('src', '/images/widgets/widget-3/venue-wide@2x.jpg', 'We responsively loaded the correct image.');
+    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+      .hasAttribute('src', '/images/widgets/widget-3/venue-wide@2x.jpg', 'We responsively loaded the correct image.');
 
 
     // Widget 4
@@ -337,8 +337,8 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.');
 
-    // assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
-    //   .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
+    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+      .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
 
 
     // Widget 4
@@ -408,8 +408,8 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.');
 
-    // assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
-    //   .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
+    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+      .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
 
 
     // Widget 4
@@ -479,8 +479,8 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.');
 
-    // assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
-    //   .hasAttribute('src', '/images/widgets/widget-3/venue-square@4x.jpg', 'We responsively loaded the correct image.');
+    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+      .hasAttribute('src', '/images/widgets/widget-3/venue-square@4x.jpg', 'We responsively loaded the correct image.');
 
 
     // Widget 4
@@ -550,8 +550,8 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.');
 
-    // assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
-    //   .hasAttribute('src', '/images/widgets/widget-3/venue-wide@2x.jpg', 'We responsively loaded the correct image.');
+    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+      .hasAttribute('src', '/images/widgets/widget-3/venue-wide@2x.jpg', 'We responsively loaded the correct image.');
 
 
     // Widget 4
@@ -621,8 +621,8 @@ module('Acceptance | dashboard', function(hooks) {
     assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.');
 
-    // assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
-    //   .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
+    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+      .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
 
 
     // Widget 4
