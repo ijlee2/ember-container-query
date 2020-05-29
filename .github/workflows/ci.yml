@@ -6,7 +6,7 @@ on:
       - master
   pull_request:
   schedule:
-    # Run the workflow every Monday at 7 am CST
+    # Run the workflow every Monday at 6 am CST
     - cron: '0 11 * * MON'
 
 env:
@@ -18,7 +18,7 @@ jobs:
   lint:
     name: Lint files and dependencies
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
@@ -71,7 +71,7 @@ jobs:
           - 'h1'
           - 'h2'
           - 'h3'
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
@@ -132,7 +132,7 @@ jobs:
           - 'w3'
         height:
           - 'h3'
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
