@@ -1,3 +1,12 @@
+## 1.0.2 (2020-05-30)
+
+### Documentation
+* [#37](https://github.com/ijlee2/ember-container-query/pull/37) Updated keywords and repository url for npm ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.0.1 (2020-05-29)
 
 ### Internal
