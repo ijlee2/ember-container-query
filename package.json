@@ -3,11 +3,18 @@
   "version": "1.0.1",
   "description": "Container queries using Ember modifiers",
   "keywords": [
-    "ember-addon"
+    "container-queries",
+    "container-query",
+    "element-queries",
+    "element-query",
+    "ember-addon",
+    "ember-octane",
+    "emberjs",
+    "responsive-design"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ijlee2/ember-container-query"
+    "url": "https://github.com/ijlee2/ember-container-query.git"
   },
   "license": "MIT",
   "author": "Isaac J. Lee",
