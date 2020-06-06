@@ -10,15 +10,33 @@ module('Integration | Component | container-query', function(hooks) {
   hooks.beforeEach(function(assert) {
     assert.areFeaturesCorrect = (features = {}) => {
       for (const [featureName, meetsFeature] of Object.entries(features)) {
-        if (meetsFeature) {
-          assert.dom(`[data-test-feature="${featureName}"]`).hasText('true');
+        switch (meetsFeature) {
+          case true: {
+            assert.dom(`[data-test-feature="${featureName}"]`)
+              .hasText(
+                'true',
+                `The container meets the feature "${featureName}".`
+              );
 
-        } else if (meetsFeature === false) {
-          assert.dom(`[data-test-feature="${featureName}"]`).hasText('false');
+            break;
+          }
 
-        } else if (!meetsFeature) {
-          assert.dom(`[data-test-feature="${featureName}"]`).hasNoText();
+          case false: {
+            assert.dom(`[data-test-feature="${featureName}"]`)
+              .hasText(
+                'false',
+                `The container doesn't meet the feature "${featureName}".`
+              );
 
+            break;
+          }
+
+          case undefined: {
+            assert.dom(`[data-test-feature="${featureName}"]`)
+              .hasNoText(`The container doesn't meet the feature "${featureName}".`);
+
+            break;
+          }
         }
       }
     };
