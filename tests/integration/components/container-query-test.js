@@ -328,8 +328,8 @@ module('Integration | Component | container-query', function(hooks) {
   });
 
 
-  module('When @dataAttributePrefix is undefined', function() {
-    test('The component updates data attributes when it is resized', async function(assert) {
+  module('When @dataAttributePrefix is undefined', function(hooks) {
+    hooks.beforeEach(async function() {
       await render(hbs`
         <div
           data-test-parent-element
@@ -364,7 +364,10 @@ module('Integration | Component | container-query', function(hooks) {
           </ContainerQuery>
         </div>
       `);
+    });
 
+
+    test('The component creates data attributes when it is rendered', async function(assert) {
       assert.areDataAttributesCorrect({
         'data-container-query-small': '',
         'data-container-query-medium': undefined,
@@ -375,8 +378,10 @@ module('Integration | Component | container-query', function(hooks) {
         'data-container-query-ratio-type-B': '',
         'data-container-query-ratio-type-C': undefined
       });
+    });
 
 
+    test('The component updates data attributes when it is resized', async function(assert) {
       await resizeContainer(500, 300);
 
       assert.areDataAttributesCorrect({
@@ -421,8 +426,8 @@ module('Integration | Component | container-query', function(hooks) {
   });
 
 
-  module('When @dataAttributePrefix is passed', function() {
-    test('The component updates data attributes when it is resized', async function(assert) {
+  module('When @dataAttributePrefix is passed', function(hooks) {
+    hooks.beforeEach(async function() {
       await render(hbs`
         <div
           data-test-parent-element
@@ -458,7 +463,10 @@ module('Integration | Component | container-query', function(hooks) {
           </ContainerQuery>
         </div>
       `);
+    });
 
+
+    test('The component creates data attributes when it is rendered', async function(assert) {
       assert.areDataAttributesCorrect({
         'data-cq-small': '',
         'data-cq-medium': undefined,
@@ -469,8 +477,10 @@ module('Integration | Component | container-query', function(hooks) {
         'data-cq-ratio-type-B': '',
         'data-cq-ratio-type-C': undefined
       });
+    });
 
 
+    test('The component updates data attributes when it is resized', async function(assert) {
       await resizeContainer(500, 300);
 
       assert.areDataAttributesCorrect({
