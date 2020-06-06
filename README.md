@@ -1,4 +1,4 @@
-![CI](https://github.com/ijlee2/ember-container-query/workflows/CI/badge.svg)
+[![This project uses GitHub Actions for continuous integration.](https://github.com/ijlee2/ember-container-query/workflows/CI/badge.svg)](https://github.com/ijlee2/ember-container-query/actions?query=workflow%3ACI)
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Isaac/ember-container-query)
 
 ember-container-query
