@@ -1,5 +1,5 @@
 import { find, render } from '@ember/test-helpers';
-import resizeWindow, { timeout } from 'dummy/tests/helpers/resize-window';
+import resizeContainer, { timeout } from 'dummy/tests/helpers/resize-container';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
@@ -9,16 +9,34 @@ module('Integration | Component | container-query', function(hooks) {
 
   hooks.beforeEach(function(assert) {
     assert.areFeaturesCorrect = (features = {}) => {
-      for (const [name, meetsFeature] of Object.entries(features)) {
-        if (meetsFeature) {
-          assert.dom(`[data-test-feature="${name}"]`).hasText('true');
+      for (const [featureName, meetsFeature] of Object.entries(features)) {
+        switch (meetsFeature) {
+          case true: {
+            assert.dom(`[data-test-feature="${featureName}"]`)
+              .hasText(
+                'true',
+                `The container meets the feature "${featureName}".`
+              );
 
-        } else if (meetsFeature === false) {
-          assert.dom(`[data-test-feature="${name}"]`).hasText('false');
+            break;
+          }
 
-        } else if (!meetsFeature) {
-          assert.dom(`[data-test-feature="${name}"]`).hasNoText();
+          case false: {
+            assert.dom(`[data-test-feature="${featureName}"]`)
+              .hasText(
+                'false',
+                `The container doesn't meet the feature "${featureName}".`
+              );
 
+            break;
+          }
+
+          case undefined: {
+            assert.dom(`[data-test-feature="${featureName}"]`)
+              .hasNoText(`The container doesn't meet the feature "${featureName}".`);
+
+            break;
+          }
         }
       }
     };
@@ -50,11 +68,39 @@ module('Integration | Component | container-query', function(hooks) {
 
       }
     };
+
+    assert.areDataAttributesCorrect = (dataAttributes = {}) => {
+      const containerQuery = find('[data-test-container-query]');
+
+      for (const [dataAttributeName, expectedValue] of Object.entries(dataAttributes)) {
+        switch (expectedValue) {
+          case undefined: {
+            assert.dom(containerQuery)
+              .doesNotHaveAttribute(
+                dataAttributeName,
+                `The container doesn't have the attribute "${dataAttributeName}".`
+              );
+
+            break;
+          }
+
+          default: {
+            assert.dom(containerQuery)
+              .hasAttribute(
+                dataAttributeName,
+                expectedValue,
+                `The container has the attribute "${dataAttributeName}".`
+              );
+          }
+        }
+      }
+    };
   });
 
   hooks.afterEach(function(assert) {
     delete assert.areFeaturesCorrect;
     delete assert.areDimensionsCorrect;
+    delete assert.areDataAttributesCorrect;
   });
 
 
@@ -104,7 +150,7 @@ module('Integration | Component | container-query', function(hooks) {
 
 
     test('The component updates features when it is resized', async function(assert) {
-      await resizeWindow(500, 300);
+      await resizeContainer(500, 300);
 
       assert.areFeaturesCorrect({
         small: undefined,
@@ -118,7 +164,7 @@ module('Integration | Component | container-query', function(hooks) {
       });
 
 
-      await resizeWindow(800, 400);
+      await resizeContainer(800, 400);
 
       assert.areFeaturesCorrect({
         small: undefined,
@@ -132,7 +178,7 @@ module('Integration | Component | container-query', function(hooks) {
       });
 
 
-      await resizeWindow(1000, 600);
+      await resizeContainer(1000, 600);
 
       assert.areFeaturesCorrect({
         small: undefined,
@@ -148,17 +194,17 @@ module('Integration | Component | container-query', function(hooks) {
 
 
     test('The component updates dimensions when it is resized', async function(assert) {
-      await resizeWindow(500, 300);
+      await resizeContainer(500, 300);
 
       assert.areDimensionsCorrect(500, 300);
 
 
-      await resizeWindow(800, 400);
+      await resizeContainer(800, 400);
 
       assert.areDimensionsCorrect(800, 400);
 
 
-      await resizeWindow(1000, 600);
+      await resizeContainer(1000, 600);
 
       assert.areDimensionsCorrect(1000, 600);
     });
@@ -221,7 +267,7 @@ module('Integration | Component | container-query', function(hooks) {
 
 
     test('The component updates features when it is resized', async function(assert) {
-      await resizeWindow(500, 300);
+      await resizeContainer(500, 300);
 
       assert.areFeaturesCorrect({
         small: false,
@@ -235,7 +281,7 @@ module('Integration | Component | container-query', function(hooks) {
       });
 
 
-      await resizeWindow(800, 400);
+      await resizeContainer(800, 400);
 
       assert.areFeaturesCorrect({
         small: false,
@@ -249,7 +295,7 @@ module('Integration | Component | container-query', function(hooks) {
       });
 
 
-      await resizeWindow(1000, 600);
+      await resizeContainer(1000, 600);
 
       assert.areFeaturesCorrect({
         small: false,
@@ -265,25 +311,25 @@ module('Integration | Component | container-query', function(hooks) {
 
 
     test('The component updates dimensions when it is resized', async function(assert) {
-      await resizeWindow(500, 300);
+      await resizeContainer(500, 300);
 
       assert.areDimensionsCorrect(500, 300);
 
 
-      await resizeWindow(800, 400);
+      await resizeContainer(800, 400);
 
       assert.areDimensionsCorrect(800, 400);
 
 
-      await resizeWindow(1000, 600);
+      await resizeContainer(1000, 600);
 
       assert.areDimensionsCorrect(1000, 600);
     });
   });
 
 
-  module('When @dataAttributePrefix is undefined', function() {
-    test('The component updates data attributes when it is resized', async function(assert) {
+  module('When @dataAttributePrefix is undefined', function(hooks) {
+    hooks.beforeEach(async function() {
       await render(hbs`
         <div
           data-test-parent-element
@@ -318,61 +364,70 @@ module('Integration | Component | container-query', function(hooks) {
           </ContainerQuery>
         </div>
       `);
-
-      assert.dom('[data-test-container-query]')
-        .hasAttribute('data-container-query-small')
-        .doesNotHaveAttribute('data-container-query-medium')
-        .doesNotHaveAttribute('data-container-query-large')
-        .doesNotHaveAttribute('data-container-query-short')
-        .hasAttribute('data-container-query-tall')
-        .hasAttribute('data-container-query-ratio-type-A')
-        .hasAttribute('data-container-query-ratio-type-B')
-        .doesNotHaveAttribute('data-container-query-ratio-type-C');
+    });
 
 
-      await resizeWindow(500, 300);
-
-      assert.dom('[data-test-container-query]')
-        .doesNotHaveAttribute('data-container-query-small')
-        .hasAttribute('data-container-query-medium')
-        .doesNotHaveAttribute('data-container-query-large')
-        .hasAttribute('data-container-query-short')
-        .doesNotHaveAttribute('data-container-query-tall')
-        .doesNotHaveAttribute('data-container-query-ratio-type-A')
-        .doesNotHaveAttribute('data-container-query-ratio-type-B')
-        .hasAttribute('data-container-query-ratio-type-C');
-
-
-      await resizeWindow(800, 400);
-
-      assert.dom('[data-test-container-query]')
-        .doesNotHaveAttribute('data-container-query-small')
-        .doesNotHaveAttribute('data-container-query-medium')
-        .hasAttribute('data-container-query-large')
-        .hasAttribute('data-container-query-short')
-        .doesNotHaveAttribute('data-container-query-tall')
-        .doesNotHaveAttribute('data-container-query-ratio-type-A')
-        .doesNotHaveAttribute('data-container-query-ratio-type-B')
-        .doesNotHaveAttribute('data-container-query-ratio-type-C');
+    test('The component creates data attributes when it is rendered', async function(assert) {
+      assert.areDataAttributesCorrect({
+        'data-container-query-small': '',
+        'data-container-query-medium': undefined,
+        'data-container-query-large': undefined,
+        'data-container-query-short': undefined,
+        'data-container-query-tall': '',
+        'data-container-query-ratio-type-A': '',
+        'data-container-query-ratio-type-B': '',
+        'data-container-query-ratio-type-C': undefined
+      });
+    });
 
 
-      await resizeWindow(1000, 600);
+    test('The component updates data attributes when it is resized', async function(assert) {
+      await resizeContainer(500, 300);
 
-      assert.dom('[data-test-container-query]')
-        .doesNotHaveAttribute('data-container-query-small')
-        .doesNotHaveAttribute('data-container-query-medium')
-        .doesNotHaveAttribute('data-container-query-large')
-        .doesNotHaveAttribute('data-container-query-short')
-        .hasAttribute('data-container-query-tall')
-        .doesNotHaveAttribute('data-container-query-ratio-type-A')
-        .doesNotHaveAttribute('data-container-query-ratio-type-B')
-        .hasAttribute('data-container-query-ratio-type-C');
+      assert.areDataAttributesCorrect({
+        'data-container-query-small': undefined,
+        'data-container-query-medium': '',
+        'data-container-query-large': undefined,
+        'data-container-query-short': '',
+        'data-container-query-tall': undefined,
+        'data-container-query-ratio-type-A': undefined,
+        'data-container-query-ratio-type-B': undefined,
+        'data-container-query-ratio-type-C': ''
+      });
+
+
+      await resizeContainer(800, 400);
+
+      assert.areDataAttributesCorrect({
+        'data-container-query-small': undefined,
+        'data-container-query-medium': undefined,
+        'data-container-query-large': '',
+        'data-container-query-short': '',
+        'data-container-query-tall': undefined,
+        'data-container-query-ratio-type-A': undefined,
+        'data-container-query-ratio-type-B': undefined,
+        'data-container-query-ratio-type-C': undefined
+      });
+
+
+      await resizeContainer(1000, 600);
+
+      assert.areDataAttributesCorrect({
+        'data-container-query-small': undefined,
+        'data-container-query-medium': undefined,
+        'data-container-query-large': undefined,
+        'data-container-query-short': undefined,
+        'data-container-query-tall': '',
+        'data-container-query-ratio-type-A': undefined,
+        'data-container-query-ratio-type-B': undefined,
+        'data-container-query-ratio-type-C': ''
+      });
     });
   });
 
 
-  module('When @dataAttributePrefix is passed', function() {
-    test('The component updates data attributes when it is resized', async function(assert) {
+  module('When @dataAttributePrefix is passed', function(hooks) {
+    hooks.beforeEach(async function() {
       await render(hbs`
         <div
           data-test-parent-element
@@ -408,55 +463,64 @@ module('Integration | Component | container-query', function(hooks) {
           </ContainerQuery>
         </div>
       `);
-
-      assert.dom('[data-test-container-query]')
-        .hasAttribute('data-cq-small')
-        .doesNotHaveAttribute('data-cq-medium')
-        .doesNotHaveAttribute('data-cq-large')
-        .doesNotHaveAttribute('data-cq-short')
-        .hasAttribute('data-cq-tall')
-        .hasAttribute('data-cq-ratio-type-A')
-        .hasAttribute('data-cq-ratio-type-B')
-        .doesNotHaveAttribute('data-cq-ratio-type-C');
+    });
 
 
-      await resizeWindow(500, 300);
-
-      assert.dom('[data-test-container-query]')
-        .doesNotHaveAttribute('data-cq-small')
-        .hasAttribute('data-cq-medium')
-        .doesNotHaveAttribute('data-cq-large')
-        .hasAttribute('data-cq-short')
-        .doesNotHaveAttribute('data-cq-tall')
-        .doesNotHaveAttribute('data-cq-ratio-type-A')
-        .doesNotHaveAttribute('data-cq-ratio-type-B')
-        .hasAttribute('data-cq-ratio-type-C');
-
-
-      await resizeWindow(800, 400);
-
-      assert.dom('[data-test-container-query]')
-        .doesNotHaveAttribute('data-cq-small')
-        .doesNotHaveAttribute('data-cq-medium')
-        .hasAttribute('data-cq-large')
-        .hasAttribute('data-cq-short')
-        .doesNotHaveAttribute('data-cq-tall')
-        .doesNotHaveAttribute('data-cq-ratio-type-A')
-        .doesNotHaveAttribute('data-cq-ratio-type-B')
-        .doesNotHaveAttribute('data-cq-ratio-type-C');
+    test('The component creates data attributes when it is rendered', async function(assert) {
+      assert.areDataAttributesCorrect({
+        'data-cq-small': '',
+        'data-cq-medium': undefined,
+        'data-cq-large': undefined,
+        'data-cq-short': undefined,
+        'data-cq-tall': '',
+        'data-cq-ratio-type-A': '',
+        'data-cq-ratio-type-B': '',
+        'data-cq-ratio-type-C': undefined
+      });
+    });
 
 
-      await resizeWindow(1000, 600);
+    test('The component updates data attributes when it is resized', async function(assert) {
+      await resizeContainer(500, 300);
 
-      assert.dom('[data-test-container-query]')
-        .doesNotHaveAttribute('data-cq-small')
-        .doesNotHaveAttribute('data-cq-medium')
-        .doesNotHaveAttribute('data-cq-large')
-        .doesNotHaveAttribute('data-cq-short')
-        .hasAttribute('data-cq-tall')
-        .doesNotHaveAttribute('data-cq-ratio-type-A')
-        .doesNotHaveAttribute('data-cq-ratio-type-B')
-        .hasAttribute('data-cq-ratio-type-C');
+      assert.areDataAttributesCorrect({
+        'data-cq-small': undefined,
+        'data-cq-medium': '',
+        'data-cq-large': undefined,
+        'data-cq-short': '',
+        'data-cq-tall': undefined,
+        'data-cq-ratio-type-A': undefined,
+        'data-cq-ratio-type-B': undefined,
+        'data-cq-ratio-type-C': ''
+      });
+
+
+      await resizeContainer(800, 400);
+
+      assert.areDataAttributesCorrect({
+        'data-cq-small': undefined,
+        'data-cq-medium': undefined,
+        'data-cq-large': '',
+        'data-cq-short': '',
+        'data-cq-tall': undefined,
+        'data-cq-ratio-type-A': undefined,
+        'data-cq-ratio-type-B': undefined,
+        'data-cq-ratio-type-C': undefined
+      });
+
+
+      await resizeContainer(1000, 600);
+
+      assert.areDataAttributesCorrect({
+        'data-cq-small': undefined,
+        'data-cq-medium': undefined,
+        'data-cq-large': undefined,
+        'data-cq-short': undefined,
+        'data-cq-tall': '',
+        'data-cq-ratio-type-A': undefined,
+        'data-cq-ratio-type-B': undefined,
+        'data-cq-ratio-type-C': ''
+      });
     });
   });
 
@@ -467,7 +531,7 @@ module('Integration | Component | container-query', function(hooks) {
         Caution:
 
         There is a dependency between the implementations of this test and
-        the `resizeWindow` test helper. The test helper waits for 100ms to
+        the `resizeContainer` test helper. The test helper waits for 100ms to
         pass so that assertions that should pass will always pass.
 
         As a result, we can test `@debounce` only when the value is larger
@@ -525,7 +589,7 @@ module('Integration | Component | container-query', function(hooks) {
 
       // After a resize, the container query results should remain the
       // same as before.
-      await resizeWindow(500, 300);
+      await resizeContainer(500, 300);
 
       assert.areFeaturesCorrect({
         small: true,
@@ -539,7 +603,7 @@ module('Integration | Component | container-query', function(hooks) {
       });
 
 
-      await resizeWindow(800, 400);
+      await resizeContainer(800, 400);
 
       assert.areFeaturesCorrect({
         small: true,
@@ -553,7 +617,7 @@ module('Integration | Component | container-query', function(hooks) {
       });
 
 
-      await resizeWindow(1000, 600);
+      await resizeContainer(1000, 600);
 
       assert.areFeaturesCorrect({
         small: true,
@@ -590,7 +654,7 @@ module('Integration | Component | container-query', function(hooks) {
       assert.expect(3);
 
       this.fetchData = () => {
-        assert.ok('{{did-insert}} modifier works. (But we should find a better way to separate concerns!)');
+        assert.ok(true, '{{did-insert}} modifier works. (But we should find a better way to separate concerns!)');
       };
 
       await render(hbs`
