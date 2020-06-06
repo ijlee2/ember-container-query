@@ -1,4 +1,4 @@
-![CI](https://github.com/ijlee2/ember-container-query/workflows/CI/badge.svg)
+[![This project uses GitHub Actions for continuous integration.](https://github.com/ijlee2/ember-container-query/workflows/CI/badge.svg)](https://github.com/ijlee2/ember-container-query/actions?query=workflow%3ACI)
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Isaac/ember-container-query)
 
 ember-container-query
@@ -243,10 +243,12 @@ For more examples, I encourage you to check out the code for my demo app. It is 
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.16 or above (3.12 - 3.15 may work but won't be supported)
+* Ember.js v3.16 or above<sup>1</sup> (3.12 - 3.15 may work but won't be supported)
 * Ember CLI v2.13 or above
 * Node.js v10 or above
-* Modern browsers (IE 11 won't be supported)
+* Modern browsers<sup>1</sup> (IE 11 won't be supported)
+
+<sup>1. Until you can adopt Ember Octane and drop support for IE 11, I recommend using [`ember-fill-up`](https://github.com/chadian/ember-fill-up) to do container queries. The APIs are similar so your migration should be smooth. Chad Carbert and I will ensure that the addons are maintained side-by-side for some time.</sup>
 
 
 Contributing
