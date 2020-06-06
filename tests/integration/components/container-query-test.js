@@ -9,15 +9,15 @@ module('Integration | Component | container-query', function(hooks) {
 
   hooks.beforeEach(function(assert) {
     assert.areFeaturesCorrect = (features = {}) => {
-      for (const [name, meetsFeature] of Object.entries(features)) {
+      for (const [featureName, meetsFeature] of Object.entries(features)) {
         if (meetsFeature) {
-          assert.dom(`[data-test-feature="${name}"]`).hasText('true');
+          assert.dom(`[data-test-feature="${featureName}"]`).hasText('true');
 
         } else if (meetsFeature === false) {
-          assert.dom(`[data-test-feature="${name}"]`).hasText('false');
+          assert.dom(`[data-test-feature="${featureName}"]`).hasText('false');
 
         } else if (!meetsFeature) {
-          assert.dom(`[data-test-feature="${name}"]`).hasNoText();
+          assert.dom(`[data-test-feature="${featureName}"]`).hasNoText();
 
         }
       }
