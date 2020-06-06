@@ -1,6 +1,6 @@
 import { render } from '@ember/test-helpers';
 import albumData from 'dummy/data/album';
-import resizeWindow from 'dummy/tests/helpers/resize-window';
+import resizeContainer from 'dummy/tests/helpers/resize-container';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
@@ -35,7 +35,7 @@ module('Integration | Component | tracks', function(hooks) {
 
 
     // Features: medium, short
-    await resizeWindow(560, 240);
+    await resizeContainer(560, 240);
 
     assert.dom('[data-test-list="Tracks"]')
       .exists('We see a list.')
@@ -46,7 +46,7 @@ module('Integration | Component | tracks', function(hooks) {
 
 
     // Features: large, short
-    await resizeWindow(880, 240);
+    await resizeContainer(880, 240);
 
     assert.dom('[data-test-list="Tracks"]')
       .exists('We see a list.')
@@ -57,7 +57,7 @@ module('Integration | Component | tracks', function(hooks) {
 
 
     // Features: small, tall
-    await resizeWindow(240, 640);
+    await resizeContainer(240, 640);
 
     assert.dom('[data-test-list="Tracks"]')
       .exists('We see a list.')
@@ -68,7 +68,7 @@ module('Integration | Component | tracks', function(hooks) {
 
 
     // Features: medium, tall
-    await resizeWindow(560, 640);
+    await resizeContainer(560, 640);
 
     assert.dom('[data-test-list="Tracks"]')
       .exists('We see a list.')
@@ -79,7 +79,7 @@ module('Integration | Component | tracks', function(hooks) {
 
 
     // Features: large, tall
-    await resizeWindow(880, 640);
+    await resizeContainer(880, 640);
 
     assert.dom('[data-test-list="Tracks"]')
       .doesNotExist('We don\'t see a list.');

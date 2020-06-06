@@ -1,5 +1,5 @@
 import { find, render } from '@ember/test-helpers';
-import resizeWindow, { timeout } from 'dummy/tests/helpers/resize-window';
+import resizeContainer, { timeout } from 'dummy/tests/helpers/resize-container';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
@@ -104,7 +104,7 @@ module('Integration | Component | container-query', function(hooks) {
 
 
     test('The component updates features when it is resized', async function(assert) {
-      await resizeWindow(500, 300);
+      await resizeContainer(500, 300);
 
       assert.areFeaturesCorrect({
         small: undefined,
@@ -118,7 +118,7 @@ module('Integration | Component | container-query', function(hooks) {
       });
 
 
-      await resizeWindow(800, 400);
+      await resizeContainer(800, 400);
 
       assert.areFeaturesCorrect({
         small: undefined,
@@ -132,7 +132,7 @@ module('Integration | Component | container-query', function(hooks) {
       });
 
 
-      await resizeWindow(1000, 600);
+      await resizeContainer(1000, 600);
 
       assert.areFeaturesCorrect({
         small: undefined,
@@ -148,17 +148,17 @@ module('Integration | Component | container-query', function(hooks) {
 
 
     test('The component updates dimensions when it is resized', async function(assert) {
-      await resizeWindow(500, 300);
+      await resizeContainer(500, 300);
 
       assert.areDimensionsCorrect(500, 300);
 
 
-      await resizeWindow(800, 400);
+      await resizeContainer(800, 400);
 
       assert.areDimensionsCorrect(800, 400);
 
 
-      await resizeWindow(1000, 600);
+      await resizeContainer(1000, 600);
 
       assert.areDimensionsCorrect(1000, 600);
     });
@@ -221,7 +221,7 @@ module('Integration | Component | container-query', function(hooks) {
 
 
     test('The component updates features when it is resized', async function(assert) {
-      await resizeWindow(500, 300);
+      await resizeContainer(500, 300);
 
       assert.areFeaturesCorrect({
         small: false,
@@ -235,7 +235,7 @@ module('Integration | Component | container-query', function(hooks) {
       });
 
 
-      await resizeWindow(800, 400);
+      await resizeContainer(800, 400);
 
       assert.areFeaturesCorrect({
         small: false,
@@ -249,7 +249,7 @@ module('Integration | Component | container-query', function(hooks) {
       });
 
 
-      await resizeWindow(1000, 600);
+      await resizeContainer(1000, 600);
 
       assert.areFeaturesCorrect({
         small: false,
@@ -265,17 +265,17 @@ module('Integration | Component | container-query', function(hooks) {
 
 
     test('The component updates dimensions when it is resized', async function(assert) {
-      await resizeWindow(500, 300);
+      await resizeContainer(500, 300);
 
       assert.areDimensionsCorrect(500, 300);
 
 
-      await resizeWindow(800, 400);
+      await resizeContainer(800, 400);
 
       assert.areDimensionsCorrect(800, 400);
 
 
-      await resizeWindow(1000, 600);
+      await resizeContainer(1000, 600);
 
       assert.areDimensionsCorrect(1000, 600);
     });
@@ -330,7 +330,7 @@ module('Integration | Component | container-query', function(hooks) {
         .doesNotHaveAttribute('data-container-query-ratio-type-C');
 
 
-      await resizeWindow(500, 300);
+      await resizeContainer(500, 300);
 
       assert.dom('[data-test-container-query]')
         .doesNotHaveAttribute('data-container-query-small')
@@ -343,7 +343,7 @@ module('Integration | Component | container-query', function(hooks) {
         .hasAttribute('data-container-query-ratio-type-C');
 
 
-      await resizeWindow(800, 400);
+      await resizeContainer(800, 400);
 
       assert.dom('[data-test-container-query]')
         .doesNotHaveAttribute('data-container-query-small')
@@ -356,7 +356,7 @@ module('Integration | Component | container-query', function(hooks) {
         .doesNotHaveAttribute('data-container-query-ratio-type-C');
 
 
-      await resizeWindow(1000, 600);
+      await resizeContainer(1000, 600);
 
       assert.dom('[data-test-container-query]')
         .doesNotHaveAttribute('data-container-query-small')
@@ -420,7 +420,7 @@ module('Integration | Component | container-query', function(hooks) {
         .doesNotHaveAttribute('data-cq-ratio-type-C');
 
 
-      await resizeWindow(500, 300);
+      await resizeContainer(500, 300);
 
       assert.dom('[data-test-container-query]')
         .doesNotHaveAttribute('data-cq-small')
@@ -433,7 +433,7 @@ module('Integration | Component | container-query', function(hooks) {
         .hasAttribute('data-cq-ratio-type-C');
 
 
-      await resizeWindow(800, 400);
+      await resizeContainer(800, 400);
 
       assert.dom('[data-test-container-query]')
         .doesNotHaveAttribute('data-cq-small')
@@ -446,7 +446,7 @@ module('Integration | Component | container-query', function(hooks) {
         .doesNotHaveAttribute('data-cq-ratio-type-C');
 
 
-      await resizeWindow(1000, 600);
+      await resizeContainer(1000, 600);
 
       assert.dom('[data-test-container-query]')
         .doesNotHaveAttribute('data-cq-small')
@@ -467,7 +467,7 @@ module('Integration | Component | container-query', function(hooks) {
         Caution:
 
         There is a dependency between the implementations of this test and
-        the `resizeWindow` test helper. The test helper waits for 100ms to
+        the `resizeContainer` test helper. The test helper waits for 100ms to
         pass so that assertions that should pass will always pass.
 
         As a result, we can test `@debounce` only when the value is larger
@@ -525,7 +525,7 @@ module('Integration | Component | container-query', function(hooks) {
 
       // After a resize, the container query results should remain the
       // same as before.
-      await resizeWindow(500, 300);
+      await resizeContainer(500, 300);
 
       assert.areFeaturesCorrect({
         small: true,
@@ -539,7 +539,7 @@ module('Integration | Component | container-query', function(hooks) {
       });
 
 
-      await resizeWindow(800, 400);
+      await resizeContainer(800, 400);
 
       assert.areFeaturesCorrect({
         small: true,
@@ -553,7 +553,7 @@ module('Integration | Component | container-query', function(hooks) {
       });
 
 
-      await resizeWindow(1000, 600);
+      await resizeContainer(1000, 600);
 
       assert.areFeaturesCorrect({
         small: true,

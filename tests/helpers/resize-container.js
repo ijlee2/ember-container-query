@@ -15,7 +15,7 @@ export function timeout(milliseconds) {
 }
 
 
-export default async function resizeWindow(width, height) {
+export default async function resizeContainer(width, height) {
   let parentElement = find('[data-test-parent-element]');
 
   assert(
