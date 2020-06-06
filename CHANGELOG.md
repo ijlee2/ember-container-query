@@ -1,3 +1,16 @@
+## 1.0.3 (2020-06-06)
+
+### Internal
+* [#41](https://github.com/ijlee2/ember-container-query/pull/41) Updated ember-cli-babel to v7.20.5 and eslint to the latest ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#40](https://github.com/ijlee2/ember-container-query/pull/40) Added adoption strategy for developers who support pre-Octane app or IE 11 users ([@ijlee2](https://github.com/ijlee2))
+* [#39](https://github.com/ijlee2/ember-container-query/pull/39) Improved codebase ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.0.2 (2020-05-30)
 
 ### Documentation
