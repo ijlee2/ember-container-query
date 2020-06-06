@@ -644,7 +644,7 @@ module('Integration | Component | container-query', function(hooks) {
       assert.expect(3);
 
       this.fetchData = () => {
-        assert.ok('{{did-insert}} modifier works. (But we should find a better way to separate concerns!)');
+        assert.ok(true, '{{did-insert}} modifier works. (But we should find a better way to separate concerns!)');
       };
 
       await render(hbs`
