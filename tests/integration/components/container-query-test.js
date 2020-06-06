@@ -68,11 +68,39 @@ module('Integration | Component | container-query', function(hooks) {
 
       }
     };
+
+    assert.areDataAttributesCorrect = (dataAttributes = {}) => {
+      const containerQuery = find('[data-test-container-query]');
+
+      for (const [dataAttributeName, expectedValue] of Object.entries(dataAttributes)) {
+        switch (expectedValue) {
+          case undefined: {
+            assert.dom(containerQuery)
+              .doesNotHaveAttribute(
+                dataAttributeName,
+                `The container doesn't have the attribute "${dataAttributeName}".`
+              );
+
+            break;
+          }
+
+          default: {
+            assert.dom(containerQuery)
+              .hasAttribute(
+                dataAttributeName,
+                expectedValue,
+                `The container has the attribute "${dataAttributeName}".`
+              );
+          }
+        }
+      }
+    };
   });
 
   hooks.afterEach(function(assert) {
     delete assert.areFeaturesCorrect;
     delete assert.areDimensionsCorrect;
+    delete assert.areDataAttributesCorrect;
   });
 
 
@@ -337,54 +365,58 @@ module('Integration | Component | container-query', function(hooks) {
         </div>
       `);
 
-      assert.dom('[data-test-container-query]')
-        .hasAttribute('data-container-query-small')
-        .doesNotHaveAttribute('data-container-query-medium')
-        .doesNotHaveAttribute('data-container-query-large')
-        .doesNotHaveAttribute('data-container-query-short')
-        .hasAttribute('data-container-query-tall')
-        .hasAttribute('data-container-query-ratio-type-A')
-        .hasAttribute('data-container-query-ratio-type-B')
-        .doesNotHaveAttribute('data-container-query-ratio-type-C');
+      assert.areDataAttributesCorrect({
+        'data-container-query-small': '',
+        'data-container-query-medium': undefined,
+        'data-container-query-large': undefined,
+        'data-container-query-short': undefined,
+        'data-container-query-tall': '',
+        'data-container-query-ratio-type-A': '',
+        'data-container-query-ratio-type-B': '',
+        'data-container-query-ratio-type-C': undefined
+      });
 
 
       await resizeContainer(500, 300);
 
-      assert.dom('[data-test-container-query]')
-        .doesNotHaveAttribute('data-container-query-small')
-        .hasAttribute('data-container-query-medium')
-        .doesNotHaveAttribute('data-container-query-large')
-        .hasAttribute('data-container-query-short')
-        .doesNotHaveAttribute('data-container-query-tall')
-        .doesNotHaveAttribute('data-container-query-ratio-type-A')
-        .doesNotHaveAttribute('data-container-query-ratio-type-B')
-        .hasAttribute('data-container-query-ratio-type-C');
+      assert.areDataAttributesCorrect({
+        'data-container-query-small': undefined,
+        'data-container-query-medium': '',
+        'data-container-query-large': undefined,
+        'data-container-query-short': '',
+        'data-container-query-tall': undefined,
+        'data-container-query-ratio-type-A': undefined,
+        'data-container-query-ratio-type-B': undefined,
+        'data-container-query-ratio-type-C': ''
+      });
 
 
       await resizeContainer(800, 400);
 
-      assert.dom('[data-test-container-query]')
-        .doesNotHaveAttribute('data-container-query-small')
-        .doesNotHaveAttribute('data-container-query-medium')
-        .hasAttribute('data-container-query-large')
-        .hasAttribute('data-container-query-short')
-        .doesNotHaveAttribute('data-container-query-tall')
-        .doesNotHaveAttribute('data-container-query-ratio-type-A')
-        .doesNotHaveAttribute('data-container-query-ratio-type-B')
-        .doesNotHaveAttribute('data-container-query-ratio-type-C');
+      assert.areDataAttributesCorrect({
+        'data-container-query-small': undefined,
+        'data-container-query-medium': undefined,
+        'data-container-query-large': '',
+        'data-container-query-short': '',
+        'data-container-query-tall': undefined,
+        'data-container-query-ratio-type-A': undefined,
+        'data-container-query-ratio-type-B': undefined,
+        'data-container-query-ratio-type-C': undefined
+      });
 
 
       await resizeContainer(1000, 600);
 
-      assert.dom('[data-test-container-query]')
-        .doesNotHaveAttribute('data-container-query-small')
-        .doesNotHaveAttribute('data-container-query-medium')
-        .doesNotHaveAttribute('data-container-query-large')
-        .doesNotHaveAttribute('data-container-query-short')
-        .hasAttribute('data-container-query-tall')
-        .doesNotHaveAttribute('data-container-query-ratio-type-A')
-        .doesNotHaveAttribute('data-container-query-ratio-type-B')
-        .hasAttribute('data-container-query-ratio-type-C');
+      assert.areDataAttributesCorrect({
+        'data-container-query-small': undefined,
+        'data-container-query-medium': undefined,
+        'data-container-query-large': undefined,
+        'data-container-query-short': undefined,
+        'data-container-query-tall': '',
+        'data-container-query-ratio-type-A': undefined,
+        'data-container-query-ratio-type-B': undefined,
+        'data-container-query-ratio-type-C': ''
+      });
     });
   });
 
@@ -427,54 +459,58 @@ module('Integration | Component | container-query', function(hooks) {
         </div>
       `);
 
-      assert.dom('[data-test-container-query]')
-        .hasAttribute('data-cq-small')
-        .doesNotHaveAttribute('data-cq-medium')
-        .doesNotHaveAttribute('data-cq-large')
-        .doesNotHaveAttribute('data-cq-short')
-        .hasAttribute('data-cq-tall')
-        .hasAttribute('data-cq-ratio-type-A')
-        .hasAttribute('data-cq-ratio-type-B')
-        .doesNotHaveAttribute('data-cq-ratio-type-C');
+      assert.areDataAttributesCorrect({
+        'data-cq-small': '',
+        'data-cq-medium': undefined,
+        'data-cq-large': undefined,
+        'data-cq-short': undefined,
+        'data-cq-tall': '',
+        'data-cq-ratio-type-A': '',
+        'data-cq-ratio-type-B': '',
+        'data-cq-ratio-type-C': undefined
+      });
 
 
       await resizeContainer(500, 300);
 
-      assert.dom('[data-test-container-query]')
-        .doesNotHaveAttribute('data-cq-small')
-        .hasAttribute('data-cq-medium')
-        .doesNotHaveAttribute('data-cq-large')
-        .hasAttribute('data-cq-short')
-        .doesNotHaveAttribute('data-cq-tall')
-        .doesNotHaveAttribute('data-cq-ratio-type-A')
-        .doesNotHaveAttribute('data-cq-ratio-type-B')
-        .hasAttribute('data-cq-ratio-type-C');
+      assert.areDataAttributesCorrect({
+        'data-cq-small': undefined,
+        'data-cq-medium': '',
+        'data-cq-large': undefined,
+        'data-cq-short': '',
+        'data-cq-tall': undefined,
+        'data-cq-ratio-type-A': undefined,
+        'data-cq-ratio-type-B': undefined,
+        'data-cq-ratio-type-C': ''
+      });
 
 
       await resizeContainer(800, 400);
 
-      assert.dom('[data-test-container-query]')
-        .doesNotHaveAttribute('data-cq-small')
-        .doesNotHaveAttribute('data-cq-medium')
-        .hasAttribute('data-cq-large')
-        .hasAttribute('data-cq-short')
-        .doesNotHaveAttribute('data-cq-tall')
-        .doesNotHaveAttribute('data-cq-ratio-type-A')
-        .doesNotHaveAttribute('data-cq-ratio-type-B')
-        .doesNotHaveAttribute('data-cq-ratio-type-C');
+      assert.areDataAttributesCorrect({
+        'data-cq-small': undefined,
+        'data-cq-medium': undefined,
+        'data-cq-large': '',
+        'data-cq-short': '',
+        'data-cq-tall': undefined,
+        'data-cq-ratio-type-A': undefined,
+        'data-cq-ratio-type-B': undefined,
+        'data-cq-ratio-type-C': undefined
+      });
 
 
       await resizeContainer(1000, 600);
 
-      assert.dom('[data-test-container-query]')
-        .doesNotHaveAttribute('data-cq-small')
-        .doesNotHaveAttribute('data-cq-medium')
-        .doesNotHaveAttribute('data-cq-large')
-        .doesNotHaveAttribute('data-cq-short')
-        .hasAttribute('data-cq-tall')
-        .doesNotHaveAttribute('data-cq-ratio-type-A')
-        .doesNotHaveAttribute('data-cq-ratio-type-B')
-        .hasAttribute('data-cq-ratio-type-C');
+      assert.areDataAttributesCorrect({
+        'data-cq-small': undefined,
+        'data-cq-medium': undefined,
+        'data-cq-large': undefined,
+        'data-cq-short': undefined,
+        'data-cq-tall': '',
+        'data-cq-ratio-type-A': undefined,
+        'data-cq-ratio-type-B': undefined,
+        'data-cq-ratio-type-C': ''
+      });
     });
   });
 
