@@ -1,3 +1,18 @@
+## 1.0.4 (2020-06-26)
+
+### Bug Fix
+* [#44](https://github.com/ijlee2/ember-container-query/pull/44) Allowed passing empty string for @dataAttributePrefix ([@ijlee2](https://github.com/ijlee2))
+
+### Enhancement
+* [#43](https://github.com/ijlee2/ember-container-query/pull/43) Reorganized tests for <ContainerQuery> component ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#42](https://github.com/ijlee2/ember-container-query/pull/42) Updated dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.0.3 (2020-06-06)
 
 ### Internal
