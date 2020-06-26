@@ -49,7 +49,15 @@ export default class ContainerQueryComponent extends Component {
     const prefix = this.dataAttributePrefix;
 
     for (const [featureName, meetsFeature] of Object.entries(this.queryResults)) {
-      const attributeName = `data-${prefix}-${featureName}`;
+      let attributeName;
+
+      if (prefix) {
+        attributeName = `data-${prefix}-${featureName}`;
+
+      } else {
+        attributeName = `data-${featureName}`;
+
+      }
 
       if (meetsFeature) {
         element.setAttribute(attributeName, '');
