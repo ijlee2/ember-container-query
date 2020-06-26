@@ -1,4 +1,5 @@
-import { find, render } from '@ember/test-helpers';
+import { render } from '@ember/test-helpers';
+import setupContainerQueryTest from 'dummy/tests/helpers/container-query';
 import resizeContainer, { timeout } from 'dummy/tests/helpers/resize-container';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
@@ -6,102 +7,7 @@ import { module, test } from 'qunit';
 
 module('Integration | Component | container-query', function(hooks) {
   setupRenderingTest(hooks);
-
-  hooks.beforeEach(function(assert) {
-    assert.areFeaturesCorrect = (features = {}) => {
-      for (const [featureName, meetsFeature] of Object.entries(features)) {
-        switch (meetsFeature) {
-          case true: {
-            assert.dom(`[data-test-feature="${featureName}"]`)
-              .hasText(
-                'true',
-                `The container meets the feature "${featureName}".`
-              );
-
-            break;
-          }
-
-          case false: {
-            assert.dom(`[data-test-feature="${featureName}"]`)
-              .hasText(
-                'false',
-                `The container doesn't meet the feature "${featureName}".`
-              );
-
-            break;
-          }
-
-          case undefined: {
-            assert.dom(`[data-test-feature="${featureName}"]`)
-              .hasNoText(`The container doesn't meet the feature "${featureName}".`);
-
-            break;
-          }
-        }
-      }
-    };
-
-    assert.areDimensionsCorrect = (expectedWidth, expectedHeight) => {
-      assert.dom('[data-test-width-height]')
-        .hasText(
-          `${expectedWidth} x ${expectedHeight}`,
-          'Width and height are correct.'
-        );
-
-      const aspectRatio = Number(find('[data-test-aspect-ratio]').textContent.trim());
-      const expectedAspectRatio = expectedWidth / expectedHeight;
-      const tolerance = 0.001;
-
-      if (expectedAspectRatio === Infinity) {
-        assert.strictEqual(
-          aspectRatio === expectedAspectRatio,
-          true,
-          'Aspect ratio is correct.'
-        );
-
-      } else {
-        assert.strictEqual(
-          Math.abs(aspectRatio - expectedAspectRatio) / Math.abs(expectedAspectRatio) < tolerance,
-          true,
-          'Aspect ratio is correct.'
-        );
-
-      }
-    };
-
-    assert.areDataAttributesCorrect = (dataAttributes = {}) => {
-      const containerQuery = find('[data-test-container-query]');
-
-      for (const [dataAttributeName, expectedValue] of Object.entries(dataAttributes)) {
-        switch (expectedValue) {
-          case undefined: {
-            assert.dom(containerQuery)
-              .doesNotHaveAttribute(
-                dataAttributeName,
-                `The container doesn't have the attribute "${dataAttributeName}".`
-              );
-
-            break;
-          }
-
-          default: {
-            assert.dom(containerQuery)
-              .hasAttribute(
-                dataAttributeName,
-                expectedValue,
-                `The container has the attribute "${dataAttributeName}".`
-              );
-          }
-        }
-      }
-    };
-  });
-
-  hooks.afterEach(function(assert) {
-    delete assert.areFeaturesCorrect;
-    delete assert.areDimensionsCorrect;
-    delete assert.areDataAttributesCorrect;
-  });
+  setupContainerQueryTest(hooks);
 
 
   module('When @features is undefined', function(hooks) {
