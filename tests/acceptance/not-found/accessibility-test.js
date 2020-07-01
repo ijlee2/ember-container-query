@@ -8,20 +8,10 @@ module('Acceptance | not-found', function(hooks) {
   setupApplicationTest(hooks);
   resetViewport(hooks);
 
-  hooks.beforeEach(function() {
-    this.axeOptions = {
-      rules: {
-        'scrollable-region-focusable': {
-          enabled: false
-        }
-      }
-    };
-  });
-
 
   test('@w1 @h1 Accessibility audit', async function(assert) {
     await visit('/404');
-    await a11yAudit(this.axeOptions);
+    await a11yAudit();
 
     assert.ok(true, 'We passed Axe tests.');
   });
@@ -29,7 +19,7 @@ module('Acceptance | not-found', function(hooks) {
 
   test('@w2 @h1 Accessibility audit', async function(assert) {
     await visit('/404');
-    await a11yAudit(this.axeOptions);
+    await a11yAudit();
 
     assert.ok(true, 'We passed Axe tests.');
   });
@@ -37,7 +27,7 @@ module('Acceptance | not-found', function(hooks) {
 
   test('@w3 @h1 Accessibility audit', async function(assert) {
     await visit('/404');
-    await a11yAudit(this.axeOptions);
+    await a11yAudit();
 
     assert.ok(true, 'We passed Axe tests.');
   });
@@ -45,7 +35,7 @@ module('Acceptance | not-found', function(hooks) {
 
   test('@w1 @h2 Accessibility audit', async function(assert) {
     await visit('/404');
-    await a11yAudit(this.axeOptions);
+    await a11yAudit();
 
     assert.ok(true, 'We passed Axe tests.');
   });
@@ -53,7 +43,7 @@ module('Acceptance | not-found', function(hooks) {
 
   test('@w2 @h2 Accessibility audit', async function(assert) {
     await visit('/404');
-    await a11yAudit(this.axeOptions);
+    await a11yAudit();
 
     assert.ok(true, 'We passed Axe tests.');
   });
@@ -61,7 +51,7 @@ module('Acceptance | not-found', function(hooks) {
 
   test('@w3 @h2 Accessibility audit', async function(assert) {
     await visit('/404');
-    await a11yAudit(this.axeOptions);
+    await a11yAudit();
 
     assert.ok(true, 'We passed Axe tests.');
   });
@@ -69,7 +59,7 @@ module('Acceptance | not-found', function(hooks) {
 
   test('@w1 @h3 Accessibility audit', async function(assert) {
     await visit('/404');
-    await a11yAudit(this.axeOptions);
+    await a11yAudit();
 
     assert.ok(true, 'We passed Axe tests.');
   });
@@ -77,7 +67,7 @@ module('Acceptance | not-found', function(hooks) {
 
   test('@w2 @h3 Accessibility audit', async function(assert) {
     await visit('/404');
-    await a11yAudit(this.axeOptions);
+    await a11yAudit();
 
     assert.ok(true, 'We passed Axe tests.');
   });
@@ -85,7 +75,7 @@ module('Acceptance | not-found', function(hooks) {
 
   test('@w3 @h3 Accessibility audit', async function(assert) {
     await visit('/404');
-    await a11yAudit(this.axeOptions);
+    await a11yAudit();
 
     assert.ok(true, 'We passed Axe tests.');
   });

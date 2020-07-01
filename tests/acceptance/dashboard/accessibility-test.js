@@ -8,16 +8,6 @@ module('Acceptance | dashboard', function(hooks) {
   setupApplicationTest(hooks);
   resetViewport(hooks);
 
-  hooks.beforeEach(function() {
-    this.axeOptions = {
-      rules: {
-        'scrollable-region-focusable': {
-          enabled: false
-        }
-      }
-    };
-  });
-
 
   test('@w1 @h1 Accessibility audit', async function(assert) {
     await visit('/dashboard');
@@ -69,7 +59,7 @@ module('Acceptance | dashboard', function(hooks) {
 
   test('@w1 @h3 Accessibility audit', async function(assert) {
     await visit('/dashboard');
-    await a11yAudit(this.axeOptions);
+    await a11yAudit();
 
     assert.ok(true, 'We passed Axe tests.');
   });

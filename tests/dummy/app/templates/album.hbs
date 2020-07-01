@@ -22,7 +22,7 @@
         </div>
       </header>
 
-      <div local-class="album-tracks">
+      <div local-class="album-tracks" tabindex={{if showLyrics "0"}}>
         <Tracks
           @tracks={{@model.tracks}}
         />
