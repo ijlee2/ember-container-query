@@ -1,4 +1,7 @@
-<div local-class="application">
+<div
+  local-class="application no-focus-outline"
+  {{did-insert this.allowFocusOutlineOnTab}}
+>
   <header local-class="header">
     <NavigationMenu
       @name="Main Navigation"
