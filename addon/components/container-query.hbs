@@ -1,16 +1,18 @@
-<div
-  class="container-query"
-  data-test-container-query
-  {{did-insert this.queryContainer}}
-  {{did-resize this.queryContainer debounce=this.debounce}}
-  ...attributes
->
-  {{yield (hash
-    features=this.queryResults
-    dimensions=(hash
-      aspectRatio=this.aspectRatio
-      height=this.height
-      width=this.width
-    )
-  )}}
-</div>
+{{#let (element this.tagName) as |Tag|}}
+  <Tag
+    class="container-query"
+    data-test-container-query
+    {{did-insert this.queryContainer}}
+    {{did-resize this.queryContainer debounce=this.debounce}}
+    ...attributes
+  >
+    {{yield (hash
+      features=this.queryResults
+      dimensions=(hash
+        aspectRatio=this.aspectRatio
+        height=this.height
+        width=this.width
+      )
+    )}}
+  </Tag>
+{{/let}}
