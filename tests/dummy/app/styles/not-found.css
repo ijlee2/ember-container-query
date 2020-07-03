@@ -1,16 +1,22 @@
 .container {
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 3rem);
   padding: 1.5rem 1rem;
 }
 
+.animation {
+  flex: 1;
+  margin: 2rem 0 1.5rem 0.75rem;
+}
+
 .metaphor {
-  margin: 2rem 0 0 0.75rem;
-  height: 15rem;
+  height: 4.5rem;
   width: 15rem;
 
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
 .mental-block {
