@@ -43,7 +43,7 @@ Where can you use container queries? Here are real-life (and some theoretical) a
 
     - Since each component can be free to decide how it looks, a webpage may end up with an unexpected combined look. This may be good, may be bad.
 
-    - In tests, you will be driven to have a correct window size. If the window size is correct, then all elements should (dis)appear just like they would on your browser.
+    - In tests, you will be driven to [have a correct window size](https://crunchingnumbers.live/2020/06/07/container-queries-cross-resolution-testing/). If the window size is correct, then all elements should (dis)appear just like they would on your browser.
 
 </details>
 
@@ -74,7 +74,7 @@ Where can you use container queries? Here are real-life (and some theoretical) a
 <details>
 <summary>Responsive images, videos, and D3 visualizations 🖼️ 📽️ 📈</summary>
 
-1. Currently, you have to use [`srcset`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset) to load images with the optimal file size. Alternatively, you can use container queries to decide which images to load.
+1. Currently, you have to use [`srcset`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset) to load images with the optimal file size. Alternatively, you can [use container queries to decide which images to load](https://crunchingnumbers.live/2020/06/03/container-queries-adaptive-images/).
 
 2. Similarly, for videos, you could use container queries to decide format and display resolution.
 
