@@ -1,3 +1,18 @@
+## 1.1.0 (2020-07-10)
+
+### Enhancement
+* [#46](https://github.com/ijlee2/ember-container-query/pull/46) Allowed passing @tagName for dynamic tag ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#45](https://github.com/ijlee2/ember-container-query/pull/45) Installed ember-a11y-testing for demo app ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#45](https://github.com/ijlee2/ember-container-query/pull/45) Installed ember-a11y-testing for demo app ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.0.4 (2020-06-26)
 
 ### Bug Fix
