@@ -114,17 +114,35 @@ The addon provides 1 Glimmer component and 3 helpers:
 <details>
 <summary><code>&lt;ContainerQuery&gt;</code></summary>
 
-The component uses `...attributes` so that you can pass `class` or [`local-class`](https://github.com/salsify/ember-css-modules) _for styling_.<sup>1</sup>
+### Arguments
 
-It also accepts these arguments:
+You can pass these arguments to the component.
 
 | Name | Required | Description | Type |
 |--|:--:|--|--|
-| @features | Yes<sup>2</sup> | Container query definitions | POJO |
+| @features | Yes<sup>1</sup> | Container query definitions | POJO |
 | @dataAttributePrefix | No | Prefix for data attributes | string |
 | @debounce | No | Debounce time for resize (ms) | number ≥ 0 |
+| @tagName | No | Container tag name<sup>2</sup> | HTML tag name |
 
-The component returns a few values that you can consume:
+<sup>1. The component renders without error when `@features` isn't provided. In practice, you will always want to set `@features`.</sup>
+
+<sup>2. By default, the component is a `<div>` element. You can pass a valid HTML tag name to facilitate accessibility and semantic HTML.</sup>
+
+### Attributes
+
+You _may_<sup>1</sup> pass attributes to the component for these reasons:
+
+- Style (e.g. `class`, [`local-class`](https://github.com/salsify/ember-css-modules))
+- Accessibility (e.g. ARIA attributes<sup>2</sup>, roles)
+
+<sup>1. Do refrain from overusing splattributes (e.g. pass a `{{did-insert}}` modifier to fetch data), since the component's API may change and cause unexpected results. Practice separation of concerns when possible. For example, data fetching can be handled by another element or [`@use` decorator](https://github.com/emberjs/rfcs/blob/use-and-resources/text/0567-use-and-resources.md).</sup>
+
+<sup>2. When an [ARIA attribute has multiple values](https://github.com/ijlee2/ember-container-query/issues/38#issuecomment-647017665), the order of values can matter. At the moment, splattributes doesn't guarantee the order.</sup>
+
+### Outputs
+
+You can consume these values in your app or addon.
 
 | Name | Yielded | Description | Type |
 |--|:--:|--|--|
@@ -132,15 +150,13 @@ The component returns a few values that you can consume:
 | dimensions | Yes | Container dimensions | POJO |
 | data-container-query-_{featureName}_ | No | Data attributes for CSS selector | HTML data attribute |
 
-<sup>1. Do refrain from overusing splattributes (e.g. pass a `{{did-insert}}` modifier to fetch data), since the component's API may change and cause unexpected results. Practice separation of concerns when possible. For example, data fetching can be handled by another element or [`@use` decorator](https://github.com/emberjs/rfcs/blob/use-and-resources/text/0567-use-and-resources.md).</sup>
-
-<sup>2. The component renders without error when `@features` isn't provided. In practice, you will always want to set `@features`.</sup>
-
 </details>
 
 
 <details>
 <summary><code>{{cq-aspect-ratio}}</code>, <code>{{cq-height}}</code>, <code>{{cq-width}}</code></summary>
+
+### Arguments
 
 All helpers accept these arguments:
 
