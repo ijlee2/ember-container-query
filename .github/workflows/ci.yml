@@ -3,7 +3,7 @@ name: CI
 on: 
   push:
     branches:
-      - master
+      - main
   pull_request:
   schedule:
     # Run the workflow every Monday at 6 am CST

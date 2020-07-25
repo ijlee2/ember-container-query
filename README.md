@@ -253,7 +253,7 @@ Let's look at the code that created the video demo above.
 
 You can see that the album page uses 2 `<ContainerQuery>` components. Rest assured, they act independently of each other. When you pair `<ContainerQuery>` with some CSS, you can create layouts beyond the dreams of others! 🙌
 
-For more examples, I encourage you to check out the code for my demo app. It is located under [`tests/dummy/app`](https://github.com/ijlee2/ember-container-query/tree/master/tests/dummy/app) folder and is structured like a typical Ember app.
+For more examples, I encourage you to check out the code for my demo app. It is located under [`tests/dummy/app`](https://github.com/ijlee2/ember-container-query/tree/main/tests/dummy/app) folder and is structured like a typical Ember app.
 
 
 Compatibility
