@@ -1,3 +1,13 @@
+## 1.1.1 (2020-07-25)
+
+### Internal
+* Updated default branch name to `main`
+* [#48](https://github.com/ijlee2/ember-container-query/pull/48) Updated devDependencies to their latest ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.1.0 (2020-07-10)
 
 ### Enhancement
