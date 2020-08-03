@@ -16,7 +16,7 @@ export default class WidgetsWidget2CaptionsComponent extends Component {
   }
 
   get summaries() {
-    return this.args.summaries ?? [];
+    return this.args.summaries ? this.args.summaries : [];
   }
 
   get canShowPreviousButton() {

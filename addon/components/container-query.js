@@ -9,15 +9,15 @@ export default class ContainerQueryComponent extends Component {
   @tracked width;
 
   get features() {
-    return this.args.features ?? {};
+    return this.args.features ? this.args.features : {};
   }
 
   get dataAttributePrefix() {
-    return this.args.dataAttributePrefix ?? 'container-query';
+    return this.args.dataAttributePrefix ? this.args.dataAttributePrefix : 'container-query';
   }
 
   get debounce() {
-    return this.args.debounce ?? 0;
+    return this.args.debounce ? this.args.debounce : 0;
   }
 
   constructor() {

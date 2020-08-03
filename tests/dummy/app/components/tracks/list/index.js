@@ -3,7 +3,7 @@ import Component from '@glimmer/component';
 
 export default class TracksListComponent extends Component {
   get numColumns() {
-    return this.args.numColumns ?? 1;
+    return this.args.numColumns ? this.args.numColumns : 1;
   }
 
   get numRows() {
@@ -11,7 +11,7 @@ export default class TracksListComponent extends Component {
   }
 
   get tracks() {
-    return this.args.tracks ?? [];
+    return this.args.tracks ? this.args.tracks : [];
   }
 
   @action updateCssForRows(element) {

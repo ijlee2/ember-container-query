@@ -27,7 +27,7 @@ export default class WidgetsWidget2StackedChartComponent extends Component {
   }
 
   get data() {
-    return this.args.data ?? [];
+    return this.args.data ? this.args.data : [];
   }
 
   get margin() {
