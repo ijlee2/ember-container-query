@@ -18,6 +18,33 @@ Installation
 ember install ember-container-query
 ```
 
+<details>
+<summary>Use FastBoot? ⚠️</summary>
+
+This addon uses nullish coalescing operator `??`. If you use [FastBoot](https://github.com/ember-fastboot/ember-cli-fastboot) (with `Node < v14.0`) and only support [browsers that natively support `??`](https://v8.dev/features/nullish-coalescing#support), you will run into a build error:
+
+```bash
+/var/folders/2z/93zyyhx13rs879qr8rzyxrb40000gn/T/broccoli-689520dxo26a682Mz/out-529-broccoli_merge_trees/assets/vendor.js:121232
+  return this.args.features ?? {};
+                             ^
+SyntaxError: Unexpected token '?'
+```
+
+To prevent this, please make sure to add `node: 'current'` to your `config/targets.js` file.
+
+```javascript
+'use strict';
+
+const browsers = [ ... ];
+
+module.exports = {
+  browsers,
+  node: 'current'
+};
+```
+
+</details>
+
 
 Applications
 ------------------------------------------------------------------------------
