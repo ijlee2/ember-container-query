@@ -1,3 +1,15 @@
+## 1.1.2 (2020-08-12)
+
+### Internal
+* [#51](https://github.com/ijlee2/ember-container-query/pull/51) Upgraded ember-source to v3.20.4 ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#50](https://github.com/ijlee2/ember-container-query/pull/50) Added installation instructions for FastBoot users ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.1.1 (2020-07-25)
 
 ### Internal
