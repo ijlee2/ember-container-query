@@ -93,6 +93,7 @@ jobs:
 
   test-addon:
     name: Test addon
+    needs: [build-ember-app]
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -132,10 +133,16 @@ jobs:
         run: yarn install --frozen-lockfile
         if: steps.cache-dependencies.outputs.cache-hit != 'true'
 
+      - name: Download built Ember app
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: dist
+
       - name: Test
         uses: percy/exec-action@v0.3.0
         with:
-          custom-command: yarn test:ember:${{ matrix.width }}-${{ matrix.height }}
+          custom-command: yarn test:ember:${{ matrix.width }}-${{ matrix.height }} --path=dist
         env:
           PERCY_PARALLEL_NONCE: ${{ env.PERCY_PARALLEL_NONCE }}
           PERCY_PARALLEL_TOTAL: ${{ env.PERCY_PARALLEL_TOTAL }}
