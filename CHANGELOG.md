@@ -1,3 +1,14 @@
+## 1.1.3 (2020-08-29)
+
+### Internal
+* [#54](https://github.com/ijlee2/ember-container-query/pull/54) Migrated to Netlify for deployment service ([@ijlee2](https://github.com/ijlee2))
+* [#53](https://github.com/ijlee2/ember-container-query/pull/53) Updated development dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+* [#52](https://github.com/ijlee2/ember-container-query/pull/52) Updated CI workflow ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.1.2 (2020-08-12)
 
 ### Internal
