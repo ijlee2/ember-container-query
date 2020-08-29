@@ -9,7 +9,7 @@ module.exports = function(defaults) {
       exclude: [
         'images/'
       ],
-      prepend: 'https://ember-container-query.herokuapp.com/'
+      prepend: 'https://ember-container-query.netlify.app/'
     }
   });
 
