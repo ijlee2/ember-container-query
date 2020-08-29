@@ -8,7 +8,7 @@ _Make container queries that harness the power of Ember Octane._
 
 ![Demo of ember-container-query](https://user-images.githubusercontent.com/16869656/82177207-72699c00-989e-11ea-9cb6-2e388c5e98c0.gif)
 
-Open the [demo app](https://ember-container-query.herokuapp.com/) to see `ember-container-query` in action. (There's even a 404 page!)
+Open the [demo app](https://ember-container-query.netlify.app/) to see `ember-container-query` in action. (There's even a 404 page!)
 
 
 Installation
