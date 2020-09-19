@@ -1,3 +1,15 @@
+## 1.1.4 (2020-09-19)
+
+### Internal
+* [#58](https://github.com/ijlee2/ember-container-query/pull/58) Updated development dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#57](https://github.com/ijlee2/ember-container-query/pull/57) Updated CI ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.1.3 (2020-08-29)
 
 ### Internal
