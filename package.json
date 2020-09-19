@@ -24,6 +24,7 @@
   },
   "scripts": {
     "build": "ember build --environment=production",
+    "build:test": "ember build --environment=test",
     "changelog": "lerna-changelog",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*",
     "lint:dependency": "ember dependency-lint",
