@@ -15,8 +15,8 @@ env:
   PERCY_PARALLEL_TOTAL: 9
 
 jobs:
-  build-ember-app:
-    name: Build Ember app
+  build-app:
+    name: Build app for testing
     runs-on: ubuntu-latest
     timeout-minutes: 7
     steps:
@@ -46,10 +46,10 @@ jobs:
         run: yarn install --frozen-lockfile
         if: steps.cache-dependencies.outputs.cache-hit != 'true'
 
-      - name: Build Ember app
-        run: yarn ember build --environment=test
+      - name: Build app
+        run: yarn build:test
 
-      - name: Upload built Ember app
+      - name: Upload app
         uses: actions/upload-artifact@v2
         with:
           name: dist
@@ -93,7 +93,7 @@ jobs:
 
   test-addon:
     name: Test addon
-    needs: [build-ember-app]
+    needs: [build-app]
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -133,7 +133,7 @@ jobs:
         run: yarn install --frozen-lockfile
         if: steps.cache-dependencies.outputs.cache-hit != 'true'
 
-      - name: Download built Ember app
+      - name: Download app
         uses: actions/download-artifact@v2
         with:
           name: dist
