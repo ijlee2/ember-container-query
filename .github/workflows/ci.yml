@@ -6,6 +6,7 @@ on:
       - main
   pull_request:
   pull_request_target:
+    types: [opened, synchronize, reopened]
   schedule:
     # Run the workflow every Monday at 6 am CST
     - cron: '0 11 * * MON'
