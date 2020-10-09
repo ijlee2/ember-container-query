@@ -19,11 +19,8 @@ export default class WidgetsWidget2StackedChartComponent extends Component {
   @tracked height = 0;
   @tracked width = 0;
 
-
   get color() {
-    return scaleOrdinal()
-      .domain(musicFormats)
-      .range(paletteColors);
+    return scaleOrdinal().domain(musicFormats).range(paletteColors);
   }
 
   get data() {
@@ -35,7 +32,7 @@ export default class WidgetsWidget2StackedChartComponent extends Component {
       top: 20,
       right: 15,
       bottom: 30,
-      left: 35
+      left: 35,
     };
   }
 
@@ -46,11 +43,15 @@ export default class WidgetsWidget2StackedChartComponent extends Component {
       .order(stackOrderReverse);
 
     const bar = Array.from(
-      rollup(this.data, ([d]) => d, d => d.year, d => d.musicFormat).values()
+      rollup(
+        this.data,
+        ([d]) => d,
+        d => d.year,
+        d => d.musicFormat
+      ).values()
     );
 
-    const foobar = foo(bar)
-      .map(s => (s.forEach(d => d.data = d.data.get(s.key)), s));
+    const foobar = foo(bar).map(s => (s.forEach(d => (d.data = d.data.get(s.key))), s));
 
     return foobar;
   }
@@ -58,9 +59,8 @@ export default class WidgetsWidget2StackedChartComponent extends Component {
   get xAxis() {
     const { height, margin, xScale } = this;
 
-    return g => g
-      .attr('transform', `translate(0, ${height - margin.bottom})`)
-      .call(
+    return g =>
+      g.attr('transform', `translate(0, ${height - margin.bottom})`).call(
         axisBottom(xScale)
           .tickValues(ticks(...extent(xScale.domain()), 5))
           .tickSizeOuter(0)
@@ -78,30 +78,34 @@ export default class WidgetsWidget2StackedChartComponent extends Component {
   get yAxis() {
     const { data, margin, yScale } = this;
 
-    return g => g
-      .attr('transform', `translate(${margin.left}, 0)`)
-      .call(
-        axisLeft(yScale)
-          .tickFormat(x => (x / 1e9).toFixed(0))
-          .tickValues(ticks(...extent(yScale.domain()), 5))
-      )
-      .call(g => g.select('.domain').remove())
-      .call(g => g.select('.tick:last-of-type text').clone()
-        .attr('x', 3)
-        .attr('text-anchor', 'start')
-        .attr('font-weight', 'bold')
-        .text(data.y)
-      );
+    return g =>
+      g
+        .attr('transform', `translate(${margin.left}, 0)`)
+        .call(
+          axisLeft(yScale)
+            .tickFormat(x => (x / 1e9).toFixed(0))
+            .tickValues(ticks(...extent(yScale.domain()), 5))
+        )
+        .call(g => g.select('.domain').remove())
+        .call(g =>
+          g
+            .select('.tick:last-of-type text')
+            .clone()
+            .attr('x', 3)
+            .attr('text-anchor', 'start')
+            .attr('font-weight', 'bold')
+            .text(data.y)
+        );
   }
 
   get yScale() {
     const { height, margin, series } = this;
 
     return scaleLinear()
-      .domain([0, max(series, d => max(d, d => d[1]))]).nice()
+      .domain([0, max(series, d => max(d, d => d[1]))])
+      .nice()
       .range([height - margin.bottom, margin.top]);
   }
-
 
   @action refreshChart(element) {
     this.clearSvg(element);
@@ -133,18 +137,19 @@ export default class WidgetsWidget2StackedChartComponent extends Component {
       .selectAll('g')
       .data(series)
       .join('g')
-        .attr('fill', ({ key }) => color(key))
-        .call(g => g
+      .attr('fill', ({ key }) => color(key))
+      .call(g =>
+        g
           .selectAll('rect')
           .data(d => d)
           .join('rect')
-            .attr('x', d => xScale(d.data.year))
-            .attr('y', d => yScale(d[1]))
-            .attr('width', xScale.bandwidth() - 1)
-            .attr('height', d => Math.max(yScale(d[0]) - yScale(d[1]), 0))
+          .attr('x', d => xScale(d.data.year))
+          .attr('y', d => yScale(d[1]))
+          .attr('width', xScale.bandwidth() - 1)
+          .attr('height', d => Math.max(yScale(d[0]) - yScale(d[1]), 0))
           .append('title')
-            .text(d => `${d.data.musicFormat}, ${d.data.year} ${formatRevenue(d.data.revenue)}`)
-        );
+          .text(d => `${d.data.musicFormat}, ${d.data.year} ${formatRevenue(d.data.revenue)}`)
+      );
 
     svg.append('g').call(xAxis);
     svg.append('g').call(yAxis);

@@ -5,13 +5,12 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Integration | Component | container-query', function(hooks) {
+module('Integration | Component | container-query', function (hooks) {
   setupRenderingTest(hooks);
   setupContainerQueryTest(hooks);
 
-
-  module('When @debounce is passed', function() {
-    test('Container queries are debounced until the @debounce time passes', async function(assert) {
+  module('When @debounce is passed', function () {
+    test('Container queries are debounced until the @debounce time passes', async function (assert) {
       /*
         Caution:
 
@@ -68,9 +67,8 @@ module('Integration | Component | container-query', function(hooks) {
         tall: true,
         'ratio-type-A': true,
         'ratio-type-B': true,
-        'ratio-type-C': false
+        'ratio-type-C': false,
       });
-
 
       // After a resize, the container query results should remain the
       // same as before.
@@ -84,9 +82,8 @@ module('Integration | Component | container-query', function(hooks) {
         tall: true,
         'ratio-type-A': true,
         'ratio-type-B': true,
-        'ratio-type-C': false
+        'ratio-type-C': false,
       });
-
 
       await resizeContainer(800, 400);
 
@@ -98,9 +95,8 @@ module('Integration | Component | container-query', function(hooks) {
         tall: true,
         'ratio-type-A': true,
         'ratio-type-B': true,
-        'ratio-type-C': false
+        'ratio-type-C': false,
       });
-
 
       await resizeContainer(1000, 600);
 
@@ -112,9 +108,8 @@ module('Integration | Component | container-query', function(hooks) {
         tall: true,
         'ratio-type-A': true,
         'ratio-type-B': true,
-        'ratio-type-C': false
+        'ratio-type-C': false,
       });
-
 
       // After the debounce time passes, the container query results
       // will update.
@@ -128,7 +123,7 @@ module('Integration | Component | container-query', function(hooks) {
         tall: true,
         'ratio-type-A': false,
         'ratio-type-B': false,
-        'ratio-type-C': true
+        'ratio-type-C': true,
       });
     });
   });

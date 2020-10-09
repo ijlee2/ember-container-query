@@ -1,14 +1,14 @@
 export const COLOR_PALETTE = {
   '8 - Track': '#5B8DB8',
-  'CD': '#EE7423',
+  CD: '#EE7423',
   'CD Single': '#F59D3D',
-  'Cassette': '#7AAAD0',
+  Cassette: '#7AAAD0',
   'Cassette Single': '#9BC7E4',
   'DVD Audio': '#9D7760',
   'Download Album': '#7C4D79',
   'Download Music Video': '#D5A5C4',
   'Download Single': '#9B6A97',
-  'Kiosk': '#E1575A',
+  Kiosk: '#E1575A',
   'LP/EP': '#2A5784',
   'Limited Tier Paid Subscription': '#B4E0A7',
   'Music Video (Physical)': '#F1CF63',
@@ -18,9 +18,9 @@ export const COLOR_PALETTE = {
   'Other Tapes': '#BADDF1',
   'Paid Subscription': '#24693D',
   'Ringtones & Ringbacks': '#BE89AC',
-  'SACD': '#FFC686',
+  SACD: '#FFC686',
   'SoundExchange Distributions': '#7DC470',
-  'Synchronization': '#BBB1AC',
+  Synchronization: '#BBB1AC',
   'Vinyl Single': '#43719F',
 };
 
@@ -40,7 +40,6 @@ export function formatRevenue(revenue) {
   return `$${new Intl.NumberFormat().format(revenue.toFixed(0))}`;
 }
 
-
 /*
   Transform the raw data into something useful for visualization
 */
@@ -53,7 +52,6 @@ export function createDataForVisualization(rawData) {
     return { musicFormat, year, revenue };
   });
 }
-
 
 /*
   Transform the raw data into something useful for captions
@@ -71,7 +69,7 @@ function groupDataByMusicFormat(rawData) {
     const musicFormat = datum['Format'];
     const year = Number(datum['Year']);
     const revenue = Number(datum['Revenue (Inflation Adjusted)']);
-    const didMusicFormatExist = (revenue !== 0);
+    const didMusicFormatExist = revenue !== 0;
 
     if (accumulator[musicFormat]) {
       accumulator[musicFormat].data.set(year, revenue);
@@ -79,25 +77,20 @@ function groupDataByMusicFormat(rawData) {
       if (didMusicFormatExist) {
         accumulator[musicFormat].relevantYears = {
           min: Math.min(year, accumulator[musicFormat].relevantYears.min),
-          max: Math.max(year, accumulator[musicFormat].relevantYears.max)
+          max: Math.max(year, accumulator[musicFormat].relevantYears.max),
         };
       }
-
     } else {
       accumulator[musicFormat] = {
-        data: new Map([
-          [ year, revenue ]
-        ]),
+        data: new Map([[year, revenue]]),
         relevantYears: {
           min: didMusicFormatExist ? year : Infinity,
-          max: didMusicFormatExist ? year : -Infinity
-        }
+          max: didMusicFormatExist ? year : -Infinity,
+        },
       };
-
     }
 
     return accumulator;
-
   }, {});
 }
 
@@ -116,7 +109,7 @@ function sanitizeData(groupedData) {
 
     output[musicFormat] = {
       relevantData,
-      relevantYears
+      relevantYears,
     };
   });
 
@@ -126,21 +119,23 @@ function sanitizeData(groupedData) {
 function summarizeData(sanitizedData) {
   const summaries = [];
 
-  Object.keys(sanitizedData).sort().forEach(musicFormat => {
-    const { relevantData, relevantYears } = sanitizedData[musicFormat];
-    const numRelevantYears = relevantYears.max - relevantYears.min + 1;
+  Object.keys(sanitizedData)
+    .sort()
+    .forEach(musicFormat => {
+      const { relevantData, relevantYears } = sanitizedData[musicFormat];
+      const numRelevantYears = relevantYears.max - relevantYears.min + 1;
 
-    const revenues = Array.from(relevantData.values());
-    const totalRevenue = revenues.reduce((accumulator, sum) => accumulator + sum, 0);
-    const averageRevenue = totalRevenue / numRelevantYears;
+      const revenues = Array.from(relevantData.values());
+      const totalRevenue = revenues.reduce((accumulator, sum) => accumulator + sum, 0);
+      const averageRevenue = totalRevenue / numRelevantYears;
 
-    summaries.push({
-      musicFormat,
-      markerColor: COLOR_PALETTE[musicFormat],
-      averageRevenue: formatRevenue(averageRevenue),
-      relevantYears
+      summaries.push({
+        musicFormat,
+        markerColor: COLOR_PALETTE[musicFormat],
+        averageRevenue: formatRevenue(averageRevenue),
+        relevantYears,
+      });
     });
-  });
 
   return summaries;
 }

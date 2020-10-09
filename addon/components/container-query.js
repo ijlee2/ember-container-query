@@ -46,7 +46,7 @@ export default class ContainerQueryComponent extends Component {
       const { dimension, min, max } = metadata;
       const value = this[dimension];
 
-      queryResults[featureName] = (min <= value && value < max);
+      queryResults[featureName] = min <= value && value < max;
     }
 
     this.queryResults = queryResults;
@@ -60,18 +60,14 @@ export default class ContainerQueryComponent extends Component {
 
       if (prefix) {
         attributeName = `data-${prefix}-${featureName}`;
-
       } else {
         attributeName = `data-${featureName}`;
-
       }
 
       if (meetsFeature) {
         element.setAttribute(attributeName, '');
-
       } else {
         element.removeAttribute(attributeName);
-
       }
     }
   }

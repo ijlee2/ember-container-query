@@ -5,13 +5,12 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Integration | Component | container-query', function(hooks) {
+module('Integration | Component | container-query', function (hooks) {
   setupRenderingTest(hooks);
   setupContainerQueryTest(hooks);
 
-
-  module('When @dataAttributePrefix is undefined', function(hooks) {
-    hooks.beforeEach(async function() {
+  module('When @dataAttributePrefix is undefined', function (hooks) {
+    hooks.beforeEach(async function () {
       await render(hbs`
         <div
           data-test-parent-element
@@ -48,8 +47,7 @@ module('Integration | Component | container-query', function(hooks) {
       `);
     });
 
-
-    test('The component creates data attributes when it is rendered', async function(assert) {
+    test('The component creates data attributes when it is rendered', async function (assert) {
       assert.areDataAttributesCorrect({
         'data-container-query-small': '',
         'data-container-query-medium': undefined,
@@ -58,12 +56,11 @@ module('Integration | Component | container-query', function(hooks) {
         'data-container-query-tall': '',
         'data-container-query-ratio-type-A': '',
         'data-container-query-ratio-type-B': '',
-        'data-container-query-ratio-type-C': undefined
+        'data-container-query-ratio-type-C': undefined,
       });
     });
 
-
-    test('The component updates data attributes when it is resized', async function(assert) {
+    test('The component updates data attributes when it is resized', async function (assert) {
       await resizeContainer(500, 300);
 
       assert.areDataAttributesCorrect({
@@ -74,9 +71,8 @@ module('Integration | Component | container-query', function(hooks) {
         'data-container-query-tall': undefined,
         'data-container-query-ratio-type-A': undefined,
         'data-container-query-ratio-type-B': undefined,
-        'data-container-query-ratio-type-C': ''
+        'data-container-query-ratio-type-C': '',
       });
-
 
       await resizeContainer(800, 400);
 
@@ -88,9 +84,8 @@ module('Integration | Component | container-query', function(hooks) {
         'data-container-query-tall': undefined,
         'data-container-query-ratio-type-A': undefined,
         'data-container-query-ratio-type-B': undefined,
-        'data-container-query-ratio-type-C': undefined
+        'data-container-query-ratio-type-C': undefined,
       });
-
 
       await resizeContainer(1000, 600);
 
@@ -102,14 +97,13 @@ module('Integration | Component | container-query', function(hooks) {
         'data-container-query-tall': '',
         'data-container-query-ratio-type-A': undefined,
         'data-container-query-ratio-type-B': undefined,
-        'data-container-query-ratio-type-C': ''
+        'data-container-query-ratio-type-C': '',
       });
     });
   });
 
-
-  module('When @dataAttributePrefix is passed (empty string)', function(hooks) {
-    hooks.beforeEach(async function() {
+  module('When @dataAttributePrefix is passed (empty string)', function (hooks) {
+    hooks.beforeEach(async function () {
       await render(hbs`
         <div
           data-test-parent-element
@@ -147,8 +141,7 @@ module('Integration | Component | container-query', function(hooks) {
       `);
     });
 
-
-    test('The component creates data attributes when it is rendered', async function(assert) {
+    test('The component creates data attributes when it is rendered', async function (assert) {
       assert.areDataAttributesCorrect({
         'data-small': '',
         'data-medium': undefined,
@@ -157,12 +150,11 @@ module('Integration | Component | container-query', function(hooks) {
         'data-tall': '',
         'data-ratio-type-A': '',
         'data-ratio-type-B': '',
-        'data-ratio-type-C': undefined
+        'data-ratio-type-C': undefined,
       });
     });
 
-
-    test('The component updates data attributes when it is resized', async function(assert) {
+    test('The component updates data attributes when it is resized', async function (assert) {
       await resizeContainer(500, 300);
 
       assert.areDataAttributesCorrect({
@@ -173,9 +165,8 @@ module('Integration | Component | container-query', function(hooks) {
         'data-tall': undefined,
         'data-ratio-type-A': undefined,
         'data-ratio-type-B': undefined,
-        'data-ratio-type-C': ''
+        'data-ratio-type-C': '',
       });
-
 
       await resizeContainer(800, 400);
 
@@ -187,9 +178,8 @@ module('Integration | Component | container-query', function(hooks) {
         'data-tall': undefined,
         'data-ratio-type-A': undefined,
         'data-ratio-type-B': undefined,
-        'data-ratio-type-C': undefined
+        'data-ratio-type-C': undefined,
       });
-
 
       await resizeContainer(1000, 600);
 
@@ -201,14 +191,13 @@ module('Integration | Component | container-query', function(hooks) {
         'data-tall': '',
         'data-ratio-type-A': undefined,
         'data-ratio-type-B': undefined,
-        'data-ratio-type-C': ''
+        'data-ratio-type-C': '',
       });
     });
   });
 
-
-  module('When @dataAttributePrefix is passed (non-empty string)', function(hooks) {
-    hooks.beforeEach(async function() {
+  module('When @dataAttributePrefix is passed (non-empty string)', function (hooks) {
+    hooks.beforeEach(async function () {
       await render(hbs`
         <div
           data-test-parent-element
@@ -246,8 +235,7 @@ module('Integration | Component | container-query', function(hooks) {
       `);
     });
 
-
-    test('The component creates data attributes when it is rendered', async function(assert) {
+    test('The component creates data attributes when it is rendered', async function (assert) {
       assert.areDataAttributesCorrect({
         'data-cq-small': '',
         'data-cq-medium': undefined,
@@ -256,12 +244,11 @@ module('Integration | Component | container-query', function(hooks) {
         'data-cq-tall': '',
         'data-cq-ratio-type-A': '',
         'data-cq-ratio-type-B': '',
-        'data-cq-ratio-type-C': undefined
+        'data-cq-ratio-type-C': undefined,
       });
     });
 
-
-    test('The component updates data attributes when it is resized', async function(assert) {
+    test('The component updates data attributes when it is resized', async function (assert) {
       await resizeContainer(500, 300);
 
       assert.areDataAttributesCorrect({
@@ -272,9 +259,8 @@ module('Integration | Component | container-query', function(hooks) {
         'data-cq-tall': undefined,
         'data-cq-ratio-type-A': undefined,
         'data-cq-ratio-type-B': undefined,
-        'data-cq-ratio-type-C': ''
+        'data-cq-ratio-type-C': '',
       });
-
 
       await resizeContainer(800, 400);
 
@@ -286,9 +272,8 @@ module('Integration | Component | container-query', function(hooks) {
         'data-cq-tall': undefined,
         'data-cq-ratio-type-A': undefined,
         'data-cq-ratio-type-B': undefined,
-        'data-cq-ratio-type-C': undefined
+        'data-cq-ratio-type-C': undefined,
       });
-
 
       await resizeContainer(1000, 600);
 
@@ -300,7 +285,7 @@ module('Integration | Component | container-query', function(hooks) {
         'data-cq-tall': '',
         'data-cq-ratio-type-A': undefined,
         'data-cq-ratio-type-B': undefined,
-        'data-cq-ratio-type-C': ''
+        'data-cq-ratio-type-C': '',
       });
     });
   });

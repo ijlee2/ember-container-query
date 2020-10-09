@@ -12,12 +12,11 @@ const DEVICES = {
 
   '400,900': 'w1-h3',
   '900,900': 'w2-h3',
-  '1400,900': 'w3-h3'
+  '1400,900': 'w3-h3',
 };
 
 const supportedDevices = Object.values(DEVICES);
 const supportedFilters = /(@w1\s+|@w2\s+|@w3\s+|@h1\s+|@h2\s+|@h3\s+)/g;
-
 
 /*
   `takeSnapshot` is designed to ensure that,
@@ -68,45 +67,30 @@ export default async function takeSnapshot(qunitAssert, options = {}) {
 
   await percySnapshot(name, {
     widths: [width],
-    minHeight: height
+    minHeight: height,
   });
 }
-
 
 function checkInput(qunitAssert, options) {
   const { description, only } = options;
 
   assert(
-    '`qunitAssert` must be QUnit\'s assert object.',
+    "`qunitAssert` must be QUnit's assert object.",
     typeof qunitAssert === 'object' && !!qunitAssert.test
   );
 
   if (description !== undefined) {
-    assert(
-      '`options.description` must be a string.',
-      typeof description === 'string'
-    );
+    assert('`options.description` must be a string.', typeof description === 'string');
 
-    assert(
-      '`options.description` cannot be empty.',
-      description !== ''
-    );
+    assert('`options.description` cannot be empty.', description !== '');
   }
 
   if (only !== undefined) {
-    assert(
-      '`options.only` must be an array of strings.',
-      Array.isArray(only)
-    );
+    assert('`options.only` must be an array of strings.', Array.isArray(only));
 
-    assert(
-      '`options.only` cannot be empty.',
-      only.length >= 1
-    );
+    assert('`options.only` cannot be empty.', only.length >= 1);
 
-    const listOfSupportedDevices = supportedDevices
-      .map(device => `'${device}'`)
-      .join(', ');
+    const listOfSupportedDevices = supportedDevices.map(device => `'${device}'`).join(', ');
 
     assert(
       `\`options.only\` cannot include strings other than ${listOfSupportedDevices}.`,
@@ -115,21 +99,16 @@ function checkInput(qunitAssert, options) {
   }
 }
 
-
 function getDevice() {
   const { height, width } = getWindowSize();
 
   const windowSize = `${width},${height}`;
   const device = DEVICES[windowSize];
 
-  assert(
-    `The window size is incorrect. Found ${windowSize}.`,
-    !!device
-  );
+  assert(`The window size is incorrect. Found ${windowSize}.`, !!device);
 
   return device;
 }
-
 
 /*
   `getName` creates the snapshot name in the following format:
@@ -151,19 +130,19 @@ function getName(qunitAssert, description) {
 
   name += ` ◆ ${moduleName}`;
 
-  const appliedFilters = name.match(supportedFilters)
+  const appliedFilters = name
+    .match(supportedFilters)
     .map(appliedFilter => appliedFilter.trim())
     .join(' ');
 
   return `${appliedFilters} ◆ ${name.replace(supportedFilters, '')}`;
 }
 
-
 function getWindowSize() {
   const queryParams = new URLSearchParams(window.location.search);
 
   return {
     height: Number(queryParams.get('height')),
-    width: Number(queryParams.get('width'))
+    width: Number(queryParams.get('width')),
   };
 }

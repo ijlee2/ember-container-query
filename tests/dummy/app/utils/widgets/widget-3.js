@@ -14,33 +14,34 @@ export function findBestFittingImage(images, containerDimensions) {
 
   const { aspectRatio, height, width } = containerDimensions;
 
-  const imagesRanked = images.map(image => {
-    const { url, metadata } = image;
+  const imagesRanked = images
+    .map(image => {
+      const { url, metadata } = image;
 
-    const imageHeight = metadata.height;
-    const imageWidth = metadata.width;
-    const imageAspectRatio = imageWidth / imageHeight;
+      const imageHeight = metadata.height;
+      const imageWidth = metadata.width;
+      const imageAspectRatio = imageWidth / imageHeight;
 
-    const arMetric = Math.abs(imageAspectRatio - aspectRatio);
-    const hwMetric = ((imageHeight - height) ** 3 + (imageWidth - width) ** 3) ** (1/3);
-    const hwTiebreaker = ((imageHeight - height) ** 2 + (imageWidth - width) ** 2) ** (1/2);
+      const arMetric = Math.abs(imageAspectRatio - aspectRatio);
+      const hwMetric = ((imageHeight - height) ** 3 + (imageWidth - width) ** 3) ** (1 / 3);
+      const hwTiebreaker = ((imageHeight - height) ** 2 + (imageWidth - width) ** 2) ** (1 / 2);
 
-    return {
-      url,
-      arMetric,
-      hwMetric: Number.isNaN(hwMetric) ? Infinity : hwMetric,
-      hwTiebreaker
-    };
-  })
-  .sort((a, b) => {
-    if (a.arMetric > b.arMetric) return 1;
-    if (a.arMetric < b.arMetric) return -1;
+      return {
+        url,
+        arMetric,
+        hwMetric: Number.isNaN(hwMetric) ? Infinity : hwMetric,
+        hwTiebreaker,
+      };
+    })
+    .sort((a, b) => {
+      if (a.arMetric > b.arMetric) return 1;
+      if (a.arMetric < b.arMetric) return -1;
 
-    if (a.hwMetric > b.hwMetric) return 1;
-    if (a.hwMetric < b.hwMetric) return -1;
+      if (a.hwMetric > b.hwMetric) return 1;
+      if (a.hwMetric < b.hwMetric) return -1;
 
-    return a.hwTiebreaker - b.hwTiebreaker;
-  });
+      return a.hwTiebreaker - b.hwTiebreaker;
+    });
 
   return imagesRanked[0].url;
 }

@@ -3,11 +3,10 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Integration | Helper | cq-height', function(hooks) {
+module('Integration | Helper | cq-height', function (hooks) {
   setupRenderingTest(hooks);
 
-
-  test('can return a hash with default values', async function(assert) {
+  test('can return a hash with default values', async function (assert) {
     await render(hbs`
       {{#let (cq-height) as |output|}}
         <p data-test-value="dimension">{{output.dimension}}</p>
@@ -21,8 +20,7 @@ module('Integration | Helper | cq-height', function(hooks) {
     assert.dom('[data-test-value="max"]').hasText('Infinity');
   });
 
-
-  test('if min and max are provided, returns them as they are', async function(assert) {
+  test('if min and max are provided, returns them as they are', async function (assert) {
     await render(hbs`
       {{#let (cq-height min=100 max=200) as |output|}}
         <p data-test-value="dimension">{{output.dimension}}</p>

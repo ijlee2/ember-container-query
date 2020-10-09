@@ -6,13 +6,12 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Integration | Component | container-query', function(hooks) {
+module('Integration | Component | container-query', function (hooks) {
   setupRenderingTest(hooks);
   setupContainerQueryTest(hooks);
 
-
-  module('When @tagName is undefined', function(hooks) {
-    hooks.beforeEach(async function() {
+  module('When @tagName is undefined', function (hooks) {
+    hooks.beforeEach(async function () {
       await render(hbs`
         <div
           data-test-parent-element
@@ -49,36 +48,27 @@ module('Integration | Component | container-query', function(hooks) {
       `);
     });
 
-
-    test('The component has the <div> tag', async function(assert) {
-      assert.dom('[data-test-container-query]')
-        .hasTagName('div', 'Tag name is correct.');
+    test('The component has the <div> tag', async function (assert) {
+      assert.dom('[data-test-container-query]').hasTagName('div', 'Tag name is correct.');
     });
 
-
-    test('The component continues to have the <div> tag when it is resized', async function(assert) {
+    test('The component continues to have the <div> tag when it is resized', async function (assert) {
       await resizeContainer(500, 300);
 
-      assert.dom('[data-test-container-query]')
-        .hasTagName('div', 'Tag name is correct.');
-
+      assert.dom('[data-test-container-query]').hasTagName('div', 'Tag name is correct.');
 
       await resizeContainer(800, 400);
 
-      assert.dom('[data-test-container-query]')
-        .hasTagName('div', 'Tag name is correct.');
-
+      assert.dom('[data-test-container-query]').hasTagName('div', 'Tag name is correct.');
 
       await resizeContainer(1000, 600);
 
-      assert.dom('[data-test-container-query]')
-        .hasTagName('div', 'Tag name is correct.');
+      assert.dom('[data-test-container-query]').hasTagName('div', 'Tag name is correct.');
     });
   });
 
-
-  module('When @tagName is passed', function(hooks) {
-    hooks.beforeEach(async function() {
+  module('When @tagName is passed', function (hooks) {
+    hooks.beforeEach(async function () {
       await render(hbs`
         <div
           data-test-parent-element
@@ -116,36 +106,27 @@ module('Integration | Component | container-query', function(hooks) {
       `);
     });
 
-
-    test('The component has the correct tag', async function(assert) {
-      assert.dom('[data-test-container-query]')
-        .hasTagName('section', 'Tag name is correct.');
+    test('The component has the correct tag', async function (assert) {
+      assert.dom('[data-test-container-query]').hasTagName('section', 'Tag name is correct.');
     });
 
-
-    test('The component continues to have the correct tag when it is resized', async function(assert) {
+    test('The component continues to have the correct tag when it is resized', async function (assert) {
       await resizeContainer(500, 300);
 
-      assert.dom('[data-test-container-query]')
-        .hasTagName('section', 'Tag name is correct.');
-
+      assert.dom('[data-test-container-query]').hasTagName('section', 'Tag name is correct.');
 
       await resizeContainer(800, 400);
 
-      assert.dom('[data-test-container-query]')
-        .hasTagName('section', 'Tag name is correct.');
-
+      assert.dom('[data-test-container-query]').hasTagName('section', 'Tag name is correct.');
 
       await resizeContainer(1000, 600);
 
-      assert.dom('[data-test-container-query]')
-        .hasTagName('section', 'Tag name is correct.');
+      assert.dom('[data-test-container-query]').hasTagName('section', 'Tag name is correct.');
     });
   });
 
-
-  module('When @tagName is updated', function(hooks) {
-    hooks.beforeEach(async function() {
+  module('When @tagName is updated', function (hooks) {
+    hooks.beforeEach(async function () {
       this.tagName = 'section';
 
       await render(hbs`
@@ -189,32 +170,32 @@ module('Integration | Component | container-query', function(hooks) {
       await settled();
     });
 
-
-    test('The component doesn\'t update the tag', async function(assert) {
-      assert.dom('[data-test-container-query]')
+    test("The component doesn't update the tag", async function (assert) {
+      assert
+        .dom('[data-test-container-query]')
         .hasTagName('section', 'Tag name is correct.')
         .doesNotHaveTagName('article', 'Tag name did not change.');
     });
 
-
-    test('The component continues to not update the tag when it is resized', async function(assert) {
+    test('The component continues to not update the tag when it is resized', async function (assert) {
       await resizeContainer(500, 300);
 
-      assert.dom('[data-test-container-query]')
+      assert
+        .dom('[data-test-container-query]')
         .hasTagName('section', 'Tag name is correct.')
         .doesNotHaveTagName('article', 'Tag name did not change.');
-
 
       await resizeContainer(800, 400);
 
-      assert.dom('[data-test-container-query]')
+      assert
+        .dom('[data-test-container-query]')
         .hasTagName('section', 'Tag name is correct.')
         .doesNotHaveTagName('article', 'Tag name did not change.');
 
-
       await resizeContainer(1000, 600);
 
-      assert.dom('[data-test-container-query]')
+      assert
+        .dom('[data-test-container-query]')
         .hasTagName('section', 'Tag name is correct.')
         .doesNotHaveTagName('article', 'Tag name did not change.');
     });
