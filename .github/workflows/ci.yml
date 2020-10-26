@@ -1,6 +1,6 @@
 name: CI
 
-on: 
+on:
   push:
     branches:
       - main
@@ -9,7 +9,7 @@ on:
     types: [opened, synchronize, reopened]
   schedule:
     # Run the workflow every Monday at 6 am CST
-    - cron: '0 11 * * MON'
+    - cron: "0 11 * * MON"
 
 env:
   NODE_VERSION: 12.18
@@ -57,7 +57,6 @@ jobs:
           name: dist
           path: dist
 
-
   lint:
     name: Lint files and dependencies
     runs-on: ubuntu-latest
@@ -92,7 +91,6 @@ jobs:
       - name: Lint
         run: yarn lint
 
-
   test-addon:
     name: Test addon
     needs: [build-app]
@@ -100,13 +98,13 @@ jobs:
     strategy:
       matrix:
         width:
-          - 'w1'
-          - 'w2'
-          - 'w3'
+          - "w1"
+          - "w2"
+          - "w3"
         height:
-          - 'h1'
-          - 'h2'
-          - 'h3'
+          - "h1"
+          - "h2"
+          - "h3"
     timeout-minutes: 7
     steps:
       - name: Check out a copy of the repo
@@ -150,22 +148,22 @@ jobs:
           PERCY_PARALLEL_TOTAL: ${{ env.PERCY_PARALLEL_TOTAL }}
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
-
   test-compatibility:
     name: Test compatibility
     runs-on: ubuntu-latest
     strategy:
       matrix:
         scenario:
-          - 'ember-lts-3.16'
-          - 'ember-release'
-          - 'ember-beta'
+          - "ember-lts-3.16"
+          - "ember-lts-3.20"
+          - "ember-release"
+          - "ember-beta"
         width:
-          - 'w1'
-          - 'w2'
-          - 'w3'
+          - "w1"
+          - "w2"
+          - "w3"
         height:
-          - 'h3'
+          - "h3"
     timeout-minutes: 7
     steps:
       - name: Check out a copy of the repo
