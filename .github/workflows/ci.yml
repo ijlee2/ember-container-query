@@ -157,8 +157,8 @@ jobs:
     strategy:
       matrix:
         scenario:
-          - 'ember-lts-3.20'
           - 'ember-lts-3.16'
+          - 'ember-lts-3.20'
           - 'ember-release'
           - 'ember-beta'
         width:
