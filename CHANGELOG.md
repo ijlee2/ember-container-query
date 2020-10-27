@@ -1,3 +1,20 @@
+## 1.1.5 (2020-10-27)
+
+### Internal
+* [#66](https://github.com/ijlee2/ember-container-query/pull/66) Upgraded ember-source to v3.22.0 ([@ijlee2](https://github.com/ijlee2))
+* [#63](https://github.com/ijlee2/ember-container-query/pull/63) Use ember-truth-helpers instead of custom helpers ([@esbanarango](https://github.com/esbanarango))
+
+### Documentation
+* [#65](https://github.com/ijlee2/ember-container-query/pull/65) Add ember-lts-3.20 to ember-try test matrix  ([@takshch](https://github.com/takshch))
+* [#61](https://github.com/ijlee2/ember-container-query/pull/61) Added demoURL to package.json ([@cah-danmonroe](https://github.com/cah-danmonroe))
+
+### Committers: 4
+- Dan Monroe ([@cah-danmonroe](https://github.com/cah-danmonroe))
+- Esteban Arango Medina ([@esbanarango](https://github.com/esbanarango))
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+- Taksh Chanana ([@takshch](https://github.com/takshch))
+
+
 ## 1.1.4 (2020-09-19)
 
 ### Internal
