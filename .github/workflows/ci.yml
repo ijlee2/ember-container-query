@@ -18,7 +18,7 @@ jobs:
   build-app:
     name: Build app for testing
     runs-on: ubuntu-latest
-    timeout-minutes: 7
+    timeout-minutes: 5
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
@@ -59,7 +59,7 @@ jobs:
   lint:
     name: Lint files and dependencies
     runs-on: ubuntu-latest
-    timeout-minutes: 7
+    timeout-minutes: 3
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
@@ -105,7 +105,7 @@ jobs:
           - 'h1'
           - 'h2'
           - 'h3'
-    timeout-minutes: 7
+    timeout-minutes: 5
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
@@ -165,7 +165,7 @@ jobs:
           - 'w3'
         height:
           - 'h3'
-    timeout-minutes: 7
+    timeout-minutes: 5
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
