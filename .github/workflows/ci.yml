@@ -159,6 +159,7 @@ jobs:
           - 'ember-lts-3.20'
           - 'ember-release'
           - 'ember-beta'
+          - 'ember-canary'
         width:
           - 'w1'
           - 'w2'
