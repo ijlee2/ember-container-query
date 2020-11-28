@@ -60,18 +60,14 @@ export default class ContainerQueryComponent extends Component {
 
       if (prefix) {
         attributeName = `data-${prefix}-${featureName}`;
-
       } else {
         attributeName = `data-${featureName}`;
-
       }
 
       if (meetsFeature) {
         element.setAttribute(attributeName, '');
-
       } else {
         element.removeAttribute(attributeName);
-
       }
     }
   }
