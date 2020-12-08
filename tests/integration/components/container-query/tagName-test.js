@@ -1,5 +1,4 @@
-import { set } from '@ember/object';
-import { render, settled } from '@ember/test-helpers';
+import { render } from '@ember/test-helpers';
 import setupContainerQueryTest from 'dummy/tests/helpers/container-query';
 import resizeContainer from 'dummy/tests/helpers/resize-container';
 import { hbs } from 'ember-cli-htmlbars';
@@ -184,9 +183,7 @@ module('Integration | Component | container-query', function(hooks) {
         </div>
       `);
 
-      set(this, 'tagName', 'article');
-
-      await settled();
+      this.set('tagName', 'article');
     });
 
 

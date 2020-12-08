@@ -47,8 +47,8 @@ export function formatRevenue(revenue) {
 export function createDataForVisualization(rawData) {
   return rawData.map(datum => {
     const musicFormat = datum['Format'];
-    const year = Number(datum['Year']);
-    const revenue = Number(datum['Revenue (Inflation Adjusted)']);
+    const year = parseInt(datum['Year'], 10);
+    const revenue = parseInt(datum['Revenue (Inflation Adjusted)'], 10);
 
     return { musicFormat, year, revenue };
   });
@@ -69,8 +69,8 @@ export function createSummariesForCaptions(rawData) {
 function groupDataByMusicFormat(rawData) {
   return rawData.reduce((accumulator, datum) => {
     const musicFormat = datum['Format'];
-    const year = Number(datum['Year']);
-    const revenue = Number(datum['Revenue (Inflation Adjusted)']);
+    const year = parseInt(datum['Year'], 10);
+    const revenue = parseInt(datum['Revenue (Inflation Adjusted)'], 10);
     const didMusicFormatExist = (revenue !== 0);
 
     if (accumulator[musicFormat]) {

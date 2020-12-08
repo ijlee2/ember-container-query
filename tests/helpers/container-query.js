@@ -48,7 +48,7 @@ function setupCustomAssertions(assert) {
         'Width and height are correct.'
       );
 
-    const aspectRatio = Number(find('[data-test-aspect-ratio]').textContent.trim());
+    const aspectRatio = parseFloat(find('[data-test-aspect-ratio]').textContent.trim());
     const expectedAspectRatio = expectedWidth / expectedHeight;
     const tolerance = 0.001;
 

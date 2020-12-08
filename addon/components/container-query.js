@@ -20,12 +20,8 @@ export default class ContainerQueryComponent extends Component {
     return this.args.debounce ?? 0;
   }
 
-  constructor() {
-    super(...arguments);
-
-    // The dynamic tag is restricted to be immutable
-    this.tagName = this.args.tagName || 'div';
-  }
+  // The dynamic tag is restricted to be immutable
+  tagName = this.args.tagName ?? 'div';
 
   @action queryContainer(element) {
     this.measureDimensions(element);
@@ -60,18 +56,14 @@ export default class ContainerQueryComponent extends Component {
 
       if (prefix) {
         attributeName = `data-${prefix}-${featureName}`;
-
       } else {
         attributeName = `data-${featureName}`;
-
       }
 
       if (meetsFeature) {
         element.setAttribute(attributeName, '');
-
       } else {
         element.removeAttribute(attributeName);
-
       }
     }
   }

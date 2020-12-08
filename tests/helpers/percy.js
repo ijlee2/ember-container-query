@@ -163,7 +163,7 @@ function getWindowSize() {
   const queryParams = new URLSearchParams(window.location.search);
 
   return {
-    height: Number(queryParams.get('height')),
-    width: Number(queryParams.get('width'))
+    height: parseInt(queryParams.get('height'), 10),
+    width: parseInt(queryParams.get('width'), 10)
   };
 }
