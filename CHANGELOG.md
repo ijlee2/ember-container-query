@@ -1,3 +1,18 @@
+## 1.1.6 (2020-12-16)
+
+### Internal
+* [#72](https://github.com/ijlee2/ember-container-query/pull/72) Upgraded ember-source to v3.23 ([@ijlee2](https://github.com/ijlee2))
+* [#68](https://github.com/ijlee2/ember-container-query/pull/68) Upgraded ember-element-helper to v0.3.2 ([@ijlee2](https://github.com/ijlee2))
+* [#67](https://github.com/ijlee2/ember-container-query/pull/67) Upgrade percy/exec-action to v0.3.1 ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#70](https://github.com/ijlee2/ember-container-query/pull/70) Research: Investigate reactivity ([@ijlee2](https://github.com/ijlee2))
+* [#69](https://github.com/ijlee2/ember-container-query/pull/69) Add ember-canary to ember-try test matrix ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.1.5 (2020-10-27)
 
 ### Internal
