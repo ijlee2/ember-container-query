@@ -1,6 +1,6 @@
 import { visit } from '@ember/test-helpers';
 import resetViewport from 'dummy/tests/helpers/reset-viewport';
-import a11yAudit from 'ember-a11y-testing/test-support/audit';
+import { a11yAudit } from 'ember-a11y-testing/test-support';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
