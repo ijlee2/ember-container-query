@@ -5,7 +5,7 @@ import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { COLOR_PALETTE, formatRevenue } from 'dummy/utils/widgets/widget-2';
-import { throttle } from '@ember/runloop';
+import { debounce } from '@ember/runloop';
 
 import { extent, max, rollup, ticks } from 'd3-array';
 import { axisBottom, axisLeft } from 'd3-axis';
@@ -111,7 +111,7 @@ export default class WidgetsWidget2StackedChartComponent extends Component {
   }
 
   @action onResize(entry) {
-    throttle(this, () => this.refreshChart(entry.target), 50);
+    debounce(this, () => this.refreshChart(entry.target), 50);
   }
 
   @action refreshChart(element) {
