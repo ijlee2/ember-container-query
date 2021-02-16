@@ -26,7 +26,7 @@ export default class ContainerQueryComponent extends Component {
 
   @action onResize(entry) {
     if (this.debounce > 0) {
-      debounce(this, () => this.queryContainer(entry.target), this.debounce);
+      debounce(this, this.queryContainer, entry.target, this.debounce);
     } else {
       this.queryContainer(entry.target);
     }
