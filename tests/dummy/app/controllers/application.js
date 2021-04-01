@@ -10,7 +10,7 @@ export default class ApplicationController extends Controller {
       element.classList.add(className);
     });
 
-    element.addEventListener('keyup', event => {
+    element.addEventListener('keyup', (event) => {
       if (event.key === 'Tab') {
         element.classList.remove(className);
       }

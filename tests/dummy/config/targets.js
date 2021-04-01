@@ -7,6 +7,6 @@ module.exports = {
     'last 2 Safari versions',
     // Latest versions of Microsoft Edge are built on top of Chromium.
     // However, not a significant number of users use the latest yet.
-    'Edge >= 18'
-  ]
+    'Edge >= 18',
+  ],
 };

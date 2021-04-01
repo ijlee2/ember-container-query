@@ -4,17 +4,19 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Integration | Component | container-query', function(hooks) {
+module('Integration | Component | container-query', function (hooks) {
   setupRenderingTest(hooks);
   setupContainerQueryTest(hooks);
 
-
-  module('...attributes', function() {
-    test('The component accepts splattributes', async function(assert) {
+  module('...attributes', function () {
+    test('The component accepts splattributes', async function (assert) {
       assert.expect(3);
 
       this.fetchData = () => {
-        assert.ok(true, '{{did-insert}} modifier works. (But we should find a better way to separate concerns!)');
+        assert.ok(
+          true,
+          '{{did-insert}} modifier works. (But we should find a better way to separate concerns!)'
+        );
       };
 
       await render(hbs`
@@ -54,7 +56,8 @@ module('Integration | Component | container-query', function(hooks) {
         </div>
       `);
 
-      assert.dom('[data-test-container-query]')
+      assert
+        .dom('[data-test-container-query]')
         .hasClass('unique-class-name', 'Providing a custom CSS class works.')
         .hasAttribute('local-class', 'container', 'ember-css-modules works.');
     });

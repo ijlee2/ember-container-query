@@ -25,9 +25,9 @@ module.exports = function (environment) {
 
   ENV['ember-a11y-testing'] = {
     componentOptions: {
-      turnAuditOff: true
-    }
-  }
+      turnAuditOff: true,
+    },
+  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

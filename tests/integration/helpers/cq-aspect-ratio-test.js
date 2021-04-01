@@ -3,11 +3,10 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Integration | Helper | cq-aspect-ratio', function(hooks) {
+module('Integration | Helper | cq-aspect-ratio', function (hooks) {
   setupRenderingTest(hooks);
 
-
-  test('can return a hash with default values', async function(assert) {
+  test('can return a hash with default values', async function (assert) {
     await render(hbs`
       {{#let (cq-aspect-ratio) as |output|}}
         <p data-test-value="dimension">{{output.dimension}}</p>
@@ -21,8 +20,7 @@ module('Integration | Helper | cq-aspect-ratio', function(hooks) {
     assert.dom('[data-test-value="max"]').hasText('Infinity');
   });
 
-
-  test('if min and max are provided, returns them as they are', async function(assert) {
+  test('if min and max are provided, returns them as they are', async function (assert) {
     await render(hbs`
       {{#let (cq-aspect-ratio min=0.25 max=0.75) as |output|}}
         <p data-test-value="dimension">{{output.dimension}}</p>

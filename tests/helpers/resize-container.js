@@ -7,13 +7,11 @@ import { find } from '@ember/test-helpers';
 // that should pass will always pass.
 const RERENDER_TIME = 100;
 
-
 export function timeout(milliseconds) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     later(resolve, milliseconds);
   });
 }
-
 
 export default async function resizeContainer(width, height) {
   let parentElement = find('[data-test-parent-element]');
