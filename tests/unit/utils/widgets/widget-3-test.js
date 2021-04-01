@@ -5,9 +5,9 @@ import { module, test } from 'qunit';
 const aspectRatios = [0.5, 1, 1.5, 2, 3, 4, 6];
 const heights = [100, 200, 300, 500, 800];
 
-module('Unit | Utility | widgets/widget-3', function() {
-  module('findBestFittingImage', function(hooks) {
-    hooks.beforeEach(function() {
+module('Unit | Utility | widgets/widget-3', function () {
+  module('findBestFittingImage', function (hooks) {
+    hooks.beforeEach(function () {
       // Create a test matrix of height and width
       const containerDimensions = new Map();
 
@@ -26,9 +26,8 @@ module('Unit | Utility | widgets/widget-3', function() {
       this.containerDimensions = containerDimensions;
     });
 
-
-    module('When images is an empty array', function() {
-      test('returns undefined', function(assert) {
+    module('When images is an empty array', function () {
+      test('returns undefined', function (assert) {
         assert.strictEqual(
           findBestFittingImage([], this.containerDimensions.get('h100,w100')),
           undefined
@@ -36,17 +35,16 @@ module('Unit | Utility | widgets/widget-3', function() {
       });
     });
 
-
-    module('When images is an array with 1 element', function() {
-      test('returns the only image regardless of the container\'s dimensions', function(assert) {
+    module('When images is an array with 1 element', function () {
+      test("returns the only image regardless of the container's dimensions", function (assert) {
         const images = [
           {
             url: '/images/widgets/widget-3/venue-square@2x.jpg',
             metadata: {
               height: 300,
-              width: 300
-            }
-          }
+              width: 300,
+            },
+          },
         ];
 
         const expectedUrls = new Map([
@@ -103,9 +101,8 @@ module('Unit | Utility | widgets/widget-3', function() {
       });
     });
 
-
-    module('When images is an array with more than 1 element', function() {
-      test('returns the image that fits the container well', function(assert) {
+    module('When images is an array with more than 1 element', function () {
+      test('returns the image that fits the container well', function (assert) {
         const images = concertData.images;
 
         const expectedUrls = new Map([

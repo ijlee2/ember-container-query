@@ -5,13 +5,12 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Integration | Component | container-query', function(hooks) {
+module('Integration | Component | container-query', function (hooks) {
   setupRenderingTest(hooks);
   setupContainerQueryTest(hooks);
 
-
-  module('When @features is undefined', function(hooks) {
-    hooks.beforeEach(async function() {
+  module('When @features is undefined', function (hooks) {
+    hooks.beforeEach(async function () {
       await render(hbs`
         <div
           data-test-parent-element
@@ -38,8 +37,7 @@ module('Integration | Component | container-query', function(hooks) {
       `);
     });
 
-
-    test('The component renders', async function(assert) {
+    test('The component renders', async function (assert) {
       assert.areFeaturesCorrect({
         small: undefined,
         medium: undefined,
@@ -48,14 +46,13 @@ module('Integration | Component | container-query', function(hooks) {
         tall: undefined,
         'ratio-type-A': undefined,
         'ratio-type-B': undefined,
-        'ratio-type-C': undefined
+        'ratio-type-C': undefined,
       });
 
       assert.areDimensionsCorrect(250, 500);
     });
 
-
-    test('The component updates features when it is resized', async function(assert) {
+    test('The component updates features when it is resized', async function (assert) {
       await resizeContainer(500, 300);
 
       assert.areFeaturesCorrect({
@@ -66,9 +63,8 @@ module('Integration | Component | container-query', function(hooks) {
         tall: undefined,
         'ratio-type-A': undefined,
         'ratio-type-B': undefined,
-        'ratio-type-C': undefined
+        'ratio-type-C': undefined,
       });
-
 
       await resizeContainer(800, 400);
 
@@ -80,9 +76,8 @@ module('Integration | Component | container-query', function(hooks) {
         tall: undefined,
         'ratio-type-A': undefined,
         'ratio-type-B': undefined,
-        'ratio-type-C': undefined
+        'ratio-type-C': undefined,
       });
-
 
       await resizeContainer(1000, 600);
 
@@ -94,21 +89,18 @@ module('Integration | Component | container-query', function(hooks) {
         tall: undefined,
         'ratio-type-A': undefined,
         'ratio-type-B': undefined,
-        'ratio-type-C': undefined
+        'ratio-type-C': undefined,
       });
     });
 
-
-    test('The component updates dimensions when it is resized', async function(assert) {
+    test('The component updates dimensions when it is resized', async function (assert) {
       await resizeContainer(500, 300);
 
       assert.areDimensionsCorrect(500, 300);
 
-
       await resizeContainer(800, 400);
 
       assert.areDimensionsCorrect(800, 400);
-
 
       await resizeContainer(1000, 600);
 
@@ -116,9 +108,8 @@ module('Integration | Component | container-query', function(hooks) {
     });
   });
 
-
-  module('When @features is passed', function(hooks) {
-    hooks.beforeEach(async function() {
+  module('When @features is passed', function (hooks) {
+    hooks.beforeEach(async function () {
       await render(hbs`
         <div
           data-test-parent-element
@@ -155,8 +146,7 @@ module('Integration | Component | container-query', function(hooks) {
       `);
     });
 
-
-    test('The component renders', async function(assert) {
+    test('The component renders', async function (assert) {
       assert.areFeaturesCorrect({
         small: true,
         medium: false,
@@ -165,14 +155,13 @@ module('Integration | Component | container-query', function(hooks) {
         tall: true,
         'ratio-type-A': true,
         'ratio-type-B': true,
-        'ratio-type-C': false
+        'ratio-type-C': false,
       });
 
       assert.areDimensionsCorrect(250, 500);
     });
 
-
-    test('The component updates features when it is resized', async function(assert) {
+    test('The component updates features when it is resized', async function (assert) {
       await resizeContainer(500, 300);
 
       assert.areFeaturesCorrect({
@@ -183,9 +172,8 @@ module('Integration | Component | container-query', function(hooks) {
         tall: false,
         'ratio-type-A': false,
         'ratio-type-B': false,
-        'ratio-type-C': true
+        'ratio-type-C': true,
       });
-
 
       await resizeContainer(800, 400);
 
@@ -197,9 +185,8 @@ module('Integration | Component | container-query', function(hooks) {
         tall: false,
         'ratio-type-A': false,
         'ratio-type-B': false,
-        'ratio-type-C': false
+        'ratio-type-C': false,
       });
-
 
       await resizeContainer(1000, 600);
 
@@ -211,21 +198,18 @@ module('Integration | Component | container-query', function(hooks) {
         tall: true,
         'ratio-type-A': false,
         'ratio-type-B': false,
-        'ratio-type-C': true
+        'ratio-type-C': true,
       });
     });
 
-
-    test('The component updates dimensions when it is resized', async function(assert) {
+    test('The component updates dimensions when it is resized', async function (assert) {
       await resizeContainer(500, 300);
 
       assert.areDimensionsCorrect(500, 300);
 
-
       await resizeContainer(800, 400);
 
       assert.areDimensionsCorrect(800, 400);
-
 
       await resizeContainer(1000, 600);
 
@@ -233,30 +217,29 @@ module('Integration | Component | container-query', function(hooks) {
     });
   });
 
-
-  module('When @features is updated', function(hooks) {
-    hooks.beforeEach(async function() {
+  module('When @features is updated', function (hooks) {
+    hooks.beforeEach(async function () {
       this.features = {
         small: {
           dimension: 'width',
           min: 0,
-          max: 300
+          max: 300,
         },
         medium: {
           dimension: 'width',
           min: 300,
-          max: 600
+          max: 600,
         },
         short: {
           dimension: 'height',
           min: 0,
-          max: 500
+          max: 500,
         },
         'ratio-type-C': {
           dimension: 'aspectRatio',
           min: 1.25,
-          max: 2
-        }
+          max: 2,
+        },
       };
 
       await render(hbs`
@@ -289,61 +272,58 @@ module('Integration | Component | container-query', function(hooks) {
         large: {
           dimension: 'width',
           min: 600,
-          max: 900
+          max: 900,
         },
         tall: {
           dimension: 'height',
           min: 500,
-          max: Infinity
+          max: Infinity,
         },
         'ratio-type-A': {
           dimension: 'aspectRatio',
           min: 0.25,
-          max: 0.75
+          max: 0.75,
         },
         'ratio-type-B': {
           dimension: 'aspectRatio',
           min: 0.5,
-          max: 1.5
-        }
+          max: 1.5,
+        },
       });
     });
 
-
-    test('The component doesn\'t update the features', async function(assert) {
+    test("The component doesn't update the features", async function (assert) {
       assert.areFeaturesCorrect({
         small: true,
         medium: false,
         short: false,
-        'ratio-type-C': false
+        'ratio-type-C': false,
       });
 
       assert.areFeaturesCorrect({
         large: undefined,
         tall: undefined,
         'ratio-type-A': undefined,
-        'ratio-type-B': undefined
+        'ratio-type-B': undefined,
       });
     });
 
-
-    test('The component updates features when it is resized', async function(assert) {
+    test('The component updates features when it is resized', async function (assert) {
       await resizeContainer(500, 300);
 
       assert.areFeaturesCorrect({
         small: undefined,
         medium: undefined,
         short: undefined,
-        'ratio-type-C': undefined
+        'ratio-type-C': undefined,
       });
 
       assert.areFeaturesCorrect({
         large: false,
         tall: false,
         'ratio-type-A': false,
-        'ratio-type-B': false
+        'ratio-type-B': false,
       });
-
 
       await resizeContainer(800, 400);
 
@@ -351,16 +331,15 @@ module('Integration | Component | container-query', function(hooks) {
         small: undefined,
         medium: undefined,
         short: undefined,
-        'ratio-type-C': undefined
+        'ratio-type-C': undefined,
       });
 
       assert.areFeaturesCorrect({
         large: true,
         tall: false,
         'ratio-type-A': false,
-        'ratio-type-B': false
+        'ratio-type-B': false,
       });
-
 
       await resizeContainer(1000, 600);
 
@@ -368,14 +347,14 @@ module('Integration | Component | container-query', function(hooks) {
         small: undefined,
         medium: undefined,
         short: undefined,
-        'ratio-type-C': undefined
+        'ratio-type-C': undefined,
       });
 
       assert.areFeaturesCorrect({
         large: false,
         tall: true,
         'ratio-type-A': false,
-        'ratio-type-B': false
+        'ratio-type-B': false,
       });
     });
   });

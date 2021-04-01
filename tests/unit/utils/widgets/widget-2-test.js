@@ -6,53 +6,33 @@ import {
 } from 'dummy/utils/widgets/widget-2';
 import { module, test } from 'qunit';
 
-module('Unit | Utility | widgets/widget-2', function() {
-  module('formatRevenue', function() {
-    test('formats a revenue in USD', function(assert) {
-      assert.strictEqual(
-        formatRevenue(1.234567e0),
-        '$1'
-      );
+module('Unit | Utility | widgets/widget-2', function () {
+  module('formatRevenue', function () {
+    test('formats a revenue in USD', function (assert) {
+      assert.strictEqual(formatRevenue(1.234567), '$1');
 
-      assert.strictEqual(
-        formatRevenue(1.234567e3),
-        '$1,235'
-      );
+      assert.strictEqual(formatRevenue(1.234567e3), '$1,235');
 
-      assert.strictEqual(
-        formatRevenue(1.234567e6),
-        '$1.2 million'
-      );
+      assert.strictEqual(formatRevenue(1.234567e6), '$1.2 million');
 
-      assert.strictEqual(
-        formatRevenue(1.234567e9),
-        '$1.23 billion'
-      );
+      assert.strictEqual(formatRevenue(1.234567e9), '$1.23 billion');
 
-      assert.strictEqual(
-        formatRevenue(1.234567e12),
-        '$1,234.57 billion'
-      );
+      assert.strictEqual(formatRevenue(1.234567e12), '$1,234.57 billion');
     });
   });
- 
 
-  module('createDataForVisualization', function() {
-    test('works', function(assert) {
+  module('createDataForVisualization', function () {
+    test('works', function (assert) {
       const data = createDataForVisualization(musicRevenue);
 
-      assert.strictEqual(
-        data.length,
-        1058,
-        'There are 1058 data points.'
-      );
+      assert.strictEqual(data.length, 1058, 'There are 1058 data points.');
 
       assert.deepEqual(
         data[0],
         {
           musicFormat: '8 - Track',
           year: 1973,
-          revenue: 2699600000
+          revenue: 2699600000,
         },
         'We created the first data point correctly.'
       );
@@ -62,23 +42,18 @@ module('Unit | Utility | widgets/widget-2', function() {
         {
           musicFormat: 'Vinyl Single',
           year: 2018,
-          revenue: 5300000
+          revenue: 5300000,
         },
         'We created the last data point correctly.'
       );
     });
   });
- 
 
-  module('createSummariesForCaptions', function() {
-    test('works', function(assert) {
+  module('createSummariesForCaptions', function () {
+    test('works', function (assert) {
       const summaries = createSummariesForCaptions(musicRevenue);
 
-      assert.strictEqual(
-        summaries.length,
-        23,
-        'There are 23 summaries.'
-      );
+      assert.strictEqual(summaries.length, 23, 'There are 23 summaries.');
 
       assert.deepEqual(
         summaries[0],
@@ -88,8 +63,8 @@ module('Unit | Utility | widgets/widget-2', function() {
           averageRevenue: '$2.27 billion',
           relevantYears: {
             min: 1973,
-            max: 1982
-          }
+            max: 1982,
+          },
         },
         'We created the first summary correctly.'
       );
@@ -102,8 +77,8 @@ module('Unit | Utility | widgets/widget-2', function() {
           averageRevenue: '$304.8 million',
           relevantYears: {
             min: 1973,
-            max: 2018
-          }
+            max: 2018,
+          },
         },
         'We created the last summary correctly.'
       );

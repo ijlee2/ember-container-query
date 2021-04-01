@@ -34,7 +34,8 @@ export default class WidgetsWidget2CaptionsComponent extends Component {
 
   @action showNextSummary(increment = 1) {
     const numSummaries = this.summaries.length;
-    const nextIndex = (this.currentIndex + increment + numSummaries) % numSummaries;
+    const nextIndex =
+      (this.currentIndex + increment + numSummaries) % numSummaries;
 
     this.summary = this.summaries[nextIndex];
     this.currentIndex = nextIndex;

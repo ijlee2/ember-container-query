@@ -5,629 +5,845 @@ import { timeout } from 'dummy/tests/helpers/resize-container';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Acceptance | dashboard', function(hooks) {
+module('Acceptance | dashboard', function (hooks) {
   setupApplicationTest(hooks);
   resetViewport(hooks);
 
-
-  test('@w1 @h1 Visual snapshot', async function(assert) {
+  test('@w1 @h1 Visual snapshot', async function (assert) {
     await visit('/dashboard');
     await timeout(100);
 
-
     // Widget 1
-    assert.dom('[data-test-widget="1"] [data-test-container-query]')
+    assert
+      .dom('[data-test-widget="1"] [data-test-container-query]')
       .doesNotHaveAttribute('data-container-query-tall')
       .doesNotHaveAttribute('data-container-query-square')
       .hasAttribute('data-container-query-wide');
 
-
     // Widget 2
-    assert.dom('[data-test-widget="2"] [data-test-visualization]')
-      .doesNotExist('We don\'t see the visualization.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-visualization]')
+      .doesNotExist("We don't see the visualization.");
 
-    assert.dom('[data-test-widget="2"] [data-test-captions]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
-      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText(
+        'Annual revenue: $2.27 billion',
+        'We see the annual revenue in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
-      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText(
+        'Relevant years: 1973 - 1982',
+        'We see the relevant years in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist('We don\'t see the previous button.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist("We don't see the previous button.");
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasText('Next', 'We see the next button in correct format.');
 
-
     // Widget 3
-    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
 
-    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist('We don\'t see the placeholder image.');
+    assert
+      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist("We don't see the placeholder image.");
 
-    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.')
-      .hasAttribute('src', '/images/widgets/widget-3/venue-wide@2x.jpg', 'We responsively loaded the correct image.');
-
+      .hasAttribute(
+        'src',
+        '/images/widgets/widget-3/venue-wide@2x.jpg',
+        'We responsively loaded the correct image.'
+      );
 
     // Widget 4
-    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-header]')
       .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-body]')
       .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-actions]')
       .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
 
-
     // Widget 5
-    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+    assert
+      .dom('[data-test-widget="5"] [data-test-call-to-action]')
       .hasText('ember-container-query', 'We see the correct call to action.');
-
 
     await takeSnapshot(assert);
   });
 
-
-  test('@w2 @h1 Visual snapshot', async function(assert) {
+  test('@w2 @h1 Visual snapshot', async function (assert) {
     await visit('/dashboard');
 
-
     // Widget 1
-    assert.dom('[data-test-widget="1"] [data-test-container-query]')
+    assert
+      .dom('[data-test-widget="1"] [data-test-container-query]')
       .doesNotHaveAttribute('data-container-query-tall')
       .hasAttribute('data-container-query-square')
       .doesNotHaveAttribute('data-container-query-wide');
 
-
     // Widget 2
-    assert.dom('[data-test-widget="2"] [data-test-visualization]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-visualization]')
       .exists('We see the visualization.');
 
-    assert.dom('[data-test-widget="2"] [data-test-captions]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
-      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText(
+        'Annual revenue: $2.27 billion',
+        'We see the annual revenue in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
-      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText(
+        'Relevant years: 1973 - 1982',
+        'We see the relevant years in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist('We don\'t see the previous button.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist("We don't see the previous button.");
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasNoText('We see the next button in correct format.');
 
-
     // Widget 3
-    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
 
-    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist('We don\'t see the placeholder image.');
+    assert
+      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist("We don't see the placeholder image.");
 
-    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.')
-      .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
-
+      .hasAttribute(
+        'src',
+        '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
+        'We responsively loaded the correct image.'
+      );
 
     // Widget 4
-    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-header]')
       .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-body]')
       .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-actions]')
       .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
 
-
     // Widget 5
-    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+    assert
+      .dom('[data-test-widget="5"] [data-test-call-to-action]')
       .hasText('ember-container-query', 'We see the correct call to action.');
-
 
     await takeSnapshot(assert);
   });
 
-
-  test('@w3 @h1 Visual snapshot', async function(assert) {
+  test('@w3 @h1 Visual snapshot', async function (assert) {
     await visit('/dashboard');
 
-
     // Widget 1
-    assert.dom('[data-test-widget="1"] [data-test-container-query]')
+    assert
+      .dom('[data-test-widget="1"] [data-test-container-query]')
       .hasAttribute('data-container-query-tall')
       .doesNotHaveAttribute('data-container-query-square')
       .doesNotHaveAttribute('data-container-query-wide');
 
-
     // Widget 2
-    assert.dom('[data-test-widget="2"] [data-test-visualization]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-visualization]')
       .exists('We see the visualization.');
 
-    assert.dom('[data-test-widget="2"] [data-test-captions]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
-      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText(
+        'Annual revenue: $2.27 billion',
+        'We see the annual revenue in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
-      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText(
+        'Relevant years: 1973 - 1982',
+        'We see the relevant years in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist('We don\'t see the previous button.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist("We don't see the previous button.");
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasNoText('We see the next button in correct format.');
 
-
     // Widget 3
-    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
 
-    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist('We don\'t see the placeholder image.');
+    assert
+      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist("We don't see the placeholder image.");
 
-    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.')
-      .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
-
+      .hasAttribute(
+        'src',
+        '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
+        'We responsively loaded the correct image.'
+      );
 
     // Widget 4
-    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
-      .doesNotHaveClass(/minimal-layout/, 'The memo header doesn\'t use the minimal layout.');
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-header]')
+      .doesNotHaveClass(
+        /minimal-layout/,
+        "The memo header doesn't use the minimal layout."
+      );
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
-      .doesNotHaveClass(/minimal-layout/, 'The memo body doesn\'t use the minimal layout.');
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-body]')
+      .doesNotHaveClass(
+        /minimal-layout/,
+        "The memo body doesn't use the minimal layout."
+      );
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
-      .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
-
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .doesNotHaveClass(
+        /minimal-layout/,
+        "The memo actions doesn't use the minimal layout."
+      );
 
     // Widget 5
-    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
-      .hasText('What will you create with ember-container-query ?', 'We see the correct call to action.');
-
+    assert
+      .dom('[data-test-widget="5"] [data-test-call-to-action]')
+      .hasText(
+        'What will you create with ember-container-query ?',
+        'We see the correct call to action.'
+      );
 
     await takeSnapshot(assert);
   });
 
-
-  test('@w1 @h2 Visual snapshot', async function(assert) {
+  test('@w1 @h2 Visual snapshot', async function (assert) {
     await visit('/dashboard');
     await timeout(100);
 
-
     // Widget 1
-    assert.dom('[data-test-widget="1"] [data-test-container-query]')
+    assert
+      .dom('[data-test-widget="1"] [data-test-container-query]')
       .doesNotHaveAttribute('data-container-query-tall')
       .doesNotHaveAttribute('data-container-query-square')
       .hasAttribute('data-container-query-wide');
 
-
     // Widget 2
-    assert.dom('[data-test-widget="2"] [data-test-visualization]')
-      .doesNotExist('We don\'t see the visualization.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-visualization]')
+      .doesNotExist("We don't see the visualization.");
 
-    assert.dom('[data-test-widget="2"] [data-test-captions]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
-      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText(
+        'Annual revenue: $2.27 billion',
+        'We see the annual revenue in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
-      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText(
+        'Relevant years: 1973 - 1982',
+        'We see the relevant years in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist('We don\'t see the previous button.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist("We don't see the previous button.");
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasText('Next', 'We see the next button in correct format.');
 
-
     // Widget 3
-    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
 
-    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist('We don\'t see the placeholder image.');
+    assert
+      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist("We don't see the placeholder image.");
 
-    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.')
-      .hasAttribute('src', '/images/widgets/widget-3/venue-wide@2x.jpg', 'We responsively loaded the correct image.');
-
+      .hasAttribute(
+        'src',
+        '/images/widgets/widget-3/venue-wide@2x.jpg',
+        'We responsively loaded the correct image.'
+      );
 
     // Widget 4
-    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-header]')
       .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-body]')
       .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-actions]')
       .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
 
-
     // Widget 5
-    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+    assert
+      .dom('[data-test-widget="5"] [data-test-call-to-action]')
       .hasText('ember-container-query', 'We see the correct call to action.');
-
 
     await takeSnapshot(assert);
   });
 
-
-  test('@w2 @h2 Visual snapshot', async function(assert) {
+  test('@w2 @h2 Visual snapshot', async function (assert) {
     await visit('/dashboard');
 
-
     // Widget 1
-    assert.dom('[data-test-widget="1"] [data-test-container-query]')
+    assert
+      .dom('[data-test-widget="1"] [data-test-container-query]')
       .doesNotHaveAttribute('data-container-query-tall')
       .hasAttribute('data-container-query-square')
       .doesNotHaveAttribute('data-container-query-wide');
 
-
     // Widget 2
-    assert.dom('[data-test-widget="2"] [data-test-visualization]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-visualization]')
       .exists('We see the visualization.');
 
-    assert.dom('[data-test-widget="2"] [data-test-captions]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
-      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText(
+        'Annual revenue: $2.27 billion',
+        'We see the annual revenue in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
-      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText(
+        'Relevant years: 1973 - 1982',
+        'We see the relevant years in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist('We don\'t see the previous button.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist("We don't see the previous button.");
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasNoText('We see the next button in correct format.');
 
-
     // Widget 3
-    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
 
-    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist('We don\'t see the placeholder image.');
+    assert
+      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist("We don't see the placeholder image.");
 
-    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.')
-      .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
-
+      .hasAttribute(
+        'src',
+        '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
+        'We responsively loaded the correct image.'
+      );
 
     // Widget 4
-    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-header]')
       .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-body]')
       .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-actions]')
       .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
 
-
     // Widget 5
-    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+    assert
+      .dom('[data-test-widget="5"] [data-test-call-to-action]')
       .hasText('ember-container-query', 'We see the correct call to action.');
-
 
     await takeSnapshot(assert);
   });
 
-
-  test('@w3 @h2 Visual snapshot', async function(assert) {
+  test('@w3 @h2 Visual snapshot', async function (assert) {
     await visit('/dashboard');
 
-
     // Widget 1
-    assert.dom('[data-test-widget="1"] [data-test-container-query]')
+    assert
+      .dom('[data-test-widget="1"] [data-test-container-query]')
       .hasAttribute('data-container-query-tall')
       .doesNotHaveAttribute('data-container-query-square')
       .doesNotHaveAttribute('data-container-query-wide');
 
-
     // Widget 2
-    assert.dom('[data-test-widget="2"] [data-test-visualization]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-visualization]')
       .exists('We see the visualization.');
 
-    assert.dom('[data-test-widget="2"] [data-test-captions]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
-      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText(
+        'Annual revenue: $2.27 billion',
+        'We see the annual revenue in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
-      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText(
+        'Relevant years: 1973 - 1982',
+        'We see the relevant years in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist('We don\'t see the previous button.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist("We don't see the previous button.");
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasNoText('We see the next button in correct format.');
 
-
     // Widget 3
-    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
 
-    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist('We don\'t see the placeholder image.');
+    assert
+      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist("We don't see the placeholder image.");
 
-    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.')
-      .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
-
+      .hasAttribute(
+        'src',
+        '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
+        'We responsively loaded the correct image.'
+      );
 
     // Widget 4
-    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
-      .doesNotHaveClass(/minimal-layout/, 'The memo header doesn\'t use the minimal layout.');
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-header]')
+      .doesNotHaveClass(
+        /minimal-layout/,
+        "The memo header doesn't use the minimal layout."
+      );
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
-      .doesNotHaveClass(/minimal-layout/, 'The memo body doesn\'t use the minimal layout.');
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-body]')
+      .doesNotHaveClass(
+        /minimal-layout/,
+        "The memo body doesn't use the minimal layout."
+      );
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
-      .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
-
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .doesNotHaveClass(
+        /minimal-layout/,
+        "The memo actions doesn't use the minimal layout."
+      );
 
     // Widget 5
-    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
-      .hasText('What will you create with ember-container-query ?', 'We see the correct call to action.');
-
+    assert
+      .dom('[data-test-widget="5"] [data-test-call-to-action]')
+      .hasText(
+        'What will you create with ember-container-query ?',
+        'We see the correct call to action.'
+      );
 
     await takeSnapshot(assert);
   });
 
-
-  test('@w1 @h3 Visual snapshot', async function(assert) {
+  test('@w1 @h3 Visual snapshot', async function (assert) {
     await visit('/dashboard');
 
-
     // Widget 1
-    assert.dom('[data-test-widget="1"] [data-test-container-query]')
+    assert
+      .dom('[data-test-widget="1"] [data-test-container-query]')
       .hasAttribute('data-container-query-tall')
       .doesNotHaveAttribute('data-container-query-square')
       .doesNotHaveAttribute('data-container-query-wide');
 
-
     // Widget 2
-    assert.dom('[data-test-widget="2"] [data-test-visualization]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-visualization]')
       .exists('We see the visualization.');
 
-    assert.dom('[data-test-widget="2"] [data-test-captions]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
-      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText(
+        'Annual revenue: $2.27 billion',
+        'We see the annual revenue in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
-      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText(
+        'Relevant years: 1973 - 1982',
+        'We see the relevant years in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist('We don\'t see the previous button.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist("We don't see the previous button.");
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasText('Next', 'We see the next button in correct format.');
 
-
     // Widget 3
-    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
 
-    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist('We don\'t see the placeholder image.');
+    assert
+      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist("We don't see the placeholder image.");
 
-    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.')
-      .hasAttribute('src', '/images/widgets/widget-3/venue-square@4x.jpg', 'We responsively loaded the correct image.');
-
+      .hasAttribute(
+        'src',
+        '/images/widgets/widget-3/venue-square@4x.jpg',
+        'We responsively loaded the correct image.'
+      );
 
     // Widget 4
-    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
-      .doesNotHaveClass(/minimal-layout/, 'The memo header doesn\'t use the minimal layout.');
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-header]')
+      .doesNotHaveClass(
+        /minimal-layout/,
+        "The memo header doesn't use the minimal layout."
+      );
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
-      .doesNotHaveClass(/minimal-layout/, 'The memo body doesn\'t use the minimal layout.');
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-body]')
+      .doesNotHaveClass(
+        /minimal-layout/,
+        "The memo body doesn't use the minimal layout."
+      );
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
-      .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
-
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .doesNotHaveClass(
+        /minimal-layout/,
+        "The memo actions doesn't use the minimal layout."
+      );
 
     // Widget 5
-    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+    assert
+      .dom('[data-test-widget="5"] [data-test-call-to-action]')
       .hasText('ember-container-query', 'We see the correct call to action.');
-
 
     await takeSnapshot(assert);
   });
 
-
-  test('@w2 @h3 Visual snapshot', async function(assert) {
+  test('@w2 @h3 Visual snapshot', async function (assert) {
     await visit('/dashboard');
 
-
     // Widget 1
-    assert.dom('[data-test-widget="1"] [data-test-container-query]')
+    assert
+      .dom('[data-test-widget="1"] [data-test-container-query]')
       .doesNotHaveAttribute('data-container-query-tall')
       .hasAttribute('data-container-query-square')
       .doesNotHaveAttribute('data-container-query-wide');
 
-
     // Widget 2
-    assert.dom('[data-test-widget="2"] [data-test-visualization]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-visualization]')
       .exists('We see the visualization.');
 
-    assert.dom('[data-test-widget="2"] [data-test-captions]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
-      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText(
+        'Annual revenue: $2.27 billion',
+        'We see the annual revenue in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
-      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText(
+        'Relevant years: 1973 - 1982',
+        'We see the relevant years in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist('We don\'t see the previous button.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist("We don't see the previous button.");
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasNoText('We see the next button in correct format.');
 
-
     // Widget 3
-    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
 
-    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist('We don\'t see the placeholder image.');
+    assert
+      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist("We don't see the placeholder image.");
 
-    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.')
-      .hasAttribute('src', '/images/widgets/widget-3/venue-wide@2x.jpg', 'We responsively loaded the correct image.');
-
+      .hasAttribute(
+        'src',
+        '/images/widgets/widget-3/venue-wide@2x.jpg',
+        'We responsively loaded the correct image.'
+      );
 
     // Widget 4
-    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-header]')
       .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-body]')
       .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-actions]')
       .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
 
-
     // Widget 5
-    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
+    assert
+      .dom('[data-test-widget="5"] [data-test-call-to-action]')
       .hasText('ember-container-query', 'We see the correct call to action.');
-
 
     await takeSnapshot(assert);
   });
 
-
-  test('@w3 @h3 Visual snapshot', async function(assert) {
+  test('@w3 @h3 Visual snapshot', async function (assert) {
     await visit('/dashboard');
 
-
     // Widget 1
-    assert.dom('[data-test-widget="1"] [data-test-container-query]')
+    assert
+      .dom('[data-test-widget="1"] [data-test-container-query]')
       .hasAttribute('data-container-query-tall')
       .doesNotHaveAttribute('data-container-query-square')
       .doesNotHaveAttribute('data-container-query-wide');
 
-
     // Widget 2
-    assert.dom('[data-test-widget="2"] [data-test-visualization]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-visualization]')
       .exists('We see the visualization.');
 
-    assert.dom('[data-test-widget="2"] [data-test-captions]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-captions]')
       .exists('We see the captions.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Music Format"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
-      .hasText('Annual revenue: $2.27 billion', 'We see the annual revenue in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
+      .hasText(
+        'Annual revenue: $2.27 billion',
+        'We see the annual revenue in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
-      .hasText('Relevant years: 1973 - 1982', 'We see the relevant years in correct format.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
+      .hasText(
+        'Relevant years: 1973 - 1982',
+        'We see the relevant years in correct format.'
+      );
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist('We don\'t see the previous button.');
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
+      .doesNotExist("We don't see the previous button.");
 
-    assert.dom('[data-test-widget="2"] [data-test-button="Next"]')
+    assert
+      .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasNoText('We see the next button in correct format.');
 
-
     // Widget 3
-    assert.dom('[data-test-widget="3"] [data-test-link="All tours"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-link="All tours"]')
       .exists('We see the All tours link.');
 
-    assert.dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist('We don\'t see the placeholder image.');
+    assert
+      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
+      .doesNotExist("We don't see the placeholder image.");
 
-    assert.dom('[data-test-widget="3"] [data-test-image="Concert"]')
+    assert
+      .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .exists('We see the concert venue image.')
-      .hasAttribute('src', '/images/widgets/widget-3/venue-extra-wide@2x.jpg', 'We responsively loaded the correct image.');
-
+      .hasAttribute(
+        'src',
+        '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
+        'We responsively loaded the correct image.'
+      );
 
     // Widget 4
-    assert.dom('[data-test-widget="4"] [data-test-link="All memos"]')
+    assert
+      .dom('[data-test-widget="4"] [data-test-link="All memos"]')
       .exists('We see the All memos link.');
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-header]')
-      .doesNotHaveClass(/minimal-layout/, 'The memo header doesn\'t use the minimal layout.');
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-header]')
+      .doesNotHaveClass(
+        /minimal-layout/,
+        "The memo header doesn't use the minimal layout."
+      );
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-body]')
-      .doesNotHaveClass(/minimal-layout/, 'The memo body doesn\'t use the minimal layout.');
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-body]')
+      .doesNotHaveClass(
+        /minimal-layout/,
+        "The memo body doesn't use the minimal layout."
+      );
 
-    assert.dom('[data-test-widget="4"] [data-test-memo-actions]')
-      .doesNotHaveClass(/minimal-layout/, 'The memo actions doesn\'t use the minimal layout.');
-
+    assert
+      .dom('[data-test-widget="4"] [data-test-memo-actions]')
+      .doesNotHaveClass(
+        /minimal-layout/,
+        "The memo actions doesn't use the minimal layout."
+      );
 
     // Widget 5
-    assert.dom('[data-test-widget="5"] [data-test-call-to-action]')
-      .hasText('What will you create with ember-container-query ?', 'We see the correct call to action.');
-
+    assert
+      .dom('[data-test-widget="5"] [data-test-call-to-action]')
+      .hasText(
+        'What will you create with ember-container-query ?',
+        'We see the correct call to action.'
+      );
 
     await takeSnapshot(assert);
   });

@@ -2,15 +2,13 @@
 
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   let app = new EmberAddon(defaults, {
     // Add options here
     fingerprint: {
-      exclude: [
-        'images/'
-      ],
-      prepend: 'https://ember-container-query.netlify.app/'
-    }
+      exclude: ['images/'],
+      prepend: 'https://ember-container-query.netlify.app/',
+    },
   });
 
   /*
