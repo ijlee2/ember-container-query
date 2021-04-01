@@ -54,7 +54,7 @@ Here are some guidelines to help you and everyone else.
     yarn lint
     ```
 
-    This command will lint files and dependencies in parallel.
+    This command will lint files and dependencies in parallel. You can run `yarn lint:fix` to fix HBS and JS files.
 
 </details>
 
