@@ -21,7 +21,7 @@ const FILTERS = {
 
   'w1-h3': '/^(?=(.*Acceptance))(?!(.*@w2|.*@w3|.*@h1|.*@h2))/',
   'w2-h3': '/^(?=(.*Acceptance))(?!(.*@w1|.*@w3|.*@h1|.*@h2))/',
-  'w3-h3': '/^(?!(.*@w1|.*@w2|.*@h1|.*@h2))/'
+  'w3-h3': '/^(?!(.*@w1|.*@w2|.*@h1|.*@h2))/',
 };
 
 const WINDOW_SIZES = {
@@ -35,7 +35,7 @@ const WINDOW_SIZES = {
 
   'w1-h3': '400,900',
   'w2-h3': '900,900',
-  'w3-h3': '1400,900'
+  'w3-h3': '1400,900',
 };
 
 const { DEVICE = 'w3-h3' } = process.env;
@@ -47,12 +47,8 @@ const [width, height] = windowSize.split(',');
 module.exports = {
   test_page: `tests/index.html?filter=${filter}&width=${width}&height=${height}&hidepassed&nolint`,
   disable_watching: true,
-  launch_in_ci: [
-    'Chrome'
-  ],
-  launch_in_dev: [
-    'Chrome'
-  ],
+  launch_in_ci: ['Chrome'],
+  launch_in_dev: ['Chrome'],
   browser_start_timeout: 60,
   browser_args: {
     Chrome: {
@@ -64,7 +60,7 @@ module.exports = {
         '--disable-software-rasterizer',
         '--mute-audio',
         '--remote-debugging-port=0',
-        `--window-size=${windowSize}`
+        `--window-size=${windowSize}`,
       ].filter(Boolean),
 
       dev: [
@@ -72,8 +68,8 @@ module.exports = {
         '--disable-software-rasterizer',
         '--mute-audio',
         '--remote-debugging-port=0',
-        `--window-size=${windowSize}`
-      ]
-    }
-  }
+        `--window-size=${windowSize}`,
+      ],
+    },
+  },
 };
