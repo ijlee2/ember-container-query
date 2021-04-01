@@ -1,3 +1,19 @@
+## 1.1.7 (2021-04-01)
+
+### Bug Fix
+* [#76](https://github.com/ijlee2/ember-container-query/pull/76) Fixed brittle tests ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#77](https://github.com/ijlee2/ember-container-query/pull/77) Updated ember-source to v3.25 ([@ijlee2](https://github.com/ijlee2))
+* [#75](https://github.com/ijlee2/ember-container-query/pull/75) Updated dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#78](https://github.com/ijlee2/ember-container-query/pull/78) Added 3.24 LTS to ember-try scenario ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.1.6 (2020-12-16)
 
 ### Internal
