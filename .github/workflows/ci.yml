@@ -6,11 +6,11 @@ on:
       - main
   pull_request:
   schedule:
-    # Run the workflow every Monday at 6 am CST
-    - cron: '0 11 * * MON'
+    # Run the workflow every Monday at 6 am CET
+    - cron: '0 4 * * MON'
 
 env:
-  NODE_VERSION: 12.18
+  NODE_VERSION: 14
   PERCY_PARALLEL_NONCE: ${{ github.run_id }}-${{ github.run_number }}
   PERCY_PARALLEL_TOTAL: 9
 
@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
 
@@ -59,13 +59,13 @@ jobs:
   lint:
     name: Lint files and dependencies
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 5
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
 
@@ -111,7 +111,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
 
@@ -172,7 +172,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
 
