@@ -1,6 +1,7 @@
 import { visit } from '@ember/test-helpers';
 import takeSnapshot from 'dummy/tests/helpers/percy';
 import resetViewport from 'dummy/tests/helpers/reset-viewport';
+import { timeout } from 'dummy/tests/helpers/resize-container';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
@@ -11,6 +12,7 @@ module('Acceptance | dashboard', function(hooks) {
 
   test('@w1 @h1 Visual snapshot', async function(assert) {
     await visit('/dashboard');
+    await timeout(100);
 
 
     // Widget 1
@@ -218,6 +220,7 @@ module('Acceptance | dashboard', function(hooks) {
 
   test('@w1 @h2 Visual snapshot', async function(assert) {
     await visit('/dashboard');
+    await timeout(100);
 
 
     // Widget 1
