@@ -1,3 +1,16 @@
+## 1.1.8 (2021-04-22)
+
+### Internal
+* [#81](https://github.com/ijlee2/ember-container-query/pull/81) Updated ember-source to v3.26.1 ([@ijlee2](https://github.com/ijlee2))
+* [#80](https://github.com/ijlee2/ember-container-query/pull/80) Updated ember-element-helper to v0.5.0 ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#79](https://github.com/ijlee2/ember-container-query/pull/79) Added embroider-safe to ember-try scenarios ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.1.7 (2021-04-01)
 
 ### Bug Fix
