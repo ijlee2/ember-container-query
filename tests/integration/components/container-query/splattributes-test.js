@@ -10,7 +10,7 @@ module('Integration | Component | container-query', function (hooks) {
 
   module('...attributes', function () {
     test('The component accepts splattributes', async function (assert) {
-      assert.expect(3);
+      assert.expect(2);
 
       this.fetchData = () => {
         assert.ok(
@@ -34,7 +34,6 @@ module('Integration | Component | container-query', function (hooks) {
             }}
 
             class="unique-class-name"
-            local-class="container"
             {{did-insert this.fetchData}}
 
             as |CQ|
@@ -58,8 +57,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       assert
         .dom('[data-test-container-query]')
-        .hasClass('unique-class-name', 'Providing a custom CSS class works.')
-        .hasAttribute('local-class', 'container', 'ember-css-modules works.');
+        .hasClass('unique-class-name', 'Providing a custom CSS class works.');
     });
   });
 });
