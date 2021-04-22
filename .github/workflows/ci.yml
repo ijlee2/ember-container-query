@@ -161,6 +161,8 @@ jobs:
           - 'ember-release'
           - 'ember-beta'
           - 'ember-canary'
+          - 'embroider-optimized'
+          - 'embroider-safe'
         width:
           - 'w1'
           - 'w2'
