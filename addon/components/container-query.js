@@ -1,7 +1,7 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { throttle } from '@ember/runloop';
+import { debounce } from '@ember/runloop';
 
 export default class ContainerQueryComponent extends Component {
   @tracked queryResults = {};
@@ -26,7 +26,7 @@ export default class ContainerQueryComponent extends Component {
 
   @action onResize(entry) {
     if (this.debounce > 0) {
-      throttle(this, () => this.queryContainer(entry.target), this.debounce);
+      debounce(this, () => this.queryContainer(entry.target), this.debounce);
     } else {
       this.queryContainer(entry.target);
     }
