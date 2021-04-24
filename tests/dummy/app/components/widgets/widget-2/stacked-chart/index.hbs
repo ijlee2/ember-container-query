@@ -2,7 +2,7 @@
   local-class="svg-container"
   {{did-insert this.refreshChart}}
   {{did-update this.drawChart this.data}}
-  {{did-resize this.refreshChart debounce=50}}
+  {{on-resize this.onResize}}
 >
   <svg local-class="svg">
   </svg>

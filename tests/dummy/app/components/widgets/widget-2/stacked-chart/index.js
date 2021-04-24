@@ -5,6 +5,7 @@ import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { COLOR_PALETTE, formatRevenue } from 'dummy/utils/widgets/widget-2';
+import { debounce } from '@ember/runloop';
 
 import { extent, max, rollup, ticks } from 'd3-array';
 import { axisBottom, axisLeft } from 'd3-axis';
@@ -107,6 +108,10 @@ export default class WidgetsWidget2StackedChartComponent extends Component {
       .domain([0, max(series, (d) => max(d, (d) => d[1]))])
       .nice()
       .range([height - margin.bottom, margin.top]);
+  }
+
+  @action onResize(entry) {
+    debounce(this, this.refreshChart, entry.target, 50);
   }
 
   @action refreshChart(element) {
