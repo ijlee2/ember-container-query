@@ -19,6 +19,12 @@ export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends 
       return;
     }
 
-    this.src = findBestFittingImage(this.args.images, dimensions);
+    const src = findBestFittingImage(this.args.images, dimensions);
+
+    if (src === this.src) {
+      return;
+    }
+
+    this.src = src;
   }
 }

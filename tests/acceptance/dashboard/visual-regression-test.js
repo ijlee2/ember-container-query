@@ -1,7 +1,6 @@
-import { visit } from '@ember/test-helpers';
+import { visit, waitFor } from '@ember/test-helpers';
 import takeSnapshot from 'dummy/tests/helpers/percy';
 import resetViewport from 'dummy/tests/helpers/reset-viewport';
-import { timeout } from 'dummy/tests/helpers/resize-container';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
@@ -11,7 +10,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w1 @h1 Visual snapshot', async function (assert) {
     await visit('/dashboard');
-    await timeout(100);
+    await waitFor('[data-test-image="Concert"]');
 
     // Widget 1
     assert
@@ -100,6 +99,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w2 @h1 Visual snapshot', async function (assert) {
     await visit('/dashboard');
+    await waitFor('[data-test-image="Concert"]');
 
     // Widget 1
     assert
@@ -188,6 +188,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w3 @h1 Visual snapshot', async function (assert) {
     await visit('/dashboard');
+    await waitFor('[data-test-image="Concert"]');
 
     // Widget 1
     assert
@@ -288,7 +289,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w1 @h2 Visual snapshot', async function (assert) {
     await visit('/dashboard');
-    await timeout(100);
+    await waitFor('[data-test-image="Concert"]');
 
     // Widget 1
     assert
@@ -377,6 +378,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w2 @h2 Visual snapshot', async function (assert) {
     await visit('/dashboard');
+    await waitFor('[data-test-image="Concert"]');
 
     // Widget 1
     assert
@@ -465,6 +467,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w3 @h2 Visual snapshot', async function (assert) {
     await visit('/dashboard');
+    await waitFor('[data-test-image="Concert"]');
 
     // Widget 1
     assert
@@ -565,6 +568,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w1 @h3 Visual snapshot', async function (assert) {
     await visit('/dashboard');
+    await waitFor('[data-test-image="Concert"]');
 
     // Widget 1
     assert
@@ -662,6 +666,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w2 @h3 Visual snapshot', async function (assert) {
     await visit('/dashboard');
+    await waitFor('[data-test-image="Concert"]');
 
     // Widget 1
     assert
@@ -750,6 +755,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w3 @h3 Visual snapshot', async function (assert) {
     await visit('/dashboard');
+    await waitFor('[data-test-image="Concert"]');
 
     // Widget 1
     assert
