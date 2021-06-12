@@ -1,11 +1,7 @@
 {{#if @images}}
-  <ContainerQuery
-    @debounce={{300}}
-    as |CQ|
-  >
+  <ContainerQuery as |CQ|>
     <div
       local-class="image-container"
-      {{did-insert (fn this.setImageSource CQ.dimensions)}}
       {{did-update (fn this.setImageSource CQ.dimensions) CQ.dimensions}}
     >
       {{#if this.src}}
