@@ -100,6 +100,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w2 @h1 Visual snapshot', async function (assert) {
     await visit('/dashboard');
+    await timeout(100);
 
     // Widget 1
     assert
@@ -188,6 +189,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w3 @h1 Visual snapshot', async function (assert) {
     await visit('/dashboard');
+    await timeout(100);
 
     // Widget 1
     assert
@@ -377,6 +379,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w2 @h2 Visual snapshot', async function (assert) {
     await visit('/dashboard');
+    await timeout(100);
 
     // Widget 1
     assert
@@ -465,6 +468,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w3 @h2 Visual snapshot', async function (assert) {
     await visit('/dashboard');
+    await timeout(100);
 
     // Widget 1
     assert
@@ -565,6 +569,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w1 @h3 Visual snapshot', async function (assert) {
     await visit('/dashboard');
+    await timeout(100);
 
     // Widget 1
     assert
@@ -662,6 +667,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w2 @h3 Visual snapshot', async function (assert) {
     await visit('/dashboard');
+    await timeout(100);
 
     // Widget 1
     assert
@@ -750,6 +756,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w3 @h3 Visual snapshot', async function (assert) {
     await visit('/dashboard');
+    await timeout(100);
 
     // Widget 1
     assert
