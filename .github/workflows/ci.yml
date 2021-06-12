@@ -160,7 +160,7 @@ jobs:
           - 'ember-lts-3.24'
           - 'ember-release'
           - 'ember-beta'
-          - 'ember-canary'
+          # - 'ember-canary'
           - 'embroider-safe'
           # - 'embroider-optimized'
         width:
