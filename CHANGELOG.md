@@ -1,3 +1,19 @@
+## 1.1.9 (2021-08-25)
+
+### Bug Fix
+* [#88](https://github.com/ijlee2/ember-container-query/pull/88) Temporarily skipped ember-beta and ember-canary ([@ijlee2](https://github.com/ijlee2))
+* [#84](https://github.com/ijlee2/ember-container-query/pull/84) Fixed failing accessibility audits in Album page ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#92](https://github.com/ijlee2/ember-container-query/pull/92) Updated ember-source to v3.27.5 ([@ijlee2](https://github.com/ijlee2))
+* [#91](https://github.com/ijlee2/ember-container-query/pull/91) Updated development dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+* [#89](https://github.com/ijlee2/ember-container-query/pull/89) Updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#85](https://github.com/ijlee2/ember-container-query/pull/85) Updated development dependencies to their latest ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.1.8 (2021-04-22)
 
 ### Internal
