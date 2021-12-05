@@ -44,7 +44,7 @@
     "test:ember:w1-h3": "DEVICE='w1-h3' percy exec -- ember test --test-port=7363",
     "test:ember:w2-h3": "DEVICE='w2-h3' percy exec -- ember test --test-port=7364",
     "test:ember:w3-h3": "DEVICE='w3-h3' percy exec -- ember test --test-port=7365",
-    "test:ember-compatibility": "ember try:one"
+    "test:ember-compatibility": "./node_modules/.bin/ember try:one"
   },
   "changelog": {
     "labels": {
