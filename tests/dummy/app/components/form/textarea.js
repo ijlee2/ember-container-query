@@ -1,7 +1,6 @@
 import { action, get } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
-import { createCache, getValue } from '@glimmer/tracking/primitives/cache';
 
 export default class FormTextareaComponent extends Component {
   inputId = guidFor(this);
@@ -20,14 +19,10 @@ export default class FormTextareaComponent extends Component {
     return undefined;
   }
 
-  #value = createCache(() => {
+  get value() {
     const { changeset, key } = this.args;
 
     return (get(changeset, key) ?? '').toString();
-  });
-
-  get value() {
-    return getValue(this.#value);
   }
 
   @action updateValue(event) {

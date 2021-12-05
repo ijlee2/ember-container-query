@@ -1,7 +1,6 @@
 import { action, get } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
-import { createCache, getValue } from '@glimmer/tracking/primitives/cache';
 
 export default class FormCheckboxComponent extends Component {
   inputId = guidFor(this);
@@ -20,14 +19,10 @@ export default class FormCheckboxComponent extends Component {
     return undefined;
   }
 
-  #isChecked = createCache(() => {
+  get isChecked() {
     const { changeset, key } = this.args;
 
     return get(changeset, key) ?? undefined;
-  });
-
-  get isChecked() {
-    return getValue(this.#isChecked);
   }
 
   @action updateValue() {
