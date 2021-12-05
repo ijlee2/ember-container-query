@@ -1,0 +1,112 @@
+.container {
+  align-items: start;
+  display: grid;
+  margin-bottom: 1.25rem;
+}
+
+.container:not(.is-wide):not(.no-feedback) {
+  grid-template-areas:
+    "field label"
+    "feedback feedback";
+  grid-column-gap: 1rem;
+  grid-row-gap: 0.5rem;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
+}
+
+.container:not(.is-wide).no-feedback {
+  grid-template-areas:
+    "field label";
+  grid-column-gap: 1rem;
+  grid-row-gap: 0;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+}
+
+.container.is-wide:not(.no-feedback) {
+  grid-template-areas:
+    "label field"
+    "label feedback";
+  grid-column-gap: 1rem;
+  grid-row-gap: 0.5rem;
+  grid-template-columns: 10rem 1fr;
+  grid-template-rows: 1fr auto;
+}
+
+.container.is-wide.no-feedback {
+  grid-template-areas:
+    "label field";
+  grid-column-gap: 1rem;
+  grid-row-gap: 0.5rem;
+  grid-template-columns: 10rem 1fr;
+  grid-template-rows: 1fr;
+}
+
+.checkbox, .label, .paragraph {
+  margin: 0;
+  padding: 0;
+}
+
+.label {
+  grid-area: label;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.checkbox, .paragraph {
+  grid-area: field;
+}
+
+.checkbox {
+  align-items: center;
+  background-color: white;
+  border: 0.125rem solid #ffd54f;
+  cursor: pointer;
+  display: flex;
+  height: 1rem;
+  justify-content: center;
+  position: relative;
+  width: 1rem;
+}
+
+.checkbox:focus {
+  background-color: #ffecb3;
+  outline: 0;
+}
+
+.checkbox:not(:focus) {
+  border-color: transparent;
+}
+
+.checkbox.is-checked {
+  background-color: #1976d2;
+}
+
+.checkbox.is-disabled {
+  background-color: #90a4ae;
+  cursor: not-allowed;
+}
+
+.checkmark-icon {
+  color: white;
+}
+
+.paragraph {
+  min-height: 1rem;
+  word-break: break-word;
+}
+
+.feedback {
+  align-items: center;
+  display: flex;
+  font-size: 0.875rem;
+  grid-area: feedback;
+}
+
+.feedback.is-error {
+  color: #ff5252;
+}
+
+.message {
+  margin-left: 0.5rem;
+}

@@ -19,6 +19,12 @@
   >
     {{yield
       (hash
+        Checkbox=(component "form/checkbox"
+          changeset=this.changeset
+          isWide=CQ.features.wide
+          onUpdate=this.updateChangeset
+        )
+
         Input=(component "form/input"
           changeset=this.changeset
           isWide=CQ.features.wide

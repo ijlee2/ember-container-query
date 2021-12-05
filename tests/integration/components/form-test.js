@@ -38,6 +38,11 @@ module('Integration | Component | form', function (hooks) {
           @key="message"
           @label="Message"
         />
+
+        <F.Checkbox
+          @key="subscribe"
+          @label="Subscribe to The Ember Times?"
+        />
       </Form>
     `);
 
@@ -53,7 +58,7 @@ module('Integration | Component | form', function (hooks) {
       )
       .hasAria('labelledby', titleId, 'We see the correct aria-labelledby.');
 
-    assert.dom('[data-test-field]').exists({ count: 3 }, 'We see 3 fields.');
+    assert.dom('[data-test-field]').exists({ count: 4 }, 'We see 4 fields.');
 
     assert
       .dom('[data-test-button="Submit"]')
