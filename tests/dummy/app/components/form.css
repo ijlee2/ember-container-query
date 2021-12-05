@@ -1,0 +1,19 @@
+.form {
+  background-color: rgba(38, 50, 56, 0.2);
+  border-radius: 0.25rem;
+  box-shadow: inset 0 0 0.125rem rgba(38, 50, 56, 0.8);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.5rem;
+}
+
+.submit-button-container {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.submit-button {
+  padding: 0.5rem 3rem;
+}

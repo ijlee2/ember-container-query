@@ -1,0 +1,31 @@
+<form
+  aria-describedby={{if @instructions (concat this.formId "-instructions")}}
+  aria-labelledby={{if @title (concat this.formId "-title")}}
+  data-test-form={{or @title ""}}
+  local-class="form"
+  {{on "submit" this.submitForm}}
+>
+  <Form::Information
+    @formId={{this.formId}}
+    @instructions={{@instructions}}
+    @title={{@title}}
+  />
+
+  <ContainerQuery
+    @features={{hash
+      wide=(cq-width min=640)
+    }}
+  >
+    {{yield}}
+  </ContainerQuery>
+
+  <div local-class="submit-button-container">
+    <button
+      data-test-button="Submit"
+      local-class="submit-button"
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
+</form>
