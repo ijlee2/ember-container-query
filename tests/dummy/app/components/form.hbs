@@ -15,8 +15,17 @@
     @features={{hash
       wide=(cq-width min=640)
     }}
+    as |CQ|
   >
-    {{yield}}
+    {{yield
+      (hash
+        Input=(component "form/input"
+          changeset=this.changeset
+          isWide=CQ.features.wide
+          onUpdate=this.updateChangeset
+        )
+      )
+    }}
   </ContainerQuery>
 
   <div local-class="submit-button-container">

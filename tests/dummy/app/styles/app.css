@@ -56,6 +56,11 @@ button:hover {
   transition: background-color 0.17s;
 }
 
+input {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+}
+
 p {
   margin-bottom: 0.75rem;
 }

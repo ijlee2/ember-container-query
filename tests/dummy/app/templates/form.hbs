@@ -15,7 +15,22 @@
       }}
       @instructions="Still have questions about ember-container-query? Try sending me a message."
       @title="Contact me"
+      as |F|
     >
+      <F.Input
+        @isRequired={{true}}
+        @key="name"
+        @label="Name"
+        @placeholder="Zoey"
+      />
+
+      <F.Input
+        @isRequired={{true}}
+        @key="email"
+        @label="Email"
+        @placeholder="zoey@emberjs.com"
+        @type="email"
+      />
     </Form>
   </div>
 </section>

@@ -17,7 +17,22 @@ module('Integration | Component | form', function (hooks) {
         }}
         @instructions="Still have questions about ember-container-query? Try sending me a message."
         @title="Contact me"
+        as |F|
       >
+        <F.Input
+          @isRequired={{true}}
+          @key="name"
+          @label="Name"
+          @placeholder="Zoey"
+        />
+
+        <F.Input
+          @isRequired={{true}}
+          @key="email"
+          @label="Email"
+          @placeholder="zoey@emberjs.com"
+          @type="email"
+        />
       </Form>
     `);
 
@@ -33,7 +48,7 @@ module('Integration | Component | form', function (hooks) {
       )
       .hasAria('labelledby', titleId, 'We see the correct aria-labelledby.');
 
-    assert.dom('[data-test-field]').exists({ count: 0 }, 'We see 0 fields.');
+    assert.dom('[data-test-field]').exists({ count: 2 }, 'We see 2 fields.');
 
     assert
       .dom('[data-test-button="Submit"]')
