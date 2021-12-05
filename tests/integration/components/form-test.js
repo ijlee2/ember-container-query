@@ -9,6 +9,12 @@ module('Integration | Component | form', function (hooks) {
   test('The component renders a form', async function (assert) {
     await render(hbs`
       <Form
+        @data={{hash
+          email=undefined
+          message="I 🧡 container queries!"
+          name=undefined
+          subscribe=true
+        }}
         @instructions="Still have questions about ember-container-query? Try sending me a message."
         @title="Contact me"
       >
@@ -26,6 +32,8 @@ module('Integration | Component | form', function (hooks) {
         'We see the correct aria-describedby.'
       )
       .hasAria('labelledby', titleId, 'We see the correct aria-labelledby.');
+
+    assert.dom('[data-test-field]').exists({ count: 0 }, 'We see 0 fields.');
 
     assert
       .dom('[data-test-button="Submit"]')
