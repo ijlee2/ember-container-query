@@ -1,7 +1,7 @@
 'use strict';
 
-const { embroiderOptimized, embroiderSafe } = require('@embroider/test-setup');
 const getChannelURL = require('ember-source-channel-url');
+const { embroiderOptimized, embroiderSafe } = require('@embroider/test-setup');
 
 module.exports = async function () {
   return {
@@ -27,7 +27,8 @@ module.exports = async function () {
         name: 'ember-release',
         npm: {
           devDependencies: {
-            'ember-source': await getChannelURL('release'),
+            'ember-source': '~3.28.8',
+            // 'ember-source': await getChannelURL('release'),
           },
         },
       },

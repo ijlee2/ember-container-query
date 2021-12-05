@@ -26,25 +26,11 @@ jobs:
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2
         with:
+          cache: 'yarn'
           node-version: ${{ env.NODE_VERSION }}
-
-      - name: Get Yarn cache path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache Yarn cache and node_modules
-        id: cache-dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            ${{ steps.yarn-cache-dir-path.outputs.dir }}
-            node_modules
-          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-${{ env.NODE_VERSION }}-
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-        if: steps.cache-dependencies.outputs.cache-hit != 'true'
 
       - name: Build app
         run: yarn build:test
@@ -67,25 +53,11 @@ jobs:
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2
         with:
+          cache: 'yarn'
           node-version: ${{ env.NODE_VERSION }}
-
-      - name: Get Yarn cache path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache Yarn cache and node_modules
-        id: cache-dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            ${{ steps.yarn-cache-dir-path.outputs.dir }}
-            node_modules
-          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-${{ env.NODE_VERSION }}-
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-        if: steps.cache-dependencies.outputs.cache-hit != 'true'
 
       - name: Lint
         run: yarn lint
@@ -96,6 +68,7 @@ jobs:
     needs: [build-app]
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         width:
           - 'w1'
@@ -113,25 +86,11 @@ jobs:
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2
         with:
+          cache: 'yarn'
           node-version: ${{ env.NODE_VERSION }}
-
-      - name: Get Yarn cache path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache Yarn cache and node_modules
-        id: cache-dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            ${{ steps.yarn-cache-dir-path.outputs.dir }}
-            node_modules
-          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-${{ env.NODE_VERSION }}-
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-        if: steps.cache-dependencies.outputs.cache-hit != 'true'
 
       - name: Download app
         uses: actions/download-artifact@v2
@@ -153,6 +112,7 @@ jobs:
     name: Test compatibility
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         scenario:
           - 'ember-lts-3.20'
@@ -176,25 +136,11 @@ jobs:
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2
         with:
+          cache: 'yarn'
           node-version: ${{ env.NODE_VERSION }}
-
-      - name: Get Yarn cache path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache Yarn cache and node_modules
-        id: cache-dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            ${{ steps.yarn-cache-dir-path.outputs.dir }}
-            node_modules
-          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ matrix.scenario }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ matrix.scenario }}-
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-        if: steps.cache-dependencies.outputs.cache-hit != 'true'
 
       # Test compatibility without Percy
       - name: Test
