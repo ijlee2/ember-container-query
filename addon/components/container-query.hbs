@@ -3,7 +3,7 @@
     class="container-query"
     data-test-container-query
     {{did-insert this.queryContainer}}
-    {{did-resize this.queryContainer debounce=this.debounce}}
+    {{on-resize this.onResize}}
     ...attributes
   >
     {{yield (hash
