@@ -33,6 +33,11 @@ module('Integration | Component | form', function (hooks) {
           @placeholder="zoey@emberjs.com"
           @type="email"
         />
+
+        <F.Textarea
+          @key="message"
+          @label="Message"
+        />
       </Form>
     `);
 
@@ -48,7 +53,7 @@ module('Integration | Component | form', function (hooks) {
       )
       .hasAria('labelledby', titleId, 'We see the correct aria-labelledby.');
 
-    assert.dom('[data-test-field]').exists({ count: 2 }, 'We see 2 fields.');
+    assert.dom('[data-test-field]').exists({ count: 3 }, 'We see 3 fields.');
 
     assert
       .dom('[data-test-button="Submit"]')
