@@ -12,7 +12,7 @@ export default class WidgetsWidget2CaptionsComponent extends Component {
       return htmlSafe('');
     }
 
-    return htmlSafe(`fill: ${this.summary.markerColor};`);
+    return htmlSafe(`color: ${this.summary.markerColor};`);
   }
 
   get summaries() {

@@ -18,7 +18,7 @@
         >
           <span local-class="marker">
             {{!-- template-lint-disable no-inline-styles style-concatenation --}}
-            {{svg-jar "stop-24px" aria-hidden="true" style=this.styleForMarker}}
+            {{svg-jar "stop" aria-hidden="true" style=this.styleForMarker}}
             {{!-- template-lint-enable no-inline-styles style-concatenation --}}
           </span>
 
@@ -62,7 +62,7 @@
             Previous
 
           {{else}}
-            {{svg-jar "arrow_back_ios-24px" aria-hidden="true" local-class="icon"}}
+            {{svg-jar "chevron-left" aria-hidden="true" local-class="icon"}}
 
           {{/if}}
         </button>
@@ -80,7 +80,7 @@
             Next
 
           {{else}}
-            {{svg-jar "arrow_forward_ios-24px" aria-hidden="true" local-class="icon"}}
+            {{svg-jar "chevron-right" aria-hidden="true" local-class="icon"}}
 
           {{/if}}
         </button>

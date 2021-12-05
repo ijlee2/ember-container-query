@@ -14,7 +14,7 @@
 }
 
 .icon-explicit {
-  fill: rgba(247, 252, 251, 0.9);
+  color: rgba(247, 252, 251, 0.9);
   flex-shrink: 0;
   margin-left: 0.25rem;
 }
