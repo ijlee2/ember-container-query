@@ -68,6 +68,7 @@ jobs:
     needs: [build-app]
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         width:
           - 'w1'
@@ -111,6 +112,7 @@ jobs:
     name: Test compatibility
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         scenario:
           - 'ember-lts-3.20'
