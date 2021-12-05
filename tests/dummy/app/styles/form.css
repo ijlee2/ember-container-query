@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 3rem);
+  padding: 1.5rem 1rem;
+}
+
+.form {
+  flex: 1;
+}
