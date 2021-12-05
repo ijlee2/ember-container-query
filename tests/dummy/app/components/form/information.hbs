@@ -1,0 +1,23 @@
+{{#if (or @title @instructions)}}
+  <div local-class="container">
+    {{#if @title}}
+      <div
+        data-test-title
+        id="{{@formId}}-title"
+        local-class="title"
+      >
+        {{@title}}
+      </div>
+    {{/if}}
+
+    {{#if @instructions}}
+      <p
+        data-test-instructions
+        id="{{@formId}}-instructions"
+        local-class="instructions"
+      >
+        {{@instructions}}
+      </p>
+    {{/if}}
+  </div>
+{{/if}}

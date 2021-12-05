@@ -9,5 +9,6 @@ export default class Router extends EmberRouter {
 Router.map(function () {
   this.route('album');
   this.route('dashboard');
+  this.route('form');
   this.route('not-found', { path: '*' });
 });
