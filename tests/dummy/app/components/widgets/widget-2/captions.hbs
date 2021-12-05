@@ -16,9 +16,9 @@
           data-test-field="Music Format"
           local-class="music-format {{unless CQ.features.large "small-font-size"}}"
         >
-          <span aria-hidden="true" local-class="marker">
+          <span local-class="marker">
             {{!-- template-lint-disable no-inline-styles style-concatenation --}}
-            {{svg-jar "stop-24px" style=this.styleForMarker}}
+            {{svg-jar "stop-24px" aria-hidden="true" style=this.styleForMarker}}
             {{!-- template-lint-enable no-inline-styles style-concatenation --}}
           </span>
 
@@ -62,7 +62,7 @@
             Previous
 
           {{else}}
-            {{svg-jar "arrow_back_ios-24px" local-class="icon"}}
+            {{svg-jar "arrow_back_ios-24px" aria-hidden="true" local-class="icon"}}
 
           {{/if}}
         </button>
@@ -80,7 +80,7 @@
             Next
 
           {{else}}
-            {{svg-jar "arrow_forward_ios-24px" local-class="icon"}}
+            {{svg-jar "arrow_forward_ios-24px" aria-hidden="true" local-class="icon"}}
 
           {{/if}}
         </button>
