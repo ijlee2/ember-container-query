@@ -110,8 +110,10 @@ export default class WidgetsWidget2StackedChartComponent extends Component {
       .range([height - margin.bottom, margin.top]);
   }
 
-  @action onResize(entry) {
-    debounce(this, this.refreshChart, entry.target, 50);
+  @action onResize(resizeObserverEntry) {
+    const element = resizeObserverEntry.target;
+
+    debounce(this, this.refreshChart, element, 50);
   }
 
   @action refreshChart(element) {

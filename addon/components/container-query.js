@@ -24,12 +24,15 @@ export default class ContainerQueryComponent extends Component {
   // The dynamic tag is restricted to be immutable
   tagName = this.args.tagName ?? 'div';
 
-  @action onResize(entry) {
+  @action onResize(resizeObserverEntry) {
+    const element = resizeObserverEntry.target;
+
     if (this.debounce > 0) {
-      debounce(this, this.queryContainer, entry.target, this.debounce);
-    } else {
-      this.queryContainer(entry.target);
+      debounce(this, this.queryContainer, element, this.debounce);
+      return;
     }
+
+    this.queryContainer(element);
   }
 
   @action queryContainer(element) {
