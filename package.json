@@ -61,7 +61,8 @@
     "ember-cli-babel": "^7.26.6",
     "ember-cli-htmlbars": "^6.0.0",
     "ember-did-resize-modifier": "^1.0.0",
-    "ember-element-helper": "^0.5.5"
+    "ember-element-helper": "^0.5.5",
+    "ember-on-resize-modifier": "^0.4.5"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
