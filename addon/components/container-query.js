@@ -1,6 +1,7 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import { debounce } from '@ember/runloop';
 
 export default class ContainerQueryComponent extends Component {
   @tracked queryResults = {};
@@ -22,6 +23,17 @@ export default class ContainerQueryComponent extends Component {
 
   // The dynamic tag is restricted to be immutable
   tagName = this.args.tagName ?? 'div';
+
+  @action onResize(resizeObserverEntry) {
+    const element = resizeObserverEntry.target;
+
+    if (this.debounce > 0) {
+      debounce(this, this.queryContainer, element, this.debounce);
+      return;
+    }
+
+    this.queryContainer(element);
+  }
 
   @action queryContainer(element) {
     this.measureDimensions(element);
