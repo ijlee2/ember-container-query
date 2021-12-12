@@ -1,6 +1,7 @@
 import { visit } from '@ember/test-helpers';
 import takeSnapshot from 'dummy/tests/helpers/percy';
 import resetViewport from 'dummy/tests/helpers/reset-viewport';
+import { timeout } from 'dummy/tests/helpers/resize-container';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
@@ -8,9 +9,12 @@ module('Acceptance | album', function (hooks) {
   setupApplicationTest(hooks);
   resetViewport(hooks);
 
-  test('@w1 @h1 Visual snapshot', async function (assert) {
+  hooks.beforeEach(async function () {
     await visit('/album');
+    await timeout();
+  });
 
+  test('@w1 @h1 Visual snapshot', async function (assert) {
     assert
       .dom('[data-test-list="Tracks"]')
       .exists('We see the album tracks in a list.')
@@ -28,8 +32,6 @@ module('Acceptance | album', function (hooks) {
   });
 
   test('@w2 @h1 Visual snapshot', async function (assert) {
-    await visit('/album');
-
     assert
       .dom('[data-test-list="Tracks"]')
       .exists('We see the album tracks in a list.')
@@ -47,8 +49,6 @@ module('Acceptance | album', function (hooks) {
   });
 
   test('@w3 @h1 Visual snapshot', async function (assert) {
-    await visit('/album');
-
     assert
       .dom('[data-test-list="Tracks"]')
       .exists('We see the album tracks in a list.')
@@ -66,8 +66,6 @@ module('Acceptance | album', function (hooks) {
   });
 
   test('@w1 @h2 Visual snapshot', async function (assert) {
-    await visit('/album');
-
     assert
       .dom('[data-test-list="Tracks"]')
       .exists('We see the album tracks in a list.')
@@ -85,8 +83,6 @@ module('Acceptance | album', function (hooks) {
   });
 
   test('@w2 @h2 Visual snapshot', async function (assert) {
-    await visit('/album');
-
     assert
       .dom('[data-test-list="Tracks"]')
       .exists('We see the album tracks in a list.')
@@ -104,8 +100,6 @@ module('Acceptance | album', function (hooks) {
   });
 
   test('@w3 @h2 Visual snapshot', async function (assert) {
-    await visit('/album');
-
     assert
       .dom('[data-test-table="Tracks"]')
       .exists('We see the album tracks in a table.');
@@ -122,8 +116,6 @@ module('Acceptance | album', function (hooks) {
   });
 
   test('@w1 @h3 Visual snapshot', async function (assert) {
-    await visit('/album');
-
     assert
       .dom('[data-test-list="Tracks"]')
       .exists('We see the album tracks in a list.')
@@ -141,8 +133,6 @@ module('Acceptance | album', function (hooks) {
   });
 
   test('@w2 @h3 Visual snapshot', async function (assert) {
-    await visit('/album');
-
     assert
       .dom('[data-test-table="Tracks"]')
       .exists('We see the album tracks in a table.');
@@ -159,8 +149,6 @@ module('Acceptance | album', function (hooks) {
   });
 
   test('@w3 @h3 Visual snapshot', async function (assert) {
-    await visit('/album');
-
     assert
       .dom('[data-test-table="Tracks"]')
       .exists('We see the album tracks in a table.');

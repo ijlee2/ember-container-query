@@ -5,9 +5,9 @@ import { find } from '@ember/test-helpers';
 // This is a magic number. It is the time (in ms) for things to `settle`
 // after a resize. It is the time that we need to wait before assertions
 // that should pass will always pass.
-const RERENDER_TIME = 100;
+const RERENDER_TIME = 50;
 
-export function timeout(milliseconds) {
+export function timeout(milliseconds = RERENDER_TIME) {
   return new Promise((resolve) => {
     later(resolve, milliseconds);
   });
@@ -27,5 +27,5 @@ export default async function resizeContainer(width, height) {
   parentElement.style.width = `${width}px`;
   parentElement.style.height = `${height}px`;
 
-  await timeout(RERENDER_TIME);
+  await timeout();
 }
