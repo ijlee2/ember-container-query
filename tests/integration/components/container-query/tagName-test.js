@@ -1,3 +1,4 @@
+import { set } from '@ember/object';
 import { render } from '@ember/test-helpers';
 import setupContainerQueryTest from 'dummy/tests/helpers/container-query';
 import resizeContainer from 'dummy/tests/helpers/resize-container';
@@ -180,7 +181,7 @@ module('Integration | Component | container-query', function (hooks) {
         </div>
       `);
 
-      this.set('tagName', 'article');
+      set(this, 'tagName', 'article');
     });
 
     test("The component doesn't update the tag", async function (assert) {
