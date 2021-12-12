@@ -53,7 +53,7 @@ module('Integration | Component | container-query', function (hooks) {
     test('The component has the <div> tag', async function (assert) {
       assert
         .dom('[data-test-container-query]')
-        .hasTagName('div', 'Tag name is correct.');
+        .hasTagName('div', 'We see the correct tag name.');
     });
 
     test('The component continues to have the <div> tag when it is resized', async function (assert) {
@@ -61,19 +61,19 @@ module('Integration | Component | container-query', function (hooks) {
 
       assert
         .dom('[data-test-container-query]')
-        .hasTagName('div', 'Tag name is correct.');
+        .hasTagName('div', 'We see the correct tag name.');
 
       await resizeContainer(800, 400);
 
       assert
         .dom('[data-test-container-query]')
-        .hasTagName('div', 'Tag name is correct.');
+        .hasTagName('div', 'We see the correct tag name.');
 
       await resizeContainer(1000, 600);
 
       assert
         .dom('[data-test-container-query]')
-        .hasTagName('div', 'Tag name is correct.');
+        .hasTagName('div', 'We see the correct tag name.');
     });
   });
 
@@ -121,7 +121,7 @@ module('Integration | Component | container-query', function (hooks) {
     test('The component has the correct tag', async function (assert) {
       assert
         .dom('[data-test-container-query]')
-        .hasTagName('section', 'Tag name is correct.');
+        .hasTagName('section', 'We see the correct tag name.');
     });
 
     test('The component continues to have the correct tag when it is resized', async function (assert) {
@@ -129,19 +129,19 @@ module('Integration | Component | container-query', function (hooks) {
 
       assert
         .dom('[data-test-container-query]')
-        .hasTagName('section', 'Tag name is correct.');
+        .hasTagName('section', 'We see the correct tag name.');
 
       await resizeContainer(800, 400);
 
       assert
         .dom('[data-test-container-query]')
-        .hasTagName('section', 'Tag name is correct.');
+        .hasTagName('section', 'We see the correct tag name.');
 
       await resizeContainer(1000, 600);
 
       assert
         .dom('[data-test-container-query]')
-        .hasTagName('section', 'Tag name is correct.');
+        .hasTagName('section', 'We see the correct tag name.');
     });
   });
 
@@ -193,8 +193,8 @@ module('Integration | Component | container-query', function (hooks) {
     test("The component doesn't update the tag", async function (assert) {
       assert
         .dom('[data-test-container-query]')
-        .hasTagName('section', 'Tag name is correct.')
-        .doesNotHaveTagName('article', 'Tag name did not change.');
+        .hasTagName('section', 'We see the correct tag name.')
+        .doesNotHaveTagName('article', 'The tag name should not change.');
     });
 
     test('The component continues to not update the tag when it is resized', async function (assert) {
@@ -202,22 +202,22 @@ module('Integration | Component | container-query', function (hooks) {
 
       assert
         .dom('[data-test-container-query]')
-        .hasTagName('section', 'Tag name is correct.')
-        .doesNotHaveTagName('article', 'Tag name did not change.');
+        .hasTagName('section', 'We see the correct tag name.')
+        .doesNotHaveTagName('article', 'The tag name should not change.');
 
       await resizeContainer(800, 400);
 
       assert
         .dom('[data-test-container-query]')
-        .hasTagName('section', 'Tag name is correct.')
-        .doesNotHaveTagName('article', 'Tag name did not change.');
+        .hasTagName('section', 'We see the correct tag name.')
+        .doesNotHaveTagName('article', 'The tag name should not change.');
 
       await resizeContainer(1000, 600);
 
       assert
         .dom('[data-test-container-query]')
-        .hasTagName('section', 'Tag name is correct.')
-        .doesNotHaveTagName('article', 'Tag name did not change.');
+        .hasTagName('section', 'We see the correct tag name.')
+        .doesNotHaveTagName('article', 'The tag name should not change.');
     });
   });
 });

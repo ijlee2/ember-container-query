@@ -4,7 +4,7 @@
 }
 
 .item.active-route {
-  background-color: rgba(255, 255, 255, 0.075);
+  background-color: #15202d;
 }
 
 .link {
@@ -16,6 +16,6 @@
 }
 
 .link:hover {
-  background-color: rgba(255, 255, 255, 0.075);
+  background-color: #26313d;
   transition: background-color 0.17s;
 }

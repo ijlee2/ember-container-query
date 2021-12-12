@@ -26,14 +26,14 @@ module('Integration | Component | form/information', function (hooks) {
     await render(hbs`
       <Form::Information
         @formId="ember123"
-        @title="Update Password"
+        @title="Contact me"
       />
     `);
 
     assert
       .dom('[data-test-title]')
       .hasAttribute('id', 'ember123-title', 'We see the correct ID.')
-      .hasText('Update Password', 'We see the form title.');
+      .hasText('Contact me', 'We see the form title.');
 
     assert
       .dom('[data-test-instructions]')
@@ -44,7 +44,7 @@ module('Integration | Component | form/information', function (hooks) {
     await render(hbs`
       <Form::Information
         @formId="ember123"
-        @instructions="Your password must be at least 16 characters long."
+        @instructions="Still have questions about ember-container-query? Try sending me a message."
       />
     `);
 
@@ -56,7 +56,7 @@ module('Integration | Component | form/information', function (hooks) {
       .dom('[data-test-instructions]')
       .hasAttribute('id', 'ember123-instructions', 'We see the correct ID.')
       .hasText(
-        'Your password must be at least 16 characters long.',
+        'Still have questions about ember-container-query? Try sending me a message.',
         'We see the form instructions.'
       );
   });

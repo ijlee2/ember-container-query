@@ -6,7 +6,6 @@
     "track-lyrics";
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 0;
-  height: calc(100% - 3rem);
   padding: 1.5rem 1rem;
 }
 

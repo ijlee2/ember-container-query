@@ -1,14 +1,14 @@
 <nav
-  data-test-nav={{@name}}
   aria-label={{@name}}
+  data-test-nav={{@name}}
 >
   <ul local-class="list">
     {{#each @menuItems as |menuItem|}}
       <li local-class="item {{if (eq menuItem.route this.rootRoute) "active-route"}}">
         <LinkTo
+          @route={{menuItem.route}}
           data-test-link={{menuItem.label}}
           local-class="link"
-          @route={{menuItem.route}}
         >
           {{menuItem.label}}
         </LinkTo>
