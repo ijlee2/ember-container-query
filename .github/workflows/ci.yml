@@ -80,6 +80,25 @@ jobs:
           - 'w1-h3'
           - 'w2-h3'
           - 'w3-h3'
+        include:
+          - device: 'w1-h1'
+            test-port: 7357
+          - device: 'w2-h1'
+            test-port: 7358
+          - device: 'w3-h1'
+            test-port: 7359
+          - device: 'w1-h2'
+            test-port: 7360
+          - device: 'w2-h2'
+            test-port: 7361
+          - device: 'w3-h2'
+            test-port: 7362
+          - device: 'w1-h3'
+            test-port: 7363
+          - device: 'w2-h3'
+            test-port: 7364
+          - device: 'w3-h3'
+            test-port: 7365
     timeout-minutes: 5
     steps:
       - name: Check out a copy of the repo
@@ -101,7 +120,7 @@ jobs:
           path: dist
 
       - name: Test
-        run: npx percy exec -- yarn test:ember:${{ matrix.device }} --path=dist
+        run: npx percy exec -- yarn test:ember --path=dist --test-port=${{ matrix.test-port }}
         env:
           DEVICE: ${{ matrix.device }}
           PERCY_PARALLEL_NONCE: ${{ env.PERCY_PARALLEL_NONCE }}
@@ -127,6 +146,13 @@ jobs:
           - 'w1-h3'
           - 'w2-h3'
           - 'w3-h3'
+        include:
+          - device: 'w1-h3'
+            test-port: 7363
+          - device: 'w2-h3'
+            test-port: 7364
+          - device: 'w3-h3'
+            test-port: 7365
     timeout-minutes: 5
     steps:
       - name: Check out a copy of the repo
@@ -143,6 +169,6 @@ jobs:
 
       # Test compatibility without Percy
       - name: Test
-        run: yarn test:ember-compatibility ${{ matrix.scenario }} --- yarn test:ember:${{ matrix.device }}
+        run: yarn test:ember-compatibility ${{ matrix.scenario }} --- yarn test:ember --test-port=${{ matrix.test-port }}
         env:
           DEVICE: ${{ matrix.device }}
