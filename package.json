@@ -34,7 +34,7 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "start": "ember serve",
-    "test": "npm-run-all --aggregate-output --continue-on-error --parallel test:ember:*",
+    "test": "DEVICE='w3-h3' ember test",
     "test:ember": "ember test",
     "test:ember-compatibility": "./node_modules/.bin/ember try:one"
   },

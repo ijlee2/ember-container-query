@@ -70,13 +70,7 @@ Here are some guidelines to help you and everyone else.
     yarn test
     ```
 
-1. A couple of caveats. `yarn test --server` may not run properly (i.e. opening 9 browsers and shutting them down). If you do want to check something in browser, you can run one script at a time:
-
-    ```bash
-    yarn test:ember:w3-h3 --server
-    ```
-
-    Using `--filter` will result in failed tests. I use the filters for responsive testing so please don't overwrite them with your own.
+1. A couple of caveats. `yarn test --server` may result in failed tests due to inexact test window size. Using `--filter` may also result in failed tests. I use the filters for responsive testing so please don't overwrite them with your own.
 
 1. When you write code, you don't need to check addon compatibility. I suggest leaving this to CI. For every PR, the CI will lint files and dependencies, run tests, and check compatible versions—all in parallel! 💯
 
