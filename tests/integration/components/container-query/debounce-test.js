@@ -19,7 +19,7 @@ module('Integration | Component | container-query', function (hooks) {
         pass so that assertions that should pass will always pass.
 
         As a result, we can test `@debounce` only when the value is larger
-        than 100.
+        than `RERENDER_TIME`.
       */
       this.debounce = 250;
 
