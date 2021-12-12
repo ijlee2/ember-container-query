@@ -1,7 +1,7 @@
 import { set } from '@ember/object';
 import { render } from '@ember/test-helpers';
 import setupContainerQueryTest from 'dummy/tests/helpers/container-query';
-import resizeContainer from 'dummy/tests/helpers/resize-container';
+import resizeContainer, { timeout } from 'dummy/tests/helpers/resize-container';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
@@ -46,6 +46,8 @@ module('Integration | Component | container-query', function (hooks) {
           </ContainerQuery>
         </div>
       `);
+
+      await timeout();
     });
 
     test('The component creates data attributes when it is rendered', async function (assert) {
@@ -142,6 +144,8 @@ module('Integration | Component | container-query', function (hooks) {
             </ContainerQuery>
           </div>
         `);
+
+        await timeout();
       });
 
       test('The component creates data attributes when it is rendered', async function (assert) {
@@ -239,6 +243,8 @@ module('Integration | Component | container-query', function (hooks) {
             </ContainerQuery>
           </div>
         `);
+
+        await timeout();
       });
 
       test('The component creates data attributes when it is rendered', async function (assert) {
@@ -336,6 +342,8 @@ module('Integration | Component | container-query', function (hooks) {
           </ContainerQuery>
         </div>
       `);
+
+      await timeout();
 
       set(this, 'dataAttributePrefix', 'cq2');
     });
