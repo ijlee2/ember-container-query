@@ -8,14 +8,6 @@ module.exports = async function () {
     useYarn: true,
     scenarios: [
       {
-        name: 'ember-lts-3.20',
-        npm: {
-          devDependencies: {
-            'ember-source': '~3.20.5',
-          },
-        },
-      },
-      {
         name: 'ember-lts-3.24',
         npm: {
           devDependencies: {
@@ -24,11 +16,18 @@ module.exports = async function () {
         },
       },
       {
-        name: 'ember-release',
+        name: 'ember-lts-3.28',
         npm: {
           devDependencies: {
             'ember-source': '~3.28.8',
-            // 'ember-source': await getChannelURL('release'),
+          },
+        },
+      },
+      {
+        name: 'ember-release',
+        npm: {
+          devDependencies: {
+            'ember-source': await getChannelURL('release'),
           },
         },
       },
