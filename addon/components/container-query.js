@@ -21,6 +21,8 @@ export default class ContainerQueryComponent extends Component {
     return this.args.debounce ?? 0;
   }
 
+  dataAttributes = [];
+
   // The dynamic tag is restricted to be immutable
   tagName = this.args.tagName ?? 'div';
 
@@ -36,9 +38,16 @@ export default class ContainerQueryComponent extends Component {
   }
 
   @action queryContainer(element) {
+    this.resetDataAttributes(element);
     this.measureDimensions(element);
     this.evaluateQueries();
     this.setDataAttributes(element);
+  }
+
+  resetDataAttributes(element) {
+    for (const dataAttribute of this.dataAttributes) {
+      element.removeAttribute(dataAttribute);
+    }
   }
 
   measureDimensions(element) {
@@ -62,6 +71,7 @@ export default class ContainerQueryComponent extends Component {
 
   setDataAttributes(element) {
     const prefix = this.dataAttributePrefix;
+    const dataAttributes = [];
 
     for (const [featureName, meetsFeature] of Object.entries(
       this.queryResults
@@ -76,9 +86,12 @@ export default class ContainerQueryComponent extends Component {
 
       if (meetsFeature) {
         element.setAttribute(attributeName, '');
+        dataAttributes.push(attributeName);
       } else {
         element.removeAttribute(attributeName);
       }
     }
+
+    this.dataAttributes = dataAttributes;
   }
 }

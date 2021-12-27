@@ -3,6 +3,7 @@
     class="container-query"
     data-test-container-query
     {{did-insert this.queryContainer}}
+    {{did-update this.queryContainer this.dataAttributePrefix this.features}}
     {{on-resize this.onResize}}
     ...attributes
   >

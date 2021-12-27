@@ -299,19 +299,19 @@ module('Integration | Component | container-query', function (hooks) {
       });
     });
 
-    test("The component doesn't update the features", async function (assert) {
+    test('The component removes old features and sets new ones', async function (assert) {
       assert.areFeaturesCorrect({
-        small: true,
-        medium: false,
-        short: false,
-        'ratio-type-C': false,
+        small: undefined,
+        medium: undefined,
+        short: undefined,
+        'ratio-type-C': undefined,
       });
 
       assert.areFeaturesCorrect({
-        large: undefined,
-        tall: undefined,
-        'ratio-type-A': undefined,
-        'ratio-type-B': undefined,
+        large: false,
+        tall: true,
+        'ratio-type-A': true,
+        'ratio-type-B': true,
       });
     });
 
