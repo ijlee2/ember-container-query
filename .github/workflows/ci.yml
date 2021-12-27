@@ -18,7 +18,7 @@ jobs:
   build-app:
     name: Build app for testing
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
@@ -45,7 +45,7 @@ jobs:
   lint:
     name: Lint files and dependencies
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
@@ -98,7 +98,7 @@ jobs:
             test-port: 7364
           - device: 'w3-h3'
             test-port: 7365
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
@@ -152,7 +152,7 @@ jobs:
             test-port: 7364
           - device: 'w3-h3'
             test-port: 7365
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
