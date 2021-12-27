@@ -68,7 +68,6 @@ jobs:
     needs: [build-app]
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
       matrix:
         device:
           - 'w1-h1'
