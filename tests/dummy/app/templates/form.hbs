@@ -1,46 +1,40 @@
 {{page-title "Form"}}
 
-<section local-class="container">
-  <header>
-    <h1>Form</h1>
-  </header>
+<Ui::Page @title="Form">
+  <Form
+    @data={{hash
+      email=undefined
+      message="I 🧡 container queries!"
+      name=undefined
+      subscribe=true
+    }}
+    @instructions="Still have questions about ember-container-query? Try sending me a message."
+    @title="Contact me"
+    as |F|
+  >
+    <F.Input
+      @isRequired={{true}}
+      @key="name"
+      @label="Name"
+      @placeholder="Zoey"
+    />
 
-  <div local-class="form">
-    <Form
-      @data={{hash
-        email=undefined
-        message="I 🧡 container queries!"
-        name=undefined
-        subscribe=true
-      }}
-      @instructions="Still have questions about ember-container-query? Try sending me a message."
-      @title="Contact me"
-      as |F|
-    >
-      <F.Input
-        @isRequired={{true}}
-        @key="name"
-        @label="Name"
-        @placeholder="Zoey"
-      />
+    <F.Input
+      @isRequired={{true}}
+      @key="email"
+      @label="Email"
+      @placeholder="zoey@emberjs.com"
+      @type="email"
+    />
 
-      <F.Input
-        @isRequired={{true}}
-        @key="email"
-        @label="Email"
-        @placeholder="zoey@emberjs.com"
-        @type="email"
-      />
+    <F.Textarea
+      @key="message"
+      @label="Message"
+    />
 
-      <F.Textarea
-        @key="message"
-        @label="Message"
-      />
-
-      <F.Checkbox
-        @key="subscribe"
-        @label="Subscribe to The Ember Times?"
-      />
-    </Form>
-  </div>
-</section>
+    <F.Checkbox
+      @key="subscribe"
+      @label="Subscribe to The Ember Times?"
+    />
+  </Form>
+</Ui::Page>
