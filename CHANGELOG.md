@@ -1,3 +1,30 @@
+## 2.0.0 (2022-04-09)
+
+### Breaking Change
+* [#106](https://github.com/ijlee2/ember-container-query/pull/106) Dropped support for 3.20 LTS ([@ijlee2](https://github.com/ijlee2))
+* [#94](https://github.com/ijlee2/ember-container-query/pull/94) Dropped support for Node 10 ([@ijlee2](https://github.com/ijlee2))
+* [#93](https://github.com/ijlee2/ember-container-query/pull/93) Dropped support for 3.16 LTS ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#108](https://github.com/ijlee2/ember-container-query/pull/108) Updated dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+* [#74](https://github.com/ijlee2/ember-container-query/pull/74) Replaced ember-did-resize-modifier with ember-on-resize-modifier ([@st-h](https://github.com/st-h))
+* [#100](https://github.com/ijlee2/ember-container-query/pull/100) Updated development dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+* [#97](https://github.com/ijlee2/ember-container-query/pull/97) Updated ember-source to v3.28.6 ([@ijlee2](https://github.com/ijlee2))
+* [#96](https://github.com/ijlee2/ember-container-query/pull/96) Updated dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#109](https://github.com/ijlee2/ember-container-query/pull/109) Updated the demo app ([@ijlee2](https://github.com/ijlee2))
+* [#104](https://github.com/ijlee2/ember-container-query/pull/104) Updated style and tests for demo app ([@ijlee2](https://github.com/ijlee2))
+* [#102](https://github.com/ijlee2/ember-container-query/pull/102) Removed @percy/exec-action (deprecated) ([@ijlee2](https://github.com/ijlee2))
+* [#103](https://github.com/ijlee2/ember-container-query/pull/103) Applied timeout to all rendering and application tests ([@ijlee2](https://github.com/ijlee2))
+* [#101](https://github.com/ijlee2/ember-container-query/pull/101) Added a form example to the demo app ([@ijlee2](https://github.com/ijlee2))
+* [#99](https://github.com/ijlee2/ember-container-query/pull/99) Replaced custom caching strategy with one built into @actions/setup-node ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 2
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+- Steve ([@st-h](https://github.com/st-h))
+
+
 ## 2.0.0-alpha.0 (2021-12-12)
 
 ### Breaking Change
