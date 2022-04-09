@@ -9,7 +9,7 @@ body {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   height: 100%;
-  letter-spacing: 0.03125rem;
+  letter-spacing: 0.03rem;
   margin: 0;
 }
 
@@ -34,6 +34,12 @@ h3 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 a {

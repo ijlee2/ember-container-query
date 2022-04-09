@@ -6,25 +6,37 @@
 >
   <header local-class="header">
     <NavigationMenu
-      @name="Main Navigation"
       @menuItems={{array
-        (hash route="index" label="Home")
-        (hash route="album" label="Album")
-        (hash route="dashboard" label="Dashboard")
-        (hash route="form" label="Form")
+        (hash
+          label="Home"
+          route="index"
+        )
+        (hash
+          label="Album"
+          route="album"
+        )
+        (hash
+          label="Dashboard"
+          route="dashboard"
+        )
+        (hash
+          label="Form"
+          route="form"
+        )
       }}
+      @name="Main Navigation"
     />
   </header>
 
   <main local-class="main">
-    <div local-class="center" tabindex="0">
+    <div local-class="center">
       {{outlet}}
     </div>
   </main>
 
   <footer local-class="footer">
     <span local-class="copyright">
-      Created by <a local-class="link" href="https://www.linkedin.com/in/ijlee2/" target="_blank" rel="noopener noreferrer">Isaac J. Lee</a> © 2022
+      Created by <a href="https://www.linkedin.com/in/ijlee2/" local-class="link" rel="noopener noreferrer" target="_blank">Isaac J. Lee</a> © 2022
     </span>
   </footer>
 </div>
