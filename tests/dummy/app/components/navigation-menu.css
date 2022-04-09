@@ -3,16 +3,16 @@
   display: flex;
 }
 
-.item.active-route {
-  background-color: #15202d;
-}
-
 .link {
   display: inline-block;
   font-size: 0.875rem;
   padding: 0.875rem 1rem;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.link.active-route {
+  background-color: #15202d;
 }
 
 .link:hover {

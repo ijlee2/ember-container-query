@@ -7,8 +7,6 @@ module('Integration | Component | navigation-menu', function (hooks) {
   setupRenderingTest(hooks);
 
   test('The component renders a navigation menu', async function (assert) {
-    this.owner.setupRouter();
-
     await render(hbs`
       <NavigationMenu
         @name="Main Navigation"

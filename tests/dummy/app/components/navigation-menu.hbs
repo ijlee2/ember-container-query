@@ -4,11 +4,11 @@
 >
   <ul local-class="list">
     {{#each @menuItems as |menuItem|}}
-      <li local-class="item {{if (eq menuItem.route this.rootRoute) "active-route"}}">
+      <li local-class="item">
         <LinkTo
           @route={{menuItem.route}}
           data-test-link={{menuItem.label}}
-          local-class="link"
+          local-class="link {{if (eq menuItem.route this.rootRoute) "active-route"}}"
         >
           {{menuItem.label}}
         </LinkTo>
