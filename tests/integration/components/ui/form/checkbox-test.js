@@ -4,7 +4,7 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Integration | Component | form/checkbox', function (hooks) {
+module('Integration | Component | ui/form/checkbox', function (hooks) {
   setupRenderingTest(hooks);
 
   hooks.beforeEach(function () {
@@ -18,7 +18,7 @@ module('Integration | Component | form/checkbox', function (hooks) {
 
   test('The component renders a label and a checkbox', async function (assert) {
     await render(hbs`
-      <Form::Checkbox
+      <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @key="subscribe"
         @label="Subscribe to The Ember Times?"
@@ -44,7 +44,7 @@ module('Integration | Component | form/checkbox', function (hooks) {
 
   test('We can pass @isDisabled to disable the input', async function (assert) {
     await render(hbs`
-      <Form::Checkbox
+      <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @isDisabled={{true}}
         @key="subscribe"
@@ -59,7 +59,7 @@ module('Integration | Component | form/checkbox', function (hooks) {
 
   test('We can pass @isRequired to require a value', async function (assert) {
     await render(hbs`
-      <Form::Checkbox
+      <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @isRequired={{true}}
         @key="subscribe"
@@ -81,7 +81,7 @@ module('Integration | Component | form/checkbox', function (hooks) {
 
   test('We can pass @isViewOnly to display the value', async function (assert) {
     await render(hbs`
-      <Form::Checkbox
+      <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @isViewOnly={{true}}
         @key="subscribe"
@@ -111,7 +111,7 @@ module('Integration | Component | form/checkbox', function (hooks) {
     };
 
     await render(hbs`
-      <Form::Checkbox
+      <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @isRequired={{true}}
         @key="subscribe"
@@ -161,7 +161,7 @@ module('Integration | Component | form/checkbox', function (hooks) {
     };
 
     await render(hbs`
-      <Form::Checkbox
+      <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @isRequired={{true}}
         @key="subscribe"

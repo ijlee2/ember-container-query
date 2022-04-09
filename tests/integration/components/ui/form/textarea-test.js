@@ -4,7 +4,7 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Integration | Component | form/textarea', function (hooks) {
+module('Integration | Component | ui/form/textarea', function (hooks) {
   setupRenderingTest(hooks);
 
   hooks.beforeEach(function () {
@@ -18,7 +18,7 @@ module('Integration | Component | form/textarea', function (hooks) {
 
   test('The component renders a label and a textarea', async function (assert) {
     await render(hbs`
-      <Form::Textarea
+      <Ui::Form::Textarea
         @changeset={{this.changeset}}
         @key="message"
         @label="Message"
@@ -43,7 +43,7 @@ module('Integration | Component | form/textarea', function (hooks) {
 
   test('We can pass @isDisabled to disable the text area', async function (assert) {
     await render(hbs`
-      <Form::Textarea
+      <Ui::Form::Textarea
         @changeset={{this.changeset}}
         @isDisabled={{true}}
         @key="message"
@@ -58,7 +58,7 @@ module('Integration | Component | form/textarea', function (hooks) {
 
   test('We can pass @isRequired to require a value', async function (assert) {
     await render(hbs`
-      <Form::Textarea
+      <Ui::Form::Textarea
         @changeset={{this.changeset}}
         @isRequired={{true}}
         @key="message"
@@ -77,7 +77,7 @@ module('Integration | Component | form/textarea', function (hooks) {
 
   test('We can pass @isViewOnly to display the value', async function (assert) {
     await render(hbs`
-      <Form::Textarea
+      <Ui::Form::Textarea
         @changeset={{this.changeset}}
         @isViewOnly={{true}}
         @key="message"
@@ -107,7 +107,7 @@ module('Integration | Component | form/textarea', function (hooks) {
     };
 
     await render(hbs`
-      <Form::Textarea
+      <Ui::Form::Textarea
         @changeset={{this.changeset}}
         @isRequired={{true}}
         @key="message"

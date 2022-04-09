@@ -2,7 +2,7 @@ import { action, get } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 
-export default class FormInputComponent extends Component {
+export default class UiFormInputComponent extends Component {
   inputId = guidFor(this);
 
   get errorMessage() {

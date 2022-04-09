@@ -3,12 +3,12 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Integration | Component | form', function (hooks) {
+module('Integration | Component | ui/form', function (hooks) {
   setupRenderingTest(hooks);
 
   test('The component renders a form', async function (assert) {
     await render(hbs`
-      <Form
+      <Ui::Form
         @data={{hash
           email=undefined
           message="I 🧡 container queries!"
@@ -43,7 +43,7 @@ module('Integration | Component | form', function (hooks) {
           @key="subscribe"
           @label="Subscribe to The Ember Times?"
         />
-      </Form>
+      </Ui::Form>
     `);
 
     const titleId = find('[data-test-title]').getAttribute('id');

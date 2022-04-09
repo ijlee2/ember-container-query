@@ -4,7 +4,7 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Integration | Component | form/input', function (hooks) {
+module('Integration | Component | ui/form/input', function (hooks) {
   setupRenderingTest(hooks);
 
   hooks.beforeEach(function () {
@@ -18,7 +18,7 @@ module('Integration | Component | form/input', function (hooks) {
 
   test('The component renders a label and an input', async function (assert) {
     await render(hbs`
-      <Form::Input
+      <Ui::Form::Input
         @changeset={{this.changeset}}
         @key="name"
         @label="Name"
@@ -44,7 +44,7 @@ module('Integration | Component | form/input', function (hooks) {
 
   test('We can pass @isDisabled to disable the input', async function (assert) {
     await render(hbs`
-      <Form::Input
+      <Ui::Form::Input
         @changeset={{this.changeset}}
         @isDisabled={{true}}
         @key="name"
@@ -57,7 +57,7 @@ module('Integration | Component | form/input', function (hooks) {
 
   test('We can pass @isRequired to require a value', async function (assert) {
     await render(hbs`
-      <Form::Input
+      <Ui::Form::Input
         @changeset={{this.changeset}}
         @isRequired={{true}}
         @key="name"
@@ -76,7 +76,7 @@ module('Integration | Component | form/input', function (hooks) {
 
   test('We can pass @isViewOnly to display the value', async function (assert) {
     await render(hbs`
-      <Form::Input
+      <Ui::Form::Input
         @changeset={{this.changeset}}
         @isViewOnly={{true}}
         @key="name"
@@ -106,7 +106,7 @@ module('Integration | Component | form/input', function (hooks) {
     };
 
     await render(hbs`
-      <Form::Input
+      <Ui::Form::Input
         @changeset={{this.changeset}}
         @isRequired={{true}}
         @key="name"
@@ -142,7 +142,7 @@ module('Integration | Component | form/input', function (hooks) {
 
   test('We can pass @type to create an email input', async function (assert) {
     await render(hbs`
-      <Form::Input
+      <Ui::Form::Input
         @changeset={{this.changeset}}
         @key="email"
         @label="Email"
