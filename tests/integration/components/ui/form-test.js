@@ -19,30 +19,38 @@ module('Integration | Component | ui/form', function (hooks) {
         @title="Contact me"
         as |F|
       >
-        <F.Input
-          @isRequired={{true}}
-          @key="name"
-          @label="Name"
-          @placeholder="Zoey"
-        />
+        <div>
+          <F.Input
+            @isRequired={{true}}
+            @key="name"
+            @label="Name"
+            @placeholder="Zoey"
+          />
+        </div>
 
-        <F.Input
-          @isRequired={{true}}
-          @key="email"
-          @label="Email"
-          @placeholder="zoey@emberjs.com"
-          @type="email"
-        />
+        <div>
+          <F.Input
+            @isRequired={{true}}
+            @key="email"
+            @label="Email"
+            @placeholder="zoey@emberjs.com"
+            @type="email"
+          />
+        </div>
 
-        <F.Textarea
-          @key="message"
-          @label="Message"
-        />
+        <div>
+          <F.Textarea
+            @key="message"
+            @label="Message"
+          />
+        </div>
 
-        <F.Checkbox
-          @key="subscribe"
-          @label="Subscribe to The Ember Times?"
-        />
+        <div>
+          <F.Checkbox
+            @key="subscribe"
+            @label="Subscribe to The Ember Times?"
+          />
+        </div>
       </Ui::Form>
     `);
 

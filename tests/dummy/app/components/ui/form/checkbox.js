@@ -26,11 +26,12 @@ export default class UiFormCheckboxComponent extends Component {
   }
 
   @action updateValue() {
-    if (this.args.isDisabled) {
+    const { isDisabled, isReadOnly, key, onUpdate } = this.args;
+
+    if (isDisabled || isReadOnly) {
       return;
     }
 
-    const { key, onUpdate } = this.args;
     const value = !this.isChecked;
 
     onUpdate({ key, value });

@@ -18,34 +18,26 @@
     {{/if}}
   </span>
 
-  {{#if @isViewOnly}}
-    <p
-      data-test-field={{@label}}
-      local-class="paragraph"
-    >
-      {{if this.isChecked "Yes" "No"}}
-    </p>
-  {{else}}
-    <span
-      aria-checked={{if this.isChecked "true" "false"}}
-      aria-disabled={{if @isDisabled "true" "false"}}
-      aria-labelledby="{{this.inputId}}-label"
-      aria-required={{if @isRequired "true" "false"}}
-      data-test-field={{@label}}
-      local-class="checkbox
-        {{if this.isChecked "is-checked"}}
-        {{if @isDisabled "is-disabled"}}
-      "
-      role="checkbox"
-      tabindex="0"
-      {{on "click" this.updateValue}}
-      {{on "keypress" this.updateValueByPressingSpace}}
-    >
-      {{#if this.isChecked}}
-        {{svg-jar "check" aria-hidden="true" local-class="checkmark-icon"}}
-      {{/if}}
-    </span>
-  {{/if}}
+  <span
+    aria-checked={{if this.isChecked "true" "false"}}
+    aria-disabled={{if @isDisabled "true" "false"}}
+    aria-labelledby="{{this.inputId}}-label"
+    aria-readonly={{if @isReadOnly "true" "false"}}
+    aria-required={{if @isRequired "true" "false"}}
+    data-test-field={{@label}}
+    local-class="checkbox
+      {{if this.isChecked "is-checked"}}
+      {{if (or @isDisabled @isReadOnly) "is-disabled"}}
+    "
+    role="checkbox"
+    tabindex={{unless @isDisabled "0"}}
+    {{on "click" this.updateValue}}
+    {{on "keypress" this.updateValueByPressingSpace}}
+  >
+    {{#if this.isChecked}}
+      {{svg-jar "check" aria-hidden="true" local-class="checkmark-icon"}}
+    {{/if}}
+  </span>
 
   {{#if this.errorMessage}}
     <div local-class="feedback is-error">

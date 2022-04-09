@@ -1,7 +1,6 @@
 .container {
   align-items: start;
   display: grid;
-  margin-bottom: 1.25rem;
 }
 
 .container:not(.is-wide):not(.no-feedback) {
@@ -42,7 +41,7 @@
   grid-template-rows: 1fr;
 }
 
-.checkbox, .label, .paragraph {
+.checkbox, .label {
   margin: 0;
   padding: 0;
 }
@@ -53,7 +52,7 @@
   word-break: break-word;
 }
 
-.checkbox, .paragraph {
+.checkbox {
   grid-area: field;
 }
 
@@ -83,7 +82,7 @@
 }
 
 .checkbox.is-disabled {
-  background-color: #90a4ae;
+  background-color: #b2c9d4;
   cursor: not-allowed;
 }
 
@@ -91,9 +90,8 @@
   color: white;
 }
 
-.paragraph {
-  min-height: 1rem;
-  word-break: break-word;
+.checkbox.is-disabled .checkmark-icon {
+  color: #546e7a;
 }
 
 .feedback {

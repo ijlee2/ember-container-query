@@ -33,8 +33,10 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       .dom('[data-test-field="Subscribe to The Ember Times?"]')
       .hasAria('checked', 'true', 'We see the correct value.')
       .hasAria('disabled', 'false', 'The input should be enabled.')
+      .hasAria('readonly', 'false', 'The input should not be readonly.')
       .hasAria('required', 'false', 'The input should not be required.')
       .hasAttribute('role', 'checkbox', 'We see the correct role.')
+      .hasAttribute('tabindex', '0', 'The input is focusable.')
       .hasTagName('span', 'We see the correct tag name.');
 
     assert
@@ -54,7 +56,25 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
 
     assert
       .dom('[data-test-field="Subscribe to The Ember Times?"]')
+      .doesNotHaveAttribute('tabindex', 'The input should not be focusable.')
       .hasAria('disabled', 'true', 'The input is disabled.');
+  });
+
+  test('We can pass @isReadOnly to display the value', async function (assert) {
+    await render(hbs`
+      <Ui::Form::Checkbox
+        @changeset={{this.changeset}}
+        @isReadOnly={{true}}
+        @key="subscribe"
+        @label="Subscribe to The Ember Times?"
+      />
+    `);
+
+    assert
+      .dom('[data-test-field="Subscribe to The Ember Times?"]')
+      .hasAria('checked', 'true', 'We see the correct value.')
+      .hasAria('readonly', 'true', 'We see the aria-readonly attribute.')
+      .hasAttribute('tabindex', '0', 'The input is focusable.');
   });
 
   test('We can pass @isRequired to require a value', async function (assert) {
@@ -77,22 +97,6 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
     assert
       .dom('[data-test-field="Subscribe to The Ember Times?"]')
       .hasAria('required', 'true', 'The input should be required.');
-  });
-
-  test('We can pass @isViewOnly to display the value', async function (assert) {
-    await render(hbs`
-      <Ui::Form::Checkbox
-        @changeset={{this.changeset}}
-        @isViewOnly={{true}}
-        @key="subscribe"
-        @label="Subscribe to The Ember Times?"
-      />
-    `);
-
-    assert
-      .dom('[data-test-field="Subscribe to The Ember Times?"]')
-      .hasTagName('p', 'We see the correct tag name.')
-      .hasText('Yes', 'We see the correct value.');
   });
 
   test('We can click on the checkbox to toggle the value', async function (assert) {

@@ -11,7 +11,7 @@ export default class UiFormComponent extends Component {
   @action submitForm(event) {
     event.preventDefault();
 
-    alert(JSON.stringify(this.changeset));
+    console.table(this.changeset);
   }
 
   @action updateChangeset({ key, value }) {
