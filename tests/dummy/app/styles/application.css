@@ -25,10 +25,9 @@
   background-color: rgba(255, 255, 255, 0.045);
   border-bottom: 0.0625rem solid rgba(211, 211, 211, 0.15);
   border-top: 0.0625rem solid rgba(211, 211, 211, 0.15);
-  grid-area: main;
-
   display: flex;
   flex: 1;
+  grid-area: main;
   justify-content: center;
   overflow-y: hidden;
 }

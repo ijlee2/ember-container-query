@@ -1,7 +1,6 @@
 .container {
   align-items: start;
   display: grid;
-  margin-bottom: 1.25rem;
 }
 
 .container:not(.is-wide):not(.no-feedback) {
@@ -44,7 +43,7 @@
   grid-template-rows: 1fr;
 }
 
-.input, .label, .paragraph {
+.input, .label {
   margin: 0;
   padding: 0;
 }
@@ -55,7 +54,7 @@
   word-break: break-word;
 }
 
-.input, .paragraph {
+.input {
   grid-area: field;
 }
 
@@ -79,14 +78,9 @@
 }
 
 .input.is-disabled {
-  background-color: #90a4ae;
+  background-color: #b2c9d4;
   color: #546e7a;
   cursor: not-allowed;
-}
-
-.paragraph {
-  min-height: 1rem;
-  word-break: break-word;
 }
 
 .feedback {

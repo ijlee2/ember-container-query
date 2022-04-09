@@ -3,12 +3,12 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Integration | Component | form', function (hooks) {
+module('Integration | Component | ui/form', function (hooks) {
   setupRenderingTest(hooks);
 
   test('The component renders a form', async function (assert) {
     await render(hbs`
-      <Form
+      <Ui::Form
         @data={{hash
           email=undefined
           message="I 🧡 container queries!"
@@ -19,31 +19,39 @@ module('Integration | Component | form', function (hooks) {
         @title="Contact me"
         as |F|
       >
-        <F.Input
-          @isRequired={{true}}
-          @key="name"
-          @label="Name"
-          @placeholder="Zoey"
-        />
+        <div>
+          <F.Input
+            @isRequired={{true}}
+            @key="name"
+            @label="Name"
+            @placeholder="Zoey"
+          />
+        </div>
 
-        <F.Input
-          @isRequired={{true}}
-          @key="email"
-          @label="Email"
-          @placeholder="zoey@emberjs.com"
-          @type="email"
-        />
+        <div>
+          <F.Input
+            @isRequired={{true}}
+            @key="email"
+            @label="Email"
+            @placeholder="zoey@emberjs.com"
+            @type="email"
+          />
+        </div>
 
-        <F.Textarea
-          @key="message"
-          @label="Message"
-        />
+        <div>
+          <F.Textarea
+            @key="message"
+            @label="Message"
+          />
+        </div>
 
-        <F.Checkbox
-          @key="subscribe"
-          @label="Subscribe to The Ember Times?"
-        />
-      </Form>
+        <div>
+          <F.Checkbox
+            @key="subscribe"
+            @label="Subscribe to The Ember Times?"
+          />
+        </div>
+      </Ui::Form>
     `);
 
     const titleId = find('[data-test-title]').getAttribute('id');

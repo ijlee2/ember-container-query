@@ -18,26 +18,20 @@
     {{/if}}
   </label>
 
-  {{#if @isViewOnly}}
-    <p
-      data-test-field={{@label}}
-      local-class="paragraph"
-    >
-      {{this.value}}
-    </p>
-  {{else}}
-    <textarea
-      data-test-field={{@label}}
-      disabled={{@isDisabled}}
-      id={{this.inputId}}
-      local-class="textarea {{if @isDisabled "is-disabled"}}"
-      placeholder={{@placeholder}}
-      rows="4"
-      required={{@isRequired}}
-      value={{this.value}}
-      {{on "input" this.updateValue}}
-    />
-  {{/if}}
+  <input
+    data-test-field={{@label}}
+    disabled={{@isDisabled}}
+    id={{this.inputId}}
+    local-class="input
+      {{if (or @isDisabled @isReadOnly) "is-disabled"}}
+    "
+    placeholder={{@placeholder}}
+    readonly={{@isReadOnly}}
+    required={{@isRequired}}
+    type={{this.type}}
+    value={{this.value}}
+    {{on "input" this.updateValue}}
+  />
 
   {{#if this.errorMessage}}
     <div local-class="feedback is-error">

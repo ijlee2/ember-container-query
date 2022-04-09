@@ -18,8 +18,6 @@ module('Acceptance | dashboard', function (hooks) {
     // Widget 1
     assert
       .dom('[data-test-widget="1"] [data-test-container-query]')
-      .doesNotHaveAttribute('data-container-query-tall')
-      .doesNotHaveAttribute('data-container-query-square')
       .hasAttribute('data-container-query-wide');
 
     // Widget 2
@@ -63,16 +61,11 @@ module('Acceptance | dashboard', function (hooks) {
       .exists('We see the All tours link.');
 
     assert
-      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist("We don't see the placeholder image.");
-
-    assert
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
-      .exists('We see the concert venue image.')
       .hasAttribute(
         'src',
         '/images/widgets/widget-3/venue-wide@2x.jpg',
-        'We responsively loaded the correct image.'
+        'We see the concert image.'
       );
 
     // Widget 4
@@ -104,9 +97,7 @@ module('Acceptance | dashboard', function (hooks) {
     // Widget 1
     assert
       .dom('[data-test-widget="1"] [data-test-container-query]')
-      .doesNotHaveAttribute('data-container-query-tall')
-      .hasAttribute('data-container-query-square')
-      .doesNotHaveAttribute('data-container-query-wide');
+      .hasAttribute('data-container-query-square');
 
     // Widget 2
     assert
@@ -149,16 +140,11 @@ module('Acceptance | dashboard', function (hooks) {
       .exists('We see the All tours link.');
 
     assert
-      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist("We don't see the placeholder image.");
-
-    assert
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
-      .exists('We see the concert venue image.')
       .hasAttribute(
         'src',
-        '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
-        'We responsively loaded the correct image.'
+        '/images/widgets/widget-3/venue-wide@2x.jpg',
+        'We see the concert image.'
       );
 
     // Widget 4
@@ -190,9 +176,7 @@ module('Acceptance | dashboard', function (hooks) {
     // Widget 1
     assert
       .dom('[data-test-widget="1"] [data-test-container-query]')
-      .hasAttribute('data-container-query-tall')
-      .doesNotHaveAttribute('data-container-query-square')
-      .doesNotHaveAttribute('data-container-query-wide');
+      .hasAttribute('data-container-query-tall');
 
     // Widget 2
     assert
@@ -235,16 +219,11 @@ module('Acceptance | dashboard', function (hooks) {
       .exists('We see the All tours link.');
 
     assert
-      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist("We don't see the placeholder image.");
-
-    assert
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
-      .exists('We see the concert venue image.')
       .hasAttribute(
         'src',
         '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
-        'We responsively loaded the correct image.'
+        'We see the concert image.'
       );
 
     // Widget 4
@@ -288,8 +267,6 @@ module('Acceptance | dashboard', function (hooks) {
     // Widget 1
     assert
       .dom('[data-test-widget="1"] [data-test-container-query]')
-      .doesNotHaveAttribute('data-container-query-tall')
-      .doesNotHaveAttribute('data-container-query-square')
       .hasAttribute('data-container-query-wide');
 
     // Widget 2
@@ -333,16 +310,11 @@ module('Acceptance | dashboard', function (hooks) {
       .exists('We see the All tours link.');
 
     assert
-      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist("We don't see the placeholder image.");
-
-    assert
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
-      .exists('We see the concert venue image.')
       .hasAttribute(
         'src',
         '/images/widgets/widget-3/venue-wide@2x.jpg',
-        'We responsively loaded the correct image.'
+        'We see the concert image.'
       );
 
     // Widget 4
@@ -374,9 +346,7 @@ module('Acceptance | dashboard', function (hooks) {
     // Widget 1
     assert
       .dom('[data-test-widget="1"] [data-test-container-query]')
-      .doesNotHaveAttribute('data-container-query-tall')
-      .hasAttribute('data-container-query-square')
-      .doesNotHaveAttribute('data-container-query-wide');
+      .hasAttribute('data-container-query-square');
 
     // Widget 2
     assert
@@ -419,16 +389,11 @@ module('Acceptance | dashboard', function (hooks) {
       .exists('We see the All tours link.');
 
     assert
-      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist("We don't see the placeholder image.");
-
-    assert
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
-      .exists('We see the concert venue image.')
       .hasAttribute(
         'src',
-        '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
-        'We responsively loaded the correct image.'
+        '/images/widgets/widget-3/venue-wide@2x.jpg',
+        'We see the concert image.'
       );
 
     // Widget 4
@@ -460,9 +425,7 @@ module('Acceptance | dashboard', function (hooks) {
     // Widget 1
     assert
       .dom('[data-test-widget="1"] [data-test-container-query]')
-      .hasAttribute('data-container-query-tall')
-      .doesNotHaveAttribute('data-container-query-square')
-      .doesNotHaveAttribute('data-container-query-wide');
+      .hasAttribute('data-container-query-tall');
 
     // Widget 2
     assert
@@ -505,16 +468,11 @@ module('Acceptance | dashboard', function (hooks) {
       .exists('We see the All tours link.');
 
     assert
-      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist("We don't see the placeholder image.");
-
-    assert
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
-      .exists('We see the concert venue image.')
       .hasAttribute(
         'src',
         '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
-        'We responsively loaded the correct image.'
+        'We see the concert image.'
       );
 
     // Widget 4
@@ -558,14 +516,12 @@ module('Acceptance | dashboard', function (hooks) {
     // Widget 1
     assert
       .dom('[data-test-widget="1"] [data-test-container-query]')
-      .hasAttribute('data-container-query-tall')
-      .doesNotHaveAttribute('data-container-query-square')
-      .doesNotHaveAttribute('data-container-query-wide');
+      .hasAttribute('data-container-query-wide');
 
     // Widget 2
     assert
       .dom('[data-test-widget="2"] [data-test-visualization]')
-      .exists('We see the visualization.');
+      .doesNotExist("We don't see the visualization.");
 
     assert
       .dom('[data-test-widget="2"] [data-test-captions]')
@@ -603,16 +559,11 @@ module('Acceptance | dashboard', function (hooks) {
       .exists('We see the All tours link.');
 
     assert
-      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist("We don't see the placeholder image.");
-
-    assert
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
-      .exists('We see the concert venue image.')
       .hasAttribute(
         'src',
-        '/images/widgets/widget-3/venue-square@4x.jpg',
-        'We responsively loaded the correct image.'
+        '/images/widgets/widget-3/venue-wide@2x.jpg',
+        'We see the concert image.'
       );
 
     // Widget 4
@@ -622,24 +573,15 @@ module('Acceptance | dashboard', function (hooks) {
 
     assert
       .dom('[data-test-widget="4"] [data-test-memo-header]')
-      .doesNotHaveClass(
-        /minimal-layout/,
-        "The memo header doesn't use the minimal layout."
-      );
+      .hasClass(/minimal-layout/, 'The memo header uses the minimal layout.');
 
     assert
       .dom('[data-test-widget="4"] [data-test-memo-body]')
-      .doesNotHaveClass(
-        /minimal-layout/,
-        "The memo body doesn't use the minimal layout."
-      );
+      .hasClass(/minimal-layout/, 'The memo body uses the minimal layout.');
 
     assert
       .dom('[data-test-widget="4"] [data-test-memo-actions]')
-      .doesNotHaveClass(
-        /minimal-layout/,
-        "The memo actions doesn't use the minimal layout."
-      );
+      .hasClass(/minimal-layout/, 'The memo actions uses the minimal layout.');
 
     // Widget 5
     assert
@@ -653,9 +595,7 @@ module('Acceptance | dashboard', function (hooks) {
     // Widget 1
     assert
       .dom('[data-test-widget="1"] [data-test-container-query]')
-      .doesNotHaveAttribute('data-container-query-tall')
-      .hasAttribute('data-container-query-square')
-      .doesNotHaveAttribute('data-container-query-wide');
+      .hasAttribute('data-container-query-square');
 
     // Widget 2
     assert
@@ -698,16 +638,11 @@ module('Acceptance | dashboard', function (hooks) {
       .exists('We see the All tours link.');
 
     assert
-      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist("We don't see the placeholder image.");
-
-    assert
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
-      .exists('We see the concert venue image.')
       .hasAttribute(
         'src',
-        '/images/widgets/widget-3/venue-wide@2x.jpg',
-        'We responsively loaded the correct image.'
+        '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
+        'We see the concert image.'
       );
 
     // Widget 4
@@ -739,9 +674,7 @@ module('Acceptance | dashboard', function (hooks) {
     // Widget 1
     assert
       .dom('[data-test-widget="1"] [data-test-container-query]')
-      .hasAttribute('data-container-query-tall')
-      .doesNotHaveAttribute('data-container-query-square')
-      .doesNotHaveAttribute('data-container-query-wide');
+      .hasAttribute('data-container-query-square');
 
     // Widget 2
     assert
@@ -784,16 +717,11 @@ module('Acceptance | dashboard', function (hooks) {
       .exists('We see the All tours link.');
 
     assert
-      .dom('[data-test-widget="3"] [data-test-placeholder-image]')
-      .doesNotExist("We don't see the placeholder image.");
-
-    assert
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
-      .exists('We see the concert venue image.')
       .hasAttribute(
         'src',
         '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
-        'We responsively loaded the correct image.'
+        'We see the concert image.'
       );
 
     // Widget 4

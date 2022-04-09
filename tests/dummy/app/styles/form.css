@@ -1,9 +1,7 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem 1rem;
+.field {
+  margin-bottom: 1.25rem;
 }
 
-.form {
-  flex: 1;
+.field:last-of-type {
+  margin-bottom: 0;
 }

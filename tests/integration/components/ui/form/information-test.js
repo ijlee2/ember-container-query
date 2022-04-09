@@ -3,12 +3,12 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Integration | Component | form/information', function (hooks) {
+module('Integration | Component | ui/form/information', function (hooks) {
   setupRenderingTest(hooks);
 
   test('The component renders nothing when we do not pass @title or @instructions', async function (assert) {
     await render(hbs`
-      <Form::Information
+      <Ui::Form::Information
         @formId="ember123"
       />
     `);
@@ -24,7 +24,7 @@ module('Integration | Component | form/information', function (hooks) {
 
   test('We can pass @title to display the form title', async function (assert) {
     await render(hbs`
-      <Form::Information
+      <Ui::Form::Information
         @formId="ember123"
         @title="Contact me"
       />
@@ -42,7 +42,7 @@ module('Integration | Component | form/information', function (hooks) {
 
   test('We can pass @instructions to display the form instructions', async function (assert) {
     await render(hbs`
-      <Form::Information
+      <Ui::Form::Information
         @formId="ember123"
         @instructions="Still have questions about ember-container-query? Try sending me a message."
       />

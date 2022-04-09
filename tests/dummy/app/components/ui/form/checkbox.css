@@ -1,28 +1,25 @@
 .container {
   align-items: start;
   display: grid;
-  margin-bottom: 1.25rem;
 }
 
 .container:not(.is-wide):not(.no-feedback) {
   grid-template-areas:
-    "label"
-    "field"
-    "feedback";
-  grid-column-gap: 0;
+    "field label"
+    "feedback feedback";
+  grid-column-gap: 1rem;
   grid-row-gap: 0.5rem;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
 }
 
 .container:not(.is-wide).no-feedback {
   grid-template-areas:
-    "label"
-    "field";
-  grid-column-gap: 0;
-  grid-row-gap: 0.5rem;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
+    "field label";
+  grid-column-gap: 1rem;
+  grid-row-gap: 0;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
 }
 
 .container.is-wide:not(.no-feedback) {
@@ -44,7 +41,7 @@
   grid-template-rows: 1fr;
 }
 
-.textarea, .label, .paragraph {
+.checkbox, .label {
   margin: 0;
   padding: 0;
 }
@@ -55,38 +52,46 @@
   word-break: break-word;
 }
 
-.textarea, .paragraph {
+.checkbox {
   grid-area: field;
 }
 
-.textarea {
+.checkbox {
+  align-items: center;
+  background-color: white;
   border: 0.125rem solid #ffd54f;
-  padding: 0.125rem 0.25rem;
-  width: calc(100% - 2 * 0.25rem);
+  cursor: pointer;
+  display: flex;
+  height: 1rem;
+  justify-content: center;
+  position: relative;
+  width: 1rem;
 }
 
-.textarea:focus {
+.checkbox:focus {
   background-color: #ffecb3;
   outline: 0;
 }
 
-.textarea:not(:focus) {
+.checkbox:not(:focus) {
   border-color: transparent;
 }
 
-.textarea::placeholder {
-  font-style: italic;
+.checkbox.is-checked {
+  background-color: #1976d2;
 }
 
-.textarea.is-disabled {
-  background-color: #90a4ae;
-  color: #546e7a;
+.checkbox.is-disabled {
+  background-color: #b2c9d4;
   cursor: not-allowed;
 }
 
-.paragraph {
-  min-height: 1rem;
-  word-break: break-word;
+.checkmark-icon {
+  color: white;
+}
+
+.checkbox.is-disabled .checkmark-icon {
+  color: #546e7a;
 }
 
 .feedback {

@@ -4,7 +4,7 @@ import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Integration | Component | form/checkbox', function (hooks) {
+module('Integration | Component | ui/form/checkbox', function (hooks) {
   setupRenderingTest(hooks);
 
   hooks.beforeEach(function () {
@@ -18,7 +18,7 @@ module('Integration | Component | form/checkbox', function (hooks) {
 
   test('The component renders a label and a checkbox', async function (assert) {
     await render(hbs`
-      <Form::Checkbox
+      <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @key="subscribe"
         @label="Subscribe to The Ember Times?"
@@ -33,8 +33,10 @@ module('Integration | Component | form/checkbox', function (hooks) {
       .dom('[data-test-field="Subscribe to The Ember Times?"]')
       .hasAria('checked', 'true', 'We see the correct value.')
       .hasAria('disabled', 'false', 'The input should be enabled.')
+      .hasAria('readonly', 'false', 'The input should not be readonly.')
       .hasAria('required', 'false', 'The input should not be required.')
       .hasAttribute('role', 'checkbox', 'We see the correct role.')
+      .hasAttribute('tabindex', '0', 'The input is focusable.')
       .hasTagName('span', 'We see the correct tag name.');
 
     assert
@@ -44,7 +46,7 @@ module('Integration | Component | form/checkbox', function (hooks) {
 
   test('We can pass @isDisabled to disable the input', async function (assert) {
     await render(hbs`
-      <Form::Checkbox
+      <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @isDisabled={{true}}
         @key="subscribe"
@@ -54,12 +56,30 @@ module('Integration | Component | form/checkbox', function (hooks) {
 
     assert
       .dom('[data-test-field="Subscribe to The Ember Times?"]')
+      .doesNotHaveAttribute('tabindex', 'The input should not be focusable.')
       .hasAria('disabled', 'true', 'The input is disabled.');
+  });
+
+  test('We can pass @isReadOnly to display the value', async function (assert) {
+    await render(hbs`
+      <Ui::Form::Checkbox
+        @changeset={{this.changeset}}
+        @isReadOnly={{true}}
+        @key="subscribe"
+        @label="Subscribe to The Ember Times?"
+      />
+    `);
+
+    assert
+      .dom('[data-test-field="Subscribe to The Ember Times?"]')
+      .hasAria('checked', 'true', 'We see the correct value.')
+      .hasAria('readonly', 'true', 'We see the aria-readonly attribute.')
+      .hasAttribute('tabindex', '0', 'The input is focusable.');
   });
 
   test('We can pass @isRequired to require a value', async function (assert) {
     await render(hbs`
-      <Form::Checkbox
+      <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @isRequired={{true}}
         @key="subscribe"
@@ -79,22 +99,6 @@ module('Integration | Component | form/checkbox', function (hooks) {
       .hasAria('required', 'true', 'The input should be required.');
   });
 
-  test('We can pass @isViewOnly to display the value', async function (assert) {
-    await render(hbs`
-      <Form::Checkbox
-        @changeset={{this.changeset}}
-        @isViewOnly={{true}}
-        @key="subscribe"
-        @label="Subscribe to The Ember Times?"
-      />
-    `);
-
-    assert
-      .dom('[data-test-field="Subscribe to The Ember Times?"]')
-      .hasTagName('p', 'We see the correct tag name.')
-      .hasText('Yes', 'We see the correct value.');
-  });
-
   test('We can click on the checkbox to toggle the value', async function (assert) {
     assert.expect(6);
 
@@ -111,7 +115,7 @@ module('Integration | Component | form/checkbox', function (hooks) {
     };
 
     await render(hbs`
-      <Form::Checkbox
+      <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @isRequired={{true}}
         @key="subscribe"
@@ -161,7 +165,7 @@ module('Integration | Component | form/checkbox', function (hooks) {
     };
 
     await render(hbs`
-      <Form::Checkbox
+      <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @isRequired={{true}}
         @key="subscribe"

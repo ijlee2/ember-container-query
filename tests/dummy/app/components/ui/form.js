@@ -3,7 +3,7 @@ import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
-export default class FormComponent extends Component {
+export default class UiFormComponent extends Component {
   formId = guidFor(this);
 
   @tracked changeset = this.args.data ?? {};
@@ -11,7 +11,7 @@ export default class FormComponent extends Component {
   @action submitForm(event) {
     event.preventDefault();
 
-    alert(JSON.stringify(this.changeset));
+    console.table(this.changeset);
   }
 
   @action updateChangeset({ key, value }) {

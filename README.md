@@ -305,8 +305,6 @@ Credits
 
 Much thanks goes to [Chad Carbert (@chadian)](https://github.com/chadian), who introduced me to container queries at [EmberFest 2019](https://www.youtube.com/watch?v=RIdjk9_RSBY) and created [`ember-fill-up`](https://github.com/chadian/ember-fill-up) 🌟. I modeled the API for `ember-container-query` based on Chad's addon.
 
-Also to the Ember teams and [Garrett Murphey (@gmurphey)](https://github.com/gmurphey), without whom [`@ember/render-modifiers`](https://github.com/emberjs/ember-render-modifiers) and [`ember-did-resize-modifier`](https://github.com/gmurphey/ember-did-resize-modifier) wouldn't exist.
-
 
 License
 ------------------------------------------------------------------------------

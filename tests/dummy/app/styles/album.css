@@ -1,22 +1,20 @@
 .container {
   display: grid;
   grid-template-areas:
-    "album-header"
+    "album-summary"
     "album-tracks"
     "track-lyrics";
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 0;
-  padding: 1.5rem 1rem;
 }
 
-.album-header {
-  grid-area: album-header;
+.album-summary {
+  grid-area: album-summary;
 }
 
 .album-tracks {
   grid-area: album-tracks;
   margin-top: 1rem;
-  margin-bottom: 2rem;
 }
 
 .track-lyrics {
@@ -43,7 +41,7 @@
 .with-lyrics {
   grid-column-gap: 2rem;
   grid-template-areas:
-    "album-header track-lyrics"
+    "album-summary track-lyrics"
     "album-tracks track-lyrics";
   grid-template-columns: 1fr 18rem;
   grid-template-rows: auto 1fr;

@@ -2,7 +2,7 @@ import { action, get } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 
-export default class FormCheckboxComponent extends Component {
+export default class UiFormCheckboxComponent extends Component {
   inputId = guidFor(this);
 
   get errorMessage() {
@@ -26,11 +26,12 @@ export default class FormCheckboxComponent extends Component {
   }
 
   @action updateValue() {
-    if (this.args.isDisabled) {
+    const { isDisabled, isReadOnly, key, onUpdate } = this.args;
+
+    if (isDisabled || isReadOnly) {
       return;
     }
 
-    const { key, onUpdate } = this.args;
     const value = !this.isChecked;
 
     onUpdate({ key, value });

@@ -7,11 +7,11 @@
   padding: 1.25rem 1.5rem;
 }
 
-.submit-button-container {
+.actions {
   align-items: center;
   display: flex;
   justify-content: flex-end;
-  margin-top: 0.5rem;
+  margin-top: 2rem;
 }
 
 .submit-button {

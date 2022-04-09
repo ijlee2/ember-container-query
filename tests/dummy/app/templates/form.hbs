@@ -1,29 +1,27 @@
 {{page-title "Form"}}
 
-<section local-class="container">
-  <header>
-    <h1>Form</h1>
-  </header>
-
-  <div local-class="form">
-    <Form
-      @data={{hash
-        email=undefined
-        message="I 🧡 container queries!"
-        name=undefined
-        subscribe=true
-      }}
-      @instructions="Still have questions about ember-container-query? Try sending me a message."
-      @title="Contact me"
-      as |F|
-    >
+<Ui::Page @title="Form">
+  <Ui::Form
+    @data={{hash
+      email=undefined
+      message="I 🧡 container queries!"
+      name=undefined
+      subscribe=true
+    }}
+    @instructions="Still have questions about ember-container-query? Try sending me a message."
+    @title="Contact me"
+    as |F|
+  >
+    <div local-class="field">
       <F.Input
         @isRequired={{true}}
         @key="name"
         @label="Name"
         @placeholder="Zoey"
       />
+    </div>
 
+    <div local-class="field">
       <F.Input
         @isRequired={{true}}
         @key="email"
@@ -31,16 +29,20 @@
         @placeholder="zoey@emberjs.com"
         @type="email"
       />
+    </div>
 
+    <div local-class="field">
       <F.Textarea
         @key="message"
         @label="Message"
       />
+    </div>
 
+    <div local-class="field">
       <F.Checkbox
         @key="subscribe"
         @label="Subscribe to The Ember Times?"
       />
-    </Form>
-  </div>
-</section>
+    </div>
+  </Ui::Form>
+</Ui::Page>

@@ -5,7 +5,7 @@
   local-class="form"
   {{on "submit" this.submitForm}}
 >
-  <Form::Information
+  <Ui::Form::Information
     @formId={{this.formId}}
     @instructions={{@instructions}}
     @title={{@title}}
@@ -19,19 +19,19 @@
   >
     {{yield
       (hash
-        Checkbox=(component "form/checkbox"
+        Checkbox=(component "ui/form/checkbox"
           changeset=this.changeset
           isWide=CQ.features.wide
           onUpdate=this.updateChangeset
         )
 
-        Input=(component "form/input"
+        Input=(component "ui/form/input"
           changeset=this.changeset
           isWide=CQ.features.wide
           onUpdate=this.updateChangeset
         )
 
-        Textarea=(component "form/textarea"
+        Textarea=(component "ui/form/textarea"
           changeset=this.changeset
           isWide=CQ.features.wide
           onUpdate=this.updateChangeset
@@ -40,7 +40,7 @@
     }}
   </ContainerQuery>
 
-  <div local-class="submit-button-container">
+  <div local-class="actions">
     <button
       data-test-button="Submit"
       local-class="submit-button"
