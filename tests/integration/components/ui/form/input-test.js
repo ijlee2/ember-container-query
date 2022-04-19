@@ -39,7 +39,7 @@ module('Integration | Component | ui/form/input', function (hooks) {
       .isNotRequired('The input should not be required.');
 
     assert
-      .dom('[data-test-feedback="Name"]')
+      .dom('[data-test-feedback]')
       .doesNotExist('We should not see an error message.');
   });
 
@@ -124,7 +124,7 @@ module('Integration | Component | ui/form/input', function (hooks) {
       .hasValue('', 'We see the correct value.');
 
     assert
-      .dom('[data-test-feedback="Name"]')
+      .dom('[data-test-feedback]')
       .hasText('Please provide a value.', 'We see an error message.');
 
     // Update the value again
@@ -137,7 +137,7 @@ module('Integration | Component | ui/form/input', function (hooks) {
       .hasValue('Tomster', 'We see the correct value.');
 
     assert
-      .dom('[data-test-feedback="Name"]')
+      .dom('[data-test-feedback]')
       .doesNotExist('We should not see an error message.');
   });
 
@@ -165,7 +165,7 @@ module('Integration | Component | ui/form/input', function (hooks) {
       .isNotRequired('The input should not be required.');
 
     assert
-      .dom('[data-test-feedback="Name"]')
+      .dom('[data-test-feedback]')
       .doesNotExist('We should not see an error message.');
   });
 });

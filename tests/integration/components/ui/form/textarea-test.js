@@ -38,7 +38,7 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
       .isNotRequired('The textarea should not be required.');
 
     assert
-      .dom('[data-test-feedback="Message"]')
+      .dom('[data-test-feedback]')
       .doesNotExist('We should not see an error message.');
   });
 
@@ -125,7 +125,7 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
       .hasValue('', 'We see the correct value.');
 
     assert
-      .dom('[data-test-feedback="Message"]')
+      .dom('[data-test-feedback]')
       .hasText('Please provide a value.', 'We see an error message.');
 
     // Update the value again
@@ -138,7 +138,7 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
       .hasValue('Keep up the good work!', 'We see the correct value.');
 
     assert
-      .dom('[data-test-feedback="Message"]')
+      .dom('[data-test-feedback]')
       .doesNotExist('We should not see an error message.');
   });
 });

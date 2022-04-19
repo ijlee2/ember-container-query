@@ -1,49 +1,37 @@
-<div
-  local-class="container
-    {{if @isWide "is-wide"}}
-    {{unless this.errorMessage "no-feedback"}}
-  "
+<Ui::Form::Field
+  @errorMessage={{this.errorMessage}}
+  @isWide={{@isWide}}
 >
-  <label
-    data-test-label
-    for={{this.inputId}}
-    local-class="label"
-  >
-    {{@label}}
+  <:label as |l|>
+    <label
+      data-test-label
+      for={{l.inputId}}
+      local-class="label"
+    >
+      {{@label}}
 
-    {{#if @isRequired}}
-      <span aria-hidden="true">
-        *
-      </span>
-    {{/if}}
-  </label>
+      {{#if @isRequired}}
+        <span aria-hidden="true">
+          *
+        </span>
+      {{/if}}
+    </label>
+  </:label>
 
-  <textarea
-    data-test-field={{@label}}
-    disabled={{@isDisabled}}
-    id={{this.inputId}}
-    local-class="textarea
-      {{if (or @isDisabled @isReadOnly) "is-disabled"}}
-    "
-    placeholder={{@placeholder}}
-    readonly={{@isReadOnly}}
-    required={{@isRequired}}
-    rows="4"
-    value={{this.value}}
-    {{on "input" this.updateValue}}
-  />
-
-  {{#if this.errorMessage}}
-    <div local-class="feedback is-error">
-      {{svg-jar "alert" aria-hidden="true"}}
-
-      <span
-        data-test-feedback={{@label}}
-        local-class="message"
-        role="alert"
-      >
-        {{this.errorMessage}}
-      </span>
-    </div>
-  {{/if}}
-</div>
+  <:field as |f|>
+    <textarea
+      data-test-field={{@label}}
+      disabled={{@isDisabled}}
+      id={{f.inputId}}
+      local-class="textarea
+        {{if (or @isDisabled @isReadOnly) "is-disabled"}}
+      "
+      placeholder={{@placeholder}}
+      readonly={{@isReadOnly}}
+      required={{@isRequired}}
+      rows="4"
+      value={{this.value}}
+      {{on "input" this.updateValue}}
+    />
+  </:field>
+</Ui::Form::Field>
