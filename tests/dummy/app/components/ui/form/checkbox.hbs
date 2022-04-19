@@ -1,55 +1,44 @@
-<div
-  local-class="container
-    {{if @isWide "is-wide"}}
-    {{unless this.errorMessage "no-feedback"}}
-  "
+<Ui::Form::Field
+  @errorMessage={{this.errorMessage}}
+  @isCheckbox={{true}}
+  @isWide={{@isWide}}
 >
-  <span
-    data-test-label
-    id="{{this.inputId}}-label"
-    local-class="label"
-  >
-    {{@label}}
+  <:label as |l|>
+    <label
+      data-test-label
+      id="{{l.inputId}}-label"
+      local-class="label"
+    >
+      {{@label}}
 
-    {{#if @isRequired}}
-      <span aria-hidden="true">
-        *
-      </span>
-    {{/if}}
-  </span>
+      {{#if @isRequired}}
+        <span aria-hidden="true">
+          *
+        </span>
+      {{/if}}
+    </label>
+  </:label>
 
-  <span
-    aria-checked={{if this.isChecked "true" "false"}}
-    aria-disabled={{if @isDisabled "true" "false"}}
-    aria-labelledby="{{this.inputId}}-label"
-    aria-readonly={{if @isReadOnly "true" "false"}}
-    aria-required={{if @isRequired "true" "false"}}
-    data-test-field={{@label}}
-    local-class="checkbox
-      {{if this.isChecked "is-checked"}}
-      {{if (or @isDisabled @isReadOnly) "is-disabled"}}
-    "
-    role="checkbox"
-    tabindex={{unless @isDisabled "0"}}
-    {{on "click" this.updateValue}}
-    {{on "keypress" this.updateValueByPressingSpace}}
-  >
-    {{#if this.isChecked}}
-      {{svg-jar "check" aria-hidden="true" local-class="checkmark-icon"}}
-    {{/if}}
-  </span>
-
-  {{#if this.errorMessage}}
-    <div local-class="feedback is-error">
-      {{svg-jar "alert" aria-hidden="true"}}
-
-      <span
-        data-test-feedback={{@label}}
-        local-class="message"
-        role="alert"
-      >
-        {{this.errorMessage}}
-      </span>
-    </div>
-  {{/if}}
-</div>
+  <:field as |f|>
+    <span
+      aria-checked={{if this.isChecked "true" "false"}}
+      aria-disabled={{if @isDisabled "true" "false"}}
+      aria-labelledby="{{f.inputId}}-label"
+      aria-readonly={{if @isReadOnly "true" "false"}}
+      aria-required={{if @isRequired "true" "false"}}
+      data-test-field={{@label}}
+      local-class="checkbox
+        {{if this.isChecked "is-checked"}}
+        {{if (or @isDisabled @isReadOnly) "is-disabled"}}
+      "
+      role="checkbox"
+      tabindex={{unless @isDisabled "0"}}
+      {{on "click" this.updateValue}}
+      {{on "keypress" this.updateValueByPressingSpace}}
+    >
+      {{#if this.isChecked}}
+        {{svg-jar "check" aria-hidden="true" local-class="checkmark-icon"}}
+      {{/if}}
+    </span>
+  </:field>
+</Ui::Form::Field>

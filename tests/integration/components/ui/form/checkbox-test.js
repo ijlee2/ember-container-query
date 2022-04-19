@@ -40,7 +40,7 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       .hasTagName('span', 'We see the correct tag name.');
 
     assert
-      .dom('[data-test-feedback="Subscribe to The Ember Times?"]')
+      .dom('[data-test-feedback]')
       .doesNotExist('We should not see an error message.');
   });
 
@@ -132,7 +132,7 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       .hasAria('checked', 'false', 'We see the correct value.');
 
     assert
-      .dom('[data-test-feedback="Subscribe to The Ember Times?"]')
+      .dom('[data-test-feedback]')
       .hasText('Please select the checkbox.', 'We see an error message.');
 
     // Click the checkbox again
@@ -145,7 +145,7 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       .hasAria('checked', 'true', 'We see the correct value.');
 
     assert
-      .dom('[data-test-feedback="Subscribe to The Ember Times?"]')
+      .dom('[data-test-feedback]')
       .doesNotExist('We should not see an error message.');
   });
 
@@ -186,7 +186,7 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       .hasAria('checked', 'false', 'We see the correct value.');
 
     assert
-      .dom('[data-test-feedback="Subscribe to The Ember Times?"]')
+      .dom('[data-test-feedback]')
       .hasText('Please select the checkbox.', 'We see an error message.');
 
     // Press the Space key again
@@ -203,7 +203,7 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       .hasAria('checked', 'true', 'We see the correct value.');
 
     assert
-      .dom('[data-test-feedback="Subscribe to The Ember Times?"]')
+      .dom('[data-test-feedback]')
       .doesNotExist('We should not see an error message.');
   });
 });
