@@ -1,3 +1,16 @@
+## 2.0.1 (2022-04-25)
+
+### Bug Fix
+* [#111](https://github.com/ijlee2/ember-container-query/pull/111) Added named exports for helpers ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#112](https://github.com/ijlee2/ember-container-query/pull/112) Enabled ember-beta scenario ([@ijlee2](https://github.com/ijlee2))
+* [#110](https://github.com/ijlee2/ember-container-query/pull/110) Refactored <Ui::Form> components in the demo app ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 2.0.0 (2022-04-09)
 
 ### Breaking Change
