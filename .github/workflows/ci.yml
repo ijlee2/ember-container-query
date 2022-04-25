@@ -137,7 +137,7 @@ jobs:
           - 'ember-lts-3.24'
           - 'ember-lts-3.28'
           - 'ember-release'
-          # - 'ember-beta'
+          - 'ember-beta'
           # - 'ember-canary'
           - 'embroider-safe'
           # - 'embroider-optimized'
