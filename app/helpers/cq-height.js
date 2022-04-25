@@ -1,1 +1,1 @@
-export { default, cqHeight } from 'ember-container-query/helpers/cq-height';
+export { cqHeight, default } from 'ember-container-query/helpers/cq-height';
