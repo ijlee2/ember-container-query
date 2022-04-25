@@ -1,6 +1,6 @@
 import { helper } from '@ember/component/helper';
 
-export function cqWidth(params, hash) {
+function cqWidth(params, hash) {
   const dimension = 'width';
   const { min = 0, max = Infinity } = hash;
 
