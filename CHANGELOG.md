@@ -1,3 +1,12 @@
+## 2.0.2 (2022-04-25)
+
+### Bug Fix
+* [#113](https://github.com/ijlee2/ember-container-query/pull/113) Removed named exports for helpers ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 2.0.1 (2022-04-25)
 
 ### Bug Fix

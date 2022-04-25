@@ -1,6 +1,6 @@
 {
   "name": "ember-container-query",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Container queries using Ember modifiers",
   "keywords": [
     "container-queries",
