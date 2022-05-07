@@ -5,6 +5,10 @@
   {{did-insert this.allowFocusOutlineOnTab}}
 >
   <header local-class="header">
+    <NavigationNarrator
+      @skipTo="#main-content"
+    />
+
     <NavigationMenu
       @menuItems={{array
         (hash
