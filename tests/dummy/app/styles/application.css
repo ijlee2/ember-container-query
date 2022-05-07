@@ -11,10 +11,6 @@
   width: 100vw;
 }
 
-.application.no-focus-outline *:focus {
-  outline: 0;
-}
-
 .header {
   grid-area: header;
   min-height: 2.75rem;
