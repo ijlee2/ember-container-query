@@ -11,7 +11,7 @@
   white-space: nowrap;
 }
 
-.link.active-route {
+.link:global(.active) {
   background-color: #15202d;
 }
 
