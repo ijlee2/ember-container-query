@@ -1,13 +1,12 @@
 <Ui::Form::Field
   @errorMessage={{this.errorMessage}}
-  @isCheckbox={{true}}
+  @isInline={{@isInline}}
   @isWide={{@isWide}}
 >
   <:label as |l|>
     <label
       data-test-label
       id="{{l.inputId}}-label"
-      local-class="label"
     >
       {{@label}}
 

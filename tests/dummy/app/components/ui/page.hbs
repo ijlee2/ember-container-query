@@ -1,14 +1,13 @@
-<section local-class="container">
-  <header local-class="header">
-    <h1>
-      {{@title}}
-    </h1>
-  </header>
+<div local-class="container">
+  <h1>
+    {{@title}}
+  </h1>
 
   <div
+    id="main-content"
     local-class="body"
-    tabindex="0"
+    tabindex="-1"
   >
     {{yield}}
   </div>
-</section>
+</div>

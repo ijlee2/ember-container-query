@@ -1,10 +1,11 @@
 {{page-title "Ember Container Query"}}
 
-<div
-  local-class="application no-focus-outline"
-  {{did-insert this.allowFocusOutlineOnTab}}
->
+<div local-class="application">
   <header local-class="header">
+    <NavigationNarrator
+      @skipTo="#main-content"
+    />
+
     <NavigationMenu
       @menuItems={{array
         (hash
