@@ -56,14 +56,14 @@
     "ember-on-resize-modifier": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.17.0",
-    "@babel/plugin-proposal-decorators": "^7.17.9",
+    "@babel/eslint-parser": "^7.18.2",
+    "@babel/plugin-proposal-decorators": "^7.18.2",
     "@ember/optional-features": "^2.0.0",
-    "@ember/test-helpers": "^2.7.0",
-    "@embroider/test-setup": "^1.6.0",
+    "@ember/test-helpers": "^2.8.1",
+    "@embroider/test-setup": "^1.7.1",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
-    "@percy/cli": "^1.1.2",
+    "@percy/cli": "^1.2.1",
     "@percy/ember": "^3.0.0",
     "broccoli-asset-rev": "^3.0.0",
     "d3-array": "^3.1.6",
@@ -73,7 +73,7 @@
     "d3-shape": "^3.1.0",
     "ember-a11y-refocus": "^2.3.0",
     "ember-a11y-testing": "^5.0.0",
-    "ember-auto-import": "^2.4.1",
+    "ember-auto-import": "^2.4.2",
     "ember-cli": "~4.3.0",
     "ember-cli-dependency-checker": "^3.3.1",
     "ember-cli-dependency-lint": "^2.0.1",
@@ -92,11 +92,11 @@
     "ember-source": "~4.3.0",
     "ember-source-channel-url": "^3.0.0",
     "ember-svg-jar": "^2.3.4",
-    "ember-template-lint": "^4.6.0",
+    "ember-template-lint": "^4.9.1",
     "ember-test-selectors": "^6.0.0",
     "ember-truth-helpers": "^3.0.0",
     "ember-try": "^2.0.0",
-    "eslint": "^8.15.0",
+    "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-ember": "^10.6.1",
     "eslint-plugin-node": "^11.1.0",
@@ -107,7 +107,7 @@
     "prettier": "^2.6.2",
     "qunit": "^2.19.1",
     "qunit-dom": "^2.0.0",
-    "webpack": "^5.72.0"
+    "webpack": "^5.72.1"
   },
   "engines": {
     "node": "12.* || 14.* || >= 16"
