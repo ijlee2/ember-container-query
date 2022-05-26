@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2021",
+    "target": "ES2020",
     "module": "ES2020",
     "moduleResolution": "node",
 
@@ -11,6 +11,9 @@
     // valid Node-resolveable locations and may not have TS-ready types. This
     // will likely improve over time
     "allowJs": false,
+
+    // Don't check the types of dependencies
+    "skipLibCheck": true,
 
     // --- TS for SemVer Types compatibility
     // Strictness settings -- you should *not* change these: Ember code is not
@@ -41,7 +44,7 @@
     // Setting `noEmitOnError` here allows ember-cli-typescript to catch errors
     // and inject them into Ember CLI's build error reporting, which provides
     // nice feedback for when
-    "noEmitOnError": true,
+    "noEmitOnError": false,
 
     // We use Babel for emitting runtime code, because it's very important that
     // we always and only use the same transpiler for non-stable features, in
