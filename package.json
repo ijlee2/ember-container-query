@@ -31,8 +31,9 @@
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",
     "lint:hbs:fix": "ember-template-lint . --fix",
-    "lint:js": "eslint . --cache",
+    "lint:js": "eslint . --cache --ext=.js,.ts",
     "lint:js:fix": "eslint . --fix",
+    "lint:types": "tsc --noEmit",
     "prepack": "ember ts:precompile",
     "postpack": "ember ts:clean",
     "start": "ember serve",
@@ -59,8 +60,6 @@
     "ember-on-resize-modifier": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.18.2",
-    "@babel/plugin-proposal-decorators": "^7.18.2",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.8.1",
     "@embroider/test-setup": "^1.7.1",
@@ -90,6 +89,8 @@
     "@types/htmlbars-inline-precompile": "^3.0.0",
     "@types/qunit": "^2.11.3",
     "@types/rsvp": "^4.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
     "broccoli-asset-rev": "^3.0.0",
     "d3-array": "^3.1.6",
     "d3-axis": "^3.0.0",

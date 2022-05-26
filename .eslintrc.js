@@ -2,16 +2,10 @@
 
 module.exports = {
   root: true,
-  parser: '@babel/eslint-parser',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
-    requireConfigFile: false,
-    babelOptions: {
-      plugins: [
-        ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
-      ],
-    },
   },
   plugins: ['ember'],
   extends: [
@@ -24,6 +18,15 @@ module.exports = {
   },
   rules: {},
   overrides: [
+    // typescript files
+    {
+      files: ['**/*.ts'],
+      plugins: ['@typescript-eslint'],
+      extends: ['plugin:@typescript-eslint/recommended'],
+      rules: {
+        '@typescript-eslint/explicit-module-boundary-types': 'error',
+      },
+    },
     // node files
     {
       files: [
