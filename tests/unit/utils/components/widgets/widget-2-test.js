@@ -3,10 +3,10 @@ import {
   createDataForVisualization,
   createSummariesForCaptions,
   formatRevenue,
-} from 'dummy/utils/widgets/widget-2';
+} from 'dummy/utils/components/widgets/widget-2';
 import { module, test } from 'qunit';
 
-module('Unit | Utility | widgets/widget-2', function () {
+module('Unit | Utility | components/widgets/widget-2', function () {
   module('formatRevenue', function () {
     test('formats a revenue in USD', function (assert) {
       assert.strictEqual(formatRevenue(1.234567), '$1');

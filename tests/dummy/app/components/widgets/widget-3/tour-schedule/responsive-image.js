@@ -1,7 +1,7 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { findBestFittingImage } from 'dummy/utils/widgets/widget-3';
+import { findBestFittingImage } from 'dummy/utils/components/widgets/widget-3';
 
 export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends Component {
   @tracked src;
