@@ -674,7 +674,7 @@ module('Acceptance | dashboard', function (hooks) {
     // Widget 1
     assert
       .dom('[data-test-widget="1"] [data-test-container-query]')
-      .hasAttribute('data-container-query-square');
+      .hasAttribute('data-container-query-tall');
 
     // Widget 2
     assert
