@@ -1,4 +1,22 @@
-export default {
+export type Image = {
+  metadata: {
+    height: number;
+    width: number;
+  };
+  url: string;
+};
+
+export type Concert = {
+  date: string;
+  images: Array<Image>;
+  location: {
+    city: string;
+    state: string;
+  };
+  name: string;
+};
+
+const concert: Concert = {
   name: 'ACL Live',
   date: 'Jun 01',
   location: {
@@ -71,3 +89,5 @@ export default {
     },
   ],
 };
+
+export default concert;

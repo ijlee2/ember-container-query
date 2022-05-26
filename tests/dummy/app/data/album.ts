@@ -1,4 +1,20 @@
-export default {
+export type Track = {
+  isExplicit: boolean;
+  length: string;
+  name: string;
+};
+
+export type Album = {
+  band: {
+    name: string;
+  };
+  name: string;
+  publicationDate: string;
+  totalLengthInMinutes: number;
+  tracks: Array<Track>;
+};
+
+const album: Album = {
   name: 'How to Be a Human Being',
   publicationDate: '2016',
   totalLengthInMinutes: 43,
@@ -63,3 +79,5 @@ export default {
     },
   ],
 };
+
+export default album;
