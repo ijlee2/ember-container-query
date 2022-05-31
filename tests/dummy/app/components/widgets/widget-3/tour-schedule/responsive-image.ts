@@ -2,11 +2,17 @@ import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { findBestFittingImage } from 'dummy/utils/components/widgets/widget-3';
+import type { ContainerDimensions } from 'dummy/utils/components/widgets/widget-3';
+import type { Image } from 'dummy/data/concert';
 
-export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends Component {
-  @tracked src;
+interface WidgetsWidget3TourScheduleResponsiveImageComponentArgs {
+  images: Array<Image>;
+}
 
-  @action setImageSource(dimensions) {
+export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends Component<WidgetsWidget3TourScheduleResponsiveImageComponentArgs> {
+  @tracked src?: string;
+
+  @action setImageSource(dimensions: ContainerDimensions): void {
     /*
       I added a guard just in case <ContainerQuery> has yet to compute
       the container's width and height. We can check the aspect ratio

@@ -1,6 +1,6 @@
 import type { Image } from 'dummy/data/concert';
 
-type ContainerDimensions = {
+export type ContainerDimensions = {
   aspectRatio: number;
   height: number;
   width: number;
