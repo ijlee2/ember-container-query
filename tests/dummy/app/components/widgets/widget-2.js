@@ -18,6 +18,6 @@ export default class WidgetsWidget2Component extends Component {
 
   loadData() {
     this.data = createDataForVisualization(musicRevenue);
-    this.summaries = createSummariesForCaptions(musicRevenue);
+    this.summaries = createSummariesForCaptions(this.data);
   }
 }

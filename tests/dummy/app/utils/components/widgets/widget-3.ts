@@ -1,3 +1,11 @@
+import type { Image } from 'dummy/data/concert';
+
+type ContainerDimensions = {
+  aspectRatio: number;
+  height: number;
+  width: number;
+};
+
 /*
   This recommendation system makes 3 assumptions:
 
@@ -7,7 +15,10 @@
     the largest of all. In other words, that image's height and width match the
     container's the closest.
 */
-export function findBestFittingImage(images, containerDimensions) {
+export function findBestFittingImage(
+  images: Array<Image>,
+  containerDimensions: ContainerDimensions
+): string | undefined {
   if (images.length === 0) {
     return;
   }
@@ -45,5 +56,5 @@ export function findBestFittingImage(images, containerDimensions) {
       return a.hwTiebreaker - b.hwTiebreaker;
     });
 
-  return imagesRanked[0].url;
+  return imagesRanked[0]!.url;
 }

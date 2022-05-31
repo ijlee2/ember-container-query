@@ -15,9 +15,9 @@ module('Unit | Utility | components/widgets/widget-2', function () {
 
       assert.strictEqual(formatRevenue(1.234567e6), '$1.2 million');
 
-      assert.strictEqual(formatRevenue(1.234567e9), '$1.23 billion');
+      assert.strictEqual(formatRevenue(1.234567e9), '$1.2 billion');
 
-      assert.strictEqual(formatRevenue(1.234567e12), '$1,234.57 billion');
+      assert.strictEqual(formatRevenue(1.234567e12), '$1.2 trillion');
     });
   });
 
@@ -51,7 +51,8 @@ module('Unit | Utility | components/widgets/widget-2', function () {
 
   module('createSummariesForCaptions', function () {
     test('works', function (assert) {
-      const summaries = createSummariesForCaptions(musicRevenue);
+      const data = createDataForVisualization(musicRevenue);
+      const summaries = createSummariesForCaptions(data);
 
       assert.strictEqual(summaries.length, 23, 'There are 23 summaries.');
 
@@ -60,7 +61,7 @@ module('Unit | Utility | components/widgets/widget-2', function () {
         {
           musicFormat: '8 - Track',
           markerColor: '#5B8DB8',
-          averageRevenue: '$2.27 billion',
+          averageRevenue: '$2.3 billion',
           relevantYears: {
             min: 1973,
             max: 1982,
