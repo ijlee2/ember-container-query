@@ -9,7 +9,7 @@
 >
   {{#if (and CQ.features.large CQ.features.tall)}}
     <Tracks::Table
-      @tracks={{@tracks}}
+      @tracks={{this.tracks}}
     />
 
   {{else}}
@@ -18,7 +18,7 @@
         if CQ.features.small 1
         (if CQ.features.medium 2 3)
       }}
-      @tracks={{@tracks}}
+      @tracks={{this.tracks}}
     />
 
   {{/if}}

@@ -32,25 +32,27 @@ module('Integration | Component | tracks/list', function (hooks) {
     delete assert.isTrackCorrect;
   });
 
-  module('When @tracks is undefined', function () {
+  module('When @tracks is an empty array', function () {
     test('The component renders an empty list', async function (assert) {
+      this.tracks = [];
+
       await render(hbs`
-        <Tracks::List />
+        <Tracks::List
+          @tracks={{this.tracks}}
+        />
       `);
 
       assert.dom('[data-test-item]').doesNotExist('There are 0 tracks.');
     });
   });
 
-  module('When @tracks is passed', function (hooks) {
-    hooks.beforeEach(function () {
-      this.album = albumData;
-    });
+  module('When @tracks is a non-empty array', function () {
+    test('The component renders a non-empty list', async function (assert) {
+      this.tracks = albumData.tracks;
 
-    test('The component renders a table with tracks', async function (assert) {
       await render(hbs`
         <Tracks::List
-          @tracks={{this.album.tracks}}
+          @tracks={{this.tracks}}
         />
       `);
 

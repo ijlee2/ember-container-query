@@ -5,7 +5,7 @@
   {{did-insert this.updateCssForRows}}
   {{did-update this.updateCssForRows @tracks @numColumns}}
 >
-  {{#each this.tracks as |track index|}}
+  {{#each @tracks as |track index|}}
     <li
       data-test-item
       local-class="item"

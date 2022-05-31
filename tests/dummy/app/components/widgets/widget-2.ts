@@ -5,18 +5,21 @@ import {
   createDataForVisualization,
   createSummariesForCaptions,
 } from 'dummy/utils/components/widgets/widget-2';
+import type { Data, Summary } from 'dummy/utils/components/widgets/widget-2';
 
-export default class WidgetsWidget2Component extends Component {
-  @tracked data = [];
-  @tracked summaries = [];
+interface WidgetsWidget2ComponentArgs {}
 
-  constructor() {
-    super(...arguments);
+export default class WidgetsWidget2Component extends Component<WidgetsWidget2ComponentArgs> {
+  @tracked data = [] as Array<Data>;
+  @tracked summaries = [] as Array<Summary>;
+
+  constructor(owner: unknown, args: WidgetsWidget2ComponentArgs) {
+    super(owner, args);
 
     this.loadData();
   }
 
-  loadData() {
+  loadData(): void {
     this.data = createDataForVisualization(musicRevenue);
     this.summaries = createSummariesForCaptions(this.data);
   }
