@@ -36,7 +36,7 @@ module('Acceptance | dashboard', function (hooks) {
     assert
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
-        'Annual revenue: $2.27 billion',
+        'Annual revenue: $2.3 billion',
         'We see the annual revenue in correct format.'
       );
 
@@ -115,7 +115,7 @@ module('Acceptance | dashboard', function (hooks) {
     assert
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
-        'Annual revenue: $2.27 billion',
+        'Annual revenue: $2.3 billion',
         'We see the annual revenue in correct format.'
       );
 
@@ -194,7 +194,7 @@ module('Acceptance | dashboard', function (hooks) {
     assert
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
-        'Annual revenue: $2.27 billion',
+        'Annual revenue: $2.3 billion',
         'We see the annual revenue in correct format.'
       );
 
@@ -285,7 +285,7 @@ module('Acceptance | dashboard', function (hooks) {
     assert
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
-        'Annual revenue: $2.27 billion',
+        'Annual revenue: $2.3 billion',
         'We see the annual revenue in correct format.'
       );
 
@@ -364,7 +364,7 @@ module('Acceptance | dashboard', function (hooks) {
     assert
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
-        'Annual revenue: $2.27 billion',
+        'Annual revenue: $2.3 billion',
         'We see the annual revenue in correct format.'
       );
 
@@ -443,7 +443,7 @@ module('Acceptance | dashboard', function (hooks) {
     assert
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
-        'Annual revenue: $2.27 billion',
+        'Annual revenue: $2.3 billion',
         'We see the annual revenue in correct format.'
       );
 
@@ -534,7 +534,7 @@ module('Acceptance | dashboard', function (hooks) {
     assert
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
-        'Annual revenue: $2.27 billion',
+        'Annual revenue: $2.3 billion',
         'We see the annual revenue in correct format.'
       );
 
@@ -613,7 +613,7 @@ module('Acceptance | dashboard', function (hooks) {
     assert
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
-        'Annual revenue: $2.27 billion',
+        'Annual revenue: $2.3 billion',
         'We see the annual revenue in correct format.'
       );
 
@@ -692,7 +692,7 @@ module('Acceptance | dashboard', function (hooks) {
     assert
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
-        'Annual revenue: $2.27 billion',
+        'Annual revenue: $2.3 billion',
         'We see the annual revenue in correct format.'
       );
 

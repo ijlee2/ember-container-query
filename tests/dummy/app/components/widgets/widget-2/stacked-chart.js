@@ -4,7 +4,10 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { COLOR_PALETTE, formatRevenue } from 'dummy/utils/widgets/widget-2';
+import {
+  COLOR_PALETTE,
+  formatRevenue,
+} from 'dummy/utils/components/widgets/widget-2';
 import { debounce } from '@ember/runloop';
 
 import { extent, max, rollup, ticks } from 'd3-array';

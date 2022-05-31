@@ -1,11 +1,11 @@
 import concertData from 'dummy/data/concert';
-import { findBestFittingImage } from 'dummy/utils/widgets/widget-3';
+import { findBestFittingImage } from 'dummy/utils/components/widgets/widget-3';
 import { module, test } from 'qunit';
 
 const aspectRatios = [0.5, 1, 1.5, 2, 3, 4, 6];
 const heights = [100, 200, 300, 500, 800];
 
-module('Unit | Utility | widgets/widget-3', function () {
+module('Unit | Utility | components/widgets/widget-3', function () {
   module('findBestFittingImage', function (hooks) {
     hooks.beforeEach(function () {
       // Create a test matrix of height and width

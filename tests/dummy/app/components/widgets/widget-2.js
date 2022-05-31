@@ -4,7 +4,7 @@ import musicRevenue from 'dummy/data/music-revenue';
 import {
   createDataForVisualization,
   createSummariesForCaptions,
-} from 'dummy/utils/widgets/widget-2';
+} from 'dummy/utils/components/widgets/widget-2';
 
 export default class WidgetsWidget2Component extends Component {
   @tracked data = [];
@@ -18,6 +18,6 @@ export default class WidgetsWidget2Component extends Component {
 
   loadData() {
     this.data = createDataForVisualization(musicRevenue);
-    this.summaries = createSummariesForCaptions(musicRevenue);
+    this.summaries = createSummariesForCaptions(this.data);
   }
 }
