@@ -1,42 +1,49 @@
 import concertData from 'dummy/data/concert';
 import { findBestFittingImage } from 'dummy/utils/components/widgets/widget-3';
 import { module, test } from 'qunit';
+import type { TestContext as BaseTestContext } from '@ember/test-helpers';
+import type { ContainerDimensions } from 'dummy/utils/components/widgets/widget-3';
 
-const aspectRatios = [0.5, 1, 1.5, 2, 3, 4, 6];
-const heights = [100, 200, 300, 500, 800];
+type TestMatrix = Map<string, ContainerDimensions>;
+
+interface TestContext extends BaseTestContext {
+  testMatrix: TestMatrix;
+}
 
 module('Unit | Utility | components/widgets/widget-3', function () {
   module('findBestFittingImage', function (hooks) {
-    hooks.beforeEach(function () {
+    hooks.beforeEach(function (this: TestContext) {
+      const aspectRatios = [0.5, 1, 1.5, 2, 3, 4, 6];
+      const heights = [100, 200, 300, 500, 800];
+
       // Create a test matrix of height and width
-      const containerDimensions = new Map();
+      const testMatrix = new Map() as TestMatrix;
 
-      for (let i = 0; i < aspectRatios.length; i++) {
-        const aspectRatio = aspectRatios[i];
-
-        for (let j = 0; j < heights.length; j++) {
-          const height = heights[j];
+      aspectRatios.forEach((aspectRatio) => {
+        heights.forEach((height) => {
           const width = aspectRatio * height;
           const key = `h${height},w${width}`;
 
-          containerDimensions.set(key, { aspectRatio, height, width });
-        }
-      }
+          testMatrix.set(key, { aspectRatio, height, width });
+        });
+      });
 
-      this.containerDimensions = containerDimensions;
+      this.testMatrix = testMatrix;
     });
 
     module('When images is an empty array', function () {
-      test('returns undefined', function (assert) {
+      test('returns undefined', function (this: TestContext, assert) {
+        const containerDimensions = this.testMatrix.get('h100,w100')!;
+
         assert.strictEqual(
-          findBestFittingImage([], this.containerDimensions.get('h100,w100')),
+          findBestFittingImage([], containerDimensions),
           undefined
         );
       });
     });
 
     module('When images is an array with 1 element', function () {
-      test("returns the only image regardless of the container's dimensions", function (assert) {
+      test("returns the only image regardless of the container's dimensions", function (this: TestContext, assert) {
         const images = [
           {
             url: '/images/widgets/widget-3/venue-square@2x.jpg',
@@ -91,7 +98,7 @@ module('Unit | Utility | components/widgets/widget-3', function () {
           ['h800,w4800', '/images/widgets/widget-3/venue-square@2x.jpg'],
         ]);
 
-        this.containerDimensions.forEach((containerDimensions, key) => {
+        this.testMatrix.forEach((containerDimensions, key) => {
           assert.strictEqual(
             findBestFittingImage(images, containerDimensions),
             expectedUrls.get(key),
@@ -102,7 +109,7 @@ module('Unit | Utility | components/widgets/widget-3', function () {
     });
 
     module('When images is an array with more than 1 element', function () {
-      test('returns the image that fits the container well', function (assert) {
+      test('returns the image that fits the container well', function (this: TestContext, assert) {
         const images = concertData.images;
 
         const expectedUrls = new Map([
@@ -149,7 +156,7 @@ module('Unit | Utility | components/widgets/widget-3', function () {
           ['h800,w4800', '/images/widgets/widget-3/venue-extra-wide@4x.jpg'],
         ]);
 
-        this.containerDimensions.forEach((containerDimensions, key) => {
+        this.testMatrix.forEach((containerDimensions, key) => {
           assert.strictEqual(
             findBestFittingImage(images, containerDimensions),
             expectedUrls.get(key),
