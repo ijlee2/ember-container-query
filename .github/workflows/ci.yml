@@ -10,7 +10,7 @@ on:
     - cron: '0 4 * * MON'
 
 env:
-  NODE_VERSION: 14
+  NODE_VERSION: 16
   PERCY_PARALLEL_NONCE: ${{ github.run_id }}-${{ github.run_number }}
   PERCY_PARALLEL_TOTAL: 9
 
