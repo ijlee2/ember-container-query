@@ -1,3 +1,25 @@
+## 2.1.0 (2022-06-03)
+
+### Enhancement
+* [#119](https://github.com/ijlee2/ember-container-query/pull/119) Introduced TypeScript (Part 3) ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#123](https://github.com/ijlee2/ember-container-query/pull/123) Updated GitHub actions to v3 ([@ijlee2](https://github.com/ijlee2))
+* [#122](https://github.com/ijlee2/ember-container-query/pull/122) Updated Node version in CI to 16 ([@ijlee2](https://github.com/ijlee2))
+* [#121](https://github.com/ijlee2/ember-container-query/pull/121) Updated ember-on-resize-modifier to v1.1.0 ([@ijlee2](https://github.com/ijlee2))
+* [#117](https://github.com/ijlee2/ember-container-query/pull/117) Updated dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+* [#115](https://github.com/ijlee2/ember-container-query/pull/115) Updated eslint to v8 ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#120](https://github.com/ijlee2/ember-container-query/pull/120) Introduced TypeScript (Part 4) ([@ijlee2](https://github.com/ijlee2))
+* [#118](https://github.com/ijlee2/ember-container-query/pull/118) Introduced TypeScript (Part 2) ([@ijlee2](https://github.com/ijlee2))
+* [#114](https://github.com/ijlee2/ember-container-query/pull/114) Introduced TypeScript (Part 1) ([@ijlee2](https://github.com/ijlee2))
+* [#116](https://github.com/ijlee2/ember-container-query/pull/116) Updated demo app ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 2.0.2 (2022-04-25)
 
 ### Bug Fix
