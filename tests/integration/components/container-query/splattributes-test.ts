@@ -1,5 +1,6 @@
 import { render } from '@ember/test-helpers';
 import setupContainerQueryTest from 'dummy/tests/helpers/container-query';
+import type { CustomAssert } from 'dummy/tests/helpers/container-query';
 import { timeout } from 'dummy/tests/helpers/resize-container';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
@@ -10,17 +11,9 @@ module('Integration | Component | container-query', function (hooks) {
   setupContainerQueryTest(hooks);
 
   module('...attributes', function () {
-    test('The component accepts splattributes', async function (assert) {
-      assert.expect(2);
-
-      this.fetchData = () => {
-        assert.ok(
-          true,
-          '{{did-insert}} modifier works. (But we should find a better way to separate concerns!)'
-        );
-      };
-
+    test('The component accepts splattributes', async function (assert: CustomAssert) {
       await render(hbs`
+        {{!-- template-lint-disable no-inline-styles --}}
         <div style="width: 500px; height: 800px;">
           <ContainerQuery
             @features={{hash
@@ -33,10 +26,7 @@ module('Integration | Component | container-query', function (hooks) {
               ratio-type-B=(cq-aspect-ratio min=0.5 max=1.5)
               ratio-type-C=(cq-aspect-ratio min=1.25 max=2)
             }}
-
             class="unique-class-name"
-            {{did-insert this.fetchData}}
-
             as |CQ|
           >
             <p data-test-feature="small">{{CQ.features.small}}</p>
