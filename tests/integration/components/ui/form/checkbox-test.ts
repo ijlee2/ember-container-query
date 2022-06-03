@@ -1,13 +1,32 @@
 import { set } from '@ember/object';
 import { click, render, triggerKeyEvent } from '@ember/test-helpers';
+import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
+type Changeset = {
+  email: string;
+  message: string;
+  name: string;
+  subscribe: boolean;
+};
+
+interface TestContext extends BaseTestContext {
+  changeset: Changeset;
+  updateChangeset?: ({
+    key,
+    value,
+  }: {
+    key: keyof Changeset;
+    value: Changeset[keyof Changeset];
+  }) => void;
+}
+
 module('Integration | Component | ui/form/checkbox', function (hooks) {
   setupRenderingTest(hooks);
 
-  hooks.beforeEach(function () {
+  hooks.beforeEach(function (this: TestContext) {
     this.changeset = {
       email: 'zoey@emberjs.com',
       message: 'I 🧡 container queries!',
@@ -99,7 +118,7 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       .hasAria('required', 'true', 'The input should be required.');
   });
 
-  test('We can click on the checkbox to toggle the value', async function (assert) {
+  test('We can click on the checkbox to toggle the value', async function (this: TestContext, assert) {
     assert.expect(6);
 
     let expectedValue = false;
@@ -149,7 +168,7 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       .doesNotExist('We should not see an error message.');
   });
 
-  test('We can press the Space key to toggle the value', async function (assert) {
+  test('We can press the Space key to toggle the value', async function (this: TestContext, assert) {
     assert.expect(6);
 
     let expectedValue = false;
