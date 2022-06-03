@@ -18,6 +18,20 @@ const DEVICES = {
 const supportedDevices = Object.values(DEVICES);
 const supportedFilters = /(@w1\s+|@w2\s+|@w3\s+|@h1\s+|@h2\s+|@h3\s+)/g;
 
+type QUnitAssert = {
+  test: {
+    module: {
+      name: string;
+    };
+    testName: string;
+  };
+};
+
+type SnapshotOptions = {
+  description: string;
+  only?: Array<string>;
+};
+
 /*
   `takeSnapshot` is designed to ensure that,
 
@@ -52,8 +66,11 @@ const supportedFilters = /(@w1\s+|@w2\s+|@w3\s+|@h1\s+|@h2\s+|@h3\s+)/g;
     ...
   });
 */
-export default async function takeSnapshot(qunitAssert, options = {}) {
-  checkInput(qunitAssert, options);
+export default async function takeSnapshot(
+  qunitAssert: unknown,
+  options: SnapshotOptions = {} as SnapshotOptions
+): Promise<void> {
+  validateOptions(options);
 
   const { description, only } = options;
   const skipSnapshot = only && !only.includes(getDevice());
@@ -62,7 +79,7 @@ export default async function takeSnapshot(qunitAssert, options = {}) {
     return;
   }
 
-  const name = getName(qunitAssert, description);
+  const name = getName(qunitAssert as QUnitAssert, description);
   const { height, width } = getWindowSize();
 
   await percySnapshot(name, {
@@ -71,13 +88,8 @@ export default async function takeSnapshot(qunitAssert, options = {}) {
   });
 }
 
-function checkInput(qunitAssert, options) {
+function validateOptions(options: SnapshotOptions): void {
   const { description, only } = options;
-
-  assert(
-    "`qunitAssert` must be QUnit's assert object.",
-    typeof qunitAssert === 'object' && !!qunitAssert.test
-  );
 
   if (description !== undefined) {
     assert(
@@ -104,10 +116,10 @@ function checkInput(qunitAssert, options) {
   }
 }
 
-function getDevice() {
+function getDevice(): string {
   const { height, width } = getWindowSize();
 
-  const windowSize = `${width},${height}`;
+  const windowSize = `${width},${height}` as keyof typeof DEVICES;
   const device = DEVICES[windowSize];
 
   assert(`The window size is incorrect. Found ${windowSize}.`, !!device);
@@ -123,9 +135,9 @@ function getDevice() {
   Snapshot names are guaranteed to be unique if a test takes a snapshot
   and the test can be run on multiple devices.
 */
-function getName(qunitAssert, description) {
-  const moduleName = qunitAssert.test?.module?.name;
-  const testName = qunitAssert.test?.testName;
+function getName(qunitAssert: QUnitAssert, description: string): string {
+  const moduleName = qunitAssert.test.module.name;
+  const testName = qunitAssert.test.testName;
 
   let name = testName;
 
@@ -135,19 +147,25 @@ function getName(qunitAssert, description) {
 
   name += ` ◆ ${moduleName}`;
 
-  const appliedFilters = name
-    .match(supportedFilters)
+  const appliedFilters = name.match(supportedFilters);
+
+  assert(
+    'The test name should include a filter, e.g. @w1, @h1, etc.',
+    appliedFilters !== null
+  );
+
+  const filterName = appliedFilters
     .map((appliedFilter) => appliedFilter.trim())
     .join(' ');
 
-  return `${appliedFilters} ◆ ${name.replace(supportedFilters, '')}`;
+  return `${filterName} ◆ ${name.replace(supportedFilters, '')}`;
 }
 
-function getWindowSize() {
+function getWindowSize(): { height: number; width: number } {
   const queryParams = new URLSearchParams(window.location.search);
 
   return {
-    height: parseInt(queryParams.get('height'), 10),
-    width: parseInt(queryParams.get('width'), 10),
+    height: parseInt(queryParams.get('height')!, 10),
+    width: parseInt(queryParams.get('width')!, 10),
   };
 }

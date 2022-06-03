@@ -4,9 +4,12 @@
 
   https://github.com/emberjs/ember-qunit/blob/master/vendor/ember-qunit/test-container-styles.css
 */
-export default function resetViewport(hooks) {
+export default function resetViewport(hooks: NestedHooks): void {
   hooks.beforeEach(function () {
-    let testingContainer = document.getElementById('ember-testing-container');
+    const testingContainer = document.getElementById(
+      'ember-testing-container'
+    )!;
+
     testingContainer.classList.add('full-screen');
   });
 }
