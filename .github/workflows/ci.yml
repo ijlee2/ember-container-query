@@ -21,10 +21,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out a copy of the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           cache: 'yarn'
           node-version: ${{ env.NODE_VERSION }}
@@ -36,7 +36,7 @@ jobs:
         run: yarn build:test
 
       - name: Upload app
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: dist
           path: dist
@@ -48,10 +48,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out a copy of the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           cache: 'yarn'
           node-version: ${{ env.NODE_VERSION }}
@@ -101,10 +101,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out a copy of the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           cache: 'yarn'
           node-version: ${{ env.NODE_VERSION }}
@@ -113,7 +113,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Download app
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: dist
           path: dist
@@ -155,10 +155,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out a copy of the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           cache: 'yarn'
           node-version: ${{ env.NODE_VERSION }}
