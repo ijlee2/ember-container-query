@@ -57,7 +57,7 @@
     "ember-cli-htmlbars": "^6.0.1",
     "ember-cli-typescript": "^5.1.0",
     "ember-element-helper": "^0.6.1",
-    "ember-on-resize-modifier": "^1.0.0"
+    "ember-on-resize-modifier": "^1.1.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
