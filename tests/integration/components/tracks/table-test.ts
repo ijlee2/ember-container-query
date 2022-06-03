@@ -1,17 +1,36 @@
 import { findAll, render } from '@ember/test-helpers';
+import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import albumData from 'dummy/data/album';
+import type { Track } from 'dummy/data/album';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
+type TrackProperties = {
+  explicit: boolean;
+  length: string;
+  title: string;
+  trackNumber: number;
+};
+
+interface CustomAssert extends Assert {
+  isTrackCorrect?: (
+    trackElement: Element,
+    trackProperties: TrackProperties
+  ) => void;
+}
+
+interface TestContext extends BaseTestContext {
+  tracks: Array<Track>;
+}
+
 module('Integration | Component | tracks/table', function (hooks) {
   setupRenderingTest(hooks);
 
-  hooks.beforeEach(function (assert) {
-    assert.isTrackCorrect = (
-      trackElement,
-      { trackNumber, title, length, explicit }
-    ) => {
+  hooks.beforeEach(function (assert: CustomAssert) {
+    assert.isTrackCorrect = (trackElement, trackProperties) => {
+      const { explicit, length, title, trackNumber } = trackProperties;
+
       assert
         .dom('[data-test-column="Title"]', trackElement)
         .hasText(
@@ -35,12 +54,12 @@ module('Integration | Component | tracks/table', function (hooks) {
     };
   });
 
-  hooks.afterEach(function (assert) {
+  hooks.afterEach(function (assert: CustomAssert) {
     delete assert.isTrackCorrect;
   });
 
   module('When @tracks is an empty array', function () {
-    test('The component renders an empty table', async function (assert) {
+    test('The component renders an empty table', async function (this: TestContext, assert: CustomAssert) {
       this.tracks = [];
 
       await render(hbs`
@@ -54,7 +73,7 @@ module('Integration | Component | tracks/table', function (hooks) {
   });
 
   module('When @tracks is a non-empty array', function () {
-    test('The component renders a non-empty table', async function (assert) {
+    test('The component renders a non-empty table', async function (this: TestContext, assert: CustomAssert) {
       this.tracks = albumData.tracks;
 
       await render(hbs`
@@ -67,28 +86,14 @@ module('Integration | Component | tracks/table', function (hooks) {
 
       assert.strictEqual(tracks.length, 11, 'There are 11 tracks.');
 
-      assert.isTrackCorrect(tracks[0], {
+      assert.isTrackCorrect!(tracks[0]!, {
         trackNumber: 1,
         title: 'Life Itself',
         length: '4:41',
         explicit: false,
       });
 
-      assert.isTrackCorrect(tracks[2], {
-        trackNumber: 3,
-        title: 'Season 2 Episode 3',
-        length: '4:04',
-        explicit: false,
-      });
-
-      assert.isTrackCorrect(tracks[6], {
-        trackNumber: 7,
-        title: '[Premade Sandwiches]',
-        length: '0:36',
-        explicit: true,
-      });
-
-      assert.isTrackCorrect(tracks[10], {
+      assert.isTrackCorrect!(tracks[10]!, {
         trackNumber: 11,
         title: 'Agnes',
         length: '4:32',

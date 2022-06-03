@@ -7,25 +7,28 @@ import { find } from '@ember/test-helpers';
 // that should pass will always pass.
 const RERENDER_TIME = 50;
 
-export function timeout(milliseconds = RERENDER_TIME) {
+export function timeout(milliseconds = RERENDER_TIME): Promise<void> {
   return new Promise((resolve) => {
     later(resolve, milliseconds);
   });
 }
 
-export default async function resizeContainer(width, height) {
-  let parentElement = find('[data-test-parent-element]');
+export default async function resizeContainer(
+  width: number,
+  height: number
+): Promise<void> {
+  const parentElement = find('[data-test-parent-element]');
 
   assert(
     'Please create a parent element with the test selector `data-test-parent-element`.',
-    !!parentElement
+    parentElement
   );
 
   // Since <ContainerQuery> has a style of `height: 100%; width: 100%;`,
   // we can set its parent element's width and height to cause container
   // queries to be evaluated.
-  parentElement.style.width = `${width}px`;
-  parentElement.style.height = `${height}px`;
+  (parentElement as HTMLElement).style.width = `${width}px`;
+  (parentElement as HTMLElement).style.height = `${height}px`;
 
   await timeout();
 }

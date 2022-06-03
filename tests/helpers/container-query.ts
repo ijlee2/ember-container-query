@@ -1,11 +1,28 @@
 import { find } from '@ember/test-helpers';
 
-export default function setupContainerQueryTest(hooks) {
+type DataAttributes = {
+  [dataAttributeName: string]: string | undefined;
+};
+
+type Features = {
+  [featureName: string]: boolean | undefined;
+};
+
+export interface CustomAssert extends Assert {
+  areDataAttributesCorrect?: (dataAttributes: DataAttributes) => void;
+  areDimensionsCorrect?: (
+    expectedWidth: number,
+    expectedHeight: number
+  ) => void;
+  areFeaturesCorrect?: (features: Features) => void;
+}
+
+export default function setupContainerQueryTest(hooks: NestedHooks): void {
   hooks.beforeEach(setupCustomAssertions);
   hooks.afterEach(cleanupCustomAssertions);
 }
 
-function setupCustomAssertions(assert) {
+function setupCustomAssertions(assert: CustomAssert): void {
   assert.areFeaturesCorrect = (features = {}) => {
     for (const [featureName, meetsFeature] of Object.entries(features)) {
       switch (meetsFeature) {
@@ -44,7 +61,11 @@ function setupCustomAssertions(assert) {
     }
   };
 
-  assert.areDimensionsCorrect = (expectedWidth, expectedHeight) => {
+  assert.areDimensionsCorrect = (
+    expectedWidth: number,
+    expectedHeight: number
+  ) => {
+    // Check width and height
     assert
       .dom('[data-test-width-height]')
       .hasText(
@@ -52,27 +73,27 @@ function setupCustomAssertions(assert) {
         'Width and height are correct.'
       );
 
-    const aspectRatio = parseFloat(
-      find('[data-test-aspect-ratio]').textContent.trim()
-    );
+    // Check aspect ratio
+    const targetElement = find('[data-test-aspect-ratio]') as HTMLElement;
+
+    const aspectRatio = parseFloat(targetElement.textContent!.trim());
     const expectedAspectRatio = expectedWidth / expectedHeight;
     const tolerance = 0.001;
 
     if (expectedAspectRatio === Infinity) {
-      assert.strictEqual(
+      assert.true(
         aspectRatio === expectedAspectRatio,
-        true,
         'Aspect ratio is correct.'
       );
-    } else {
-      assert.strictEqual(
-        Math.abs(aspectRatio - expectedAspectRatio) /
-          Math.abs(expectedAspectRatio) <
-          tolerance,
-        true,
-        'Aspect ratio is correct.'
-      );
+
+      return;
     }
+
+    const relativeError =
+      Math.abs(aspectRatio - expectedAspectRatio) /
+      Math.abs(expectedAspectRatio);
+
+    assert.true(relativeError < tolerance, 'Aspect ratio is correct.');
   };
 
   assert.areDataAttributesCorrect = (dataAttributes = {}) => {
@@ -107,7 +128,7 @@ function setupCustomAssertions(assert) {
   };
 }
 
-function cleanupCustomAssertions(assert) {
+function cleanupCustomAssertions(assert: CustomAssert): void {
   delete assert.areFeaturesCorrect;
   delete assert.areDimensionsCorrect;
   delete assert.areDataAttributesCorrect;

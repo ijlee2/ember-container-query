@@ -54,8 +54,10 @@ module('Integration | Component | ui/form', function (hooks) {
       </Ui::Form>
     `);
 
-    const titleId = find('[data-test-title]').getAttribute('id');
-    const instructionsId = find('[data-test-instructions]').getAttribute('id');
+    const titleId = find('[data-test-title]')!.getAttribute('id')!;
+    const instructionsId = find('[data-test-instructions]')!.getAttribute(
+      'id'
+    )!;
 
     assert
       .dom('[data-test-form="Contact me"]')

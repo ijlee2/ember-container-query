@@ -1,20 +1,27 @@
 import { render } from '@ember/test-helpers';
+import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import albumData from 'dummy/data/album';
+import type { Album } from 'dummy/data/album';
 import resizeContainer from 'dummy/tests/helpers/resize-container';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
+interface TestContext extends BaseTestContext {
+  album: Album;
+}
+
 module('Integration | Component | tracks', function (hooks) {
   setupRenderingTest(hooks);
 
-  hooks.beforeEach(function () {
+  hooks.beforeEach(function (this: TestContext) {
     this.album = albumData;
   });
 
   test('uses container queries to render tracks', async function (assert) {
     // Features: small, short
     await render(hbs`
+      {{!-- template-lint-disable no-inline-styles --}}
       <div
         data-test-parent-element
         style="width: 240px; height: 240px;"

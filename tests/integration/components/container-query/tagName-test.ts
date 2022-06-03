@@ -1,10 +1,16 @@
 import { set } from '@ember/object';
 import { render } from '@ember/test-helpers';
+import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import setupContainerQueryTest from 'dummy/tests/helpers/container-query';
+import type { CustomAssert } from 'dummy/tests/helpers/container-query';
 import resizeContainer, { timeout } from 'dummy/tests/helpers/resize-container';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
+
+interface TestContext extends BaseTestContext {
+  tagName?: string;
+}
 
 module('Integration | Component | container-query', function (hooks) {
   setupRenderingTest(hooks);
@@ -13,6 +19,7 @@ module('Integration | Component | container-query', function (hooks) {
   module('When @tagName is undefined', function (hooks) {
     hooks.beforeEach(async function () {
       await render(hbs`
+        {{!-- template-lint-disable no-inline-styles --}}
         <div
           data-test-parent-element
           style="width: 250px; height: 500px;"
@@ -50,13 +57,13 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component has the <div> tag', async function (assert) {
+    test('The component has the <div> tag', async function (assert: CustomAssert) {
       assert
         .dom('[data-test-container-query]')
         .hasTagName('div', 'We see the correct tag name.');
     });
 
-    test('The component continues to have the <div> tag when it is resized', async function (assert) {
+    test('The component continues to have the <div> tag when it is resized', async function (assert: CustomAssert) {
       await resizeContainer(500, 300);
 
       assert
@@ -80,6 +87,7 @@ module('Integration | Component | container-query', function (hooks) {
   module('When @tagName is passed', function (hooks) {
     hooks.beforeEach(async function () {
       await render(hbs`
+        {{!-- template-lint-disable no-inline-styles --}}
         <div
           data-test-parent-element
           style="width: 250px; height: 500px;"
@@ -118,13 +126,13 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component has the correct tag', async function (assert) {
+    test('The component has the correct tag', async function (assert: CustomAssert) {
       assert
         .dom('[data-test-container-query]')
         .hasTagName('section', 'We see the correct tag name.');
     });
 
-    test('The component continues to have the correct tag when it is resized', async function (assert) {
+    test('The component continues to have the correct tag when it is resized', async function (assert: CustomAssert) {
       await resizeContainer(500, 300);
 
       assert
@@ -146,10 +154,11 @@ module('Integration | Component | container-query', function (hooks) {
   });
 
   module('When @tagName is updated', function (hooks) {
-    hooks.beforeEach(async function () {
+    hooks.beforeEach(async function (this: TestContext) {
       this.tagName = 'section';
 
       await render(hbs`
+        {{!-- template-lint-disable no-inline-styles --}}
         <div
           data-test-parent-element
           style="width: 250px; height: 500px;"
@@ -190,14 +199,14 @@ module('Integration | Component | container-query', function (hooks) {
       set(this, 'tagName', 'article');
     });
 
-    test("The component doesn't update the tag", async function (assert) {
+    test("The component doesn't update the tag", async function (assert: CustomAssert) {
       assert
         .dom('[data-test-container-query]')
         .hasTagName('section', 'We see the correct tag name.')
         .doesNotHaveTagName('article', 'The tag name should not change.');
     });
 
-    test('The component continues to not update the tag when it is resized', async function (assert) {
+    test('The component continues to not update the tag when it is resized', async function (assert: CustomAssert) {
       await resizeContainer(500, 300);
 
       assert

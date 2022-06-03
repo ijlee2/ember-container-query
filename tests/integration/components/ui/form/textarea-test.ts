@@ -1,13 +1,32 @@
 import { set } from '@ember/object';
 import { fillIn, render } from '@ember/test-helpers';
+import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
+type Changeset = {
+  email: string;
+  message: string;
+  name: string;
+  subscribe: boolean;
+};
+
+interface TestContext extends BaseTestContext {
+  changeset: Changeset;
+  updateChangeset?: ({
+    key,
+    value,
+  }: {
+    key: keyof Changeset;
+    value: Changeset[keyof Changeset];
+  }) => void;
+}
+
 module('Integration | Component | ui/form/textarea', function (hooks) {
   setupRenderingTest(hooks);
 
-  hooks.beforeEach(function () {
+  hooks.beforeEach(function (this: TestContext) {
     this.changeset = {
       email: 'zoey@emberjs.com',
       message: 'I 🧡 container queries!',
@@ -92,7 +111,7 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
       .isRequired('The textarea should be required.');
   });
 
-  test('We can pass @onUpdate to get the updated value', async function (assert) {
+  test('We can pass @onUpdate to get the updated value', async function (this: TestContext, assert) {
     assert.expect(6);
 
     let expectedValue = '';
