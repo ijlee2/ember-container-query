@@ -19,9 +19,8 @@
 }
 
 .actions {
-  grid-area: actions;
-
   align-items: flex-end;
   display: flex;
+  grid-area: actions;
   justify-content: flex-end;
 }

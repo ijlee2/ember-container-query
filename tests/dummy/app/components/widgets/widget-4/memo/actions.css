@@ -5,17 +5,15 @@
 }
 
 .button {
+  align-items: center;
   border: 0;
   border-radius: 50%;
+  display: flex;
+  height: 2rem;
+  justify-content: center;
   margin: 0;
   padding: 0;
-
-  height: 2rem;
   width: 2rem;
-
-  align-items: center;
-  display: flex;
-  justify-content: center;
 }
 
 .icon {
@@ -31,7 +29,6 @@
 .icon-repost {
   transform: translate(0, 0) scale(-1, 1) rotate(90deg);
 }
-
 
 .actions.minimal-layout .button {
   height: 1.25rem;

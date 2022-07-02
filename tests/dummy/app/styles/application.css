@@ -18,9 +18,9 @@
 }
 
 .main {
-  background-color: rgba(255, 255, 255, 0.045);
-  border-bottom: 0.0625rem solid rgba(211, 211, 211, 0.15);
-  border-top: 0.0625rem solid rgba(211, 211, 211, 0.15);
+  background-color: rgb(255 255 255 / 4.5%);
+  border-bottom: 0.0625rem solid rgb(211 211 211 / 15%);
+  border-top: 0.0625rem solid rgb(211 211 211 / 15%);
   display: flex;
   flex: 1;
   grid-area: main;
@@ -45,11 +45,11 @@
 }
 
 .copyright {
-  color: rgba(128, 191, 255, 0.9);
+  color: rgb(128 191 255 / 90%);
   font-size: 0.75rem;
   padding: 0.75rem 0;
 }
 
 .copyright .link {
-  color: rgba(128, 191, 255, 0.9);
+  color: rgb(128 191 255 / 90%);
 }

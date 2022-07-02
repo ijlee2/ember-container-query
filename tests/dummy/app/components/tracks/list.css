@@ -8,13 +8,13 @@
 .item {
   align-items: center;
   display: flex;
-  min-height: 1.5rem;
   justify-content: space-between;
+  min-height: 1.5rem;
   word-break: break-word;
 }
 
 .icon-explicit {
-  color: rgba(247, 252, 251, 0.9);
+  color: rgb(247 252 251 / 90%);
   flex-shrink: 0;
   margin-left: 0.25rem;
 }

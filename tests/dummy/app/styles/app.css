@@ -5,8 +5,8 @@ html {
 
 body {
   background-color: #020e1c;
-  color: rgba(247, 252, 251, 0.9);
-  font-family: "Raleway", sans-serif;
+  color: rgb(247 252 251 / 90%);
+  font-family: Raleway, sans-serif;
   font-weight: 400;
   height: 100%;
   letter-spacing: 0.03rem;
@@ -43,27 +43,27 @@ h4 {
 }
 
 a {
-  color: rgba(245, 255, 250, 0.88);
+  color: rgb(245 255 250 / 88%);
 }
 
 button {
   background: transparent;
-  border: 0.0625rem solid rgba(247, 252, 251, 0.5);
+  border: 0.0625rem solid rgb(247 252 251 / 50%);
   border-radius: 0.15rem;
-  color: rgba(247, 252, 251, 0.9);
-  font-family: "Raleway", sans-serif;
+  color: rgb(247 252 251 / 90%);
+  font-family: Raleway, sans-serif;
   font-size: 0.875rem;
   padding: 0.25rem 0.5rem;
 }
 
 button:hover {
-  background-color: rgba(255, 255, 255, 0.225);
+  background-color: rgb(255 255 255 / 22.5%);
   cursor: pointer;
   transition: background-color 0.17s;
 }
 
 input {
-  font-family: "Raleway", sans-serif;
+  font-family: Raleway, sans-serif;
   font-size: 1rem;
 }
 
@@ -77,12 +77,13 @@ table {
 }
 
 textarea {
-  font-family: "Raleway", sans-serif;
+  font-family: Raleway, sans-serif;
   font-size: 1rem;
 }
 
-th, td {
-  border: 0.0625rem solid rgba(112, 128, 144, 1);
+th,
+td {
+  border: 0.0625rem solid rgb(112 128 144 / 100%);
   padding: 0.25rem 0.5rem;
 }
 
@@ -92,6 +93,6 @@ ul {
 
 :global(#ember-testing-container) {
   background-color: #020e1c !important;
-  border: 0.0625rem solid rgba(211, 211, 211, 0.15) !important;
+  border: 0.0625rem solid rgb(211 211 211 / 15%) !important;
   overflow: visible !important;
 }

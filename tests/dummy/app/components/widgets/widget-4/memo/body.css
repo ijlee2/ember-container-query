@@ -1,30 +1,26 @@
 .body {
-  background: linear-gradient(126deg, rgba(238, 255, 255, 0.5) 20%, rgba(248, 253, 255, 0.7) 80%);
+  background: linear-gradient(126deg, rgb(238 255 255 / 50%) 20%, rgb(248 253 255 / 70%) 80%);
   border-radius: 0.1875rem;
   height: 100%;
 }
 
 .message {
-  overflow-y: auto;
-
+  font-size: 0.8rem;
   height: calc(100% - 1.5rem);
+  line-height: 1.75;
+  overflow-y: auto;
   padding: 0.75rem;
   width: calc(100% - 1.5rem);
-
-  font-size: 0.8rem;
-  line-height: 1.75;
 }
 
 .message a {
   color: #03a9f4;
 }
 
-
 .body.minimal-layout .message {
+  font-size: 0.75rem;
   height: calc(100% - 1rem);
+  line-height: 1.6;
   padding: 0.5rem;
   width: calc(100% - 1rem);
-
-  font-size: 0.75rem;
-  line-height: 1.6;
 }
