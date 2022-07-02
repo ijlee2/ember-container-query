@@ -11,7 +11,11 @@
   grid-template-rows: repeat(4, minmax(12rem, 75%)) 5rem;
 }
 
-.widget-1, .widget-2, .widget-3, .widget-4, .widget-5 {
+.widget-1,
+.widget-2,
+.widget-3,
+.widget-4,
+.widget-5 {
   border-radius: 0.125rem;
   overflow: hidden;
   padding: 0.75rem;

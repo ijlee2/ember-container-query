@@ -9,11 +9,10 @@
 }
 
 .avatar-container {
-  grid-area: avatar-container;
-  margin-right: 0.5rem;
-
   display: grid;
+  grid-area: avatar-container;
   height: 2rem;
+  margin-right: 0.5rem;
   width: 2rem;
 }
 
@@ -25,17 +24,15 @@
 }
 
 .name {
-  grid-area: name;
-
   font-size: 0.875rem;
   font-weight: 700;
+  grid-area: name;
   margin: 0;
 }
 
 .metadata {
-  grid-area: metadata;
-
   font-size: 0.8rem;
+  grid-area: metadata;
 }
 
 .handle {
@@ -43,11 +40,9 @@
   text-decoration: none;
 }
 
-
 .header.horizontal-layout {
   grid-gap: 0 0.6rem;
-  grid-template-areas:
-    "name metadata";
+  grid-template-areas: "name metadata";
   grid-template-columns: 1fr auto;
   grid-template-rows: 1fr;
 }

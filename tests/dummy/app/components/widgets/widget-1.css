@@ -6,8 +6,8 @@
 
 .items {
   display: grid;
-  grid-gap: 0.6rem;
   flex: 1;
+  grid-gap: 0.6rem;
   overflow: hidden;
 }
 
@@ -41,8 +41,7 @@
 }
 
 .container[data-container-query-wide] .items {
-  grid-template-areas:
-    "item-1 item-2 item-3";
+  grid-template-areas: "item-1 item-2 item-3";
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
 }
