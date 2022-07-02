@@ -11,8 +11,10 @@
 # misc
 /.env*
 /.pnp*
+/.DS_Store
 /.sass-cache
 /.eslintcache
+/.stylelintcache
 /connect.lock
 /coverage/
 /libpeerconnection.log
