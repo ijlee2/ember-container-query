@@ -3,25 +3,11 @@
 const { maybeEmbroider } = require('@embroider/test-setup');
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
-const isProduction = EmberAddon.env() === 'production';
-
 module.exports = function (defaults) {
   let app = new EmberAddon(defaults, {
     // Add options here
-    autoImport: {
-      publicAssetURL: isProduction
-        ? 'https://ember-container-query.netlify.app/assets'
-        : undefined,
-    },
-
     fingerprint: {
-      enabled: isProduction,
       exclude: ['images/'],
-      prepend: 'https://ember-container-query.netlify.app/',
-    },
-
-    sourcemaps: {
-      enabled: true,
     },
   });
 
