@@ -55,9 +55,7 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
   private queryContainer(element: Element): void {
     this.measureDimensions(element);
     this.evaluateQueries();
-
-    console.log(this.dimensions);
-    console.log(this.queryResults);
+    this.setDataAttributes(element);
   }
 
   private measureDimensions(element: Element): void {
@@ -82,5 +80,27 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
     }
 
     this.queryResults = queryResults;
+  }
+
+  private setDataAttributes(element: Element): void {
+    const prefix = this.dataAttributePrefix;
+
+    for (const [featureName, meetsFeature] of Object.entries(
+      this.queryResults
+    )) {
+      let attributeName;
+
+      if (prefix) {
+        attributeName = `data-${prefix}-${featureName}`;
+      } else {
+        attributeName = `data-${featureName}`;
+      }
+
+      if (meetsFeature) {
+        element.setAttribute(attributeName, '');
+      } else {
+        element.removeAttribute(attributeName);
+      }
+    }
   }
 }

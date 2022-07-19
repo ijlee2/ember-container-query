@@ -46,29 +46,6 @@ export default class ContainerQueryComponent extends Component<ContainerQueryCom
     this.queryContainer(element);
   }
 
-  @action queryContainer(element: Element): void {
-    this.setDataAttributes(element);
-  }
-
-  setDataAttributes(element: Element): void {
-    const prefix = this.dataAttributePrefix;
-
-    for (const [featureName, meetsFeature] of Object.entries(
-      this.queryResults
-    )) {
-      let attributeName;
-
-      if (prefix) {
-        attributeName = `data-${prefix}-${featureName}`;
-      } else {
-        attributeName = `data-${featureName}`;
-      }
-
-      if (meetsFeature) {
-        element.setAttribute(attributeName, '');
-      } else {
-        element.removeAttribute(attributeName);
-      }
-    }
-  }
+  /* eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars */
+  @action queryContainer(element: Element): void {}
 }
