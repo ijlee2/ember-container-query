@@ -48,15 +48,8 @@ export default class ContainerQueryComponent extends Component<ContainerQueryCom
   }
 
   @action queryContainer(element: Element): void {
-    this.measureDimensions(element);
     this.evaluateQueries();
     this.setDataAttributes(element);
-  }
-
-  measureDimensions(element: Element): void {
-    this.height = element.clientHeight;
-    this.width = element.clientWidth;
-    this.aspectRatio = this.width / this.height;
   }
 
   evaluateQueries(): void {

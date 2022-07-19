@@ -10,6 +10,12 @@ export type Features = {
   [featureName: string]: Metadata;
 };
 
+export type Dimensions = {
+  aspectRatio: number;
+  height: number;
+  width: number;
+};
+
 interface ContainerQueryModifierSignature {
   Args: {
     Named: {
@@ -23,6 +29,8 @@ interface ContainerQueryModifierSignature {
 }
 
 export default class ContainerQueryModifier extends Modifier<ContainerQueryModifierSignature> {
+  dimensions!: Dimensions;
+
   get dataAttributePrefix(): string {
     return this.args.named.dataAttributePrefix ?? 'container-query';
   }
@@ -40,9 +48,19 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
   }
 
   private queryContainer(element: Element): void {
-    const { dataAttributePrefix, debounce, features } = this;
+    this.measureDimensions(element);
 
-    console.log(element);
-    console.table({ dataAttributePrefix, debounce, features });
+    console.log(this.dimensions);
+  }
+
+  private measureDimensions(element: Element): void {
+    const height = element.clientHeight;
+    const width = element.clientWidth;
+
+    this.dimensions = {
+      aspectRatio: width / height,
+      height,
+      width,
+    };
   }
 }
