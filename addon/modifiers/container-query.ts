@@ -1,4 +1,8 @@
-import Modifier from 'ember-modifier';
+import { registerDestructor } from '@ember/destroyable';
+import { action } from '@ember/object';
+import { debounce as _debounce } from '@ember/runloop';
+import { inject as service } from '@ember/service';
+import Modifier, { ArgsFor } from 'ember-modifier';
 
 export type Metadata = {
   dimension: 'aspectRatio' | 'height' | 'width';
@@ -40,8 +44,14 @@ interface ContainerQueryModifierSignature {
 }
 
 export default class ContainerQueryModifier extends Modifier<ContainerQueryModifierSignature> {
+  /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+  /* @ts-ignore */
+  @service private declare readonly resizeObserver;
+
   dimensions!: Dimensions;
   queryResults!: QueryResults;
+
+  private _element?: Element;
 
   get dataAttributePrefix(): string {
     return this.args.named.dataAttributePrefix ?? 'container-query';
@@ -55,8 +65,35 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
     return this.args.named.features ?? {};
   }
 
+  constructor(owner: unknown, args: ArgsFor<ContainerQueryModifierSignature>) {
+    super(owner, args);
+
+    registerDestructor(this, () => {
+      this.resizeObserver.unobserve(this._element, this.onResize);
+    });
+  }
+
   modify(element: Element): void {
+    this.registerResizeObserver(element);
     this.queryContainer(element);
+  }
+
+  @action private onResize(resizeObserverEntry: ResizeObserverEntry): void {
+    const element = resizeObserverEntry.target;
+
+    if (this.debounce > 0) {
+      _debounce(this, this.queryContainer, element, this.debounce);
+      return;
+    }
+
+    this.queryContainer(element);
+  }
+
+  private registerResizeObserver(element: Element): void {
+    this.resizeObserver.unobserve(this._element, this.onResize);
+
+    this._element = element;
+    this.resizeObserver.observe(this._element, this.onResize);
   }
 
   private queryContainer(element: Element): void {

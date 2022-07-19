@@ -358,7 +358,8 @@ module('Integration | Component | container-query', function (hooks) {
       set(this, 'dataAttributePrefix', 'cq2');
     });
 
-    test("The component doesn't update the data attributes", async function (assert: CustomAssert) {
+    test('The component updates the data attributes', async function (assert: CustomAssert) {
+      /* TODO: Remove old data attributes */
       assert.areDataAttributesCorrect!({
         'data-cq1-small': '',
         'data-cq1-medium': undefined,
@@ -371,13 +372,13 @@ module('Integration | Component | container-query', function (hooks) {
       });
 
       assert.areDataAttributesCorrect!({
-        'data-cq2-small': undefined,
+        'data-cq2-small': '',
         'data-cq2-medium': undefined,
         'data-cq2-large': undefined,
         'data-cq2-short': undefined,
-        'data-cq2-tall': undefined,
-        'data-cq2-ratio-type-A': undefined,
-        'data-cq2-ratio-type-B': undefined,
+        'data-cq2-tall': '',
+        'data-cq2-ratio-type-A': '',
+        'data-cq2-ratio-type-B': '',
         'data-cq2-ratio-type-C': undefined,
       });
     });
@@ -385,6 +386,7 @@ module('Integration | Component | container-query', function (hooks) {
     test('The component updates the data attributes when it is resized', async function (assert: CustomAssert) {
       await resizeContainer(500, 300);
 
+      /* TODO: Remove old data attributes */
       assert.areDataAttributesCorrect!({
         'data-cq1-small': '',
         'data-cq1-medium': undefined,
@@ -409,6 +411,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer(800, 400);
 
+      /* TODO: Remove old data attributes */
       assert.areDataAttributesCorrect!({
         'data-cq1-small': '',
         'data-cq1-medium': undefined,
@@ -433,6 +436,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer(1000, 600);
 
+      /* TODO: Remove old data attributes */
       assert.areDataAttributesCorrect!({
         'data-cq1-small': '',
         'data-cq1-medium': undefined,
