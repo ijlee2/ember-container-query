@@ -2,11 +2,10 @@ import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { debounce } from '@ember/runloop';
-import type { Features } from 'ember-container-query/modifiers/container-query';
-
-type QueryResults = {
-  [featureName: string]: boolean;
-};
+import type {
+  Features,
+  QueryResults,
+} from 'ember-container-query/modifiers/container-query';
 
 interface ContainerQueryComponentArgs {
   dataAttributePrefix?: string;
@@ -48,21 +47,7 @@ export default class ContainerQueryComponent extends Component<ContainerQueryCom
   }
 
   @action queryContainer(element: Element): void {
-    this.evaluateQueries();
     this.setDataAttributes(element);
-  }
-
-  evaluateQueries(): void {
-    const queryResults = {} as QueryResults;
-
-    for (const [featureName, metadata] of Object.entries(this.features)) {
-      const { dimension, min, max } = metadata;
-      const value = this[dimension]!;
-
-      queryResults[featureName] = min <= value && value < max;
-    }
-
-    this.queryResults = queryResults;
   }
 
   setDataAttributes(element: Element): void {

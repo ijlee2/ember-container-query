@@ -16,6 +16,10 @@ export type Dimensions = {
   width: number;
 };
 
+export type QueryResults = {
+  [featureName: string]: boolean;
+};
+
 interface ContainerQueryModifierSignature {
   Args: {
     Named: {
@@ -30,6 +34,7 @@ interface ContainerQueryModifierSignature {
 
 export default class ContainerQueryModifier extends Modifier<ContainerQueryModifierSignature> {
   dimensions!: Dimensions;
+  queryResults!: QueryResults;
 
   get dataAttributePrefix(): string {
     return this.args.named.dataAttributePrefix ?? 'container-query';
@@ -49,8 +54,10 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
 
   private queryContainer(element: Element): void {
     this.measureDimensions(element);
+    this.evaluateQueries();
 
     console.log(this.dimensions);
+    console.log(this.queryResults);
   }
 
   private measureDimensions(element: Element): void {
@@ -62,5 +69,18 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
       height,
       width,
     };
+  }
+
+  private evaluateQueries(): void {
+    const queryResults = {} as QueryResults;
+
+    for (const [featureName, metadata] of Object.entries(this.features)) {
+      const { dimension, min, max } = metadata;
+      const value = this.dimensions[dimension];
+
+      queryResults[featureName] = min <= value && value < max;
+    }
+
+    this.queryResults = queryResults;
   }
 }
