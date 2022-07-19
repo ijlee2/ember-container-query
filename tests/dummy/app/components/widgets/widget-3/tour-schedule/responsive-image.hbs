@@ -5,15 +5,19 @@
   >
     <div
       local-class="image-container"
-      {{did-update (fn this.setImageSource CQ.dimensions) CQ.dimensions}}
+      {{find-best-fitting-image
+        dimensions=CQ.dimensions
+        images=@images
+        onQuery=this.setImageSource
+      }}
     >
-      {{#if this.src}}
+      {{#if this.imageSource}}
         <img
           alt=""
           data-test-image="Concert"
           local-class="image"
           role="presentation"
-          src={{this.src}}
+          src={{this.imageSource}}
         />
       {{/if}}
     </div>
