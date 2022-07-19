@@ -1,10 +1,5 @@
 import { helper } from '@ember/component/helper';
-
-type Metadata = {
-  dimension: 'aspectRatio' | 'height' | 'width';
-  max: number;
-  min: number;
-};
+import type { Metadata } from 'ember-container-query/modifiers/container-query';
 
 function cqHeight(
   positional: unknown[],

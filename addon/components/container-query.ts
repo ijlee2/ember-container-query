@@ -2,16 +2,7 @@ import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { debounce } from '@ember/runloop';
-
-type Metadata = {
-  dimension: 'aspectRatio' | 'height' | 'width';
-  max: number;
-  min: number;
-};
-
-type Features = {
-  [featureName: string]: Metadata;
-};
+import type { Features } from 'ember-container-query/modifiers/container-query';
 
 type QueryResults = {
   [featureName: string]: boolean;

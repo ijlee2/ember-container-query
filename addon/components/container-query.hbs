@@ -2,7 +2,11 @@
   <Tag
     class="container-query"
     data-test-container-query
-    {{container-query}}
+    {{container-query
+      dataAttributePrefix=@dataAttributePrefix
+      debounce=@debounce
+      features=@features
+    }}
     ...attributes
   >
     {{yield (hash
