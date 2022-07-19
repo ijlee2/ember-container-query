@@ -10,7 +10,6 @@ interface WidgetsWidget2CaptionsComponentArgs {
 }
 
 export default class WidgetsWidget2CaptionsComponent extends Component<WidgetsWidget2CaptionsComponentArgs> {
-  @tracked summary?: Summary;
   @tracked currentIndex = 0;
 
   get styleForMarker(): SafeString {
@@ -19,6 +18,10 @@ export default class WidgetsWidget2CaptionsComponent extends Component<WidgetsWi
     }
 
     return htmlSafe(`color: ${this.summary.markerColor};`);
+  }
+
+  get summary(): Summary | undefined {
+    return this.summaries[this.currentIndex];
   }
 
   get summaries(): Array<Summary> {
@@ -33,17 +36,11 @@ export default class WidgetsWidget2CaptionsComponent extends Component<WidgetsWi
     return this.currentIndex < this.summaries.length - 1;
   }
 
-  @action showSummary(): void {
-    this.summary = this.summaries[0];
-    this.currentIndex = 0;
-  }
-
   @action showNextSummary(increment = 1): void {
     const numSummaries = this.summaries.length;
     const nextIndex =
       (this.currentIndex + increment + numSummaries) % numSummaries;
 
-    this.summary = this.summaries[nextIndex];
     this.currentIndex = nextIndex;
   }
 }

@@ -5,11 +5,7 @@
   }}
   as |CQ|
 >
-  <div
-    local-class="container {{unless CQ.features.tall "flat"}}"
-    {{did-insert this.showSummary}}
-    {{did-update this.showSummary this.summaries}}
-  >
+  <div local-class="container {{unless CQ.features.tall "flat"}}">
     {{#if this.summary}}
       <div local-class="summary {{if CQ.features.large "horizontal-layout"}}" tabindex="0">
         <h3
