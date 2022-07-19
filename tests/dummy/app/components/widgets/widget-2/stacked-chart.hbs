@@ -1,8 +1,6 @@
 <div
   local-class="svg-container"
-  {{did-insert this.refreshChart}}
-  {{did-update this.drawChart this.data}}
-  {{on-resize this.onResize}}
+  {{draw-chart data=@data}}
 >
   <svg local-class="svg">
   </svg>
