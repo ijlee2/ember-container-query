@@ -26,6 +26,13 @@ interface ContainerQueryModifierSignature {
       dataAttributePrefix?: string;
       debounce?: number;
       features?: Features;
+      onQuery?: ({
+        dimensions,
+        queryResults,
+      }: {
+        dimensions: Dimensions;
+        queryResults: QueryResults;
+      }) => void;
     };
     Positional: [];
   };
@@ -56,6 +63,11 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
     this.measureDimensions(element);
     this.evaluateQueries();
     this.setDataAttributes(element);
+
+    this.args.named.onQuery?.({
+      dimensions: this.dimensions,
+      queryResults: this.queryResults,
+    });
   }
 
   private measureDimensions(element: Element): void {

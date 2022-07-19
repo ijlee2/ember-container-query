@@ -6,16 +6,13 @@
       dataAttributePrefix=@dataAttributePrefix
       debounce=@debounce
       features=@features
+      onQuery=this.updateState
     }}
     ...attributes
   >
     {{yield (hash
+      dimensions=this.dimensions
       features=this.queryResults
-      dimensions=(hash
-        aspectRatio=this.aspectRatio
-        height=this.height
-        width=this.width
-      )
     )}}
   </Tag>
 {{/let}}

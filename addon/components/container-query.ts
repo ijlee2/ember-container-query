@@ -3,6 +3,7 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { debounce } from '@ember/runloop';
 import type {
+  Dimensions,
   Features,
   QueryResults,
 } from 'ember-container-query/modifiers/container-query';
@@ -15,10 +16,8 @@ interface ContainerQueryComponentArgs {
 }
 
 export default class ContainerQueryComponent extends Component<ContainerQueryComponentArgs> {
-  @tracked queryResults = {} as QueryResults;
-  @tracked aspectRatio?: number;
-  @tracked height?: number;
-  @tracked width?: number;
+  @tracked dimensions?: Dimensions;
+  @tracked queryResults?: QueryResults;
 
   get features(): Features {
     return this.args.features ?? {};
@@ -48,4 +47,15 @@ export default class ContainerQueryComponent extends Component<ContainerQueryCom
 
   /* eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars */
   @action queryContainer(element: Element): void {}
+
+  @action updateState({
+    dimensions,
+    queryResults,
+  }: {
+    dimensions: Dimensions;
+    queryResults: QueryResults;
+  }): void {
+    this.dimensions = dimensions;
+    this.queryResults = queryResults;
+  }
 }
