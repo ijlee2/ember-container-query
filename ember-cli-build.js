@@ -8,7 +8,6 @@ module.exports = function (defaults) {
     // Add options here
     fingerprint: {
       exclude: ['images/'],
-      prepend: 'https://ember-container-query.netlify.app/',
     },
   });
 
