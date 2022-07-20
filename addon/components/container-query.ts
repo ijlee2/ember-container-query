@@ -24,7 +24,24 @@ interface ContainerQueryComponentArgs {
   tagName?: string;
 }
 
-export default class ContainerQueryComponent extends Component<ContainerQueryComponentArgs> {
+interface Signature {
+  Element: HTMLElement;
+  Args: ContainerQueryComponentArgs;
+  Blocks: {
+    default: [
+      {
+        features: Features;
+        dimensions: {
+          aspectRatio: number;
+          height: number;
+          width: number;
+        };
+      }
+    ];
+  };
+}
+
+export default class ContainerQueryComponent extends Component<Signature> {
   @tracked queryResults = {} as QueryResults;
   @tracked aspectRatio?: number;
   @tracked height?: number;
