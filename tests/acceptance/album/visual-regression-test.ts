@@ -1,3 +1,4 @@
+/* eslint-disable qunit/require-expect */
 import { visit } from '@ember/test-helpers';
 import takeSnapshot from 'dummy/tests/helpers/percy';
 import resetViewport from 'dummy/tests/helpers/reset-viewport';

@@ -1,8 +1,8 @@
+import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import concertData from 'dummy/data/concert';
+import type { ContainerDimensions } from 'dummy/utils/components/widgets/widget-3';
 import { findBestFittingImage } from 'dummy/utils/components/widgets/widget-3';
 import { module, test } from 'qunit';
-import type { TestContext as BaseTestContext } from '@ember/test-helpers';
-import type { ContainerDimensions } from 'dummy/utils/components/widgets/widget-3';
 
 type TestMatrix = Map<string, ContainerDimensions>;
 
@@ -44,6 +44,8 @@ module('Unit | Utility | components/widgets/widget-3', function () {
 
     module('When images is an array with 1 element', function () {
       test("returns the only image regardless of the container's dimensions", function (this: TestContext, assert) {
+        assert.expect(35);
+
         const images = [
           {
             url: '/images/widgets/widget-3/venue-square@2x.jpg',
@@ -110,6 +112,8 @@ module('Unit | Utility | components/widgets/widget-3', function () {
 
     module('When images is an array with more than 1 element', function () {
       test('returns the image that fits the container well', function (this: TestContext, assert) {
+        assert.expect(35);
+
         const images = concertData.images;
 
         const expectedUrls = new Map([
