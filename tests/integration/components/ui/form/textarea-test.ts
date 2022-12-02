@@ -1,6 +1,6 @@
 import { set } from '@ember/object';
-import { fillIn, render } from '@ember/test-helpers';
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
+import { fillIn, render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';

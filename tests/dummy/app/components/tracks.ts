@@ -1,5 +1,5 @@
-import type { Track } from 'dummy/data/album';
 import Component from '@glimmer/component';
+import type { Track } from 'dummy/data/album';
 
 interface TracksComponentArgs {
   tracks?: Array<Track>;

@@ -5,9 +5,8 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module',
   },
-  plugins: ['ember'],
+  plugins: ['ember', '@typescript-eslint', 'simple-import-sort'],
   extends: [
     'eslint:recommended',
     'plugin:ember/recommended',
@@ -16,21 +15,26 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    curly: 'error',
+    'simple-import-sort/exports': 'error',
+    'simple-import-sort/imports': 'error',
+  },
   overrides: [
-    // typescript files
+    // TypeScript files
     {
       files: ['**/*.ts'],
-      plugins: ['@typescript-eslint'],
-      extends: ['plugin:@typescript-eslint/recommended'],
+      extends: [
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+      ],
       rules: {
-        '@typescript-eslint/explicit-module-boundary-types': 'error',
         '@typescript-eslint/no-empty-interface': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
       },
     },
-    // node files
+    // Node files
     {
       files: [
         './.eslintrc.js',
@@ -44,15 +48,16 @@ module.exports = {
         './config/**/*.js',
         './tests/dummy/config/**/*.js',
       ],
-      parserOptions: {
-        sourceType: 'script',
-      },
       env: {
         browser: false,
         node: true,
       },
-      plugins: ['node'],
-      extends: ['plugin:node/recommended'],
+      extends: ['plugin:n/recommended'],
+    },
+    // Test files
+    {
+      files: ['tests/**/*-test.{js,ts}'],
+      extends: ['plugin:qunit/recommended'],
     },
   ],
 };

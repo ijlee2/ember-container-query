@@ -1,11 +1,11 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import musicRevenue from 'dummy/data/music-revenue';
+import type { Data, Summary } from 'dummy/utils/components/widgets/widget-2';
 import {
   createDataForVisualization,
   createSummariesForCaptions,
 } from 'dummy/utils/components/widgets/widget-2';
-import type { Data, Summary } from 'dummy/utils/components/widgets/widget-2';
 
 interface WidgetsWidget2ComponentArgs {}
 

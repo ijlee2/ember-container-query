@@ -47,11 +47,21 @@ export function findBestFittingImage(
       };
     })
     .sort((a, b) => {
-      if (a.arMetric > b.arMetric) return 1;
-      if (a.arMetric < b.arMetric) return -1;
+      if (a.arMetric > b.arMetric) {
+        return 1;
+      }
 
-      if (a.hwMetric > b.hwMetric) return 1;
-      if (a.hwMetric < b.hwMetric) return -1;
+      if (a.arMetric < b.arMetric) {
+        return -1;
+      }
+
+      if (a.hwMetric > b.hwMetric) {
+        return 1;
+      }
+
+      if (a.hwMetric < b.hwMetric) {
+        return -1;
+      }
 
       return a.hwTiebreaker - b.hwTiebreaker;
     });

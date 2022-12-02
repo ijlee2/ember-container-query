@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import concertData from 'dummy/data/concert';
 import type { Concert } from 'dummy/data/concert';
+import concertData from 'dummy/data/concert';
 
 interface WidgetsWidget3ComponentArgs {}
 

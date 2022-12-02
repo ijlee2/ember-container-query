@@ -1,7 +1,7 @@
-import { render } from '@ember/test-helpers';
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
-import albumData from 'dummy/data/album';
+import { render } from '@ember/test-helpers';
 import type { Album } from 'dummy/data/album';
+import albumData from 'dummy/data/album';
 import resizeContainer from 'dummy/tests/helpers/resize-container';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
