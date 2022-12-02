@@ -51,6 +51,7 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
   dimensions!: Dimensions;
   queryResults!: QueryResults;
 
+  private _dataAttributes: string[] = [];
   private _element?: Element;
 
   get dataAttributePrefix(): string {
@@ -99,6 +100,7 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
   private queryContainer(element: Element): void {
     this.measureDimensions(element);
     this.evaluateQueries();
+    this.resetDataAttributes(element);
     this.setDataAttributes(element);
 
     this.args.named.onQuery?.({
@@ -131,25 +133,31 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
     this.queryResults = queryResults;
   }
 
+  private resetDataAttributes(element: Element): void {
+    this._dataAttributes.forEach((dataAttribute) => {
+      element.removeAttribute(dataAttribute);
+    });
+
+    this._dataAttributes = [];
+  }
+
   private setDataAttributes(element: Element): void {
     const prefix = this.dataAttributePrefix;
 
     for (const [featureName, meetsFeature] of Object.entries(
       this.queryResults
     )) {
-      let attributeName;
-
-      if (prefix) {
-        attributeName = `data-${prefix}-${featureName}`;
-      } else {
-        attributeName = `data-${featureName}`;
+      if (!meetsFeature) {
+        continue;
       }
 
-      if (meetsFeature) {
-        element.setAttribute(attributeName, '');
-      } else {
-        element.removeAttribute(attributeName);
-      }
+      const dataAttribute = prefix
+        ? `data-${prefix}-${featureName}`
+        : `data-${featureName}`;
+
+      element.setAttribute(dataAttribute, '');
+
+      this._dataAttributes.push(dataAttribute);
     }
   }
 }

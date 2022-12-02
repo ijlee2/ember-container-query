@@ -359,15 +359,14 @@ module('Integration | Component | container-query', function (hooks) {
     });
 
     test('The component updates the data attributes', async function (assert: CustomAssert) {
-      /* TODO: Remove old data attributes */
       assert.areDataAttributesCorrect!({
-        'data-cq1-small': '',
+        'data-cq1-small': undefined,
         'data-cq1-medium': undefined,
         'data-cq1-large': undefined,
         'data-cq1-short': undefined,
-        'data-cq1-tall': '',
-        'data-cq1-ratio-type-A': '',
-        'data-cq1-ratio-type-B': '',
+        'data-cq1-tall': undefined,
+        'data-cq1-ratio-type-A': undefined,
+        'data-cq1-ratio-type-B': undefined,
         'data-cq1-ratio-type-C': undefined,
       });
 
@@ -386,15 +385,14 @@ module('Integration | Component | container-query', function (hooks) {
     test('The component updates the data attributes when it is resized', async function (assert: CustomAssert) {
       await resizeContainer(500, 300);
 
-      /* TODO: Remove old data attributes */
       assert.areDataAttributesCorrect!({
-        'data-cq1-small': '',
+        'data-cq1-small': undefined,
         'data-cq1-medium': undefined,
         'data-cq1-large': undefined,
         'data-cq1-short': undefined,
-        'data-cq1-tall': '',
-        'data-cq1-ratio-type-A': '',
-        'data-cq1-ratio-type-B': '',
+        'data-cq1-tall': undefined,
+        'data-cq1-ratio-type-A': undefined,
+        'data-cq1-ratio-type-B': undefined,
         'data-cq1-ratio-type-C': undefined,
       });
 
@@ -411,15 +409,14 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer(800, 400);
 
-      /* TODO: Remove old data attributes */
       assert.areDataAttributesCorrect!({
-        'data-cq1-small': '',
+        'data-cq1-small': undefined,
         'data-cq1-medium': undefined,
         'data-cq1-large': undefined,
         'data-cq1-short': undefined,
-        'data-cq1-tall': '',
-        'data-cq1-ratio-type-A': '',
-        'data-cq1-ratio-type-B': '',
+        'data-cq1-tall': undefined,
+        'data-cq1-ratio-type-A': undefined,
+        'data-cq1-ratio-type-B': undefined,
         'data-cq1-ratio-type-C': undefined,
       });
 
@@ -436,15 +433,14 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer(1000, 600);
 
-      /* TODO: Remove old data attributes */
       assert.areDataAttributesCorrect!({
-        'data-cq1-small': '',
+        'data-cq1-small': undefined,
         'data-cq1-medium': undefined,
         'data-cq1-large': undefined,
         'data-cq1-short': undefined,
-        'data-cq1-tall': '',
-        'data-cq1-ratio-type-A': '',
-        'data-cq1-ratio-type-B': '',
+        'data-cq1-tall': undefined,
+        'data-cq1-ratio-type-A': undefined,
+        'data-cq1-ratio-type-B': undefined,
         'data-cq1-ratio-type-C': undefined,
       });
 
