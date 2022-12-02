@@ -11,16 +11,19 @@ interface DynamicCssGridModifierSignature {
   Element: Element;
 }
 
-export default modifier(function dynamicCssGrid(
-  element: Element,
-  _: PositionalArgs<DynamicCssGridModifierSignature>,
-  named: NamedArgs<DynamicCssGridModifierSignature>
-): void {
-  const { numColumns, numRows } = named;
+export default modifier(
+  function dynamicCssGrid(
+    element: Element,
+    _: PositionalArgs<DynamicCssGridModifierSignature>,
+    named: NamedArgs<DynamicCssGridModifierSignature>
+  ): void {
+    const { numColumns, numRows } = named;
 
-  (
-    element as HTMLElement
-  ).style.gridTemplateColumns = `repeat(${numColumns}, minmax(0, 1fr))`;
+    (
+      element as HTMLElement
+    ).style.gridTemplateColumns = `repeat(${numColumns}, minmax(0, 1fr))`;
 
-  (element as HTMLElement).style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
-});
+    (element as HTMLElement).style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
+  },
+  { eager: false }
+);

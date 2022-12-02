@@ -15,18 +15,21 @@ interface FindBestFittingImageModifierSignature {
   Element: Element;
 }
 
-export default modifier(function findBestFittingImage(
-  element: Element,
-  _: PositionalArgs<FindBestFittingImageModifierSignature>,
-  named: NamedArgs<FindBestFittingImageModifierSignature>
-) {
-  const { dimensions, images, onQuery } = named;
+export default modifier(
+  function findBestFittingImage(
+    element: Element,
+    _: PositionalArgs<FindBestFittingImageModifierSignature>,
+    named: NamedArgs<FindBestFittingImageModifierSignature>
+  ) {
+    const { dimensions, images, onQuery } = named;
 
-  if (!dimensions || !images) {
-    onQuery();
-    return;
-  }
+    if (!dimensions || !images) {
+      onQuery();
+      return;
+    }
 
-  const imageSource = _findBestFittingImage(images, dimensions);
-  onQuery(imageSource);
-});
+    const imageSource = _findBestFittingImage(images, dimensions);
+    onQuery(imageSource);
+  },
+  { eager: false }
+);

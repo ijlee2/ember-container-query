@@ -20,14 +20,16 @@ export default class DrawChartModifier extends Modifier {
 
   height = 0;
   width = 0;
-  _element = null;
+
+  _element = undefined;
+  _named = {};
 
   get color() {
     return scaleOrdinal().domain(musicFormats).range(paletteColors);
   }
 
   get data() {
-    return this.args.named.data ?? [];
+    return this._named.data ?? [];
   }
 
   get margin() {
@@ -120,7 +122,9 @@ export default class DrawChartModifier extends Modifier {
     });
   }
 
-  modify(element) {
+  modify(element, _positional, named) {
+    this._named = named;
+
     this.registerResizeObserver(element);
     this.refreshChart(element);
   }
