@@ -1,3 +1,23 @@
+## 2.1.1 (2022-12-02)
+
+### Bug Fix
+* [#128](https://github.com/ijlee2/ember-container-query/pull/128) Replaced @ember/render-modifiers with ember-modifier ([@ijlee2](https://github.com/ijlee2))
+* [#126](https://github.com/ijlee2/ember-container-query/pull/126) Listed ember-test-selectors as a dependency ([@ijlee2](https://github.com/ijlee2))
+
+### Enhancement
+* [#128](https://github.com/ijlee2/ember-container-query/pull/128) Replaced @ember/render-modifiers with ember-modifier ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#133](https://github.com/ijlee2/ember-container-query/pull/133) Addressed ember-modifier deprecations ([@ijlee2](https://github.com/ijlee2))
+* [#132](https://github.com/ijlee2/ember-container-query/pull/132) Updated dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+* [#128](https://github.com/ijlee2/ember-container-query/pull/128) Replaced @ember/render-modifiers with ember-modifier ([@ijlee2](https://github.com/ijlee2))
+* [#125](https://github.com/ijlee2/ember-container-query/pull/125) Updated dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+* [#124](https://github.com/ijlee2/ember-container-query/pull/124) Installed stylelint to help with maintaining the demo app ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 2.1.0 (2022-06-03)
 
 ### Enhancement
