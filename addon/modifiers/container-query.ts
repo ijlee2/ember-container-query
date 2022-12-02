@@ -2,7 +2,7 @@ import { registerDestructor } from '@ember/destroyable';
 import { action } from '@ember/object';
 import { debounce as _debounce } from '@ember/runloop';
 import { inject as service } from '@ember/service';
-import Modifier, { ArgsFor } from 'ember-modifier';
+import Modifier, { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
 
 export type Metadata = {
   dimension: 'aspectRatio' | 'height' | 'width';
@@ -53,17 +53,18 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
 
   private _dataAttributes: string[] = [];
   private _element?: Element;
+  private _named!: NamedArgs<ContainerQueryModifierSignature>;
 
   get dataAttributePrefix(): string {
-    return this.args.named.dataAttributePrefix ?? 'container-query';
+    return this._named.dataAttributePrefix ?? 'container-query';
   }
 
   get debounce(): number {
-    return this.args.named.debounce ?? 0;
+    return this._named.debounce ?? 0;
   }
 
   get features(): Features {
-    return this.args.named.features ?? {};
+    return this._named.features ?? {};
   }
 
   constructor(owner: unknown, args: ArgsFor<ContainerQueryModifierSignature>) {
@@ -74,7 +75,13 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
     });
   }
 
-  modify(element: Element): void {
+  modify(
+    element: Element,
+    _positional: PositionalArgs<ContainerQueryModifierSignature>,
+    named: NamedArgs<ContainerQueryModifierSignature>
+  ): void {
+    this._named = named;
+
     this.registerResizeObserver(element);
     this.queryContainer(element);
   }
@@ -103,7 +110,7 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
     this.resetDataAttributes(element);
     this.setDataAttributes(element);
 
-    this.args.named.onQuery?.({
+    this._named.onQuery?.({
       dimensions: this.dimensions,
       queryResults: this.queryResults,
     });
