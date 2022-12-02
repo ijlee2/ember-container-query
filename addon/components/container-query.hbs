@@ -2,17 +2,17 @@
   <Tag
     class="container-query"
     data-test-container-query
-    {{did-insert this.queryContainer}}
-    {{on-resize this.onResize}}
+    {{container-query
+      dataAttributePrefix=@dataAttributePrefix
+      debounce=@debounce
+      features=@features
+      onQuery=this.updateState
+    }}
     ...attributes
   >
     {{yield (hash
+      dimensions=this.dimensions
       features=this.queryResults
-      dimensions=(hash
-        aspectRatio=this.aspectRatio
-        height=this.height
-        width=this.width
-      )
     )}}
   </Tag>
 {{/let}}

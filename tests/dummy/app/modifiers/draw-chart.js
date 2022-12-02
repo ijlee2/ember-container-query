@@ -1,34 +1,33 @@
-/*
-  D3 code adapted from https://observablehq.com/@mbostock/revenue-by-music-format-1973-2018
-*/
+import { registerDestructor } from '@ember/destroyable';
 import { action } from '@ember/object';
-import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
-import {
-  COLOR_PALETTE,
-  formatRevenue,
-} from 'dummy/utils/components/widgets/widget-2';
-import { debounce } from '@ember/runloop';
-
+import { inject as service } from '@ember/service';
 import { extent, max, rollup, ticks } from 'd3-array';
 import { axisBottom, axisLeft } from 'd3-axis';
 import { scaleBand, scaleLinear, scaleOrdinal } from 'd3-scale';
 import { select } from 'd3-selection';
 import { stack, stackOrderReverse } from 'd3-shape';
+import {
+  COLOR_PALETTE,
+  formatRevenue,
+} from 'dummy/utils/components/widgets/widget-2';
+import Modifier from 'ember-modifier';
 
 const musicFormats = Object.keys(COLOR_PALETTE);
 const paletteColors = Object.values(COLOR_PALETTE);
 
-export default class WidgetsWidget2StackedChartComponent extends Component {
-  @tracked height = 0;
-  @tracked width = 0;
+export default class DrawChartModifier extends Modifier {
+  @service resizeObserver;
+
+  height = 0;
+  width = 0;
+  _element = null;
 
   get color() {
     return scaleOrdinal().domain(musicFormats).range(paletteColors);
   }
 
   get data() {
-    return this.args.data ?? [];
+    return this.args.named.data ?? [];
   }
 
   get margin() {
@@ -113,13 +112,32 @@ export default class WidgetsWidget2StackedChartComponent extends Component {
       .range([height - margin.bottom, margin.top]);
   }
 
+  constructor(owner, args) {
+    super(owner, args);
+
+    registerDestructor(this, () => {
+      this.resizeObserver.unobserve(this._element, this.onResize);
+    });
+  }
+
+  modify(element) {
+    this.registerResizeObserver(element);
+    this.refreshChart(element);
+  }
+
   @action onResize(resizeObserverEntry) {
     const element = resizeObserverEntry.target;
 
-    debounce(this, this.refreshChart, element, 50);
+    this.refreshChart(element);
   }
 
-  @action refreshChart(element) {
+  registerResizeObserver(element) {
+    this.resizeObserver.observe(element, this.onResize);
+    this.resizeObserver.unobserve(this._element, this.onResize);
+    this._element = element;
+  }
+
+  refreshChart(element) {
     this.clearSvg(element);
     this.measureDimensions(element);
     this.drawChart(element);
@@ -130,17 +148,14 @@ export default class WidgetsWidget2StackedChartComponent extends Component {
   }
 
   measureDimensions(element) {
-    const { clientHeight, clientWidth } = element;
-
-    this.height = clientHeight;
-    this.width = clientWidth;
+    this.height = element.clientHeight;
+    this.width = element.clientWidth;
   }
 
-  @action drawChart(element) {
-    const { height, width } = this;
-    const { color, series, xAxis, yAxis, xScale, yScale } = this;
+  drawChart(element) {
+    const { color, height, series, width, xAxis, xScale, yAxis, yScale } = this;
 
-    let svg = select(element.querySelector('svg'));
+    const svg = select(element.querySelector('svg'));
 
     svg.attr('viewBox', [0, 0, width, height]);
 

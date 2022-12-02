@@ -2,8 +2,10 @@
   data-test-list="Tracks"
   data-css-grid="{{this.numRows}} x {{this.numColumns}}"
   local-class="list"
-  {{did-insert this.updateCssForRows}}
-  {{did-update this.updateCssForRows @tracks @numColumns}}
+  {{dynamic-css-grid
+    numColumns=this.numColumns
+    numRows=this.numRows
+  }}
 >
   {{#each @tracks as |track index|}}
     <li

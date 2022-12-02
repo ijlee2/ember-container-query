@@ -54,12 +54,12 @@
     }
   },
   "dependencies": {
-    "@ember/render-modifiers": "^2.0.4",
     "ember-cli-babel": "^7.26.11",
     "ember-cli-htmlbars": "^6.1.0",
     "ember-cli-typescript": "^5.1.0",
     "ember-element-helper": "^0.6.1",
-    "ember-on-resize-modifier": "^1.1.0",
+    "ember-modifier": "^3.2.7",
+    "ember-resize-observer-service": "^1.1.0",
     "ember-test-selectors": "^6.0.0"
   },
   "devDependencies": {
@@ -77,6 +77,7 @@
     "@types/ember__component": "^4.0.8",
     "@types/ember__controller": "^4.0.0",
     "@types/ember__debug": "^4.0.1",
+    "@types/ember__destroyable": "^4.0.0",
     "@types/ember__engine": "^4.0.0",
     "@types/ember__error": "^4.0.0",
     "@types/ember__object": "^4.0.2",

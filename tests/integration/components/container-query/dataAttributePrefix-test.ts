@@ -358,26 +358,26 @@ module('Integration | Component | container-query', function (hooks) {
       set(this, 'dataAttributePrefix', 'cq2');
     });
 
-    test("The component doesn't update the data attributes", async function (assert: CustomAssert) {
+    test('The component updates the data attributes', async function (assert: CustomAssert) {
       assert.areDataAttributesCorrect!({
-        'data-cq1-small': '',
+        'data-cq1-small': undefined,
         'data-cq1-medium': undefined,
         'data-cq1-large': undefined,
         'data-cq1-short': undefined,
-        'data-cq1-tall': '',
-        'data-cq1-ratio-type-A': '',
-        'data-cq1-ratio-type-B': '',
+        'data-cq1-tall': undefined,
+        'data-cq1-ratio-type-A': undefined,
+        'data-cq1-ratio-type-B': undefined,
         'data-cq1-ratio-type-C': undefined,
       });
 
       assert.areDataAttributesCorrect!({
-        'data-cq2-small': undefined,
+        'data-cq2-small': '',
         'data-cq2-medium': undefined,
         'data-cq2-large': undefined,
         'data-cq2-short': undefined,
-        'data-cq2-tall': undefined,
-        'data-cq2-ratio-type-A': undefined,
-        'data-cq2-ratio-type-B': undefined,
+        'data-cq2-tall': '',
+        'data-cq2-ratio-type-A': '',
+        'data-cq2-ratio-type-B': '',
         'data-cq2-ratio-type-C': undefined,
       });
     });
@@ -386,13 +386,13 @@ module('Integration | Component | container-query', function (hooks) {
       await resizeContainer(500, 300);
 
       assert.areDataAttributesCorrect!({
-        'data-cq1-small': '',
+        'data-cq1-small': undefined,
         'data-cq1-medium': undefined,
         'data-cq1-large': undefined,
         'data-cq1-short': undefined,
-        'data-cq1-tall': '',
-        'data-cq1-ratio-type-A': '',
-        'data-cq1-ratio-type-B': '',
+        'data-cq1-tall': undefined,
+        'data-cq1-ratio-type-A': undefined,
+        'data-cq1-ratio-type-B': undefined,
         'data-cq1-ratio-type-C': undefined,
       });
 
@@ -410,13 +410,13 @@ module('Integration | Component | container-query', function (hooks) {
       await resizeContainer(800, 400);
 
       assert.areDataAttributesCorrect!({
-        'data-cq1-small': '',
+        'data-cq1-small': undefined,
         'data-cq1-medium': undefined,
         'data-cq1-large': undefined,
         'data-cq1-short': undefined,
-        'data-cq1-tall': '',
-        'data-cq1-ratio-type-A': '',
-        'data-cq1-ratio-type-B': '',
+        'data-cq1-tall': undefined,
+        'data-cq1-ratio-type-A': undefined,
+        'data-cq1-ratio-type-B': undefined,
         'data-cq1-ratio-type-C': undefined,
       });
 
@@ -434,13 +434,13 @@ module('Integration | Component | container-query', function (hooks) {
       await resizeContainer(1000, 600);
 
       assert.areDataAttributesCorrect!({
-        'data-cq1-small': '',
+        'data-cq1-small': undefined,
         'data-cq1-medium': undefined,
         'data-cq1-large': undefined,
         'data-cq1-short': undefined,
-        'data-cq1-tall': '',
-        'data-cq1-ratio-type-A': '',
-        'data-cq1-ratio-type-B': '',
+        'data-cq1-tall': undefined,
+        'data-cq1-ratio-type-A': undefined,
+        'data-cq1-ratio-type-B': undefined,
         'data-cq1-ratio-type-C': undefined,
       });
 
