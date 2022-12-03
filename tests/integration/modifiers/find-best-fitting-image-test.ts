@@ -12,8 +12,9 @@ module('Integration | Modifier | find-best-fitting-image', function (hooks) {
   setupRenderingTest(hooks);
 
   test('We can find the best-fitting image', async function (this: TestContext, assert) {
-    /* eslint-disable-next-line @typescript-eslint/no-empty-function */
-    this.noOp = () => {};
+    this.noOp = () => {
+      // Do nothing
+    };
 
     await render(hbs`
       <div
