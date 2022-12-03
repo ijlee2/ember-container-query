@@ -1,13 +1,11 @@
 import { visit } from '@ember/test-helpers';
-import resetViewport from 'dummy/tests/helpers/reset-viewport';
+import { setupApplicationTest } from 'dummy/tests/helpers';
 import { timeout } from 'dummy/tests/helpers/resize-container';
 import { a11yAudit } from 'ember-a11y-testing/test-support';
-import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
 module('Acceptance | index', function (hooks) {
   setupApplicationTest(hooks);
-  resetViewport(hooks);
 
   hooks.beforeEach(async function () {
     await visit('/');

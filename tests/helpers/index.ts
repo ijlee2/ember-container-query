@@ -5,6 +5,8 @@ import {
 } from 'ember-qunit';
 import EmberResolver from 'ember-resolver';
 
+import resetViewport from './reset-viewport';
+
 interface SetupTestOptions {
   resolver?: EmberResolver | undefined;
 }
@@ -18,6 +20,7 @@ function setupApplicationTest(
   options?: SetupTestOptions
 ): void {
   upstreamSetupApplicationTest(hooks, options);
+  resetViewport(hooks);
 
   // Additional setup for application tests can be done here.
   //
