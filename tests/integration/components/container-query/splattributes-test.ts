@@ -3,8 +3,8 @@ import type { CustomAssert } from 'dummy/tests/helpers';
 import {
   setupContainerQueryTest,
   setupRenderingTest,
+  timeout,
 } from 'dummy/tests/helpers';
-import { timeout } from 'dummy/tests/helpers/resize-container';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
 

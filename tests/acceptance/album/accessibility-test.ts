@@ -1,6 +1,5 @@
 import { visit } from '@ember/test-helpers';
-import { setupApplicationTest } from 'dummy/tests/helpers';
-import { timeout } from 'dummy/tests/helpers/resize-container';
+import { setupApplicationTest, timeout } from 'dummy/tests/helpers';
 import { a11yAudit } from 'ember-a11y-testing/test-support';
 import { module, test } from 'qunit';
 

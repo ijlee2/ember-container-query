@@ -1,7 +1,10 @@
 /* eslint-disable qunit/require-expect */
 import { visit } from '@ember/test-helpers';
-import { setupApplicationTest, takeSnapshot } from 'dummy/tests/helpers';
-import { timeout } from 'dummy/tests/helpers/resize-container';
+import {
+  setupApplicationTest,
+  takeSnapshot,
+  timeout,
+} from 'dummy/tests/helpers';
 import { module, test } from 'qunit';
 
 module('Acceptance | form', function (hooks) {

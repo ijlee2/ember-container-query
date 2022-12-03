@@ -58,3 +58,4 @@ export { setupApplicationTest, setupRenderingTest, setupTest };
 export * from './container-query';
 export * from './percy';
 export * from './reset-viewport';
+export * from './resize-container';

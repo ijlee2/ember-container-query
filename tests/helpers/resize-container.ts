@@ -13,7 +13,7 @@ export function timeout(milliseconds = RERENDER_TIME): Promise<void> {
   });
 }
 
-export default async function resizeContainer(
+export async function resizeContainer(
   width: number,
   height: number
 ): Promise<void> {
