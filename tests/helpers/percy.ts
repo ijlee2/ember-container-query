@@ -66,7 +66,7 @@ type SnapshotOptions = {
     ...
   });
 */
-export default async function takeSnapshot(
+export async function takeSnapshot(
   qunitAssert: unknown,
   options: SnapshotOptions = {} as SnapshotOptions
 ): Promise<void> {

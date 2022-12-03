@@ -1,7 +1,6 @@
 /* eslint-disable qunit/require-expect */
 import { visit } from '@ember/test-helpers';
-import { setupApplicationTest } from 'dummy/tests/helpers';
-import takeSnapshot from 'dummy/tests/helpers/percy';
+import { setupApplicationTest, takeSnapshot } from 'dummy/tests/helpers';
 import { timeout } from 'dummy/tests/helpers/resize-container';
 import { module, test } from 'qunit';
 
