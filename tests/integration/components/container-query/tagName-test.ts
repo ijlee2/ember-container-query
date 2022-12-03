@@ -67,19 +67,19 @@ module('Integration | Component | container-query', function (hooks) {
     });
 
     test('The component continues to have the <div> tag when it is resized', async function (assert: CustomAssert) {
-      await resizeContainer(500, 300);
+      await resizeContainer({ height: 300, width: 500 });
 
       assert
         .dom('[data-test-container-query]')
         .hasTagName('div', 'We see the correct tag name.');
 
-      await resizeContainer(800, 400);
+      await resizeContainer({ height: 400, width: 800 });
 
       assert
         .dom('[data-test-container-query]')
         .hasTagName('div', 'We see the correct tag name.');
 
-      await resizeContainer(1000, 600);
+      await resizeContainer({ height: 600, width: 1000 });
 
       assert
         .dom('[data-test-container-query]')
@@ -136,19 +136,19 @@ module('Integration | Component | container-query', function (hooks) {
     });
 
     test('The component continues to have the correct tag when it is resized', async function (assert: CustomAssert) {
-      await resizeContainer(500, 300);
+      await resizeContainer({ height: 300, width: 500 });
 
       assert
         .dom('[data-test-container-query]')
         .hasTagName('section', 'We see the correct tag name.');
 
-      await resizeContainer(800, 400);
+      await resizeContainer({ height: 400, width: 800 });
 
       assert
         .dom('[data-test-container-query]')
         .hasTagName('section', 'We see the correct tag name.');
 
-      await resizeContainer(1000, 600);
+      await resizeContainer({ height: 600, width: 1000 });
 
       assert
         .dom('[data-test-container-query]')
@@ -210,21 +210,21 @@ module('Integration | Component | container-query', function (hooks) {
     });
 
     test('The component continues to not update the tag when it is resized', async function (assert: CustomAssert) {
-      await resizeContainer(500, 300);
+      await resizeContainer({ height: 300, width: 500 });
 
       assert
         .dom('[data-test-container-query]')
         .hasTagName('section', 'We see the correct tag name.')
         .doesNotHaveTagName('article', 'The tag name should not change.');
 
-      await resizeContainer(800, 400);
+      await resizeContainer({ height: 400, width: 800 });
 
       assert
         .dom('[data-test-container-query]')
         .hasTagName('section', 'We see the correct tag name.')
         .doesNotHaveTagName('article', 'The tag name should not change.');
 
-      await resizeContainer(1000, 600);
+      await resizeContainer({ height: 600, width: 1000 });
 
       assert
         .dom('[data-test-container-query]')

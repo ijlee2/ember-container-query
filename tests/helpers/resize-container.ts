@@ -13,10 +13,13 @@ export function timeout(milliseconds = RERENDER_TIME): Promise<void> {
   });
 }
 
-export async function resizeContainer(
-  width: number,
-  height: number
-): Promise<void> {
+export async function resizeContainer({
+  height,
+  width,
+}: {
+  height: number;
+  width: number;
+}): Promise<void> {
   const parentElement = find('[data-test-parent-element]');
 
   assert(
@@ -27,8 +30,8 @@ export async function resizeContainer(
   // Since <ContainerQuery> has a style of `height: 100%; width: 100%;`,
   // we can set its parent element's width and height to cause container
   // queries to be evaluated.
-  (parentElement as HTMLElement).style.width = `${width}px`;
   (parentElement as HTMLElement).style.height = `${height}px`;
+  (parentElement as HTMLElement).style.width = `${width}px`;
 
   await timeout();
 }

@@ -82,7 +82,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       // After a resize, the container query results should remain the
       // same as before.
-      await resizeContainer(500, 300);
+      await resizeContainer({ height: 300, width: 500 });
 
       assert.areFeaturesCorrect!({
         small: true,
@@ -95,7 +95,7 @@ module('Integration | Component | container-query', function (hooks) {
         'ratio-type-C': false,
       });
 
-      await resizeContainer(800, 400);
+      await resizeContainer({ height: 400, width: 800 });
 
       assert.areFeaturesCorrect!({
         small: true,
@@ -108,7 +108,7 @@ module('Integration | Component | container-query', function (hooks) {
         'ratio-type-C': false,
       });
 
-      await resizeContainer(1000, 600);
+      await resizeContainer({ height: 600, width: 1000 });
 
       assert.areFeaturesCorrect!({
         small: true,

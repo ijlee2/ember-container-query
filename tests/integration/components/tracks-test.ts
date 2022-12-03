@@ -45,7 +45,7 @@ module('Integration | Component | tracks', function (hooks) {
       .doesNotExist("We don't see a table.");
 
     // Features: medium, short
-    await resizeContainer(560, 240);
+    await resizeContainer({ height: 240, width: 560 });
 
     assert
       .dom('[data-test-list="Tracks"]')
@@ -61,7 +61,7 @@ module('Integration | Component | tracks', function (hooks) {
       .doesNotExist("We don't see a table.");
 
     // Features: large, short
-    await resizeContainer(880, 240);
+    await resizeContainer({ height: 240, width: 880 });
 
     assert
       .dom('[data-test-list="Tracks"]')
@@ -77,7 +77,7 @@ module('Integration | Component | tracks', function (hooks) {
       .doesNotExist("We don't see a table.");
 
     // Features: small, tall
-    await resizeContainer(240, 640);
+    await resizeContainer({ height: 640, width: 240 });
 
     assert
       .dom('[data-test-list="Tracks"]')
@@ -93,7 +93,7 @@ module('Integration | Component | tracks', function (hooks) {
       .doesNotExist("We don't see a table.");
 
     // Features: medium, tall
-    await resizeContainer(560, 640);
+    await resizeContainer({ height: 640, width: 560 });
 
     assert
       .dom('[data-test-list="Tracks"]')
@@ -109,7 +109,7 @@ module('Integration | Component | tracks', function (hooks) {
       .doesNotExist("We don't see a table.");
 
     // Features: large, tall
-    await resizeContainer(880, 640);
+    await resizeContainer({ height: 640, width: 880 });
 
     assert
       .dom('[data-test-list="Tracks"]')

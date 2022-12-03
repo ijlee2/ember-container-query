@@ -72,7 +72,7 @@ module('Integration | Component | container-query', function (hooks) {
     });
 
     test('The component updates features when it is resized', async function (assert: CustomAssert) {
-      await resizeContainer(500, 300);
+      await resizeContainer({ height: 300, width: 500 });
 
       assert.areFeaturesCorrect!({
         small: undefined,
@@ -85,7 +85,7 @@ module('Integration | Component | container-query', function (hooks) {
         'ratio-type-C': undefined,
       });
 
-      await resizeContainer(800, 400);
+      await resizeContainer({ height: 400, width: 800 });
 
       assert.areFeaturesCorrect!({
         small: undefined,
@@ -98,7 +98,7 @@ module('Integration | Component | container-query', function (hooks) {
         'ratio-type-C': undefined,
       });
 
-      await resizeContainer(1000, 600);
+      await resizeContainer({ height: 600, width: 1000 });
 
       assert.areFeaturesCorrect!({
         small: undefined,
@@ -113,15 +113,15 @@ module('Integration | Component | container-query', function (hooks) {
     });
 
     test('The component updates dimensions when it is resized', async function (assert: CustomAssert) {
-      await resizeContainer(500, 300);
+      await resizeContainer({ height: 300, width: 500 });
 
       assert.areDimensionsCorrect!(500, 300);
 
-      await resizeContainer(800, 400);
+      await resizeContainer({ height: 400, width: 800 });
 
       assert.areDimensionsCorrect!(800, 400);
 
-      await resizeContainer(1000, 600);
+      await resizeContainer({ height: 600, width: 1000 });
 
       assert.areDimensionsCorrect!(1000, 600);
     });
@@ -184,7 +184,7 @@ module('Integration | Component | container-query', function (hooks) {
     });
 
     test('The component updates features when it is resized', async function (assert: CustomAssert) {
-      await resizeContainer(500, 300);
+      await resizeContainer({ height: 300, width: 500 });
 
       assert.areFeaturesCorrect!({
         small: false,
@@ -197,7 +197,7 @@ module('Integration | Component | container-query', function (hooks) {
         'ratio-type-C': true,
       });
 
-      await resizeContainer(800, 400);
+      await resizeContainer({ height: 400, width: 800 });
 
       assert.areFeaturesCorrect!({
         small: false,
@@ -210,7 +210,7 @@ module('Integration | Component | container-query', function (hooks) {
         'ratio-type-C': false,
       });
 
-      await resizeContainer(1000, 600);
+      await resizeContainer({ height: 600, width: 1000 });
 
       assert.areFeaturesCorrect!({
         small: false,
@@ -225,15 +225,15 @@ module('Integration | Component | container-query', function (hooks) {
     });
 
     test('The component updates dimensions when it is resized', async function (assert: CustomAssert) {
-      await resizeContainer(500, 300);
+      await resizeContainer({ height: 300, width: 500 });
 
       assert.areDimensionsCorrect!(500, 300);
 
-      await resizeContainer(800, 400);
+      await resizeContainer({ height: 400, width: 800 });
 
       assert.areDimensionsCorrect!(800, 400);
 
-      await resizeContainer(1000, 600);
+      await resizeContainer({ height: 600, width: 1000 });
 
       assert.areDimensionsCorrect!(1000, 600);
     });
@@ -334,7 +334,7 @@ module('Integration | Component | container-query', function (hooks) {
     });
 
     test('The component updates features when it is resized', async function (assert: CustomAssert) {
-      await resizeContainer(500, 300);
+      await resizeContainer({ height: 300, width: 500 });
 
       assert.areFeaturesCorrect!({
         small: undefined,
@@ -350,7 +350,7 @@ module('Integration | Component | container-query', function (hooks) {
         'ratio-type-B': false,
       });
 
-      await resizeContainer(800, 400);
+      await resizeContainer({ height: 400, width: 800 });
 
       assert.areFeaturesCorrect!({
         small: undefined,
@@ -366,7 +366,7 @@ module('Integration | Component | container-query', function (hooks) {
         'ratio-type-B': false,
       });
 
-      await resizeContainer(1000, 600);
+      await resizeContainer({ height: 600, width: 1000 });
 
       assert.areFeaturesCorrect!({
         small: undefined,
