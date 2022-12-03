@@ -1,8 +1,8 @@
 import { set } from '@ember/object';
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import { click, render, triggerKeyEvent } from '@ember/test-helpers';
+import { setupRenderingTest } from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
-import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
 type Changeset = {
