@@ -18,7 +18,7 @@ interface FindBestFittingImageModifierSignature {
 export default modifier(
   function findBestFittingImage(
     element: Element,
-    _: PositionalArgs<FindBestFittingImageModifierSignature>,
+    _positional: PositionalArgs<FindBestFittingImageModifierSignature>,
     named: NamedArgs<FindBestFittingImageModifierSignature>
   ) {
     const { dimensions, images, onQuery } = named;
