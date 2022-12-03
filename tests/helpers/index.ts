@@ -5,7 +5,7 @@ import {
 } from 'ember-qunit';
 import EmberResolver from 'ember-resolver';
 
-import resetViewport from './reset-viewport';
+import { resetViewport } from './reset-viewport';
 
 interface SetupTestOptions {
   resolver?: EmberResolver | undefined;
@@ -57,3 +57,4 @@ export { setupApplicationTest, setupRenderingTest, setupTest };
 
 export * from './container-query';
 export * from './percy';
+export * from './reset-viewport';

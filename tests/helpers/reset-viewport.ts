@@ -4,7 +4,7 @@
 
   https://github.com/emberjs/ember-qunit/blob/master/vendor/ember-qunit/test-container-styles.css
 */
-export default function resetViewport(hooks: NestedHooks): void {
+export function resetViewport(hooks: NestedHooks): void {
   hooks.beforeEach(function () {
     const testingContainer = document.getElementById(
       'ember-testing-container'
