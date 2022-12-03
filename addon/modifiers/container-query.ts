@@ -44,8 +44,6 @@ interface ContainerQueryModifierSignature {
 }
 
 export default class ContainerQueryModifier extends Modifier<ContainerQueryModifierSignature> {
-  /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
-  /* @ts-ignore */
   @service private declare readonly resizeObserver;
 
   dimensions!: Dimensions;

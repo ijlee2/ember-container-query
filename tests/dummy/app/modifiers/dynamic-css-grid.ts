@@ -14,7 +14,7 @@ interface DynamicCssGridModifierSignature {
 export default modifier(
   function dynamicCssGrid(
     element: Element,
-    _: PositionalArgs<DynamicCssGridModifierSignature>,
+    _positional: PositionalArgs<DynamicCssGridModifierSignature>,
     named: NamedArgs<DynamicCssGridModifierSignature>
   ): void {
     const { numColumns, numRows } = named;

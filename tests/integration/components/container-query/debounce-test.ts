@@ -1,10 +1,13 @@
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
-import type { CustomAssert } from 'dummy/tests/helpers/container-query';
-import setupContainerQueryTest from 'dummy/tests/helpers/container-query';
-import resizeContainer, { timeout } from 'dummy/tests/helpers/resize-container';
+import type { CustomAssert } from 'dummy/tests/helpers';
+import {
+  resizeContainer,
+  setupContainerQueryTest,
+  setupRenderingTest,
+  timeout,
+} from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
-import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
 interface TestContext extends BaseTestContext {
@@ -79,7 +82,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       // After a resize, the container query results should remain the
       // same as before.
-      await resizeContainer(500, 300);
+      await resizeContainer({ height: 300, width: 500 });
 
       assert.areFeaturesCorrect!({
         small: true,
@@ -92,7 +95,7 @@ module('Integration | Component | container-query', function (hooks) {
         'ratio-type-C': false,
       });
 
-      await resizeContainer(800, 400);
+      await resizeContainer({ height: 400, width: 800 });
 
       assert.areFeaturesCorrect!({
         small: true,
@@ -105,7 +108,7 @@ module('Integration | Component | container-query', function (hooks) {
         'ratio-type-C': false,
       });
 
-      await resizeContainer(1000, 600);
+      await resizeContainer({ height: 600, width: 1000 });
 
       assert.areFeaturesCorrect!({
         small: true,

@@ -1,14 +1,14 @@
 /* eslint-disable qunit/require-expect */
 import { visit } from '@ember/test-helpers';
-import takeSnapshot from 'dummy/tests/helpers/percy';
-import resetViewport from 'dummy/tests/helpers/reset-viewport';
-import { timeout } from 'dummy/tests/helpers/resize-container';
-import { setupApplicationTest } from 'ember-qunit';
+import {
+  setupApplicationTest,
+  takeSnapshot,
+  timeout,
+} from 'dummy/tests/helpers';
 import { module, test } from 'qunit';
 
 module('Acceptance | album', function (hooks) {
   setupApplicationTest(hooks);
-  resetViewport(hooks);
 
   hooks.beforeEach(async function () {
     await visit('/album');

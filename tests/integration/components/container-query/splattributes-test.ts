@@ -1,9 +1,11 @@
 import { render } from '@ember/test-helpers';
-import type { CustomAssert } from 'dummy/tests/helpers/container-query';
-import setupContainerQueryTest from 'dummy/tests/helpers/container-query';
-import { timeout } from 'dummy/tests/helpers/resize-container';
+import type { CustomAssert } from 'dummy/tests/helpers';
+import {
+  setupContainerQueryTest,
+  setupRenderingTest,
+  timeout,
+} from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
-import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
 module('Integration | Component | container-query', function (hooks) {

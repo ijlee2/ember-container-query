@@ -1,7 +1,7 @@
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
+import { setupRenderingTest } from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
-import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
 interface TestContext extends BaseTestContext {
@@ -12,8 +12,9 @@ module('Integration | Modifier | find-best-fitting-image', function (hooks) {
   setupRenderingTest(hooks);
 
   test('We can find the best-fitting image', async function (this: TestContext, assert) {
-    /* eslint-disable-next-line @typescript-eslint/no-empty-function */
-    this.noOp = () => {};
+    this.noOp = () => {
+      // Do nothing
+    };
 
     await render(hbs`
       <div
