@@ -25,39 +25,32 @@ export function setupContainerQueryTest(hooks: NestedHooks): void {
 }
 
 function setupCustomAssertions(assert: CustomAssert): void {
-  assert.areFeaturesCorrect = (features = {}) => {
-    for (const [featureName, meetsFeature] of Object.entries(features)) {
-      switch (meetsFeature) {
-        case true: {
-          assert
-            .dom(`[data-test-feature="${featureName}"]`)
-            .hasText(
-              'true',
-              `The container meets the feature "${featureName}".`
-            );
+  assert.areDataAttributesCorrect = (dataAttributes = {}) => {
+    const containerQuery = find('[data-test-container-query]');
 
-          break;
-        }
-
-        case false: {
-          assert
-            .dom(`[data-test-feature="${featureName}"]`)
-            .hasText(
-              'false',
-              `The container doesn't meet the feature "${featureName}".`
-            );
-
-          break;
-        }
-
+    for (const [dataAttributeName, expectedValue] of Object.entries(
+      dataAttributes
+    )) {
+      switch (expectedValue) {
         case undefined: {
           assert
-            .dom(`[data-test-feature="${featureName}"]`)
-            .hasNoText(
-              `The container doesn't meet the feature "${featureName}".`
+            .dom(containerQuery)
+            .doesNotHaveAttribute(
+              dataAttributeName,
+              `The container doesn't have the attribute "${dataAttributeName}".`
             );
 
           break;
+        }
+
+        default: {
+          assert
+            .dom(containerQuery)
+            .hasAttribute(
+              dataAttributeName,
+              expectedValue,
+              `The container has the attribute "${dataAttributeName}".`
+            );
         }
       }
     }
@@ -97,32 +90,39 @@ function setupCustomAssertions(assert: CustomAssert): void {
     assert.true(relativeError < tolerance, 'Aspect ratio is correct.');
   };
 
-  assert.areDataAttributesCorrect = (dataAttributes = {}) => {
-    const containerQuery = find('[data-test-container-query]');
-
-    for (const [dataAttributeName, expectedValue] of Object.entries(
-      dataAttributes
-    )) {
-      switch (expectedValue) {
-        case undefined: {
+  assert.areFeaturesCorrect = (features = {}) => {
+    for (const [featureName, meetsFeature] of Object.entries(features)) {
+      switch (meetsFeature) {
+        case true: {
           assert
-            .dom(containerQuery)
-            .doesNotHaveAttribute(
-              dataAttributeName,
-              `The container doesn't have the attribute "${dataAttributeName}".`
+            .dom(`[data-test-feature="${featureName}"]`)
+            .hasText(
+              'true',
+              `The container meets the feature "${featureName}".`
             );
 
           break;
         }
 
-        default: {
+        case false: {
           assert
-            .dom(containerQuery)
-            .hasAttribute(
-              dataAttributeName,
-              expectedValue,
-              `The container has the attribute "${dataAttributeName}".`
+            .dom(`[data-test-feature="${featureName}"]`)
+            .hasText(
+              'false',
+              `The container doesn't meet the feature "${featureName}".`
             );
+
+          break;
+        }
+
+        case undefined: {
+          assert
+            .dom(`[data-test-feature="${featureName}"]`)
+            .hasNoText(
+              `The container doesn't meet the feature "${featureName}".`
+            );
+
+          break;
         }
       }
     }
@@ -130,7 +130,7 @@ function setupCustomAssertions(assert: CustomAssert): void {
 }
 
 function cleanupCustomAssertions(assert: CustomAssert): void {
-  delete assert.areFeaturesCorrect;
-  delete assert.areDimensionsCorrect;
   delete assert.areDataAttributesCorrect;
+  delete assert.areDimensionsCorrect;
+  delete assert.areFeaturesCorrect;
 }
