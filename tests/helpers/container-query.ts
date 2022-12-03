@@ -4,16 +4,18 @@ type DataAttributes = {
   [dataAttributeName: string]: string | undefined;
 };
 
+type Dimensions = {
+  height: number;
+  width: number;
+};
+
 type Features = {
   [featureName: string]: boolean | undefined;
 };
 
 export interface CustomAssert extends Assert {
   areDataAttributesCorrect?: (dataAttributes: DataAttributes) => void;
-  areDimensionsCorrect?: (
-    expectedWidth: number,
-    expectedHeight: number
-  ) => void;
+  areDimensionsCorrect?: (dimensions: Dimensions) => void;
   areFeaturesCorrect?: (features: Features) => void;
 }
 
@@ -61,10 +63,9 @@ function setupCustomAssertions(assert: CustomAssert): void {
     }
   };
 
-  assert.areDimensionsCorrect = (
-    expectedWidth: number,
-    expectedHeight: number
-  ) => {
+  assert.areDimensionsCorrect = (dimensions) => {
+    const { height: expectedHeight, width: expectedWidth } = dimensions;
+
     // Check width and height
     assert
       .dom('[data-test-width-height]')
