@@ -1,9 +1,11 @@
 import { set } from '@ember/object';
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
-import { setupRenderingTest } from 'dummy/tests/helpers';
-import type { CustomAssert } from 'dummy/tests/helpers/container-query';
-import setupContainerQueryTest from 'dummy/tests/helpers/container-query';
+import type { CustomAssert } from 'dummy/tests/helpers';
+import {
+  setupContainerQueryTest,
+  setupRenderingTest,
+} from 'dummy/tests/helpers';
 import resizeContainer, { timeout } from 'dummy/tests/helpers/resize-container';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';

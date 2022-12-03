@@ -54,3 +54,5 @@ function setupTest(hooks: NestedHooks, options?: SetupTestOptions): void {
 }
 
 export { setupApplicationTest, setupRenderingTest, setupTest };
+
+export * from './container-query';

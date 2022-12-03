@@ -17,7 +17,7 @@ export interface CustomAssert extends Assert {
   areFeaturesCorrect?: (features: Features) => void;
 }
 
-export default function setupContainerQueryTest(hooks: NestedHooks): void {
+export function setupContainerQueryTest(hooks: NestedHooks): void {
   hooks.beforeEach(setupCustomAssertions);
   hooks.afterEach(cleanupCustomAssertions);
 }
