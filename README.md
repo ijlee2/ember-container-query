@@ -137,6 +137,12 @@ The addon provides 1 Glimmer component and 3 helpers:
 - `{{cq-height}}`
 - `{{cq-width}}`
 
+Starting `v2.2.1`, the addon extracts the core logic into a modifier. This lets you opt out of using the provided component.
+
+- `{{container-query}}`
+
+Expand the items below to learn more about the API.
+
 
 <details>
 <summary><code>&lt;ContainerQuery&gt;</code></summary>
@@ -195,6 +201,30 @@ All helpers accept these arguments:
 <sup>1. The helpers use default values of `min = 0` and `max = Infinity`, and assume the inequalities `min ≤ x < max`. In practice, you will always want to set `min` or `max` (or both).</sup>
 
 <sup>2. Aspect ratio is unitless. Height and width have the unit of pixel.</sup>
+
+</details>
+
+
+<details>
+<summary><code>{{container-query}}</code></summary>
+
+### Arguments
+
+You can pass these arguments to the modifier.
+
+- `@dataAttributePrefix`
+- `@debounce`
+- `@features`
+
+For more information, refer to [the arguments of `<ContainerQuery>` component](#arguments).
+
+
+### Outputs
+
+The outputs are similar to [those of `<ContainerQuery>` component](#outputs).
+
+Data attributes are automatically applied to the HTML element. To get `dimensions` and `features`, you will need to pass the argument `@onQuery` (a function) to the modifier.
+
 
 </details>
 
@@ -286,12 +316,9 @@ For more examples, I encourage you to check out the code for my demo app. It is 
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.24 or above<sup>1</sup>
-* Ember CLI v3.24 or above
-* Node.js v12 or above
-* Modern browsers<sup>1</sup> (IE 11 won't be supported)
-
-<sup>1. Until you can adopt Ember Octane and drop support for IE 11, I recommend using [`ember-fill-up`](https://github.com/chadian/ember-fill-up) to do container queries. The APIs are similar so your migration should be smooth. Chad Carbert and I will ensure that the addons are maintained side-by-side for some time.</sup>
+* Ember.js v3.28 or above
+* Ember CLI v3.28 or above
+* Node.js v14 or above
 
 
 Contributing
