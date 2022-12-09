@@ -286,12 +286,9 @@ For more examples, I encourage you to check out the code for my demo app. It is 
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.24 or above<sup>1</sup>
-* Ember CLI v3.24 or above
-* Node.js v12 or above
-* Modern browsers<sup>1</sup> (IE 11 won't be supported)
-
-<sup>1. Until you can adopt Ember Octane and drop support for IE 11, I recommend using [`ember-fill-up`](https://github.com/chadian/ember-fill-up) to do container queries. The APIs are similar so your migration should be smooth. Chad Carbert and I will ensure that the addons are maintained side-by-side for some time.</sup>
+* Ember.js v3.28 or above
+* Ember CLI v3.28 or above
+* Node.js v14 or above
 
 
 Contributing
