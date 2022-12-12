@@ -13,9 +13,7 @@
           local-class="music-format {{unless CQ.features.large "small-font-size"}}"
         >
           <span local-class="marker">
-            {{!-- template-lint-disable no-inline-styles style-concatenation --}}
             {{svg-jar "stop" aria-hidden="true" style=this.styleForMarker}}
-            {{!-- template-lint-enable no-inline-styles style-concatenation --}}
           </span>
 
           {{this.summary.musicFormat}}

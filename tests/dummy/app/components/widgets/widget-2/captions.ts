@@ -1,6 +1,4 @@
 import { action } from '@ember/object';
-import { htmlSafe } from '@ember/template';
-import type { SafeString } from '@ember/template/-private/handlebars';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import type { Summary } from 'dummy/utils/components/widgets/widget-2';
@@ -12,12 +10,12 @@ interface WidgetsWidget2CaptionsComponentArgs {
 export default class WidgetsWidget2CaptionsComponent extends Component<WidgetsWidget2CaptionsComponentArgs> {
   @tracked currentIndex = 0;
 
-  get styleForMarker(): SafeString {
+  get styleForMarker(): string {
     if (!this.summary) {
-      return htmlSafe('');
+      return '';
     }
 
-    return htmlSafe(`color: ${this.summary.markerColor};`);
+    return `color: ${this.summary.markerColor};`;
   }
 
   get summary(): Summary | undefined {
