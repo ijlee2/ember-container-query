@@ -70,6 +70,7 @@
     "@glimmer/tracking": "^1.1.2",
     "@percy/cli": "^1.16.0",
     "@percy/ember": "^4.0.0",
+    "@tsconfig/ember": "^1.1.0",
     "@types/ember-qunit": "^5.0.2",
     "@types/ember-resolver": "^5.0.13",
     "@types/ember__application": "^4.0.5",
