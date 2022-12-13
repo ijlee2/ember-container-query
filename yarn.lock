@@ -5205,6 +5205,13 @@ ember-template-imports@^3.1.1, ember-template-imports@^3.4.0:
     string.prototype.matchall "^4.0.6"
     validate-peer-dependencies "^1.1.0"
 
+ember-template-lint-plugin-prettier@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/ember-template-lint-plugin-prettier/-/ember-template-lint-plugin-prettier-4.1.0.tgz#bf1db3984d240e8c0bc0c97de419c36398be8691"
+  integrity sha512-LGGn1SXS5vhH60Tp37D4yG8z9ftVMCSSBn5qst+7rjMtLAZuZYwq+q+fs46op745ds0NNtaj+3OzSpBj+RVL2w==
+  dependencies:
+    prettier-linter-helpers "^1.0.0"
+
 ember-template-lint@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-5.0.2.tgz#38cf23010b3e48b7506c23c7f528fa5d0a209fd8"

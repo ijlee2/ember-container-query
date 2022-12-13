@@ -15,7 +15,7 @@ import Modifier from 'ember-modifier';
 const musicFormats = Object.keys(COLOR_PALETTE);
 const paletteColors = Object.values(COLOR_PALETTE);
 
-export default class DrawChartModifier extends Modifier {
+export default class DrawStackedChartModifier extends Modifier {
   @service resizeObserver;
 
   height = 0;
@@ -42,56 +42,56 @@ export default class DrawChartModifier extends Modifier {
   }
 
   get series() {
-    const foo = stack()
+    const series = stack()
       .keys(musicFormats)
       .value((group, key) => group.get(key).revenue)
       .order(stackOrderReverse);
 
-    const bar = Array.from(
-      rollup(
-        this.data,
-        ([d]) => d,
-        (d) => d.year,
-        (d) => d.musicFormat
-      ).values()
+    const internMap = rollup(
+      this.data,
+      ([d]) => d,
+      (d) => d.year,
+      (d) => d.musicFormat
     );
 
-    const foobar = foo(bar).map(
+    return series(internMap.values()).map(
       (s) => (s.forEach((d) => (d.data = d.data.get(s.key))), s)
     );
-
-    return foobar;
   }
 
   get xAxis() {
     const { height, margin, xScale } = this;
 
+    const xTicks = ticks(...extent(xScale.domain()), 5);
+
     return (g) =>
-      g.attr('transform', `translate(0, ${height - margin.bottom})`).call(
-        axisBottom(xScale)
-          .tickValues(ticks(...extent(xScale.domain()), 5))
-          .tickSizeOuter(0)
-      );
+      g
+        .attr('transform', `translate(0, ${height - margin.bottom})`)
+        .call(axisBottom(xScale).tickValues(xTicks).tickSizeOuter(0));
   }
 
   get xScale() {
     const { data, margin, width } = this;
 
+    const xDomain = data.map((d) => d.year);
+
     return scaleBand()
-      .domain(data.map((d) => d.year))
+      .domain(xDomain)
       .rangeRound([margin.left, width - margin.right]);
   }
 
   get yAxis() {
     const { data, margin, yScale } = this;
 
+    const yTicks = ticks(...extent(yScale.domain()), 5);
+
     return (g) =>
       g
         .attr('transform', `translate(${margin.left}, 0)`)
         .call(
           axisLeft(yScale)
-            .tickFormat((x) => (x / 1e9).toFixed(0))
-            .tickValues(ticks(...extent(yScale.domain()), 5))
+            .tickFormat((y) => (y / 1e9).toFixed(0))
+            .tickValues(yTicks)
         )
         .call((g) => g.select('.domain').remove())
         .call((g) =>
@@ -108,8 +108,10 @@ export default class DrawChartModifier extends Modifier {
   get yScale() {
     const { height, margin, series } = this;
 
+    const yDomain = [0, max(series, (d) => max(d, (d) => d[1]))];
+
     return scaleLinear()
-      .domain([0, max(series, (d) => max(d, (d) => d[1]))])
+      .domain(yDomain)
       .nice()
       .range([height - margin.bottom, margin.top]);
   }
@@ -136,9 +138,10 @@ export default class DrawChartModifier extends Modifier {
   }
 
   registerResizeObserver(element) {
-    this.resizeObserver.observe(element, this.onResize);
     this.resizeObserver.unobserve(this._element, this.onResize);
+
     this._element = element;
+    this.resizeObserver.observe(element, this.onResize);
   }
 
   refreshChart(element) {
@@ -179,12 +182,11 @@ export default class DrawChartModifier extends Modifier {
           .attr('width', xScale.bandwidth() - 1)
           .attr('height', (d) => Math.max(yScale(d[0]) - yScale(d[1]), 0))
           .append('title')
-          .text(
-            (d) =>
-              `${d.data.musicFormat}, ${d.data.year} ${formatRevenue(
-                d.data.revenue
-              )}`
-          )
+          .text((d) => {
+            const { musicFormat, revenue, year } = d.data;
+
+            return `${musicFormat}, ${year} ${formatRevenue(revenue)}`;
+          })
       );
 
     svg.append('g').call(xAxis);

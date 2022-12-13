@@ -10,9 +10,11 @@
     }}
     ...attributes
   >
-    {{yield (hash
-      dimensions=this.dimensions
-      features=this.queryResults
-    )}}
+    {{yield
+      (hash
+        dimensions=this.dimensions
+        features=this.queryResults
+      )
+    }}
   </Tag>
 {{/let}}
