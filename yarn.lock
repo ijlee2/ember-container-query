@@ -1121,6 +1121,11 @@
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.2.tgz#30aa825f11d438671d585bd44e7fd564535fc210"
   integrity sha512-82cpyJyKRoQoRi+14ibCeGPu0CwypgtBAdBhq1WfvagpCZNKqwXbKwXllYSMG91DhmG4jt9gN8eP6lGOtozuaw==
 
+"@gavant/glint-template-types@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@gavant/glint-template-types/-/glint-template-types-0.3.0.tgz#0c8096ba6934c561665b3a4f867204dc0815cae3"
+  integrity sha512-fL1C1EmQPQw9TZxewN3D/r5XbJVPP8Ba3gR0jLBroBUXWFD9mxnYhsivKJVf3p41XiV5KVsBumxbVmbQ/JbpSQ==
+
 "@glimmer/component@^1.1.0", "@glimmer/component@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@glimmer/component/-/component-1.1.2.tgz#892ec0c9f0b6b3e41c112be502fde073cf24d17c"
