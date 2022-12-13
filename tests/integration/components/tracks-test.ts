@@ -20,6 +20,7 @@ module('Integration | Component | tracks', function (hooks) {
   test('uses container queries to render tracks', async function (assert) {
     // Features: small, short
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       {{!-- template-lint-disable no-inline-styles --}}
       <div
         data-test-parent-element

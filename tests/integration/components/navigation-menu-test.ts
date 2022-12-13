@@ -8,6 +8,7 @@ module('Integration | Component | navigation-menu', function (hooks) {
 
   test('The component renders a navigation menu', async function (assert) {
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       <NavigationMenu
         @name="Main Navigation"
         @menuItems={{array

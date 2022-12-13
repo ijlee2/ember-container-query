@@ -8,6 +8,7 @@ module('Integration | Component | ui/form', function (hooks) {
 
   test('The component renders a form', async function (assert) {
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form
         @data={{hash
           email=undefined

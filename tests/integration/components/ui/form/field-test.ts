@@ -9,6 +9,7 @@ module('Integration | Component | ui/form/field', function (hooks) {
 
   test('The component handles the field layout', async function (assert) {
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Field>
         <:label as |l|>
           <label
@@ -44,6 +45,7 @@ module('Integration | Component | ui/form/field', function (hooks) {
 
   test('We can pass @errorMessage to show an error message', async function (assert) {
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Field
         @errorMessage="Please provide a value."
       >

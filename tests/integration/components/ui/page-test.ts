@@ -8,6 +8,7 @@ module('Integration | Component | ui/page', function (hooks) {
 
   test('The component handles the page layout', async function (assert) {
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Page
         @title="Form"
       >

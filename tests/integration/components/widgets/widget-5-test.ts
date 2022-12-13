@@ -8,6 +8,7 @@ module('Integration | Component | widgets/widget-5', function (hooks) {
 
   test('The component renders', async function (assert) {
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       <Widgets::Widget-5 />
     `);
 
