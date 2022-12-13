@@ -1,7 +1,14 @@
 import { helper } from '@ember/component/helper';
 import { assert } from '@ember/debug';
 
-function add(positional: Array<unknown>) {
+interface AddHelperSignature {
+  Args: {
+    Positional: Array<unknown>;
+  };
+  Return: number;
+}
+
+const AddHelper = helper<AddHelperSignature>((positional) => {
   assert(
     'All positional arguments must be numbers.',
     positional.every((element) => typeof element === 'number')
@@ -13,6 +20,6 @@ function add(positional: Array<unknown>) {
   );
 
   return sum;
-}
+});
 
-export default helper(add);
+export default AddHelper;
