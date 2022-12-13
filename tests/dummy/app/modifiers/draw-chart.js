@@ -136,9 +136,10 @@ export default class DrawChartModifier extends Modifier {
   }
 
   registerResizeObserver(element) {
-    this.resizeObserver.observe(element, this.onResize);
     this.resizeObserver.unobserve(this._element, this.onResize);
+
     this._element = element;
+    this.resizeObserver.observe(element, this.onResize);
   }
 
   refreshChart(element) {
