@@ -1,3 +1,24 @@
+## 3.0.0-alpha.0 (2022-12-13)
+
+### Breaking Change
+* [#135](https://github.com/ijlee2/ember-container-query/pull/135) Documented {{container-query}} modifier. Dropped support for Node 12 and Ember 3.24. ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#138](https://github.com/ijlee2/ember-container-query/pull/138) Updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#137](https://github.com/ijlee2/ember-container-query/pull/137) Updated demo app ([@ijlee2](https://github.com/ijlee2))
+* [#136](https://github.com/ijlee2/ember-container-query/pull/136) Reinstalled ember-cli-typescript ([@ijlee2](https://github.com/ijlee2))
+* [#135](https://github.com/ijlee2/ember-container-query/pull/135) Documented {{container-query}} modifier. Dropped support for Node 12 and Ember 3.24. ([@ijlee2](https://github.com/ijlee2))
+* [#131](https://github.com/ijlee2/ember-container-query/pull/131) Remove ember-cli-typescript. Enable enableTypeScriptTransform instead. ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#137](https://github.com/ijlee2/ember-container-query/pull/137) Updated demo app ([@ijlee2](https://github.com/ijlee2))
+* [#135](https://github.com/ijlee2/ember-container-query/pull/135) Documented {{container-query}} modifier. Dropped support for Node 12 and Ember 3.24. ([@ijlee2](https://github.com/ijlee2))
+* [#134](https://github.com/ijlee2/ember-container-query/pull/134) Refactor tests ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 2.1.1 (2022-12-02)
 
 ### Bug Fix
