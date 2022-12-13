@@ -7,14 +7,25 @@ import type {
   QueryResults,
 } from 'ember-container-query/modifiers/container-query';
 
-interface ContainerQueryComponentArgs {
-  dataAttributePrefix?: string;
-  debounce?: number;
-  features?: Features;
-  tagName?: string;
+interface ContainerQueryComponentSignature {
+  Args: {
+    dataAttributePrefix?: string;
+    debounce?: number;
+    features?: Features;
+    tagName?: string;
+  };
+  Blocks: {
+    default: [
+      {
+        dimensions?: Dimensions;
+        features?: QueryResults;
+      }
+    ];
+  };
+  Element: HTMLElement;
 }
 
-export default class ContainerQueryComponent extends Component<ContainerQueryComponentArgs> {
+export default class ContainerQueryComponent extends Component<ContainerQueryComponentSignature> {
   @tracked dimensions?: Dimensions;
   @tracked queryResults?: QueryResults;
 
