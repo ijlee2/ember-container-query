@@ -1,25 +1,17 @@
-{{#if @images}}
-  <ContainerQuery
-    @debounce={{300}}
-    as |CQ|
-  >
-    <div
-      local-class="image-container"
-      {{find-best-fitting-image
-        dimensions=CQ.dimensions
-        images=@images
-        onQuery=this.setImageSource
-      }}
-    >
-      {{#if this.imageSource}}
-        <img
-          alt=""
-          data-test-image="Concert"
-          local-class="image"
-          role="presentation"
-          src={{this.imageSource}}
-        />
-      {{/if}}
-    </div>
-  </ContainerQuery>
-{{/if}}
+<div
+  local-class="image-container"
+  {{container-query
+    debounce=300
+    onQuery=this.setImageSource
+  }}
+>
+  {{#if this.imageSource}}
+    <img
+      alt=""
+      data-test-image="Concert"
+      local-class="image"
+      role="presentation"
+      src={{this.imageSource}}
+    />
+  {{/if}}
+</div>

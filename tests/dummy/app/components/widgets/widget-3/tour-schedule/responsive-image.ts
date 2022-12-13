@@ -2,6 +2,11 @@ import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import type { Image } from 'dummy/data/concert';
+import { findBestFittingImage } from 'dummy/utils/components/widgets/widget-3';
+import type {
+  Dimensions,
+  QueryResults,
+} from 'ember-container-query/modifiers/container-query';
 
 interface WidgetsWidget3TourScheduleResponsiveImageComponentArgs {
   images: Array<Image>;
@@ -10,7 +15,14 @@ interface WidgetsWidget3TourScheduleResponsiveImageComponentArgs {
 export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends Component<WidgetsWidget3TourScheduleResponsiveImageComponentArgs> {
   @tracked imageSource?: string;
 
-  @action setImageSource(imageSource?: string): void {
-    this.imageSource = imageSource;
+  @action setImageSource({
+    dimensions,
+  }: {
+    dimensions: Dimensions;
+    queryResults: QueryResults;
+  }): void {
+    const { images } = this.args;
+
+    this.imageSource = findBestFittingImage(images, dimensions);
   }
 }
