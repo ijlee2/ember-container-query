@@ -4,6 +4,7 @@
 import '@glint/environment-ember-loose';
 
 import type AddHelper from 'dummy/helpers/add';
+import type DynamicCssGridModifier from 'dummy/modifiers/dynamic-css-grid';
 import type EmberContainerQueryRegistry from 'ember-container-query/template-registry';
 
 declare module '@glint/environment-ember-loose/registry' {
@@ -11,5 +12,6 @@ declare module '@glint/environment-ember-loose/registry' {
     // Add any registry entries from other addons here that your addon itself uses (in non-strict mode templates)
     // See https://typed-ember.gitbook.io/glint/using-glint/ember/using-addons
     add: typeof AddHelper;
+    'dynamic-css-grid': typeof DynamicCssGridModifier;
   }
 }

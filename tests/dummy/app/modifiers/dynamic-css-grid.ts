@@ -1,4 +1,4 @@
-import { modifier, NamedArgs, PositionalArgs } from 'ember-modifier';
+import { modifier } from 'ember-modifier';
 
 interface DynamicCssGridModifierSignature {
   Args: {
@@ -11,12 +11,8 @@ interface DynamicCssGridModifierSignature {
   Element: Element;
 }
 
-export default modifier(
-  function dynamicCssGrid(
-    element: Element,
-    _positional: PositionalArgs<DynamicCssGridModifierSignature>,
-    named: NamedArgs<DynamicCssGridModifierSignature>
-  ): void {
+const DynamicCssGridModifier = modifier<DynamicCssGridModifierSignature>(
+  (element, _positional, named) => {
     const { numColumns, numRows } = named;
 
     (
@@ -27,3 +23,5 @@ export default modifier(
   },
   { eager: false }
 );
+
+export default DynamicCssGridModifier;
