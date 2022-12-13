@@ -6,12 +6,15 @@
 
   <div local-class="animation">
     <ContainerQuery
-      @features={{hash
-        small=(cq-width max=350)
-      }}
+      @features={{hash small=(cq-width max=350)}}
       as |CQ|
     >
-      <div local-class="metaphor {{if CQ.features.small "small-layout"}}">
+      <div
+        local-class="metaphor {{if
+          CQ.features.small
+          'small-layout'
+        }}"
+      >
         <div local-class="mental-block">
         </div>
 

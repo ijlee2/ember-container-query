@@ -4,10 +4,7 @@
   @isWide={{@isWide}}
 >
   <:label as |l|>
-    <label
-      data-test-label
-      id="{{l.inputId}}-label"
-    >
+    <label data-test-label id="{{l.inputId}}-label">
       {{@label}}
 
       {{#if @isRequired}}
@@ -27,8 +24,8 @@
       aria-required={{if @isRequired "true" "false"}}
       data-test-field={{@label}}
       local-class="checkbox
-        {{if this.isChecked "is-checked"}}
-        {{if (or @isDisabled @isReadOnly) "is-disabled"}}
+        {{if this.isChecked 'is-checked'}}
+        {{if (or @isDisabled @isReadOnly) 'is-disabled'}}
       "
       role="checkbox"
       tabindex={{unless @isDisabled "0"}}
@@ -36,7 +33,11 @@
       {{on "keypress" this.updateValueByPressingSpace}}
     >
       {{#if this.isChecked}}
-        {{svg-jar "check" aria-hidden="true" local-class="checkmark-icon"}}
+        {{svg-jar
+          "check"
+          aria-hidden="true"
+          local-class="checkmark-icon"
+        }}
       {{/if}}
     </span>
   </:field>

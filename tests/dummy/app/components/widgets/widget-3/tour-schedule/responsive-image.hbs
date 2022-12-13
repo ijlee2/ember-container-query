@@ -1,9 +1,6 @@
 <div
   local-class="image-container"
-  {{container-query
-    debounce=300
-    onQuery=this.setImageSource
-  }}
+  {{container-query debounce=300 onQuery=this.setImageSource}}
 >
   {{#if this.imageSource}}
     <img

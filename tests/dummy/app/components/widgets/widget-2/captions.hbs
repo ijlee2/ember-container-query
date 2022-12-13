@@ -5,15 +5,32 @@
   }}
   as |CQ|
 >
-  <div local-class="container {{unless CQ.features.tall "flat"}}">
+  <div
+    local-class="container {{unless CQ.features.tall 'flat'}}"
+  >
     {{#if this.summary}}
-      <div local-class="summary {{if CQ.features.large "horizontal-layout"}}" tabindex="0">
+      <div
+        local-class="summary {{if
+          CQ.features.large
+          'horizontal-layout'
+        }}"
+        tabindex="0"
+      >
         <h3
           data-test-field="Music Format"
-          local-class="music-format {{unless CQ.features.large "small-font-size"}}"
+          local-class="music-format {{unless
+            CQ.features.large
+            'small-font-size'
+          }}"
         >
           <span local-class="marker">
-            {{svg-jar "stop" aria-hidden="true" style=(concat "color: " this.summary.markerColor ";")}}
+            {{svg-jar
+              "stop"
+              aria-hidden="true"
+              style=(concat
+                "color: " this.summary.markerColor ";"
+              )
+            }}
           </span>
 
           {{this.summary.musicFormat}}
@@ -41,7 +58,9 @@
           {{/if}}
 
           <span local-class="highlight">
-            {{this.summary.relevantYears.min}} - {{this.summary.relevantYears.max}}
+            {{this.summary.relevantYears.min}}
+            -
+            {{this.summary.relevantYears.max}}
           </span>
         </div>
       </div>
@@ -58,7 +77,11 @@
             Previous
 
           {{else}}
-            {{svg-jar "chevron-left" aria-hidden="true" local-class="icon"}}
+            {{svg-jar
+              "chevron-left"
+              aria-hidden="true"
+              local-class="icon"
+            }}
 
           {{/if}}
         </button>
@@ -76,7 +99,11 @@
             Next
 
           {{else}}
-            {{svg-jar "chevron-right" aria-hidden="true" local-class="icon"}}
+            {{svg-jar
+              "chevron-right"
+              aria-hidden="true"
+              local-class="icon"
+            }}
 
           {{/if}}
         </button>

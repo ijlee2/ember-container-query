@@ -5,7 +5,11 @@
 }}
   <div
     data-test-memo-header
-    local-class="header {{if showMinimalLayout "minimal-layout"}} {{if showHorizontalLayout "horizontal-layout"}}"
+    local-class="
+      header
+      {{if showMinimalLayout 'minimal-layout'}}
+      {{if showHorizontalLayout 'horizontal-layout'}}
+    "
   >
     {{#unless showMinimalLayout}}
       <div local-class="avatar-container">
@@ -24,7 +28,8 @@
     </p>
 
     <div local-class="metadata">
-      <a href="#" local-class="handle">@ijlee2</a> · 38m
+      <a href="#" local-class="handle">@ijlee2</a>
+      · 38m
     </div>
   </div>
 {{/let}}

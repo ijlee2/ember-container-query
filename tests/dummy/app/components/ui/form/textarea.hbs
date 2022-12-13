@@ -3,10 +3,7 @@
   @isWide={{@isWide}}
 >
   <:label as |l|>
-    <label
-      data-test-label
-      for={{l.inputId}}
-    >
+    <label data-test-label for={{l.inputId}}>
       {{@label}}
 
       {{#if @isRequired}}
@@ -23,7 +20,7 @@
       disabled={{@isDisabled}}
       id={{f.inputId}}
       local-class="textarea
-        {{if (or @isDisabled @isReadOnly) "is-disabled"}}
+        {{if (or @isDisabled @isReadOnly) 'is-disabled'}}
       "
       placeholder={{@placeholder}}
       readonly={{@isReadOnly}}
@@ -31,6 +28,6 @@
       rows="4"
       value={{this.value}}
       {{on "input" this.updateValue}}
-    />
+    ></textarea>
   </:field>
 </Ui::Form::Field>

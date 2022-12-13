@@ -2,28 +2,14 @@
 
 <div local-class="application">
   <header local-class="header">
-    <NavigationNarrator
-      @skipTo="#main-content"
-    />
+    <NavigationNarrator @skipTo="#main-content" />
 
     <NavigationMenu
       @menuItems={{array
-        (hash
-          label="Home"
-          route="index"
-        )
-        (hash
-          label="Album"
-          route="album"
-        )
-        (hash
-          label="Dashboard"
-          route="dashboard"
-        )
-        (hash
-          label="Form"
-          route="form"
-        )
+        (hash label="Home" route="index")
+        (hash label="Album" route="album")
+        (hash label="Dashboard" route="dashboard")
+        (hash label="Form" route="form")
       }}
       @name="Main Navigation"
     />
@@ -37,7 +23,16 @@
 
   <footer local-class="footer">
     <span local-class="copyright">
-      Created by <a href="https://www.linkedin.com/in/ijlee2/" local-class="link" rel="noopener noreferrer" target="_blank">Isaac J. Lee</a> © 2022
+      Created by
+      <a
+        href="https://www.linkedin.com/in/ijlee2/"
+        local-class="link"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Isaac J. Lee
+      </a>
+      © 2023
     </span>
   </footer>
 </div>

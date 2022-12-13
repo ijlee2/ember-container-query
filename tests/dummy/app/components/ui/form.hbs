@@ -1,5 +1,8 @@
 <form
-  aria-describedby={{if @instructions (concat this.formId "-instructions")}}
+  aria-describedby={{if
+    @instructions
+    (concat this.formId "-instructions")
+  }}
   aria-labelledby={{if @title (concat this.formId "-title")}}
   data-test-form={{or @title ""}}
   local-class="form"
@@ -12,27 +15,26 @@
   />
 
   <ContainerQuery
-    @features={{hash
-      wide=(cq-width min=480)
-    }}
+    @features={{hash wide=(cq-width min=480)}}
     as |CQ|
   >
     {{yield
       (hash
-        Checkbox=(component "ui/form/checkbox"
+        Checkbox=(component
+          "ui/form/checkbox"
           changeset=this.changeset
           isInline=true
           isWide=CQ.features.wide
           onUpdate=this.updateChangeset
         )
-
-        Input=(component "ui/form/input"
+        Input=(component
+          "ui/form/input"
           changeset=this.changeset
           isWide=CQ.features.wide
           onUpdate=this.updateChangeset
         )
-
-        Textarea=(component "ui/form/textarea"
+        Textarea=(component
+          "ui/form/textarea"
           changeset=this.changeset
           isWide=CQ.features.wide
           onUpdate=this.updateChangeset
