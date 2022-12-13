@@ -1,12 +1,15 @@
 import Component from '@glimmer/component';
 import type { Track } from 'dummy/data/album';
 
-interface TracksListComponentArgs {
-  numColumns?: number;
-  tracks?: Array<Track>;
+interface TracksListComponentSignature {
+  Args: {
+    numColumns?: number;
+    tracks?: Array<Track>;
+  };
+  Element: HTMLElement;
 }
 
-export default class TracksListComponent extends Component<TracksListComponentArgs> {
+export default class TracksListComponent extends Component<TracksListComponentSignature> {
   get numColumns(): number {
     const { numColumns } = this.args;
 
