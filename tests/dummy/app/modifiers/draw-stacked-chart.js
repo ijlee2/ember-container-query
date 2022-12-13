@@ -15,7 +15,7 @@ import Modifier from 'ember-modifier';
 const musicFormats = Object.keys(COLOR_PALETTE);
 const paletteColors = Object.values(COLOR_PALETTE);
 
-export default class DrawChartModifier extends Modifier {
+export default class DrawStackedChartModifier extends Modifier {
   @service resizeObserver;
 
   height = 0;
