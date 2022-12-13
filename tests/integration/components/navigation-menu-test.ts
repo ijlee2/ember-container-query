@@ -7,17 +7,15 @@ module('Integration | Component | navigation-menu', function (hooks) {
   setupRenderingTest(hooks);
 
   test('The component renders a navigation menu', async function (assert) {
-    await render(hbs`
-      <NavigationMenu
-        @name="Main Navigation"
-        @menuItems={{array
-          (hash route="index" label="Home")
-          (hash route="album" label="Album")
-          (hash route="dashboard" label="Dashboard")
-          (hash route="form" label="Form")
-        }}
-      />
-    `);
+    await render(hbs`<NavigationMenu
+  @name='Main Navigation'
+  @menuItems={{array
+    (hash route='index' label='Home')
+    (hash route='album' label='Album')
+    (hash route='dashboard' label='Dashboard')
+    (hash route='form' label='Form')
+  }}
+/>`);
 
     assert
       .dom('[data-test-nav="Main Navigation"]')

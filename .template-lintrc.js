@@ -5,7 +5,7 @@ module.exports = {
   extends: ['recommended', 'ember-template-lint-plugin-prettier:recommended'],
   overrides: [
     {
-      files: ['addon/**/*.hbs', 'tests/**/*-test.{js,ts}'],
+      files: ['addon/**/*.hbs'],
       rules: {
         prettier: 'off',
       },

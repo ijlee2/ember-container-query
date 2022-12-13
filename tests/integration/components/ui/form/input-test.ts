@@ -36,13 +36,7 @@ module('Integration | Component | ui/form/input', function (hooks) {
   });
 
   test('The component renders a label and an input', async function (assert) {
-    await render(hbs`
-      <Ui::Form::Input
-        @changeset={{this.changeset}}
-        @key="name"
-        @label="Name"
-      />
-    `);
+    await render(hbs`<Ui::Form::Input @changeset={{this.changeset}} @key='name' @label='Name' />`);
 
     assert
       .dom('[data-test-label]')
@@ -63,27 +57,23 @@ module('Integration | Component | ui/form/input', function (hooks) {
   });
 
   test('We can pass @isDisabled to disable the input', async function (assert) {
-    await render(hbs`
-      <Ui::Form::Input
-        @changeset={{this.changeset}}
-        @isDisabled={{true}}
-        @key="name"
-        @label="Name"
-      />
-    `);
+    await render(hbs`<Ui::Form::Input
+  @changeset={{this.changeset}}
+  @isDisabled={{true}}
+  @key='name'
+  @label='Name'
+/>`);
 
     assert.dom('[data-test-field="Name"]').isDisabled('The input is disabled.');
   });
 
   test('We can pass @isReadOnly to display the value', async function (assert) {
-    await render(hbs`
-      <Ui::Form::Input
-        @changeset={{this.changeset}}
-        @isReadOnly={{true}}
-        @key="name"
-        @label="Name"
-      />
-    `);
+    await render(hbs`<Ui::Form::Input
+  @changeset={{this.changeset}}
+  @isReadOnly={{true}}
+  @key='name'
+  @label='Name'
+/>`);
 
     assert
       .dom('[data-test-field="Name"]')
@@ -92,14 +82,12 @@ module('Integration | Component | ui/form/input', function (hooks) {
   });
 
   test('We can pass @isRequired to require a value', async function (assert) {
-    await render(hbs`
-      <Ui::Form::Input
-        @changeset={{this.changeset}}
-        @isRequired={{true}}
-        @key="name"
-        @label="Name"
-      />
-    `);
+    await render(hbs`<Ui::Form::Input
+  @changeset={{this.changeset}}
+  @isRequired={{true}}
+  @key='name'
+  @label='Name'
+/>`);
 
     assert
       .dom('[data-test-label]')
@@ -125,15 +113,13 @@ module('Integration | Component | ui/form/input', function (hooks) {
       set(this.changeset, key, value);
     };
 
-    await render(hbs`
-      <Ui::Form::Input
-        @changeset={{this.changeset}}
-        @isRequired={{true}}
-        @key="name"
-        @label="Name"
-        @onUpdate={{this.updateChangeset}}
-      />
-    `);
+    await render(hbs`<Ui::Form::Input
+  @changeset={{this.changeset}}
+  @isRequired={{true}}
+  @key='name'
+  @label='Name'
+  @onUpdate={{this.updateChangeset}}
+/>`);
 
     // Update the value
     await fillIn('[data-test-field="Name"]', '');
@@ -161,14 +147,12 @@ module('Integration | Component | ui/form/input', function (hooks) {
   });
 
   test('We can pass @type to create an email input', async function (assert) {
-    await render(hbs`
-      <Ui::Form::Input
-        @changeset={{this.changeset}}
-        @key="email"
-        @label="Email"
-        @type="email"
-      />
-    `);
+    await render(hbs`<Ui::Form::Input
+  @changeset={{this.changeset}}
+  @key='email'
+  @label='Email'
+  @type='email'
+/>`);
 
     assert
       .dom('[data-test-label]')

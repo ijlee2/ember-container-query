@@ -7,9 +7,7 @@ module('Integration | Component | widgets/widget-2', function (hooks) {
   setupRenderingTest(hooks);
 
   test('The component renders', async function (assert) {
-    await render(hbs`
-      <Widgets::Widget-2 />
-    `);
+    await render(hbs`<Widgets::Widget-2 />`);
 
     assert.dom('[data-test-visualization]').exists('We see the visualization.');
 

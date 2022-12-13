@@ -7,52 +7,44 @@ module('Integration | Component | ui/form', function (hooks) {
   setupRenderingTest(hooks);
 
   test('The component renders a form', async function (assert) {
-    await render(hbs`
-      <Ui::Form
-        @data={{hash
-          email=undefined
-          message="I 🧡 container queries!"
-          name=undefined
-          subscribe=true
-        }}
-        @instructions="Still have questions about ember-container-query? Try sending me a message."
-        @title="Contact me"
-        as |F|
-      >
-        <div>
-          <F.Input
-            @isRequired={{true}}
-            @key="name"
-            @label="Name"
-            @placeholder="Zoey"
-          />
-        </div>
+    await render(hbs`<Ui::Form
+  @data={{hash
+    email=undefined
+    message='I 🧡 container queries!'
+    name=undefined
+    subscribe=true
+  }}
+  @instructions='Still have questions about ember-container-query? Try sending me a message.'
+  @title='Contact me'
+  as |F|
+>
+  <div>
+    <F.Input
+      @isRequired={{true}}
+      @key='name'
+      @label='Name'
+      @placeholder='Zoey'
+    />
+  </div>
 
-        <div>
-          <F.Input
-            @isRequired={{true}}
-            @key="email"
-            @label="Email"
-            @placeholder="zoey@emberjs.com"
-            @type="email"
-          />
-        </div>
+  <div>
+    <F.Input
+      @isRequired={{true}}
+      @key='email'
+      @label='Email'
+      @placeholder='zoey@emberjs.com'
+      @type='email'
+    />
+  </div>
 
-        <div>
-          <F.Textarea
-            @key="message"
-            @label="Message"
-          />
-        </div>
+  <div>
+    <F.Textarea @key='message' @label='Message' />
+  </div>
 
-        <div>
-          <F.Checkbox
-            @key="subscribe"
-            @label="Subscribe to The Ember Times?"
-          />
-        </div>
-      </Ui::Form>
-    `);
+  <div>
+    <F.Checkbox @key='subscribe' @label='Subscribe to The Ember Times?' />
+  </div>
+</Ui::Form>`);
 
     const titleId = find('[data-test-title]')!.getAttribute('id')!;
     const instructionsId = find('[data-test-instructions]')!.getAttribute(

@@ -19,17 +19,10 @@ module('Integration | Component | tracks', function (hooks) {
 
   test('uses container queries to render tracks', async function (assert) {
     // Features: small, short
-    await render(hbs`
-      {{!-- template-lint-disable no-inline-styles --}}
-      <div
-        data-test-parent-element
-        style="width: 240px; height: 240px;"
-      >
-        <Tracks
-          @tracks={{this.album.tracks}}
-        />
-      </div>
-    `);
+    await render(hbs`{{! template-lint-disable no-inline-styles }}
+<div data-test-parent-element style='width: 240px; height: 240px;'>
+  <Tracks @tracks={{this.album.tracks}} />
+</div>`);
 
     assert
       .dom('[data-test-list="Tracks"]')
