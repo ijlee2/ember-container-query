@@ -1,10 +1,11 @@
 {{#let
+  (and @cqFeatures.large @cqFeatures.short)
   (or @cqFeatures.small @cqFeatures.short)
-  as |showMinimalLayout|
+  as |showHorizontalLayout showMinimalLayout|
 }}
   <div
     data-test-memo-header
-    local-class="header {{if showMinimalLayout "minimal-layout"}} {{if (and @cqFeatures.large @cqFeatures.short) "horizontal-layout"}}"
+    local-class="header {{if showMinimalLayout "minimal-layout"}} {{if showHorizontalLayout "horizontal-layout"}}"
   >
     {{#unless showMinimalLayout}}
       <div local-class="avatar-container">
