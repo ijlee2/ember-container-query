@@ -36,11 +36,13 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
   });
 
   test('The component renders a label and a textarea', async function (assert) {
-    await render(hbs`<Ui::Form::Textarea
-  @changeset={{this.changeset}}
-  @key='message'
-  @label='Message'
-/>`);
+    await render(hbs`
+      <Ui::Form::Textarea
+        @changeset={{this.changeset}}
+        @key="message"
+        @label="Message"
+      />
+    `);
 
     assert
       .dom('[data-test-label]')
@@ -60,12 +62,14 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
   });
 
   test('We can pass @isDisabled to disable the text area', async function (assert) {
-    await render(hbs`<Ui::Form::Textarea
-  @changeset={{this.changeset}}
-  @isDisabled={{true}}
-  @key='message'
-  @label='Message'
-/>`);
+    await render(hbs`
+      <Ui::Form::Textarea
+        @changeset={{this.changeset}}
+        @isDisabled={{true}}
+        @key="message"
+        @label="Message"
+      />
+    `);
 
     assert
       .dom('[data-test-field="Message"]')
@@ -73,12 +77,14 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
   });
 
   test('We can pass @isReadOnly to display the value', async function (assert) {
-    await render(hbs`<Ui::Form::Textarea
-  @changeset={{this.changeset}}
-  @isReadOnly={{true}}
-  @key='message'
-  @label='Message'
-/>`);
+    await render(hbs`
+      <Ui::Form::Textarea
+        @changeset={{this.changeset}}
+        @isReadOnly={{true}}
+        @key="message"
+        @label="Message"
+      />
+    `);
 
     assert
       .dom('[data-test-field="Message"]')
@@ -87,12 +93,14 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
   });
 
   test('We can pass @isRequired to require a value', async function (assert) {
-    await render(hbs`<Ui::Form::Textarea
-  @changeset={{this.changeset}}
-  @isRequired={{true}}
-  @key='message'
-  @label='Message'
-/>`);
+    await render(hbs`
+      <Ui::Form::Textarea
+        @changeset={{this.changeset}}
+        @isRequired={{true}}
+        @key="message"
+        @label="Message"
+      />
+    `);
 
     assert
       .dom('[data-test-label]')
@@ -118,13 +126,15 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
       set(this.changeset, key, value);
     };
 
-    await render(hbs`<Ui::Form::Textarea
-  @changeset={{this.changeset}}
-  @isRequired={{true}}
-  @key='message'
-  @label='Message'
-  @onUpdate={{this.updateChangeset}}
-/>`);
+    await render(hbs`
+      <Ui::Form::Textarea
+        @changeset={{this.changeset}}
+        @isRequired={{true}}
+        @key="message"
+        @label="Message"
+        @onUpdate={{this.updateChangeset}}
+      />
+    `);
 
     // Update the value
     await fillIn('[data-test-field="Message"]', '');

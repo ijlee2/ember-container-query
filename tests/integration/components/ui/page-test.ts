@@ -7,10 +7,14 @@ module('Integration | Component | ui/page', function (hooks) {
   setupRenderingTest(hooks);
 
   test('The component handles the page layout', async function (assert) {
-    await render(hbs`<Ui::Page @title='Form'>
-  <div data-test-body>
-  </div>
-</Ui::Page>`);
+    await render(hbs`
+      <Ui::Page
+        @title="Form"
+      >
+        <div data-test-body>
+        </div>
+      </Ui::Page>
+    `);
 
     assert.dom('h1').hasText('Form', 'We see the title.');
 

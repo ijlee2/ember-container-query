@@ -62,7 +62,11 @@ module('Integration | Component | tracks/table', function (hooks) {
     test('The component renders an empty table', async function (this: TestContext, assert: CustomAssert) {
       this.tracks = [];
 
-      await render(hbs`<Tracks::Table @tracks={{this.tracks}} />`);
+      await render(hbs`
+        <Tracks::Table
+          @tracks={{this.tracks}}
+        />
+      `);
 
       assert.dom('[data-test-row]').doesNotExist('There are 0 tracks.');
     });
@@ -72,7 +76,11 @@ module('Integration | Component | tracks/table', function (hooks) {
     test('The component renders a non-empty table', async function (this: TestContext, assert: CustomAssert) {
       this.tracks = albumData.tracks;
 
-      await render(hbs`<Tracks::Table @tracks={{this.tracks}} />`);
+      await render(hbs`
+        <Tracks::Table
+          @tracks={{this.tracks}}
+        />
+      `);
 
       const tracks = findAll('[data-test-row]');
 

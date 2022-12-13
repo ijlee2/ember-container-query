@@ -7,7 +7,9 @@ module('Integration | Component | widgets/widget-1', function (hooks) {
   setupRenderingTest(hooks);
 
   test('The component renders', async function (assert) {
-    await render(hbs`<Widgets::Widget-1 />`);
+    await render(hbs`
+      <Widgets::Widget-1 />
+    `);
 
     const titles = findAll('[data-test-title]');
 
