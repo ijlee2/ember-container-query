@@ -3,15 +3,23 @@ import type { Track } from 'dummy/data/album';
 
 interface TracksListComponentArgs {
   numColumns?: number;
-  tracks: Array<Track>;
+  tracks?: Array<Track>;
 }
 
 export default class TracksListComponent extends Component<TracksListComponentArgs> {
   get numColumns(): number {
-    return this.args.numColumns ?? 1;
+    const { numColumns } = this.args;
+
+    return numColumns ?? 1;
   }
 
   get numRows(): number {
-    return Math.ceil(this.args.tracks.length / this.numColumns);
+    const { tracks } = this.args;
+
+    if (!tracks) {
+      return 0;
+    }
+
+    return Math.ceil(tracks.length / this.numColumns);
   }
 }

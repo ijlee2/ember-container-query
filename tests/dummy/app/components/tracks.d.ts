@@ -1,5 +1,5 @@
 import type { Track } from 'dummy/data/album';
 
-export interface TracksTableComponentArgs {
+export interface TracksComponentArgs {
   tracks?: Array<Track>;
 }
