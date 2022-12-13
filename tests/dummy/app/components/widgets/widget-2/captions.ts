@@ -10,34 +10,27 @@ interface WidgetsWidget2CaptionsComponentArgs {
 export default class WidgetsWidget2CaptionsComponent extends Component<WidgetsWidget2CaptionsComponentArgs> {
   @tracked currentIndex = 0;
 
-  get styleForMarker(): string {
-    if (!this.summary) {
-      return '';
-    }
-
-    return `color: ${this.summary.markerColor};`;
-  }
-
-  get summary(): Summary | undefined {
-    return this.summaries[this.currentIndex];
-  }
-
-  get summaries(): Array<Summary> {
-    return this.args.summaries ?? [];
+  get canShowNextButton(): boolean {
+    return this.currentIndex < this.summaries.length - 1;
   }
 
   get canShowPreviousButton(): boolean {
     return this.currentIndex > 0;
   }
 
-  get canShowNextButton(): boolean {
-    return this.currentIndex < this.summaries.length - 1;
+  get summaries(): Array<Summary> {
+    return this.args.summaries ?? [];
+  }
+
+  get summary(): Summary | undefined {
+    return this.summaries[this.currentIndex];
   }
 
   @action showNextSummary(increment = 1): void {
-    const numSummaries = this.summaries.length;
-    const nextIndex =
-      (this.currentIndex + increment + numSummaries) % numSummaries;
+    const { currentIndex, summaries } = this;
+
+    const numSummaries = summaries.length;
+    const nextIndex = (currentIndex + increment + numSummaries) % numSummaries;
 
     this.currentIndex = nextIndex;
   }
