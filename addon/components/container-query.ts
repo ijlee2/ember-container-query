@@ -4,30 +4,33 @@ import { tracked } from '@glimmer/tracking';
 import type {
   Dimensions,
   Features,
+  IndexSignatureParameter,
   QueryResults,
 } from 'ember-container-query/modifiers/container-query';
 
-interface ContainerQueryComponentSignature {
+interface ContainerQueryComponentSignature<T extends IndexSignatureParameter> {
   Args: {
     dataAttributePrefix?: string;
     debounce?: number;
-    features?: Features;
+    features?: Features<T>;
     tagName?: string;
   };
   Blocks: {
     default: [
       {
         dimensions?: Dimensions;
-        features?: QueryResults;
+        features?: QueryResults<T>;
       }
     ];
   };
   Element: HTMLElement;
 }
 
-export default class ContainerQueryComponent extends Component<ContainerQueryComponentSignature> {
+export default class ContainerQueryComponent<
+  T extends IndexSignatureParameter
+> extends Component<ContainerQueryComponentSignature<T>> {
   @tracked dimensions?: Dimensions;
-  @tracked queryResults?: QueryResults;
+  @tracked queryResults?: QueryResults<T>;
 
   // The dynamic tag is restricted to be immutable
   tagName = this.args.tagName ?? 'div';
@@ -37,7 +40,7 @@ export default class ContainerQueryComponent extends Component<ContainerQueryCom
     queryResults,
   }: {
     dimensions: Dimensions;
-    queryResults: QueryResults;
+    queryResults: QueryResults<T>;
   }): void {
     this.dimensions = dimensions;
     this.queryResults = queryResults;
