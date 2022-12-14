@@ -4,23 +4,23 @@ import { debounce as _debounce } from '@ember/runloop';
 import { inject as service } from '@ember/service';
 import Modifier, { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
 
-export type Metadata = {
-  dimension: 'aspectRatio' | 'height' | 'width';
-  max: number;
-  min: number;
-};
-
-export type Features = {
-  [featureName: string]: Metadata;
-};
-
-export type Dimensions = {
+type Dimensions = {
   aspectRatio: number;
   height: number;
   width: number;
 };
 
-export type QueryResults = {
+type Metadata = {
+  dimension: 'aspectRatio' | 'height' | 'width';
+  max: number;
+  min: number;
+};
+
+type Features = {
+  [featureName: string]: Metadata;
+};
+
+type QueryResults = {
   [featureName: string]: boolean;
 };
 
@@ -166,3 +166,5 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
     }
   }
 }
+
+export { Dimensions, Features, Metadata, QueryResults };
