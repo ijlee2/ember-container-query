@@ -4,6 +4,8 @@ import { debounce as _debounce } from '@ember/runloop';
 import { inject as service } from '@ember/service';
 import Modifier, { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
 
+type IndexSignatureParameter = string | number | symbol;
+
 type Dimensions = {
   aspectRatio: number;
   height: number;
@@ -16,22 +18,22 @@ type Metadata = {
   min: number;
 };
 
-type Features = Record<string, Metadata>;
+type Features<T extends IndexSignatureParameter> = Record<T, Metadata>;
 
-type QueryResults = Record<string, boolean>;
+type QueryResults<T extends IndexSignatureParameter> = Record<T, boolean>;
 
-interface ContainerQueryModifierSignature {
+interface ContainerQueryModifierSignature<T extends IndexSignatureParameter> {
   Args: {
     Named: {
       dataAttributePrefix?: string;
       debounce?: number;
-      features?: Features;
+      features?: Features<T>;
       onQuery?: ({
         dimensions,
         queryResults,
       }: {
         dimensions: Dimensions;
-        queryResults: QueryResults;
+        queryResults: QueryResults<T>;
       }) => void;
     };
     Positional: [];
@@ -39,15 +41,17 @@ interface ContainerQueryModifierSignature {
   Element: Element;
 }
 
-export default class ContainerQueryModifier extends Modifier<ContainerQueryModifierSignature> {
+export default class ContainerQueryModifier<
+  T extends IndexSignatureParameter
+> extends Modifier<ContainerQueryModifierSignature<T>> {
   @service private declare readonly resizeObserver;
 
   dimensions!: Dimensions;
-  queryResults!: QueryResults;
+  queryResults!: QueryResults<T>;
 
   private _dataAttributes: string[] = [];
   private _element?: Element;
-  private _named!: NamedArgs<ContainerQueryModifierSignature>;
+  private _named!: NamedArgs<ContainerQueryModifierSignature<T>>;
 
   get dataAttributePrefix(): string {
     return this._named.dataAttributePrefix ?? 'container-query';
@@ -57,11 +61,14 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
     return this._named.debounce ?? 0;
   }
 
-  get features(): Features {
-    return this._named.features ?? {};
+  get features(): Features<T> {
+    return this._named.features ?? ({} as Features<T>);
   }
 
-  constructor(owner: unknown, args: ArgsFor<ContainerQueryModifierSignature>) {
+  constructor(
+    owner: unknown,
+    args: ArgsFor<ContainerQueryModifierSignature<T>>
+  ) {
     super(owner, args);
 
     registerDestructor(this, () => {
@@ -71,8 +78,8 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
 
   modify(
     element: Element,
-    _positional: PositionalArgs<ContainerQueryModifierSignature>,
-    named: NamedArgs<ContainerQueryModifierSignature>
+    _positional: PositionalArgs<ContainerQueryModifierSignature<T>>,
+    named: NamedArgs<ContainerQueryModifierSignature<T>>
   ): void {
     this._named = named;
 
@@ -122,13 +129,13 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
   }
 
   private evaluateQueries(): void {
-    const queryResults = {} as QueryResults;
+    const queryResults = {} as QueryResults<T>;
 
     for (const [featureName, metadata] of Object.entries(this.features)) {
-      const { dimension, min, max } = metadata;
+      const { dimension, min, max } = metadata as Metadata;
       const value = this.dimensions[dimension];
 
-      queryResults[featureName] = min <= value && value < max;
+      queryResults[featureName as T] = min <= value && value < max;
     }
 
     this.queryResults = queryResults;
@@ -163,4 +170,10 @@ export default class ContainerQueryModifier extends Modifier<ContainerQueryModif
   }
 }
 
-export { Dimensions, Features, Metadata, QueryResults };
+export {
+  Dimensions,
+  Features,
+  IndexSignatureParameter,
+  Metadata,
+  QueryResults,
+};
