@@ -16,13 +16,9 @@ type Metadata = {
   min: number;
 };
 
-type Features = {
-  [featureName: string]: Metadata;
-};
+type Features = Record<string, Metadata>;
 
-type QueryResults = {
-  [featureName: string]: boolean;
-};
+type QueryResults = Record<string, boolean>;
 
 interface ContainerQueryModifierSignature {
   Args: {
