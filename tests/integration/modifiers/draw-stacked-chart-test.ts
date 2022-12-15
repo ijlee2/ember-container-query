@@ -8,6 +8,7 @@ module('Integration | Modifier | draw-stacked-chart', function (hooks) {
 
   test('We can draw a chart', async function (assert) {
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       <div {{draw-stacked-chart}}>
         <svg></svg>
       </div>

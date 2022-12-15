@@ -8,6 +8,7 @@ module('Integration | Modifier | dynamic-css-grid', function (hooks) {
 
   test('We can dynamically style the CSS grid', async function (assert) {
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       <div
         data-test-list="Tracks"
         {{dynamic-css-grid

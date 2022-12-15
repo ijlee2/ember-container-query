@@ -56,6 +56,7 @@ module('Integration | Component | tracks/list', function (hooks) {
       this.tracks = [];
 
       await render(hbs`
+        {{! @glint-nocheck: not typesafe yet }}
         <Tracks::List
           @tracks={{this.tracks}}
         />
@@ -70,6 +71,7 @@ module('Integration | Component | tracks/list', function (hooks) {
       this.tracks = albumData.tracks;
 
       await render(hbs`
+        {{! @glint-nocheck: not typesafe yet }}
         <Tracks::List
           @tracks={{this.tracks}}
         />

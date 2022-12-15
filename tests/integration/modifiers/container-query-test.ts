@@ -8,6 +8,7 @@ module('Integration | Modifier | container-query', function (hooks) {
 
   test('We can call the modifier without passing arguments', async function (assert) {
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       {{!-- template-lint-disable no-inline-styles --}}
       <div
         data-test-parent-element

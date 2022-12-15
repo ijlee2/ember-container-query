@@ -22,6 +22,7 @@ module('Integration | Component | container-query', function (hooks) {
   module('When @dataAttributePrefix is undefined', function (hooks) {
     hooks.beforeEach(async function () {
       await render(hbs`
+        {{! @glint-nocheck: not typesafe yet }}
         {{!-- template-lint-disable no-inline-styles --}}
         <div
           data-test-parent-element
@@ -120,6 +121,7 @@ module('Integration | Component | container-query', function (hooks) {
     function (hooks) {
       hooks.beforeEach(async function () {
         await render(hbs`
+          {{! @glint-nocheck: not typesafe yet }}
           {{!-- template-lint-disable no-inline-styles --}}
           <div
             data-test-parent-element
@@ -220,6 +222,7 @@ module('Integration | Component | container-query', function (hooks) {
     function (hooks) {
       hooks.beforeEach(async function () {
         await render(hbs`
+          {{! @glint-nocheck: not typesafe yet }}
           {{!-- template-lint-disable no-inline-styles --}}
           <div
             data-test-parent-element
@@ -320,6 +323,7 @@ module('Integration | Component | container-query', function (hooks) {
       this.dataAttributePrefix = 'cq1';
 
       await render(hbs`
+        {{! @glint-nocheck: not typesafe yet }}
         {{!-- template-lint-disable no-inline-styles --}}
         <div
           data-test-parent-element

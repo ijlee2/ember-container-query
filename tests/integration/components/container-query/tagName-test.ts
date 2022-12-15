@@ -22,6 +22,7 @@ module('Integration | Component | container-query', function (hooks) {
   module('When @tagName is undefined', function (hooks) {
     hooks.beforeEach(async function () {
       await render(hbs`
+        {{! @glint-nocheck: not typesafe yet }}
         {{!-- template-lint-disable no-inline-styles --}}
         <div
           data-test-parent-element
@@ -90,6 +91,7 @@ module('Integration | Component | container-query', function (hooks) {
   module('When @tagName is passed', function (hooks) {
     hooks.beforeEach(async function () {
       await render(hbs`
+        {{! @glint-nocheck: not typesafe yet }}
         {{!-- template-lint-disable no-inline-styles --}}
         <div
           data-test-parent-element
@@ -161,6 +163,7 @@ module('Integration | Component | container-query', function (hooks) {
       this.tagName = 'section';
 
       await render(hbs`
+        {{! @glint-nocheck: not typesafe yet }}
         {{!-- template-lint-disable no-inline-styles --}}
         <div
           data-test-parent-element

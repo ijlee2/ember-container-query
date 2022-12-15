@@ -37,6 +37,7 @@ module('Integration | Component | ui/form/input', function (hooks) {
 
   test('The component renders a label and an input', async function (assert) {
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Input
         @changeset={{this.changeset}}
         @key="name"
@@ -64,6 +65,7 @@ module('Integration | Component | ui/form/input', function (hooks) {
 
   test('We can pass @isDisabled to disable the input', async function (assert) {
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Input
         @changeset={{this.changeset}}
         @isDisabled={{true}}
@@ -77,6 +79,7 @@ module('Integration | Component | ui/form/input', function (hooks) {
 
   test('We can pass @isReadOnly to display the value', async function (assert) {
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Input
         @changeset={{this.changeset}}
         @isReadOnly={{true}}
@@ -93,6 +96,7 @@ module('Integration | Component | ui/form/input', function (hooks) {
 
   test('We can pass @isRequired to require a value', async function (assert) {
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Input
         @changeset={{this.changeset}}
         @isRequired={{true}}
@@ -126,6 +130,7 @@ module('Integration | Component | ui/form/input', function (hooks) {
     };
 
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Input
         @changeset={{this.changeset}}
         @isRequired={{true}}
@@ -162,6 +167,7 @@ module('Integration | Component | ui/form/input', function (hooks) {
 
   test('We can pass @type to create an email input', async function (assert) {
     await render(hbs`
+      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Input
         @changeset={{this.changeset}}
         @key="email"
