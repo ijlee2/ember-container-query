@@ -1,21 +1,21 @@
 import { action, get } from '@ember/object';
 import Component from '@glimmer/component';
 
-interface UiFormCheckboxComponentArgs {
-  changeset: {
-    [key: string]: any;
+interface UiFormCheckboxComponentSignature {
+  Args: {
+    changeset: Record<string, any>;
+    isDisabled?: boolean;
+    isInline?: boolean;
+    isReadOnly?: boolean;
+    isRequired?: boolean;
+    isWide?: boolean;
+    key: string;
+    label: string;
+    onUpdate: ({ key, value }: { key: string; value: any }) => void;
   };
-  isDisabled?: boolean;
-  isInline?: boolean;
-  isReadOnly?: boolean;
-  isRequired?: boolean;
-  isWide?: boolean;
-  key: string;
-  label: string;
-  onUpdate: ({ key, value }: { key: string; value: any }) => void;
 }
 
-export default class UiFormCheckboxComponent extends Component<UiFormCheckboxComponentArgs> {
+export default class UiFormCheckboxComponent extends Component<UiFormCheckboxComponentSignature> {
   get errorMessage(): string | undefined {
     const { isRequired } = this.args;
 
@@ -52,5 +52,12 @@ export default class UiFormCheckboxComponent extends Component<UiFormCheckboxCom
     if (event.code === 'Space' || event.key === 'Space') {
       this.updateValue();
     }
+  }
+}
+
+declare module '@glint/environment-ember-loose/registry' {
+  export default interface Registry {
+    'Ui::Form::Checkbox': typeof UiFormCheckboxComponent;
+    'ui/form/checkbox': typeof UiFormCheckboxComponent;
   }
 }
