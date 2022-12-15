@@ -1,12 +1,14 @@
 import Component from '@glimmer/component';
 import type { Track } from 'dummy/data/album';
 
-interface TracksListComponentArgs {
-  numColumns?: number;
-  tracks?: Array<Track>;
+interface TracksListComponentSignature {
+  Args: {
+    numColumns?: number;
+    tracks?: Array<Track>;
+  };
 }
 
-export default class TracksListComponent extends Component<TracksListComponentArgs> {
+export default class TracksListComponent extends Component<TracksListComponentSignature> {
   get numColumns(): number {
     const { numColumns } = this.args;
 
@@ -21,5 +23,11 @@ export default class TracksListComponent extends Component<TracksListComponentAr
     }
 
     return Math.ceil(tracks.length / this.numColumns);
+  }
+}
+
+declare module '@glint/environment-ember-loose/registry' {
+  export default interface Registry {
+    'Tracks::List': typeof TracksListComponent;
   }
 }
