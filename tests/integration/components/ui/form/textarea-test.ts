@@ -35,8 +35,8 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
     };
   });
 
-  test('The component renders a label and a textarea', async function (assert) {
-    await render(hbs`
+  test('The component renders a label and a textarea', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Textarea
         @changeset={{this.changeset}}
@@ -62,8 +62,8 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
       .doesNotExist('We should not see an error message.');
   });
 
-  test('We can pass @isDisabled to disable the text area', async function (assert) {
-    await render(hbs`
+  test('We can pass @isDisabled to disable the text area', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Textarea
         @changeset={{this.changeset}}
@@ -78,8 +78,8 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
       .isDisabled('The textarea is disabled.');
   });
 
-  test('We can pass @isReadOnly to display the value', async function (assert) {
-    await render(hbs`
+  test('We can pass @isReadOnly to display the value', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Textarea
         @changeset={{this.changeset}}
@@ -95,8 +95,8 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
       .hasValue('I 🧡 container queries!', 'We see the correct value.');
   });
 
-  test('We can pass @isRequired to require a value', async function (assert) {
-    await render(hbs`
+  test('We can pass @isRequired to require a value', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Textarea
         @changeset={{this.changeset}}
@@ -130,7 +130,7 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
       set(this.changeset, key, value);
     };
 
-    await render(hbs`
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Textarea
         @changeset={{this.changeset}}

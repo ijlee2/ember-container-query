@@ -1,3 +1,4 @@
+import type { TestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
@@ -6,8 +7,8 @@ import { module, test } from 'qunit';
 module('Integration | Component | ui/form/information', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('The component renders nothing when we do not pass @title or @instructions', async function (assert) {
-    await render(hbs`
+  test('The component renders nothing when we do not pass @title or @instructions', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Information
         @formId="ember123"
@@ -23,8 +24,8 @@ module('Integration | Component | ui/form/information', function (hooks) {
       .doesNotExist('We should not see the form instructions.');
   });
 
-  test('We can pass @title to display the form title', async function (assert) {
-    await render(hbs`
+  test('We can pass @title to display the form title', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Information
         @formId="ember123"
@@ -42,8 +43,8 @@ module('Integration | Component | ui/form/information', function (hooks) {
       .doesNotExist('We should not see the form instructions.');
   });
 
-  test('We can pass @instructions to display the form instructions', async function (assert) {
-    await render(hbs`
+  test('We can pass @instructions to display the form instructions', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Information
         @formId="ember123"

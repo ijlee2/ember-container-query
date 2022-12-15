@@ -1,3 +1,4 @@
+import type { TestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
@@ -6,8 +7,8 @@ import { module, test } from 'qunit';
 module('Integration | Helper | cq-height', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('can return a hash with default values', async function (assert) {
-    await render(hbs`
+  test('can return a hash with default values', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       {{#let (cq-height) as |output|}}
         <p data-test-value="dimension">{{output.dimension}}</p>
@@ -21,8 +22,8 @@ module('Integration | Helper | cq-height', function (hooks) {
     assert.dom('[data-test-value="max"]').hasText('Infinity');
   });
 
-  test('if min and max are provided, returns them as they are', async function (assert) {
-    await render(hbs`
+  test('if min and max are provided, returns them as they are', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       {{#let (cq-height min=100 max=200) as |output|}}
         <p data-test-value="dimension">{{output.dimension}}</p>

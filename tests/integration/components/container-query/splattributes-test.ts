@@ -1,3 +1,4 @@
+import type { TestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
 import type { CustomAssert } from 'dummy/tests/helpers';
 import {
@@ -13,8 +14,8 @@ module('Integration | Component | container-query', function (hooks) {
   setupContainerQueryTest(hooks);
 
   module('...attributes', function () {
-    test('The component accepts splattributes', async function (assert: CustomAssert) {
-      await render(hbs`
+    test('The component accepts splattributes', async function (this: TestContext, assert: CustomAssert) {
+      await render<TestContext>(hbs`
         {{! @glint-nocheck: not typesafe yet }}
         {{!-- template-lint-disable no-inline-styles --}}
         <div style="width: 500px; height: 800px;">

@@ -1,3 +1,4 @@
+import type { TestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'dummy/tests/helpers';
 import { a11yAudit } from 'ember-a11y-testing/test-support';
@@ -7,8 +8,8 @@ import { module, test } from 'qunit';
 module('Integration | Component | ui/form/field', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('The component handles the field layout', async function (assert) {
-    await render(hbs`
+  test('The component handles the field layout', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Field>
         <:label as |l|>
@@ -43,8 +44,8 @@ module('Integration | Component | ui/form/field', function (hooks) {
     assert.ok(true, 'We passed the accessibility audit.');
   });
 
-  test('We can pass @errorMessage to show an error message', async function (assert) {
-    await render(hbs`
+  test('We can pass @errorMessage to show an error message', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Field
         @errorMessage="Please provide a value."

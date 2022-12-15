@@ -27,7 +27,7 @@ module('Integration | Component | container-query', function (hooks) {
 
   module('When @features is undefined', function (hooks) {
     hooks.beforeEach(async function () {
-      await render(hbs`
+      await render<TestContext>(hbs`
         {{! @glint-nocheck: not typesafe yet }}
         {{!-- template-lint-disable no-inline-styles --}}
         <div
@@ -57,7 +57,7 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component renders', async function (assert: CustomAssert) {
+    test('The component renders', async function (this: TestContext, assert: CustomAssert) {
       assert.areFeaturesCorrect!({
         small: undefined,
         medium: undefined,
@@ -72,7 +72,7 @@ module('Integration | Component | container-query', function (hooks) {
       assert.areDimensionsCorrect!({ height: 500, width: 250 });
     });
 
-    test('The component updates features when it is resized', async function (assert: CustomAssert) {
+    test('The component updates features when it is resized', async function (this: TestContext, assert: CustomAssert) {
       await resizeContainer({ height: 300, width: 500 });
 
       assert.areFeaturesCorrect!({
@@ -113,7 +113,7 @@ module('Integration | Component | container-query', function (hooks) {
       });
     });
 
-    test('The component updates dimensions when it is resized', async function (assert: CustomAssert) {
+    test('The component updates dimensions when it is resized', async function (this: TestContext, assert: CustomAssert) {
       await resizeContainer({ height: 300, width: 500 });
 
       assert.areDimensionsCorrect!({ height: 300, width: 500 });
@@ -130,7 +130,7 @@ module('Integration | Component | container-query', function (hooks) {
 
   module('When @features is passed', function (hooks) {
     hooks.beforeEach(async function () {
-      await render(hbs`
+      await render<TestContext>(hbs`
         {{! @glint-nocheck: not typesafe yet }}
         {{!-- template-lint-disable no-inline-styles --}}
         <div
@@ -170,7 +170,7 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component renders', async function (assert: CustomAssert) {
+    test('The component renders', async function (this: TestContext, assert: CustomAssert) {
       assert.areFeaturesCorrect!({
         small: true,
         medium: false,
@@ -185,7 +185,7 @@ module('Integration | Component | container-query', function (hooks) {
       assert.areDimensionsCorrect!({ height: 500, width: 250 });
     });
 
-    test('The component updates features when it is resized', async function (assert: CustomAssert) {
+    test('The component updates features when it is resized', async function (this: TestContext, assert: CustomAssert) {
       await resizeContainer({ height: 300, width: 500 });
 
       assert.areFeaturesCorrect!({
@@ -226,7 +226,7 @@ module('Integration | Component | container-query', function (hooks) {
       });
     });
 
-    test('The component updates dimensions when it is resized', async function (assert: CustomAssert) {
+    test('The component updates dimensions when it is resized', async function (this: TestContext, assert: CustomAssert) {
       await resizeContainer({ height: 300, width: 500 });
 
       assert.areDimensionsCorrect!({ height: 300, width: 500 });
@@ -266,7 +266,7 @@ module('Integration | Component | container-query', function (hooks) {
         },
       };
 
-      await render(hbs`
+      await render<TestContext>(hbs`
         {{! @glint-nocheck: not typesafe yet }}
         {{!-- template-lint-disable no-inline-styles --}}
         <div
@@ -320,7 +320,7 @@ module('Integration | Component | container-query', function (hooks) {
       });
     });
 
-    test('The component updates the features', async function (assert: CustomAssert) {
+    test('The component updates the features', async function (this: TestContext, assert: CustomAssert) {
       assert.areFeaturesCorrect!({
         small: undefined,
         medium: undefined,
@@ -336,7 +336,7 @@ module('Integration | Component | container-query', function (hooks) {
       });
     });
 
-    test('The component updates features when it is resized', async function (assert: CustomAssert) {
+    test('The component updates features when it is resized', async function (this: TestContext, assert: CustomAssert) {
       await resizeContainer({ height: 300, width: 500 });
 
       assert.areFeaturesCorrect!({

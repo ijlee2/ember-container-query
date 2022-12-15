@@ -62,7 +62,7 @@ module('Integration | Component | tracks/table', function (hooks) {
     test('The component renders an empty table', async function (this: TestContext, assert: CustomAssert) {
       this.tracks = [];
 
-      await render(hbs`
+      await render<TestContext>(hbs`
         {{! @glint-nocheck: not typesafe yet }}
         <Tracks::Table
           @tracks={{this.tracks}}
@@ -77,7 +77,7 @@ module('Integration | Component | tracks/table', function (hooks) {
     test('The component renders a non-empty table', async function (this: TestContext, assert: CustomAssert) {
       this.tracks = albumData.tracks;
 
-      await render(hbs`
+      await render<TestContext>(hbs`
         {{! @glint-nocheck: not typesafe yet }}
         <Tracks::Table
           @tracks={{this.tracks}}

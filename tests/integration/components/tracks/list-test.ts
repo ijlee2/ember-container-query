@@ -55,7 +55,7 @@ module('Integration | Component | tracks/list', function (hooks) {
     test('The component renders an empty list', async function (this: TestContext, assert: CustomAssert) {
       this.tracks = [];
 
-      await render(hbs`
+      await render<TestContext>(hbs`
         {{! @glint-nocheck: not typesafe yet }}
         <Tracks::List
           @tracks={{this.tracks}}
@@ -70,7 +70,7 @@ module('Integration | Component | tracks/list', function (hooks) {
     test('The component renders a non-empty list', async function (this: TestContext, assert: CustomAssert) {
       this.tracks = albumData.tracks;
 
-      await render(hbs`
+      await render<TestContext>(hbs`
         {{! @glint-nocheck: not typesafe yet }}
         <Tracks::List
           @tracks={{this.tracks}}

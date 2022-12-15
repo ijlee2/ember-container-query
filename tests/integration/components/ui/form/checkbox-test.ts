@@ -35,8 +35,8 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
     };
   });
 
-  test('The component renders a label and a checkbox', async function (assert) {
-    await render(hbs`
+  test('The component renders a label and a checkbox', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Checkbox
         @changeset={{this.changeset}}
@@ -64,8 +64,8 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       .doesNotExist('We should not see an error message.');
   });
 
-  test('We can pass @isDisabled to disable the input', async function (assert) {
-    await render(hbs`
+  test('We can pass @isDisabled to disable the input', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Checkbox
         @changeset={{this.changeset}}
@@ -81,8 +81,8 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       .hasAria('disabled', 'true', 'The input is disabled.');
   });
 
-  test('We can pass @isReadOnly to display the value', async function (assert) {
-    await render(hbs`
+  test('We can pass @isReadOnly to display the value', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Checkbox
         @changeset={{this.changeset}}
@@ -99,8 +99,8 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       .hasAttribute('tabindex', '0', 'The input is focusable.');
   });
 
-  test('We can pass @isRequired to require a value', async function (assert) {
-    await render(hbs`
+  test('We can pass @isRequired to require a value', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Checkbox
         @changeset={{this.changeset}}
@@ -137,7 +137,7 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       set(this.changeset, key, value);
     };
 
-    await render(hbs`
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Checkbox
         @changeset={{this.changeset}}
@@ -188,7 +188,7 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       set(this.changeset, key, value);
     };
 
-    await render(hbs`
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Checkbox
         @changeset={{this.changeset}}

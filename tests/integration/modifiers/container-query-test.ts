@@ -1,3 +1,4 @@
+import type { TestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
@@ -6,8 +7,8 @@ import { module, test } from 'qunit';
 module('Integration | Modifier | container-query', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('We can call the modifier without passing arguments', async function (assert) {
-    await render(hbs`
+  test('We can call the modifier without passing arguments', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       {{! @glint-nocheck: not typesafe yet }}
       {{!-- template-lint-disable no-inline-styles --}}
       <div
