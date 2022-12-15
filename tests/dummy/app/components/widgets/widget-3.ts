@@ -3,12 +3,13 @@ import { tracked } from '@glimmer/tracking';
 import type { Concert } from 'dummy/data/concert';
 import concertData from 'dummy/data/concert';
 
-interface WidgetsWidget3ComponentArgs {}
+interface WidgetsWidget3ComponentSignature {}
 
-export default class WidgetsWidget3Component extends Component<WidgetsWidget3ComponentArgs> {
+export default class WidgetsWidget3Component extends Component<WidgetsWidget3ComponentSignature> {
   @tracked concertData = {} as Concert;
 
-  constructor(owner: unknown, args: WidgetsWidget3ComponentArgs) {
+  /* @ts-expect-error Property 'Args' does not exist on type 'WidgetsWidget3ComponentSignature' */
+  constructor(owner: unknown, args: WidgetsWidget3ComponentSignature['Args']) {
     super(owner, args);
 
     this.loadData();
@@ -16,5 +17,11 @@ export default class WidgetsWidget3Component extends Component<WidgetsWidget3Com
 
   loadData(): void {
     this.concertData = concertData;
+  }
+}
+
+declare module '@glint/environment-ember-loose/registry' {
+  export default interface Registry {
+    'Widgets::Widget-3': typeof WidgetsWidget3Component;
   }
 }
