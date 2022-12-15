@@ -16,7 +16,6 @@ module('Integration | Component | container-query', function (hooks) {
   module('...attributes', function () {
     test('The component accepts splattributes', async function (this: TestContext, assert: CustomAssert) {
       await render<TestContext>(hbs`
-        {{! @glint-nocheck: not typesafe yet }}
         {{!-- template-lint-disable no-inline-styles --}}
         <div style="width: 500px; height: 800px;">
           <ContainerQuery

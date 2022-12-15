@@ -9,16 +9,21 @@ import {
   timeout,
 } from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
+import type { Features } from 'ember-container-query/modifiers/container-query';
 import { module, test } from 'qunit';
 
+type FeatureNames =
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'short'
+  | 'tall'
+  | 'ratio-type-A'
+  | 'ratio-type-B'
+  | 'ratio-type-C';
+
 interface TestContext extends BaseTestContext {
-  features?: {
-    [featureName: string]: {
-      dimension: 'aspectRatio' | 'height' | 'width';
-      max: number;
-      min: number;
-    };
-  };
+  features?: Features<FeatureNames>;
 }
 
 module('Integration | Component | container-query', function (hooks) {
@@ -27,14 +32,17 @@ module('Integration | Component | container-query', function (hooks) {
 
   module('When @features is undefined', function (hooks) {
     hooks.beforeEach(async function () {
+      /* @ts-expect-error: We are testing a special case (@features is undefined) */
+      this.features = undefined;
+
       await render<TestContext>(hbs`
-        {{! @glint-nocheck: not typesafe yet }}
         {{!-- template-lint-disable no-inline-styles --}}
         <div
           data-test-parent-element
           style="width: 250px; height: 500px;"
         >
           <ContainerQuery
+            @features={{this.features}}
             as |CQ|
           >
             <p data-test-feature="small">{{CQ.features.small}}</p>
@@ -131,7 +139,6 @@ module('Integration | Component | container-query', function (hooks) {
   module('When @features is passed', function (hooks) {
     hooks.beforeEach(async function () {
       await render<TestContext>(hbs`
-        {{! @glint-nocheck: not typesafe yet }}
         {{!-- template-lint-disable no-inline-styles --}}
         <div
           data-test-parent-element
@@ -243,6 +250,7 @@ module('Integration | Component | container-query', function (hooks) {
 
   module('When @features is updated', function (hooks) {
     hooks.beforeEach(async function (this: TestContext) {
+      /* @ts-expect-error: We are testing a special case (@features is updated) */
       this.features = {
         small: {
           dimension: 'width',
@@ -267,7 +275,6 @@ module('Integration | Component | container-query', function (hooks) {
       };
 
       await render<TestContext>(hbs`
-        {{! @glint-nocheck: not typesafe yet }}
         {{!-- template-lint-disable no-inline-styles --}}
         <div
           data-test-parent-element
@@ -296,6 +303,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       await timeout();
 
+      /* @ts-expect-error: We are testing a special case (@features is updated) */
       set(this, 'features', {
         large: {
           dimension: 'width',

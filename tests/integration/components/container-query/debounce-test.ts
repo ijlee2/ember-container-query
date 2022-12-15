@@ -33,7 +33,6 @@ module('Integration | Component | container-query', function (hooks) {
       this.debounce = 250;
 
       await render<TestContext>(hbs`
-        {{! @glint-nocheck: not typesafe yet }}
         {{!-- template-lint-disable no-inline-styles --}}
         <div
           data-test-parent-element
