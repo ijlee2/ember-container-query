@@ -9,7 +9,6 @@ module('Integration | Helper | cq-height', function (hooks) {
 
   test('can return a hash with default values', async function (this: TestContext, assert) {
     await render<TestContext>(hbs`
-      {{! @glint-nocheck: not typesafe yet }}
       {{#let (cq-height) as |output|}}
         <p data-test-value="dimension">{{output.dimension}}</p>
         <p data-test-value="min">{{output.min}}</p>
@@ -24,7 +23,6 @@ module('Integration | Helper | cq-height', function (hooks) {
 
   test('if min and max are provided, returns them as they are', async function (this: TestContext, assert) {
     await render<TestContext>(hbs`
-      {{! @glint-nocheck: not typesafe yet }}
       {{#let (cq-height min=100 max=200) as |output|}}
         <p data-test-value="dimension">{{output.dimension}}</p>
         <p data-test-value="min">{{output.min}}</p>
