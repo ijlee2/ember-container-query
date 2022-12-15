@@ -1,4 +1,4 @@
-import { modifier, NamedArgs, PositionalArgs } from 'ember-modifier';
+import { modifier } from 'ember-modifier';
 
 interface DynamicCssGridModifierSignature {
   Args: {
@@ -8,22 +8,23 @@ interface DynamicCssGridModifierSignature {
     };
     Positional: [];
   };
-  Element: Element;
+  Element: HTMLElement;
 }
 
-export default modifier(
-  function dynamicCssGrid(
-    element: Element,
-    _positional: PositionalArgs<DynamicCssGridModifierSignature>,
-    named: NamedArgs<DynamicCssGridModifierSignature>
-  ): void {
+const DynamicCssGridModifier = modifier<DynamicCssGridModifierSignature>(
+  (element, _positional, named) => {
     const { numColumns, numRows } = named;
 
-    (
-      element as HTMLElement
-    ).style.gridTemplateColumns = `repeat(${numColumns}, minmax(0, 1fr))`;
-
-    (element as HTMLElement).style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
+    element.style.gridTemplateColumns = `repeat(${numColumns}, minmax(0, 1fr))`;
+    element.style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
   },
   { eager: false }
 );
+
+export default DynamicCssGridModifier;
+
+declare module '@glint/environment-ember-loose/registry' {
+  export default interface Registry {
+    'dynamic-css-grid': typeof DynamicCssGridModifier;
+  }
+}
