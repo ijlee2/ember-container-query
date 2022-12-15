@@ -63,7 +63,6 @@ module('Integration | Component | tracks/table', function (hooks) {
       this.tracks = [];
 
       await render<TestContext>(hbs`
-        {{! @glint-nocheck: not typesafe yet }}
         <Tracks::Table
           @tracks={{this.tracks}}
         />
@@ -78,7 +77,6 @@ module('Integration | Component | tracks/table', function (hooks) {
       this.tracks = albumData.tracks;
 
       await render<TestContext>(hbs`
-        {{! @glint-nocheck: not typesafe yet }}
         <Tracks::Table
           @tracks={{this.tracks}}
         />

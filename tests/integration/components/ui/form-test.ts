@@ -9,7 +9,6 @@ module('Integration | Component | ui/form', function (hooks) {
 
   test('The component renders a form', async function (this: TestContext, assert) {
     await render<TestContext>(hbs`
-      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form
         @data={{hash
           email=undefined

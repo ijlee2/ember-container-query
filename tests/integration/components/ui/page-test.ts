@@ -9,7 +9,6 @@ module('Integration | Component | ui/page', function (hooks) {
 
   test('The component handles the page layout', async function (this: TestContext, assert) {
     await render<TestContext>(hbs`
-      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Page
         @title="Form"
       >

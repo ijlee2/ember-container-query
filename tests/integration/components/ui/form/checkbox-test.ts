@@ -5,22 +5,9 @@ import { setupRenderingTest } from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
 
-type Changeset = {
-  email: string;
-  message: string;
-  name: string;
-  subscribe: boolean;
-};
-
 interface TestContext extends BaseTestContext {
-  changeset: Changeset;
-  updateChangeset?: ({
-    key,
-    value,
-  }: {
-    key: keyof Changeset;
-    value: Changeset[keyof Changeset];
-  }) => void;
+  changeset: Record<string, any>;
+  updateChangeset: ({ key, value }: { key: string; value: any }) => void;
 }
 
 module('Integration | Component | ui/form/checkbox', function (hooks) {
@@ -33,15 +20,19 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       name: 'Zoey',
       subscribe: true,
     };
+
+    this.updateChangeset = () => {
+      // Do nothing
+    };
   });
 
   test('The component renders a label and a checkbox', async function (this: TestContext, assert) {
     await render<TestContext>(hbs`
-      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @key="subscribe"
         @label="Subscribe to The Ember Times?"
+        @onUpdate={{this.updateChangeset}}
       />
     `);
 
@@ -66,12 +57,12 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
 
   test('We can pass @isDisabled to disable the input', async function (this: TestContext, assert) {
     await render<TestContext>(hbs`
-      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @isDisabled={{true}}
         @key="subscribe"
         @label="Subscribe to The Ember Times?"
+        @onUpdate={{this.updateChangeset}}
       />
     `);
 
@@ -83,12 +74,12 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
 
   test('We can pass @isReadOnly to display the value', async function (this: TestContext, assert) {
     await render<TestContext>(hbs`
-      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @isReadOnly={{true}}
         @key="subscribe"
         @label="Subscribe to The Ember Times?"
+        @onUpdate={{this.updateChangeset}}
       />
     `);
 
@@ -101,12 +92,12 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
 
   test('We can pass @isRequired to require a value', async function (this: TestContext, assert) {
     await render<TestContext>(hbs`
-      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @isRequired={{true}}
         @key="subscribe"
         @label="Subscribe to The Ember Times?"
+        @onUpdate={{this.updateChangeset}}
       />
     `);
 
@@ -138,7 +129,6 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
     };
 
     await render<TestContext>(hbs`
-      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @isRequired={{true}}
@@ -189,7 +179,6 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
     };
 
     await render<TestContext>(hbs`
-      {{! @glint-nocheck: not typesafe yet }}
       <Ui::Form::Checkbox
         @changeset={{this.changeset}}
         @isRequired={{true}}
