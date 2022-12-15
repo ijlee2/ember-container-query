@@ -1,18 +1,22 @@
 import { helper } from '@ember/component/helper';
-import { assert } from '@ember/debug';
 
-function add(positional: Array<unknown>) {
-  assert(
-    'All positional arguments must be numbers.',
-    positional.every((element) => typeof element === 'number')
-  );
-
-  const sum = (positional as Array<number>).reduce(
-    (accumulator, value) => accumulator + value,
-    0
-  );
-
-  return sum;
+interface AddHelperSignature {
+  Args: {
+    Positional: Array<number>;
+  };
+  Return: number;
 }
 
-export default helper(add);
+const AddHelper = helper<AddHelperSignature>((positional) => {
+  const sum = positional.reduce((accumulator, value) => accumulator + value, 0);
+
+  return sum;
+});
+
+export default AddHelper;
+
+declare module '@glint/environment-ember-loose/registry' {
+  export default interface Registry {
+    add: typeof AddHelper;
+  }
+}
