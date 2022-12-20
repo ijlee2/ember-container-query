@@ -21,7 +21,7 @@ module('Integration | Component | container-query', function (hooks) {
 
   module('When @dataAttributePrefix is undefined', function (hooks) {
     hooks.beforeEach(async function () {
-      await render(hbs`
+      await render<TestContext>(hbs`
         {{!-- template-lint-disable no-inline-styles --}}
         <div
           data-test-parent-element
@@ -60,7 +60,7 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component creates data attributes when it is rendered', async function (assert: CustomAssert) {
+    test('The component creates data attributes when it is rendered', async function (this: TestContext, assert: CustomAssert) {
       assert.areDataAttributesCorrect!({
         'data-container-query-small': '',
         'data-container-query-medium': undefined,
@@ -73,7 +73,7 @@ module('Integration | Component | container-query', function (hooks) {
       });
     });
 
-    test('The component updates data attributes when it is resized', async function (assert: CustomAssert) {
+    test('The component updates data attributes when it is resized', async function (this: TestContext, assert: CustomAssert) {
       await resizeContainer({ height: 300, width: 500 });
 
       assert.areDataAttributesCorrect!({
@@ -119,7 +119,7 @@ module('Integration | Component | container-query', function (hooks) {
     'When @dataAttributePrefix is passed (empty string)',
     function (hooks) {
       hooks.beforeEach(async function () {
-        await render(hbs`
+        await render<TestContext>(hbs`
           {{!-- template-lint-disable no-inline-styles --}}
           <div
             data-test-parent-element
@@ -159,7 +159,7 @@ module('Integration | Component | container-query', function (hooks) {
         await timeout();
       });
 
-      test('The component creates data attributes when it is rendered', async function (assert: CustomAssert) {
+      test('The component creates data attributes when it is rendered', async function (this: TestContext, assert: CustomAssert) {
         assert.areDataAttributesCorrect!({
           'data-small': '',
           'data-medium': undefined,
@@ -172,7 +172,7 @@ module('Integration | Component | container-query', function (hooks) {
         });
       });
 
-      test('The component updates data attributes when it is resized', async function (assert: CustomAssert) {
+      test('The component updates data attributes when it is resized', async function (this: TestContext, assert: CustomAssert) {
         await resizeContainer({ height: 300, width: 500 });
 
         assert.areDataAttributesCorrect!({
@@ -219,7 +219,7 @@ module('Integration | Component | container-query', function (hooks) {
     'When @dataAttributePrefix is passed (non-empty string)',
     function (hooks) {
       hooks.beforeEach(async function () {
-        await render(hbs`
+        await render<TestContext>(hbs`
           {{!-- template-lint-disable no-inline-styles --}}
           <div
             data-test-parent-element
@@ -259,7 +259,7 @@ module('Integration | Component | container-query', function (hooks) {
         await timeout();
       });
 
-      test('The component creates data attributes when it is rendered', async function (assert: CustomAssert) {
+      test('The component creates data attributes when it is rendered', async function (this: TestContext, assert: CustomAssert) {
         assert.areDataAttributesCorrect!({
           'data-cq-small': '',
           'data-cq-medium': undefined,
@@ -272,7 +272,7 @@ module('Integration | Component | container-query', function (hooks) {
         });
       });
 
-      test('The component updates data attributes when it is resized', async function (assert: CustomAssert) {
+      test('The component updates data attributes when it is resized', async function (this: TestContext, assert: CustomAssert) {
         await resizeContainer({ height: 300, width: 500 });
 
         assert.areDataAttributesCorrect!({
@@ -319,7 +319,7 @@ module('Integration | Component | container-query', function (hooks) {
     hooks.beforeEach(async function (this: TestContext) {
       this.dataAttributePrefix = 'cq1';
 
-      await render(hbs`
+      await render<TestContext>(hbs`
         {{!-- template-lint-disable no-inline-styles --}}
         <div
           data-test-parent-element
@@ -361,7 +361,7 @@ module('Integration | Component | container-query', function (hooks) {
       set(this, 'dataAttributePrefix', 'cq2');
     });
 
-    test('The component updates the data attributes', async function (assert: CustomAssert) {
+    test('The component updates the data attributes', async function (this: TestContext, assert: CustomAssert) {
       assert.areDataAttributesCorrect!({
         'data-cq1-small': undefined,
         'data-cq1-medium': undefined,
@@ -385,7 +385,7 @@ module('Integration | Component | container-query', function (hooks) {
       });
     });
 
-    test('The component updates the data attributes when it is resized', async function (assert: CustomAssert) {
+    test('The component updates the data attributes when it is resized', async function (this: TestContext, assert: CustomAssert) {
       await resizeContainer({ height: 300, width: 500 });
 
       assert.areDataAttributesCorrect!({

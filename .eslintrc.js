@@ -6,7 +6,12 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2018,
   },
-  plugins: ['ember', '@typescript-eslint', 'simple-import-sort'],
+  plugins: [
+    'ember',
+    '@typescript-eslint',
+    'simple-import-sort',
+    'typescript-sort-keys',
+  ],
   extends: [
     'eslint:recommended',
     'plugin:ember/recommended',
@@ -27,6 +32,7 @@ module.exports = {
       extends: [
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:typescript-sort-keys/recommended',
       ],
       rules: {
         '@typescript-eslint/no-empty-interface': 'off',

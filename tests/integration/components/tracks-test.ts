@@ -17,9 +17,9 @@ module('Integration | Component | tracks', function (hooks) {
     this.album = albumData;
   });
 
-  test('uses container queries to render tracks', async function (assert) {
+  test('uses container queries to render tracks', async function (this: TestContext, assert) {
     // Features: small, short
-    await render(hbs`
+    await render<TestContext>(hbs`
       {{!-- template-lint-disable no-inline-styles --}}
       <div
         data-test-parent-element

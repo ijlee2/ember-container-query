@@ -1,3 +1,4 @@
+import type { TestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
@@ -6,8 +7,8 @@ import { module, test } from 'qunit';
 module('Integration | Component | ui/page', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('The component handles the page layout', async function (assert) {
-    await render(hbs`
+  test('The component handles the page layout', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       <Ui::Page
         @title="Form"
       >

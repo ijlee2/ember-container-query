@@ -1,3 +1,4 @@
+import type { TestContext } from '@ember/test-helpers';
 import { findAll, render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
@@ -6,8 +7,8 @@ import { module, test } from 'qunit';
 module('Integration | Component | navigation-menu', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('The component renders a navigation menu', async function (assert) {
-    await render(hbs`
+  test('The component renders a navigation menu', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       <NavigationMenu
         @name="Main Navigation"
         @menuItems={{array

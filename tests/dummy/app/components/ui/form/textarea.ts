@@ -1,21 +1,21 @@
 import { action, get } from '@ember/object';
 import Component from '@glimmer/component';
 
-interface UiFormTextareaComponentArgs {
-  changeset: {
-    [key: string]: any;
+interface UiFormTextareaComponentSignature {
+  Args: {
+    changeset: Record<string, any>;
+    isDisabled?: boolean;
+    isReadOnly?: boolean;
+    isRequired?: boolean;
+    isWide?: boolean;
+    key: string;
+    label: string;
+    onUpdate: ({ key, value }: { key: string; value: any }) => void;
+    placeholder?: string;
   };
-  isDisabled?: boolean;
-  isReadOnly?: boolean;
-  isRequired?: boolean;
-  isWide?: boolean;
-  key: string;
-  label: string;
-  onUpdate: ({ key, value }: { key: string; value: any }) => void;
-  placeholder?: string;
 }
 
-export default class UiFormTextareaComponent extends Component<UiFormTextareaComponentArgs> {
+export default class UiFormTextareaComponent extends Component<UiFormTextareaComponentSignature> {
   get errorMessage(): string | undefined {
     const { isRequired } = this.args;
 
@@ -36,10 +36,17 @@ export default class UiFormTextareaComponent extends Component<UiFormTextareaCom
     return ((get(changeset, key) as string) ?? '').toString();
   }
 
-  @action updateValue(event: InputEvent & { target: HTMLInputElement }): void {
+  @action updateValue(event: Event): void {
     const { key, onUpdate } = this.args;
-    const { value } = event.target;
+    const { value } = event.target as HTMLInputElement;
 
     onUpdate({ key, value });
+  }
+}
+
+declare module '@glint/environment-ember-loose/registry' {
+  export default interface Registry {
+    'Ui::Form::Textarea': typeof UiFormTextareaComponent;
+    'ui/form/textarea': typeof UiFormTextareaComponent;
   }
 }

@@ -1,3 +1,4 @@
+import type { TestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
@@ -6,8 +7,8 @@ import { module, test } from 'qunit';
 module('Integration | Component | widgets/widget-2', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('The component renders', async function (assert) {
-    await render(hbs`
+  test('The component renders', async function (this: TestContext, assert) {
+    await render<TestContext>(hbs`
       <Widgets::Widget-2 />
     `);
 
