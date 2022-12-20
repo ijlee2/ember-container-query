@@ -1,3 +1,22 @@
+## 3.1.0 (2022-12-20)
+
+### Enhancement
+* [#140](https://github.com/ijlee2/ember-container-query/pull/140) Add Glint signatures ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#145](https://github.com/ijlee2/ember-container-query/pull/145) Updated development dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+* [#141](https://github.com/ijlee2/ember-container-query/pull/141) Glint demo app ([@ijlee2](https://github.com/ijlee2))
+* [#140](https://github.com/ijlee2/ember-container-query/pull/140) Add Glint signatures ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#141](https://github.com/ijlee2/ember-container-query/pull/141) Glint demo app ([@ijlee2](https://github.com/ijlee2))
+* [#140](https://github.com/ijlee2/ember-container-query/pull/140) Add Glint signatures ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+- Thanks to [@NullVoxPopuli](https://github.com/NullVoxPopuli), [@denisclark](https://github.com/denisclark), [@gossi](https://github.com/gossi), and [@buschtoens](https://github.com/buschtoens) for their help with [#140](https://github.com/ijlee2/ember-container-query/pull/140)
+
+
 ## 3.0.0 (2022-12-15)
 
 ### Breaking Change
