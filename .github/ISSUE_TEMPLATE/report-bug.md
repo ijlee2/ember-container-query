@@ -9,7 +9,7 @@ assignees: ''
 
 Hello! Thanks for taking time to make a bug report.
 
-Before you make a new issue, please search for similar issues. It's possible that someone has reported this bug aleady.
+Before you make a new issue, please search for similar issues. It's possible that someone has reported this bug already.
 
 
 ## Describe the bug 🐞

@@ -9,7 +9,7 @@ assignees: ''
 
 Hello! Thanks for taking time to make an outdated dependency report.
 
-Before you make a new issue, please search for similar issues. It's possible that someone has made a request for update aleady.
+Before you make a new issue, please search for similar issues. It's possible that someone has made a request for update already.
 
 
 ## List outdated dependencies 🔗
