@@ -1,13 +1,16 @@
 import type ContainerQueryComponent from 'ember-container-query/components/container-query';
-import type CqAspectRatioHelper from 'ember-container-query/helpers/cq-aspect-ratio';
-import type CqHeightHelper from 'ember-container-query/helpers/cq-height';
-import type CqWidthHelper from 'ember-container-query/helpers/cq-width';
+import type AspectRatioHelper from 'ember-container-query/helpers/aspect-ratio';
+import type HeightHelper from 'ember-container-query/helpers/height';
+import type WidthHelper from 'ember-container-query/helpers/width';
 import type ContainerQueryModifier from 'ember-container-query/modifiers/container-query';
 
 export default interface EmberContainerQueryRegistry {
   ContainerQuery: typeof ContainerQueryComponent;
+  'aspect-ratio': typeof AspectRatioHelper;
   'container-query': typeof ContainerQueryModifier;
-  'cq-aspect-ratio': typeof CqAspectRatioHelper;
-  'cq-height': typeof CqHeightHelper;
-  'cq-width': typeof CqWidthHelper;
+  'cq-aspect-ratio': typeof AspectRatioHelper;
+  'cq-height': typeof HeightHelper;
+  'cq-width': typeof WidthHelper;
+  height: typeof HeightHelper;
+  width: typeof WidthHelper;
 }

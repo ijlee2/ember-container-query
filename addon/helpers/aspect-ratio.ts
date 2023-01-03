@@ -1,7 +1,7 @@
 import { helper } from '@ember/component/helper';
 import type { Metadata } from 'ember-container-query/modifiers/container-query';
 
-interface CqAspectRatioHelperSignature {
+interface AspectRatioHelperSignature {
   Args: {
     Named: {
       max?: number;
@@ -12,7 +12,7 @@ interface CqAspectRatioHelperSignature {
   Return: Metadata;
 }
 
-const CqAspectRatioHelper = helper<CqAspectRatioHelperSignature>(
+const AspectRatioHelper = helper<AspectRatioHelperSignature>(
   (_positional, named) => {
     const dimension = 'aspectRatio';
     const max = named.max ?? Infinity;
@@ -22,4 +22,4 @@ const CqAspectRatioHelper = helper<CqAspectRatioHelperSignature>(
   }
 );
 
-export default CqAspectRatioHelper;
+export default AspectRatioHelper;

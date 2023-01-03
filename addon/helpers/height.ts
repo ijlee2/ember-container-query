@@ -1,7 +1,7 @@
 import { helper } from '@ember/component/helper';
 import type { Metadata } from 'ember-container-query/modifiers/container-query';
 
-interface CqHeightHelperSignature {
+interface HeightHelperSignature {
   Args: {
     Named: {
       max?: number;
@@ -12,7 +12,7 @@ interface CqHeightHelperSignature {
   Return: Metadata;
 }
 
-const CqHeightHelper = helper<CqHeightHelperSignature>((_positional, named) => {
+const HeightHelper = helper<HeightHelperSignature>((_positional, named) => {
   const dimension = 'height';
   const max = named.max ?? Infinity;
   const min = named.min ?? 0;
@@ -20,4 +20,4 @@ const CqHeightHelper = helper<CqHeightHelperSignature>((_positional, named) => {
   return { dimension, max, min };
 });
 
-export default CqHeightHelper;
+export default HeightHelper;
