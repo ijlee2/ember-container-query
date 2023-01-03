@@ -132,7 +132,7 @@ API
 The addon provides 1 Glimmer component and 3 helpers:
 
 - `<ContainerQuery>`
-- `{{cq-aspect-ratio}}`
+- `{{aspect-ratio}}`
 - `{{cq-height}}`
 - `{{cq-width}}`
 
@@ -186,7 +186,7 @@ You can consume these values in your app or addon.
 
 
 <details>
-<summary><code>{{cq-aspect-ratio}}</code>, <code>{{cq-height}}</code>, <code>{{cq-width}}</code></summary>
+<summary><code>{{aspect-ratio}}</code>, <code>{{cq-height}}</code>, <code>{{cq-width}}</code></summary>
 
 ### Arguments
 

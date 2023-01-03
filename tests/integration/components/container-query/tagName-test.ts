@@ -34,9 +34,9 @@ module('Integration | Component | container-query', function (hooks) {
               large=(cq-width min=600 max=900)
               short=(cq-height max=500)
               tall=(cq-height min=500)
-              ratio-type-A=(cq-aspect-ratio min=0.25 max=0.75)
-              ratio-type-B=(cq-aspect-ratio min=0.5 max=1.5)
-              ratio-type-C=(cq-aspect-ratio min=1.25 max=2)
+              ratio-type-A=(aspect-ratio min=0.25 max=0.75)
+              ratio-type-B=(aspect-ratio min=0.5 max=1.5)
+              ratio-type-C=(aspect-ratio min=1.25 max=2)
             }}
             as |CQ|
           >
@@ -102,9 +102,9 @@ module('Integration | Component | container-query', function (hooks) {
               large=(cq-width min=600 max=900)
               short=(cq-height max=500)
               tall=(cq-height min=500)
-              ratio-type-A=(cq-aspect-ratio min=0.25 max=0.75)
-              ratio-type-B=(cq-aspect-ratio min=0.5 max=1.5)
-              ratio-type-C=(cq-aspect-ratio min=1.25 max=2)
+              ratio-type-A=(aspect-ratio min=0.25 max=0.75)
+              ratio-type-B=(aspect-ratio min=0.5 max=1.5)
+              ratio-type-C=(aspect-ratio min=1.25 max=2)
             }}
             @tagName="section"
             as |CQ|
@@ -173,9 +173,9 @@ module('Integration | Component | container-query', function (hooks) {
               large=(cq-width min=600 max=900)
               short=(cq-height max=500)
               tall=(cq-height min=500)
-              ratio-type-A=(cq-aspect-ratio min=0.25 max=0.75)
-              ratio-type-B=(cq-aspect-ratio min=0.5 max=1.5)
-              ratio-type-C=(cq-aspect-ratio min=1.25 max=2)
+              ratio-type-A=(aspect-ratio min=0.25 max=0.75)
+              ratio-type-B=(aspect-ratio min=0.5 max=1.5)
+              ratio-type-C=(aspect-ratio min=1.25 max=2)
             }}
             @tagName={{this.tagName}}
             as |CQ|
