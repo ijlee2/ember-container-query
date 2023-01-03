@@ -29,9 +29,9 @@ module('Integration | Component | container-query', function (hooks) {
         >
           <ContainerQuery
             @features={{hash
-              small=(cq-width max=300)
-              medium=(cq-width min=300 max=600)
-              large=(cq-width min=600 max=900)
+              small=(width max=300)
+              medium=(width min=300 max=600)
+              large=(width min=600 max=900)
               short=(height max=500)
               tall=(height min=500)
               ratio-type-A=(aspect-ratio min=0.25 max=0.75)
@@ -127,9 +127,9 @@ module('Integration | Component | container-query', function (hooks) {
           >
             <ContainerQuery
               @features={{hash
-                small=(cq-width max=300)
-                medium=(cq-width min=300 max=600)
-                large=(cq-width min=600 max=900)
+                small=(width max=300)
+                medium=(width min=300 max=600)
+                large=(width min=600 max=900)
                 short=(height max=500)
                 tall=(height min=500)
                 ratio-type-A=(aspect-ratio min=0.25 max=0.75)
@@ -227,9 +227,9 @@ module('Integration | Component | container-query', function (hooks) {
           >
             <ContainerQuery
               @features={{hash
-                small=(cq-width max=300)
-                medium=(cq-width min=300 max=600)
-                large=(cq-width min=600 max=900)
+                small=(width max=300)
+                medium=(width min=300 max=600)
+                large=(width min=600 max=900)
                 short=(height max=500)
                 tall=(height min=500)
                 ratio-type-A=(aspect-ratio min=0.25 max=0.75)
@@ -327,9 +327,9 @@ module('Integration | Component | container-query', function (hooks) {
         >
           <ContainerQuery
             @features={{hash
-              small=(cq-width max=300)
-              medium=(cq-width min=300 max=600)
-              large=(cq-width min=600 max=900)
+              small=(width max=300)
+              medium=(width min=300 max=600)
+              large=(width min=600 max=900)
               short=(height max=500)
               tall=(height min=500)
               ratio-type-A=(aspect-ratio min=0.25 max=0.75)

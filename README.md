@@ -134,7 +134,7 @@ The addon provides 1 Glimmer component and 3 helpers:
 - `<ContainerQuery>`
 - `{{aspect-ratio}}`
 - `{{height}}`
-- `{{cq-width}}`
+- `{{width}}`
 
 Starting `v2.1.1`, the addon extracts the core logic into a modifier. This lets you opt out of using the provided component.
 
@@ -186,7 +186,7 @@ You can consume these values in your app or addon.
 
 
 <details>
-<summary><code>{{aspect-ratio}}</code>, <code>{{height}}</code>, <code>{{cq-width}}</code></summary>
+<summary><code>{{aspect-ratio}}</code>, <code>{{height}}</code>, <code>{{width}}</code></summary>
 
 ### Arguments
 
@@ -239,7 +239,7 @@ Let's look at the code that created the video demo above.
 ```hbs
 <ContainerQuery
   @features={{hash
-    large=(cq-width min=960)
+    large=(width min=960)
     tall=(height min=400)
   }}
   as |CQ|
@@ -280,9 +280,9 @@ Let's look at the code that created the video demo above.
 ```hbs
 <ContainerQuery
   @features={{hash
-    small=(cq-width max=480)
-    medium=(cq-width min=480 max=640)
-    large=(cq-width min=640)
+    small=(width max=480)
+    medium=(width min=480 max=640)
+    large=(width min=640)
     tall=(height min=320)
   }}
   as |CQ|
