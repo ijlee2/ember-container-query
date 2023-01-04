@@ -1,5 +1,6 @@
 import templateOnlyComponent from '@ember/component/template-only';
-import type { Data } from 'dummy/utils/components/widgets/widget-2';
+
+import type { Data } from '../../../utils/components/widgets/widget-2';
 
 interface WidgetsWidget2StackedChartComponentSignature {
   Args: {

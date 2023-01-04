@@ -6,11 +6,12 @@ import { axisBottom, axisLeft } from 'd3-axis';
 import { scaleBand, scaleLinear, scaleOrdinal } from 'd3-scale';
 import { select } from 'd3-selection';
 import { stack, stackOrderReverse } from 'd3-shape';
+import Modifier from 'ember-modifier';
+
 import {
   COLOR_PALETTE,
   formatRevenue,
-} from 'dummy/utils/components/widgets/widget-2';
-import Modifier from 'ember-modifier';
+} from '../utils/components/widgets/widget-2';
 
 const musicFormats = Object.keys(COLOR_PALETTE);
 const paletteColors = Object.values(COLOR_PALETTE);

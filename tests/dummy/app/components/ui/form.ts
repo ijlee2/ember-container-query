@@ -3,9 +3,10 @@ import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { WithBoundArgs } from '@glint/template';
-import type UiFormCheckboxComponent from 'dummy/components/ui/form/checkbox';
-import type UiFormInputComponent from 'dummy/components/ui/form/input';
-import type UiFormTextareaComponent from 'dummy/components/ui/form/textarea';
+
+import type UiFormCheckboxComponent from './form/checkbox';
+import type UiFormInputComponent from './form/input';
+import type UiFormTextareaComponent from './form/textarea';
 
 interface UiFormComponentSignature {
   Args: {

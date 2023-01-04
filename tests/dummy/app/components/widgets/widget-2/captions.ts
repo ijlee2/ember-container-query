@@ -1,7 +1,8 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import type { Summary } from 'dummy/utils/components/widgets/widget-2';
+
+import type { Summary } from '../../../utils/components/widgets/widget-2';
 
 interface WidgetsWidget2CaptionsComponentSignature {
   Args: {
