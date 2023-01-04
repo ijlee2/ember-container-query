@@ -1,14 +1,15 @@
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
-import type { CustomAssert } from 'dummy/tests/helpers';
+import { hbs } from 'ember-cli-htmlbars';
+import { module, test } from 'qunit';
+
+import type { CustomAssert } from '../../../helpers';
 import {
   resizeContainer,
   setupContainerQueryTest,
   setupRenderingTest,
   timeout,
-} from 'dummy/tests/helpers';
-import { hbs } from 'ember-cli-htmlbars';
-import { module, test } from 'qunit';
+} from '../../../helpers';
 
 interface TestContext extends BaseTestContext {
   debounce?: number;

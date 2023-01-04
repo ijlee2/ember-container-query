@@ -1,9 +1,10 @@
 import { set } from '@ember/object';
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import { click, render, triggerKeyEvent } from '@ember/test-helpers';
-import { setupRenderingTest } from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
+
+import { setupRenderingTest } from '../../../../helpers';
 
 interface TestContext extends BaseTestContext {
   changeset: Record<string, any>;
