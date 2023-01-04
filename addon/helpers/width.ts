@@ -1,5 +1,6 @@
 import { helper } from '@ember/component/helper';
-import type { Metadata } from 'ember-container-query/modifiers/container-query';
+
+import type { Metadata } from '../modifiers/container-query';
 
 interface WidthHelperSignature {
   Args: {
