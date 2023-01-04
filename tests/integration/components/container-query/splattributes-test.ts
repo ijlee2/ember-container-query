@@ -1,13 +1,14 @@
 import type { TestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
-import type { CustomAssert } from 'dummy/tests/helpers';
+import { hbs } from 'ember-cli-htmlbars';
+import { module, test } from 'qunit';
+
+import type { CustomAssert } from '../../../helpers';
 import {
   setupContainerQueryTest,
   setupRenderingTest,
   timeout,
-} from 'dummy/tests/helpers';
-import { hbs } from 'ember-cli-htmlbars';
-import { module, test } from 'qunit';
+} from '../../../helpers';
 
 module('Integration | Component | container-query', function (hooks) {
   setupRenderingTest(hooks);

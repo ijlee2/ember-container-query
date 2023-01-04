@@ -1,8 +1,9 @@
 import type { TestContext } from '@ember/test-helpers';
 import { getDeprecations, render } from '@ember/test-helpers';
-import { setupRenderingTest } from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
+
+import { setupRenderingTest } from '../../helpers';
 
 module('Integration | Helper | cq-height', function (hooks) {
   setupRenderingTest(hooks);

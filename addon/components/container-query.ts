@@ -1,12 +1,13 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+
 import type {
   Dimensions,
   Features,
   IndexSignatureParameter,
   QueryResults,
-} from 'ember-container-query/modifiers/container-query';
+} from '../modifiers/container-query';
 
 interface ContainerQueryComponentSignature<T extends IndexSignatureParameter> {
   Args: {
