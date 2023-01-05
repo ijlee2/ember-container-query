@@ -1,3 +1,18 @@
+## 3.2.0 (2023-01-05)
+
+### Enhancement
+* [#147](https://github.com/ijlee2/ember-container-query/pull/147) Use relative paths whenever possible ([@ijlee2](https://github.com/ijlee2))
+* [#130](https://github.com/ijlee2/ember-container-query/pull/130) Add easier imports from strict mode users ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+* [#146](https://github.com/ijlee2/ember-container-query/pull/146) Renamed the helpers by dropping the cq prefix ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#148](https://github.com/ijlee2/ember-container-query/pull/148) Updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 2
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
+
 ## 3.1.0 (2022-12-20)
 
 ### Enhancement
