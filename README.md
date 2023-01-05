@@ -21,7 +21,28 @@ ember install ember-container-query
 <details>
 <summary>Use Glint? ✨</summary>
 
-- If you are using [strict mode](http://emberjs.github.io/rfcs/0496-handlebars-strict-mode.html) (via [first-class component templates](http://emberjs.github.io/rfcs/0779-first-class-component-templates.html)), then you are good to go!
+- If you are using [strict mode](https://github.com/ember-template-imports/ember-template-imports), then you are good to go!
+
+    ```ts
+    /* app/components/tracks.{gjs,gts} */
+
+    import { hash } from '@ember/helper';
+    import { ContainerQuery, height, width } from 'ember-container-query';
+
+    <template>
+      <ContainerQuery
+        @features={{hash
+          small=(width max=480)
+          medium=(width min=480 max=640)
+          large=(width min=640)
+          tall=(height min=320)
+        }}
+        as |CQ|
+      >
+        ...
+      </ContainerQuery>
+    </template>
+    ```
 
 - Otherwise, update your template registry to extend this addon's. Check the [Glint documentation](https://typed-ember.gitbook.io/glint/using-glint/ember/using-addons#using-glint-enabled-addons) for more information.
 
