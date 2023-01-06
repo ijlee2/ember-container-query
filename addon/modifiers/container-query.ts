@@ -13,7 +13,7 @@ type Dimensions = {
 };
 
 type Metadata = {
-  dimension: 'aspectRatio' | 'height' | 'width';
+  dimension: keyof Dimensions;
   max: number;
   min: number;
 };
