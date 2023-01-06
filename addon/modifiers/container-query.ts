@@ -51,7 +51,7 @@ export default class ContainerQueryModifier<
   dimensions!: Dimensions;
   queryResults!: QueryResults<T>;
 
-  private _dataAttributes: string[] = [];
+  private _dataAttributes: Array<string> = [];
   private _element?: Element;
   private _named!: NamedArgs<ContainerQueryModifierSignature<T>>;
 
