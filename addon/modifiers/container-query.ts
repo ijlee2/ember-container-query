@@ -5,6 +5,8 @@ import { inject as service } from '@ember/service';
 import Modifier, { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
 
 type IndexSignatureParameter = string | number | symbol;
+type ObjectEntry<T> = [keyof T, T[keyof T]];
+type ObjectEntries<T> = Array<ObjectEntry<T>>;
 
 type Dimensions = {
   aspectRatio: number;
@@ -131,11 +133,13 @@ export default class ContainerQueryModifier<
   private evaluateQueries(): void {
     const queryResults = {} as QueryResults<T>;
 
-    for (const [featureName, metadata] of Object.entries(this.features)) {
-      const { dimension, min, max } = metadata as Metadata;
+    for (const [featureName, metadata] of Object.entries(
+      this.features
+    ) as ObjectEntries<Features<T>>) {
+      const { dimension, min, max } = metadata;
       const value = this.dimensions[dimension];
 
-      queryResults[featureName as T] = min <= value && value < max;
+      queryResults[featureName] = min <= value && value < max;
     }
 
     this.queryResults = queryResults;
@@ -154,14 +158,14 @@ export default class ContainerQueryModifier<
 
     for (const [featureName, meetsFeature] of Object.entries(
       this.queryResults
-    )) {
+    ) as ObjectEntries<QueryResults<T>>) {
       if (!meetsFeature) {
         continue;
       }
 
       const dataAttribute = prefix
-        ? `data-${prefix}-${featureName}`
-        : `data-${featureName}`;
+        ? `data-${prefix}-${String(featureName)}`
+        : `data-${String(featureName)}`;
 
       element.setAttribute(dataAttribute, '');
 
