@@ -117,7 +117,6 @@
     "ember-cli-terser": "^4.0.2",
     "ember-css-modules": "^2.0.1",
     "ember-load-initializers": "^2.1.2",
-    "ember-named-blocks-polyfill": "^0.2.5",
     "ember-page-title": "^7.0.0",
     "ember-qunit": "^6.1.1",
     "ember-resolver": "^9.0.1",
