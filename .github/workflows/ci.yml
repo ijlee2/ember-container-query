@@ -12,8 +12,8 @@ env:
   PERCY_PARALLEL_TOTAL: 9
 
 jobs:
-  build-app:
-    name: Build app for testing
+  build-test-app:
+    name: Build test-app
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -29,18 +29,19 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build app
+      - name: Build test-app
         run: yarn build:test
+        working-directory: test-app
 
-      - name: Upload app
+      - name: Upload test-app
         uses: actions/upload-artifact@v3
         with:
           name: dist
-          path: dist
+          path: test-app/dist
 
 
   lint:
-    name: Lint files and dependencies
+    name: Lint files
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -62,7 +63,7 @@ jobs:
 
   test-addon:
     name: Test addon
-    needs: [build-app]
+    needs: [build-test-app]
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -109,14 +110,15 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Download app
+      - name: Download test-app
         uses: actions/download-artifact@v3
         with:
           name: dist
-          path: dist
+          path: test-app/dist
 
-      - name: Test
+      - name: Run tests
         run: npx percy exec -- yarn test:ember --path=dist --test-port=${{ matrix.test-port }}
+        working-directory: test-app
         env:
           DEVICE: ${{ matrix.device }}
           PERCY_PARALLEL_NONCE: ${{ env.PERCY_PARALLEL_NONCE }}
@@ -165,7 +167,8 @@ jobs:
         run: yarn install --frozen-lockfile
 
       # Test compatibility without Percy
-      - name: Test
+      - name: Run tests
         run: yarn test:ember-compatibility ${{ matrix.scenario }} --- yarn test:ember --test-port=${{ matrix.test-port }}
+        working-directory: test-app
         env:
           DEVICE: ${{ matrix.device }}
