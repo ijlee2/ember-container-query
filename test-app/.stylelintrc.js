@@ -1,7 +1,6 @@
 'use strict';
 
-/* eslint-disable-next-line n/no-unpublished-require */
-const { browsers } = require('./tests/dummy/config/targets');
+const { browsers } = require('./config/targets');
 
 module.exports = {
   extends: ['stylelint-config-standard'],

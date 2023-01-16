@@ -13,6 +13,7 @@
         "types/*"
       ]
     },
+    "moduleResolution": "node16",
     "skipLibCheck": true
   },
   "include": [
