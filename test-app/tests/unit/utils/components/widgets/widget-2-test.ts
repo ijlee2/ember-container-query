@@ -1,10 +1,10 @@
+import { module, test } from 'qunit';
 import musicRevenue from 'test-app/data/music-revenue';
 import {
   createDataForVisualization,
   createSummariesForCaptions,
   formatRevenue,
 } from 'test-app/utils/components/widgets/widget-2';
-import { module, test } from 'qunit';
 
 module('Unit | Utility | components/widgets/widget-2', function () {
   module('formatRevenue', function () {
