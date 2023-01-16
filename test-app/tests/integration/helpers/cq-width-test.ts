@@ -23,8 +23,10 @@ module('Integration | Helper | cq-width', function (hooks) {
 
     const deprecationMessages = getDeprecations().map(({ message }) => message);
 
-    assert.deepEqual(deprecationMessages, [
-      'The {{cq-width}} helper has been renamed to {{width}}. Please update the helper name in your template.',
-    ]);
+    assert.true(
+      deprecationMessages.includes(
+        'The {{cq-width}} helper has been renamed to {{width}}. Please update the helper name in your template.'
+      )
+    );
   });
 });

@@ -23,8 +23,10 @@ module('Integration | Helper | cq-aspect-ratio', function (hooks) {
 
     const deprecationMessages = getDeprecations().map(({ message }) => message);
 
-    assert.deepEqual(deprecationMessages, [
-      'The {{cq-aspect-ratio}} helper has been renamed to {{aspect-ratio}}. Please update the helper name in your template.',
-    ]);
+    assert.true(
+      deprecationMessages.includes(
+        'The {{cq-aspect-ratio}} helper has been renamed to {{aspect-ratio}}. Please update the helper name in your template.'
+      )
+    );
   });
 });

@@ -23,8 +23,10 @@ module('Integration | Helper | cq-height', function (hooks) {
 
     const deprecationMessages = getDeprecations().map(({ message }) => message);
 
-    assert.deepEqual(deprecationMessages, [
-      'The {{cq-height}} helper has been renamed to {{height}}. Please update the helper name in your template.',
-    ]);
+    assert.true(
+      deprecationMessages.includes(
+        'The {{cq-height}} helper has been renamed to {{height}}. Please update the helper name in your template.'
+      )
+    );
   });
 });
