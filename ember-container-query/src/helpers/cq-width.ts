@@ -13,7 +13,7 @@ deprecate(
       enabled: '3.2.0',
     },
     until: '4.0.0',
-    url: 'https://github.com/ijlee2/../tree/3.2.0#api',
+    url: 'https://github.com/ijlee2/ember-container-query/tree/3.2.0#api',
   }
 );
 
