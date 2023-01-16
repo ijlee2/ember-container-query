@@ -19,10 +19,19 @@
   },
   "license": "MIT",
   "author": "Isaac J. Lee",
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js",
+    "./addon-main.js": "./addon-main.js"
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
+  "files": [
+    "addon-main.js",
+    "dist"
+  ],
   "scripts": {
     "build": "rollup --config",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
@@ -90,14 +99,5 @@
     "main": "addon-main.js",
     "type": "addon",
     "version": 2
-  },
-  "exports": {
-    ".": "./dist/index.js",
-    "./*": "./dist/*.js",
-    "./addon-main.js": "./addon-main.js"
-  },
-  "files": [
-    "addon-main.js",
-    "dist"
-  ]
+  }
 }
