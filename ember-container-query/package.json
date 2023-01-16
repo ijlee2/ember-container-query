@@ -1,0 +1,96 @@
+{
+  "name": "ember-container-query",
+  "version": "3.2.0",
+  "description": "Container queries using Ember modifiers",
+  "keywords": [
+    "container-queries",
+    "container-query",
+    "element-queries",
+    "element-query",
+    "ember-addon",
+    "ember-octane",
+    "emberjs",
+    "glint",
+    "responsive-design"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ijlee2/ember-container-query.git"
+  },
+  "license": "MIT",
+  "author": "Isaac J. Lee",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "rollup --config",
+    "build:test": "ember build --environment=test",
+    "changelog": "lerna-changelog",
+    "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
+    "lint:css": "stylelint \"tests/dummy/app/**/*.css\" --cache",
+    "lint:css:fix": "stylelint \"tests/dummy/app/**/*.css\" --fix",
+    "lint:dependency": "ember dependency-lint",
+    "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
+    "lint:hbs": "ember-template-lint .",
+    "lint:hbs:fix": "ember-template-lint . --fix",
+    "lint:js": "eslint . --cache --ext=.js,.ts",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "glint",
+    "postpack": "ember ts:clean",
+    "prepack": "rollup --config",
+    "start": "rollup --config --watch",
+    "test": "echo 'A v2 addon does not have tests, run tests in test-app'",
+    "test:ember": "ember test",
+    "test:ember-compatibility": "./node_modules/.bin/ember try:one"
+  },
+  "changelog": {
+    "labels": {
+      "breaking": "Breaking Change",
+      "bug": "Bug Fix",
+      "enhance: code": "Enhancement",
+      "enhance: dependency": "Internal",
+      "enhance: documentation": "Documentation",
+      "user feedback": "User Feedback"
+    }
+  },
+  "dependencies": {
+    "@embroider/addon-shim": "^1.8.4",
+    "ember-cli-typescript": "^5.2.1",
+    "ember-element-helper": "^0.6.1",
+    "ember-modifier": "^3.2.7",
+    "ember-resize-observer-service": "^1.1.0",
+    "ember-test-selectors": "^6.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.20.7",
+    "@babel/preset-typescript": "^7.18.6",
+    "@embroider/addon-dev": "^3.0.0",
+    "rollup": "^3.10.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-ts": "^3.1.1"
+  },
+  "engines": {
+    "node": "14.* || 16.* || >= 18"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "app-js": {},
+    "main": "addon-main.js",
+    "type": "addon",
+    "version": 2
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js",
+    "./addon-main.js": "./addon-main.js"
+  },
+  "files": [
+    "addon-main.js",
+    "dist"
+  ]
+}
