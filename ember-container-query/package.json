@@ -25,8 +25,6 @@
   },
   "scripts": {
     "build": "rollup --config",
-    "build:test": "ember build --environment=test",
-    "changelog": "lerna-changelog",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
     "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
     "lint:hbs": "ember-template-lint .",
@@ -34,22 +32,9 @@
     "lint:js": "eslint . --cache --ext=.js,.mjs,.ts",
     "lint:js:fix": "eslint . --ext=.js,.mjs,.ts --fix",
     "lint:types": "glint",
-    "postpack": "ember ts:clean",
     "prepack": "rollup --config",
     "start": "rollup --config --watch",
-    "test": "echo 'A v2 addon does not have tests, run tests in test-app'",
-    "test:ember": "ember test",
-    "test:ember-compatibility": "./node_modules/.bin/ember try:one"
-  },
-  "changelog": {
-    "labels": {
-      "breaking": "Breaking Change",
-      "bug": "Bug Fix",
-      "enhance: code": "Enhancement",
-      "enhance: dependency": "Internal",
-      "enhance: documentation": "Documentation",
-      "user feedback": "User Feedback"
-    }
+    "test": "echo 'A v2 addon does not have tests, run tests in test-app'"
   },
   "dependencies": {
     "@embroider/addon-shim": "^1.8.4",

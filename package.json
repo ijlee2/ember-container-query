@@ -2,15 +2,20 @@
   "name": "ember-container-query",
   "version": "3.2.0",
   "private": true,
-  "repository": "",
+  "description": "Container queries using Ember modifiers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ijlee2/ember-container-query.git"
+  },
   "license": "MIT",
-  "author": "",
+  "author": "Isaac J. Lee",
   "workspaces": [
     "ember-container-query",
     "test-app"
   ],
   "scripts": {
     "build": "yarn workspace ember-container-query run build",
+    "changelog": "lerna-changelog",
     "lint": "yarn workspaces run lint",
     "lint:fix": "yarn workspaces run lint:fix",
     "prepare": "yarn build",
@@ -21,6 +26,17 @@
   },
   "devDependencies": {
     "concurrently": "^7.6.0",
+    "lerna-changelog": "^2.2.0",
     "prettier": "^2.8.1"
+  },
+  "changelog": {
+    "labels": {
+      "breaking": "Breaking Change",
+      "bug": "Bug Fix",
+      "enhance: code": "Enhancement",
+      "enhance: dependency": "Internal",
+      "enhance: documentation": "Documentation",
+      "user feedback": "User Feedback"
+    }
   }
 }

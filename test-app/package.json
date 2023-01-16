@@ -25,7 +25,6 @@
   "scripts": {
     "build": "ember build --environment=production",
     "build:test": "ember build --environment=test",
-    "changelog": "lerna-changelog",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
     "lint:css": "stylelint \"app/**/*.css\" --cache",
     "lint:css:fix": "stylelint \"app/**/*.css\" --fix",
@@ -41,17 +40,7 @@
     "start": "ember serve",
     "test": "DEVICE='w3-h3' ember test",
     "test:ember": "ember test",
-    "test:ember-compatibility": "./node_modules/.bin/ember try:one"
-  },
-  "changelog": {
-    "labels": {
-      "breaking": "Breaking Change",
-      "bug": "Bug Fix",
-      "enhance: code": "Enhancement",
-      "enhance: dependency": "Internal",
-      "enhance: documentation": "Documentation",
-      "user feedback": "User Feedback"
-    }
+    "test:ember-compatibility": "../node_modules/.bin/ember try:one"
   },
   "dependencies": {},
   "devDependencies": {
@@ -130,7 +119,6 @@
     "eslint-plugin-qunit": "^7.3.4",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "eslint-plugin-typescript-sort-keys": "^2.1.0",
-    "lerna-changelog": "^2.2.0",
     "loader.js": "^4.7.0",
     "prettier": "^2.8.1",
     "qunit": "^2.19.3",
