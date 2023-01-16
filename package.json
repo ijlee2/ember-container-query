@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "build": "yarn workspace ember-container-query run build",
+    "build:deploy": "yarn workspaces run build",
     "changelog": "lerna-changelog",
     "lint": "yarn workspaces run lint",
     "lint:fix": "yarn workspaces run lint:fix",
