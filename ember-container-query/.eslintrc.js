@@ -45,25 +45,15 @@ module.exports = {
       files: [
         './.eslintrc.js',
         './.prettierrc.js',
-        './.stylelintrc.js',
         './.template-lintrc.js',
-        './ember-cli-build.js',
-        './index.js',
-        './testem.js',
+        './addon-main.js',
         './blueprints/*/index.js',
-        './config/**/*.js',
-        './tests/dummy/config/**/*.js',
       ],
       env: {
         browser: false,
         node: true,
       },
       extends: ['plugin:n/recommended'],
-    },
-    // Test files
-    {
-      files: ['tests/**/*-test.{js,ts}'],
-      extends: ['plugin:qunit/recommended'],
     },
   ],
 };
