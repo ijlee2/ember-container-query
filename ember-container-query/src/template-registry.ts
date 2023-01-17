@@ -8,9 +8,6 @@ export default interface EmberContainerQueryRegistry {
   ContainerQuery: typeof ContainerQueryComponent;
   'aspect-ratio': typeof AspectRatioHelper;
   'container-query': typeof ContainerQueryModifier;
-  'cq-aspect-ratio': typeof AspectRatioHelper;
-  'cq-height': typeof HeightHelper;
-  'cq-width': typeof WidthHelper;
   height: typeof HeightHelper;
   width: typeof WidthHelper;
 }

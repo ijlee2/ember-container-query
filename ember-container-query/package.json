@@ -89,9 +89,6 @@
     "app-js": {
       "./components/container-query.js": "./dist/_app_/components/container-query.js",
       "./helpers/aspect-ratio.js": "./dist/_app_/helpers/aspect-ratio.js",
-      "./helpers/cq-aspect-ratio.js": "./dist/_app_/helpers/cq-aspect-ratio.js",
-      "./helpers/cq-height.js": "./dist/_app_/helpers/cq-height.js",
-      "./helpers/cq-width.js": "./dist/_app_/helpers/cq-width.js",
       "./helpers/height.js": "./dist/_app_/helpers/height.js",
       "./helpers/width.js": "./dist/_app_/helpers/width.js",
       "./modifiers/container-query.js": "./dist/_app_/modifiers/container-query.js"
