@@ -18,9 +18,6 @@ export default {
     addon.publicEntrypoints([
       'components/container-query.js',
       'helpers/aspect-ratio.js',
-      'helpers/cq-aspect-ratio.js',
-      'helpers/cq-height.js',
-      'helpers/cq-width.js',
       'helpers/height.js',
       'helpers/width.js',
       'index.js',
@@ -34,9 +31,6 @@ export default {
     addon.appReexports([
       'components/container-query.js',
       'helpers/aspect-ratio.js',
-      'helpers/cq-aspect-ratio.js',
-      'helpers/cq-height.js',
-      'helpers/cq-width.js',
       'helpers/height.js',
       'helpers/width.js',
       'modifiers/container-query.js',
