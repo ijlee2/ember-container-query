@@ -138,9 +138,9 @@ jobs:
           - 'ember-lts-4.8'
           - 'ember-release'
           - 'ember-beta'
-          - 'ember-canary'
+          # - 'ember-canary'
           - 'embroider-safe'
-          # - 'embroider-optimized'
+          - 'embroider-optimized'
         device:
           - 'w1-h3'
           - 'w2-h3'
