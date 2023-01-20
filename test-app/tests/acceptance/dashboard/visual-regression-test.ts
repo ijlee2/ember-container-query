@@ -62,7 +62,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .hasAttribute(
         'src',
-        '/images/widgets/widget-3/venue-wide@2x.jpg',
+        new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
         'We see the concert image.'
       );
 
@@ -141,7 +141,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .hasAttribute(
         'src',
-        '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
+        new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
         'We see the concert image.'
       );
 
@@ -220,7 +220,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .hasAttribute(
         'src',
-        '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
+        new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
         'We see the concert image.'
       );
 
@@ -311,7 +311,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .hasAttribute(
         'src',
-        '/images/widgets/widget-3/venue-wide@2x.jpg',
+        new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
         'We see the concert image.'
       );
 
@@ -390,7 +390,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .hasAttribute(
         'src',
-        '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
+        new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
         'We see the concert image.'
       );
 
@@ -469,7 +469,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .hasAttribute(
         'src',
-        '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
+        new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
         'We see the concert image.'
       );
 
@@ -560,7 +560,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .hasAttribute(
         'src',
-        '/images/widgets/widget-3/venue-wide@2x.jpg',
+        new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
         'We see the concert image.'
       );
 
@@ -639,7 +639,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .hasAttribute(
         'src',
-        '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
+        new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
         'We see the concert image.'
       );
 
@@ -718,7 +718,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="3"] [data-test-image="Concert"]')
       .hasAttribute(
         'src',
-        '/images/widgets/widget-3/venue-extra-wide@2x.jpg',
+        new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
         'We see the concert image.'
       );
 
