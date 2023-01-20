@@ -1,3 +1,23 @@
+## 4.0.0-alpha.0 (2023-01-20)
+
+### Breaking Change
+* [#152](https://github.com/ijlee2/ember-container-query/pull/152) Removed the deprecated helpers ([@ijlee2](https://github.com/ijlee2))
+* [#151](https://github.com/ijlee2/ember-container-query/pull/151) Migrated to v2 addon format ([@ijlee2](https://github.com/ijlee2))
+
+### Enhancement
+* [#151](https://github.com/ijlee2/ember-container-query/pull/151) Migrated to v2 addon format ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#154](https://github.com/ijlee2/ember-container-query/pull/154) Updated development dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+* [#150](https://github.com/ijlee2/ember-container-query/pull/150) Removed ember-named-blocks-polyfill ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#149](https://github.com/ijlee2/ember-container-query/pull/149) Refactor types ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 3.2.0 (2023-01-05)
 
 ### Enhancement
