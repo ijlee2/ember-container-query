@@ -1,3 +1,12 @@
+## 4.0.0-alpha.1 (2023-01-20)
+
+#### Documentation
+* [#155](https://github.com/ijlee2/ember-container-query/pull/155) Weakened image source assertions ([@ijlee2](https://github.com/ijlee2))
+
+#### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 4.0.0-alpha.0 (2023-01-20)
 
 ### Breaking Change
