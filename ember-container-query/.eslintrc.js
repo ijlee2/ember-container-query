@@ -46,8 +46,9 @@ module.exports = {
         './.eslintrc.js',
         './.prettierrc.js',
         './.template-lintrc.js',
-        './addon-main.js',
+        './addon-main.cjs',
         './blueprints/*/index.js',
+        './rollup.config.mjs',
       ],
       env: {
         browser: false,

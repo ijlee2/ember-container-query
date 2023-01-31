@@ -21,15 +21,25 @@
   "author": "Isaac J. Lee",
   "exports": {
     ".": "./dist/index.js",
-    "./*": "./dist/*.js",
-    "./addon-main.js": "./addon-main.js"
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./addon-main.js": "./addon-main.cjs"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/*"
+      ]
+    }
   },
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
   "files": [
-    "addon-main.js",
+    "addon-main.cjs",
     "dist"
   ],
   "scripts": {
@@ -38,8 +48,8 @@
     "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
     "lint:hbs": "ember-template-lint .",
     "lint:hbs:fix": "ember-template-lint . --fix",
-    "lint:js": "eslint . --cache --ext=.js,.mjs,.ts",
-    "lint:js:fix": "eslint . --ext=.js,.mjs,.ts --fix",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
     "lint:types": "glint",
     "prepack": "rollup --config",
     "start": "rollup --config --watch",
@@ -94,7 +104,7 @@
       "./helpers/width.js": "./dist/_app_/helpers/width.js",
       "./modifiers/container-query.js": "./dist/_app_/modifiers/container-query.js"
     },
-    "main": "addon-main.js",
+    "main": "addon-main.cjs",
     "type": "addon",
     "version": 2
   }
