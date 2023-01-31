@@ -21,15 +21,25 @@
   "author": "Isaac J. Lee",
   "exports": {
     ".": "./dist/index.js",
-    "./*": "./dist/*.js",
-    "./addon-main.js": "./addon-main.js"
+    "./*": {
+      "default": "./dist/*.js",
+      "types": "./dist/*.d.ts"
+    },
+    "./addon-main.js": "./addon-main.cjs"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/*"
+      ]
+    }
   },
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
   "files": [
-    "addon-main.js",
+    "addon-main.cjs",
     "dist"
   ],
   "scripts": {
@@ -94,7 +104,7 @@
       "./helpers/width.js": "./dist/_app_/helpers/width.js",
       "./modifiers/container-query.js": "./dist/_app_/modifiers/container-query.js"
     },
-    "main": "addon-main.js",
+    "main": "addon-main.cjs",
     "type": "addon",
     "version": 2
   }
