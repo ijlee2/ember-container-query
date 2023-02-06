@@ -1,3 +1,12 @@
+## 4.0.0-alpha.2 (2023-02-06)
+
+### Bug Fix
+* [#157](https://github.com/ijlee2/ember-container-query/pull/157) Downstreamed changes from ember-codemod-v1-to-v2 ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 4.0.0-alpha.1 (2023-01-20)
 
 #### Documentation
