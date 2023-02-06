@@ -1,0 +1,19 @@
+{{page-title "Products"}}
+
+<Ui::Page @title="Products">
+  <div local-class="products-with-details">
+    <div local-class="list">
+      {{#each @model as |product|}}
+        <Products::Product::Card @product={{product}} />
+      {{else}}
+        <p>
+          No products found.
+        </p>
+      {{/each}}
+    </div>
+
+    <div local-class="product-details">
+      {{outlet}}
+    </div>
+  </div>
+</Ui::Page>

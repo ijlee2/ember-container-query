@@ -1,0 +1,12 @@
+{{#if this.isTestEnvironment}}
+  <div local-class="placeholder-image"></div>
+
+{{else}}
+  <img
+    alt=""
+    local-class="image"
+    role="presentation"
+    src={{@src}}
+  />
+
+{{/if}}
