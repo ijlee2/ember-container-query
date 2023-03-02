@@ -7,10 +7,10 @@
     "actions";
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto;
-  height: calc(100% - 2rem);
+  height: calc(100% - 2rem) !important;
   padding: 1rem;
   position: relative;
-  width: calc(100% - 2rem);
+  width: calc(100% - 2rem) !important;
 }
 
 .container:hover {
