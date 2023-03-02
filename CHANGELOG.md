@@ -1,3 +1,16 @@
+## 4.0.0-alpha.3 (2023-03-02)
+
+### Internal
+* [#162](https://github.com/ijlee2/ember-container-query/pull/162) Updated ember-modifier to v4 ([@ijlee2](https://github.com/ijlee2))
+* [#161](https://github.com/ijlee2/ember-container-query/pull/161) Updated development dependencies to the latest version ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#160](https://github.com/ijlee2/ember-container-query/pull/160) Investigated how styles are applied in the consuming app ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 4.0.0-alpha.2 (2023-02-06)
 
 ### Bug Fix
