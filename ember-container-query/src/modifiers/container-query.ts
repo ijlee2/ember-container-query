@@ -1,5 +1,6 @@
 import { registerDestructor } from '@ember/destroyable';
 import { action } from '@ember/object';
+import type Owner from '@ember/owner';
 import { debounce as _debounce } from '@ember/runloop';
 import { inject as service } from '@ember/service';
 import Modifier, { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
@@ -67,10 +68,7 @@ export default class ContainerQueryModifier<
     return this._named.features ?? ({} as Features<T>);
   }
 
-  constructor(
-    owner: unknown,
-    args: ArgsFor<ContainerQueryModifierSignature<T>>
-  ) {
+  constructor(owner: Owner, args: ArgsFor<ContainerQueryModifierSignature<T>>) {
     super(owner, args);
 
     registerDestructor(this, () => {
