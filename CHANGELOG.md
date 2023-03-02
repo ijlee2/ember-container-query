@@ -1,3 +1,15 @@
+## 4.0.0-alpha.4 (2023-03-02)
+
+### Breaking Change
+* [#163](https://github.com/ijlee2/ember-container-query/pull/163) Remove ember-test-selectors from dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#163](https://github.com/ijlee2/ember-container-query/pull/163) Remove ember-test-selectors from dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 4.0.0-alpha.3 (2023-03-02)
 
 ### Internal
