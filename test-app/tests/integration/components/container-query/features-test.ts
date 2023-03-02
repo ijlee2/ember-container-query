@@ -44,6 +44,7 @@ module('Integration | Component | container-query', function (hooks) {
         >
           <ContainerQuery
             @features={{this.features}}
+            data-test-container-query
             as |CQ|
           >
             <p data-test-feature="small">{{CQ.features.small}}</p>
@@ -156,6 +157,7 @@ module('Integration | Component | container-query', function (hooks) {
               ratio-type-B=(aspect-ratio min=0.5 max=1.5)
               ratio-type-C=(aspect-ratio min=1.25 max=2)
             }}
+            data-test-container-query
             as |CQ|
           >
             <p data-test-feature="small">{{CQ.features.small}}</p>
@@ -283,6 +285,7 @@ module('Integration | Component | container-query', function (hooks) {
         >
           <ContainerQuery
             @features={{this.features}}
+            data-test-container-query
             as |CQ|
           >
             <p data-test-feature="small">{{CQ.features.small}}</p>

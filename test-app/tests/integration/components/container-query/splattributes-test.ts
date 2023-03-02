@@ -31,6 +31,7 @@ module('Integration | Component | container-query', function (hooks) {
               ratio-type-C=(aspect-ratio min=1.25 max=2)
             }}
             class="unique-class-name"
+            data-test-container-query
             as |CQ|
           >
             <p data-test-feature="small">{{CQ.features.small}}</p>
