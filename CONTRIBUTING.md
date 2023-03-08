@@ -8,7 +8,7 @@ Here are some guidelines to help you and everyone else.
 ## Setup
 
 <details>
-<summary>Installation</summary>
+<summary>Install the app</summary>
 
 1. Fork and clone this repo.
 
@@ -32,47 +32,41 @@ Here are some guidelines to help you and everyone else.
 
 
 <details>
-<summary>Running demo app</summary>
+<summary>Run the demo app</summary>
 
 1. After following the installation step, you can run the app.
 
     ```bash
-    ember serve
+    yarn start
     ```
 
-1. Open the app at [http://localhost:4200](http://localhost:4200).
+1. Once the app has finished building, visit [http://localhost:4200](http://localhost:4200).
 
 </details>
 
 
 <details>
-<summary>Linting</summary>
+<summary>Lint files</summary>
 
-1. When you write code, please check dependencies, template files, and JavaScript files often.
+1. When you write code, please check that it meets all linting rules.
 
     ```bash
     yarn lint
     ```
 
-    This command will lint files and dependencies in parallel. You can run `yarn lint:fix` to fix HBS and JS files.
+1. You can run `yarn lint:fix` to automatically fix linting errors in all packages.
 
 </details>
 
 
 <details>
-<summary>Running tests - very important ⚠️</summary>
+<summary>Run tests</summary>
 
-1. The setup is quite different from most addons. We check the addon and demo app at _9_ various widths and heights.
-
-1. When you write code, please check both addon and demo app often.
+1. When you write code, please check that all tests continue to pass.
 
     ```bash
     yarn test
     ```
-
-1. A couple of caveats. `yarn test --server` may result in failed tests due to inexact test window size. Using `--filter` may also result in failed tests. I use the filters for responsive testing so please don't overwrite them with your own.
-
-1. When you write code, you don't need to check addon compatibility. I suggest leaving this to CI. For every PR, the CI will lint files and dependencies, run tests, and check compatible versions—all in parallel! 💯
 
 </details>
 
