@@ -1,0 +1,14 @@
+<div
+  local-class="image-container"
+  {{container-query debounce=300 onQuery=this.setImageSource}}
+>
+  {{#if this.imageSource}}
+    <img
+      alt=""
+      data-test-image="Concert"
+      local-class="image"
+      role="presentation"
+      src={{this.imageSource}}
+    />
+  {{/if}}
+</div>

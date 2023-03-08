@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions {
+  margin-top: 0.4rem;
+}
+
+.tour-schedule {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+}

@@ -1,0 +1,55 @@
+.application {
+  display: grid;
+  grid-template-areas:
+    ". header ."
+    "main main main"
+    ". footer .";
+  grid-template-columns: 1fr minmax(auto, 75rem) 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.header {
+  grid-area: header;
+  min-height: 2.75rem;
+  overflow-x: auto;
+}
+
+.main {
+  background-color: rgb(255 255 255 / 4.5%);
+  border-bottom: 0.0625rem solid rgb(211 211 211 / 15%);
+  border-top: 0.0625rem solid rgb(211 211 211 / 15%);
+  display: flex;
+  flex: 1;
+  grid-area: main;
+  justify-content: center;
+  overflow-y: hidden;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  max-width: 75rem;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.footer {
+  align-items: center;
+  display: flex;
+  grid-area: footer;
+  justify-content: center;
+  min-height: 2.375rem;
+}
+
+.copyright {
+  color: rgb(128 191 255 / 90%);
+  font-size: 0.75rem;
+  padding: 0.75rem 0;
+}
+
+.copyright .link {
+  color: rgb(128 191 255 / 90%);
+}

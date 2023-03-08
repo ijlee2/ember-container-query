@@ -1,0 +1,27 @@
+{{page-title "Page Not Found"}}
+
+<Ui::Page @title="404">
+  <p>Feeling lost? Un<em>contained</em>?</p>
+  <p>Don't worry. We all have our off days.</p>
+
+  <div local-class="animation">
+    <ContainerQuery
+      @features={{hash small=(width max=350)}}
+      as |CQ|
+    >
+      <div
+        local-class="metaphor {{if
+          CQ.features.small
+          'small-layout'
+        }}"
+      >
+        <div local-class="mental-block">
+        </div>
+
+        <div aria-hidden="true" local-class="the-next-idea">
+          ember-container-query
+        </div>
+      </div>
+    </ContainerQuery>
+  </div>
+</Ui::Page>

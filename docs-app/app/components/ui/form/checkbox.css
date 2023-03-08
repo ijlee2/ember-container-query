@@ -1,0 +1,37 @@
+.checkbox {
+  align-items: center;
+  background-color: white;
+  border: 0.125rem solid #ffd54f;
+  cursor: pointer;
+  display: flex;
+  height: 1rem;
+  justify-content: center;
+  position: relative;
+  width: 1rem;
+}
+
+.checkbox:focus {
+  background-color: #ffecb3;
+  outline: 0;
+}
+
+.checkbox:not(:focus) {
+  border-color: transparent;
+}
+
+.checkbox.is-checked {
+  background-color: #1976d2;
+}
+
+.checkbox.is-disabled {
+  background-color: #b2c9d4;
+  cursor: not-allowed;
+}
+
+.checkmark-icon {
+  color: white;
+}
+
+.checkbox.is-disabled .checkmark-icon {
+  color: #546e7a;
+}

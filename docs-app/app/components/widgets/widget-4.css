@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "memo-highlight"
+    "actions";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr 2.5rem;
+  height: 100%;
+}
+
+.header {
+  grid-area: header;
+}
+
+.memo-highlight {
+  grid-area: memo-highlight;
+  overflow: hidden;
+}
+
+.actions {
+  align-items: flex-end;
+  display: flex;
+  grid-area: actions;
+  justify-content: flex-end;
+}

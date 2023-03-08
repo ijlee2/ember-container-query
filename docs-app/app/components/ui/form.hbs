@@ -1,0 +1,55 @@
+<form
+  aria-describedby={{if
+    @instructions
+    (concat this.formId "-instructions")
+  }}
+  aria-labelledby={{if @title (concat this.formId "-title")}}
+  data-test-form={{or @title ""}}
+  local-class="form"
+  {{on "submit" this.submitForm}}
+>
+  <Ui::Form::Information
+    @formId={{this.formId}}
+    @instructions={{@instructions}}
+    @title={{@title}}
+  />
+
+  <ContainerQuery
+    @features={{hash wide=(width min=480)}}
+    as |CQ|
+  >
+    {{yield
+      (hash
+        Checkbox=(component
+          "ui/form/checkbox"
+          changeset=this.changeset
+          isInline=true
+          isWide=CQ.features.wide
+          onUpdate=this.updateChangeset
+        )
+        Input=(component
+          "ui/form/input"
+          changeset=this.changeset
+          isWide=CQ.features.wide
+          onUpdate=this.updateChangeset
+        )
+        Textarea=(component
+          "ui/form/textarea"
+          changeset=this.changeset
+          isWide=CQ.features.wide
+          onUpdate=this.updateChangeset
+        )
+      )
+    }}
+  </ContainerQuery>
+
+  <div local-class="actions">
+    <button
+      data-test-button="Submit"
+      local-class="submit-button"
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
+</form>

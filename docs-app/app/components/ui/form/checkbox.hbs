@@ -1,0 +1,44 @@
+<Ui::Form::Field
+  @errorMessage={{this.errorMessage}}
+  @isInline={{@isInline}}
+  @isWide={{@isWide}}
+>
+  <:label as |l|>
+    <label data-test-label id="{{l.inputId}}-label">
+      {{@label}}
+
+      {{#if @isRequired}}
+        <span aria-hidden="true">
+          *
+        </span>
+      {{/if}}
+    </label>
+  </:label>
+
+  <:field as |f|>
+    <span
+      aria-checked={{if this.isChecked "true" "false"}}
+      aria-disabled={{if @isDisabled "true" "false"}}
+      aria-labelledby="{{f.inputId}}-label"
+      aria-readonly={{if @isReadOnly "true" "false"}}
+      aria-required={{if @isRequired "true" "false"}}
+      data-test-field={{@label}}
+      local-class="checkbox
+        {{if this.isChecked 'is-checked'}}
+        {{if (or @isDisabled @isReadOnly) 'is-disabled'}}
+      "
+      role="checkbox"
+      tabindex={{unless @isDisabled "0"}}
+      {{on "click" this.updateValue}}
+      {{on "keypress" this.updateValueByPressingSpace}}
+    >
+      {{#if this.isChecked}}
+        {{svg-jar
+          "check"
+          aria-hidden="true"
+          local-class="checkmark-icon"
+        }}
+      {{/if}}
+    </span>
+  </:field>
+</Ui::Form::Field>

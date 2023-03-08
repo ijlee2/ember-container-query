@@ -1,0 +1,33 @@
+<Ui::Form::Field
+  @errorMessage={{this.errorMessage}}
+  @isWide={{@isWide}}
+>
+  <:label as |l|>
+    <label data-test-label for={{l.inputId}}>
+      {{@label}}
+
+      {{#if @isRequired}}
+        <span aria-hidden="true">
+          *
+        </span>
+      {{/if}}
+    </label>
+  </:label>
+
+  <:field as |f|>
+    <textarea
+      data-test-field={{@label}}
+      disabled={{@isDisabled}}
+      id={{f.inputId}}
+      local-class="textarea
+        {{if (or @isDisabled @isReadOnly) 'is-disabled'}}
+      "
+      placeholder={{@placeholder}}
+      readonly={{@isReadOnly}}
+      required={{@isRequired}}
+      rows="4"
+      value={{this.value}}
+      {{on "input" this.updateValue}}
+    ></textarea>
+  </:field>
+</Ui::Form::Field>

@@ -1,0 +1,150 @@
+{{page-title "Album"}}
+
+<Ui::Page @title={{@model.name}}>
+  <ContainerQuery
+    @features={{hash
+      large=(width min=960)
+      tall=(height min=400)
+    }}
+    as |CQ|
+  >
+    {{#let
+      (and CQ.features.large CQ.features.tall)
+      as |showLyrics|
+    }}
+      <div
+        local-class="container {{if showLyrics 'with-lyrics'}}"
+      >
+        <div local-class="album-summary">
+          <div>
+            by
+            <strong>{{@model.band.name}}</strong>
+          </div>
+
+          <div>
+            {{@model.publicationDate}}
+            ·
+            {{@model.tracks.length}}
+            songs
+            {{#if @model.tracks}}
+              ·
+              {{@model.totalLengthInMinutes}}
+              minutes
+            {{/if}}
+          </div>
+        </div>
+
+        <div
+          local-class="album-tracks"
+          tabindex={{if showLyrics "0"}}
+        >
+          <Tracks @tracks={{@model.tracks}} />
+        </div>
+
+        {{#if showLyrics}}
+          <div
+            data-test-track-lyrics
+            local-class="track-lyrics"
+            tabindex="0"
+          >
+            <p local-class="heading-2">Lyrics</p>
+
+            <div>
+              <p local-class="heading-3">Verse 1</p>
+              <p local-class="lyrics">
+                Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
+              </p>
+              <p local-class="lyrics">
+                Feugiat in ante metus dictum at. Donec ac odio
+                tempor orci dapibus. Turpis in eu mi bibendum.
+              </p>
+              <p local-class="lyrics">
+                Aliquet nibh praesent tristique magna sit amet.
+                Risus ultricies tristique nulla aliquet enim
+                tortor.
+              </p>
+            </div>
+
+            <div>
+              <p local-class="heading-3">Chorus</p>
+              <p local-class="lyrics">
+                Aliquet eget sit amet tellus cras adipiscing. ♫
+              </p>
+              <p local-class="lyrics">
+                Diam vel quam elementum pulvinar etiam non quam
+                lacus suspendisse.
+              </p>
+            </div>
+
+            <div>
+              <p local-class="heading-3">Verse 2</p>
+              <p local-class="lyrics">
+                Arcu dui vivamus arcu felis bibendum ut
+                tristique. Est pellentesque elit ullamcorper
+                dignissim cras.
+              </p>
+              <p local-class="lyrics">
+                In mollis nunc sed id semper risus in hendrerit.
+                Sit amet aliquam id diam maecenas ultricies.
+              </p>
+              <p local-class="lyrics">
+                Massa sed elementum tempus egestas sed. At
+                ultrices mi tempus imperdiet nulla malesuada.
+              </p>
+            </div>
+
+            <div>
+              <p local-class="heading-3">Chorus</p>
+              <p local-class="lyrics">
+                Aliquet eget sit amet tellus cras adipiscing. ♫
+              </p>
+              <p local-class="lyrics">
+                Mi ipsum faucibus vitae aliquet nec ullamcorper.
+                Purus viverra accumsan in nisl.
+              </p>
+            </div>
+
+            <div>
+              <p local-class="heading-3">Bridge</p>
+              <p local-class="lyrics">
+                Maecenas sed enim ut sem viverra aliquet.
+              </p>
+              <p local-class="lyrics">
+                Vitae suscipit tellus mauris a diam maecenas
+                sed.
+              </p>
+              <p local-class="lyrics">
+                At erat pellentesque adipiscing commodo elit at
+                imperdiet.
+              </p>
+            </div>
+
+            <div>
+              <p local-class="heading-3">Chorus</p>
+              <p local-class="lyrics">
+                Aliquet eget sit amet tellus cras adipiscing. ♫
+              </p>
+              <p local-class="lyrics">
+                Imperdiet proin fermentum leo vel orci porta non
+                pulvinar neque. Vulputate odio ut enim blandit.
+              </p>
+            </div>
+
+            <div>
+              <p local-class="heading-3">Outro</p>
+              <p local-class="lyrics">
+                Aliquet lectus proin nibh nisl condimentum.
+              </p>
+              <p local-class="lyrics">
+                Ut aliquam purus sit amet luctus venenatis
+                lectus magna.
+              </p>
+            </div>
+          </div>
+        {{/if}}
+      </div>
+    {{/let}}
+  </ContainerQuery>
+</Ui::Page>

@@ -1,0 +1,17 @@
+<section local-class="container">
+  <header local-class="header">
+    <h2>Widget 3</h2>
+
+    <div local-class="actions">
+      <a data-test-link="All tours" href="#">
+        All tours
+      </a>
+    </div>
+  </header>
+
+  <div data-test-tour-schedule local-class="tour-schedule">
+    <Widgets::Widget-3::TourSchedule
+      @concert={{this.concertData}}
+    />
+  </div>
+</section>

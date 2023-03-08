@@ -1,0 +1,46 @@
+.actions {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  align-items: center;
+  border: 0;
+  border-radius: 50%;
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 2rem;
+}
+
+.icon {
+  color: #03a9f4;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.icon-comment {
+  transform: translate(0, 0) scale(-1, 1);
+}
+
+.icon-repost {
+  transform: translate(0, 0) scale(-1, 1) rotate(90deg);
+}
+
+.actions.minimal-layout .button {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.actions.minimal-layout .button:hover {
+  background: transparent;
+  transition: none;
+}
+
+.actions.minimal-layout .icon {
+  height: 0.875rem;
+  width: 0.875rem;
+}

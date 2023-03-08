@@ -1,0 +1,15 @@
+<nav aria-label={{@name}} data-test-nav={{@name}}>
+  <ul local-class="list">
+    {{#each @menuItems as |menuItem|}}
+      <li local-class="item">
+        <LinkTo
+          @route={{menuItem.route}}
+          data-test-link={{menuItem.label}}
+          local-class="link"
+        >
+          {{menuItem.label}}
+        </LinkTo>
+      </li>
+    {{/each}}
+  </ul>
+</nav>

@@ -1,0 +1,46 @@
+.container {
+  background: linear-gradient(36deg, rgb(179 229 252 / 55%) 35%, rgb(230 255 255 / 82.5%) 80%);
+  border-radius: 0.1875rem;
+  color: #455a64;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 1.2rem);
+  padding: 0.6rem;
+  width: calc(100% - 1.2rem);
+}
+
+.header-container {
+  margin-bottom: 0.75rem;
+}
+
+.body-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.actions-container {
+  height: 1.75rem;
+  margin-top: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.container[data-container-query-short] {
+  height: calc(100% - 1rem);
+  padding: 0.5rem;
+  width: calc(100% - 1rem);
+}
+
+.container[data-container-query-short] .header-container {
+  margin-bottom: 0.5rem;
+}
+
+.container[data-container-query-short] .body-container {
+  max-height: 9rem;
+}
+
+.container[data-container-query-small] .actions-container,
+.container[data-container-query-short] .actions-container {
+  height: 1rem;
+  margin-top: 0.25rem;
+  padding: 0 0.25rem;
+}

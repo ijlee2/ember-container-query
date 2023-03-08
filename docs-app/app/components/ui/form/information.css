@@ -1,0 +1,16 @@
+.container {
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.instructions {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.25rem;
+  margin-bottom: 0.5rem;
+}

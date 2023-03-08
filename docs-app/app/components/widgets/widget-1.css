@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.items {
+  display: grid;
+  flex: 1;
+  grid-gap: 0.6rem;
+  overflow: hidden;
+}
+
+.item-1 {
+  grid-area: item-1;
+}
+
+.item-2 {
+  grid-area: item-2;
+}
+
+.item-3 {
+  grid-area: item-3;
+}
+
+.container[data-container-query-tall] .items {
+  grid-template-areas:
+    "item-1"
+    "item-2"
+    "item-3";
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.container[data-container-query-square] .items {
+  grid-template-areas:
+    "item-1 item-2"
+    "item-3 item-3";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.container[data-container-query-wide] .items {
+  grid-template-areas: "item-1 item-2 item-3";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+}

@@ -1,0 +1,47 @@
+<div
+  data-test-memo-actions
+  local-class="actions {{if
+    (or @cqFeatures.small @cqFeatures.short)
+    'minimal-layout'
+  }}"
+>
+  <button
+    aria-label="Comment"
+    local-class="button"
+    type="button"
+  >
+    {{svg-jar
+      "message-processing-outline"
+      aria-hidden="true"
+      local-class="icon icon-comment"
+    }}
+  </button>
+
+  <button
+    aria-label="Repost"
+    local-class="button"
+    type="button"
+  >
+    {{svg-jar
+      "sync"
+      aria-hidden="true"
+      local-class="icon icon-repost"
+    }}
+  </button>
+
+  <button aria-label="Like" local-class="button" type="button">
+    {{svg-jar
+      "heart-outline"
+      aria-hidden="true"
+      local-class="icon"
+    }}
+  </button>
+
+  <button aria-label="Share" local-class="button" type="button">
+    {{svg-jar
+      "share-variant-outline"
+      aria-hidden="true"
+      local-class="icon"
+    }}
+  </button>
+</div>

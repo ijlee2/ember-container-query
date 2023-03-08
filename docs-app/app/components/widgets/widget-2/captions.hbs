@@ -1,0 +1,110 @@
+<ContainerQuery
+  @features={{hash large=(width min=320) tall=(height min=80)}}
+  as |CQ|
+>
+  <div
+    local-class="container {{unless CQ.features.tall 'flat'}}"
+  >
+    {{#if this.summary}}
+      <div
+        local-class="summary {{if
+          CQ.features.large
+          'horizontal-layout'
+        }}"
+        tabindex="0"
+      >
+        <h3
+          data-test-field="Music Format"
+          local-class="music-format {{unless
+            CQ.features.large
+            'small-font-size'
+          }}"
+        >
+          <span local-class="marker">
+            {{svg-jar
+              "stop"
+              aria-hidden="true"
+              style=(concat
+                "color: " this.summary.markerColor ";"
+              )
+            }}
+          </span>
+
+          {{this.summary.musicFormat}}
+        </h3>
+
+        <div
+          data-test-field="Annual Revenue"
+          local-class="annual-revenue"
+        >
+          {{#if (or CQ.features.tall CQ.features.large)}}
+            <span>Annual revenue:</span>
+          {{/if}}
+
+          <span local-class="highlight">
+            {{this.summary.averageRevenue}}
+          </span>
+        </div>
+
+        <div
+          data-test-field="Relevant Years"
+          local-class="relevant-years"
+        >
+          {{#if (or CQ.features.tall CQ.features.large)}}
+            <span>Relevant years:</span>
+          {{/if}}
+
+          <span local-class="highlight">
+            {{this.summary.relevantYears.min}}
+            -
+            {{this.summary.relevantYears.max}}
+          </span>
+        </div>
+      </div>
+
+      {{#if this.canShowPreviousButton}}
+        <button
+          aria-label="Previous"
+          data-test-button="Previous"
+          local-class="previous-button"
+          type="button"
+          {{on "click" (fn this.showNextSummary -1)}}
+        >
+          {{#if CQ.features.tall}}
+            Previous
+
+          {{else}}
+            {{svg-jar
+              "chevron-left"
+              aria-hidden="true"
+              local-class="icon"
+            }}
+
+          {{/if}}
+        </button>
+      {{/if}}
+
+      {{#if this.canShowNextButton}}
+        <button
+          aria-label="Next"
+          data-test-button="Next"
+          local-class="next-button"
+          type="button"
+          {{on "click" (fn this.showNextSummary 1)}}
+        >
+          {{#if CQ.features.tall}}
+            Next
+
+          {{else}}
+            {{svg-jar
+              "chevron-right"
+              aria-hidden="true"
+              local-class="icon"
+            }}
+
+          {{/if}}
+        </button>
+      {{/if}}
+    {{/if}}
+  </div>
+</ContainerQuery>

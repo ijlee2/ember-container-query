@@ -1,0 +1,20 @@
+.list {
+  column-gap: 0.5rem;
+  display: grid;
+  grid-auto-flow: column;
+  row-gap: 0.25rem;
+}
+
+.item {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  min-height: 1.5rem;
+  word-break: break-word;
+}
+
+.icon-explicit {
+  color: rgb(247 252 251 / 90%);
+  flex-shrink: 0;
+  margin-left: 0.25rem;
+}

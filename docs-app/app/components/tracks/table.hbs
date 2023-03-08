@@ -1,0 +1,29 @@
+<table data-test-table="Tracks">
+  <thead>
+    <tr>
+      <th local-class="track-number">#</th>
+      <th local-class="track-name">Title</th>
+      <th local-class="track-length">Length</th>
+      <th local-class="track-is-explicit">Explicit</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each @tracks as |track index|}}
+      <tr data-test-row>
+        <td>
+          {{add index 1}}
+        </td>
+        <td data-test-column="Title">
+          {{track.name}}
+        </td>
+        <td data-test-column="Length" align="right">
+          {{track.length}}
+        </td>
+        <td data-test-column="Explicit" align="center">
+          {{if track.isExplicit "Yes"}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

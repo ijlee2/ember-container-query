@@ -1,0 +1,56 @@
+.header {
+  display: grid;
+  grid-gap: 0.25rem 0;
+  grid-template-areas:
+    "avatar-container name"
+    "avatar-container metadata";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+}
+
+.avatar-container {
+  display: grid;
+  grid-area: avatar-container;
+  height: 2rem;
+  margin-right: 0.5rem;
+  width: 2rem;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  grid-area: name;
+  margin: 0;
+}
+
+.metadata {
+  font-size: 0.8rem;
+  grid-area: metadata;
+}
+
+.handle {
+  color: #03a9f4;
+  text-decoration: none;
+}
+
+.header.horizontal-layout {
+  grid-gap: 0 0.6rem;
+  grid-template-areas: "name metadata";
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr;
+}
+
+.header.minimal-layout .name {
+  font-size: 0.8rem;
+}
+
+.header.minimal-layout .metadata {
+  font-size: 0.75rem;
+}

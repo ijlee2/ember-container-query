@@ -1,0 +1,29 @@
+<div
+  local-class="container
+    {{if @isInline 'is-inline'}}
+    {{if @isWide 'is-wide'}}
+    {{unless @errorMessage 'no-feedback'}}
+  "
+>
+  <div local-class="label">
+    {{yield (hash inputId=this.inputId) to="label"}}
+  </div>
+
+  <div local-class="field">
+    {{yield (hash inputId=this.inputId) to="field"}}
+  </div>
+
+  {{#if @errorMessage}}
+    <div local-class="feedback is-error">
+      {{svg-jar "alert" aria-hidden="true"}}
+
+      <span
+        data-test-feedback
+        local-class="message"
+        role="alert"
+      >
+        {{@errorMessage}}
+      </span>
+    </div>
+  {{/if}}
+</div>
