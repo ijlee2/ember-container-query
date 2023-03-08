@@ -12,8 +12,8 @@ env:
   PERCY_PARALLEL_TOTAL: 9
 
 jobs:
-  build-test-app:
-    name: Build test-app
+  build-docs-app:
+    name: Build docs-app for testing
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -29,15 +29,15 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build test-app
+      - name: Build docs-app
         run: yarn build:test
-        working-directory: test-app
+        working-directory: docs-app
 
-      - name: Upload test-app
+      - name: Upload docs-app
         uses: actions/upload-artifact@v3
         with:
           name: dist
-          path: test-app/dist
+          path: docs-app/dist
 
 
   lint:
@@ -61,9 +61,9 @@ jobs:
         run: yarn lint
 
 
-  test-addon:
-    name: Test addon
-    needs: [build-test-app]
+  test-docs-app:
+    name: Test docs-app
+    needs: [build-docs-app]
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -110,15 +110,15 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Download test-app
+      - name: Download docs-app
         uses: actions/download-artifact@v3
         with:
           name: dist
-          path: test-app/dist
+          path: docs-app/dist
 
       - name: Run tests
-        run: npx percy exec -- yarn test:ember --path=dist --test-port=${{ matrix.test-port }}
-        working-directory: test-app
+        run: npx percy exec -- yarn test:device --path=dist --test-port=${{ matrix.test-port }}
+        working-directory: docs-app
         env:
           DEVICE: ${{ matrix.device }}
           PERCY_PARALLEL_NONCE: ${{ env.PERCY_PARALLEL_NONCE }}
@@ -126,32 +126,9 @@ jobs:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
 
-  test-compatibility:
-    name: Test compatibility
+  test-addon:
+    name: Test addon
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        scenario:
-          - 'ember-lts-3.28'
-          - 'ember-lts-4.4'
-          - 'ember-lts-4.8'
-          - 'ember-release'
-          - 'ember-beta'
-          # - 'ember-canary'
-          - 'embroider-safe'
-          # - 'embroider-optimized'
-        device:
-          - 'w1-h3'
-          - 'w2-h3'
-          - 'w3-h3'
-        include:
-          - device: 'w1-h3'
-            test-port: 7363
-          - device: 'w2-h3'
-            test-port: 7364
-          - device: 'w3-h3'
-            test-port: 7365
     timeout-minutes: 5
     steps:
       - name: Check out a copy of the repo
@@ -166,9 +143,40 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      # Test compatibility without Percy
       - name: Run tests
-        run: yarn test:ember-compatibility ${{ matrix.scenario }} --- yarn test:ember --test-port=${{ matrix.test-port }}
+        run: yarn test
         working-directory: test-app
-        env:
-          DEVICE: ${{ matrix.device }}
+
+
+  test-addon-compatibility:
+    name: Test addon compatibility
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario:
+          - 'ember-lts-3.28'
+          - 'ember-lts-4.4'
+          - 'ember-lts-4.8'
+          - 'ember-release'
+          - 'ember-beta'
+          - 'ember-canary'
+          - 'embroider-safe'
+          - 'embroider-optimized'
+    timeout-minutes: 5
+    steps:
+      - name: Check out a copy of the repo
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          cache: 'yarn'
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run tests
+        run: yarn test:ember-compatibility ${{ matrix.scenario }} --- yarn test
+        working-directory: test-app
