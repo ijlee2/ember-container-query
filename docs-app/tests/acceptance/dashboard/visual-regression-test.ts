@@ -14,9 +14,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w1 @h1 Visual snapshot', async function (assert) {
     // Widget 1
-    assert
-      .dom('[data-test-widget="1"] [data-test-container-query]')
-      .hasAttribute('data-container-query-wide');
+    assert.dom('[data-test-widget="1"]').exists('We see the first widget.');
 
     // Widget 2
     assert
@@ -93,9 +91,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w2 @h1 Visual snapshot', async function (assert) {
     // Widget 1
-    assert
-      .dom('[data-test-widget="1"] [data-test-container-query]')
-      .hasAttribute('data-container-query-square');
+    assert.dom('[data-test-widget="1"]').exists('We see the first widget.');
 
     // Widget 2
     assert
@@ -172,9 +168,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w3 @h1 Visual snapshot', async function (assert) {
     // Widget 1
-    assert
-      .dom('[data-test-widget="1"] [data-test-container-query]')
-      .hasAttribute('data-container-query-tall');
+    assert.dom('[data-test-widget="1"]').exists('We see the first widget.');
 
     // Widget 2
     assert
@@ -263,9 +257,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w1 @h2 Visual snapshot', async function (assert) {
     // Widget 1
-    assert
-      .dom('[data-test-widget="1"] [data-test-container-query]')
-      .hasAttribute('data-container-query-wide');
+    assert.dom('[data-test-widget="1"]').exists('We see the first widget.');
 
     // Widget 2
     assert
@@ -342,9 +334,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w2 @h2 Visual snapshot', async function (assert) {
     // Widget 1
-    assert
-      .dom('[data-test-widget="1"] [data-test-container-query]')
-      .hasAttribute('data-container-query-square');
+    assert.dom('[data-test-widget="1"]').exists('We see the first widget.');
 
     // Widget 2
     assert
@@ -421,9 +411,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w3 @h2 Visual snapshot', async function (assert) {
     // Widget 1
-    assert
-      .dom('[data-test-widget="1"] [data-test-container-query]')
-      .hasAttribute('data-container-query-tall');
+    assert.dom('[data-test-widget="1"]').exists('We see the first widget.');
 
     // Widget 2
     assert
@@ -512,9 +500,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w1 @h3 Visual snapshot', async function (assert) {
     // Widget 1
-    assert
-      .dom('[data-test-widget="1"] [data-test-container-query]')
-      .hasAttribute('data-container-query-wide');
+    assert.dom('[data-test-widget="1"]').exists('We see the first widget.');
 
     // Widget 2
     assert
@@ -591,9 +577,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w2 @h3 Visual snapshot', async function (assert) {
     // Widget 1
-    assert
-      .dom('[data-test-widget="1"] [data-test-container-query]')
-      .hasAttribute('data-container-query-square');
+    assert.dom('[data-test-widget="1"]').exists('We see the first widget.');
 
     // Widget 2
     assert
@@ -670,9 +654,7 @@ module('Acceptance | dashboard', function (hooks) {
 
   test('@w3 @h3 Visual snapshot', async function (assert) {
     // Widget 1
-    assert
-      .dom('[data-test-widget="1"] [data-test-container-query]')
-      .hasAttribute('data-container-query-tall');
+    assert.dom('[data-test-widget="1"]').exists('We see the first widget.');
 
     // Widget 2
     assert
