@@ -1,3 +1,15 @@
+## 4.0.0-alpha.5 (2023-03-08)
+
+### Internal
+* [#164](https://github.com/ijlee2/ember-container-query/pull/164) Updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#165](https://github.com/ijlee2/ember-container-query/pull/165) Separated docs and test apps ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 4.0.0-alpha.4 (2023-03-02)
 
 ### Breaking Change
