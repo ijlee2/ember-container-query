@@ -2,6 +2,8 @@
 // These will *not* be published as part of your addon, so be careful that your published code does not rely on them!
 
 import '@glint/environment-ember-loose';
+import 'ember-source/types';
+import 'ember-source/types/preview';
 
 import SvgJarHelper from '@gavant/glint-template-types/types/ember-svg-jar/helpers/svg-jar';
 import AndHelper from '@gavant/glint-template-types/types/ember-truth-helpers/helpers/and';

@@ -9,6 +9,9 @@ module.exports = function (defaults) {
     autoImport: {
       watchDependencies: ['ember-container-query'],
     },
+    'ember-cli-babel': {
+      enableTypeScriptTransform: true,
+    },
   });
 
   return require('@embroider/compat').compatBuild(app, Webpack, {
