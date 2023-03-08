@@ -10,19 +10,21 @@
   "license": "MIT",
   "author": "Isaac J. Lee",
   "workspaces": [
+    "docs-app",
     "ember-container-query",
     "test-app"
   ],
   "scripts": {
-    "build": "yarn workspace ember-container-query run build",
-    "build:deploy": "yarn workspaces run build",
+    "build": "concurrently \"npm:build:*\"",
+    "build:addon": "yarn workspace ember-container-query run build",
+    "build:docs-app": "yarn workspace docs-app run build",
     "changelog": "lerna-changelog",
     "lint": "yarn workspaces run lint",
     "lint:fix": "yarn workspaces run lint:fix",
-    "prepare": "yarn build",
-    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "prepare": "yarn build:addon",
+    "start": "concurrently \"npm:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "yarn workspace ember-container-query run start",
-    "start:test": "yarn workspace test-app run start",
+    "start:docs-app": "yarn workspace docs-app run start",
     "test": "yarn workspaces run test"
   },
   "devDependencies": {
