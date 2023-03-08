@@ -1,6 +1,6 @@
 import { registerDestructor } from '@ember/destroyable';
 import { action } from '@ember/object';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import { extent, max, rollup, ticks } from 'd3-array';
 import { axisBottom, axisLeft } from 'd3-axis';
 import { scaleBand, scaleLinear, scaleOrdinal } from 'd3-scale';
