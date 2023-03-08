@@ -1,5 +1,6 @@
 'use strict';
 
+const { Webpack } = require('@embroider/webpack');
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
@@ -10,7 +11,11 @@ module.exports = function (defaults) {
     },
   });
 
-  const { maybeEmbroider } = require('@embroider/test-setup');
-
-  return maybeEmbroider(app);
+  return require('@embroider/compat').compatBuild(app, Webpack, {
+    skipBabel: [
+      {
+        package: 'qunit',
+      },
+    ],
+  });
 };
