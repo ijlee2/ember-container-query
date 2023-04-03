@@ -46,15 +46,15 @@
   grid-area: widget-5;
 }
 
-@media screen and (max-width: 30rem) {
-  @media (min-height: 40rem) {
+@media screen and (width <= 30rem) {
+  @media (height >= 40rem) {
     .widgets {
       grid-template-rows: repeat(4, 25%) 5rem;
     }
   }
 }
 
-@media screen and (min-width: 30rem) and (max-width: 60rem) {
+@media screen and (width >= 30rem) and (width <= 60rem) {
   .widgets {
     grid-template-areas:
       "widget-1 widget-2"
@@ -66,14 +66,14 @@
     height: 40rem;
   }
 
-  @media (min-height: 40rem) {
+  @media (height >= 40rem) {
     .widgets {
       grid-template-rows: 3fr 1fr 2fr 5rem;
     }
   }
 }
 
-@media screen and (min-width: 60rem) {
+@media screen and (width >= 60rem) {
   .widgets {
     grid-template-areas:
       "widget-1 widget-2 widget-4"
@@ -84,7 +84,7 @@
     height: 40rem;
   }
 
-  @media (min-height: 40rem) {
+  @media (height >= 40rem) {
     .widgets {
       grid-template-rows: 4fr 1fr 10rem;
     }
