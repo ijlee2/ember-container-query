@@ -1,8 +1,8 @@
 {
-  "name": "ember-container-query",
+  "name": "workspace-root",
   "version": "4.0.0-alpha.5",
   "private": true,
-  "description": "Container queries using Ember modifiers",
+  "description": "Workspace root for ember-container-query",
   "repository": {
     "type": "git",
     "url": "https://github.com/ijlee2/ember-container-query.git"
@@ -28,9 +28,8 @@
     "test": "yarn workspaces run test"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0",
-    "lerna-changelog": "^2.2.0",
-    "prettier": "^2.8.7"
+    "concurrently": "^8.0.1",
+    "lerna-changelog": "^2.2.0"
   },
   "changelog": {
     "labels": {
