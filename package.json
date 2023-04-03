@@ -28,7 +28,7 @@
     "test": "yarn workspaces run test"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0",
+    "concurrently": "^8.0.1",
     "lerna-changelog": "^2.2.0"
   },
   "changelog": {
