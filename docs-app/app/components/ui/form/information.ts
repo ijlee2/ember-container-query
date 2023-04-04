@@ -1,6 +1,6 @@
 import templateOnlyComponent from '@ember/component/template-only';
 
-export interface UiFormInformationComponentSignature {
+interface UiFormInformationComponentSignature {
   Args: {
     formId: string;
     instructions?: string;

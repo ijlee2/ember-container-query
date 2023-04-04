@@ -1,6 +1,6 @@
 import templateOnlyComponent from '@ember/component/template-only';
 
-export interface WidgetsWidget4MemoHeaderComponentSignature {
+interface WidgetsWidget4MemoHeaderComponentSignature {
   Args: {
     cqFeatures?: Record<'small' | 'large' | 'short', boolean>;
   };
