@@ -6,7 +6,7 @@ export type Revenue = {
   Year: number;
 };
 
-const revenues: Array<Revenue> = [
+const revenues: Revenue[] = [
   {
     Format: '8 - Track',
     Year: 1973,

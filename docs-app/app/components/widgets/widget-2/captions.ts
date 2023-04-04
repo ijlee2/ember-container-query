@@ -6,7 +6,7 @@ import type { Summary } from '../../../utils/components/widgets/widget-2';
 
 interface WidgetsWidget2CaptionsComponentSignature {
   Args: {
-    summaries?: Array<Summary>;
+    summaries?: Summary[];
   };
 }
 
@@ -21,7 +21,7 @@ export default class WidgetsWidget2CaptionsComponent extends Component<WidgetsWi
     return this.currentIndex > 0;
   }
 
-  get summaries(): Array<Summary> {
+  get summaries(): Summary[] {
     return this.args.summaries ?? [];
   }
 

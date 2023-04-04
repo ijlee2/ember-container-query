@@ -16,7 +16,7 @@ export type ContainerDimensions = {
     container's the closest.
 */
 export function findBestFittingImage(
-  images: Array<Image>,
+  images: Image[],
   containerDimensions: ContainerDimensions
 ): string | undefined {
   if (images.length === 0) {

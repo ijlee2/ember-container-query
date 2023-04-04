@@ -7,7 +7,7 @@ import Modifier, { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
 
 type IndexSignatureParameter = string | number | symbol;
 type ObjectEntry<T> = [keyof T, T[keyof T]];
-type ObjectEntries<T> = Array<ObjectEntry<T>>;
+type ObjectEntries<T> = ObjectEntry<T>[];
 
 type Dimensions = {
   aspectRatio: number;
@@ -52,7 +52,7 @@ export default class ContainerQueryModifier<
   dimensions!: Dimensions;
   queryResults!: QueryResults<T>;
 
-  private _dataAttributes: Array<string> = [];
+  private _dataAttributes: string[] = [];
   private _element?: Element;
   private _named!: NamedArgs<ContainerQueryModifierSignature<T>>;
 

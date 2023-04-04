@@ -7,7 +7,7 @@ declare module '@glint/environment-ember-loose/registry' {
     'draw-stacked-chart': ModifierLike<{
       Args: {
         Named: {
-          data?: Array<Data>;
+          data?: Data[];
         };
       };
       Element: Element;

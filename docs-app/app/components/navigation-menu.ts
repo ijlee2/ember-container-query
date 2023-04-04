@@ -7,7 +7,7 @@ type MenuItem = {
 
 export interface NavigationMenuComponentSignature {
   Args: {
-    menuItems: Array<MenuItem>;
+    menuItems: MenuItem[];
     name?: string;
   };
 }

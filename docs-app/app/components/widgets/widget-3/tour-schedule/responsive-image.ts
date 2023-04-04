@@ -8,7 +8,7 @@ import { findBestFittingImage } from '../../../../utils/components/widgets/widge
 
 interface WidgetsWidget3TourScheduleResponsiveImageComponentSignature {
   Args: {
-    images: Array<Image>;
+    images: Image[];
   };
 }
 

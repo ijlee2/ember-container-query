@@ -11,7 +11,7 @@ export type Album = {
   name: string;
   publicationDate: string;
   totalLengthInMinutes: number;
-  tracks: Array<Track>;
+  tracks: Track[];
 };
 
 const album: Album = {
