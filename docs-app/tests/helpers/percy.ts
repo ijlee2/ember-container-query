@@ -29,7 +29,7 @@ type QUnitAssert = {
 
 type SnapshotOptions = {
   description: string;
-  only?: Array<string>;
+  only?: string[];
 };
 
 /*

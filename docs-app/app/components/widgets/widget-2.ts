@@ -8,13 +8,15 @@ import {
   createSummariesForCaptions,
 } from '../../utils/components/widgets/widget-2';
 
-interface WidgetsWidget2ComponentSignature {}
+interface WidgetsWidget2ComponentSignature {
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  Args: {};
+}
 
 export default class WidgetsWidget2Component extends Component<WidgetsWidget2ComponentSignature> {
-  @tracked data = [] as Array<Data>;
-  @tracked summaries = [] as Array<Summary>;
+  @tracked data = [] as Data[];
+  @tracked summaries = [] as Summary[];
 
-  /* @ts-expect-error Property 'Args' does not exist on type 'WidgetsWidget2ComponentSignature' */
   constructor(owner: unknown, args: WidgetsWidget2ComponentSignature['Args']) {
     super(owner, args);
 

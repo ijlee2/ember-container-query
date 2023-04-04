@@ -35,6 +35,7 @@ module.exports = {
         'plugin:typescript-sort-keys/recommended',
       ],
       rules: {
+        '@typescript-eslint/array-type': 'error',
         '@typescript-eslint/no-empty-interface': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',

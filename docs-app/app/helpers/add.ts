@@ -2,7 +2,7 @@ import { helper } from '@ember/component/helper';
 
 interface AddHelperSignature {
   Args: {
-    Positional: Array<number>;
+    Positional: number[];
   };
   Return: number;
 }

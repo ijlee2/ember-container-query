@@ -22,7 +22,7 @@ interface CustomAssert extends Assert {
 }
 
 interface TestContext extends BaseTestContext {
-  tracks: Array<Track>;
+  tracks: Track[];
 }
 
 module('Integration | Component | tracks/list', function (hooks) {

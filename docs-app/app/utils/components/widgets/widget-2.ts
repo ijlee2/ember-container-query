@@ -81,9 +81,7 @@ export function formatRevenue(revenue: number): string {
 /*
   Transform the raw data into something useful for visualization
 */
-export function createDataForVisualization(
-  rawData: Array<Revenue>
-): Array<Data> {
+export function createDataForVisualization(rawData: Revenue[]): Data[] {
   return rawData.map((datum) => {
     return {
       musicFormat: datum['Format'],
@@ -96,7 +94,7 @@ export function createDataForVisualization(
 /*
   Transform the raw data into something useful for captions
 */
-export function createSummariesForCaptions(data: Array<Data>): Array<Summary> {
+export function createSummariesForCaptions(data: Data[]): Summary[] {
   const groupedData = groupDataByMusicFormat(data);
   const sanitizedData = sanitizeData(groupedData);
   const summaries = summarizeData(sanitizedData);
@@ -104,7 +102,7 @@ export function createSummariesForCaptions(data: Array<Data>): Array<Summary> {
   return summaries;
 }
 
-function groupDataByMusicFormat(data: Array<Data>): GroupedData {
+function groupDataByMusicFormat(data: Data[]): GroupedData {
   return data.reduce((accumulator, datum) => {
     const { musicFormat, revenue, year } = datum;
     const didMusicFormatExist = revenue !== 0;
@@ -162,8 +160,8 @@ function sanitizeData(groupedData: GroupedData): GroupedData {
   return output;
 }
 
-function summarizeData(sanitizedData: GroupedData): Array<Summary> {
-  const summaries = [] as Array<Summary>;
+function summarizeData(sanitizedData: GroupedData): Summary[] {
+  const summaries = [] as Summary[];
 
   Object.keys(sanitizedData)
     .sort()

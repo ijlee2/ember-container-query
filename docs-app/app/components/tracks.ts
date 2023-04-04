@@ -4,7 +4,7 @@ import type { Track } from '../data/album';
 
 interface TracksComponentSignature {
   Args: {
-    tracks?: Array<Track>;
+    tracks?: Track[];
   };
 }
 

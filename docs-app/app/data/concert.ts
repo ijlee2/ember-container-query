@@ -8,7 +8,7 @@ export type Image = {
 
 export type Concert = {
   date: string;
-  images: Array<Image>;
+  images: Image[];
   location: {
     city: string;
     state: string;

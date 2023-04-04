@@ -2,7 +2,7 @@ import templateOnlyComponent from '@ember/component/template-only';
 
 import type { Concert } from '../../../data/concert';
 
-export interface WidgetsWidget3TourScheduleComponentSignature {
+interface WidgetsWidget3TourScheduleComponentSignature {
   Args: {
     concert: Concert;
   };
