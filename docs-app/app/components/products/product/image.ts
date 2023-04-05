@@ -1,13 +1,13 @@
 import Component from '@glimmer/component';
 import config from 'docs-app/config/environment';
 
-interface ProductsProductImageComponentSignature {
+interface ProductsProductImageSignature {
   Args: {
     src: string;
   };
 }
 
-export default class ProductsProductImageComponent extends Component<ProductsProductImageComponentSignature> {
+export default class ProductsProductImageComponent extends Component<ProductsProductImageSignature> {
   get isTestEnvironment() {
     return config.environment === 'test';
   }

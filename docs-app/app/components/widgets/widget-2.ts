@@ -8,16 +8,16 @@ import {
   createSummariesForCaptions,
 } from '../../utils/components/widgets/widget-2';
 
-interface WidgetsWidget2ComponentSignature {
+interface WidgetsWidget2Signature {
   // eslint-disable-next-line @typescript-eslint/ban-types
   Args: {};
 }
 
-export default class WidgetsWidget2Component extends Component<WidgetsWidget2ComponentSignature> {
+export default class WidgetsWidget2Component extends Component<WidgetsWidget2Signature> {
   @tracked data = [] as Data[];
   @tracked summaries = [] as Summary[];
 
-  constructor(owner: unknown, args: WidgetsWidget2ComponentSignature['Args']) {
+  constructor(owner: unknown, args: WidgetsWidget2Signature['Args']) {
     super(owner, args);
 
     this.loadData();

@@ -1,7 +1,7 @@
 import { action, get } from '@ember/object';
 import Component from '@glimmer/component';
 
-interface UiFormTextareaComponentSignature {
+interface UiFormTextareaSignature {
   Args: {
     changeset: Record<string, any>;
     isDisabled?: boolean;
@@ -15,7 +15,7 @@ interface UiFormTextareaComponentSignature {
   };
 }
 
-export default class UiFormTextareaComponent extends Component<UiFormTextareaComponentSignature> {
+export default class UiFormTextareaComponent extends Component<UiFormTextareaSignature> {
   get errorMessage(): string | undefined {
     const { isRequired } = this.args;
 

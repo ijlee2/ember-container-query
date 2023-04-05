@@ -1,7 +1,7 @@
 import { action, get } from '@ember/object';
 import Component from '@glimmer/component';
 
-interface UiFormInputComponentSignature {
+interface UiFormInputSignature {
   Args: {
     changeset: Record<string, any>;
     isDisabled?: boolean;
@@ -16,7 +16,7 @@ interface UiFormInputComponentSignature {
   };
 }
 
-export default class UiFormInputComponent extends Component<UiFormInputComponentSignature> {
+export default class UiFormInputComponent extends Component<UiFormInputSignature> {
   get errorMessage(): string | undefined {
     const { isRequired } = this.args;
 
