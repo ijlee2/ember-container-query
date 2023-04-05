@@ -2,14 +2,13 @@ import templateOnlyComponent from '@ember/component/template-only';
 
 import type { Track } from '../../data/album';
 
-interface TracksTableComponentSignature {
+interface TracksTableSignature {
   Args: {
     tracks?: Track[];
   };
 }
 
-const TracksTableComponent =
-  templateOnlyComponent<TracksTableComponentSignature>();
+const TracksTableComponent = templateOnlyComponent<TracksTableSignature>();
 
 export default TracksTableComponent;
 

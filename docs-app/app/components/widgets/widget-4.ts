@@ -1,9 +1,9 @@
 import templateOnlyComponent from '@ember/component/template-only';
 
-interface WidgetsWidget4ComponentSignature {}
+interface WidgetsWidget4Signature {}
 
 const WidgetsWidget4Component =
-  templateOnlyComponent<WidgetsWidget4ComponentSignature>();
+  templateOnlyComponent<WidgetsWidget4Signature>();
 
 export default WidgetsWidget4Component;
 

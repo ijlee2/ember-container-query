@@ -2,14 +2,14 @@ import Component from '@glimmer/component';
 
 import type { Track } from '../../data/album';
 
-interface TracksListComponentSignature {
+interface TracksListSignature {
   Args: {
     numColumns?: number;
     tracks?: Track[];
   };
 }
 
-export default class TracksListComponent extends Component<TracksListComponentSignature> {
+export default class TracksListComponent extends Component<TracksListSignature> {
   get numColumns(): number {
     const { numColumns } = this.args;
 

@@ -5,7 +5,7 @@ type MenuItem = {
   route: string;
 };
 
-interface NavigationMenuComponentSignature {
+interface NavigationMenuSignature {
   Args: {
     menuItems: MenuItem[];
     name?: string;
@@ -13,7 +13,7 @@ interface NavigationMenuComponentSignature {
 }
 
 const NavigationMenuComponent =
-  templateOnlyComponent<NavigationMenuComponentSignature>();
+  templateOnlyComponent<NavigationMenuSignature>();
 
 export default NavigationMenuComponent;
 

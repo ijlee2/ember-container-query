@@ -1,7 +1,7 @@
 import { action, get } from '@ember/object';
 import Component from '@glimmer/component';
 
-interface UiFormCheckboxComponentSignature {
+interface UiFormCheckboxSignature {
   Args: {
     changeset: Record<string, any>;
     isDisabled?: boolean;
@@ -15,7 +15,7 @@ interface UiFormCheckboxComponentSignature {
   };
 }
 
-export default class UiFormCheckboxComponent extends Component<UiFormCheckboxComponentSignature> {
+export default class UiFormCheckboxComponent extends Component<UiFormCheckboxSignature> {
   get errorMessage(): string | undefined {
     const { isRequired } = this.args;
 

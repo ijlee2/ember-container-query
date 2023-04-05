@@ -11,7 +11,7 @@ import type {
   QueryResults,
 } from '../modifiers/container-query';
 
-interface ContainerQueryComponentSignature<T extends IndexSignatureParameter> {
+interface ContainerQuerySignature<T extends IndexSignatureParameter> {
   Args: {
     dataAttributePrefix?: string;
     debounce?: number;
@@ -31,7 +31,7 @@ interface ContainerQueryComponentSignature<T extends IndexSignatureParameter> {
 
 export default class ContainerQueryComponent<
   T extends IndexSignatureParameter
-> extends Component<ContainerQueryComponentSignature<T>> {
+> extends Component<ContainerQuerySignature<T>> {
   @tracked dimensions?: Dimensions;
   @tracked queryResults?: QueryResults<T>;
 

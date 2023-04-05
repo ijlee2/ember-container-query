@@ -4,13 +4,13 @@ import { tracked } from '@glimmer/tracking';
 
 import type { Summary } from '../../../utils/components/widgets/widget-2';
 
-interface WidgetsWidget2CaptionsComponentSignature {
+interface WidgetsWidget2CaptionsSignature {
   Args: {
     summaries?: Summary[];
   };
 }
 
-export default class WidgetsWidget2CaptionsComponent extends Component<WidgetsWidget2CaptionsComponentSignature> {
+export default class WidgetsWidget2CaptionsComponent extends Component<WidgetsWidget2CaptionsSignature> {
   @tracked currentIndex = 0;
 
   get canShowNextButton(): boolean {

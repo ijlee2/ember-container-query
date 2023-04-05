@@ -1,6 +1,6 @@
 import templateOnlyComponent from '@ember/component/template-only';
 
-interface UiPageComponentSignature {
+interface UiPageSignature {
   Args: {
     title: string;
   };
@@ -9,7 +9,7 @@ interface UiPageComponentSignature {
   };
 }
 
-const UiPageComponent = templateOnlyComponent<UiPageComponentSignature>();
+const UiPageComponent = templateOnlyComponent<UiPageSignature>();
 
 export default UiPageComponent;
 
