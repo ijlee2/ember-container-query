@@ -8,8 +8,7 @@ interface TracksTableSignature {
   };
 }
 
-const TracksTableComponent =
-  templateOnlyComponent<TracksTableSignature>();
+const TracksTableComponent = templateOnlyComponent<TracksTableSignature>();
 
 export default TracksTableComponent;
 
