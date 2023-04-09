@@ -50,6 +50,7 @@ module.exports = {
         './.stylelintrc.js',
         './.template-lintrc.js',
         './ember-cli-build.js',
+        './postcss.config.js',
         './testem.js',
         './blueprints/*/index.js',
         './config/**/*.js',
