@@ -10,12 +10,19 @@
       as |CQ|
     >
       <div
-        class="{{this.styles.metaphor}} {{local-class this.styles (if CQ.features.small 'small-layout')}}"
+        class="{{this.styles.metaphor}}
+          {{local-class
+            this.styles
+            (if CQ.features.small 'small-layout')
+          }}"
       >
         <div class={{this.styles.mental-block}}>
         </div>
 
-        <div aria-hidden="true" class={{this.styles.the-next-idea}}>
+        <div
+          aria-hidden="true"
+          class={{this.styles.the-next-idea}}
+        >
           ember-container-query
         </div>
       </div>

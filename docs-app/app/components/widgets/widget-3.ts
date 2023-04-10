@@ -3,7 +3,6 @@ import { tracked } from '@glimmer/tracking';
 
 import type { Concert } from '../../data/concert';
 import concertData from '../../data/concert';
-
 import styles from './widget-3.css';
 
 interface WidgetsWidget3Signature {

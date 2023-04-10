@@ -13,7 +13,11 @@
       as |showLyrics|
     }}
       <div
-        class="{{this.styles.container}} {{local-class this.styles (if showLyrics 'with-lyrics')}}"
+        class="{{this.styles.container}}
+          {{local-class
+            this.styles
+            (if showLyrics 'with-lyrics')
+          }}"
       >
         <div class={{this.styles.album-summary}}>
           <div>

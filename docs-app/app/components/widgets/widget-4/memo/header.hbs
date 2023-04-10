@@ -5,9 +5,16 @@
 }}
   <div
     data-test-memo-header
-    class="{{this.styles.header}} {{local-class this.styles (if showMinimalLayout 'minimal-layout')}} 
-       {{local-class this.styles (if showHorizontalLayout 'horizontal-layout')}} 
-    "
+    class="{{this.styles.header}}
+      {{local-class
+        this.styles
+        (if showMinimalLayout 'minimal-layout')
+      }}
+      {{local-class
+        this.styles
+        (if showHorizontalLayout 'horizontal-layout')
+      }}
+      "
   >
     {{#unless showMinimalLayout}}
       <div class={{this.styles.avatar-container}}>

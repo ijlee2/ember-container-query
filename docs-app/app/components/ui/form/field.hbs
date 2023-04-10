@@ -1,8 +1,12 @@
 <div
-  class="{{this.styles.container}} {{local-class this.styles (if @isInline 'is-inline')}} 
-     {{local-class this.styles (if @isWide 'is-wide')}} 
-     {{local-class this.styles (unless @errorMessage 'no-feedback')}} 
-  "
+  class="{{this.styles.container}}
+    {{local-class this.styles (if @isInline 'is-inline')}}
+    {{local-class this.styles (if @isWide 'is-wide')}}
+    {{local-class
+      this.styles
+      (unless @errorMessage 'no-feedback')
+    }}
+    "
 >
   <div class={{this.styles.label}}>
     {{yield (hash inputId=this.inputId) to="label"}}
@@ -13,7 +17,9 @@
   </div>
 
   {{#if @errorMessage}}
-    <div class={{local-class this.styles "feedback" "is-error"}}>
+    <div
+      class={{local-class this.styles "feedback" "is-error"}}
+    >
       {{svg-jar "alert" aria-hidden="true"}}
 
       <span

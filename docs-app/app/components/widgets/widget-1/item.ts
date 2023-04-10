@@ -8,10 +8,9 @@ interface WidgetsWidget1ItemSignature {
   };
 }
 
-const WidgetsWidget1ItemComponent =
-  class extends Component<WidgetsWidget1ItemSignature> {
-    styles = styles;
-  };
+const WidgetsWidget1ItemComponent = class extends Component<WidgetsWidget1ItemSignature> {
+  styles = styles;
+};
 
 export default WidgetsWidget1ItemComponent;
 

@@ -7,7 +7,6 @@ import {
   createDataForVisualization,
   createSummariesForCaptions,
 } from '../../utils/components/widgets/widget-2';
-
 import styles from './widget-2.css';
 
 interface WidgetsWidget2Signature {

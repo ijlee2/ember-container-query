@@ -1,7 +1,6 @@
 import Component from '@glimmer/component';
 
 import type { Track } from '../../data/album';
-
 import styles from './table.css';
 
 interface TracksTableSignature {

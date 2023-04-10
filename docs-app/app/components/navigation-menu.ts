@@ -14,10 +14,9 @@ interface NavigationMenuSignature {
   };
 }
 
-const NavigationMenuComponent =
-  class extends Component<NavigationMenuSignature> {
-    styles = styles;
-  };
+const NavigationMenuComponent = class extends Component<NavigationMenuSignature> {
+  styles = styles;
+};
 
 export default NavigationMenuComponent;
 

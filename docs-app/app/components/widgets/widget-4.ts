@@ -4,10 +4,9 @@ import styles from './widget-4.css';
 
 interface WidgetsWidget4Signature {}
 
-const WidgetsWidget4Component =
-  class extends Component<WidgetsWidget4Signature> {
-    styles = styles;
-  };
+const WidgetsWidget4Component = class extends Component<WidgetsWidget4Signature> {
+  styles = styles;
+};
 
 export default WidgetsWidget4Component;
 

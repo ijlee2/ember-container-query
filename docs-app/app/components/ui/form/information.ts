@@ -10,10 +10,9 @@ interface UiFormInformationSignature {
   };
 }
 
-const UiFormInformationComponent =
-  class extends Component<UiFormInformationSignature> {
-    styles = styles;
-  };
+const UiFormInformationComponent = class extends Component<UiFormInformationSignature> {
+  styles = styles;
+};
 
 export default UiFormInformationComponent;
 
