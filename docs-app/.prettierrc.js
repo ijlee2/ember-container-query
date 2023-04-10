@@ -6,6 +6,12 @@ module.exports = {
 
   overrides: [
     {
+      files: '*.css.d.ts',
+      options: {
+        quoteProps: 'preserve',
+      },
+    },
+    {
       files: '*.hbs',
       options: {
         printWidth: 64,
