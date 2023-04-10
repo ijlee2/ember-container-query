@@ -9,11 +9,9 @@ interface TracksTableSignature {
   };
 }
 
-const TracksTableComponent = class extends Component<TracksTableSignature> {
+export default class TracksTableComponent extends Component<TracksTableSignature> {
   styles = styles;
-};
-
-export default TracksTableComponent;
+}
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {

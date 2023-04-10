@@ -1,13 +1,12 @@
 <div
   data-test-memo-actions
-  class="{{this.styles.actions}}
-    {{local-class
-      this.styles
-      (if
-        (or @cqFeatures.small @cqFeatures.short)
-        'minimal-layout'
-      )
-    }}"
+  class={{local-class
+    this.styles
+    "actions"
+    (if
+      (or @cqFeatures.small @cqFeatures.short) "minimal-layout"
+    )
+  }}
 >
   <button
     aria-label="Comment"
@@ -45,7 +44,7 @@
     {{svg-jar
       "heart-outline"
       aria-hidden="true"
-      class=(local-class this.styles "icon")
+      class=this.styles.icon
     }}
   </button>
 
@@ -57,7 +56,7 @@
     {{svg-jar
       "share-variant-outline"
       aria-hidden="true"
-      class=(local-class this.styles "icon")
+      class=this.styles.icon
     }}
   </button>
 </div>

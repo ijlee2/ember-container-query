@@ -14,11 +14,9 @@ interface NavigationMenuSignature {
   };
 }
 
-const NavigationMenuComponent = class extends Component<NavigationMenuSignature> {
+export default class NavigationMenuComponent extends Component<NavigationMenuSignature> {
   styles = styles;
-};
-
-export default NavigationMenuComponent;
+}
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {

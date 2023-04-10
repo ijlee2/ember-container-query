@@ -8,11 +8,9 @@ interface WidgetsWidget1ItemSignature {
   };
 }
 
-const WidgetsWidget1ItemComponent = class extends Component<WidgetsWidget1ItemSignature> {
+export default class WidgetsWidget1ItemComponent extends Component<WidgetsWidget1ItemSignature> {
   styles = styles;
-};
-
-export default WidgetsWidget1ItemComponent;
+}
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {

@@ -9,11 +9,9 @@ interface WidgetsWidget3TourScheduleSignature {
   };
 }
 
-const WidgetsWidget3TourScheduleComponent = class extends Component<WidgetsWidget3TourScheduleSignature> {
+export default class WidgetsWidget3TourScheduleComponent extends Component<WidgetsWidget3TourScheduleSignature> {
   styles = styles;
-};
-
-export default WidgetsWidget3TourScheduleComponent;
+}
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {

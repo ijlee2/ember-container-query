@@ -9,11 +9,9 @@ interface WidgetsWidget2StackedChartSignature {
   };
 }
 
-const WidgetsWidget2StackedChartComponent = class extends Component<WidgetsWidget2StackedChartSignature> {
+export default class WidgetsWidget2StackedChartComponent extends Component<WidgetsWidget2StackedChartSignature> {
   styles = styles;
-};
-
-export default WidgetsWidget2StackedChartComponent;
+}
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {

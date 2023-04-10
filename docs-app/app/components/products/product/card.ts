@@ -10,11 +10,9 @@ interface ProductsProductCardSignature {
   };
 }
 
-const ProductsProductCardComponent = class extends Component<ProductsProductCardSignature> {
+export default class ProductsProductCardComponent extends Component<ProductsProductCardSignature> {
   styles = styles;
-};
-
-export default ProductsProductCardComponent;
+}
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {

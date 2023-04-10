@@ -1,12 +1,11 @@
 <div
-  class="{{this.styles.container}}
-    {{local-class this.styles (if @isInline 'is-inline')}}
-    {{local-class this.styles (if @isWide 'is-wide')}}
-    {{local-class
-      this.styles
-      (unless @errorMessage 'no-feedback')
-    }}
-    "
+  class={{local-class
+    this.styles
+    "container"
+    (if @isInline "is-inline")
+    (if @isWide "is-wide")
+    (unless @errorMessage "no-feedback")
+  }}
 >
   <div class={{this.styles.label}}>
     {{yield (hash inputId=this.inputId) to="label"}}
