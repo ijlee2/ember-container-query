@@ -34,7 +34,7 @@ module.exports = function (defaults) {
             // We want to enable local mode only for our own host app. All other
             // addons should be loaded in global mode.
             const hostAppWorkspaceDir = `${options.workspaceDir}/${app.name}`;
-            const isHostAppPath = resourcePath.startsWith(hostAppWorkspaceDir);
+            const isHostAppPath = resourcePath.includes(hostAppWorkspaceDir);
 
             return isHostAppPath ? 'local' : 'global';
           },
