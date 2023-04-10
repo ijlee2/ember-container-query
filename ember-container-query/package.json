@@ -77,9 +77,9 @@
     "concurrently": "^8.0.1",
     "ember-template-lint": "^5.7.2",
     "ember-template-lint-plugin-prettier": "^4.1.0",
-    "eslint": "^8.37.0",
+    "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-ember": "^11.4.9",
+    "eslint-plugin-ember": "^11.5.1",
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
@@ -88,7 +88,7 @@
     "rollup": "^3.20.2",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-ts": "^3.2.0",
-    "typescript": "^5.0.3"
+    "typescript": "^5.0.4"
   },
   "engines": {
     "node": "14.* || 16.* || >= 18"
