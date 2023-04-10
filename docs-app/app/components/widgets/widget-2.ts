@@ -7,6 +7,7 @@ import {
   createDataForVisualization,
   createSummariesForCaptions,
 } from '../../utils/components/widgets/widget-2';
+import styles from './widget-2.css';
 
 interface WidgetsWidget2Signature {
   // eslint-disable-next-line @typescript-eslint/ban-types
@@ -14,6 +15,8 @@ interface WidgetsWidget2Signature {
 }
 
 export default class WidgetsWidget2Component extends Component<WidgetsWidget2Signature> {
+  styles = styles;
+
   @tracked data = [] as Data[];
   @tracked summaries = [] as Summary[];
 

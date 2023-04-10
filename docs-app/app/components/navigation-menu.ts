@@ -1,4 +1,6 @@
-import templateOnlyComponent from '@ember/component/template-only';
+import Component from '@glimmer/component';
+
+import styles from './navigation-menu.css';
 
 type MenuItem = {
   label: string;
@@ -12,10 +14,9 @@ interface NavigationMenuSignature {
   };
 }
 
-const NavigationMenuComponent =
-  templateOnlyComponent<NavigationMenuSignature>();
-
-export default NavigationMenuComponent;
+export default class NavigationMenuComponent extends Component<NavigationMenuSignature> {
+  styles = styles;
+}
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {

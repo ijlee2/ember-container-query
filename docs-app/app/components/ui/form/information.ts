@@ -1,4 +1,6 @@
-import templateOnlyComponent from '@ember/component/template-only';
+import Component from '@glimmer/component';
+
+import styles from './information.css';
 
 interface UiFormInformationSignature {
   Args: {
@@ -8,10 +10,9 @@ interface UiFormInformationSignature {
   };
 }
 
-const UiFormInformationComponent =
-  templateOnlyComponent<UiFormInformationSignature>();
-
-export default UiFormInformationComponent;
+export default class UiFormInformationComponent extends Component<UiFormInformationSignature> {
+  styles = styles;
+}
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {

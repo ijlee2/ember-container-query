@@ -1,6 +1,7 @@
-import templateOnlyComponent from '@ember/component/template-only';
+import Component from '@glimmer/component';
 
 import type { Product } from '../../../data/products';
+import styles from './card.css';
 
 interface ProductsProductCardSignature {
   Args: {
@@ -9,10 +10,9 @@ interface ProductsProductCardSignature {
   };
 }
 
-const ProductsProductCardComponent =
-  templateOnlyComponent<ProductsProductCardSignature>();
-
-export default ProductsProductCardComponent;
+export default class ProductsProductCardComponent extends Component<ProductsProductCardSignature> {
+  styles = styles;
+}
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {

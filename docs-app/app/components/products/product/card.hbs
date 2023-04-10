@@ -2,37 +2,37 @@
   @features={{hash wide=(width min=320)}}
   @tagName="article"
   data-test-product-card
-  local-class="container"
+  class={{this.styles.container}}
 >
-  <header local-class="header">
-    <h2 data-test-field="Name" local-class="name">
+  <header class={{this.styles.header}}>
+    <h2 data-test-field="Name" class={{this.styles.name}}>
       {{@product.name}}
     </h2>
   </header>
 
-  <div local-class="image-container">
+  <div class={{this.styles.image-container}}>
     <Products::Product::Image @src={{@product.imageUrl}} />
   </div>
 
-  <div local-class="body">
+  <div class={{this.styles.body}}>
     <p
       data-test-field="Short Description"
-      local-class="description"
+      class={{this.styles.description}}
     >
       {{@product.shortDescription}}
     </p>
 
-    <p data-test-field="Price" local-class="price">
+    <p data-test-field="Price" class={{this.styles.price}}>
       ${{@product.price}}
     </p>
   </div>
 
-  <div local-class="actions">
+  <div class={{this.styles.actions}}>
     <LinkTo
       @model={{@product.id}}
       @route={{@redirectTo}}
       data-test-link="Learn More"
-      local-class="link"
+      class={{this.styles.link}}
     >
       Learn more
     </LinkTo>

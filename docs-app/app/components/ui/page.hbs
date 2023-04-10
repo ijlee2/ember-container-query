@@ -1,9 +1,13 @@
-<div local-class="container">
-  <h1 local-class="header">
+<div class={{this.styles.container}}>
+  <h1 class={{this.styles.header}}>
     {{@title}}
   </h1>
 
-  <div id="main-content" local-class="body" tabindex="-1">
+  <div
+    id="main-content"
+    class={{this.styles.body}}
+    tabindex="-1"
+  >
     {{yield}}
   </div>
 </div>

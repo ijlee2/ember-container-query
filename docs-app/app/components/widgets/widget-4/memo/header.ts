@@ -1,4 +1,6 @@
-import templateOnlyComponent from '@ember/component/template-only';
+import Component from '@glimmer/component';
+
+import styles from './header.css';
 
 interface WidgetsWidget4MemoHeaderSignature {
   Args: {
@@ -6,10 +8,9 @@ interface WidgetsWidget4MemoHeaderSignature {
   };
 }
 
-const WidgetsWidget4MemoHeaderComponent =
-  templateOnlyComponent<WidgetsWidget4MemoHeaderSignature>();
-
-export default WidgetsWidget4MemoHeaderComponent;
+export default class WidgetsWidget4MemoHeaderComponent extends Component<WidgetsWidget4MemoHeaderSignature> {
+  styles = styles;
+}
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {

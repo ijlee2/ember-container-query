@@ -12,7 +12,7 @@
     @title="Contact me"
     as |F|
   >
-    <div local-class="field">
+    <div class={{this.styles.field}}>
       <F.Input
         @isRequired={{true}}
         @key="name"
@@ -21,7 +21,7 @@
       />
     </div>
 
-    <div local-class="field">
+    <div class={{this.styles.field}}>
       <F.Input
         @isRequired={{true}}
         @key="email"
@@ -31,11 +31,11 @@
       />
     </div>
 
-    <div local-class="field">
+    <div class={{this.styles.field}}>
       <F.Textarea @key="message" @label="Message" />
     </div>
 
-    <div local-class="field">
+    <div class={{this.styles.field}}>
       <F.Checkbox
         @key="subscribe"
         @label="Subscribe to The Ember Times?"

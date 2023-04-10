@@ -1,7 +1,7 @@
 {{page-title "Ember Container Query"}}
 
-<div local-class="application">
-  <header local-class="header">
+<div class={{this.styles.application}}>
+  <header class={{this.styles.header}}>
     <NavigationNarrator @skipTo="#main-content" />
 
     <NavigationMenu
@@ -16,18 +16,18 @@
     />
   </header>
 
-  <main local-class="main">
-    <div local-class="center">
+  <main class={{this.styles.main}}>
+    <div class={{this.styles.center}}>
       {{outlet}}
     </div>
   </main>
 
-  <footer local-class="footer">
-    <span local-class="copyright">
+  <footer class={{this.styles.footer}}>
+    <span class={{this.styles.copyright}}>
       Created by
       <a
         href="https://www.linkedin.com/in/ijlee2/"
-        local-class="link"
+        class={{this.styles.link}}
         rel="noopener noreferrer"
         target="_blank"
       >

@@ -1,6 +1,7 @@
-import templateOnlyComponent from '@ember/component/template-only';
+import Component from '@glimmer/component';
 
 import type { Concert } from '../../../data/concert';
+import styles from './tour-schedule.css';
 
 interface WidgetsWidget3TourScheduleSignature {
   Args: {
@@ -8,10 +9,9 @@ interface WidgetsWidget3TourScheduleSignature {
   };
 }
 
-const WidgetsWidget3TourScheduleComponent =
-  templateOnlyComponent<WidgetsWidget3TourScheduleSignature>();
-
-export default WidgetsWidget3TourScheduleComponent;
+export default class WidgetsWidget3TourScheduleComponent extends Component<WidgetsWidget3TourScheduleSignature> {
+  styles = styles;
+}
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {

@@ -5,22 +5,22 @@
     short=(height max=200)
   }}
   @tagName="article"
-  local-class="container"
+  class={{this.styles.container}}
   as |CQ|
 >
-  <div local-class="header-container">
+  <div class={{this.styles.header-container}}>
     <Widgets::Widget-4::Memo::Header
       @cqFeatures={{CQ.features}}
     />
   </div>
 
-  <div local-class="body-container">
+  <div class={{this.styles.body-container}}>
     <Widgets::Widget-4::Memo::Body
       @cqFeatures={{CQ.features}}
     />
   </div>
 
-  <div local-class="actions-container">
+  <div class={{this.styles.actions-container}}>
     <Widgets::Widget-4::Memo::Actions
       @cqFeatures={{CQ.features}}
     />

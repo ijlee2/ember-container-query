@@ -1,6 +1,8 @@
 import { action, get } from '@ember/object';
 import Component from '@glimmer/component';
 
+import styles from './checkbox.css';
+
 interface UiFormCheckboxSignature {
   Args: {
     changeset: Record<string, any>;
@@ -16,6 +18,8 @@ interface UiFormCheckboxSignature {
 }
 
 export default class UiFormCheckboxComponent extends Component<UiFormCheckboxSignature> {
+  styles = styles;
+
   get errorMessage(): string | undefined {
     const { isRequired } = this.args;
 

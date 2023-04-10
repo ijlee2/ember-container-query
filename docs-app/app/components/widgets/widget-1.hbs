@@ -5,22 +5,22 @@
     wide=(aspect-ratio min=1.25)
   }}
   @tagName="section"
-  local-class="container"
+  class={{this.styles.container}}
 >
   <header>
     <h2>Widget 1</h2>
   </header>
 
-  <div local-class="items">
-    <div local-class="item-1">
+  <div class={{this.styles.items}}>
+    <div class={{this.styles.item-1}}>
       <Widgets::Widget-1::Item @title="Item 1" />
     </div>
 
-    <div local-class="item-2">
+    <div class={{this.styles.item-2}}>
       <Widgets::Widget-1::Item @title="Item 2" />
     </div>
 
-    <div local-class="item-3">
+    <div class={{this.styles.item-3}}>
       <Widgets::Widget-1::Item @title="Item 3" />
     </div>
   </div>

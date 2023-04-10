@@ -4,6 +4,7 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { WithBoundArgs } from '@glint/template';
 
+import styles from './form.css';
 import type UiFormCheckboxComponent from './form/checkbox';
 import type UiFormInputComponent from './form/input';
 import type UiFormTextareaComponent from './form/textarea';
@@ -35,6 +36,8 @@ interface UiFormSignature {
 }
 
 export default class UiFormComponent extends Component<UiFormSignature> {
+  styles = styles;
+
   formId = guidFor(this);
 
   @tracked changeset = this.args.data ?? ({} as Record<string, any>);

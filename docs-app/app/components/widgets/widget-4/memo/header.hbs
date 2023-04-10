@@ -5,30 +5,31 @@
 }}
   <div
     data-test-memo-header
-    local-class="
-      header
-      {{if showMinimalLayout 'minimal-layout'}}
-      {{if showHorizontalLayout 'horizontal-layout'}}
-    "
+    class={{local-class
+      this.styles
+      "header"
+      (if showMinimalLayout "minimal-layout")
+      (if showHorizontalLayout "horizontal-layout")
+    }}
   >
     {{#unless showMinimalLayout}}
-      <div local-class="avatar-container">
+      <div class={{this.styles.avatar-container}}>
         <img
           alt=""
           data-test-image="Avatar"
-          local-class="avatar"
+          class={{this.styles.avatar}}
           role="presentation"
           src="/images/widgets/widget-4/avatar.jpg"
         />
       </div>
     {{/unless}}
 
-    <p local-class="name">
+    <p class={{this.styles.name}}>
       Isaac Lee
     </p>
 
-    <div local-class="metadata">
-      <a href="#" local-class="handle">@ijlee2</a>
+    <div class={{this.styles.metadata}}>
+      <a href="#" class={{this.styles.handle}}>@ijlee2</a>
       · 38m
     </div>
   </div>

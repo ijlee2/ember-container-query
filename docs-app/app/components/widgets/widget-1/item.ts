@@ -1,4 +1,6 @@
-import templateOnlyComponent from '@ember/component/template-only';
+import Component from '@glimmer/component';
+
+import styles from './item.css';
 
 interface WidgetsWidget1ItemSignature {
   Args: {
@@ -6,10 +8,9 @@ interface WidgetsWidget1ItemSignature {
   };
 }
 
-const WidgetsWidget1ItemComponent =
-  templateOnlyComponent<WidgetsWidget1ItemSignature>();
-
-export default WidgetsWidget1ItemComponent;
+export default class WidgetsWidget1ItemComponent extends Component<WidgetsWidget1ItemSignature> {
+  styles = styles;
+}
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {

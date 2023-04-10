@@ -1,3 +1,5 @@
+import './assets/app.css';
+
 import Application from '@ember/application';
 import loadInitializers from 'ember-load-initializers';
 import Resolver from 'ember-resolver';

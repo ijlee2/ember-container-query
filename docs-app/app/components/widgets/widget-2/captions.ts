@@ -3,6 +3,7 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
 import type { Summary } from '../../../utils/components/widgets/widget-2';
+import styles from './captions.css';
 
 interface WidgetsWidget2CaptionsSignature {
   Args: {
@@ -11,6 +12,8 @@ interface WidgetsWidget2CaptionsSignature {
 }
 
 export default class WidgetsWidget2CaptionsComponent extends Component<WidgetsWidget2CaptionsSignature> {
+  styles = styles;
+
   @tracked currentIndex = 0;
 
   get canShowNextButton(): boolean {

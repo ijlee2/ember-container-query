@@ -1,6 +1,7 @@
-import templateOnlyComponent from '@ember/component/template-only';
+import Component from '@glimmer/component';
 
 import type { Track } from '../../data/album';
+import styles from './table.css';
 
 interface TracksTableSignature {
   Args: {
@@ -8,9 +9,9 @@ interface TracksTableSignature {
   };
 }
 
-const TracksTableComponent = templateOnlyComponent<TracksTableSignature>();
-
-export default TracksTableComponent;
+export default class TracksTableComponent extends Component<TracksTableSignature> {
+  styles = styles;
+}
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {
