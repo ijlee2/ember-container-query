@@ -71,8 +71,8 @@ module.exports = function (defaults) {
     ],
     splitAtRoutes: ['album', 'dashboard', 'form', 'products'],
     staticAddonTestSupportTrees: true,
-    staticAddonTrees: false, // due to ember-css-modules
-    staticComponents: false, // due to ember-css-modules
+    staticAddonTrees: true,
+    staticComponents: true,
     staticHelpers: true,
     staticModifiers: true,
   };
