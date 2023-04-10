@@ -1,6 +1,6 @@
 {
   "name": "docs-app",
-  "version": "4.0.0-alpha.5",
+  "version": "4.0.0-alpha.6",
   "private": true,
   "description": "Container queries using Ember modifiers",
   "keywords": [
@@ -79,7 +79,7 @@
     "ember-cli-htmlbars": "^6.2.0",
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-cli-netlify": "^0.4.1",
-    "ember-container-query": "4.0.0-alpha.5",
+    "ember-container-query": "4.0.0-alpha.6",
     "ember-load-initializers": "^2.1.2",
     "ember-modifier": "^4.1.0",
     "ember-page-title": "^7.0.0",

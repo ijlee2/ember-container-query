@@ -1,3 +1,20 @@
+## 4.0.0-alpha.6 (2023-04-10)
+
+### Internal
+* [#167](https://github.com/ijlee2/ember-container-query/pull/167) Remove ember-css-modules ([@ijlee2](https://github.com/ijlee2), [@buschtoens](https://github.com/buschtoens))
+* [#172](https://github.com/ijlee2/ember-container-query/pull/172) Updated ember-source to v4.12.0 ([@ijlee2](https://github.com/ijlee2))
+* [#169](https://github.com/ijlee2/ember-container-query/pull/169) Updated development dependencies. Patched unused and missing styles. ([@ijlee2](https://github.com/ijlee2))
+* [#166](https://github.com/ijlee2/ember-container-query/pull/166) Updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#171](https://github.com/ijlee2/ember-container-query/pull/171) Renamed component signatures ([@ijlee2](https://github.com/ijlee2))
+* [#170](https://github.com/ijlee2/ember-container-query/pull/170) Updated TypeScript syntax ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 2
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+- Jan Buschtöns ([@buschtoens](https://github.com/buschtoens))
+
+
 ## 4.0.0-alpha.5 (2023-03-08)
 
 ### Internal
