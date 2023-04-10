@@ -1,9 +1,9 @@
 .application {
   display: grid;
   grid-template-areas:
-    ". header ."
-    "main main main"
-    ". footer .";
+    '. header .'
+    'main main main'
+    '. footer .';
   grid-template-columns: 1fr minmax(auto, 75rem) 1fr;
   grid-template-rows: auto 1fr auto;
   height: 100%;
