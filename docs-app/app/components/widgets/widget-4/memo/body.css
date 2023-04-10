@@ -1,5 +1,9 @@
 .body {
-  background: linear-gradient(126deg, rgb(238 255 255 / 50%) 20%, rgb(248 253 255 / 70%) 80%);
+  background: linear-gradient(
+    126deg,
+    rgb(238 255 255 / 50%) 20%,
+    rgb(248 253 255 / 70%) 80%
+  );
   border-radius: 0.1875rem;
   height: 100%;
 }

@@ -1,5 +1,9 @@
 .container {
-  background: linear-gradient(36deg, rgb(179 229 252 / 55%) 35%, rgb(230 255 255 / 82.5%) 80%);
+  background: linear-gradient(
+    36deg,
+    rgb(179 229 252 / 55%) 35%,
+    rgb(230 255 255 / 82.5%) 80%
+  );
   border-radius: 0.1875rem;
   color: #455a64;
   display: flex;

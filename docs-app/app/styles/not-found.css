@@ -39,8 +39,13 @@
 }
 
 @keyframes extend-right {
-  from { width: 1.5rem; }
-  to { width: 10rem; }
+  from {
+    width: 1.5rem;
+  }
+
+  to {
+    width: 10rem;
+  }
 }
 
 .metaphor.small-layout {
@@ -61,6 +66,11 @@
 }
 
 @keyframes extend-right-variation-1 {
-  from { width: 1.5rem; }
-  to { width: 8rem; }
+  from {
+    width: 1.5rem;
+  }
+
+  to {
+    width: 8rem;
+  }
 }
