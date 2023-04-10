@@ -3,24 +3,18 @@
   as |CQ|
 >
   <div
-    local-class="container {{unless CQ.features.tall 'flat'}}"
+    class="{{this.styles.container}} {{local-class this.styles (unless CQ.features.tall 'flat')}}"
   >
     {{#if this.summary}}
       <div
-        local-class="summary {{if
-          CQ.features.large
-          'horizontal-layout'
-        }}"
+        class="{{this.styles.summary}} {{local-class this.styles (if CQ.features.large 'horizontal-layout')}}"
         tabindex="0"
       >
         <h3
           data-test-field="Music Format"
-          local-class="music-format {{unless
-            CQ.features.large
-            'small-font-size'
-          }}"
+          class="{{this.styles.music-format}} {{local-class this.styles (unless CQ.features.large 'small-font-size')}}"
         >
-          <span local-class="marker">
+          <span class={{this.styles.marker}}>
             {{svg-jar
               "stop"
               aria-hidden="true"
@@ -35,26 +29,26 @@
 
         <div
           data-test-field="Annual Revenue"
-          local-class="annual-revenue"
+          class={{this.styles.annual-revenue}}
         >
           {{#if (or CQ.features.tall CQ.features.large)}}
             <span>Annual revenue:</span>
           {{/if}}
 
-          <span local-class="highlight">
+          <span class={{this.styles.highlight}}>
             {{this.summary.averageRevenue}}
           </span>
         </div>
 
         <div
           data-test-field="Relevant Years"
-          local-class="relevant-years"
+          class={{this.styles.relevant-years}}
         >
           {{#if (or CQ.features.tall CQ.features.large)}}
             <span>Relevant years:</span>
           {{/if}}
 
-          <span local-class="highlight">
+          <span class={{this.styles.highlight}}>
             {{this.summary.relevantYears.min}}
             -
             {{this.summary.relevantYears.max}}
@@ -66,7 +60,7 @@
         <button
           aria-label="Previous"
           data-test-button="Previous"
-          local-class="previous-button"
+          class={{this.styles.previous-button}}
           type="button"
           {{on "click" (fn this.showNextSummary -1)}}
         >
@@ -77,7 +71,7 @@
             {{svg-jar
               "chevron-left"
               aria-hidden="true"
-              local-class="icon"
+              class=(local-class this.styles "icon")
             }}
 
           {{/if}}
@@ -88,7 +82,7 @@
         <button
           aria-label="Next"
           data-test-button="Next"
-          local-class="next-button"
+          class={{this.styles.next-button}}
           type="button"
           {{on "click" (fn this.showNextSummary 1)}}
         >
@@ -99,7 +93,7 @@
             {{svg-jar
               "chevron-right"
               aria-hidden="true"
-              local-class="icon"
+              class=(local-class this.styles "icon")
             }}
 
           {{/if}}

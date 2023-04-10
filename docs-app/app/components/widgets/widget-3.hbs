@@ -1,15 +1,15 @@
-<section local-class="container">
-  <header local-class="header">
+<section class={{this.styles.container}}>
+  <header class={{this.styles.header}}>
     <h2>Widget 3</h2>
 
-    <div local-class="actions">
+    <div class={{this.styles.actions}}>
       <a data-test-link="All tours" href="#">
         All tours
       </a>
     </div>
   </header>
 
-  <div data-test-tour-schedule local-class="tour-schedule">
+  <div data-test-tour-schedule class={{this.styles.tour-schedule}}>
     <Widgets::Widget-3::TourSchedule
       @concert={{this.concertData}}
     />

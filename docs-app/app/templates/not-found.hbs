@@ -4,21 +4,18 @@
   <p>Feeling lost? Un<em>contained</em>?</p>
   <p>Don't worry. We all have our off days.</p>
 
-  <div local-class="animation">
+  <div class={{this.styles.animation}}>
     <ContainerQuery
       @features={{hash small=(width max=350)}}
       as |CQ|
     >
       <div
-        local-class="metaphor {{if
-          CQ.features.small
-          'small-layout'
-        }}"
+        class="{{this.styles.metaphor}} {{local-class this.styles (if CQ.features.small 'small-layout')}}"
       >
-        <div local-class="mental-block">
+        <div class={{this.styles.mental-block}}>
         </div>
 
-        <div aria-hidden="true" local-class="the-next-idea">
+        <div aria-hidden="true" class={{this.styles.the-next-idea}}>
           ember-container-query
         </div>
       </div>

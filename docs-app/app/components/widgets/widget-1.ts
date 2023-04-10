@@ -1,9 +1,13 @@
-import templateOnlyComponent from '@ember/component/template-only';
+import Component from '@glimmer/component';
+
+import styles from './widget-1.css';
 
 interface WidgetsWidget1Signature {}
 
 const WidgetsWidget1Component =
-  templateOnlyComponent<WidgetsWidget1Signature>();
+  class extends Component<WidgetsWidget1Signature> {
+    styles = styles;
+  };
 
 export default WidgetsWidget1Component;
 

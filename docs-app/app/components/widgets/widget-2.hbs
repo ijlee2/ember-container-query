@@ -5,7 +5,7 @@
     very-tall=(height min=480)
   }}
   @tagName="section"
-  local-class="container"
+  class={{this.styles.container}}
   as |CQ|
 >
   <header>
@@ -13,12 +13,12 @@
   </header>
 
   {{#unless CQ.features.short}}
-    <div data-test-visualization local-class="visualization">
+    <div data-test-visualization class={{this.styles.visualization}}>
       <Widgets::Widget-2::StackedChart @data={{this.data}} />
     </div>
   {{/unless}}
 
-  <div data-test-captions local-class="captions">
+  <div data-test-captions class={{this.styles.captions}}>
     <Widgets::Widget-2::Captions
       @summaries={{this.summaries}}
     />

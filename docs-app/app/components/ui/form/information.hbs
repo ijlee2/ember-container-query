@@ -1,10 +1,10 @@
 {{#if (or @title @instructions)}}
-  <div local-class="container">
+  <div class={{this.styles.container}}>
     {{#if @title}}
       <div
         data-test-title
         id="{{@formId}}-title"
-        local-class="title"
+        class={{this.styles.title}}
       >
         {{@title}}
       </div>
@@ -14,7 +14,7 @@
       <p
         data-test-instructions
         id="{{@formId}}-instructions"
-        local-class="instructions"
+        class={{this.styles.instructions}}
       >
         {{@instructions}}
       </p>

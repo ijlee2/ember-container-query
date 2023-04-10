@@ -1,19 +1,19 @@
 <ContainerQuery
   @features={{hash large=(width min=224) tall=(height min=120)}}
   @tagName="section"
-  local-class="container"
+  class={{this.styles.container}}
   as |CQ|
 >
   {{#let
     (and CQ.features.large CQ.features.tall)
     as |showFullText|
   }}
-    <div data-test-call-to-action local-class="call-to-action">
+    <div data-test-call-to-action class={{this.styles.call-to-action}}>
       {{#if showFullText}}
         <p>What will <em>you</em> create with</p>
       {{/if}}
 
-      <p local-class="highlight">
+      <p class={{this.styles.highlight}}>
         <a
           href="https://github.com/ijlee2/ember-container-query"
           target="_blank"

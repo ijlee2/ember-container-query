@@ -1,6 +1,8 @@
-import templateOnlyComponent from '@ember/component/template-only';
+import Component from '@glimmer/component';
 
 import type { Product } from '../../../data/products';
+
+import styles from './card.css';
 
 interface ProductsProductCardSignature {
   Args: {
@@ -10,7 +12,9 @@ interface ProductsProductCardSignature {
 }
 
 const ProductsProductCardComponent =
-  templateOnlyComponent<ProductsProductCardSignature>();
+  class extends Component<ProductsProductCardSignature> {
+    styles = styles;
+  };
 
 export default ProductsProductCardComponent;
 

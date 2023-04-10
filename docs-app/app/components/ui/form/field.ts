@@ -1,6 +1,8 @@
 import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 
+import styles from './field.css';
+
 interface UiFormFieldSignature {
   Args: {
     errorMessage?: string;
@@ -22,6 +24,8 @@ interface UiFormFieldSignature {
 }
 
 export default class UiFormFieldComponent extends Component<UiFormFieldSignature> {
+  styles = styles;
+
   inputId = guidFor(this);
 }
 

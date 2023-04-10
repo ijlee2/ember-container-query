@@ -19,8 +19,7 @@
       data-test-field={{@label}}
       disabled={{@isDisabled}}
       id={{f.inputId}}
-      local-class="textarea
-        {{if (or @isDisabled @isReadOnly) 'is-disabled'}}
+      class="{{this.styles.textarea}} {{local-class this.styles (if (or @isDisabled @isReadOnly) 'is-disabled')}} 
       "
       placeholder={{@placeholder}}
       readonly={{@isReadOnly}}

@@ -1,8 +1,8 @@
 {{page-title "Products"}}
 
 <Ui::Page @title="Products">
-  <div local-class="products-with-details">
-    <div local-class="list">
+  <div class={{this.styles.products-with-details}}>
+    <div class={{this.styles.list}}>
       {{#each @model as |product|}}
         <Products::Product::Card @product={{product}} />
       {{else}}
@@ -12,7 +12,7 @@
       {{/each}}
     </div>
 
-    <div local-class="product-details">
+    <div class={{this.styles.product-details}}>
       {{outlet}}
     </div>
   </div>

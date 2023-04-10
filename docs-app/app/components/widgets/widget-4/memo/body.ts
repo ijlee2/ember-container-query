@@ -1,4 +1,6 @@
-import templateOnlyComponent from '@ember/component/template-only';
+import Component from '@glimmer/component';
+
+import styles from './body.css';
 
 interface WidgetsWidget4MemoBodySignature {
   Args: {
@@ -7,7 +9,9 @@ interface WidgetsWidget4MemoBodySignature {
 }
 
 const WidgetsWidget4MemoBodyComponent =
-  templateOnlyComponent<WidgetsWidget4MemoBodySignature>();
+  class extends Component<WidgetsWidget4MemoBodySignature> {
+    styles = styles;
+  };
 
 export default WidgetsWidget4MemoBodyComponent;
 

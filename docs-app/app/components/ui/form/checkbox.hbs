@@ -23,9 +23,8 @@
       aria-readonly={{if @isReadOnly "true" "false"}}
       aria-required={{if @isRequired "true" "false"}}
       data-test-field={{@label}}
-      local-class="checkbox
-        {{if this.isChecked 'is-checked'}}
-        {{if (or @isDisabled @isReadOnly) 'is-disabled'}}
+      class="{{this.styles.checkbox}} {{local-class this.styles (if this.isChecked 'is-checked')}} 
+         {{local-class this.styles (if (or @isDisabled @isReadOnly) 'is-disabled')}} 
       "
       role="checkbox"
       tabindex={{unless @isDisabled "0"}}
@@ -36,7 +35,7 @@
         {{svg-jar
           "check"
           aria-hidden="true"
-          local-class="checkmark-icon"
+          class=(local-class this.styles "checkmark-icon")
         }}
       {{/if}}
     </span>

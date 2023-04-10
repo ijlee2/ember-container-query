@@ -1,10 +1,10 @@
 {{#if this.isTestEnvironment}}
-  <div local-class="placeholder-image"></div>
+  <div class={{this.styles.placeholder-image}}></div>
 
 {{else}}
   <img
     alt=""
-    local-class="image"
+    class={{this.styles.image}}
     role="presentation"
     src={{@src}}
   />

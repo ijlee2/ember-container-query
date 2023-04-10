@@ -1,6 +1,8 @@
-import templateOnlyComponent from '@ember/component/template-only';
+import Component from '@glimmer/component';
 
 import type { Track } from '../../data/album';
+
+import styles from './table.css';
 
 interface TracksTableSignature {
   Args: {
@@ -8,7 +10,9 @@ interface TracksTableSignature {
   };
 }
 
-const TracksTableComponent = templateOnlyComponent<TracksTableSignature>();
+const TracksTableComponent = class extends Component<TracksTableSignature> {
+  styles = styles;
+};
 
 export default TracksTableComponent;
 

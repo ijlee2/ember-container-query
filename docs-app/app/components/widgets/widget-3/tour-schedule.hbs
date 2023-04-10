@@ -1,30 +1,30 @@
 <ContainerQuery
   @features={{hash small=(width max=400)}}
   @dataAttributePrefix="cq"
-  local-class="container"
+  class={{this.styles.container}}
 >
-  <div local-class="splash">
-    <div local-class="splash-image-container">
+  <div class={{this.styles.splash}}>
+    <div class={{this.styles.splash-image-container}}>
       {{#if @concert.images}}
         <Widgets::Widget-3::TourSchedule::ResponsiveImage
           @images={{@concert.images}}
         />
 
       {{else}}
-        <div local-class="placeholder-image"></div>
+        <div class={{this.styles.placeholder-image}}></div>
 
       {{/if}}
     </div>
 
-    <div local-class="concert-date-container">
-      <time local-class="concert-date">
+    <div class={{this.styles.concert-date-container}}>
+      <time class={{this.styles.concert-date}}>
         {{@concert.date}}
       </time>
     </div>
 
-    <div local-class="venue-name-container">
-      <a href="#" local-class="concert-link">
-        <div local-class="venue-name">{{@concert.name}}</div>
+    <div class={{this.styles.venue-name-container}}>
+      <a href="#" class={{this.styles.concert-link}}>
+        <div class={{this.styles.venue-name}}>{{@concert.name}}</div>
       </a>
     </div>
   </div>

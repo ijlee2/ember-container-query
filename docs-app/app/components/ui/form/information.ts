@@ -1,4 +1,6 @@
-import templateOnlyComponent from '@ember/component/template-only';
+import Component from '@glimmer/component';
+
+import styles from './information.css';
 
 interface UiFormInformationSignature {
   Args: {
@@ -9,7 +11,9 @@ interface UiFormInformationSignature {
 }
 
 const UiFormInformationComponent =
-  templateOnlyComponent<UiFormInformationSignature>();
+  class extends Component<UiFormInformationSignature> {
+    styles = styles;
+  };
 
 export default UiFormInformationComponent;
 
