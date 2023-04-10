@@ -18,15 +18,23 @@ module.exports = function (defaults) {
     },
   });
 
-  return require('@embroider/compat').compatBuild(app, Webpack, {
+  const options = {
     packagerOptions: {
       cssLoaderOptions: {
         modules: {
           localIdentName: isProduction()
             ? '[sha512:hash:base64:5]'
             : '[path][name]__[local]',
+          // Enable local mode only for CSS files from the host app
           mode: (resourcePath) => {
-            const isHostAppPath = resourcePath.includes(`/${app.name}/`);
+            // The host app and active child addons are moved into a common
+            // stable temp dir (`options.workspaceDir`), before the `css-loader`
+            // processes them.
+            //
+            // We want to enable local mode only for our own host app. All other
+            // addons should be loaded in global mode.
+            const hostAppWorkspaceDir = `${options.workspaceDir}/${app.name}`;
+            const isHostAppPath = resourcePath.includes(hostAppWorkspaceDir);
 
             return isHostAppPath ? 'local' : 'global';
           },
@@ -67,5 +75,7 @@ module.exports = function (defaults) {
     staticComponents: false, // due to ember-css-modules
     staticHelpers: true,
     staticModifiers: true,
-  });
+  };
+
+  return require('@embroider/compat').compatBuild(app, Webpack, options);
 };
