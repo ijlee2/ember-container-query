@@ -1,6 +1,6 @@
-import type { TestContext } from '@ember/test-helpers';
+import { array, hash } from '@ember/helper';
 import { findAll, render } from '@ember/test-helpers';
-import { hbs } from 'ember-cli-htmlbars';
+import NavigationMenu from 'docs-app/components/navigation-menu';
 import { module, test } from 'qunit';
 
 import { setupRenderingTest } from '../../helpers';
@@ -8,18 +8,20 @@ import { setupRenderingTest } from '../../helpers';
 module('Integration | Component | navigation-menu', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('The component renders a navigation menu', async function (this: TestContext, assert) {
-    await render<TestContext>(hbs`
-      <NavigationMenu
-        @name="Main Navigation"
-        @menuItems={{array
-          (hash route="index" label="Home")
-          (hash route="album" label="Album")
-          (hash route="dashboard" label="Dashboard")
-          (hash route="form" label="Form")
-        }}
-      />
-    `);
+  test('The component renders a navigation menu', async function (assert) {
+    await render(
+      <template>
+        <NavigationMenu
+          @name="Main Navigation"
+          @menuItems={{array
+            (hash route="index" label="Home")
+            (hash route="album" label="Album")
+            (hash route="dashboard" label="Dashboard")
+            (hash route="form" label="Form")
+          }}
+        />
+      </template>
+    );
 
     assert
       .dom('[data-test-nav="Main Navigation"]')
