@@ -1451,6 +1451,11 @@
   resolved "https://registry.yarnpkg.com/@glint/environment-ember-loose/-/environment-ember-loose-1.0.0-beta.5.tgz#0200c81bf599409b9a495e26030ac83587264ff7"
   integrity sha512-CZe6qX1rzc0KQjl0fk0/c8TWmMCHAGmPtvMTjbnjCr8kny7Kp7KoK1Tuj3fTZ/ThpRZDCMj7QzU1AHyG273EDw==
 
+"@glint/environment-ember-template-imports@v1.0.0-beta.5":
+  version "1.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@glint/environment-ember-template-imports/-/environment-ember-template-imports-1.0.0-beta.5.tgz#600469105fc44d4259ff46d3143243bfb8869a12"
+  integrity sha512-1o77XPwoP13p6sUxdCo+OxX13LfLTM/6G0b7WWaCL1H2J8EyhXPxD5GO+u5nXbR14TJEveD+61dqfnCJwRy87g==
+
 "@glint/template@^v1.0.0-beta.5":
   version "1.0.0-beta.5"
   resolved "https://registry.yarnpkg.com/@glint/template/-/template-1.0.0-beta.5.tgz#0d094750ab69069e54a92647d06c7d8813732395"
