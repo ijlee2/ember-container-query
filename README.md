@@ -1,14 +1,12 @@
 [![This project uses GitHub Actions for continuous integration.](https://github.com/ijlee2/ember-container-query/workflows/CI/badge.svg)](https://github.com/ijlee2/ember-container-query/actions?query=workflow%3ACI)
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Isaac/ember-container-query)
 
-ember-container-query
-==============================================================================
+# ember-container-query
 
 _Make container queries that harness the power of Ember_
 
 
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 ```sh
 ember install ember-container-query
@@ -59,8 +57,7 @@ ember install ember-container-query
 </details>
 
 
-Applications
-------------------------------------------------------------------------------
+## Applications
 
 Where can you use container queries? Here are real-life (and some theoretical) applications!
 
@@ -147,8 +144,7 @@ Not convinced? Open the [demo app](https://ember-container-query.netlify.app/) t
 </div>
 
 
-API
-------------------------------------------------------------------------------
+## API
 
 The addon provides 1 Glimmer component and 3 helpers:
 
@@ -279,8 +275,7 @@ export default class ChartComponent extends Component {
 </details>
 
 
-Example
-------------------------------------------------------------------------------
+## Example
 
 Let's look at the code that created the video demo above.
 
@@ -363,8 +358,7 @@ You can see that the album page uses 2 `<ContainerQuery>` components. Rest assur
 For more examples, I encourage you to check out the code for my demo app. It is located under the [`docs-app`](https://github.com/ijlee2/ember-container-query/tree/main/docs-app) folder and is structured like a typical Ember app.
 
 
-Compatibility
-------------------------------------------------------------------------------
+## Compatibility
 
 * `ember-auto-import@v2`<sup>1</sup>
 * Ember.js v3.28 or above
@@ -373,19 +367,16 @@ Compatibility
 <sup>1. Until you can adopt `ember-auto-import@v2`, you can use [`ember-container-query@v3.2.0`](https://github.com/ijlee2/ember-container-query/tree/3.2.0) to make container queries.</sup>
 
 
-Contributing
-------------------------------------------------------------------------------
+## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
 
-Credits
-------------------------------------------------------------------------------
+## Credits
 
 Much thanks goes to [Chad Carbert (@chadian)](https://github.com/chadian), who introduced me to container queries at [EmberFest 2019](https://www.youtube.com/watch?v=RIdjk9_RSBY) and created [`ember-fill-up`](https://github.com/chadian/ember-fill-up) 🌟. I modeled the API for `ember-container-query` based on Chad's addon.
 
 
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).
