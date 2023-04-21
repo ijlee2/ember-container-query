@@ -19,9 +19,25 @@ ember install ember-container-query
 ```
 
 <details>
-<summary>Use Glint? ✨</summary>
+<summary>Use Glint or <code>&lt;template&gt;</code> tag? ✨</summary>
 
-- If you are using [strict mode](https://github.com/ember-template-imports/ember-template-imports), then you are good to go!
+- Update your template registry to extend this addon's. Check the [Glint documentation](https://typed-ember.gitbook.io/glint/using-glint/ember/using-addons#using-glint-enabled-addons) for more information.
+
+    ```ts
+    /* types/global.d.ts */
+
+    import '@glint/environment-ember-loose';
+
+    import type EmberContainerQueryRegistry from 'ember-container-query/template-registry';
+
+    declare module '@glint/environment-ember-loose/registry' {
+      export default interface Registry extends EmberContainerQueryRegistry, /* other addon registries */ {
+        // local entries
+      }
+    }
+    ```
+
+- If you are using [`<template>` tag](https://github.com/ember-template-imports/ember-template-imports), you are good to go! Use the named import to consume things.
 
     ```ts
     /* app/components/tracks.{gjs,gts} */
@@ -43,25 +59,6 @@ ember install ember-container-query
       </ContainerQuery>
     </template>
     ```
-
-- Otherwise, update your template registry to extend this addon's. Check the [Glint documentation](https://typed-ember.gitbook.io/glint/using-glint/ember/using-addons#using-glint-enabled-addons) for more information.
-
-    ```ts
-    /* types/global.d.ts */
-
-    import '@glint/environment-ember-loose';
-
-    import type EmberContainerQueryRegistry from 'ember-container-query/template-registry';
-
-    declare module '@glint/environment-ember-loose/registry' {
-      export default interface Registry extends EmberContainerQueryRegistry, /* other addon registries */ {
-        // local entries
-      }
-    }
-    ```
-
-
-⚠️ Glint is in active development and may introduce breaking changes. This addon will try to provide a stable API. Should it need to make a breaking change due to Glint, semantic versioning may not be rigorously followed (e.g. there is no new major version).
 
 </details>
 
