@@ -336,9 +336,11 @@ For more examples, I encourage you to check out the code for my demo app. It is 
 Compatibility
 ------------------------------------------------------------------------------
 
+* `ember-auto-import@v2`<sup>1</sup>
 * Ember.js v3.28 or above
-* Ember CLI v3.28 or above
 * Node.js v14 or above
+
+<sup>1. Until you can adopt `ember-auto-import@v2`, you can use [`ember-container-query@v3.2.0`](https://github.com/ijlee2/ember-container-query/tree/3.2.0) to make container queries.</sup>
 
 
 Contributing
