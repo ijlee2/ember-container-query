@@ -1,17 +1,18 @@
 {
   "name": "ember-container-query",
   "version": "4.0.0-alpha.6",
-  "description": "Container queries using Ember modifiers",
+  "description": "Make container queries that harness the power of Ember",
   "keywords": [
     "container-queries",
     "container-query",
     "element-queries",
     "element-query",
     "ember-addon",
-    "ember-octane",
     "emberjs",
+    "embroider",
     "glint",
-    "responsive-design"
+    "responsive-design",
+    "typescript"
   ],
   "repository": {
     "type": "git",
