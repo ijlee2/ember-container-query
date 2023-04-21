@@ -232,6 +232,7 @@ You can pass these arguments to the modifier.
 - `@dataAttributePrefix`
 - `@debounce`
 - `@features`
+- `@onQuery`
 
 For more information, refer to [the arguments of `<ContainerQuery>` component](#arguments).
 
@@ -242,6 +243,35 @@ The outputs are similar to [those of `<ContainerQuery>` component](#outputs).
 
 Data attributes are automatically applied to the HTML element. To get `dimensions` and `features`, you will need to pass the argument `@onQuery` (a function) to the modifier.
 
+```ts
+/* app/components/chart.gts */
+
+import { action } from '@ember/object';
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { containerQuery } from 'ember-container-query';
+import type { Dimensions } from 'ember-container-query/modifiers/container-query';
+
+export default class ChartComponent extends Component {
+  @tracked height!: number;
+  @tracked width!: number;
+
+  @action updateDimensions({ dimensions }: { dimensions: Dimensions }) {
+    const { height, width } = dimensions;
+
+    this.height = height;
+    this.width = width;
+  }
+
+  // ...
+
+  <template>
+    <div {{containerQuery onQuery=this.updateDimensions}}>
+      <svg></svg>
+    </div>
+  </template>
+}
+```
 
 </details>
 
