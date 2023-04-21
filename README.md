@@ -4,11 +4,7 @@
 ember-container-query
 ==============================================================================
 
-_Make container queries that harness the power of Ember Octane._
-
-![Demo of ember-container-query](https://user-images.githubusercontent.com/16869656/82177207-72699c00-989e-11ea-9cb6-2e388c5e98c0.gif)
-
-Open the [demo app](https://ember-container-query.netlify.app/) to see `ember-container-query` in action. (There's even a 404 page!)
+_Make container queries that harness the power of Ember_
 
 
 Installation
@@ -142,6 +138,13 @@ Where can you use container queries? Here are real-life (and some theoretical) a
 
 1. Maybe a secret, most powerful item appears when the game world is at a certain size? :)
 </details>
+
+Not convinced? Open the [demo app](https://ember-container-query.netlify.app/) to see `ember-container-query` in action. (There's even a 404 page!)
+
+<div align="left">
+  <img alt="A demo of ember-container-query shows a smooth transition when using a list or table to display data" src="https://user-images.githubusercontent.com/16869656/82177207-72699c00-989e-11ea-9cb6-2e388c5e98c0.gif" width="600" />
+  <img alt="Another demo of ember-container-query shows a dashboard with widgets in mobile, tablet, and desktop resolutions" src="https://user-images.githubusercontent.com/16869656/233708509-1fac7262-239b-4f73-a58e-2ffd62456a73.gif" width="600" />
+</div>
 
 
 API
