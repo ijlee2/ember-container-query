@@ -5,7 +5,7 @@
   as |CQ|
 >
   {{#let
-    (and CQ.features.large CQ.features.tall)
+    (strict-and CQ.features.large CQ.features.tall)
     as |showFullText|
   }}
     <div

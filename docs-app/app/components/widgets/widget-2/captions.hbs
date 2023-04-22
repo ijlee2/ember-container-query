@@ -45,7 +45,7 @@
           data-test-field="Annual Revenue"
           class={{this.styles.annual-revenue}}
         >
-          {{#if (or CQ.features.tall CQ.features.large)}}
+          {{#if (strict-or CQ.features.tall CQ.features.large)}}
             <span>Annual revenue:</span>
           {{/if}}
 
@@ -58,7 +58,7 @@
           data-test-field="Relevant Years"
           class={{this.styles.relevant-years}}
         >
-          {{#if (or CQ.features.tall CQ.features.large)}}
+          {{#if (strict-or CQ.features.tall CQ.features.large)}}
             <span>Relevant years:</span>
           {{/if}}
 

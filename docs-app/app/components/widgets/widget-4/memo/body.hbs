@@ -4,7 +4,8 @@
     this.styles
     "body"
     (if
-      (or @cqFeatures.small @cqFeatures.short) "minimal-layout"
+      (strict-or @cqFeatures.small @cqFeatures.short)
+      "minimal-layout"
     )
   }}
 >

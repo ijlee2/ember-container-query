@@ -22,7 +22,7 @@
       class={{local-class
         this.styles
         "input"
-        (if (or @isDisabled @isReadOnly) "is-disabled")
+        (if (strict-or @isDisabled @isReadOnly) "is-disabled")
       }}
       placeholder={{@placeholder}}
       readonly={{@isReadOnly}}

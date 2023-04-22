@@ -1,6 +1,6 @@
 {{#let
-  (and @cqFeatures.large @cqFeatures.short)
-  (or @cqFeatures.small @cqFeatures.short)
+  (strict-and @cqFeatures.large @cqFeatures.short)
+  (strict-or @cqFeatures.small @cqFeatures.short)
   as |showHorizontalLayout showMinimalLayout|
 }}
   <div
