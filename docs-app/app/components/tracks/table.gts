@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import type { TOC } from '@ember/component/template-only';
 
 import type { Track } from '../../data/album';
 import add from '../../helpers/add';
@@ -10,17 +10,15 @@ interface TracksTableSignature {
   };
 }
 
-export default class TracksTableComponent extends Component<TracksTableSignature> {
-  styles = styles;
-
+const TracksTableComponent: TOC<TracksTableSignature> =
   <template>
     <table data-test-table="Tracks">
       <thead>
         <tr>
-          <th class={{this.styles.track-number}}>#</th>
+          <th class={{styles.track-number}}>#</th>
           <th>Title</th>
-          <th class={{this.styles.track-length}}>Length</th>
-          <th class={{this.styles.track-is-explicit}}>Explicit</th>
+          <th class={{styles.track-length}}>Length</th>
+          <th class={{styles.track-is-explicit}}>Explicit</th>
         </tr>
       </thead>
 
@@ -44,7 +42,8 @@ export default class TracksTableComponent extends Component<TracksTableSignature
       </tbody>
     </table>
   </template>
-}
+
+export default TracksTableComponent;
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {
