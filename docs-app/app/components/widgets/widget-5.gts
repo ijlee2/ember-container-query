@@ -1,5 +1,5 @@
+import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
-import Component from '@glimmer/component';
 import { ContainerQuery, height, width } from 'ember-container-query';
 
 import strictAnd from '../../helpers/strict-and';
@@ -7,14 +7,12 @@ import styles from './widget-5.css';
 
 interface WidgetsWidget5Signature {}
 
-export default class WidgetsWidget5Component extends Component<WidgetsWidget5Signature> {
-  styles = styles;
-
+const WidgetsWidget5Component: TOC<WidgetsWidget5Signature> =
   <template>
     <ContainerQuery
       @features={{hash large=(width min=224) tall=(height min=120)}}
       @tagName="section"
-      class={{this.styles.container}}
+      class={{styles.container}}
       as |CQ|
     >
       {{#let
@@ -23,13 +21,13 @@ export default class WidgetsWidget5Component extends Component<WidgetsWidget5Sig
       }}
         <div
           data-test-call-to-action
-          class={{this.styles.call-to-action}}
+          class={{styles.call-to-action}}
         >
           {{#if showFullText}}
             <p>What will <em>you</em> create with</p>
           {{/if}}
 
-          <p class={{this.styles.highlight}}>
+          <p class={{styles.highlight}}>
             <a
               href="https://github.com/ijlee2/ember-container-query"
               target="_blank"
@@ -46,7 +44,8 @@ export default class WidgetsWidget5Component extends Component<WidgetsWidget5Sig
       {{/let}}
     </ContainerQuery>
   </template>
-}
+
+export default WidgetsWidget5Component;
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {
