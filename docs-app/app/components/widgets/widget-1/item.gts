@@ -10,6 +10,14 @@ interface WidgetsWidget1ItemSignature {
 
 export default class WidgetsWidget1ItemComponent extends Component<WidgetsWidget1ItemSignature> {
   styles = styles;
+
+  <template>
+    <div class={{this.styles.container}}>
+      <p data-test-title>
+        {{@title}}
+      </p>
+    </div>
+  </template>
 }
 
 declare module '@glint/environment-ember-loose/registry' {
