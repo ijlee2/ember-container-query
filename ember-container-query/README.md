@@ -1,27 +1,37 @@
 [![This project uses GitHub Actions for continuous integration.](https://github.com/ijlee2/ember-container-query/workflows/CI/badge.svg)](https://github.com/ijlee2/ember-container-query/actions?query=workflow%3ACI)
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Isaac/ember-container-query)
 
-ember-container-query
-==============================================================================
+# ember-container-query
 
-_Make container queries that harness the power of Ember Octane._
-
-![Demo of ember-container-query](https://user-images.githubusercontent.com/16869656/82177207-72699c00-989e-11ea-9cb6-2e388c5e98c0.gif)
-
-Open the [demo app](https://ember-container-query.netlify.app/) to see `ember-container-query` in action. (There's even a 404 page!)
+_Make container queries that harness the power of Ember_
 
 
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 ```sh
 ember install ember-container-query
 ```
 
 <details>
-<summary>Use Glint? ✨</summary>
+<summary>Use Glint or <code>&lt;template&gt;</code> tag? ✨</summary>
 
-- If you are using [strict mode](https://github.com/ember-template-imports/ember-template-imports), then you are good to go!
+- Update your template registry to extend this addon's. Check the [Glint documentation](https://typed-ember.gitbook.io/glint/using-glint/ember/using-addons#using-glint-enabled-addons) for more information.
+
+    ```ts
+    /* types/global.d.ts */
+
+    import '@glint/environment-ember-loose';
+
+    import type EmberContainerQueryRegistry from 'ember-container-query/template-registry';
+
+    declare module '@glint/environment-ember-loose/registry' {
+      export default interface Registry extends EmberContainerQueryRegistry, /* other addon registries */ {
+        // local entries
+      }
+    }
+    ```
+
+- If you are using [`<template>` tag](https://github.com/ember-template-imports/ember-template-imports), you are good to go! Use the named import to consume things.
 
     ```ts
     /* app/components/tracks.{gjs,gts} */
@@ -44,30 +54,10 @@ ember install ember-container-query
     </template>
     ```
 
-- Otherwise, update your template registry to extend this addon's. Check the [Glint documentation](https://typed-ember.gitbook.io/glint/using-glint/ember/using-addons#using-glint-enabled-addons) for more information.
-
-    ```ts
-    /* types/global.d.ts */
-
-    import '@glint/environment-ember-loose';
-
-    import type EmberContainerQueryRegistry from 'ember-container-query/template-registry';
-
-    declare module '@glint/environment-ember-loose/registry' {
-      export default interface Registry extends EmberContainerQueryRegistry, /* other addon registries */ {
-        // local entries
-      }
-    }
-    ```
-
-
-⚠️ Glint is in active development and may introduce breaking changes. This addon will try to provide a stable API. Should it need to make a breaking change due to Glint, semantic versioning may not be rigorously followed (e.g. there is no new major version).
-
 </details>
 
 
-Applications
-------------------------------------------------------------------------------
+## Applications
 
 Where can you use container queries? Here are real-life (and some theoretical) applications!
 
@@ -146,18 +136,24 @@ Where can you use container queries? Here are real-life (and some theoretical) a
 1. Maybe a secret, most powerful item appears when the game world is at a certain size? :)
 </details>
 
+Not convinced? Open the [demo app](https://ember-container-query.netlify.app/) to see `ember-container-query` in action. (There's even a 404 page!)
 
-API
-------------------------------------------------------------------------------
+<div align="left">
+  <img alt="A demo of ember-container-query shows a smooth transition when using a list or table to display data" src="https://user-images.githubusercontent.com/16869656/82177207-72699c00-989e-11ea-9cb6-2e388c5e98c0.gif" width="600" />
+  <img alt="Another demo of ember-container-query shows a dashboard with widgets in mobile, tablet, and desktop resolutions" src="https://user-images.githubusercontent.com/16869656/233708509-1fac7262-239b-4f73-a58e-2ffd62456a73.gif" width="600" />
+</div>
 
-The addon provides 1 Glimmer component and 3 helpers:
+
+## API
+
+`ember-container-query` provides 1 Glimmer component and 3 helpers:
 
 - `<ContainerQuery>`
 - `{{aspect-ratio}}`
 - `{{height}}`
 - `{{width}}`
 
-Starting `v2.1.1`, the addon extracts the core logic into a modifier. This lets you opt out of using the provided component.
+The addon also provides a modifier so that you can opt out of using the provided component. You may also use the modifier to get the container dimensions when the window is resized.
 
 - `{{container-query}}`
 
@@ -235,6 +231,7 @@ You can pass these arguments to the modifier.
 - `@dataAttributePrefix`
 - `@debounce`
 - `@features`
+- `@onQuery`
 
 For more information, refer to [the arguments of `<ContainerQuery>` component](#arguments).
 
@@ -245,12 +242,40 @@ The outputs are similar to [those of `<ContainerQuery>` component](#outputs).
 
 Data attributes are automatically applied to the HTML element. To get `dimensions` and `features`, you will need to pass the argument `@onQuery` (a function) to the modifier.
 
+```ts
+/* app/components/chart.gts */
+
+import { action } from '@ember/object';
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { containerQuery } from 'ember-container-query';
+import type { Dimensions } from 'ember-container-query/modifiers/container-query';
+
+export default class ChartComponent extends Component {
+  @tracked height!: number;
+  @tracked width!: number;
+
+  @action updateDimensions({ dimensions }: { dimensions: Dimensions }) {
+    const { height, width } = dimensions;
+
+    this.height = height;
+    this.width = width;
+  }
+
+  // ...
+
+  <template>
+    <div {{containerQuery onQuery=this.updateDimensions}}>
+      <svg></svg>
+    </div>
+  </template>
+}
+```
 
 </details>
 
 
-Example
-------------------------------------------------------------------------------
+## Example
 
 Let's look at the code that created the video demo above.
 
@@ -333,27 +358,25 @@ You can see that the album page uses 2 `<ContainerQuery>` components. Rest assur
 For more examples, I encourage you to check out the code for my demo app. It is located under the [`docs-app`](https://github.com/ijlee2/ember-container-query/tree/main/docs-app) folder and is structured like a typical Ember app.
 
 
-Compatibility
-------------------------------------------------------------------------------
+## Compatibility
 
+* `ember-auto-import@v2`<sup>1</sup>
 * Ember.js v3.28 or above
-* Ember CLI v3.28 or above
 * Node.js v14 or above
 
+<sup>1. `ember-container-query` is a v2 addon. This means, your project must have `ember-auto-import@v2`. If you are momentarily stuck with `ember-auto-import@v1`, you can use [`ember-container-query@v3.2.0`](https://github.com/ijlee2/ember-container-query/tree/3.2.0) to make container queries.</sup>
 
-Contributing
-------------------------------------------------------------------------------
+
+## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
 
-Credits
-------------------------------------------------------------------------------
+## Credits
 
 Much thanks goes to [Chad Carbert (@chadian)](https://github.com/chadian), who introduced me to container queries at [EmberFest 2019](https://www.youtube.com/watch?v=RIdjk9_RSBY) and created [`ember-fill-up`](https://github.com/chadian/ember-fill-up) 🌟. I modeled the API for `ember-container-query` based on Chad's addon.
 
 
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).
