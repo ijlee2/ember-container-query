@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import type { TOC } from '@ember/component/template-only';
 
 import styles from './page.css';
 
@@ -11,25 +11,24 @@ interface UiPageSignature {
   };
 }
 
-export default class UiPageComponent extends Component<UiPageSignature> {
-  styles = styles;
-
+const UiPageComponent: TOC<UiPageSignature> =
   <template>
-    <div class={{this.styles.container}}>
-      <h1 class={{this.styles.header}}>
+    <div class={{styles.container}}>
+      <h1 class={{styles.header}}>
         {{@title}}
       </h1>
 
       <div
         id="main-content"
-        class={{this.styles.body}}
+        class={{styles.body}}
         tabindex="-1"
       >
         {{yield}}
       </div>
     </div>
   </template>
-}
+
+  export default UiPageComponent;
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {
