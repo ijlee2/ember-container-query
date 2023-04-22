@@ -1,5 +1,5 @@
+import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
-import Component from '@glimmer/component';
 import { ContainerQuery, height, width } from 'ember-container-query';
 
 import styles from './memo.css';
@@ -9,9 +9,7 @@ import WidgetsWidget4MemoHeader from './memo/header';
 
 interface WidgetsWidget4MemoSignature {}
 
-export default class WidgetsWidget4MemoComponent extends Component<WidgetsWidget4MemoSignature> {
-  styles = styles;
-
+const WidgetsWidget4MemoComponent: TOC<WidgetsWidget4MemoSignature> =
   <template>
     <ContainerQuery
       @features={{hash
@@ -20,29 +18,30 @@ export default class WidgetsWidget4MemoComponent extends Component<WidgetsWidget
         short=(height max=200)
       }}
       @tagName="article"
-      class={{this.styles.container}}
+      class={{styles.container}}
       as |CQ|
     >
-      <div class={{this.styles.header-container}}>
+      <div class={{styles.header-container}}>
         <WidgetsWidget4MemoHeader
           @cqFeatures={{CQ.features}}
         />
       </div>
 
-      <div class={{this.styles.body-container}}>
+      <div class={{styles.body-container}}>
         <WidgetsWidget4MemoBody
           @cqFeatures={{CQ.features}}
         />
       </div>
 
-      <div class={{this.styles.actions-container}}>
+      <div class={{styles.actions-container}}>
         <WidgetsWidget4MemoActions
           @cqFeatures={{CQ.features}}
         />
       </div>
     </ContainerQuery>
   </template>
-}
+
+export default WidgetsWidget4MemoComponent;
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {
