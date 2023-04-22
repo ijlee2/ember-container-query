@@ -1,5 +1,5 @@
+import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
-import Component from '@glimmer/component';
 import { aspectRatio, ContainerQuery } from 'ember-container-query';
 
 import styles from './widget-1.css';
@@ -7,9 +7,7 @@ import WidgetsWidget1Item from './widget-1/item';
 
 interface WidgetsWidget1Signature {}
 
-export default class WidgetsWidget1Component extends Component<WidgetsWidget1Signature> {
-  styles = styles;
-
+const WidgetsWidget1Component: TOC<WidgetsWidget1Signature> =
   <template>
     <ContainerQuery
       @features={{hash
@@ -18,28 +16,29 @@ export default class WidgetsWidget1Component extends Component<WidgetsWidget1Sig
         wide=(aspectRatio min=1.25)
       }}
       @tagName="section"
-      class={{this.styles.container}}
+      class={{styles.container}}
     >
       <header>
         <h2>Widget 1</h2>
       </header>
 
-      <div class={{this.styles.items}}>
-        <div class={{this.styles.item-1}}>
+      <div class={{styles.items}}>
+        <div class={{styles.item-1}}>
           <WidgetsWidget1Item @title="Item 1" />
         </div>
 
-        <div class={{this.styles.item-2}}>
+        <div class={{styles.item-2}}>
           <WidgetsWidget1Item @title="Item 2" />
         </div>
 
-        <div class={{this.styles.item-3}}>
+        <div class={{styles.item-3}}>
           <WidgetsWidget1Item @title="Item 3" />
         </div>
       </div>
     </ContainerQuery>
   </template>
-}
+
+export default WidgetsWidget1Component;
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {
