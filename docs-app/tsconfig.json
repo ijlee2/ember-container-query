@@ -19,9 +19,7 @@
   "include": [
     "app/**/*",
     "tests/**/*",
-    "types/**/*",
-    "../node_modules/@gavant/glint-template-types/types/ember-truth-helpers/and.d.ts",
-    "../node_modules/@gavant/glint-template-types/types/ember-truth-helpers/or.d.ts"
+    "types/**/*"
   ],
   "glint": {
     "environment": [

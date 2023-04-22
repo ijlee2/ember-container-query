@@ -9,8 +9,6 @@ import 'ember-source/types/preview';
 import { ComponentLike, HelperLike } from '@glint/template';
 import type EmberContainerQueryRegistry from 'ember-container-query/template-registry';
 import type EmberSvgJarRegistry from 'ember-svg-jar/glint';
-import AndHelper from 'ember-truth-helpers/helpers/and';
-import OrHelper from 'ember-truth-helpers/helpers/or';
 import type EmbroiderCssModulesRegistry from 'embroider-css-modules/template-registry';
 
 type NavigationNarratorComponent = ComponentLike<{
@@ -32,8 +30,6 @@ declare module '@glint/environment-ember-loose/registry' {
     // Add any registry entries from other addons here that your addon itself uses (in non-strict mode templates)
     // See https://typed-ember.gitbook.io/glint/using-glint/ember/using-addons
     NavigationNarrator: NavigationNarratorComponent;
-    and: typeof AndHelper;
-    or: typeof OrHelper;
     'page-title': PageTitleHelper;
   }
 }
