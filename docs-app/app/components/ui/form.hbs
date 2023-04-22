@@ -4,7 +4,7 @@
     (concat this.formId "-instructions")
   }}
   aria-labelledby={{if @title (concat this.formId "-title")}}
-  data-test-form={{or @title ""}}
+  data-test-form={{if @title @title ""}}
   class={{this.styles.form}}
   {{on "submit" this.submitForm}}
 >

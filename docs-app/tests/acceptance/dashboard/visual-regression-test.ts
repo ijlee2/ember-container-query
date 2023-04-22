@@ -126,7 +126,10 @@ module('Acceptance | dashboard', function (hooks) {
 
     assert
       .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasNoText('We see the next button in correct format.');
+      .hasText(
+        'A chevron arrow pointing right',
+        'We see the next button in correct format.'
+      );
 
     // Widget 3
     assert
@@ -203,7 +206,10 @@ module('Acceptance | dashboard', function (hooks) {
 
     assert
       .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasNoText('We see the next button in correct format.');
+      .hasText(
+        'A chevron arrow pointing right',
+        'We see the next button in correct format.'
+      );
 
     // Widget 3
     assert
@@ -369,7 +375,10 @@ module('Acceptance | dashboard', function (hooks) {
 
     assert
       .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasNoText('We see the next button in correct format.');
+      .hasText(
+        'A chevron arrow pointing right',
+        'We see the next button in correct format.'
+      );
 
     // Widget 3
     assert
@@ -446,7 +455,10 @@ module('Acceptance | dashboard', function (hooks) {
 
     assert
       .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasNoText('We see the next button in correct format.');
+      .hasText(
+        'A chevron arrow pointing right',
+        'We see the next button in correct format.'
+      );
 
     // Widget 3
     assert
@@ -612,7 +624,10 @@ module('Acceptance | dashboard', function (hooks) {
 
     assert
       .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasNoText('We see the next button in correct format.');
+      .hasText(
+        'A chevron arrow pointing right',
+        'We see the next button in correct format.'
+      );
 
     // Widget 3
     assert
@@ -689,7 +704,10 @@ module('Acceptance | dashboard', function (hooks) {
 
     assert
       .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasNoText('We see the next button in correct format.');
+      .hasText(
+        'A chevron arrow pointing right',
+        'We see the next button in correct format.'
+      );
 
     // Widget 3
     assert

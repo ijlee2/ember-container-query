@@ -1,7 +1,7 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import type { Dimensions } from 'ember-container-query';
+import { containerQuery, type Dimensions } from 'ember-container-query';
 
 import type { Image } from '../../../../data/concert';
 import { findBestFittingImage } from '../../../../utils/components/widgets/widget-3';
@@ -14,8 +14,6 @@ interface WidgetsWidget3TourScheduleResponsiveImageSignature {
 }
 
 export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends Component<WidgetsWidget3TourScheduleResponsiveImageSignature> {
-  styles = styles;
-
   @tracked imageSource?: string;
 
   @action setImageSource({ dimensions }: { dimensions: Dimensions }): void {
@@ -23,6 +21,23 @@ export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends 
 
     this.imageSource = findBestFittingImage(images, dimensions);
   }
+
+  <template>
+    <div
+      class={{styles.image-container}}
+      {{containerQuery debounce=300 onQuery=this.setImageSource}}
+    >
+      {{#if this.imageSource}}
+        <img
+          alt=""
+          data-test-image="Concert"
+          class={{styles.image}}
+          role="presentation"
+          src={{this.imageSource}}
+        />
+      {{/if}}
+    </div>
+  </template>
 }
 
 declare module '@glint/environment-ember-loose/registry' {

@@ -1,4 +1,4 @@
-{{#if (or @title @instructions)}}
+{{#if (strict-or @title @instructions)}}
   <div class={{this.styles.container}}>
     {{#if @title}}
       <div
