@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import type { TOC } from '@ember/component/template-only';
 import type { QueryResults } from 'ember-container-query';
 import { localClass } from 'embroider-css-modules';
 
@@ -12,9 +12,7 @@ interface WidgetsWidget4MemoHeaderSignature {
   };
 }
 
-export default class WidgetsWidget4MemoHeaderComponent extends Component<WidgetsWidget4MemoHeaderSignature> {
-  styles = styles;
-
+const WidgetsWidget4MemoHeaderComponent: TOC<WidgetsWidget4MemoHeaderSignature> =
   <template>
     {{#let
       (strictAnd @cqFeatures.large @cqFeatures.short)
@@ -24,36 +22,37 @@ export default class WidgetsWidget4MemoHeaderComponent extends Component<Widgets
       <div
         data-test-memo-header
         class={{localClass
-          this.styles
+          styles
           "header"
           (if showMinimalLayout "minimal-layout")
           (if showHorizontalLayout "horizontal-layout")
         }}
       >
         {{#unless showMinimalLayout}}
-          <div class={{this.styles.avatar-container}}>
+          <div class={{styles.avatar-container}}>
             <img
               alt=""
               data-test-image="Avatar"
-              class={{this.styles.avatar}}
+              class={{styles.avatar}}
               role="presentation"
               src="/images/widgets/widget-4/avatar.jpg"
             />
           </div>
         {{/unless}}
 
-        <p class={{this.styles.name}}>
+        <p class={{styles.name}}>
           Isaac Lee
         </p>
 
-        <div class={{this.styles.metadata}}>
-          <a href="#" class={{this.styles.handle}}>@ijlee2</a>
+        <div class={{styles.metadata}}>
+          <a href="#" class={{styles.handle}}>@ijlee2</a>
           · 38m
         </div>
       </div>
     {{/let}}
   </template>
-}
+
+export default WidgetsWidget4MemoHeaderComponent;
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {
