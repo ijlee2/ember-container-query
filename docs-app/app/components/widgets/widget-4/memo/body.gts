@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import type { TOC } from '@ember/component/template-only';
 import type { QueryResults } from 'ember-container-query';
 import { localClass } from 'embroider-css-modules';
 
@@ -11,14 +11,12 @@ interface WidgetsWidget4MemoBodySignature {
   };
 }
 
-export default class WidgetsWidget4MemoBodyComponent extends Component<WidgetsWidget4MemoBodySignature> {
-  styles = styles;
-
+const WidgetsWidget4MemoBodyComponent: TOC<WidgetsWidget4MemoBodySignature> =
   <template>
     <div
       data-test-memo-body
       class={{localClass
-        this.styles
+        styles
         "body"
         (if
           (strictOr @cqFeatures.small @cqFeatures.short)
@@ -26,7 +24,7 @@ export default class WidgetsWidget4MemoBodyComponent extends Component<WidgetsWi
         )
       }}
     >
-      <div class={{this.styles.message}} tabindex="0">
+      <div class={{styles.message}} tabindex="0">
         <p>
           <strong>Buffon’s needle</strong>
           is a classic Monte Carlo simulation that we can conduct in
@@ -55,7 +53,8 @@ export default class WidgetsWidget4MemoBodyComponent extends Component<WidgetsWi
       </div>
     </div>
   </template>
-}
+
+export default WidgetsWidget4MemoBodyComponent;
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {
