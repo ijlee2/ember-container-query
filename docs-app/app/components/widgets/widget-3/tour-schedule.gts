@@ -1,5 +1,5 @@
+import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
-import Component from '@glimmer/component';
 import { ContainerQuery, width } from 'ember-container-query';
 
 import type { Concert } from '../../../data/concert';
@@ -12,37 +12,35 @@ interface WidgetsWidget3TourScheduleSignature {
   };
 }
 
-export default class WidgetsWidget3TourScheduleComponent extends Component<WidgetsWidget3TourScheduleSignature> {
-  styles = styles;
-
+const WidgetsWidget3TourScheduleComponent: TOC<WidgetsWidget3TourScheduleSignature> =
   <template>
     <ContainerQuery
       @features={{hash small=(width max=400)}}
       @dataAttributePrefix="cq"
-      class={{this.styles.container}}
+      class={{styles.container}}
     >
-      <div class={{this.styles.splash}}>
-        <div class={{this.styles.splash-image-container}}>
+      <div class={{styles.splash}}>
+        <div class={{styles.splash-image-container}}>
           {{#if @concert.images}}
             <WidgetsWidget3TourScheduleResponsiveImage
               @images={{@concert.images}}
             />
 
           {{else}}
-            <div class={{this.styles.placeholder-image}}></div>
+            <div class={{styles.placeholder-image}}></div>
 
           {{/if}}
         </div>
 
-        <div class={{this.styles.concert-date-container}}>
-          <time class={{this.styles.concert-date}}>
+        <div class={{styles.concert-date-container}}>
+          <time class={{styles.concert-date}}>
             {{@concert.date}}
           </time>
         </div>
 
-        <div class={{this.styles.venue-name-container}}>
-          <a href="#" class={{this.styles.concert-link}}>
-            <div class={{this.styles.venue-name}}>
+        <div class={{styles.venue-name-container}}>
+          <a href="#" class={{styles.concert-link}}>
+            <div class={{styles.venue-name}}>
               {{@concert.name}}
             </div>
           </a>
@@ -50,7 +48,8 @@ export default class WidgetsWidget3TourScheduleComponent extends Component<Widge
       </div>
     </ContainerQuery>
   </template>
-}
+
+export default WidgetsWidget3TourScheduleComponent;
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {
