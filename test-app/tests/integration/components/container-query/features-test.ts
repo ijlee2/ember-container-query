@@ -2,7 +2,7 @@ import { set } from '@ember/object';
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
-import type { Features } from 'ember-container-query/modifiers/container-query';
+import type { Features } from 'ember-container-query';
 import { module, test } from 'qunit';
 
 import type { CustomAssert } from '../../../helpers';

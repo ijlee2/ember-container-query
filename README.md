@@ -146,14 +146,14 @@ Not convinced? Open the [demo app](https://ember-container-query.netlify.app/) t
 
 ## API
 
-The addon provides 1 Glimmer component and 3 helpers:
+`ember-container-query` provides 1 Glimmer component and 3 helpers:
 
 - `<ContainerQuery>`
 - `{{aspect-ratio}}`
 - `{{height}}`
 - `{{width}}`
 
-Starting `v2.1.1`, the addon extracts the core logic into a modifier. This lets you opt out of using the provided component.
+The addon also provides a modifier so that you can opt out of using the provided component. You may also use the modifier to get the container dimensions when the window is resized.
 
 - `{{container-query}}`
 
@@ -248,8 +248,7 @@ Data attributes are automatically applied to the HTML element. To get `dimension
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { containerQuery } from 'ember-container-query';
-import type { Dimensions } from 'ember-container-query/modifiers/container-query';
+import { containerQuery, type Dimensions } from 'ember-container-query';
 
 export default class ChartComponent extends Component {
   @tracked height!: number;
@@ -364,7 +363,7 @@ For more examples, I encourage you to check out the code for my demo app. It is 
 * Ember.js v3.28 or above
 * Node.js v14 or above
 
-<sup>1. Until you can adopt `ember-auto-import@v2`, you can use [`ember-container-query@v3.2.0`](https://github.com/ijlee2/ember-container-query/tree/3.2.0) to make container queries.</sup>
+<sup>1. `ember-container-query` is a v2 addon. This means, your project must have `ember-auto-import@v2`. If you are momentarily stuck with `ember-auto-import@v1`, you can use [`ember-container-query@v3.2.0`](https://github.com/ijlee2/ember-container-query/tree/3.2.0) to make container queries.</sup>
 
 
 ## Contributing
