@@ -28,7 +28,7 @@ const UiPageComponent: TOC<UiPageSignature> =
     </div>
   </template>
 
-  export default UiPageComponent;
+export default UiPageComponent;
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {
