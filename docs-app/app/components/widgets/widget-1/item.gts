@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import type { TOC } from '@ember/component/template-only';
 
 import styles from './item.css';
 
@@ -8,17 +8,16 @@ interface WidgetsWidget1ItemSignature {
   };
 }
 
-export default class WidgetsWidget1ItemComponent extends Component<WidgetsWidget1ItemSignature> {
-  styles = styles;
-
+const WidgetsWidget1ItemComponent: TOC<WidgetsWidget1ItemSignature> =
   <template>
-    <div class={{this.styles.container}}>
+    <div class={{styles.container}}>
       <p data-test-title>
         {{@title}}
       </p>
     </div>
   </template>
-}
+
+export default WidgetsWidget1ItemComponent;
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {
