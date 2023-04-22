@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import type { TOC } from '@ember/component/template-only';
 import type { QueryResults } from 'ember-container-query';
 import { localClass } from 'embroider-css-modules';
 
@@ -11,14 +11,12 @@ interface WidgetsWidget4MemoActionsSignature {
   };
 }
 
-export default class WidgetsWidget4MemoActionsComponent extends Component<WidgetsWidget4MemoActionsSignature> {
-  styles = styles;
-
+const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature> =
   <template>
     <div
       data-test-memo-actions
       class={{localClass
-        this.styles
+        styles
         "actions"
         (if
           (strictOr @cqFeatures.small @cqFeatures.short)
@@ -28,13 +26,13 @@ export default class WidgetsWidget4MemoActionsComponent extends Component<Widget
     >
       <button
         aria-label="Comment"
-        class={{this.styles.button}}
+        class={{styles.button}}
         type="button"
       >
         {{!-- @glint-expect-error: Unable to import the {{svg-jar}} helper --}}
         {{svg-jar
           "message-processing-outline"
-          class=(localClass this.styles "icon" "icon-comment")
+          class=(localClass styles "icon" "icon-comment")
           desc="A speech bubble"
           role="img"
         }}
@@ -42,13 +40,13 @@ export default class WidgetsWidget4MemoActionsComponent extends Component<Widget
 
       <button
         aria-label="Repost"
-        class={{this.styles.button}}
+        class={{styles.button}}
         type="button"
       >
         {{!-- @glint-expect-error: Unable to import the {{svg-jar}} helper --}}
         {{svg-jar
           "sync"
-          class=(localClass this.styles "icon" "icon-repost")
+          class=(localClass styles "icon" "icon-repost")
           desc="Two circular arrows pointing to each other"
           role="img"
         }}
@@ -56,13 +54,13 @@ export default class WidgetsWidget4MemoActionsComponent extends Component<Widget
 
       <button
         aria-label="Like"
-        class={{this.styles.button}}
+        class={{styles.button}}
         type="button"
       >
         {{!-- @glint-expect-error: Unable to import the {{svg-jar}} helper --}}
         {{svg-jar
           "heart-outline"
-          class=this.styles.icon
+          class=styles.icon
           desc="A heart"
           role="img"
         }}
@@ -70,20 +68,21 @@ export default class WidgetsWidget4MemoActionsComponent extends Component<Widget
 
       <button
         aria-label="Share"
-        class={{this.styles.button}}
+        class={{styles.button}}
         type="button"
       >
         {{!-- @glint-expect-error: Unable to import the {{svg-jar}} helper --}}
         {{svg-jar
           "share-variant-outline"
-          class=this.styles.icon
+          class=styles.icon
           desc="A circular node that branches out to two circular nodes"
           role="img"
         }}
       </button>
     </div>
   </template>
-}
+
+export default WidgetsWidget4MemoActionsComponent;
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {
