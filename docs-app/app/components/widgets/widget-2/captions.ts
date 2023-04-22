@@ -1,9 +1,20 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import { modifier } from 'ember-modifier';
 
 import type { Summary } from '../../../utils/components/widgets/widget-2';
 import styles from './captions.css';
+
+const colorSvg = modifier((container: Element, [color]: [string]) => {
+  const svgElement = container.querySelector('svg');
+
+  if (!svgElement) {
+    return;
+  }
+
+  svgElement.style.setProperty('color', color);
+});
 
 interface WidgetsWidget2CaptionsSignature {
   Args: {
@@ -12,6 +23,7 @@ interface WidgetsWidget2CaptionsSignature {
 }
 
 export default class WidgetsWidget2CaptionsComponent extends Component<WidgetsWidget2CaptionsSignature> {
+  colorSvg = colorSvg;
   styles = styles;
 
   @tracked currentIndex = 0;

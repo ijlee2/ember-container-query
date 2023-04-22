@@ -17,15 +17,12 @@
       </div>
 
       {{#if track.isExplicit}}
-        <span
-          aria-label="Explicit"
-          data-test-field="Explicit"
-          role="img"
-        >
+        <span aria-label="Explicit" data-test-field="Explicit">
           {{svg-jar
             "alpha-e-box"
-            aria-hidden="true"
             class=this.styles.icon-explicit
+            desc="Letter E, which stands for explicit"
+            role="img"
           }}
         </span>
       {{/if}}

@@ -19,7 +19,11 @@
     <div
       class={{local-class this.styles "feedback" "is-error"}}
     >
-      {{svg-jar "alert" aria-hidden="true"}}
+      {{svg-jar
+        "alert"
+        desc="A warning to indicate that the input field has an error"
+        role="img"
+      }}
 
       <span
         data-test-feedback
