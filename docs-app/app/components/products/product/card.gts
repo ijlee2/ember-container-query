@@ -1,11 +1,11 @@
 import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
-import { ContainerQuery, height, width } from 'ember-container-query';
-import ProductsProductImage from './image';
 import { LinkTo } from '@ember/routing';
+import { ContainerQuery, width } from 'ember-container-query';
 
 import type { Product } from '../../../data/products';
 import styles from './card.css';
+import ProductsProductImage from './image';
 
 interface ProductsProductCardSignature {
   Args: {
