@@ -1,9 +1,31 @@
 {{page-title "Products"}}
 
 <Ui::Page @title="Products">
-  <div class={{this.styles.products-with-details}}>
+  <div
+    class={{local-class
+      this.styles
+      (if
+        this.isPartOfNestProductDetailsExperiment
+        (array "shared-layout" "products-with-details")
+        (array "shared-layout" "products")
+      )
+      "sticky-container"
+    }}
+  >
+    <div class={{this.styles.filters}}>
+      <div class={{this.styles.filter}}>
+        <Ui::Form::Input
+          @changeset={{hash name=this.name}}
+          @key="name"
+          @label="Filter by"
+          @onUpdate={{this.noOp}}
+          @placeholder="Cake, pasta, etc."
+        />
+      </div>
+    </div>
+
     <div class={{this.styles.list}}>
-      {{#each @model as |product|}}
+      {{#each this.filteredProducts as |product|}}
         <Products::Product::Card @product={{product}} />
       {{else}}
         <p>

@@ -16,14 +16,14 @@
 
   <:field as |f|>
     <input
-      data-test-field={{@label}}
-      disabled={{@isDisabled}}
-      id={{f.inputId}}
       class={{local-class
         this.styles
         "input"
         (if (strict-or @isDisabled @isReadOnly) "is-disabled")
       }}
+      data-test-field={{@label}}
+      disabled={{@isDisabled}}
+      id={{f.inputId}}
       placeholder={{@placeholder}}
       readonly={{@isReadOnly}}
       required={{@isRequired}}

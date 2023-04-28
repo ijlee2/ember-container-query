@@ -23,8 +23,8 @@ const NavigationMenuComponent: TOC<NavigationMenuSignature> =
           <li>
             <LinkTo
               @route={{menuItem.route}}
-              data-test-link={{menuItem.label}}
               class={{styles.link}}
+              data-test-link={{menuItem.label}}
             >
               {{menuItem.label}}
             </LinkTo>

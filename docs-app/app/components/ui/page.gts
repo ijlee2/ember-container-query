@@ -1,4 +1,5 @@
 import type { TOC } from '@ember/component/template-only';
+import { localClass } from 'embroider-css-modules';
 
 import styles from './page.css';
 
@@ -13,14 +14,14 @@ interface UiPageSignature {
 
 const UiPageComponent: TOC<UiPageSignature> =
   <template>
-    <div class={{styles.container}}>
+    <div class={{localClass styles "container"}}>
       <h1 class={{styles.header}}>
         {{@title}}
       </h1>
 
       <div
+        class="{{styles.body}}"
         id="main-content"
-        class={{styles.body}}
         tabindex="-1"
       >
         {{yield}}

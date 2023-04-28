@@ -19,11 +19,11 @@ const ProductsProductCardComponent: TOC<ProductsProductCardSignature> =
     <ContainerQuery
       @features={{hash wide=(width min=320)}}
       @tagName="article"
-      data-test-product-card
       class={{styles.container}}
+      data-test-product-card
     >
       <header class={{styles.header}}>
-        <h2 data-test-field="Name" class={{styles.name}}>
+        <h2 class={{styles.name}} data-test-field="Name">
           {{@product.name}}
         </h2>
       </header>
@@ -34,14 +34,14 @@ const ProductsProductCardComponent: TOC<ProductsProductCardSignature> =
 
       <div class={{styles.body}}>
         <p
-          data-test-field="Short Description"
           class={{styles.description}}
+          data-test-field="Short Description"
         >
           {{@product.shortDescription}}
         </p>
 
-        <p data-test-field="Price" class={{styles.price}}>
-          &#36;{{@product.price}}
+        <p class={{styles.price}} data-test-field="Price">
+          \${{@product.price}}
         </p>
       </div>
 
@@ -49,8 +49,8 @@ const ProductsProductCardComponent: TOC<ProductsProductCardSignature> =
         <LinkTo
           @model={{@product.id}}
           @route={{@redirectTo}}
-          data-test-link="Learn More"
           class={{styles.link}}
+          data-test-link="Learn More"
         >
           Learn more
         </LinkTo>

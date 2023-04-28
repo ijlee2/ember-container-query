@@ -36,9 +36,8 @@ interface UiFormSignature {
 }
 
 export default class UiFormComponent extends Component<UiFormSignature> {
-  styles = styles;
-
   formId = guidFor(this);
+  styles = styles;
 
   @tracked changeset = this.args.data ?? ({} as Record<string, any>);
 

@@ -42,8 +42,8 @@
         </h3>
 
         <div
-          data-test-field="Annual Revenue"
           class={{this.styles.annual-revenue}}
+          data-test-field="Annual Revenue"
         >
           {{#if (strict-or CQ.features.tall CQ.features.large)}}
             <span>Annual revenue:</span>
@@ -55,8 +55,8 @@
         </div>
 
         <div
-          data-test-field="Relevant Years"
           class={{this.styles.relevant-years}}
+          data-test-field="Relevant Years"
         >
           {{#if (strict-or CQ.features.tall CQ.features.large)}}
             <span>Relevant years:</span>
@@ -73,8 +73,8 @@
       {{#if this.canShowPreviousButton}}
         <button
           aria-label="Previous"
-          data-test-button="Previous"
           class={{this.styles.previous-button}}
+          data-test-button="Previous"
           type="button"
           {{on "click" (fn this.showNextSummary -1)}}
         >
@@ -96,8 +96,8 @@
       {{#if this.canShowNextButton}}
         <button
           aria-label="Next"
-          data-test-button="Next"
           class={{this.styles.next-button}}
+          data-test-button="Next"
           type="button"
           {{on "click" (fn this.showNextSummary 1)}}
         >
@@ -107,8 +107,8 @@
           {{else}}
             {{svg-jar
               "chevron-right"
-              desc="A chevron arrow pointing right"
               class=(local-class this.styles "icon")
+              desc="A chevron arrow pointing right"
               role="img"
             }}
 

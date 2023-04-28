@@ -4,7 +4,7 @@
   @isWide={{@isWide}}
 >
   <:label as |l|>
-    <label data-test-label id="{{l.inputId}}-label">
+    <label data-test-label id={{concat l.inputId "-label"}}>
       {{@label}}
 
       {{#if @isRequired}}
@@ -19,16 +19,16 @@
     <span
       aria-checked={{if this.isChecked "true" "false"}}
       aria-disabled={{if @isDisabled "true" "false"}}
-      aria-labelledby="{{f.inputId}}-label"
+      aria-labelledby={{concat f.inputId "-label"}}
       aria-readonly={{if @isReadOnly "true" "false"}}
       aria-required={{if @isRequired "true" "false"}}
-      data-test-field={{@label}}
       class={{local-class
         this.styles
         "checkbox"
         (if this.isChecked "is-checked")
         (if (strict-or @isDisabled @isReadOnly) "is-disabled")
       }}
+      data-test-field={{@label}}
       role="checkbox"
       tabindex={{unless @isDisabled "0"}}
       {{on "click" this.updateValue}}

@@ -1,4 +1,5 @@
 import type { TOC } from '@ember/component/template-only';
+import { concat } from '@ember/helper';
 
 import strictOr from '../../../helpers/strict-or';
 import styles from './information.css';
@@ -17,9 +18,9 @@ const UiFormInformationComponent: TOC<UiFormInformationSignature> =
       <div class={{styles.container}}>
         {{#if @title}}
           <div
-            data-test-title
-            id="{{@formId}}-title"
             class={{styles.title}}
+            data-test-title
+            id={{concat @formId "-title"}}
           >
             {{@title}}
           </div>
@@ -27,9 +28,9 @@ const UiFormInformationComponent: TOC<UiFormInformationSignature> =
 
         {{#if @instructions}}
           <p
-            data-test-instructions
-            id="{{@formId}}-instructions"
             class={{styles.instructions}}
+            data-test-instructions
+            id={{concat @formId "-instructions"}}
           >
             {{@instructions}}
           </p>
