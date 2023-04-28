@@ -215,7 +215,7 @@ module('Integration | Component | container-query', function (hooks) {
           'data-ratio-type-C': '',
         });
       });
-    }
+    },
   );
 
   module(
@@ -316,7 +316,7 @@ module('Integration | Component | container-query', function (hooks) {
           'data-cq-ratio-type-C': '',
         });
       });
-    }
+    },
   );
 
   module('When @dataAttributePrefix is updated', function (hooks) {

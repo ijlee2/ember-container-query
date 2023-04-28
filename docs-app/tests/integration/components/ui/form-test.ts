@@ -58,7 +58,7 @@ module('Integration | Component | ui/form', function (hooks) {
 
     const titleId = find('[data-test-title]')!.getAttribute('id')!;
     const instructionsId = find('[data-test-instructions]')!.getAttribute(
-      'id'
+      'id',
     )!;
 
     assert
@@ -66,7 +66,7 @@ module('Integration | Component | ui/form', function (hooks) {
       .hasAria(
         'describedby',
         instructionsId,
-        'We see the correct aria-describedby.'
+        'We see the correct aria-describedby.',
       )
       .hasAria('labelledby', titleId, 'We see the correct aria-labelledby.');
 

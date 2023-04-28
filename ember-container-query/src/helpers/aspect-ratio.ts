@@ -20,7 +20,7 @@ const AspectRatioHelper = helper<AspectRatioHelperSignature>(
     const min = named.min ?? 0;
 
     return { dimension, max, min };
-  }
+  },
 );
 
 export default AspectRatioHelper;

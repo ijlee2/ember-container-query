@@ -30,7 +30,7 @@ interface UiFormSignature {
           typeof UiFormTextareaComponent,
           'changeset' | 'isWide' | 'onUpdate'
         >;
-      }
+      },
     ];
   };
 }

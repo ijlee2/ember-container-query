@@ -25,23 +25,23 @@
 
 .container[data-container-query-tall] .items {
   grid-template-areas:
-    'item-1'
-    'item-2'
-    'item-3';
+    "item-1"
+    "item-2"
+    "item-3";
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
 }
 
 .container[data-container-query-square] .items {
   grid-template-areas:
-    'item-1 item-2'
-    'item-3 item-3';
+    "item-1 item-2"
+    "item-3 item-3";
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
 
 .container[data-container-query-wide] .items {
-  grid-template-areas: 'item-1 item-2 item-3';
+  grid-template-areas: "item-1 item-2 item-3";
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
 }

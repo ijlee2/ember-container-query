@@ -33,14 +33,14 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
         'Annual revenue: $2.3 billion',
-        'We see the annual revenue in correct format.'
+        'We see the annual revenue in correct format.',
       );
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
       .hasText(
         'Relevant years: 1973 - 1982',
-        'We see the relevant years in correct format.'
+        'We see the relevant years in correct format.',
       );
 
     assert
@@ -61,7 +61,7 @@ module('Acceptance | dashboard', function (hooks) {
       .hasAttribute(
         'src',
         new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
-        'We see the concert image.'
+        'We see the concert image.',
       );
 
     // Widget 4
@@ -110,14 +110,14 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
         'Annual revenue: $2.3 billion',
-        'We see the annual revenue in correct format.'
+        'We see the annual revenue in correct format.',
       );
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
       .hasText(
         'Relevant years: 1973 - 1982',
-        'We see the relevant years in correct format.'
+        'We see the relevant years in correct format.',
       );
 
     assert
@@ -128,7 +128,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasText(
         'A chevron arrow pointing right',
-        'We see the next button in correct format.'
+        'We see the next button in correct format.',
       );
 
     // Widget 3
@@ -141,7 +141,7 @@ module('Acceptance | dashboard', function (hooks) {
       .hasAttribute(
         'src',
         new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
-        'We see the concert image.'
+        'We see the concert image.',
       );
 
     // Widget 4
@@ -190,14 +190,14 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
         'Annual revenue: $2.3 billion',
-        'We see the annual revenue in correct format.'
+        'We see the annual revenue in correct format.',
       );
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
       .hasText(
         'Relevant years: 1973 - 1982',
-        'We see the relevant years in correct format.'
+        'We see the relevant years in correct format.',
       );
 
     assert
@@ -208,7 +208,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasText(
         'A chevron arrow pointing right',
-        'We see the next button in correct format.'
+        'We see the next button in correct format.',
       );
 
     // Widget 3
@@ -221,7 +221,7 @@ module('Acceptance | dashboard', function (hooks) {
       .hasAttribute(
         'src',
         new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
-        'We see the concert image.'
+        'We see the concert image.',
       );
 
     // Widget 4
@@ -233,21 +233,21 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="4"] [data-test-memo-header]')
       .doesNotHaveClass(
         /minimal-layout/,
-        "The memo header doesn't use the minimal layout."
+        "The memo header doesn't use the minimal layout.",
       );
 
     assert
       .dom('[data-test-widget="4"] [data-test-memo-body]')
       .doesNotHaveClass(
         /minimal-layout/,
-        "The memo body doesn't use the minimal layout."
+        "The memo body doesn't use the minimal layout.",
       );
 
     assert
       .dom('[data-test-widget="4"] [data-test-memo-actions]')
       .doesNotHaveClass(
         /minimal-layout/,
-        "The memo actions doesn't use the minimal layout."
+        "The memo actions doesn't use the minimal layout.",
       );
 
     // Widget 5
@@ -255,7 +255,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="5"] [data-test-call-to-action]')
       .hasText(
         'What will you create with ember-container-query ?',
-        'We see the correct call to action.'
+        'We see the correct call to action.',
       );
 
     await takeSnapshot(assert);
@@ -282,14 +282,14 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
         'Annual revenue: $2.3 billion',
-        'We see the annual revenue in correct format.'
+        'We see the annual revenue in correct format.',
       );
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
       .hasText(
         'Relevant years: 1973 - 1982',
-        'We see the relevant years in correct format.'
+        'We see the relevant years in correct format.',
       );
 
     assert
@@ -310,7 +310,7 @@ module('Acceptance | dashboard', function (hooks) {
       .hasAttribute(
         'src',
         new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
-        'We see the concert image.'
+        'We see the concert image.',
       );
 
     // Widget 4
@@ -359,14 +359,14 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
         'Annual revenue: $2.3 billion',
-        'We see the annual revenue in correct format.'
+        'We see the annual revenue in correct format.',
       );
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
       .hasText(
         'Relevant years: 1973 - 1982',
-        'We see the relevant years in correct format.'
+        'We see the relevant years in correct format.',
       );
 
     assert
@@ -377,7 +377,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasText(
         'A chevron arrow pointing right',
-        'We see the next button in correct format.'
+        'We see the next button in correct format.',
       );
 
     // Widget 3
@@ -390,7 +390,7 @@ module('Acceptance | dashboard', function (hooks) {
       .hasAttribute(
         'src',
         new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
-        'We see the concert image.'
+        'We see the concert image.',
       );
 
     // Widget 4
@@ -439,14 +439,14 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
         'Annual revenue: $2.3 billion',
-        'We see the annual revenue in correct format.'
+        'We see the annual revenue in correct format.',
       );
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
       .hasText(
         'Relevant years: 1973 - 1982',
-        'We see the relevant years in correct format.'
+        'We see the relevant years in correct format.',
       );
 
     assert
@@ -457,7 +457,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasText(
         'A chevron arrow pointing right',
-        'We see the next button in correct format.'
+        'We see the next button in correct format.',
       );
 
     // Widget 3
@@ -470,7 +470,7 @@ module('Acceptance | dashboard', function (hooks) {
       .hasAttribute(
         'src',
         new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
-        'We see the concert image.'
+        'We see the concert image.',
       );
 
     // Widget 4
@@ -482,21 +482,21 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="4"] [data-test-memo-header]')
       .doesNotHaveClass(
         /minimal-layout/,
-        "The memo header doesn't use the minimal layout."
+        "The memo header doesn't use the minimal layout.",
       );
 
     assert
       .dom('[data-test-widget="4"] [data-test-memo-body]')
       .doesNotHaveClass(
         /minimal-layout/,
-        "The memo body doesn't use the minimal layout."
+        "The memo body doesn't use the minimal layout.",
       );
 
     assert
       .dom('[data-test-widget="4"] [data-test-memo-actions]')
       .doesNotHaveClass(
         /minimal-layout/,
-        "The memo actions doesn't use the minimal layout."
+        "The memo actions doesn't use the minimal layout.",
       );
 
     // Widget 5
@@ -504,7 +504,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="5"] [data-test-call-to-action]')
       .hasText(
         'What will you create with ember-container-query ?',
-        'We see the correct call to action.'
+        'We see the correct call to action.',
       );
 
     await takeSnapshot(assert);
@@ -531,14 +531,14 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
         'Annual revenue: $2.3 billion',
-        'We see the annual revenue in correct format.'
+        'We see the annual revenue in correct format.',
       );
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
       .hasText(
         'Relevant years: 1973 - 1982',
-        'We see the relevant years in correct format.'
+        'We see the relevant years in correct format.',
       );
 
     assert
@@ -559,7 +559,7 @@ module('Acceptance | dashboard', function (hooks) {
       .hasAttribute(
         'src',
         new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
-        'We see the concert image.'
+        'We see the concert image.',
       );
 
     // Widget 4
@@ -608,14 +608,14 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
         'Annual revenue: $2.3 billion',
-        'We see the annual revenue in correct format.'
+        'We see the annual revenue in correct format.',
       );
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
       .hasText(
         'Relevant years: 1973 - 1982',
-        'We see the relevant years in correct format.'
+        'We see the relevant years in correct format.',
       );
 
     assert
@@ -626,7 +626,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasText(
         'A chevron arrow pointing right',
-        'We see the next button in correct format.'
+        'We see the next button in correct format.',
       );
 
     // Widget 3
@@ -639,7 +639,7 @@ module('Acceptance | dashboard', function (hooks) {
       .hasAttribute(
         'src',
         new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
-        'We see the concert image.'
+        'We see the concert image.',
       );
 
     // Widget 4
@@ -688,14 +688,14 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
       .hasText(
         'Annual revenue: $2.3 billion',
-        'We see the annual revenue in correct format.'
+        'We see the annual revenue in correct format.',
       );
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
       .hasText(
         'Relevant years: 1973 - 1982',
-        'We see the relevant years in correct format.'
+        'We see the relevant years in correct format.',
       );
 
     assert
@@ -706,7 +706,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="2"] [data-test-button="Next"]')
       .hasText(
         'A chevron arrow pointing right',
-        'We see the next button in correct format.'
+        'We see the next button in correct format.',
       );
 
     // Widget 3
@@ -719,7 +719,7 @@ module('Acceptance | dashboard', function (hooks) {
       .hasAttribute(
         'src',
         new RegExp('^/images/widgets/widget-3/.+\\.jpg$'),
-        'We see the concert image.'
+        'We see the concert image.',
       );
 
     // Widget 4
@@ -731,21 +731,21 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="4"] [data-test-memo-header]')
       .doesNotHaveClass(
         /minimal-layout/,
-        "The memo header doesn't use the minimal layout."
+        "The memo header doesn't use the minimal layout.",
       );
 
     assert
       .dom('[data-test-widget="4"] [data-test-memo-body]')
       .doesNotHaveClass(
         /minimal-layout/,
-        "The memo body doesn't use the minimal layout."
+        "The memo body doesn't use the minimal layout.",
       );
 
     assert
       .dom('[data-test-widget="4"] [data-test-memo-actions]')
       .doesNotHaveClass(
         /minimal-layout/,
-        "The memo actions doesn't use the minimal layout."
+        "The memo actions doesn't use the minimal layout.",
       );
 
     // Widget 5
@@ -753,7 +753,7 @@ module('Acceptance | dashboard', function (hooks) {
       .dom('[data-test-widget="5"] [data-test-call-to-action]')
       .hasText(
         'What will you create with ember-container-query ?',
-        'We see the correct call to action.'
+        'We see the correct call to action.',
       );
 
     await takeSnapshot(assert);

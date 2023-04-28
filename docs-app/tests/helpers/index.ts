@@ -17,7 +17,7 @@ interface SetupTestOptions {
 
 function setupApplicationTest(
   hooks: NestedHooks,
-  options?: SetupTestOptions
+  options?: SetupTestOptions,
 ): void {
   upstreamSetupApplicationTest(hooks, options);
   resetViewport(hooks);
@@ -40,7 +40,7 @@ function setupApplicationTest(
 
 function setupRenderingTest(
   hooks: NestedHooks,
-  options?: SetupTestOptions
+  options?: SetupTestOptions,
 ): void {
   upstreamSetupRenderingTest(hooks, options);
 

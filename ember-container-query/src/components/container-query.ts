@@ -23,14 +23,14 @@ interface ContainerQuerySignature<T extends IndexSignatureParameter> {
       {
         dimensions?: Dimensions;
         features?: QueryResults<T>;
-      }
+      },
     ];
   };
   Element: HTMLElement;
 }
 
 export default class ContainerQueryComponent<
-  T extends IndexSignatureParameter
+  T extends IndexSignatureParameter,
 > extends Component<ContainerQuerySignature<T>> {
   @tracked dimensions?: Dimensions;
   @tracked queryResults?: QueryResults<T>;

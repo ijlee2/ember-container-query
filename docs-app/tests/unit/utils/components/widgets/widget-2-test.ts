@@ -34,7 +34,7 @@ module('Unit | Utility | components/widgets/widget-2', function () {
           year: 1973,
           revenue: 2699600000,
         },
-        'We created the first data point correctly.'
+        'We created the first data point correctly.',
       );
 
       assert.deepEqual(
@@ -44,7 +44,7 @@ module('Unit | Utility | components/widgets/widget-2', function () {
           year: 2018,
           revenue: 5300000,
         },
-        'We created the last data point correctly.'
+        'We created the last data point correctly.',
       );
     });
   });
@@ -67,7 +67,7 @@ module('Unit | Utility | components/widgets/widget-2', function () {
             max: 1982,
           },
         },
-        'We created the first summary correctly.'
+        'We created the first summary correctly.',
       );
 
       assert.deepEqual(
@@ -81,7 +81,7 @@ module('Unit | Utility | components/widgets/widget-2', function () {
             max: 2018,
           },
         },
-        'We created the last summary correctly.'
+        'We created the last summary correctly.',
       );
     });
   });

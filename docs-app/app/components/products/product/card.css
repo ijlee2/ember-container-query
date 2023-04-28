@@ -1,10 +1,10 @@
 .container {
   display: grid;
   grid-template-areas:
-    'header'
-    'image-container'
-    'body'
-    'actions';
+    "header"
+    "image-container"
+    "body"
+    "actions";
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto;
   height: calc(100% - 2rem) !important;
@@ -66,7 +66,7 @@
 }
 
 .link::after {
-  content: '';
+  content: "";
   height: 100%;
   left: 0;
   position: absolute;
@@ -85,9 +85,9 @@
 .container[data-container-query-wide] {
   grid-column-gap: 1.5rem;
   grid-template-areas:
-    'image-container header'
-    'image-container body'
-    'image-container actions';
+    "image-container header"
+    "image-container body"
+    "image-container actions";
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr auto;
 }

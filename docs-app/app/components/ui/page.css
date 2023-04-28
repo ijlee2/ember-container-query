@@ -1,8 +1,8 @@
 .container {
   display: grid;
   grid-template-areas:
-    'header'
-    'body';
+    "header"
+    "body";
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   height: calc(100% - 3em);

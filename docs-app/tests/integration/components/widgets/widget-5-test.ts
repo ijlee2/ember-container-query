@@ -17,7 +17,7 @@ module('Integration | Component | widgets/widget-5', function (hooks) {
       .dom('[data-test-call-to-action]')
       .hasText(
         'What will you create with ember-container-query ?',
-        'We see the correct text for call-to-action.'
+        'We see the correct text for call-to-action.',
       );
   });
 });

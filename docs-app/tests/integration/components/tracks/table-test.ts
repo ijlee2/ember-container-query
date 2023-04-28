@@ -17,7 +17,7 @@ type TrackProperties = {
 interface CustomAssert extends Assert {
   isTrackCorrect?: (
     trackElement: Element,
-    trackProperties: TrackProperties
+    trackProperties: TrackProperties,
   ) => void;
 }
 
@@ -36,21 +36,21 @@ module('Integration | Component | tracks/table', function (hooks) {
         .dom('[data-test-column="Title"]', trackElement)
         .hasText(
           title,
-          `For track #${trackNumber}, the Title column is correct.`
+          `For track #${trackNumber}, the Title column is correct.`,
         );
 
       assert
         .dom('[data-test-column="Length"]', trackElement)
         .hasText(
           length,
-          `For track #${trackNumber}, the Length column is correct.`
+          `For track #${trackNumber}, the Length column is correct.`,
         );
 
       assert
         .dom('[data-test-column="Explicit"]', trackElement)
         .hasText(
           explicit ? 'Yes' : '',
-          `For track #${trackNumber}, the Explicit column is correct.`
+          `For track #${trackNumber}, the Explicit column is correct.`,
         );
     };
   });

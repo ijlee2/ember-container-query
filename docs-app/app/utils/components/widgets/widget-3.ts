@@ -17,7 +17,7 @@ export type ContainerDimensions = {
 */
 export function findBestFittingImage(
   images: Image[],
-  containerDimensions: ContainerDimensions
+  containerDimensions: ContainerDimensions,
 ): string | undefined {
   if (images.length === 0) {
     return;

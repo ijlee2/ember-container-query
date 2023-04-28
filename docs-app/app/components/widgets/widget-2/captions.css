@@ -2,8 +2,8 @@
   display: grid;
   grid-gap: 1rem 2.5rem;
   grid-template-areas:
-    'summary summary'
-    'previous-button next-button';
+    "summary summary"
+    "previous-button next-button";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr auto;
   height: 100%;
@@ -17,9 +17,9 @@
   font-size: 0.875rem;
   grid-area: summary;
   grid-template-areas:
-    'music-format'
-    'annual-revenue'
-    'relevant-years';
+    "music-format"
+    "annual-revenue"
+    "relevant-years";
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, auto);
   overflow-y: auto;
@@ -83,14 +83,14 @@
 
 .container.flat {
   column-gap: 1rem;
-  grid-template-areas: 'previous-button summary next-button';
+  grid-template-areas: "previous-button summary next-button";
   grid-template-columns: 2.5rem 1fr 2.5rem;
   grid-template-rows: minmax(3rem, 1fr);
 }
 
 .container.flat .summary.horizontal-layout {
   grid-gap: 0.5rem;
-  grid-template-areas: 'music-format annual-revenue relevant-years';
+  grid-template-areas: "music-format annual-revenue relevant-years";
   grid-template-columns: 40% 1fr 1fr;
   grid-template-rows: 1fr;
 }

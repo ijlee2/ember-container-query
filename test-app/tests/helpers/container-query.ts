@@ -29,7 +29,7 @@ function setupCustomAssertions(assert: CustomAssert): void {
     const containerQuery = find('[data-test-container-query]');
 
     for (const [dataAttributeName, expectedValue] of Object.entries(
-      dataAttributes
+      dataAttributes,
     )) {
       switch (expectedValue) {
         case undefined: {
@@ -37,7 +37,7 @@ function setupCustomAssertions(assert: CustomAssert): void {
             .dom(containerQuery)
             .doesNotHaveAttribute(
               dataAttributeName,
-              `The container doesn't have the attribute "${dataAttributeName}".`
+              `The container doesn't have the attribute "${dataAttributeName}".`,
             );
 
           break;
@@ -49,7 +49,7 @@ function setupCustomAssertions(assert: CustomAssert): void {
             .hasAttribute(
               dataAttributeName,
               expectedValue,
-              `The container has the attribute "${dataAttributeName}".`
+              `The container has the attribute "${dataAttributeName}".`,
             );
         }
       }
@@ -64,7 +64,7 @@ function setupCustomAssertions(assert: CustomAssert): void {
       .dom('[data-test-width-height]')
       .hasText(
         `${expectedWidth} x ${expectedHeight}`,
-        'Width and height are correct.'
+        'Width and height are correct.',
       );
 
     // Check aspect ratio
@@ -77,7 +77,7 @@ function setupCustomAssertions(assert: CustomAssert): void {
     if (expectedAspectRatio === Infinity) {
       assert.true(
         aspectRatio === expectedAspectRatio,
-        'Aspect ratio is correct.'
+        'Aspect ratio is correct.',
       );
 
       return;
@@ -98,7 +98,7 @@ function setupCustomAssertions(assert: CustomAssert): void {
             .dom(`[data-test-feature="${featureName}"]`)
             .hasText(
               'true',
-              `The container meets the feature "${featureName}".`
+              `The container meets the feature "${featureName}".`,
             );
 
           break;
@@ -109,7 +109,7 @@ function setupCustomAssertions(assert: CustomAssert): void {
             .dom(`[data-test-feature="${featureName}"]`)
             .hasText(
               'false',
-              `The container doesn't meet the feature "${featureName}".`
+              `The container doesn't meet the feature "${featureName}".`,
             );
 
           break;
@@ -119,7 +119,7 @@ function setupCustomAssertions(assert: CustomAssert): void {
           assert
             .dom(`[data-test-feature="${featureName}"]`)
             .hasNoText(
-              `The container doesn't meet the feature "${featureName}".`
+              `The container doesn't meet the feature "${featureName}".`,
             );
 
           break;

@@ -59,7 +59,7 @@ module('Integration | Component | ui/form/information', function (hooks) {
       .hasAttribute('id', 'ember123-instructions', 'We see the correct ID.')
       .hasText(
         'Still have questions about ember-container-query? Try sending me a message.',
-        'We see the form instructions.'
+        'We see the form instructions.',
       );
   });
 });

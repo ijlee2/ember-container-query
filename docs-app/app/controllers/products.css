@@ -1,8 +1,8 @@
 .products-with-details {
   display: grid;
   grid-template-areas:
-    'product-details'
-    'list';
+    "product-details"
+    "list";
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   position: relative;
@@ -21,7 +21,7 @@
 
 @media screen and (width >= 40rem) {
   .products-with-details {
-    grid-template-areas: 'list product-details';
+    grid-template-areas: "list product-details";
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr;
   }
