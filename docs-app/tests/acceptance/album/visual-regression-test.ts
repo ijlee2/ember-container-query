@@ -19,7 +19,7 @@ module('Acceptance | album', function (hooks) {
       .hasAttribute(
         'data-css-grid',
         '11 x 1',
-        'We see 11 tracks in an 11 x 1 grid.'
+        'We see 11 tracks in an 11 x 1 grid.',
       );
 
     assert
@@ -36,7 +36,7 @@ module('Acceptance | album', function (hooks) {
       .hasAttribute(
         'data-css-grid',
         '4 x 3',
-        'We see 11 tracks in a 4 x 3 grid.'
+        'We see 11 tracks in a 4 x 3 grid.',
       );
 
     assert
@@ -69,7 +69,7 @@ module('Acceptance | album', function (hooks) {
       .hasAttribute(
         'data-css-grid',
         '11 x 1',
-        'We see 11 tracks in an 11 x 1 grid.'
+        'We see 11 tracks in an 11 x 1 grid.',
       );
 
     assert
@@ -86,7 +86,7 @@ module('Acceptance | album', function (hooks) {
       .hasAttribute(
         'data-css-grid',
         '4 x 3',
-        'We see 11 tracks in a 4 x 3 grid.'
+        'We see 11 tracks in a 4 x 3 grid.',
       );
 
     assert
@@ -119,7 +119,7 @@ module('Acceptance | album', function (hooks) {
       .hasAttribute(
         'data-css-grid',
         '11 x 1',
-        'We see 11 tracks in an 11 x 1 grid.'
+        'We see 11 tracks in an 11 x 1 grid.',
       );
 
     assert
@@ -136,7 +136,7 @@ module('Acceptance | album', function (hooks) {
       .hasAttribute(
         'data-css-grid',
         '4 x 3',
-        'We see 11 tracks in a 4 x 3 grid.'
+        'We see 11 tracks in a 4 x 3 grid.',
       );
 
     assert

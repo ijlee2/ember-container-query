@@ -38,7 +38,7 @@ module('Integration | Component | tracks', function (hooks) {
       .hasAttribute(
         'data-css-grid',
         '11 x 1',
-        'The list is shown in an 11 x 1 grid.'
+        'The list is shown in an 11 x 1 grid.',
       );
 
     assert
@@ -54,7 +54,7 @@ module('Integration | Component | tracks', function (hooks) {
       .hasAttribute(
         'data-css-grid',
         '6 x 2',
-        'The list is shown in a 6 x 2 grid.'
+        'The list is shown in a 6 x 2 grid.',
       );
 
     assert
@@ -70,7 +70,7 @@ module('Integration | Component | tracks', function (hooks) {
       .hasAttribute(
         'data-css-grid',
         '4 x 3',
-        'The list is shown in a 4 x 3 grid.'
+        'The list is shown in a 4 x 3 grid.',
       );
 
     assert
@@ -86,7 +86,7 @@ module('Integration | Component | tracks', function (hooks) {
       .hasAttribute(
         'data-css-grid',
         '11 x 1',
-        'The list is shown in an 11 x 1 grid.'
+        'The list is shown in an 11 x 1 grid.',
       );
 
     assert
@@ -102,7 +102,7 @@ module('Integration | Component | tracks', function (hooks) {
       .hasAttribute(
         'data-css-grid',
         '6 x 2',
-        'The list is shown in a 6 x 2 grid.'
+        'The list is shown in a 6 x 2 grid.',
       );
 
     assert

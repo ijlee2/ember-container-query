@@ -172,7 +172,7 @@ function summarizeData(sanitizedData: GroupedData): Summary[] {
       const revenues = Array.from(data.values());
       const totalRevenue = revenues.reduce(
         (accumulator, sum) => accumulator + sum,
-        0
+        0,
       );
       const averageRevenue = totalRevenue / numRelevantYears;
 

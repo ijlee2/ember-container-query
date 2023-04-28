@@ -68,7 +68,7 @@ type SnapshotOptions = {
 */
 export async function takeSnapshot(
   qunitAssert: unknown,
-  options: SnapshotOptions = {} as SnapshotOptions
+  options: SnapshotOptions = {} as SnapshotOptions,
 ): Promise<void> {
   validateOptions(options);
 
@@ -94,7 +94,7 @@ function validateOptions(options: SnapshotOptions): void {
   if (description !== undefined) {
     assert(
       '`options.description` must be a string.',
-      typeof description === 'string'
+      typeof description === 'string',
     );
 
     assert('`options.description` cannot be empty.', description !== '');
@@ -111,7 +111,7 @@ function validateOptions(options: SnapshotOptions): void {
 
     assert(
       `\`options.only\` cannot include strings other than ${listOfSupportedDevices}.`,
-      only.every((device) => supportedDevices.includes(device))
+      only.every((device) => supportedDevices.includes(device)),
     );
   }
 }
@@ -151,7 +151,7 @@ function getName(qunitAssert: QUnitAssert, description: string): string {
 
   assert(
     'The test name should include a filter, e.g. @w1, @h1, etc.',
-    appliedFilters !== null
+    appliedFilters !== null,
   );
 
   const filterName = appliedFilters

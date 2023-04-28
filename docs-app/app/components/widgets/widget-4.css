@@ -1,9 +1,9 @@
 .container {
   display: grid;
   grid-template-areas:
-    'header'
-    'memo-highlight'
-    'actions';
+    "header"
+    "memo-highlight"
+    "actions";
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 2.5rem;
   height: 100%;

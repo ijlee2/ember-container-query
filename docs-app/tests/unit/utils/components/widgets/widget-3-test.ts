@@ -37,7 +37,7 @@ module('Unit | Utility | components/widgets/widget-3', function () {
 
         assert.strictEqual(
           findBestFittingImage([], containerDimensions),
-          undefined
+          undefined,
         );
       });
     });
@@ -104,7 +104,7 @@ module('Unit | Utility | components/widgets/widget-3', function () {
           assert.strictEqual(
             findBestFittingImage(images, containerDimensions),
             expectedUrls.get(key),
-            `Container dimensions: ${key}`
+            `Container dimensions: ${key}`,
           );
         });
       });
@@ -164,7 +164,7 @@ module('Unit | Utility | components/widgets/widget-3', function () {
           assert.strictEqual(
             findBestFittingImage(images, containerDimensions),
             expectedUrls.get(key),
-            `Container dimensions: ${key}`
+            `Container dimensions: ${key}`,
           );
         });
       });

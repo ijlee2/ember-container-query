@@ -24,7 +24,7 @@ export async function resizeContainer({
 
   assert(
     'Please create a parent element with the test selector `data-test-parent-element`.',
-    parentElement
+    parentElement,
   );
 
   // Since <ContainerQuery> has a style of `height: 100%; width: 100%;`,

@@ -52,11 +52,11 @@ export default class DrawStackedChartModifier extends Modifier {
       this.data,
       ([d]) => d,
       (d) => d.year,
-      (d) => d.musicFormat
+      (d) => d.musicFormat,
     );
 
     return series(internMap.values()).map(
-      (s) => (s.forEach((d) => (d.data = d.data.get(s.key))), s)
+      (s) => (s.forEach((d) => (d.data = d.data.get(s.key))), s),
     );
   }
 
@@ -92,7 +92,7 @@ export default class DrawStackedChartModifier extends Modifier {
         .call(
           axisLeft(yScale)
             .tickFormat((y) => (y / 1e9).toFixed(0))
-            .tickValues(yTicks)
+            .tickValues(yTicks),
         )
         .call((g) => g.select('.domain').remove())
         .call((g) =>
@@ -102,7 +102,7 @@ export default class DrawStackedChartModifier extends Modifier {
             .attr('x', 3)
             .attr('text-anchor', 'start')
             .attr('font-weight', 'bold')
-            .text(data.y)
+            .text(data.y),
         );
   }
 
@@ -187,7 +187,7 @@ export default class DrawStackedChartModifier extends Modifier {
             const { musicFormat, revenue, year } = d.data;
 
             return `${musicFormat}, ${year} ${formatRevenue(revenue)}`;
-          })
+          }),
       );
 
     svg.append('g').call(xAxis);

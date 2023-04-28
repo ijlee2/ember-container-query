@@ -1,9 +1,9 @@
 .container {
   display: grid;
   grid-template-areas:
-    'album-summary'
-    'album-tracks'
-    'track-lyrics';
+    "album-summary"
+    "album-tracks"
+    "track-lyrics";
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 0;
 }
@@ -41,8 +41,8 @@
 .with-lyrics {
   grid-column-gap: 2rem;
   grid-template-areas:
-    'album-summary track-lyrics'
-    'album-tracks track-lyrics';
+    "album-summary track-lyrics"
+    "album-tracks track-lyrics";
   grid-template-columns: 1fr 18rem;
   grid-template-rows: auto 1fr;
   overflow-y: hidden;

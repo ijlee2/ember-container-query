@@ -115,7 +115,7 @@ module('Integration | Component | ui/form/input', function (hooks) {
       assert.strictEqual(
         value,
         expectedValue,
-        'The changeset has the correct value.'
+        'The changeset has the correct value.',
       );
 
       set(this.changeset, key, value);

@@ -45,7 +45,7 @@ interface ContainerQueryModifierSignature<T extends IndexSignatureParameter> {
 }
 
 export default class ContainerQueryModifier<
-  T extends IndexSignatureParameter
+  T extends IndexSignatureParameter,
 > extends Modifier<ContainerQueryModifierSignature<T>> {
   @service private declare readonly resizeObserver;
 
@@ -79,7 +79,7 @@ export default class ContainerQueryModifier<
   modify(
     element: Element,
     _positional: PositionalArgs<ContainerQueryModifierSignature<T>>,
-    named: NamedArgs<ContainerQueryModifierSignature<T>>
+    named: NamedArgs<ContainerQueryModifierSignature<T>>,
   ): void {
     this._named = named;
 
@@ -132,7 +132,7 @@ export default class ContainerQueryModifier<
     const queryResults = {} as QueryResults<T>;
 
     for (const [featureName, metadata] of Object.entries(
-      this.features
+      this.features,
     ) as ObjectEntries<Features<T>>) {
       const { dimension, min, max } = metadata;
       const value = this.dimensions[dimension];
@@ -155,7 +155,7 @@ export default class ContainerQueryModifier<
     const prefix = this.dataAttributePrefix;
 
     for (const [featureName, meetsFeature] of Object.entries(
-      this.queryResults
+      this.queryResults,
     ) as ObjectEntries<QueryResults<T>>) {
       if (!meetsFeature) {
         continue;

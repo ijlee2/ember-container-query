@@ -43,7 +43,7 @@ module('Integration | Component | products/product/card', function (hooks) {
       .dom('[data-test-field="Short Description"]')
       .hasText(
         'Made with organic herbs',
-        'We see the product short description.'
+        'We see the product short description.',
       );
 
     assert

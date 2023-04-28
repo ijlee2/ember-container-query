@@ -17,7 +17,7 @@ type TrackProperties = {
 interface CustomAssert extends Assert {
   isTrackCorrect?: (
     trackElement: Element,
-    trackProperties: TrackProperties
+    trackProperties: TrackProperties,
   ) => void;
 }
 
@@ -36,14 +36,14 @@ module('Integration | Component | tracks/list', function (hooks) {
         .dom('[data-test-field="Title"]', trackElement)
         .hasText(
           title,
-          `For track #${trackNumber}, the Title field is correct.`
+          `For track #${trackNumber}, the Title field is correct.`,
         );
 
       assert
         .dom('[data-test-field="Explicit"]', trackElement)
         .exists(
           { count: explicit ? 1 : 0 },
-          `For track #${trackNumber}, the Explicit field is correct.`
+          `For track #${trackNumber}, the Explicit field is correct.`,
         );
     };
   });

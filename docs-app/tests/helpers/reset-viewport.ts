@@ -7,7 +7,7 @@
 export function resetViewport(hooks: NestedHooks): void {
   hooks.beforeEach(function () {
     const testingContainer = document.getElementById(
-      'ember-testing-container'
+      'ember-testing-container',
     )!;
 
     testingContainer.classList.add('full-screen');
