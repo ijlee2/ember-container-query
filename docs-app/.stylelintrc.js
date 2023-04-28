@@ -33,6 +33,16 @@ module.exports = {
     /*
       Customize rules
     */
+    'declaration-block-no-duplicate-properties': [
+      true,
+      {
+        ignoreProperties: [
+          // Defined by CSS modules
+          'composes',
+        ],
+      },
+    ],
+
     'declaration-block-no-redundant-longhand-properties': [
       true,
       {

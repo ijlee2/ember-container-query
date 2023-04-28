@@ -16,7 +16,7 @@ module.exports = {
       },
     },
     {
-      files: '*.{cjs,cts,js,mjs,mts,ts}',
+      files: '*.{cjs,cts,gjs,gts,js,mjs,mts,ts}',
       options: {
         printWidth: 80,
         singleQuote: true,

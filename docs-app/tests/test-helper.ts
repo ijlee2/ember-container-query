@@ -1,5 +1,3 @@
-import 'qunit-dom';
-
 import { setApplication } from '@ember/test-helpers';
 import Application from 'docs-app/app';
 import config from 'docs-app/config/environment';
