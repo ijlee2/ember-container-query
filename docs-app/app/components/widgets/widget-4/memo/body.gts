@@ -14,7 +14,6 @@ interface WidgetsWidget4MemoBodySignature {
 const WidgetsWidget4MemoBodyComponent: TOC<WidgetsWidget4MemoBodySignature> =
   <template>
     <div
-      data-test-memo-body
       class={{localClass
         styles
         "body"
@@ -23,6 +22,7 @@ const WidgetsWidget4MemoBodyComponent: TOC<WidgetsWidget4MemoBodySignature> =
           "minimal-layout"
         )
       }}
+      data-test-memo-body
     >
       <div class={{styles.message}} tabindex="0">
         <p>
@@ -44,8 +44,8 @@ const WidgetsWidget4MemoBodyComponent: TOC<WidgetsWidget4MemoBodySignature> =
           special number. (Guess
           <a
             href="https://crunchingnumbers.live/2016/02/01/monte-carlo-simulations-buffons-needle/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             who
           </a>?)

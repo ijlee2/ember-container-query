@@ -14,14 +14,14 @@
 
   {{#unless CQ.features.short}}
     <div
-      data-test-visualization
       class={{this.styles.visualization}}
+      data-test-visualization
     >
       <Widgets::Widget-2::StackedChart @data={{this.data}} />
     </div>
   {{/unless}}
 
-  <div data-test-captions class={{this.styles.captions}}>
+  <div class={{this.styles.captions}} data-test-captions>
     <Widgets::Widget-2::Captions
       @summaries={{this.summaries}}
     />

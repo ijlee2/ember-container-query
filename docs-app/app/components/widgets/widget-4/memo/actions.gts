@@ -14,7 +14,6 @@ interface WidgetsWidget4MemoActionsSignature {
 const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature> =
   <template>
     <div
-      data-test-memo-actions
       class={{localClass
         styles
         "actions"
@@ -23,6 +22,7 @@ const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature
           "minimal-layout"
         )
       }}
+      data-test-memo-actions
     >
       <button
         aria-label="Comment"

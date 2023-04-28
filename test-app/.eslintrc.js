@@ -29,7 +29,7 @@ module.exports = {
   overrides: [
     // TypeScript files
     {
-      files: ['**/*.ts'],
+      files: ['**/*.{gts,ts}'],
       extends: [
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
@@ -64,7 +64,7 @@ module.exports = {
     },
     // Test files
     {
-      files: ['tests/**/*-test.{js,ts}'],
+      files: ['tests/**/*-test.{gjs,gts,js,ts}'],
       extends: ['plugin:qunit/recommended'],
     },
   ],

@@ -39,7 +39,7 @@ const WidgetsWidget3TourScheduleComponent: TOC<WidgetsWidget3TourScheduleSignatu
         </div>
 
         <div class={{styles.venue-name-container}}>
-          <a href="#" class={{styles.concert-link}}>
+          <a class={{styles.concert-link}} href="#">
             <div class={{styles.venue-name}}>
               {{@concert.name}}
             </div>

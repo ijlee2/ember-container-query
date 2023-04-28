@@ -12,13 +12,14 @@ module('Integration | Component | navigation-menu', function (hooks) {
     await render(
       <template>
         <NavigationMenu
-          @name="Main Navigation"
           @menuItems={{array
-            (hash route="index" label="Home")
-            (hash route="album" label="Album")
-            (hash route="dashboard" label="Dashboard")
-            (hash route="form" label="Form")
+            (hash label="Home" route="index")
+            (hash label="Album" route="album")
+            (hash label="Dashboard" route="dashboard")
+            (hash label="Form" route="form")
+            (hash label="Products" route="products")
           }}
+          @name="Main Navigation"
         />
       </template>
     );
@@ -34,7 +35,7 @@ module('Integration | Component | navigation-menu', function (hooks) {
 
     const links = findAll('[data-test-link]');
 
-    assert.strictEqual(links.length, 4, 'We see 4 links.');
+    assert.strictEqual(links.length, 5, 'We see 5 links.');
 
     assert
       .dom(links[0])
@@ -67,5 +68,14 @@ module('Integration | Component | navigation-menu', function (hooks) {
         'We see the correct href for the 4th link.'
       )
       .hasText('Form', 'We see the correct label for the 4th link.');
+
+    assert
+      .dom(links[4])
+      .hasAttribute(
+        'href',
+        '/products',
+        'We see the correct href for the 5th link.'
+      )
+      .hasText('Products', 'We see the correct label for the 5th link.');
   });
 });

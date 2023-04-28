@@ -30,8 +30,8 @@ export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends 
       {{#if this.imageSource}}
         <img
           alt=""
-          data-test-image="Concert"
           class={{styles.image}}
+          data-test-image="Concert"
           role="presentation"
           src={{this.imageSource}}
         />

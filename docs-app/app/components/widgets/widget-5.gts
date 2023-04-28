@@ -20,8 +20,8 @@ const WidgetsWidget5Component: TOC<WidgetsWidget5Signature> =
         as |showFullText|
       }}
         <div
-          data-test-call-to-action
           class={{styles.call-to-action}}
+          data-test-call-to-action
         >
           {{#if showFullText}}
             <p>What will <em>you</em> create with</p>

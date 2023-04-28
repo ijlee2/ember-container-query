@@ -26,31 +26,30 @@ interface UiFormFieldSignature {
 }
 
 export default class UiFormFieldComponent extends Component<UiFormFieldSignature> {
-  styles = styles;
-
   inputId = guidFor(this);
 
   <template>
     <div
       class={{localClass
-        this.styles
+        styles
         "container"
         (if @isInline "is-inline")
         (if @isWide "is-wide")
         (unless @errorMessage "no-feedback")
       }}
+      data-test-field-container
     >
-      <div class={{this.styles.label}}>
+      <div class={{styles.label}}>
         {{yield (hash inputId=this.inputId) to="label"}}
       </div>
 
-      <div class={{this.styles.field}}>
+      <div class={{styles.field}}>
         {{yield (hash inputId=this.inputId) to="field"}}
       </div>
 
       {{#if @errorMessage}}
         <div
-          class={{localClass this.styles "feedback" "is-error"}}
+          class={{localClass styles "feedback" "is-error"}}
         >
           {{!-- @glint-expect-error: Unable to import the {{svg-jar}} helper --}}
           {{svg-jar
@@ -60,8 +59,8 @@ export default class UiFormFieldComponent extends Component<UiFormFieldSignature
           }}
 
           <span
+            class={{styles.message}}
             data-test-feedback
-            class={{this.styles.message}}
             role="alert"
           >
             {{@errorMessage}}

@@ -31,10 +31,10 @@ const TracksTableComponent: TOC<TracksTableSignature> =
             <td data-test-column="Title">
               {{track.name}}
             </td>
-            <td data-test-column="Length" align="right">
+            <td align="right" data-test-column="Length">
               {{track.length}}
             </td>
-            <td data-test-column="Explicit" align="center">
+            <td align="center" data-test-column="Explicit">
               {{if track.isExplicit "Yes"}}
             </td>
           </tr>

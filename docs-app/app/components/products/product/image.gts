@@ -3,13 +3,13 @@ import config from 'docs-app/config/environment';
 
 import styles from './image.css';
 
+const isTestEnvironment = config.environment === 'test';
+
 interface ProductsProductImageSignature {
   Args: {
     src: string;
   };
 }
-
-const isTestEnvironment = config.environment === 'test';
 
 const ProductsProductImageComponent: TOC<ProductsProductImageSignature> =
   <template>

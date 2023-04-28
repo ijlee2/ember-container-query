@@ -3,12 +3,12 @@ import {
   setupRenderingTest as upstreamSetupRenderingTest,
   setupTest as upstreamSetupTest,
 } from 'ember-qunit';
-import EmberResolver from 'ember-resolver';
+import type Resolver from 'ember-resolver';
 
 import { resetViewport } from './reset-viewport';
 
 interface SetupTestOptions {
-  resolver?: EmberResolver | undefined;
+  resolver?: Resolver | undefined;
 }
 
 // This file exists to provide wrappers around ember-qunit's / ember-mocha's

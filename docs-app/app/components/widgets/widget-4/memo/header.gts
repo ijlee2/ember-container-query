@@ -20,20 +20,20 @@ const WidgetsWidget4MemoHeaderComponent: TOC<WidgetsWidget4MemoHeaderSignature> 
       as |showHorizontalLayout showMinimalLayout|
     }}
       <div
-        data-test-memo-header
         class={{localClass
           styles
           "header"
           (if showMinimalLayout "minimal-layout")
           (if showHorizontalLayout "horizontal-layout")
         }}
+        data-test-memo-header
       >
         {{#unless showMinimalLayout}}
           <div class={{styles.avatar-container}}>
             <img
               alt=""
-              data-test-image="Avatar"
               class={{styles.avatar}}
+              data-test-image="Avatar"
               role="presentation"
               src="/images/widgets/widget-4/avatar.jpg"
             />
@@ -45,7 +45,7 @@ const WidgetsWidget4MemoHeaderComponent: TOC<WidgetsWidget4MemoHeaderSignature> 
         </p>
 
         <div class={{styles.metadata}}>
-          <a href="#" class={{styles.handle}}>@ijlee2</a>
+          <a class={{styles.handle}} href="#">@ijlee2</a>
           · 38m
         </div>
       </div>
