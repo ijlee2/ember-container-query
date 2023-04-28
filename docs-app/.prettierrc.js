@@ -1,9 +1,6 @@
 'use strict';
 
 module.exports = {
-  printWidth: 80,
-  singleQuote: true,
-
   overrides: [
     {
       files: '*.css.d.ts',
@@ -16,6 +13,14 @@ module.exports = {
       options: {
         printWidth: 64,
         singleQuote: false,
+      },
+    },
+    {
+      files: '*.{cjs,cts,gjs,gts,js,mjs,mts,ts}',
+      options: {
+        printWidth: 80,
+        singleQuote: true,
+        trailingComma: 'all',
       },
     },
   ],
