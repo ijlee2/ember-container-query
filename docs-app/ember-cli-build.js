@@ -25,18 +25,16 @@ module.exports = function (defaults) {
           localIdentName: isProduction()
             ? '[sha512:hash:base64:5]'
             : '[path][name]__[local]',
-          // Enable local mode only for CSS files from the host app
           mode: (resourcePath) => {
-            // The host app and active child addons are moved into a common
-            // stable temp dir (`options.workspaceDir`), before the `css-loader`
+            // The host app and active child addons are moved into a shared
+            // temporary directory (`options.workspaceDir`) before css-loader
             // processes them.
             //
-            // We want to enable local mode only for our own host app. All other
-            // addons should be loaded in global mode.
-            const hostAppWorkspaceDir = `${options.workspaceDir}/${app.name}`;
-            const isHostAppPath = resourcePath.includes(hostAppWorkspaceDir);
+            // We want to enable the local mode only for our own host app.
+            // All other addons should be loaded in the global mode.
+            const hostAppLocation = `${options.workspaceDir}/docs-app`;
 
-            return isHostAppPath ? 'local' : 'global';
+            return resourcePath.includes(hostAppLocation) ? 'local' : 'global';
           },
         },
         sourceMap: !isProduction(),
