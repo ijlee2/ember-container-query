@@ -1,3 +1,66 @@
+# Changelog
+
+Version overview
+
+- `v4.x`: [4.0.0](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#400-2023-05-01)
+- `v3.x`: [3.0.0](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#300-2022-12-15) - [3.2.0](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#320-2023-01-05)
+- `v2.x`: [2.0.0](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#200-2022-04-09) - [2.1.1](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#211-2022-12-02)
+- `v1.x`: [1.0.0](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#100-2020-05-29) - [1.1.9](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#119-2021-08-25)
+
+
+## 4.0.0 (2023-05-01)
+
+### Breaking Change
+* [#187](https://github.com/ijlee2/ember-container-query/pull/187) Dropped support for Ember 3.28 and Node 14 ([@ijlee2](https://github.com/ijlee2))
+* [#163](https://github.com/ijlee2/ember-container-query/pull/163) Remove ember-test-selectors from dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#152](https://github.com/ijlee2/ember-container-query/pull/152) Removed the deprecated helpers ([@ijlee2](https://github.com/ijlee2))
+* [#151](https://github.com/ijlee2/ember-container-query/pull/151) Migrated to v2 addon format ([@ijlee2](https://github.com/ijlee2))
+
+### Bug Fix
+* [#157](https://github.com/ijlee2/ember-container-query/pull/157) Downstreamed changes from ember-codemod-v1-to-v2 ([@ijlee2](https://github.com/ijlee2))
+
+### Enhancement
+* [#178](https://github.com/ijlee2/ember-container-query/pull/178) Reexported types from modifiers/container-query.ts in index.ts ([@ijlee2](https://github.com/ijlee2))
+* [#151](https://github.com/ijlee2/ember-container-query/pull/151) Migrated to v2 addon format ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#185](https://github.com/ijlee2/ember-container-query/pull/185) Updated development dependencies and CONTRIBUTING.md ([@ijlee2](https://github.com/ijlee2))
+* [#175](https://github.com/ijlee2/ember-container-query/pull/175) Updated configuration files to match Ember v4.12 blueprint ([@ijlee2](https://github.com/ijlee2))
+* [#172](https://github.com/ijlee2/ember-container-query/pull/172) Updated ember-source to v4.12.0 ([@ijlee2](https://github.com/ijlee2))
+* [#169](https://github.com/ijlee2/ember-container-query/pull/169) Updated development dependencies. Patched unused and missing styles. ([@ijlee2](https://github.com/ijlee2))
+* [#167](https://github.com/ijlee2/ember-container-query/pull/167) Remove ember-css-modules ([@ijlee2](https://github.com/ijlee2), [@buschtoens](https://github.com/buschtoens))
+* [#166](https://github.com/ijlee2/ember-container-query/pull/166) Updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#164](https://github.com/ijlee2/ember-container-query/pull/164) Updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#163](https://github.com/ijlee2/ember-container-query/pull/163) Remove ember-test-selectors from dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#162](https://github.com/ijlee2/ember-container-query/pull/162) Updated ember-modifier to v4 ([@ijlee2](https://github.com/ijlee2))
+* [#161](https://github.com/ijlee2/ember-container-query/pull/161) Updated development dependencies to the latest version ([@ijlee2](https://github.com/ijlee2))
+* [#154](https://github.com/ijlee2/ember-container-query/pull/154) Updated development dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+* [#150](https://github.com/ijlee2/ember-container-query/pull/150) Removed ember-named-blocks-polyfill ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#186](https://github.com/ijlee2/ember-container-query/pull/186) Sync apps with those from embroider-css-modules ([@ijlee2](https://github.com/ijlee2))
+* [#185](https://github.com/ijlee2/ember-container-query/pull/185) Updated development dependencies and CONTRIBUTING.md ([@ijlee2](https://github.com/ijlee2))
+* [#184](https://github.com/ijlee2/ember-container-query/pull/184) Updated <Ui::Form::Field> to be a <template>-tag component ([@opatajoshua](https://github.com/opatajoshua))
+* [#183](https://github.com/ijlee2/ember-container-query/pull/183) Updated <Products::Product::Card> to be a template-only component ([@opatajoshua](https://github.com/opatajoshua))
+* [#182](https://github.com/ijlee2/ember-container-query/pull/182) Updated <Ui::Form::Information> to be a template-only component ([@opatajoshua](https://github.com/opatajoshua))
+* [#181](https://github.com/ijlee2/ember-container-query/pull/181) Updated <Products::Product::Image> to be a template-only component ([@opatajoshua](https://github.com/opatajoshua))
+* [#180](https://github.com/ijlee2/ember-container-query/pull/180) Updated <Ui::Page> to be a template-only component ([@opatajoshua](https://github.com/opatajoshua))
+* [#179](https://github.com/ijlee2/ember-container-query/pull/179) Add examples of <template>-tag components ([@ijlee2](https://github.com/ijlee2))
+* [#177](https://github.com/ijlee2/ember-container-query/pull/177) Updated README ([@ijlee2](https://github.com/ijlee2))
+* [#173](https://github.com/ijlee2/ember-container-query/pull/173) Set up ember-template-imports ([@ijlee2](https://github.com/ijlee2))
+* [#171](https://github.com/ijlee2/ember-container-query/pull/171) Renamed component signatures ([@ijlee2](https://github.com/ijlee2))
+* [#170](https://github.com/ijlee2/ember-container-query/pull/170) Updated TypeScript syntax ([@ijlee2](https://github.com/ijlee2))
+* [#165](https://github.com/ijlee2/ember-container-query/pull/165) Separated docs and test apps ([@ijlee2](https://github.com/ijlee2))
+* [#160](https://github.com/ijlee2/ember-container-query/pull/160) Investigated how styles are applied in the consuming app ([@ijlee2](https://github.com/ijlee2))
+* [#155](https://github.com/ijlee2/ember-container-query/pull/155) Weakened image source assertions ([@ijlee2](https://github.com/ijlee2))
+* [#149](https://github.com/ijlee2/ember-container-query/pull/149) Refactor types ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 3
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+- Jan Buschtöns ([@buschtoens](https://github.com/buschtoens))
+- Opata Joshua ([@opatajoshua](https://github.com/opatajoshua))
+
+
 ## 4.0.0-alpha.6 (2023-04-10)
 
 ### Internal
@@ -63,10 +126,10 @@
 
 ## 4.0.0-alpha.1 (2023-01-20)
 
-#### Documentation
+### Documentation
 * [#155](https://github.com/ijlee2/ember-container-query/pull/155) Weakened image source assertions ([@ijlee2](https://github.com/ijlee2))
 
-#### Committers: 1
+### Committers: 1
 - Isaac Lee ([@ijlee2](https://github.com/ijlee2))
 
 
