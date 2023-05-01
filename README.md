@@ -360,7 +360,7 @@ For more examples, I encourage you to check out the code for my demo app. It is 
 ## Compatibility
 
 * `ember-auto-import@v2`<sup>1</sup>
-* Ember.js v3.28 or above
+* Ember.js v4.4 or above
 * Node.js v14 or above
 
 <sup>1. `ember-container-query` is a v2 addon. This means, your project must have `ember-auto-import@v2`. If you are momentarily stuck with `ember-auto-import@v1`, you can use [`ember-container-query@v3.2.0`](https://github.com/ijlee2/ember-container-query/tree/3.2.0) to make container queries.</sup>
