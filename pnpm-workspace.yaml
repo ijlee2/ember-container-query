@@ -1,0 +1,4 @@
+packages:
+  - docs-app
+  - ember-container-query
+  - test-app

@@ -8,6 +8,7 @@
 /.env*
 /.pnp*
 /.eslintcache
+/.pnpm-debug.log
 /.stylelintcache
 /coverage/
 /npm-debug.log*

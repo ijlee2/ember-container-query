@@ -35,8 +35,8 @@
     "lint:js:fix": "eslint . --fix",
     "lint:types": "glint",
     "start": "ember serve",
-    "test": "ember test",
-    "test:ember-compatibility": "../node_modules/.bin/ember try:one"
+    "test": "ember test --test-port=0",
+    "test:ember-compatibility": "./node_modules/.bin/ember try:one"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
@@ -46,13 +46,11 @@
     "@gavant/glint-template-types": "^0.3.3",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
-    "@glint/core": "^v1.0.2",
-    "@glint/environment-ember-loose": "^v1.0.2",
-    "@glint/environment-ember-template-imports": "v1.0.2",
-    "@glint/template": "^v1.0.2",
+    "@glint/core": "^1.0.2",
+    "@glint/environment-ember-loose": "^1.0.2",
+    "@glint/environment-ember-template-imports": "^1.0.2",
+    "@glint/template": "^1.0.2",
     "@tsconfig/ember": "^2.0.0",
-    "@types/ember__destroyable": "^4.0.1",
-    "@types/ember__object": "^4.0.5",
     "@types/qunit": "^2.19.4",
     "@typescript-eslint/eslint-plugin": "^5.59.1",
     "@typescript-eslint/parser": "^5.59.1",

@@ -9,27 +9,26 @@
   },
   "license": "MIT",
   "author": "Isaac J. Lee",
-  "workspaces": [
-    "docs-app",
-    "ember-container-query",
-    "test-app"
-  ],
+  "type": "module",
   "scripts": {
     "build": "concurrently \"npm:build:*\"",
-    "build:addon": "yarn workspace ember-container-query run build",
-    "build:docs-app": "yarn workspace docs-app run build",
+    "build:addon": "pnpm --filter ember-container-query build",
+    "build:docs-app": "pnpm --filter docs-app build",
     "changelog": "lerna-changelog",
-    "lint": "yarn workspaces run lint",
-    "lint:fix": "yarn workspaces run lint:fix",
-    "prepare": "yarn build:addon",
+    "lint": "pnpm --filter '*' lint",
+    "lint:fix": "pnpm --filter '*' lint:fix",
+    "prepare": "pnpm build:addon",
     "start": "concurrently \"npm:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
-    "start:addon": "yarn workspace ember-container-query run start",
-    "start:docs-app": "yarn workspace docs-app run start",
-    "test": "yarn workspaces run test"
+    "start:addon": "pnpm --filter ember-container-query start",
+    "start:docs-app": "pnpm --filter docs-app start",
+    "test": "pnpm --filter '*' test"
   },
   "devDependencies": {
     "concurrently": "^8.0.1",
     "lerna-changelog": "^2.2.0"
+  },
+  "engines": {
+    "node": "16.* || >= 18"
   },
   "changelog": {
     "labels": {
