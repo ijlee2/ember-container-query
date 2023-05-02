@@ -1431,7 +1431,7 @@
   dependencies:
     babel-plugin-debug-macros "^0.3.4"
 
-"@glint/core@^v1.0.2":
+"@glint/core@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@glint/core/-/core-1.0.2.tgz#eb684b6b7c830b8e0a8e3ddda550bc269d1cbb5e"
   integrity sha512-0bVt/lT/NurpD8nBG9RTPKYlcpg51UDGCKgLoBEFOiTXv3aCSxAVKPud1IYaitGBKE0C+s5pl2PHkgptotVS+w==
@@ -1446,17 +1446,17 @@
     vscode-uri "^3.0.2"
     yargs "^17.5.1"
 
-"@glint/environment-ember-loose@^v1.0.2":
+"@glint/environment-ember-loose@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@glint/environment-ember-loose/-/environment-ember-loose-1.0.2.tgz#701d084625707e9ba9ca2cf5269bbea443b15d62"
   integrity sha512-tVLYzAx6c/4vcSaijiAubwR27/+K2tujuozArxeNud58MTwncGxhUkCHSM9xl+wn4VJjsjkzI6+nmzjEdkszSg==
 
-"@glint/environment-ember-template-imports@v1.0.2":
+"@glint/environment-ember-template-imports@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@glint/environment-ember-template-imports/-/environment-ember-template-imports-1.0.2.tgz#5763088ded269efa0f5ad9daf2fca19912d77108"
   integrity sha512-PAH7obVGXPFU7gLb04JVlqiNtz/j7Q29BBTAyhS7EVy99Hc6CPe+nV6+xhUPKu/S5GOVn3MWehVt/6gXPJ+cnA==
 
-"@glint/template@^v1.0.2":
+"@glint/template@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@glint/template/-/template-1.0.2.tgz#dcb96f048df52e7d0e78cf194fa07b3c42f15278"
   integrity sha512-kFWfJrS7XM0NjC5YSN0CWA9FiN0mhUvWVlQ2O7YRz/uhrO8+TVYNLst0WKELRbfCXbdI7wyYQkazNgz6FoL9CA==
