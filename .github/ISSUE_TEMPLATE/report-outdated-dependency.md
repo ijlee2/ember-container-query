@@ -14,7 +14,7 @@ Before you make a new issue, please search for similar issues. It's possible tha
 
 ## List outdated dependencies 🔗
 
-When you ran `yarn outdated`, what did you see?
+When you ran `pnpm outdated -r`, what did you see?
 
 | Package | Current version | Latest version |
 |---|---|---|

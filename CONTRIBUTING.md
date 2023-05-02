@@ -22,10 +22,10 @@ Here are some guidelines to help you and everyone else.
     cd ember-container-query
     ```
 
-1. Use `yarn` to install dependencies.
+1. Use [`pnpm`](https://pnpm.io/installation) to install dependencies.
 
     ```sh
-    yarn install
+    pnpm install
     ```
 
 </details>
@@ -38,7 +38,7 @@ Here are some guidelines to help you and everyone else.
 
     ```sh
     # From the workspace root
-    yarn start
+    pnpm start
     ```
 
 1. Open the app at [http://localhost:4200](http://localhost:4200).
@@ -53,14 +53,14 @@ Here are some guidelines to help you and everyone else.
 
     ```sh
     # From the workspace root
-    yarn lint
+    pnpm lint
     ```
 
 1. You can run `lint:fix` to automatically fix linting errors.
 
     ```sh
     # From the workspace root
-    yarn lint:fix
+    pnpm lint:fix
     ```
 
 </details>
@@ -73,7 +73,7 @@ Here are some guidelines to help you and everyone else.
 
     ```sh
     # From the workspace root
-    yarn test
+    pnpm test
     ```
 
 </details>
@@ -89,7 +89,7 @@ Here are some guidelines to help you and everyone else.
 
     ```sh
     # From the workspace root
-    GITHUB_AUTH=<YOUR_PERSONAL_ACCESS_TOKEN> yarn changelog
+    GITHUB_AUTH=<YOUR_PERSONAL_ACCESS_TOKEN> pnpm changelog
     ```
 
 1. Create a tag such as `1.0.0` (the name satisfies the regular expression `^\d+\.\d+\.\d+`).
