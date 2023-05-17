@@ -16,11 +16,15 @@ Before you make a new issue, please search for similar issues. It's possible tha
 
 When you ran `pnpm outdated -r`, what did you see?
 
-| Package | Current version | Latest version |
-|---|---|---|
-| ember-cli-babel | 7.19.0 | 7.20.0 |
-| ember-source | 3.18.1 | 3.19.0 |
-| ember-template-lint | 2.7.0 | 2.8.0 |
+```sh
+┌───────────────┬─────────┬────────┬────────────────────────────────┐
+│ Package       │ Current │ Latest │ Dependents                     │
+├───────────────┼─────────┼────────┼────────────────────────────────┤
+│ rollup (dev)  │ 3.21.3  │ 3.22.0 │ ember-container-query          │
+├───────────────┼─────────┼────────┼────────────────────────────────┤
+│ webpack (dev) │ 5.81.0  │ 5.82.1 │ docs-app, test-app             │
+└───────────────┴─────────┴────────┴────────────────────────────────┘
+```
 
 
 ## Risk analysis ⚠️
