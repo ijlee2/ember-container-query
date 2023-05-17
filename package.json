@@ -1,6 +1,6 @@
 {
   "name": "workspace-root",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "private": true,
   "description": "Workspace root for ember-container-query",
   "repository": {

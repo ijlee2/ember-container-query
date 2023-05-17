@@ -8,6 +8,20 @@ Version overview
 - `v1.x`: [1.0.0](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#100-2020-05-29) - [1.1.9](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#119-2021-08-25)
 
 
+## 4.0.1 (2023-05-17)
+
+### Internal
+* [#191](https://github.com/ijlee2/ember-container-query/pull/191) Updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#190](https://github.com/ijlee2/ember-container-query/pull/190) Updated ember-modifier to v4.1.0 ([@ijlee2](https://github.com/ijlee2))
+* [#189](https://github.com/ijlee2/ember-container-query/pull/189) Migrated to pnpm ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#188](https://github.com/ijlee2/ember-container-query/pull/188) Generalized how webpack checks if a stylesheet comes from us (host app) or them (some package) ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 4.0.0 (2023-05-01)
 
 ### Breaking Change
