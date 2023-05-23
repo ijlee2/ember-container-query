@@ -8,6 +8,15 @@ Version overview
 - `v1.x`: [1.0.0](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#100-2020-05-29) - [1.1.9](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#119-2021-08-25)
 
 
+## 4.0.2 (2023-05-23)
+
+### Internal
+* [#192](https://github.com/ijlee2/ember-container-query/pull/192) Updated @embroider packages ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 4.0.1 (2023-05-17)
 
 ### Internal
