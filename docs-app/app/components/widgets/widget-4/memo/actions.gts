@@ -3,6 +3,7 @@ import type { QueryResults } from 'ember-container-query';
 import { localClass } from 'embroider-css-modules';
 
 import strictOr from '../../../../helpers/strict-or';
+import { svgJar } from '../../../../utils/ember-svg-jar';
 import styles from './actions.css';
 
 interface WidgetsWidget4MemoActionsSignature {
@@ -29,8 +30,7 @@ const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature
         class={{styles.button}}
         type="button"
       >
-        {{!-- @glint-expect-error: Unable to import the {{svg-jar}} helper --}}
-        {{svg-jar
+        {{svgJar
           "message-processing-outline"
           class=(localClass styles "icon" "icon-comment")
           desc="A speech bubble"
@@ -43,8 +43,7 @@ const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature
         class={{styles.button}}
         type="button"
       >
-        {{!-- @glint-expect-error: Unable to import the {{svg-jar}} helper --}}
-        {{svg-jar
+        {{svgJar
           "sync"
           class=(localClass styles "icon" "icon-repost")
           desc="Two circular arrows pointing to each other"
@@ -57,8 +56,7 @@ const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature
         class={{styles.button}}
         type="button"
       >
-        {{!-- @glint-expect-error: Unable to import the {{svg-jar}} helper --}}
-        {{svg-jar
+        {{svgJar
           "heart-outline"
           class=styles.icon
           desc="A heart"
@@ -71,8 +69,7 @@ const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature
         class={{styles.button}}
         type="button"
       >
-        {{!-- @glint-expect-error: Unable to import the {{svg-jar}} helper --}}
-        {{svg-jar
+        {{svgJar
           "share-variant-outline"
           class=styles.icon
           desc="A circular node that branches out to two circular nodes"

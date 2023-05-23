@@ -3,6 +3,7 @@ import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 import { localClass } from 'embroider-css-modules';
 
+import { svgJar } from '../../../utils/ember-svg-jar';
 import styles from './field.css';
 
 interface UiFormFieldSignature {
@@ -51,8 +52,7 @@ export default class UiFormFieldComponent extends Component<UiFormFieldSignature
         <div
           class={{localClass styles "feedback" "is-error"}}
         >
-          {{!-- @glint-expect-error: Unable to import the {{svg-jar}} helper --}}
-          {{svg-jar
+          {{svgJar
             "alert"
             desc="A warning to indicate that the input field has an error"
             role="img"
