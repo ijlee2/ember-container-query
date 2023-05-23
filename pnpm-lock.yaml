@@ -372,8 +372,8 @@ importers:
         specifier: ^2.9.3
         version: 2.9.3(@babel/core@7.21.8)(@glint/template@1.0.2)(ember-source@4.12.0)
       '@embroider/test-setup':
-        specifier: ^2.1.1
-        version: 2.1.1
+        specifier: ^3.0.1
+        version: 3.0.1
       '@gavant/glint-template-types':
         specifier: ^0.3.3
         version: 0.3.3
@@ -2122,9 +2122,20 @@ packages:
       semver: 7.5.0
       typescript-memoize: 1.1.1
 
-  /@embroider/test-setup@2.1.1:
-    resolution: {integrity: sha512-t81a2z2OEFAOZVbV7wkgiDuCyZ3ajD7J7J+keaTfNSRiXoQgeFFASEECYq1TCsH8m/R+xHMRiY59apF2FIeFhw==}
+  /@embroider/test-setup@3.0.1:
+    resolution: {integrity: sha512-t7R2f10iZDSNw3ovWAPM63GRQTu63uihpVh6CvHev5XkLt8B7tdxcxGyO6RbdF5Hu+pbsUu8sD0kAlR1gopmxg==}
     engines: {node: 12.* || 14.* || >= 16}
+    peerDependencies:
+      '@embroider/compat': ^3.0.0
+      '@embroider/core': ^3.0.0
+      '@embroider/webpack': ^3.0.0
+    peerDependenciesMeta:
+      '@embroider/compat':
+        optional: true
+      '@embroider/core':
+        optional: true
+      '@embroider/webpack':
+        optional: true
     dependencies:
       lodash: 4.17.21
       resolve: 1.22.2
