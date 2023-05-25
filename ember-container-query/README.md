@@ -18,7 +18,7 @@ ember install ember-container-query
 - Update your template registry to extend this addon's. Check the [Glint documentation](https://typed-ember.gitbook.io/glint/using-glint/ember/using-addons#using-glint-enabled-addons) for more information.
 
     ```ts
-    /* types/global.d.ts */
+    /* types/index.d.ts */
 
     import '@glint/environment-ember-loose';
 
