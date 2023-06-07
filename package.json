@@ -24,7 +24,7 @@
     "test": "pnpm --filter '*' test"
   },
   "devDependencies": {
-    "concurrently": "^8.0.1",
+    "concurrently": "^8.1.0",
     "lerna-changelog": "^2.2.0"
   },
   "engines": {
@@ -38,6 +38,11 @@
       "enhance: dependency": "Internal",
       "enhance: documentation": "Documentation",
       "user feedback": "User Feedback"
+    }
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "rollup-plugin-ts@3.2.0": "patches/rollup-plugin-ts@3.2.0.patch"
     }
   }
 }

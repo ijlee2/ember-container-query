@@ -10,10 +10,7 @@ const addon = new Addon({
 export default {
   // This provides defaults that work well alongside `publicEntrypoints` below.
   // You can augment this if you need to.
-  output: {
-    ...addon.output(),
-    experimentalMinChunkSize: 0,
-  },
+  output: addon.output(),
 
   plugins: [
     // These are the modules that users should be able to import from your
