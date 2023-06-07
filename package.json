@@ -24,7 +24,7 @@
     "test": "pnpm --filter '*' test"
   },
   "devDependencies": {
-    "concurrently": "^8.0.1",
+    "concurrently": "^8.1.0",
     "lerna-changelog": "^2.2.0"
   },
   "engines": {
