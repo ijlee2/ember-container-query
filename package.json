@@ -39,5 +39,10 @@
       "enhance: documentation": "Documentation",
       "user feedback": "User Feedback"
     }
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "rollup-plugin-ts@3.2.0": "patches/rollup-plugin-ts@3.2.0.patch"
+    }
   }
 }
