@@ -45,4 +45,3 @@ declare module '@glint/environment-ember-loose/registry' {
     'Widgets::Widget-1': typeof WidgetsWidget1Component;
   }
 }
-  

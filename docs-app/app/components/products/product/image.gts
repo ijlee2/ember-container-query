@@ -17,12 +17,14 @@ const ProductsProductImageComponent: TOC<ProductsProductImageSignature> =
       <div class={{styles.placeholder-image}}></div>
 
     {{else}}
+      {{! template-lint-disable no-redundant-role }}
       <img
         alt=""
         class={{styles.image}}
         role="presentation"
         src={{@src}}
       />
+      {{! template-lint-enable no-redundant-role }}
 
     {{/if}}
   </template>
