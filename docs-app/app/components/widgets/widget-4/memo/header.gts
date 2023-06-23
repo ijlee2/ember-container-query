@@ -30,6 +30,7 @@ const WidgetsWidget4MemoHeaderComponent: TOC<WidgetsWidget4MemoHeaderSignature> 
       >
         {{#unless showMinimalLayout}}
           <div class={{styles.avatar-container}}>
+            {{! template-lint-disable no-redundant-role }}
             <img
               alt=""
               class={{styles.avatar}}
@@ -37,6 +38,7 @@ const WidgetsWidget4MemoHeaderComponent: TOC<WidgetsWidget4MemoHeaderSignature> 
               role="presentation"
               src="/images/widgets/widget-4/avatar.jpg"
             />
+            {{! template-lint-enable no-redundant-role }}
           </div>
         {{/unless}}
 
