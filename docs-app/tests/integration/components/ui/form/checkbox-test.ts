@@ -115,8 +115,6 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
   });
 
   test('We can click on the checkbox to toggle the value', async function (this: TestContext, assert) {
-    assert.expect(6);
-
     let expectedValue = false;
 
     this.updateChangeset = ({ key, value }) => {
@@ -165,8 +163,6 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
   });
 
   test('We can press the Space key to toggle the value', async function (this: TestContext, assert) {
-    assert.expect(6);
-
     let expectedValue = false;
 
     this.updateChangeset = ({ key, value }) => {

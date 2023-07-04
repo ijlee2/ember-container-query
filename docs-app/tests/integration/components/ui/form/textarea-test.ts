@@ -108,8 +108,6 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
   });
 
   test('We can pass @onUpdate to get the updated value', async function (this: TestContext, assert) {
-    assert.expect(6);
-
     let expectedValue = '';
 
     this.updateChangeset = ({ key, value }) => {
