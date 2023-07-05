@@ -1,10 +1,12 @@
 import { _ as _applyDecoratedDescriptor, a as _initializerDefineProperty, b as _defineProperty } from '../_rollupPluginBabelHelpers-e795903d.js';
 import { setComponentTemplate } from '@ember/component';
-import { T as TEMPLATE } from '../container-query.hbs-1b00a8f0.js';
+import { precompileTemplate } from '@ember/template-compilation';
 import './container-query.css';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+
+var TEMPLATE = precompileTemplate("{{! @glint-ignore: ember-element-helper needs to provide Glint signature }}\n{{#let (element this.tagName) as |Tag|}}\n  <Tag\n    class=\"container-query\"\n    {{container-query\n      dataAttributePrefix=@dataAttributePrefix\n      debounce=@debounce\n      features=@features\n      onQuery=this.updateState\n    }}\n    ...attributes\n  >\n    {{yield\n      (hash\n        dimensions=this.dimensions\n        features=this.queryResults\n      )\n    }}\n  </Tag>\n{{/let}}");
 
 var _class, _descriptor, _descriptor2;
 let ContainerQueryComponent = (_class = class ContainerQueryComponent extends Component {
