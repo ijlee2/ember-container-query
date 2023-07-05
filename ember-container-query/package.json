@@ -57,11 +57,11 @@
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "lint:types": "glint --project tsconfig.development.json",
+    "lint:types": "glint",
     "prepack": "rollup --config",
     "start": "concurrently \"npm:start:*\" --names \"start:\"",
     "start:js": "rollup --config --watch --no-watch.clearScreen",
-    "start:types": "glint --declaration --watch",
+    "start:types": "glint --build --watch",
     "test": "echo 'A v2 addon does not have tests, run tests in test-app'"
   },
   "dependencies": {
