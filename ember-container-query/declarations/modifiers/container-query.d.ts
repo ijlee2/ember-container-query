@@ -1,7 +1,5 @@
-/// <reference types="ents" />
-import Owner from '@ember/owner';
-import Modifier from 'ember-modifier';
-import { ArgsFor, NamedArgs, PositionalArgs } from "ember-modifier";
+import type Owner from '@ember/owner';
+import Modifier, { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
 type IndexSignatureParameter = string | number | symbol;
 type Dimensions = {
     aspectRatio: number;
@@ -30,7 +28,7 @@ interface ContainerQueryModifierSignature<T extends IndexSignatureParameter> {
     };
     Element: Element;
 }
-declare class ContainerQueryModifier<T extends IndexSignatureParameter> extends Modifier<ContainerQueryModifierSignature<T>> {
+export default class ContainerQueryModifier<T extends IndexSignatureParameter> extends Modifier<ContainerQueryModifierSignature<T>> {
     private readonly resizeObserver;
     dimensions: Dimensions;
     queryResults: QueryResults<T>;
@@ -50,4 +48,5 @@ declare class ContainerQueryModifier<T extends IndexSignatureParameter> extends 
     private resetDataAttributes;
     private setDataAttributes;
 }
-export { ContainerQueryModifier as default, Dimensions, Features, IndexSignatureParameter, Metadata, QueryResults };
+export { Dimensions, Features, IndexSignatureParameter, Metadata, QueryResults, };
+//# sourceMappingURL=container-query.d.ts.map

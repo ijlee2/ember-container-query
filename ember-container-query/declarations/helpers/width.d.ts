@@ -1,5 +1,4 @@
-/// <reference types="ents" />
-import { Metadata } from "../modifiers/container-query.js";
+import type { Metadata } from '../modifiers/container-query';
 declare const WidthHelper: import("@ember/component/helper").FunctionBasedHelper<{
     Args: {
         Positional: [];
@@ -10,4 +9,5 @@ declare const WidthHelper: import("@ember/component/helper").FunctionBasedHelper
     };
     Return: Metadata;
 }>;
-export { WidthHelper as default };
+export default WidthHelper;
+//# sourceMappingURL=width.d.ts.map

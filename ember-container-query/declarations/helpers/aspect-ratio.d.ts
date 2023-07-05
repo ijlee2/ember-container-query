@@ -1,5 +1,4 @@
-/// <reference types="ents" />
-import { Metadata } from "../modifiers/container-query.js";
+import type { Metadata } from '../modifiers/container-query';
 declare const AspectRatioHelper: import("@ember/component/helper").FunctionBasedHelper<{
     Args: {
         Positional: [];
@@ -10,4 +9,5 @@ declare const AspectRatioHelper: import("@ember/component/helper").FunctionBased
     };
     Return: Metadata;
 }>;
-export { AspectRatioHelper as default };
+export default AspectRatioHelper;
+//# sourceMappingURL=aspect-ratio.d.ts.map

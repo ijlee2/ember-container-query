@@ -1,5 +1,4 @@
-/// <reference types="ents" />
-import { Metadata } from "../modifiers/container-query.js";
+import type { Metadata } from '../modifiers/container-query';
 declare const HeightHelper: import("@ember/component/helper").FunctionBasedHelper<{
     Args: {
         Positional: [];
@@ -10,4 +9,5 @@ declare const HeightHelper: import("@ember/component/helper").FunctionBasedHelpe
     };
     Return: Metadata;
 }>;
-export { HeightHelper as default };
+export default HeightHelper;
+//# sourceMappingURL=height.d.ts.map

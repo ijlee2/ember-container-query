@@ -1,5 +1,6 @@
+import './container-query.css';
 import Component from '@glimmer/component';
-import { Dimensions, Features, IndexSignatureParameter, QueryResults } from "../modifiers/container-query.js";
+import type { Dimensions, Features, IndexSignatureParameter, QueryResults } from '../modifiers/container-query';
 interface ContainerQuerySignature<T extends IndexSignatureParameter> {
     Args: {
         dataAttributePrefix?: string;
@@ -17,7 +18,7 @@ interface ContainerQuerySignature<T extends IndexSignatureParameter> {
     };
     Element: HTMLElement;
 }
-declare class ContainerQueryComponent<T extends IndexSignatureParameter> extends Component<ContainerQuerySignature<T>> {
+export default class ContainerQueryComponent<T extends IndexSignatureParameter> extends Component<ContainerQuerySignature<T>> {
     dimensions?: Dimensions;
     queryResults?: QueryResults<T>;
     tagName: string;
@@ -26,5 +27,5 @@ declare class ContainerQueryComponent<T extends IndexSignatureParameter> extends
         queryResults: QueryResults<T>;
     }): void;
 }
-export { ContainerQueryComponent as default };
-//# sourceMappingURL=components/container-query.d.ts.map
+export {};
+//# sourceMappingURL=container-query.d.ts.map
