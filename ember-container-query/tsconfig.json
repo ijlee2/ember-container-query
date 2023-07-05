@@ -2,8 +2,6 @@
   "extends": "@tsconfig/ember/tsconfig.json",
   "compilerOptions": {
     "declarationDir": "declarations",
-    "emitDeclarationOnly": true,
-    "noEmit": false,
     "skipLibCheck": true
   },
   "include": [
