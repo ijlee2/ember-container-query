@@ -44,11 +44,11 @@
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@ember/string": "^3.1.1",
-    "@ember/test-helpers": "^3.1.0",
+    "@ember/test-helpers": "^3.2.0",
     "@embroider/compat": "^3.0.2",
     "@embroider/core": "^3.0.2",
-    "@embroider/macros": "^1.11.1",
-    "@embroider/router": "^2.1.1",
+    "@embroider/macros": "^1.12.2",
+    "@embroider/router": "^2.1.2",
     "@embroider/webpack": "^3.0.0",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
@@ -116,7 +116,7 @@
     "stylelint-prettier": "^3.0.0",
     "type-css-modules": "^0.2.3",
     "typescript": "^5.1.6",
-    "webpack": "^5.88.0"
+    "webpack": "^5.88.1"
   },
   "engines": {
     "node": "16.* || >= 18"

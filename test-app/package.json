@@ -41,7 +41,7 @@
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@ember/string": "^3.1.1",
-    "@ember/test-helpers": "^3.1.0",
+    "@ember/test-helpers": "^3.2.0",
     "@embroider/test-setup": "^3.0.1",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
@@ -88,7 +88,7 @@
     "qunit": "^2.19.4",
     "qunit-dom": "^2.0.0",
     "typescript": "^5.1.6",
-    "webpack": "^5.88.0"
+    "webpack": "^5.88.1"
   },
   "engines": {
     "node": "16.* || >= 18"
