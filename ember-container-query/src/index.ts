@@ -1,12 +1,12 @@
-export { default as ContainerQuery } from './components/container-query';
-export { default as aspectRatio } from './helpers/aspect-ratio';
-export { default as height } from './helpers/height';
-export { default as width } from './helpers/width';
+export { default as ContainerQuery } from './components/container-query.ts';
+export { default as aspectRatio } from './helpers/aspect-ratio.ts';
+export { default as height } from './helpers/height.ts';
+export { default as width } from './helpers/width.ts';
 export type {
   Dimensions,
   Features,
   IndexSignatureParameter,
   Metadata,
   QueryResults,
-} from './modifiers/container-query';
-export { default as containerQuery } from './modifiers/container-query';
+} from './modifiers/container-query.ts';
+export { default as containerQuery } from './modifiers/container-query.ts';

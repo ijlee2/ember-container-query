@@ -1,6 +1,6 @@
 import { helper } from '@ember/component/helper';
 
-import type { Metadata } from '../modifiers/container-query';
+import type { Metadata } from '../modifiers/container-query.ts';
 
 interface HeightHelperSignature {
   Args: {

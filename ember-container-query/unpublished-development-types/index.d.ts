@@ -5,7 +5,7 @@ import '@glint/environment-ember-loose';
 
 import { ComponentLike, HelperLike } from '@glint/template';
 
-import EmberContainerQueryRegistry from '../src/template-registry';
+import type EmberContainerQueryRegistry from '../src/template-registry.ts';
 
 interface ElementHelperSignature<T extends string> {
   Args: {

@@ -9,7 +9,7 @@ import type {
   Features,
   IndexSignatureParameter,
   QueryResults,
-} from '../modifiers/container-query';
+} from '../modifiers/container-query.ts';
 
 interface ContainerQuerySignature<T extends IndexSignatureParameter> {
   Args: {
