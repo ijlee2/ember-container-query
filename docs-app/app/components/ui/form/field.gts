@@ -1,9 +1,9 @@
 import { hash } from '@ember/helper';
 import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
+import svgJar from 'ember-svg-jar/helpers/svg-jar';
 import { localClass } from 'embroider-css-modules';
 
-import { svgJar } from '../../../utils/ember-svg-jar';
 import styles from './field.css';
 
 interface UiFormFieldSignature {

@@ -1,9 +1,9 @@
 import type { TOC } from '@ember/component/template-only';
 import type { QueryResults } from 'ember-container-query';
+import svgJar from 'ember-svg-jar/helpers/svg-jar';
 import { localClass } from 'embroider-css-modules';
 
 import strictOr from '../../../../helpers/strict-or';
-import { svgJar } from '../../../../utils/ember-svg-jar';
 import styles from './actions.css';
 
 interface WidgetsWidget4MemoActionsSignature {
