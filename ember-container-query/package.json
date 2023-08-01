@@ -84,7 +84,6 @@
     "@glint/environment-ember-loose": "^1.0.2",
     "@glint/template": "^1.0.2",
     "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-node-resolve": "^15.1.0",
     "@tsconfig/ember": "^2.0.0",
     "@types/ember__component": "^4.0.14",
     "@types/ember__destroyable": "^4.0.2",

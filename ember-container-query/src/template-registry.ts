@@ -1,8 +1,8 @@
-import type ContainerQueryComponent from './components/container-query';
-import type AspectRatioHelper from './helpers/aspect-ratio';
-import type HeightHelper from './helpers/height';
-import type WidthHelper from './helpers/width';
-import type ContainerQueryModifier from './modifiers/container-query';
+import type ContainerQueryComponent from './components/container-query.ts';
+import type AspectRatioHelper from './helpers/aspect-ratio.ts';
+import type HeightHelper from './helpers/height.ts';
+import type WidthHelper from './helpers/width.ts';
+import type ContainerQueryModifier from './modifiers/container-query.ts';
 
 export default interface EmberContainerQueryRegistry {
   ContainerQuery: typeof ContainerQueryComponent;
