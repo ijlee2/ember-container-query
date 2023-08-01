@@ -115,11 +115,11 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
   });
 
   test('We can click on the checkbox to toggle the value', async function (this: TestContext, assert) {
-    assert.expect(6);
-
     let expectedValue = false;
 
     this.updateChangeset = ({ key, value }) => {
+      assert.step('onUpdate');
+
       assert.strictEqual(
         value,
         expectedValue,
@@ -162,14 +162,16 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
     assert
       .dom('[data-test-feedback]')
       .doesNotExist('We should not see an error message.');
+
+    assert.verifySteps(['onUpdate', 'onUpdate']);
   });
 
   test('We can press the Space key to toggle the value', async function (this: TestContext, assert) {
-    assert.expect(6);
-
     let expectedValue = false;
 
     this.updateChangeset = ({ key, value }) => {
+      assert.step('onUpdate');
+
       assert.strictEqual(
         value,
         expectedValue,
@@ -220,5 +222,7 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
     assert
       .dom('[data-test-feedback]')
       .doesNotExist('We should not see an error message.');
+
+    assert.verifySteps(['onUpdate', 'onUpdate']);
   });
 });

@@ -44,8 +44,6 @@ module('Unit | Utility | components/widgets/widget-3', function () {
 
     module('When images is an array with 1 element', function () {
       test("returns the only image regardless of the container's dimensions", function (this: TestContext, assert) {
-        assert.expect(35);
-
         const images = [
           {
             url: '/images/widgets/widget-3/venue-square@2x.jpg',
@@ -112,8 +110,6 @@ module('Unit | Utility | components/widgets/widget-3', function () {
 
     module('When images is an array with more than 1 element', function () {
       test('returns the image that fits the container well', function (this: TestContext, assert) {
-        assert.expect(35);
-
         const images = concertData.images;
 
         const expectedUrls = new Map([
