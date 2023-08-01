@@ -8,6 +8,25 @@ Version overview
 - `v1.x`: [1.0.0](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#100-2020-05-29) - [1.1.9](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#119-2021-08-25)
 
 
+## 4.0.5 (2023-08-01)
+
+### Bug Fix
+* [#204](https://github.com/ijlee2/ember-container-query/pull/204) Downstreamed bug fix from @embroider/addon-blueprint#155 ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#206](https://github.com/ijlee2/ember-container-query/pull/206) Updated ember-element-helper to v0.7.1 ([@ijlee2](https://github.com/ijlee2))
+* [#205](https://github.com/ijlee2/ember-container-query/pull/205) Updated lint-related packages ([@ijlee2](https://github.com/ijlee2))
+* [#203](https://github.com/ijlee2/ember-container-query/pull/203) Remove rollup-plugin-ts ([@ijlee2](https://github.com/ijlee2))
+* [#201](https://github.com/ijlee2/ember-container-query/pull/201) Added Ember 4.12 LTS to ember-try scenarios ([@ijlee2](https://github.com/ijlee2))
+* [#200](https://github.com/ijlee2/ember-container-query/pull/200) Updated @ember/test-helpers to v3 ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#201](https://github.com/ijlee2/ember-container-query/pull/201) Added Ember 4.12 LTS to ember-try scenarios ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 4.0.4 (2023-06-13)
 
 #### Internal
