@@ -307,7 +307,6 @@ module('Integration | Component | container-query', function (hooks) {
 
       await timeout();
 
-      /* @ts-expect-error: We are testing a special case (@features is updated) */
       set(this, 'features', {
         large: {
           dimension: 'width',
