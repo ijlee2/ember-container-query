@@ -47,7 +47,7 @@
     "@ember/test-helpers": "^3.2.0",
     "@embroider/compat": "^3.0.2",
     "@embroider/core": "^3.0.2",
-    "@embroider/macros": "^1.11.1",
+    "@embroider/macros": "^1.13.0",
     "@embroider/router": "^2.1.1",
     "@embroider/webpack": "^3.0.0",
     "@gavant/glint-template-types": "^0.3.4",
