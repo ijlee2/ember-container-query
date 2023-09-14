@@ -13,14 +13,8 @@
         "types/*"
       ]
     },
-    "moduleResolution": "node16",
     "skipLibCheck": true
   },
-  "include": [
-    "app/**/*",
-    "tests/**/*",
-    "types/**/*"
-  ],
   "glint": {
     "environment": [
       "ember-loose",
