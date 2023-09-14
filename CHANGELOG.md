@@ -8,6 +8,15 @@ Version overview
 - `v1.x`: [1.0.0](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#100-2020-05-29) - [1.1.9](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#119-2021-08-25)
 
 
+## 4.1.0 (2023-09-14)
+
+### Internal
+* [#209](https://github.com/ijlee2/ember-container-query/pull/209) Updated ember-element-helper to v0.8.4 ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 4.0.6 (2023-09-14)
 
 ### Bug Fix
