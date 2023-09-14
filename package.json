@@ -28,7 +28,7 @@
     "lerna-changelog": "^2.2.0"
   },
   "engines": {
-    "node": "16.* || >= 18"
+    "node": "18.* || >= 20"
   },
   "changelog": {
     "labels": {
