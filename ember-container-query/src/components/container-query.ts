@@ -26,7 +26,7 @@ interface ContainerQuerySignature<T extends IndexSignatureParameter> {
       },
     ];
   };
-  Element: HTMLElement;
+  Element: Element;
 }
 
 export default class ContainerQueryComponent<
