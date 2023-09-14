@@ -5,7 +5,6 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module',
   },
   plugins: [
     'ember',
@@ -16,6 +15,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:ember/recommended',
+    'plugin:import/recommended',
     'plugin:prettier/recommended',
   ],
   env: {
@@ -29,10 +29,10 @@ module.exports = {
   overrides: [
     // TypeScript files
     {
-      files: ['**/*.ts'],
+      files: ['**/*.{gts,ts}'],
       extends: [
-        'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:import/typescript',
         'plugin:typescript-sort-keys/recommended',
       ],
       rules: {
@@ -40,6 +40,16 @@ module.exports = {
         '@typescript-eslint/no-empty-interface': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
+        'import/no-duplicates': 'error',
+        'import/no-unresolved': 'off',
+      },
+    },
+    // JavaScript files
+    {
+      files: ['**/*.{gjs,js}'],
+      rules: {
+        'import/no-duplicates': 'error',
+        'import/no-unresolved': 'off',
       },
     },
     // Node files
@@ -49,13 +59,15 @@ module.exports = {
         './.prettierrc.js',
         './.template-lintrc.js',
         './addon-main.cjs',
-        './blueprints/*/index.js',
-        './rollup.config.mjs',
       ],
+      parserOptions: {
+        sourceType: 'script',
+      },
       env: {
         browser: false,
         node: true,
       },
+      plugins: ['n'],
       extends: ['plugin:n/recommended'],
     },
   ],

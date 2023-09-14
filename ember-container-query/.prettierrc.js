@@ -20,7 +20,6 @@ module.exports = {
       options: {
         printWidth: 80,
         singleQuote: true,
-        trailingComma: 'all',
       },
     },
   ],
