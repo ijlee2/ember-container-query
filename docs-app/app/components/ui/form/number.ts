@@ -1,11 +1,10 @@
-import { assert } from '@ember/debug';
 import { action, get } from '@ember/object';
 import Component from '@glimmer/component';
 
 import { generateErrorMessage } from '../../../utils/components/ui/form';
-import styles from './input.css';
+import styles from './number.css';
 
-interface UiFormInputSignature {
+interface UiFormNumberSignature {
   Args: {
     changeset: Record<string, any>;
     isDisabled?: boolean;
@@ -14,13 +13,16 @@ interface UiFormInputSignature {
     isWide?: boolean;
     key: string;
     label: string;
+    maxValue?: number;
+    minValue?: number;
     onUpdate: ({ key, value }: { key: string; value: any }) => void;
     placeholder?: string;
+    step?: number | 'any';
     type?: string;
   };
 }
 
-export default class UiFormInputComponent extends Component<UiFormInputSignature> {
+export default class UiFormNumberComponent extends Component<UiFormNumberSignature> {
   styles = styles;
 
   get errorMessage(): string | undefined {
@@ -29,19 +31,8 @@ export default class UiFormInputComponent extends Component<UiFormInputSignature
     return generateErrorMessage({
       isRequired,
       value: this.value,
-      valueType: 'string',
+      valueType: 'number',
     });
-  }
-
-  get type(): string {
-    const { type } = this.args;
-
-    assert(
-      'To render a number input, please use <Ui::Form::Number> instead.',
-      type !== 'number',
-    );
-
-    return this.args.type ?? 'text';
   }
 
   get value(): string {
@@ -54,13 +45,20 @@ export default class UiFormInputComponent extends Component<UiFormInputSignature
     const { key, onUpdate } = this.args;
     const { value } = event.target as HTMLInputElement;
 
-    onUpdate({ key, value });
+    const valueAsNumber = Number.parseFloat(value);
+
+    if (Number.isNaN(valueAsNumber)) {
+      onUpdate({ key, value: undefined });
+      return;
+    }
+
+    onUpdate({ key, value: valueAsNumber });
   }
 }
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {
-    'Ui::Form::Input': typeof UiFormInputComponent;
-    'ui/form/input': typeof UiFormInputComponent;
+    'Ui::Form::Number': typeof UiFormNumberComponent;
+    'ui/form/number': typeof UiFormNumberComponent;
   }
 }

@@ -7,6 +7,7 @@ import { WithBoundArgs } from '@glint/template';
 import styles from './form.css';
 import type UiFormCheckboxComponent from './form/checkbox';
 import type UiFormInputComponent from './form/input';
+import type UiFormNumberComponent from './form/number';
 import type UiFormTextareaComponent from './form/textarea';
 
 interface UiFormSignature {
@@ -24,6 +25,10 @@ interface UiFormSignature {
         >;
         Input: WithBoundArgs<
           typeof UiFormInputComponent,
+          'changeset' | 'isWide' | 'onUpdate'
+        >;
+        Number: WithBoundArgs<
+          typeof UiFormNumberComponent,
           'changeset' | 'isWide' | 'onUpdate'
         >;
         Textarea: WithBoundArgs<

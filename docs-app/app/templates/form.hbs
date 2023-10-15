@@ -3,6 +3,7 @@
 <Ui::Page @title="Form">
   <Ui::Form
     @data={{hash
+      donation=undefined
       email=undefined
       message="I 🧡 container queries!"
       name=undefined
@@ -39,6 +40,16 @@
       <F.Checkbox
         @key="subscribe"
         @label="Subscribe to The Ember Times?"
+      />
+    </div>
+
+    <div class={{this.styles.field}}>
+      <F.Number
+        @key="donation"
+        @label="Donation amount ($)"
+        @minValue={{0}}
+        @placeholder="100"
+        @step={{10}}
       />
     </div>
   </Ui::Form>

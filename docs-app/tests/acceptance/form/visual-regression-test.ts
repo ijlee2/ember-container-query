@@ -17,7 +17,7 @@ module('Acceptance | form', function (hooks) {
       .dom('[data-test-form="Contact me"]')
       .exists('We see the contact form.');
 
-    assert.dom('[data-test-field]').exists({ count: 4 }, 'We see 4 fields.');
+    assert.dom('[data-test-field]').exists({ count: 5 }, 'We see 5 fields.');
 
     assert
       .dom('[data-test-button="Submit"]')
@@ -31,7 +31,7 @@ module('Acceptance | form', function (hooks) {
       .dom('[data-test-form="Contact me"]')
       .exists('We see the contact form.');
 
-    assert.dom('[data-test-field]').exists({ count: 4 }, 'We see 4 fields.');
+    assert.dom('[data-test-field]').exists({ count: 5 }, 'We see 5 fields.');
 
     assert
       .dom('[data-test-button="Submit"]')
@@ -45,7 +45,7 @@ module('Acceptance | form', function (hooks) {
       .dom('[data-test-form="Contact me"]')
       .exists('We see the contact form.');
 
-    assert.dom('[data-test-field]').exists({ count: 4 }, 'We see 4 fields.');
+    assert.dom('[data-test-field]').exists({ count: 5 }, 'We see 5 fields.');
 
     assert
       .dom('[data-test-button="Submit"]')
@@ -59,7 +59,7 @@ module('Acceptance | form', function (hooks) {
       .dom('[data-test-form="Contact me"]')
       .exists('We see the contact form.');
 
-    assert.dom('[data-test-field]').exists({ count: 4 }, 'We see 4 fields.');
+    assert.dom('[data-test-field]').exists({ count: 5 }, 'We see 5 fields.');
 
     assert
       .dom('[data-test-button="Submit"]')
@@ -73,7 +73,7 @@ module('Acceptance | form', function (hooks) {
       .dom('[data-test-form="Contact me"]')
       .exists('We see the contact form.');
 
-    assert.dom('[data-test-field]').exists({ count: 4 }, 'We see 4 fields.');
+    assert.dom('[data-test-field]').exists({ count: 5 }, 'We see 5 fields.');
 
     assert
       .dom('[data-test-button="Submit"]')
@@ -87,7 +87,7 @@ module('Acceptance | form', function (hooks) {
       .dom('[data-test-form="Contact me"]')
       .exists('We see the contact form.');
 
-    assert.dom('[data-test-field]').exists({ count: 4 }, 'We see 4 fields.');
+    assert.dom('[data-test-field]').exists({ count: 5 }, 'We see 5 fields.');
 
     assert
       .dom('[data-test-button="Submit"]')
@@ -101,7 +101,7 @@ module('Acceptance | form', function (hooks) {
       .dom('[data-test-form="Contact me"]')
       .exists('We see the contact form.');
 
-    assert.dom('[data-test-field]').exists({ count: 4 }, 'We see 4 fields.');
+    assert.dom('[data-test-field]').exists({ count: 5 }, 'We see 5 fields.');
 
     assert
       .dom('[data-test-button="Submit"]')
@@ -115,7 +115,7 @@ module('Acceptance | form', function (hooks) {
       .dom('[data-test-form="Contact me"]')
       .exists('We see the contact form.');
 
-    assert.dom('[data-test-field]').exists({ count: 4 }, 'We see 4 fields.');
+    assert.dom('[data-test-field]').exists({ count: 5 }, 'We see 5 fields.');
 
     assert
       .dom('[data-test-button="Submit"]')
@@ -129,7 +129,7 @@ module('Acceptance | form', function (hooks) {
       .dom('[data-test-form="Contact me"]')
       .exists('We see the contact form.');
 
-    assert.dom('[data-test-field]').exists({ count: 4 }, 'We see 4 fields.');
+    assert.dom('[data-test-field]').exists({ count: 5 }, 'We see 5 fields.');
 
     assert
       .dom('[data-test-button="Submit"]')
