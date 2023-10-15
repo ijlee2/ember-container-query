@@ -9,6 +9,18 @@ Version overview
 - `v1.x`: [1.0.0](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#100-2020-05-29) - [1.1.9](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#119-2021-08-25)
 
 
+## 5.0.1 (2023-10-15)
+
+### Internal
+* [#211](https://github.com/ijlee2/ember-container-query/pull/211) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#212](https://github.com/ijlee2/ember-container-query/pull/212) Updated docs and test apps ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 5.0.0 (2023-09-14)
 
 ### Breaking Change
