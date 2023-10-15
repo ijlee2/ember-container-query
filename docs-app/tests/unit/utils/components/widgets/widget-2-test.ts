@@ -1,4 +1,4 @@
-import musicRevenue from 'docs-app/data/music-revenue';
+import { musicRevenues } from 'docs-app/data';
 import {
   createDataForVisualization,
   createSummariesForCaptions,
@@ -23,7 +23,7 @@ module('Unit | Utility | components/widgets/widget-2', function () {
 
   module('createDataForVisualization', function () {
     test('works', function (assert) {
-      const data = createDataForVisualization(musicRevenue);
+      const data = createDataForVisualization(musicRevenues);
 
       assert.strictEqual(data.length, 1058, 'There are 1058 data points.');
 
@@ -51,7 +51,7 @@ module('Unit | Utility | components/widgets/widget-2', function () {
 
   module('createSummariesForCaptions', function () {
     test('works', function (assert) {
-      const data = createDataForVisualization(musicRevenue);
+      const data = createDataForVisualization(musicRevenues);
       const summaries = createSummariesForCaptions(data);
 
       assert.strictEqual(summaries.length, 23, 'There are 23 summaries.');

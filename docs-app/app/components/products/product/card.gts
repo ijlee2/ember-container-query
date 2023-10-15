@@ -3,7 +3,7 @@ import { hash } from '@ember/helper';
 import { LinkTo } from '@ember/routing';
 import { ContainerQuery, width } from 'ember-container-query';
 
-import type { Product } from '../../../data/products';
+import type { Product } from '../../../data';
 import styles from './card.css';
 import ProductsProductImage from './image';
 

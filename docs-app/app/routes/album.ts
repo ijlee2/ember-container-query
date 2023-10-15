@@ -1,12 +1,11 @@
 import Route from '@ember/routing/route';
 
-import type { Album } from '../data/album';
-import albumData from '../data/album';
+import { type Album, album } from '../data';
 import type { ModelFrom } from '../utils/routes';
 
 export default class AlbumRoute extends Route {
   model(): Album {
-    return albumData;
+    return album;
   }
 }
 

@@ -1,4 +1,4 @@
-export type Revenue = {
+export type MusicRevenue = {
   Format: string;
   Revenue: number;
   'Revenue (Inflation Adjusted)': number;
@@ -6,7 +6,7 @@ export type Revenue = {
   Year: number;
 };
 
-const revenues: Revenue[] = [
+export const musicRevenues: MusicRevenue[] = [
   {
     Format: '8 - Track',
     Year: 1973,
@@ -7414,5 +7414,3 @@ const revenues: Revenue[] = [
     'Revenue (Inflation Adjusted)': 5300000,
   },
 ];
-
-export default revenues;

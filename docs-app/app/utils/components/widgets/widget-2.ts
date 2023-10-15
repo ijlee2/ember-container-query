@@ -1,4 +1,4 @@
-import type { Revenue } from '../../../data/music-revenue';
+import type { MusicRevenue } from '../../../data';
 
 export type Data = {
   musicFormat: string;
@@ -81,7 +81,7 @@ export function formatRevenue(revenue: number): string {
 /*
   Transform the raw data into something useful for visualization
 */
-export function createDataForVisualization(rawData: Revenue[]): Data[] {
+export function createDataForVisualization(rawData: MusicRevenue[]): Data[] {
   return rawData.map((datum) => {
     return {
       musicFormat: datum['Format'],

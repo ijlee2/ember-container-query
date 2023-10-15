@@ -5,8 +5,6 @@ import { tracked } from '@glimmer/tracking';
 import type { Model } from '../routes/products';
 import styles from './products.css';
 
-type SupportedKey = 'name';
-
 export default class ProductsController extends Controller {
   declare model: Model;
 
@@ -34,13 +32,17 @@ export default class ProductsController extends Controller {
     });
   }
 
-  @action noOp({ key, value }: { key: string; value: any }) {
+  @action updateQueryParameters({ key, value }: { key: string; value: any }) {
+    if (key !== 'name') {
+      return;
+    }
+
     if (value === undefined || value === '') {
-      this[key as SupportedKey] = null;
+      this[key] = null;
 
       return;
     }
 
-    this[key as SupportedKey] = value;
+    this[key] = value;
   }
 }

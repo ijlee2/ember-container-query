@@ -1,4 +1,4 @@
-import type { Image } from '../../../data/concert';
+import type { ConcertImage } from '../../../data/concert';
 
 export type ContainerDimensions = {
   aspectRatio: number;
@@ -16,7 +16,7 @@ export type ContainerDimensions = {
     container's the closest.
 */
 export function findBestFittingImage(
-  images: Image[],
+  images: ConcertImage[],
   containerDimensions: ContainerDimensions,
 ): string | undefined {
   if (images.length === 0) {

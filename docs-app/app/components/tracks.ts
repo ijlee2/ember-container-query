@@ -1,6 +1,6 @@
 import templateOnlyComponent from '@ember/component/template-only';
 
-import type { Track } from '../data/album';
+import type { Track } from '../data';
 
 interface TracksSignature {
   Args: {

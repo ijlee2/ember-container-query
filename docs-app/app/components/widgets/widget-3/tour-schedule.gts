@@ -2,7 +2,7 @@ import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
 import { ContainerQuery, width } from 'ember-container-query';
 
-import type { Concert } from '../../../data/concert';
+import type { Concert } from '../../../data';
 import styles from './tour-schedule.css';
 import WidgetsWidget3TourScheduleResponsiveImage from './tour-schedule/responsive-image';
 

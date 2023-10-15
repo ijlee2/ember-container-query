@@ -1,7 +1,6 @@
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
-import type { Album } from 'docs-app/data/album';
-import albumData from 'docs-app/data/album';
+import { type Album, album } from 'docs-app/data';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
 
@@ -15,7 +14,7 @@ module('Integration | Component | tracks', function (hooks) {
   setupRenderingTest(hooks);
 
   hooks.beforeEach(function (this: TestContext) {
-    this.album = albumData;
+    this.album = album;
   });
 
   test('uses container queries to render tracks', async function (this: TestContext, assert) {

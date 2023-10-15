@@ -1,4 +1,4 @@
-export type Image = {
+export type ConcertImage = {
   metadata: {
     height: number;
     width: number;
@@ -8,7 +8,7 @@ export type Image = {
 
 export type Concert = {
   date: string;
-  images: Image[];
+  images: ConcertImage[];
   location: {
     city: string;
     state: string;
@@ -16,7 +16,7 @@ export type Concert = {
   name: string;
 };
 
-const concert: Concert = {
+export const concert: Concert = {
   name: 'ACL Live',
   date: 'Jun 01',
   location: {
@@ -89,5 +89,3 @@ const concert: Concert = {
     },
   ],
 };
-
-export default concert;

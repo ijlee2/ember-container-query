@@ -1,7 +1,6 @@
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import { findAll, render } from '@ember/test-helpers';
-import type { Track } from 'docs-app/data/album';
-import albumData from 'docs-app/data/album';
+import { album, type Track } from 'docs-app/data';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
 
@@ -68,7 +67,7 @@ module('Integration | Component | tracks/list', function (hooks) {
 
   module('When @tracks is a non-empty array', function () {
     test('The component renders a non-empty list', async function (this: TestContext, assert: CustomAssert) {
-      this.tracks = albumData.tracks;
+      this.tracks = album.tracks;
 
       await render<TestContext>(hbs`
         <Tracks::List

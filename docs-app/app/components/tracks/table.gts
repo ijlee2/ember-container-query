@@ -1,6 +1,6 @@
 import type { TOC } from '@ember/component/template-only';
 
-import type { Track } from '../../data/album';
+import type { Track } from '../../data';
 import add from '../../helpers/add';
 import styles from './table.css';
 

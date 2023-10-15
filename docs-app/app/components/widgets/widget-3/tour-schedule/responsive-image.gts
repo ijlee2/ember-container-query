@@ -3,13 +3,13 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { containerQuery, type Dimensions } from 'ember-container-query';
 
-import type { Image } from '../../../../data/concert';
+import type { ConcertImage } from '../../../../data';
 import { findBestFittingImage } from '../../../../utils/components/widgets/widget-3';
 import styles from './responsive-image.css';
 
 interface WidgetsWidget3TourScheduleResponsiveImageSignature {
   Args: {
-    images: Image[];
+    images: ConcertImage[];
   };
 }
 

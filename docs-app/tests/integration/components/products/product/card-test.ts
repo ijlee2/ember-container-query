@@ -1,6 +1,6 @@
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
-import type { Product } from 'docs-app/data/products';
+import type { Product } from 'docs-app/data';
 import { a11yAudit } from 'ember-a11y-testing/test-support';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
@@ -15,6 +15,7 @@ module('Integration | Component | products/product/card', function (hooks) {
 
   hooks.beforeEach(function (this: TestContext) {
     this.product = {
+      categoryId: 'cake',
       description: 'Made with organic herbs',
       id: '1',
       imageUrl:
