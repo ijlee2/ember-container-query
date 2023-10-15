@@ -1,10 +1,12 @@
-import type { TestContext as BaseTestContext } from '@ember/test-helpers';
-import { findAll, render } from '@ember/test-helpers';
+import {
+  findAll,
+  render,
+  type TestContext as BaseTestContext,
+} from '@ember/test-helpers';
 import { album, type Track } from 'docs-app/data';
+import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
-
-import { setupRenderingTest } from '../../../helpers';
 
 type TrackProperties = {
   explicit: boolean;

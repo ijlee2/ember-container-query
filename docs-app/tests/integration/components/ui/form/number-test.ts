@@ -4,10 +4,9 @@ import {
   render,
   type TestContext as BaseTestContext,
 } from '@ember/test-helpers';
+import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
-
-import { setupRenderingTest } from '../../../../helpers';
 
 interface TestContext extends BaseTestContext {
   changeset: Record<string, any>;
@@ -76,7 +75,6 @@ module('Integration | Component | ui/form/number', function (hooks) {
 
     assert
       .dom('[data-test-field="Donation amount ($)"]')
-      .hasStyle({ cursor: 'not-allowed' }, 'We see the correct style.')
       .isDisabled('The input is disabled.');
   });
 

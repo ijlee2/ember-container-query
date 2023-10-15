@@ -2,7 +2,7 @@ import { action } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { WithBoundArgs } from '@glint/template';
+import type { WithBoundArgs } from '@glint/template';
 
 import styles from './form.css';
 import type UiFormCheckboxComponent from './form/checkbox';
@@ -14,6 +14,7 @@ interface UiFormSignature {
   Args: {
     data?: Record<string, any>;
     instructions?: string;
+    onSubmit: (data: Record<string, any>) => Promise<void>;
     title?: string;
   };
   Blocks: {
@@ -46,10 +47,10 @@ export default class UiFormComponent extends Component<UiFormSignature> {
 
   @tracked changeset = this.args.data ?? ({} as Record<string, any>);
 
-  @action submitForm(event: SubmitEvent): void {
+  @action async submitForm(event: SubmitEvent): Promise<void> {
     event.preventDefault();
 
-    console.table(this.changeset);
+    await this.args.onSubmit(this.changeset);
   }
 
   @action updateChangeset({ key, value }: { key: string; value: any }): void {

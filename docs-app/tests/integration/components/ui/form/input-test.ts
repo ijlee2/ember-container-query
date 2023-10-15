@@ -1,10 +1,12 @@
 import { set } from '@ember/object';
-import type { TestContext as BaseTestContext } from '@ember/test-helpers';
-import { fillIn, render } from '@ember/test-helpers';
+import {
+  fillIn,
+  render,
+  type TestContext as BaseTestContext,
+} from '@ember/test-helpers';
+import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
-
-import { setupRenderingTest } from '../../../../helpers';
 
 interface TestContext extends BaseTestContext {
   changeset: Record<string, any>;
@@ -101,9 +103,7 @@ module('Integration | Component | ui/form/input', function (hooks) {
       .dom('[data-test-label]')
       .hasText('Name *', 'The label shows that the field is required.');
 
-    assert
-      .dom('[data-test-field="Name"]')
-      .isRequired('The input should be required.');
+    assert.dom('[data-test-field="Name"]').isRequired('The input is required.');
   });
 
   test('We can pass @onUpdate to get the updated value', async function (this: TestContext, assert) {

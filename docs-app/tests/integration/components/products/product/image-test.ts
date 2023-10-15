@@ -1,7 +1,6 @@
-import type { TestContext } from '@ember/test-helpers';
-import { render } from '@ember/test-helpers';
+import { render, type TestContext } from '@ember/test-helpers';
+import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
-import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
 module('Integration | Component | products/product/image', function (hooks) {

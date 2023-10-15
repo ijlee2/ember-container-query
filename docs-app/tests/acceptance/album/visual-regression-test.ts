@@ -1,8 +1,10 @@
-/* eslint-disable qunit/require-expect */
 import { visit } from '@ember/test-helpers';
+import {
+  setupApplicationTest,
+  takeSnapshot,
+  timeout,
+} from 'docs-app/tests/helpers';
 import { module, test } from 'qunit';
-
-import { setupApplicationTest, takeSnapshot, timeout } from '../../helpers';
 
 module('Acceptance | album', function (hooks) {
   setupApplicationTest(hooks);
