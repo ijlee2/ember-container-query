@@ -1,6 +1,7 @@
 import { action, get } from '@ember/object';
 import Component from '@glimmer/component';
 
+import { generateErrorMessage } from '../../../utils/components/ui/form';
 import styles from './textarea.css';
 
 interface UiFormTextareaSignature {
@@ -23,15 +24,11 @@ export default class UiFormTextareaComponent extends Component<UiFormTextareaSig
   get errorMessage(): string | undefined {
     const { isRequired } = this.args;
 
-    if (!isRequired) {
-      return undefined;
-    }
-
-    if (!this.value) {
-      return 'Please provide a value.';
-    }
-
-    return undefined;
+    return generateErrorMessage({
+      isRequired,
+      value: this.value,
+      valueType: 'string',
+    });
   }
 
   get value(): string {
@@ -42,7 +39,7 @@ export default class UiFormTextareaComponent extends Component<UiFormTextareaSig
 
   @action updateValue(event: Event): void {
     const { key, onUpdate } = this.args;
-    const { value } = event.target as HTMLInputElement;
+    const { value } = event.target as HTMLTextAreaElement;
 
     onUpdate({ key, value });
   }

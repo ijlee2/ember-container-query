@@ -1,4 +1,22 @@
+type CategoryId =
+  | 'bacon'
+  | 'balloon'
+  | 'cake'
+  | 'chair'
+  | 'fish'
+  | 'gloves'
+  | 'hat'
+  | 'mug'
+  | 'pants'
+  | 'pasta'
+  | 'pizza'
+  | 'sausages'
+  | 'shoes'
+  | 'soap'
+  | 'towel';
+
 export type Product = {
+  categoryId: CategoryId;
   description: string;
   id: string;
   imageUrl: string;
@@ -9,8 +27,9 @@ export type Product = {
   shortDescription: string;
 };
 
-const products: Product[] = [
+export const products: Product[] = [
   {
+    categoryId: 'cake',
     description: 'Made with organic herbs',
     id: '1',
     imageUrl:
@@ -22,17 +41,19 @@ const products: Product[] = [
     shortDescription: 'Made with organic herbs',
   },
   {
-    description: 'Decorate your laptop with Tomster and Zoey!',
+    categoryId: 'mug',
+    description: 'A good day starts with a good cup of coffee',
     id: '2',
     imageUrl:
       'https://images.pexels.com/photos/1516415/pexels-photo-1516415.jpeg?auto=compress&cs=tinysrgb&dpr=1&h=256',
-    name: 'Ember.js Stickers',
+    name: 'Ember.js Mug',
     price: 8,
     rating: 5,
     seller: 'Ember',
-    shortDescription: 'Decorate your laptop with Tomster and Zoey!',
+    shortDescription: 'A good day starts with a good cup of coffee',
   },
   {
+    categoryId: 'cake',
     description: 'A chocolate sponge cake with a rich cherry filling',
     id: '3',
     imageUrl:
@@ -44,6 +65,7 @@ const products: Product[] = [
     shortDescription: 'A chocolate sponge cake with a rich cherry filling',
   },
   {
+    categoryId: 'sausages',
     description:
       'Tempore culpa repellat voluptatum blanditiis recusandae voluptatum similique sint aliquid. Saepe enim pariatur eaque eaque reprehenderit voluptates. Iure voluptate sequi harum. Voluptate asperiores placeat itaque nemo molestiae ducimus provident. Repellendus vel eius nihil minus similique quam nobis iste assumenda.',
     id: '4',
@@ -56,6 +78,7 @@ const products: Product[] = [
     shortDescription: 'Visionary executive local area network',
   },
   {
+    categoryId: 'pants',
     description:
       'Minus explicabo expedita voluptas inventore dicta dignissimos earum. Architecto voluptatibus omnis doloremque autem. Maxime sunt laudantium sit totam. Incidunt consequatur totam animi consectetur. Tenetur velit nihil quas officia maiores modi. Soluta a culpa fuga animi nam recusandae assumenda quas laudantium.',
     id: '5',
@@ -68,6 +91,7 @@ const products: Product[] = [
     shortDescription: 'Seamless fault-tolerant synergy',
   },
   {
+    categoryId: 'chair',
     description:
       'Dicta dolorum ea est accusamus accusamus et dolorum repellat. Sed rem pariatur pariatur animi assumenda deserunt. Laborum aspernatur optio quo aliquam.',
     id: '6',
@@ -80,6 +104,7 @@ const products: Product[] = [
     shortDescription: 'Customizable zero administration challenge',
   },
   {
+    categoryId: 'sausages',
     description:
       'Magni natus qui facere. Numquam illum voluptate. Voluptates provident inventore expedita veritatis. Itaque quae perspiciatis aliquid. Quas consequatur facere quia reprehenderit eos vel.',
     id: '7',
@@ -92,6 +117,7 @@ const products: Product[] = [
     shortDescription: 'Fully-configurable client-driven neural-net',
   },
   {
+    categoryId: 'pants',
     description:
       'Quae ipsum ducimus atque distinctio similique voluptatum sequi ea. Officiis adipisci fugiat possimus. Tenetur eligendi voluptatem nulla magnam itaque fugiat enim laudantium voluptate. Voluptatem eaque nostrum quibusdam at. Cum itaque ipsa assumenda reprehenderit dolor animi inventore rem. Reprehenderit nesciunt non itaque labore accusamus maxime.',
     id: '8',
@@ -104,6 +130,7 @@ const products: Product[] = [
     shortDescription: 'Total responsive attitude',
   },
   {
+    categoryId: 'sausages',
     description:
       'Reprehenderit eos esse pariatur soluta tempore tempora. Rem consequuntur excepturi officiis mollitia eos sint dolor nisi tempore. Culpa maxime nihil odit. Aliquam sapiente illum quos magnam odio aliquid provident illo sint.',
     id: '9',
@@ -116,6 +143,7 @@ const products: Product[] = [
     shortDescription: 'Intuitive reciprocal solution',
   },
   {
+    categoryId: 'pants',
     description:
       'Ipsa minima consectetur reprehenderit labore qui earum numquam praesentium. Consectetur corporis expedita similique nobis. Numquam ipsa officiis consequatur itaque. Maxime modi vero nam aut optio aut.',
     id: '10',
@@ -128,6 +156,7 @@ const products: Product[] = [
     shortDescription: 'Monitored eco-centric installation',
   },
   {
+    categoryId: 'soap',
     description:
       'Aliquam explicabo fugiat quidem libero tenetur nobis aliquid voluptas. Modi ab ipsa quisquam numquam rem molestiae. Molestiae pariatur unde perferendis fugit itaque temporibus quo ducimus. Natus cum quibusdam harum in perspiciatis perspiciatis. Magni quis quaerat reprehenderit facere.',
     id: '11',
@@ -140,6 +169,7 @@ const products: Product[] = [
     shortDescription: 'Vision-oriented encompassing encoding',
   },
   {
+    categoryId: 'towel',
     description:
       'Dolores perspiciatis enim. Eligendi dolores dolorum ratione quasi quae quas commodi incidunt. Dolore assumenda impedit optio quam explicabo. Laudantium accusamus asperiores assumenda excepturi at non iure consequatur repudiandae. Id vitae quo. Illo architecto dolores quisquam quia labore magni optio nulla est.',
     id: '12',
@@ -152,6 +182,7 @@ const products: Product[] = [
     shortDescription: 'Reactive scalable circuit',
   },
   {
+    categoryId: 'mug',
     description:
       'Odit provident earum eum tenetur ab perspiciatis minima quia impedit. Eos debitis qui atque officiis accusamus ullam maiores dolor. Aperiam eligendi deserunt tempora. Provident odit debitis voluptas provident sit. Magni quia quas voluptas voluptas aut officiis cum aliquid.',
     id: '13',
@@ -164,6 +195,7 @@ const products: Product[] = [
     shortDescription: 'Universal zero defect conglomeration',
   },
   {
+    categoryId: 'pasta',
     description:
       'Sapiente voluptates tempore quia nam sed iste blanditiis. Non quam modi veniam nemo doloribus rem est. Suscipit qui quibusdam. Temporibus reiciendis alias dolorem nemo odio blanditiis deleniti. Porro suscipit nam labore reprehenderit quidem. Sed aperiam hic tenetur quidem.',
     id: '14',
@@ -176,6 +208,7 @@ const products: Product[] = [
     shortDescription: 'Triple-buffered system-worthy emulation',
   },
   {
+    categoryId: 'gloves',
     description:
       'Dolore necessitatibus dolor voluptates quidem. Maiores aspernatur eius possimus odio recusandae et asperiores. Dolorum explicabo inventore placeat consequatur repudiandae est quidem adipisci qui. Nihil laboriosam laborum ratione dolore minus. Ipsum doloremque quaerat dolore. Sequi hic quod.',
     id: '15',
@@ -188,6 +221,7 @@ const products: Product[] = [
     shortDescription: 'Focused neutral product',
   },
   {
+    categoryId: 'pizza',
     description: 'Odit laborum a. Alias molestias quia quasi ratione enim.',
     id: '16',
     imageUrl:
@@ -199,6 +233,7 @@ const products: Product[] = [
     shortDescription: 'Devolved asymmetric frame',
   },
   {
+    categoryId: 'chair',
     description:
       'Voluptatum commodi magnam corporis id laboriosam necessitatibus dicta explicabo. Ut magnam expedita suscipit ea. Autem maxime nobis minus tenetur impedit labore officia. Amet qui blanditiis quod est at doloribus. Possimus earum odit debitis totam veniam neque amet. Molestiae error vel vel ipsum.',
     id: '17',
@@ -211,6 +246,7 @@ const products: Product[] = [
     shortDescription: 'Switchable scalable time-frame',
   },
   {
+    categoryId: 'pants',
     description:
       'Corrupti labore at labore cumque odio. Quos mollitia id aliquid hic esse expedita odit iste. Officia reprehenderit dolores. Amet itaque velit quae voluptatum.',
     id: '18',
@@ -223,6 +259,7 @@ const products: Product[] = [
     shortDescription: 'Innovative uniform monitoring',
   },
   {
+    categoryId: 'sausages',
     description:
       'Ipsum veniam aliquam. Reiciendis temporibus unde repellat tempora quod deleniti necessitatibus quos. Eaque quas sint perspiciatis vel impedit dolore.',
     id: '19',
@@ -235,6 +272,7 @@ const products: Product[] = [
     shortDescription: 'Integrated intangible superstructure',
   },
   {
+    categoryId: 'pasta',
     description:
       'Totam amet vel ex ullam iste sint hic exercitationem. Perspiciatis eos commodi quia impedit quam recusandae laborum vitae nulla. Debitis quae non ea accusamus harum fuga tempore facilis recusandae. Voluptates ex perspiciatis fugiat sint nemo deleniti incidunt rerum architecto.',
     id: '20',
@@ -247,6 +285,7 @@ const products: Product[] = [
     shortDescription: 'Stand-alone full-range toolset',
   },
   {
+    categoryId: 'shoes',
     description:
       'Earum veritatis autem similique amet. Numquam asperiores corporis sapiente quis repellat reiciendis aut ipsa. Labore natus nobis. Eos laboriosam iure praesentium occaecati quisquam exercitationem. Consequuntur repudiandae exercitationem voluptas excepturi voluptatum vitae earum quia odit.',
     id: '21',
@@ -259,6 +298,7 @@ const products: Product[] = [
     shortDescription: 'Profound 4th generation project',
   },
   {
+    categoryId: 'pants',
     description:
       'Dolore exercitationem error dicta quos fuga excepturi et. Libero quis voluptate dolorem blanditiis accusamus porro quisquam dolorum perspiciatis. Ea repellendus saepe quia ipsam esse odio.',
     id: '22',
@@ -271,6 +311,7 @@ const products: Product[] = [
     shortDescription: 'Organized fresh-thinking data-warehouse',
   },
   {
+    categoryId: 'towel',
     description:
       'Voluptatibus tempora officia debitis ducimus cumque. Nisi voluptate veritatis nam harum. Error voluptate nulla cumque culpa ullam expedita hic.',
     id: '23',
@@ -283,6 +324,7 @@ const products: Product[] = [
     shortDescription: 'Operative transitional methodology',
   },
   {
+    categoryId: 'cake',
     description:
       'Fugiat vero distinctio porro animi doloremque tenetur esse maiores. Quisquam illo eum facere adipisci doloremque quidem pariatur. Modi maxime nisi fugiat cum et. Consequatur accusantium doloribus quod numquam explicabo libero eos totam. Fuga suscipit laudantium.',
     id: '24',
@@ -295,6 +337,7 @@ const products: Product[] = [
     shortDescription: 'Managed didactic access',
   },
   {
+    categoryId: 'chair',
     description:
       'Nisi dolorum sit voluptatum veritatis error consequatur. Minima dicta quo dolores omnis rerum dolore voluptatem accusantium officiis.',
     id: '25',
@@ -307,6 +350,7 @@ const products: Product[] = [
     shortDescription: 'Horizontal bandwidth-monitored parallelism',
   },
   {
+    categoryId: 'pasta',
     description:
       'Mollitia est non mollitia doloribus a. Error incidunt tempora modi exercitationem. Distinctio eaque beatae at exercitationem vitae assumenda. Reiciendis impedit voluptas non officia nemo. Tenetur quos libero vero explicabo laborum optio.',
     id: '26',
@@ -319,6 +363,7 @@ const products: Product[] = [
     shortDescription: 'Total attitude-oriented moderator',
   },
   {
+    categoryId: 'shoes',
     description: 'Neque voluptates asperiores aliquid. Odit alias id.',
     id: '27',
     imageUrl:
@@ -330,6 +375,7 @@ const products: Product[] = [
     shortDescription: 'Grass-roots static orchestration',
   },
   {
+    categoryId: 'hat',
     description:
       'Tenetur maxime aliquid beatae sequi. Aspernatur sapiente aut alias corporis officia.',
     id: '28',
@@ -342,6 +388,7 @@ const products: Product[] = [
     shortDescription: 'Mandatory eco-centric structure',
   },
   {
+    categoryId: 'shoes',
     description:
       'Reprehenderit alias accusantium voluptate iure illum sequi. Nam consectetur at autem quaerat ea totam aspernatur possimus fugit. Debitis dolorem non vero quasi. Cupiditate optio facere mollitia earum eveniet laboriosam libero doloremque quod.',
     id: '29',
@@ -354,6 +401,7 @@ const products: Product[] = [
     shortDescription: 'Up-sized secondary archive',
   },
   {
+    categoryId: 'hat',
     description:
       'Sint minus aliquid tenetur vitae sit soluta. Ab ea ex ratione amet aliquid deleniti est. Repudiandae deleniti officiis et repellat mollitia nihil facilis provident. Nemo debitis dignissimos quaerat. Totam placeat officiis occaecati voluptatum ad adipisci ab.',
     id: '30',
@@ -366,6 +414,7 @@ const products: Product[] = [
     shortDescription: 'Open-source 4th generation leverage',
   },
   {
+    categoryId: 'balloon',
     description:
       'Fuga libero sed quidem repellat dolores. Est eaque distinctio laborum ad sit. Pariatur tenetur dolorem cumque repellendus cupiditate sed ut quae. Tempora accusantium cumque ipsam dolores provident inventore doloribus molestias. Alias dolor deleniti nemo repudiandae corrupti omnis perspiciatis at.',
     id: '31',
@@ -378,6 +427,7 @@ const products: Product[] = [
     shortDescription: 'Realigned bifurcated Graphical User Interface',
   },
   {
+    categoryId: 'gloves',
     description:
       'Iusto nobis natus illum ipsum provident quis. Officia dolor autem ipsum assumenda. Asperiores qui error. Dolorem animi nisi animi voluptate amet. A corporis ea.',
     id: '32',
@@ -390,6 +440,7 @@ const products: Product[] = [
     shortDescription: 'Centralized logistical matrix',
   },
   {
+    categoryId: 'shoes',
     description:
       'Explicabo omnis ad error commodi. Vel atque harum illum porro suscipit. Sequi praesentium cumque accusamus dolorum deserunt suscipit totam debitis assumenda. Ad aspernatur deserunt alias nesciunt saepe provident dignissimos commodi. Excepturi reprehenderit vel minus.',
     id: '33',
@@ -402,5 +453,3 @@ const products: Product[] = [
     shortDescription: 'Phased clear-thinking projection',
   },
 ];
-
-export default products;

@@ -16,10 +16,10 @@
 
   <:field as |f|>
     <textarea
-      class={{local-class
+      class={{local
         this.styles
         "textarea"
-        (if (strict-or @isDisabled @isReadOnly) "is-disabled")
+        (if (or @isDisabled @isReadOnly) "is-disabled")
       }}
       data-test-field={{@label}}
       disabled={{@isDisabled}}

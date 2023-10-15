@@ -9,11 +9,11 @@
     as |CQ|
   >
     {{#let
-      (strict-and CQ.features.large CQ.features.tall)
+      (and CQ.features.large CQ.features.tall)
       as |showLyrics|
     }}
       <div
-        class={{local-class
+        class={{local
           this.styles
           "container"
           (if showLyrics "with-lyrics")

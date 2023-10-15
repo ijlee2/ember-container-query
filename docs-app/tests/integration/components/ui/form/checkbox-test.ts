@@ -1,10 +1,13 @@
 import { set } from '@ember/object';
-import type { TestContext as BaseTestContext } from '@ember/test-helpers';
-import { click, render, triggerKeyEvent } from '@ember/test-helpers';
+import {
+  click,
+  render,
+  type TestContext as BaseTestContext,
+  triggerKeyEvent,
+} from '@ember/test-helpers';
+import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
-
-import { setupRenderingTest } from '../../../../helpers';
 
 interface TestContext extends BaseTestContext {
   changeset: Record<string, any>;
@@ -44,11 +47,11 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
     assert
       .dom('[data-test-field="Subscribe to The Ember Times?"]')
       .hasAria('checked', 'true', 'We see the correct value.')
-      .hasAria('disabled', 'false', 'The input should be enabled.')
-      .hasAria('readonly', 'false', 'The input should not be readonly.')
-      .hasAria('required', 'false', 'The input should not be required.')
+      .hasAria('disabled', 'false', 'The checkbox should be enabled.')
+      .hasAria('readonly', 'false', 'The checkbox should not be readonly.')
+      .hasAria('required', 'false', 'The checkbox should not be required.')
       .hasAttribute('role', 'checkbox', 'We see the correct role.')
-      .hasAttribute('tabindex', '0', 'The input is focusable.')
+      .hasAttribute('tabindex', '0', 'The checkbox is focusable.')
       .hasTagName('span', 'We see the correct tag name.');
 
     assert
@@ -56,7 +59,7 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       .doesNotExist('We should not see an error message.');
   });
 
-  test('We can pass @isDisabled to disable the input', async function (this: TestContext, assert) {
+  test('We can pass @isDisabled to disable the checkbox', async function (this: TestContext, assert) {
     await render<TestContext>(hbs`
       <Ui::Form::Checkbox
         @changeset={{this.changeset}}
@@ -69,8 +72,8 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
 
     assert
       .dom('[data-test-field="Subscribe to The Ember Times?"]')
-      .doesNotHaveAttribute('tabindex', 'The input should not be focusable.')
-      .hasAria('disabled', 'true', 'The input is disabled.');
+      .doesNotHaveAttribute('tabindex', 'The checkbox should not be focusable.')
+      .hasAria('disabled', 'true', 'The checkbox is disabled.');
   });
 
   test('We can pass @isReadOnly to display the value', async function (this: TestContext, assert) {
@@ -88,7 +91,7 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
       .dom('[data-test-field="Subscribe to The Ember Times?"]')
       .hasAria('checked', 'true', 'We see the correct value.')
       .hasAria('readonly', 'true', 'We see the aria-readonly attribute.')
-      .hasAttribute('tabindex', '0', 'The input is focusable.');
+      .hasAttribute('tabindex', '0', 'The checkbox is focusable.');
   });
 
   test('We can pass @isRequired to require a value', async function (this: TestContext, assert) {
@@ -111,7 +114,7 @@ module('Integration | Component | ui/form/checkbox', function (hooks) {
 
     assert
       .dom('[data-test-field="Subscribe to The Ember Times?"]')
-      .hasAria('required', 'true', 'The input should be required.');
+      .hasAria('required', 'true', 'The checkbox is required.');
   });
 
   test('We can click on the checkbox to toggle the value', async function (this: TestContext, assert) {

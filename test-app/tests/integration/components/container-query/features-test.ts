@@ -1,17 +1,18 @@
 import { set } from '@ember/object';
-import type { TestContext as BaseTestContext } from '@ember/test-helpers';
-import { render } from '@ember/test-helpers';
+import {
+  render,
+  type TestContext as BaseTestContext,
+} from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import type { Features } from 'ember-container-query';
 import { module, test } from 'qunit';
-
-import type { CustomAssert } from '../../../helpers';
 import {
+  assertDimensions,
+  assertFeatures,
   resizeContainer,
-  setupContainerQueryTest,
   setupRenderingTest,
   timeout,
-} from '../../../helpers';
+} from 'test-app/tests/helpers';
 
 type FeatureNames =
   | 'small'
@@ -29,7 +30,6 @@ interface TestContext extends BaseTestContext {
 
 module('Integration | Component | container-query', function (hooks) {
   setupRenderingTest(hooks);
-  setupContainerQueryTest(hooks);
 
   module('When @features is undefined', function (hooks) {
     hooks.beforeEach(async function () {
@@ -67,8 +67,8 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component renders', async function (this: TestContext, assert: CustomAssert) {
-      assert.areFeaturesCorrect!({
+    test('The component renders', async function (this: TestContext, assert) {
+      assertFeatures(assert, {
         small: undefined,
         medium: undefined,
         large: undefined,
@@ -79,13 +79,13 @@ module('Integration | Component | container-query', function (hooks) {
         'ratio-type-C': undefined,
       });
 
-      assert.areDimensionsCorrect!({ height: 500, width: 250 });
+      assertDimensions(assert, { height: 500, width: 250 });
     });
 
-    test('The component updates features when it is resized', async function (this: TestContext, assert: CustomAssert) {
+    test('The component updates features when it is resized', async function (this: TestContext, assert) {
       await resizeContainer({ height: 300, width: 500 });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         small: undefined,
         medium: undefined,
         large: undefined,
@@ -98,7 +98,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer({ height: 400, width: 800 });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         small: undefined,
         medium: undefined,
         large: undefined,
@@ -111,7 +111,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer({ height: 600, width: 1000 });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         small: undefined,
         medium: undefined,
         large: undefined,
@@ -123,18 +123,18 @@ module('Integration | Component | container-query', function (hooks) {
       });
     });
 
-    test('The component updates dimensions when it is resized', async function (this: TestContext, assert: CustomAssert) {
+    test('The component updates dimensions when it is resized', async function (this: TestContext, assert) {
       await resizeContainer({ height: 300, width: 500 });
 
-      assert.areDimensionsCorrect!({ height: 300, width: 500 });
+      assertDimensions(assert, { height: 300, width: 500 });
 
       await resizeContainer({ height: 400, width: 800 });
 
-      assert.areDimensionsCorrect!({ height: 400, width: 800 });
+      assertDimensions(assert, { height: 400, width: 800 });
 
       await resizeContainer({ height: 600, width: 1000 });
 
-      assert.areDimensionsCorrect!({ height: 600, width: 1000 });
+      assertDimensions(assert, { height: 600, width: 1000 });
     });
   });
 
@@ -180,8 +180,8 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component renders', async function (this: TestContext, assert: CustomAssert) {
-      assert.areFeaturesCorrect!({
+    test('The component renders', async function (this: TestContext, assert) {
+      assertFeatures(assert, {
         small: true,
         medium: false,
         large: false,
@@ -192,13 +192,13 @@ module('Integration | Component | container-query', function (hooks) {
         'ratio-type-C': false,
       });
 
-      assert.areDimensionsCorrect!({ height: 500, width: 250 });
+      assertDimensions(assert, { height: 500, width: 250 });
     });
 
-    test('The component updates features when it is resized', async function (this: TestContext, assert: CustomAssert) {
+    test('The component updates features when it is resized', async function (this: TestContext, assert) {
       await resizeContainer({ height: 300, width: 500 });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         small: false,
         medium: true,
         large: false,
@@ -211,7 +211,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer({ height: 400, width: 800 });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         small: false,
         medium: false,
         large: true,
@@ -224,7 +224,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer({ height: 600, width: 1000 });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         small: false,
         medium: false,
         large: false,
@@ -236,18 +236,18 @@ module('Integration | Component | container-query', function (hooks) {
       });
     });
 
-    test('The component updates dimensions when it is resized', async function (this: TestContext, assert: CustomAssert) {
+    test('The component updates dimensions when it is resized', async function (this: TestContext, assert) {
       await resizeContainer({ height: 300, width: 500 });
 
-      assert.areDimensionsCorrect!({ height: 300, width: 500 });
+      assertDimensions(assert, { height: 300, width: 500 });
 
       await resizeContainer({ height: 400, width: 800 });
 
-      assert.areDimensionsCorrect!({ height: 400, width: 800 });
+      assertDimensions(assert, { height: 400, width: 800 });
 
       await resizeContainer({ height: 600, width: 1000 });
 
-      assert.areDimensionsCorrect!({ height: 600, width: 1000 });
+      assertDimensions(assert, { height: 600, width: 1000 });
     });
   });
 
@@ -331,15 +331,15 @@ module('Integration | Component | container-query', function (hooks) {
       });
     });
 
-    test('The component updates the features', async function (this: TestContext, assert: CustomAssert) {
-      assert.areFeaturesCorrect!({
+    test('The component updates the features', async function (this: TestContext, assert) {
+      assertFeatures(assert, {
         small: undefined,
         medium: undefined,
         short: undefined,
         'ratio-type-C': undefined,
       });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         large: false,
         tall: true,
         'ratio-type-A': true,
@@ -347,17 +347,17 @@ module('Integration | Component | container-query', function (hooks) {
       });
     });
 
-    test('The component updates features when it is resized', async function (this: TestContext, assert: CustomAssert) {
+    test('The component updates features when it is resized', async function (this: TestContext, assert) {
       await resizeContainer({ height: 300, width: 500 });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         small: undefined,
         medium: undefined,
         short: undefined,
         'ratio-type-C': undefined,
       });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         large: false,
         tall: false,
         'ratio-type-A': false,
@@ -366,14 +366,14 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer({ height: 400, width: 800 });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         small: undefined,
         medium: undefined,
         short: undefined,
         'ratio-type-C': undefined,
       });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         large: true,
         tall: false,
         'ratio-type-A': false,
@@ -382,14 +382,14 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer({ height: 600, width: 1000 });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         small: undefined,
         medium: undefined,
         short: undefined,
         'ratio-type-C': undefined,
       });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         large: false,
         tall: true,
         'ratio-type-A': false,

@@ -1,16 +1,16 @@
 import { set } from '@ember/object';
-import type { TestContext as BaseTestContext } from '@ember/test-helpers';
-import { render } from '@ember/test-helpers';
+import {
+  render,
+  type TestContext as BaseTestContext,
+} from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
-
-import type { CustomAssert } from '../../../helpers';
 import {
+  assertDataAttributes,
   resizeContainer,
-  setupContainerQueryTest,
   setupRenderingTest,
   timeout,
-} from '../../../helpers';
+} from 'test-app/tests/helpers';
 
 interface TestContext extends BaseTestContext {
   dataAttributePrefix?: string;
@@ -18,7 +18,6 @@ interface TestContext extends BaseTestContext {
 
 module('Integration | Component | container-query', function (hooks) {
   setupRenderingTest(hooks);
-  setupContainerQueryTest(hooks);
 
   module('When @dataAttributePrefix is undefined', function (hooks) {
     hooks.beforeEach(async function () {
@@ -62,8 +61,8 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component creates data attributes when it is rendered', async function (this: TestContext, assert: CustomAssert) {
-      assert.areDataAttributesCorrect!({
+    test('The component creates data attributes when it is rendered', async function (this: TestContext, assert) {
+      assertDataAttributes(assert, {
         'data-container-query-small': '',
         'data-container-query-medium': undefined,
         'data-container-query-large': undefined,
@@ -75,10 +74,10 @@ module('Integration | Component | container-query', function (hooks) {
       });
     });
 
-    test('The component updates data attributes when it is resized', async function (this: TestContext, assert: CustomAssert) {
+    test('The component updates data attributes when it is resized', async function (this: TestContext, assert) {
       await resizeContainer({ height: 300, width: 500 });
 
-      assert.areDataAttributesCorrect!({
+      assertDataAttributes(assert, {
         'data-container-query-small': undefined,
         'data-container-query-medium': '',
         'data-container-query-large': undefined,
@@ -91,7 +90,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer({ height: 400, width: 800 });
 
-      assert.areDataAttributesCorrect!({
+      assertDataAttributes(assert, {
         'data-container-query-small': undefined,
         'data-container-query-medium': undefined,
         'data-container-query-large': '',
@@ -104,7 +103,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer({ height: 600, width: 1000 });
 
-      assert.areDataAttributesCorrect!({
+      assertDataAttributes(assert, {
         'data-container-query-small': undefined,
         'data-container-query-medium': undefined,
         'data-container-query-large': undefined,
@@ -162,8 +161,8 @@ module('Integration | Component | container-query', function (hooks) {
         await timeout();
       });
 
-      test('The component creates data attributes when it is rendered', async function (this: TestContext, assert: CustomAssert) {
-        assert.areDataAttributesCorrect!({
+      test('The component creates data attributes when it is rendered', async function (this: TestContext, assert) {
+        assertDataAttributes(assert, {
           'data-small': '',
           'data-medium': undefined,
           'data-large': undefined,
@@ -175,10 +174,10 @@ module('Integration | Component | container-query', function (hooks) {
         });
       });
 
-      test('The component updates data attributes when it is resized', async function (this: TestContext, assert: CustomAssert) {
+      test('The component updates data attributes when it is resized', async function (this: TestContext, assert) {
         await resizeContainer({ height: 300, width: 500 });
 
-        assert.areDataAttributesCorrect!({
+        assertDataAttributes(assert, {
           'data-small': undefined,
           'data-medium': '',
           'data-large': undefined,
@@ -191,7 +190,7 @@ module('Integration | Component | container-query', function (hooks) {
 
         await resizeContainer({ height: 400, width: 800 });
 
-        assert.areDataAttributesCorrect!({
+        assertDataAttributes(assert, {
           'data-small': undefined,
           'data-medium': undefined,
           'data-large': '',
@@ -204,7 +203,7 @@ module('Integration | Component | container-query', function (hooks) {
 
         await resizeContainer({ height: 600, width: 1000 });
 
-        assert.areDataAttributesCorrect!({
+        assertDataAttributes(assert, {
           'data-small': undefined,
           'data-medium': undefined,
           'data-large': undefined,
@@ -263,8 +262,8 @@ module('Integration | Component | container-query', function (hooks) {
         await timeout();
       });
 
-      test('The component creates data attributes when it is rendered', async function (this: TestContext, assert: CustomAssert) {
-        assert.areDataAttributesCorrect!({
+      test('The component creates data attributes when it is rendered', async function (this: TestContext, assert) {
+        assertDataAttributes(assert, {
           'data-cq-small': '',
           'data-cq-medium': undefined,
           'data-cq-large': undefined,
@@ -276,10 +275,10 @@ module('Integration | Component | container-query', function (hooks) {
         });
       });
 
-      test('The component updates data attributes when it is resized', async function (this: TestContext, assert: CustomAssert) {
+      test('The component updates data attributes when it is resized', async function (this: TestContext, assert) {
         await resizeContainer({ height: 300, width: 500 });
 
-        assert.areDataAttributesCorrect!({
+        assertDataAttributes(assert, {
           'data-cq-small': undefined,
           'data-cq-medium': '',
           'data-cq-large': undefined,
@@ -292,7 +291,7 @@ module('Integration | Component | container-query', function (hooks) {
 
         await resizeContainer({ height: 400, width: 800 });
 
-        assert.areDataAttributesCorrect!({
+        assertDataAttributes(assert, {
           'data-cq-small': undefined,
           'data-cq-medium': undefined,
           'data-cq-large': '',
@@ -305,7 +304,7 @@ module('Integration | Component | container-query', function (hooks) {
 
         await resizeContainer({ height: 600, width: 1000 });
 
-        assert.areDataAttributesCorrect!({
+        assertDataAttributes(assert, {
           'data-cq-small': undefined,
           'data-cq-medium': undefined,
           'data-cq-large': undefined,
@@ -366,8 +365,8 @@ module('Integration | Component | container-query', function (hooks) {
       set(this, 'dataAttributePrefix', 'cq2');
     });
 
-    test('The component updates the data attributes', async function (this: TestContext, assert: CustomAssert) {
-      assert.areDataAttributesCorrect!({
+    test('The component updates the data attributes', async function (this: TestContext, assert) {
+      assertDataAttributes(assert, {
         'data-cq1-small': undefined,
         'data-cq1-medium': undefined,
         'data-cq1-large': undefined,
@@ -378,7 +377,7 @@ module('Integration | Component | container-query', function (hooks) {
         'data-cq1-ratio-type-C': undefined,
       });
 
-      assert.areDataAttributesCorrect!({
+      assertDataAttributes(assert, {
         'data-cq2-small': '',
         'data-cq2-medium': undefined,
         'data-cq2-large': undefined,
@@ -390,10 +389,10 @@ module('Integration | Component | container-query', function (hooks) {
       });
     });
 
-    test('The component updates the data attributes when it is resized', async function (this: TestContext, assert: CustomAssert) {
+    test('The component updates the data attributes when it is resized', async function (this: TestContext, assert) {
       await resizeContainer({ height: 300, width: 500 });
 
-      assert.areDataAttributesCorrect!({
+      assertDataAttributes(assert, {
         'data-cq1-small': undefined,
         'data-cq1-medium': undefined,
         'data-cq1-large': undefined,
@@ -404,7 +403,7 @@ module('Integration | Component | container-query', function (hooks) {
         'data-cq1-ratio-type-C': undefined,
       });
 
-      assert.areDataAttributesCorrect!({
+      assertDataAttributes(assert, {
         'data-cq2-small': undefined,
         'data-cq2-medium': '',
         'data-cq2-large': undefined,
@@ -417,7 +416,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer({ height: 400, width: 800 });
 
-      assert.areDataAttributesCorrect!({
+      assertDataAttributes(assert, {
         'data-cq1-small': undefined,
         'data-cq1-medium': undefined,
         'data-cq1-large': undefined,
@@ -428,7 +427,7 @@ module('Integration | Component | container-query', function (hooks) {
         'data-cq1-ratio-type-C': undefined,
       });
 
-      assert.areDataAttributesCorrect!({
+      assertDataAttributes(assert, {
         'data-cq2-small': undefined,
         'data-cq2-medium': undefined,
         'data-cq2-large': '',
@@ -441,7 +440,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer({ height: 600, width: 1000 });
 
-      assert.areDataAttributesCorrect!({
+      assertDataAttributes(assert, {
         'data-cq1-small': undefined,
         'data-cq1-medium': undefined,
         'data-cq1-large': undefined,
@@ -452,7 +451,7 @@ module('Integration | Component | container-query', function (hooks) {
         'data-cq1-ratio-type-C': undefined,
       });
 
-      assert.areDataAttributesCorrect!({
+      assertDataAttributes(assert, {
         'data-cq2-small': undefined,
         'data-cq2-medium': undefined,
         'data-cq2-large': undefined,

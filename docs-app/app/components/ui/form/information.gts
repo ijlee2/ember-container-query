@@ -1,7 +1,7 @@
 import type { TOC } from '@ember/component/template-only';
 import { concat } from '@ember/helper';
+import { or } from 'ember-truth-helpers';
 
-import strictOr from '../../../helpers/strict-or';
 import styles from './information.css';
 
 interface UiFormInformationSignature {
@@ -14,7 +14,7 @@ interface UiFormInformationSignature {
 
 const UiFormInformationComponent: TOC<UiFormInformationSignature> =
   <template>
-    {{#if (strictOr @title @instructions)}}
+    {{#if (or @title @instructions)}}
       <div class={{styles.container}}>
         {{#if @title}}
           <div

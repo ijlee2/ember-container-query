@@ -3,12 +3,14 @@
 <Ui::Page @title="Form">
   <Ui::Form
     @data={{hash
+      donation=undefined
       email=undefined
       message="I 🧡 container queries!"
       name=undefined
       subscribe=true
     }}
     @instructions="Still have questions about ember-container-query? Try sending me a message."
+    @onSubmit={{this.submitForm}}
     @title="Contact me"
     as |F|
   >
@@ -39,6 +41,16 @@
       <F.Checkbox
         @key="subscribe"
         @label="Subscribe to The Ember Times?"
+      />
+    </div>
+
+    <div class={{this.styles.field}}>
+      <F.Number
+        @key="donation"
+        @label="Donation amount ($)"
+        @minValue={{0}}
+        @placeholder="100"
+        @step={{10}}
       />
     </div>
   </Ui::Form>

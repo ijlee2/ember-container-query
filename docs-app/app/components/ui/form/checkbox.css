@@ -19,19 +19,18 @@
   border-color: transparent;
 }
 
-.checkbox.is-checked {
-  background-color: #1976d2;
-}
-
-.checkbox.is-disabled {
-  background-color: #b2c9d4;
-  cursor: not-allowed;
-}
-
 .checkmark-icon {
   color: white;
 }
 
-.checkbox.is-disabled .checkmark-icon {
+.checkbox.is-checked {
+  background-color: #1976d2;
+}
+
+.is-disabled {
+  composes: input-disabled from global;
+}
+
+.is-disabled .checkmark-icon {
   color: #546e7a;
 }

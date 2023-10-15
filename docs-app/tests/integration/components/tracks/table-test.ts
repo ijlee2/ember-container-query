@@ -1,11 +1,12 @@
-import type { TestContext as BaseTestContext } from '@ember/test-helpers';
-import { findAll, render } from '@ember/test-helpers';
-import type { Track } from 'docs-app/data/album';
-import albumData from 'docs-app/data/album';
+import {
+  findAll,
+  render,
+  type TestContext as BaseTestContext,
+} from '@ember/test-helpers';
+import { album, type Track } from 'docs-app/data';
+import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
-
-import { setupRenderingTest } from '../../../helpers';
 
 type TrackProperties = {
   explicit: boolean;
@@ -75,7 +76,7 @@ module('Integration | Component | tracks/table', function (hooks) {
 
   module('When @tracks is a non-empty array', function () {
     test('The component renders a non-empty table', async function (this: TestContext, assert: CustomAssert) {
-      this.tracks = albumData.tracks;
+      this.tracks = album.tracks;
 
       await render<TestContext>(hbs`
         <Tracks::Table

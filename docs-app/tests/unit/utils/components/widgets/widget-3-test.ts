@@ -1,7 +1,9 @@
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
-import concertData from 'docs-app/data/concert';
-import type { ContainerDimensions } from 'docs-app/utils/components/widgets/widget-3';
-import { findBestFittingImage } from 'docs-app/utils/components/widgets/widget-3';
+import { concert } from 'docs-app/data';
+import {
+  type ContainerDimensions,
+  findBestFittingImage,
+} from 'docs-app/utils/components/widgets/widget-3';
 import { module, test } from 'qunit';
 
 type TestMatrix = Map<string, ContainerDimensions>;
@@ -110,7 +112,7 @@ module('Unit | Utility | components/widgets/widget-3', function () {
 
     module('When images is an array with more than 1 element', function () {
       test('returns the image that fits the container well', function (this: TestContext, assert) {
-        const images = concertData.images;
+        const images = concert.images;
 
         const expectedUrls = new Map([
           ['h100,w50', '/images/widgets/widget-3/venue-square@1x.jpg'],

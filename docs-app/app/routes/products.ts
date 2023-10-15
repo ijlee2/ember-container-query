@@ -1,10 +1,10 @@
 import Route from '@ember/routing/route';
 
-import products from '../data/products';
+import { type Product, products } from '../data';
 import type { ModelFrom } from '../utils/routes';
 
 export default class ProductsRoute extends Route {
-  model() {
+  model(): Product[] {
     return products;
   }
 }

@@ -1,8 +1,7 @@
 import { visit } from '@ember/test-helpers';
+import { setupApplicationTest, timeout } from 'docs-app/tests/helpers';
 import { a11yAudit } from 'ember-a11y-testing/test-support';
 import { module, test } from 'qunit';
-
-import { setupApplicationTest, timeout } from '../../helpers';
 
 module('Acceptance | not-found', function (hooks) {
   setupApplicationTest(hooks);

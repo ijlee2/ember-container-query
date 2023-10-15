@@ -1,24 +1,7 @@
 .textarea {
-  border: 0.125rem solid #ffd54f;
-  padding: 0.125rem 0.25rem;
-  width: calc(100% - 0.75rem);
+  composes: input from "./input.css";
 }
 
-.textarea:focus {
-  background-color: #ffecb3;
-  outline: 0;
-}
-
-.textarea:not(:focus) {
-  border-color: transparent;
-}
-
-.textarea::placeholder {
-  font-style: italic;
-}
-
-.textarea.is-disabled {
-  background-color: #b2c9d4;
-  color: #546e7a;
-  cursor: not-allowed;
+.is-disabled {
+  composes: input-disabled from global;
 }

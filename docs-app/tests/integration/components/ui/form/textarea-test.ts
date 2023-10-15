@@ -1,10 +1,12 @@
 import { set } from '@ember/object';
-import type { TestContext as BaseTestContext } from '@ember/test-helpers';
-import { fillIn, render } from '@ember/test-helpers';
+import {
+  fillIn,
+  render,
+  type TestContext as BaseTestContext,
+} from '@ember/test-helpers';
+import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
-
-import { setupRenderingTest } from '../../../../helpers';
 
 interface TestContext extends BaseTestContext {
   changeset: Record<string, any>;
@@ -43,7 +45,7 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
 
     assert
       .dom('[data-test-field="Message"]')
-      .doesNotHaveAttribute('readonly', 'The input should not be readonly.')
+      .doesNotHaveAttribute('readonly', 'The textarea should not be readonly.')
       .hasTagName('textarea', 'We see the correct tag name.')
       .hasValue('I 🧡 container queries!', 'We see the correct value.')
       .isEnabled('The textarea should be enabled.')
@@ -104,7 +106,7 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
 
     assert
       .dom('[data-test-field="Message"]')
-      .isRequired('The textarea should be required.');
+      .isRequired('The textarea is required.');
   });
 
   test('We can pass @onUpdate to get the updated value', async function (this: TestContext, assert) {

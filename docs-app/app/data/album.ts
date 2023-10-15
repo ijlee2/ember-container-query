@@ -14,7 +14,7 @@ export type Album = {
   tracks: Track[];
 };
 
-const album: Album = {
+export const album: Album = {
   name: 'How to Be a Human Being',
   publicationDate: '2016',
   totalLengthInMinutes: 43,
@@ -79,5 +79,3 @@ const album: Album = {
     },
   ],
 };
-
-export default album;

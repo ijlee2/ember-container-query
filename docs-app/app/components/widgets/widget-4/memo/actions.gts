@@ -3,9 +3,9 @@ import type { QueryResults } from 'ember-container-query';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: Could not find a declaration file for module 'ember-svg-jar/helpers/svg-jar'.
 import svgJar from 'ember-svg-jar/helpers/svg-jar';
-import { localClass } from 'embroider-css-modules';
+import { or } from 'ember-truth-helpers';
+import { local } from 'embroider-css-modules';
 
-import strictOr from '../../../../helpers/strict-or';
 import styles from './actions.css';
 
 interface WidgetsWidget4MemoActionsSignature {
@@ -17,11 +17,11 @@ interface WidgetsWidget4MemoActionsSignature {
 const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature> =
   <template>
     <div
-      class={{localClass
+      class={{local
         styles
         "actions"
         (if
-          (strictOr @cqFeatures.small @cqFeatures.short)
+          (or @cqFeatures.small @cqFeatures.short)
           "minimal-layout"
         )
       }}
@@ -34,7 +34,7 @@ const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature
       >
         {{svgJar
           "message-processing-outline"
-          class=(localClass styles "icon" "icon-comment")
+          class=(local styles "icon" "icon-comment")
           desc="A speech bubble"
           role="img"
         }}
@@ -47,7 +47,7 @@ const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature
       >
         {{svgJar
           "sync"
-          class=(localClass styles "icon" "icon-repost")
+          class=(local styles "icon" "icon-repost")
           desc="Two circular arrows pointing to each other"
           role="img"
         }}

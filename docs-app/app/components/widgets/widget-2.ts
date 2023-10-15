@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
-import musicRevenue from '../../data/music-revenue';
+import { musicRevenues } from '../../data';
 import type { Data, Summary } from '../../utils/components/widgets/widget-2';
 import {
   createDataForVisualization,
@@ -27,7 +27,7 @@ export default class WidgetsWidget2Component extends Component<WidgetsWidget2Sig
   }
 
   loadData(): void {
-    this.data = createDataForVisualization(musicRevenue);
+    this.data = createDataForVisualization(musicRevenues);
     this.summaries = createSummariesForCaptions(this.data);
   }
 }

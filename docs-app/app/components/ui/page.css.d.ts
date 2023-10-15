@@ -1,7 +1,7 @@
 declare const styles: {
-  readonly 'body': string;
   readonly 'container': string;
-  readonly 'header': string;
+  readonly 'content': string;
+  readonly 'title': string;
 };
 
 export default styles;

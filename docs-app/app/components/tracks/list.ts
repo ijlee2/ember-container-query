@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 
-import type { Track } from '../../data/album';
+import type { Track } from '../../data';
 import styles from './list.css';
 
 interface TracksListSignature {
