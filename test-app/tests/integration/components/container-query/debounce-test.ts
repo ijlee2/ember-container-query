@@ -1,15 +1,15 @@
-import type { TestContext as BaseTestContext } from '@ember/test-helpers';
-import { render } from '@ember/test-helpers';
+import {
+  render,
+  type TestContext as BaseTestContext,
+} from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
-
-import type { CustomAssert } from '../../../helpers';
 import {
+  assertFeatures,
   resizeContainer,
-  setupContainerQueryTest,
   setupRenderingTest,
   timeout,
-} from '../../../helpers';
+} from 'test-app/tests/helpers';
 
 interface TestContext extends BaseTestContext {
   debounce?: number;
@@ -17,10 +17,9 @@ interface TestContext extends BaseTestContext {
 
 module('Integration | Component | container-query', function (hooks) {
   setupRenderingTest(hooks);
-  setupContainerQueryTest(hooks);
 
   module('When @debounce is passed', function () {
-    test('Container queries are debounced until the @debounce time passes', async function (this: TestContext, assert: CustomAssert) {
+    test('Container queries are debounced until the @debounce time passes', async function (this: TestContext, assert) {
       /*
         Caution:
 
@@ -71,7 +70,7 @@ module('Integration | Component | container-query', function (hooks) {
         </div>
       `);
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         small: true,
         medium: false,
         large: false,
@@ -86,7 +85,7 @@ module('Integration | Component | container-query', function (hooks) {
       // same as before.
       await resizeContainer({ height: 300, width: 500 });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         small: true,
         medium: false,
         large: false,
@@ -99,7 +98,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer({ height: 400, width: 800 });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         small: true,
         medium: false,
         large: false,
@@ -112,7 +111,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       await resizeContainer({ height: 600, width: 1000 });
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         small: true,
         medium: false,
         large: false,
@@ -127,7 +126,7 @@ module('Integration | Component | container-query', function (hooks) {
       // will update.
       await timeout(this.debounce);
 
-      assert.areFeaturesCorrect!({
+      assertFeatures(assert, {
         small: false,
         medium: false,
         large: false,

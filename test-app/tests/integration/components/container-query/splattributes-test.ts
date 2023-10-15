@@ -1,22 +1,14 @@
-import type { TestContext } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
-
-import type { CustomAssert } from '../../../helpers';
-import {
-  setupContainerQueryTest,
-  setupRenderingTest,
-  timeout,
-} from '../../../helpers';
+import { setupRenderingTest, timeout } from 'test-app/tests/helpers';
 
 module('Integration | Component | container-query', function (hooks) {
   setupRenderingTest(hooks);
-  setupContainerQueryTest(hooks);
 
   module('...attributes', function () {
-    test('The component accepts splattributes', async function (this: TestContext, assert: CustomAssert) {
-      await render<TestContext>(hbs`
+    test('The component accepts splattributes', async function (assert) {
+      await render(hbs`
         {{!-- template-lint-disable no-inline-styles --}}
         <div style="width: 500px; height: 800px;">
           <ContainerQuery

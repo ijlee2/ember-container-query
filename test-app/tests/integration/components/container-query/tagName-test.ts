@@ -1,16 +1,15 @@
 import { set } from '@ember/object';
-import type { TestContext as BaseTestContext } from '@ember/test-helpers';
-import { render } from '@ember/test-helpers';
+import {
+  render,
+  type TestContext as BaseTestContext,
+} from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
-
-import type { CustomAssert } from '../../../helpers';
 import {
   resizeContainer,
-  setupContainerQueryTest,
   setupRenderingTest,
   timeout,
-} from '../../../helpers';
+} from 'test-app/tests/helpers';
 
 interface TestContext extends BaseTestContext {
   tagName?: string;
@@ -18,7 +17,6 @@ interface TestContext extends BaseTestContext {
 
 module('Integration | Component | container-query', function (hooks) {
   setupRenderingTest(hooks);
-  setupContainerQueryTest(hooks);
 
   module('When @tagName is undefined', function (hooks) {
     hooks.beforeEach(async function () {
@@ -62,13 +60,13 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component has the <div> tag', async function (this: TestContext, assert: CustomAssert) {
+    test('The component has the <div> tag', async function (this: TestContext, assert) {
       assert
         .dom('[data-test-container-query]')
         .hasTagName('div', 'We see the correct tag name.');
     });
 
-    test('The component continues to have the <div> tag when it is resized', async function (this: TestContext, assert: CustomAssert) {
+    test('The component continues to have the <div> tag when it is resized', async function (this: TestContext, assert) {
       await resizeContainer({ height: 300, width: 500 });
 
       assert
@@ -132,13 +130,13 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component has the correct tag', async function (this: TestContext, assert: CustomAssert) {
+    test('The component has the correct tag', async function (this: TestContext, assert) {
       assert
         .dom('[data-test-container-query]')
         .hasTagName('section', 'We see the correct tag name.');
     });
 
-    test('The component continues to have the correct tag when it is resized', async function (this: TestContext, assert: CustomAssert) {
+    test('The component continues to have the correct tag when it is resized', async function (this: TestContext, assert) {
       await resizeContainer({ height: 300, width: 500 });
 
       assert
@@ -206,14 +204,14 @@ module('Integration | Component | container-query', function (hooks) {
       set(this, 'tagName', 'article');
     });
 
-    test("The component doesn't update the tag", async function (this: TestContext, assert: CustomAssert) {
+    test("The component doesn't update the tag", async function (this: TestContext, assert) {
       assert
         .dom('[data-test-container-query]')
         .hasTagName('section', 'We see the correct tag name.')
         .doesNotHaveTagName('article', 'The tag name should not change.');
     });
 
-    test('The component continues to not update the tag when it is resized', async function (this: TestContext, assert: CustomAssert) {
+    test('The component continues to not update the tag when it is resized', async function (this: TestContext, assert) {
       await resizeContainer({ height: 300, width: 500 });
 
       assert
