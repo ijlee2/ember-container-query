@@ -1,6 +1,7 @@
 import { action, get } from '@ember/object';
 import Component from '@glimmer/component';
 
+import { generateErrorMessage } from '../../../utils/components/ui/form';
 import styles from './checkbox.css';
 
 interface UiFormCheckboxSignature {
@@ -23,15 +24,11 @@ export default class UiFormCheckboxComponent extends Component<UiFormCheckboxSig
   get errorMessage(): string | undefined {
     const { isRequired } = this.args;
 
-    if (!isRequired) {
-      return undefined;
-    }
-
-    if (!this.isChecked) {
-      return 'Please select the checkbox.';
-    }
-
-    return undefined;
+    return generateErrorMessage({
+      isRequired,
+      value: this.isChecked,
+      valueType: 'boolean',
+    });
   }
 
   get isChecked(): boolean {
