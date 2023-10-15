@@ -92,6 +92,12 @@ ul {
   list-style-type: none;
 }
 
+:global(.input-disabled) {
+  background-color: #9ea4b0 !important;
+  color: #546e7a !important;
+  cursor: not-allowed !important;
+}
+
 :global(#ember-testing-container) {
   background-color: #020e1c !important;
   border: 0.0625rem solid rgb(211 211 211 / 15%) !important;

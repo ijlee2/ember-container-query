@@ -17,8 +17,6 @@
   font-style: italic;
 }
 
-.input.is-disabled {
-  background-color: #b2c9d4;
-  color: #546e7a;
-  cursor: not-allowed;
+.is-disabled {
+  composes: input-disabled from global;
 }
