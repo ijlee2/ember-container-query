@@ -26,7 +26,7 @@
         this.styles
         "checkbox"
         (if this.isChecked "is-checked")
-        (if (strict-or @isDisabled @isReadOnly) "is-disabled")
+        (if (or @isDisabled @isReadOnly) "is-disabled")
       }}
       data-test-field={{@label}}
       role="checkbox"

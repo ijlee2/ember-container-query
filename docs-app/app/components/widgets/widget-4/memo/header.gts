@@ -1,9 +1,8 @@
 import type { TOC } from '@ember/component/template-only';
 import type { QueryResults } from 'ember-container-query';
+import { and, or } from 'ember-truth-helpers';
 import { localClass } from 'embroider-css-modules';
 
-import strictAnd from '../../../../helpers/strict-and';
-import strictOr from '../../../../helpers/strict-or';
 import styles from './header.css';
 
 interface WidgetsWidget4MemoHeaderSignature {
@@ -15,8 +14,8 @@ interface WidgetsWidget4MemoHeaderSignature {
 const WidgetsWidget4MemoHeaderComponent: TOC<WidgetsWidget4MemoHeaderSignature> =
   <template>
     {{#let
-      (strictAnd @cqFeatures.large @cqFeatures.short)
-      (strictOr @cqFeatures.small @cqFeatures.short)
+      (and @cqFeatures.large @cqFeatures.short)
+      (or @cqFeatures.small @cqFeatures.short)
       as |showHorizontalLayout showMinimalLayout|
     }}
       <div

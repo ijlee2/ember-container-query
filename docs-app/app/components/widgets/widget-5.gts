@@ -1,8 +1,8 @@
 import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
 import { ContainerQuery, height, width } from 'ember-container-query';
+import { and } from 'ember-truth-helpers';
 
-import strictAnd from '../../helpers/strict-and';
 import styles from './widget-5.css';
 
 interface WidgetsWidget5Signature {}
@@ -16,7 +16,7 @@ const WidgetsWidget5Component: TOC<WidgetsWidget5Signature> =
       as |CQ|
     >
       {{#let
-        (strictAnd CQ.features.large CQ.features.tall)
+        (and CQ.features.large CQ.features.tall)
         as |showFullText|
       }}
         <div

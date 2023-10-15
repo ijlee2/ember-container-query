@@ -3,9 +3,9 @@ import type { QueryResults } from 'ember-container-query';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: Could not find a declaration file for module 'ember-svg-jar/helpers/svg-jar'.
 import svgJar from 'ember-svg-jar/helpers/svg-jar';
+import { or } from 'ember-truth-helpers';
 import { localClass } from 'embroider-css-modules';
 
-import strictOr from '../../../../helpers/strict-or';
 import styles from './actions.css';
 
 interface WidgetsWidget4MemoActionsSignature {
@@ -21,7 +21,7 @@ const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature
         styles
         "actions"
         (if
-          (strictOr @cqFeatures.small @cqFeatures.short)
+          (or @cqFeatures.small @cqFeatures.short)
           "minimal-layout"
         )
       }}

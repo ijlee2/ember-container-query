@@ -19,7 +19,7 @@
       class={{local-class
         this.styles
         "input"
-        (if (strict-or @isDisabled @isReadOnly) "is-disabled")
+        (if (or @isDisabled @isReadOnly) "is-disabled")
       }}
       data-test-field={{@label}}
       disabled={{@isDisabled}}
