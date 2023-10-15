@@ -1,8 +1,8 @@
 .container {
   display: grid;
   grid-template-areas:
-    "header"
-    "body";
+    "title"
+    "content";
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   height: calc(100% - 3em);
@@ -11,10 +11,10 @@
   scrollbar-gutter: stable;
 }
 
-.header {
-  grid-area: header;
+.title {
+  grid-area: title;
 }
 
-.body {
-  grid-area: body;
+.content {
+  grid-area: content;
 }

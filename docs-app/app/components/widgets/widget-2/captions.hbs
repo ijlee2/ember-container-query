@@ -3,7 +3,7 @@
   as |CQ|
 >
   <div
-    class={{local-class
+    class={{local
       this.styles
       "container"
       (unless CQ.features.tall "flat")
@@ -11,7 +11,7 @@
   >
     {{#if this.summary}}
       <div
-        class={{local-class
+        class={{local
           this.styles
           "summary"
           (if CQ.features.large "horizontal-layout")
@@ -19,7 +19,7 @@
         tabindex="0"
       >
         <h3
-          class={{local-class
+          class={{local
             this.styles
             "music-format"
             (unless CQ.features.large "small-font-size")
@@ -84,7 +84,7 @@
           {{else}}
             {{svg-jar
               "chevron-left"
-              class=(local-class this.styles "icon")
+              class=(local this.styles "icon")
               desc="A chevron arrow pointing left"
               role="img"
             }}
@@ -107,7 +107,7 @@
           {{else}}
             {{svg-jar
               "chevron-right"
-              class=(local-class this.styles "icon")
+              class=(local this.styles "icon")
               desc="A chevron arrow pointing right"
               role="img"
             }}

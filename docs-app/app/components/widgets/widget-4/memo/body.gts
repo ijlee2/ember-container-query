@@ -1,7 +1,7 @@
 import type { TOC } from '@ember/component/template-only';
 import type { QueryResults } from 'ember-container-query';
 import { or } from 'ember-truth-helpers';
-import { localClass } from 'embroider-css-modules';
+import { local } from 'embroider-css-modules';
 
 import styles from './body.css';
 
@@ -14,7 +14,7 @@ interface WidgetsWidget4MemoBodySignature {
 const WidgetsWidget4MemoBodyComponent: TOC<WidgetsWidget4MemoBodySignature> =
   <template>
     <div
-      class={{localClass
+      class={{local
         styles
         "body"
         (if

@@ -1,5 +1,6 @@
 import type { TOC } from '@ember/component/template-only';
 import { LinkTo } from '@ember/routing';
+import { local } from 'embroider-css-modules';
 
 import styles from './navigation-menu.css';
 
@@ -23,7 +24,7 @@ const NavigationMenuComponent: TOC<NavigationMenuSignature> =
           <li>
             <LinkTo
               @route={{menuItem.route}}
-              class={{styles.link}}
+              class={{local styles "link"}}
               data-test-link={{menuItem.label}}
             >
               {{menuItem.label}}

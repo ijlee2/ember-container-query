@@ -4,7 +4,7 @@ import Component from '@glimmer/component';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: Could not find a declaration file for module 'ember-svg-jar/helpers/svg-jar'.
 import svgJar from 'ember-svg-jar/helpers/svg-jar';
-import { localClass } from 'embroider-css-modules';
+import { local } from 'embroider-css-modules';
 
 import styles from './field.css';
 
@@ -33,7 +33,7 @@ export default class UiFormFieldComponent extends Component<UiFormFieldSignature
 
   <template>
     <div
-      class={{localClass
+      class={{local
         styles
         "container"
         (if @isInline "is-inline")
@@ -52,7 +52,7 @@ export default class UiFormFieldComponent extends Component<UiFormFieldSignature
 
       {{#if @errorMessage}}
         <div
-          class={{localClass styles "feedback" "is-error"}}
+          class={{local styles "feedback" "is-error"}}
         >
           {{svgJar
             "alert"

@@ -22,7 +22,7 @@
       aria-labelledby={{concat f.inputId "-label"}}
       aria-readonly={{if @isReadOnly "true" "false"}}
       aria-required={{if @isRequired "true" "false"}}
-      class={{local-class
+      class={{local
         this.styles
         "checkbox"
         (if this.isChecked "is-checked")
