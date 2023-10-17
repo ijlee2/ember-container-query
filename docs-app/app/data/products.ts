@@ -33,7 +33,7 @@ export const products: Product[] = [
     description: 'Made with organic herbs',
     id: '1',
     imageUrl:
-      'https://images.pexels.com/photos/414645/pexels-photo-414645.jpeg?auto=compress&cs=tinysrgb&dpr=1&h=256',
+      'https://images.pexels.com/photos/1070850/pexels-photo-1070850.jpeg?auto=compress&cs=tinysrgb&dpr=1&h=256',
     name: 'Vanilla Ice Cream Cake',
     price: 40,
     rating: 4.5,
@@ -45,7 +45,7 @@ export const products: Product[] = [
     description: 'A good day starts with a good cup of coffee',
     id: '2',
     imageUrl:
-      'https://images.pexels.com/photos/1516415/pexels-photo-1516415.jpeg?auto=compress&cs=tinysrgb&dpr=1&h=256',
+      'https://images.pexels.com/photos/851555/pexels-photo-851555.jpeg?auto=compress&cs=tinysrgb&dpr=1&h=256',
     name: 'Ember.js Mug',
     price: 8,
     rating: 5,
@@ -57,7 +57,7 @@ export const products: Product[] = [
     description: 'A chocolate sponge cake with a rich cherry filling',
     id: '3',
     imageUrl:
-      'https://images.pexels.com/photos/365459/pexels-photo-365459.jpeg?auto=compress&cs=tinysrgb&dpr=1&h=256',
+      'https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?auto=compress&cs=tinysrgb&dpr=1&h=256',
     name: 'Black Forest Cake',
     price: 70,
     rating: 5,
