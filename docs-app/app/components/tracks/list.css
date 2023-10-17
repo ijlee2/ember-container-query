@@ -1,8 +1,7 @@
 .list {
-  column-gap: 0.5rem;
   display: grid;
+  gap: 0.25rem 0.5rem;
   grid-auto-flow: column;
-  row-gap: 0.25rem;
 }
 
 .item {
