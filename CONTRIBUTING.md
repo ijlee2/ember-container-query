@@ -8,12 +8,13 @@ Here are some guidelines to help you and everyone else.
 ## Local development
 
 <details>
+
 <summary>Install dependencies</summary>
 
 1. Fork and clone this repo.
 
     ```sh
-    git clone git@github.com:<your GitHub handle>/ember-container-query.git
+    git clone git@github.com:<your-github-handle>/ember-container-query.git
     ```
 
 1. Change directory.
@@ -47,6 +48,7 @@ Here are some guidelines to help you and everyone else.
 
 
 <details>
+
 <summary>Lint files</summary>
 
 1. When you write code, please check that it meets the linting rules.
@@ -67,6 +69,7 @@ Here are some guidelines to help you and everyone else.
 
 
 <details>
+
 <summary>Run tests</summary>
 
 1. When you write code, please check that all tests continue to pass.
@@ -85,20 +88,20 @@ Here are some guidelines to help you and everyone else.
 
 1. Generate a [personal access token](https://github.com/settings/tokens/) in GitHub, with default values for scopes (none selected).
 
-1. Create a pull request, in which you update the package version and `CHANGELOG`.
+1. Run the `release:changelog` script. This generates a text that you can add to `CHANGELOG.md`.
 
     ```sh
     # From the workspace root
-    GITHUB_AUTH=<YOUR_PERSONAL_ACCESS_TOKEN> pnpm changelog
+    GITHUB_AUTH=<YOUR_PERSONAL_ACCESS_TOKEN> pnpm release:changelog
     ```
 
-1. [Create a tag](https://github.com/ijlee2/ember-container-query/releases/new) such as `1.0.0` (the name satisfies the regular expression `^\d+\.\d+\.\d+`).
+1. [Create a tag](https://github.com/ijlee2/ember-container-query/releases/new) and provide release notes. The tag name should match the package version.
 
 1. Publish the package.
 
     ```sh
     # From the workspace root
-    pnpm publish -r
+    pnpm release:publish
     ```
 
 </details>
@@ -112,6 +115,7 @@ Here are some suggestions to help you start:
 
 
 <details>
+
 <summary>Give feedback 💞</summary>
 
 1. An open source project's value comes from people using the code and extending it to make greater things. Let me know how you use container queries in your Ember app or addon!
@@ -125,6 +129,7 @@ Here are some suggestions to help you start:
 
 
 <details>
+
 <summary>Help with marketing 📢</summary>
 
 1. Platforms include:
@@ -139,6 +144,7 @@ Here are some suggestions to help you start:
 
 
 <details>
+
 <summary>Join this project 👩‍💻👨‍💻</summary>
 
 1. Help me maintain the project! I have limited time and there is much that I don't know.
@@ -152,6 +158,7 @@ Here are some suggestions to help you start:
 
 
 <details>
+
 <summary>Make issues 📝</summary>
 
 1. In addition to sharing feedback (described in `Give feedback`), you can create an issue to:
