@@ -9,6 +9,17 @@ Version overview
 - `v1.x`: [1.0.0](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#100-2020-05-29) - [1.1.9](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#119-2021-08-25)
 
 
+## 5.0.2 (2023-11-07)
+
+### Internal
+* [#215](https://github.com/ijlee2/ember-container-query/pull/215) Downstreamed changes from @embroider/addon-blueprint@2.7.0 ([@ijlee2](https://github.com/ijlee2))
+* [#214](https://github.com/ijlee2/ember-container-query/pull/214) Updated project dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#213](https://github.com/ijlee2/ember-container-query/pull/213) Updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 5.0.1 (2023-10-15)
 
 ### Internal
