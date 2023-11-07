@@ -1,20 +1,19 @@
 {
-  "extends": "@tsconfig/ember/tsconfig.json",
+  "extends": "@shared-configs/typescript/ember",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "docs-app/tests/*": [
-        "tests/*"
-      ],
-      "docs-app/*": [
-        "app/*"
-      ],
-      "*": [
-        "types/*"
-      ]
+      "docs-app/tests/*": ["tests/*"],
+      "docs-app/*": ["app/*"],
+      "*": ["types/*"]
     },
     "skipLibCheck": true
   },
+  "include": [
+    "app/**/*",
+    "tests/**/*",
+    "types/**/*"
+  ],
   "glint": {
     "environment": [
       "ember-loose",

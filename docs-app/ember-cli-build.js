@@ -26,10 +26,6 @@ module.exports = function (defaults) {
             ? '[sha512:hash:base64:5]'
             : '[path][name]__[local]',
           mode: (resourcePath) => {
-            // The host app and active child addons are moved into a shared
-            // temporary directory (`options.workspaceDir`) before css-loader
-            // processes them.
-            //
             // We want to enable the local mode only for our own host app.
             // All other addons should be loaded in the global mode.
             const hostAppLocation =

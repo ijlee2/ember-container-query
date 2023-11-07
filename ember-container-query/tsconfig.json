@@ -1,5 +1,5 @@
 {
-  "extends": "@tsconfig/ember/tsconfig.json",
+  "extends": "@shared-configs/typescript/ember",
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "allowJs": true,
@@ -11,6 +11,9 @@
     "unpublished-development-types/**/*"
   ],
   "glint": {
-    "environment": "ember-loose"
+    "environment": [
+      "ember-loose",
+      "ember-template-imports"
+    ]
   }
 }

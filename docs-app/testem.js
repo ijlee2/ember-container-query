@@ -45,11 +45,6 @@ const windowSize = WINDOW_SIZES[DEVICE];
 const [width, height] = windowSize.split(',');
 
 module.exports = {
-  test_page: `tests/index.html?filter=${filter}&width=${width}&height=${height}&hidepassed&nolint`,
-  disable_watching: true,
-  launch_in_ci: ['Chrome'],
-  launch_in_dev: ['Chrome'],
-  browser_start_timeout: 60,
   browser_args: {
     Chrome: {
       ci: [
@@ -62,14 +57,11 @@ module.exports = {
         '--remote-debugging-port=0',
         `--window-size=${windowSize}`,
       ].filter(Boolean),
-
-      dev: [
-        '--disable-dev-shm-usage',
-        '--disable-software-rasterizer',
-        '--mute-audio',
-        '--remote-debugging-port=0',
-        `--window-size=${windowSize}`,
-      ],
     },
   },
+  browser_start_timeout: 120,
+  disable_watching: true,
+  launch_in_ci: ['Chrome'],
+  launch_in_dev: ['Chrome'],
+  test_page: `tests/index.html?filter=${filter}&width=${width}&height=${height}&hidepassed&nolint`,
 };
