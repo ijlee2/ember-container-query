@@ -62,7 +62,6 @@
   }
 
   .products-with-details .list {
-    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
     height: max-content;
   }
 }
