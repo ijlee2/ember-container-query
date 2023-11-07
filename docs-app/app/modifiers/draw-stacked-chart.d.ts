@@ -1,4 +1,4 @@
-import { ModifierLike } from '@glint/template';
+import type { ModifierLike } from '@glint/template';
 
 import type { Data } from '../utils/components/widgets/widget-2';
 

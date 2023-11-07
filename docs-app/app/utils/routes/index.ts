@@ -1,7 +1,7 @@
 /*
   https://docs.ember-cli-typescript.com/cookbook/working-with-route-models
 */
-import Route from '@ember/routing/route';
+import type Route from '@ember/routing/route';
 
 /**
   Get the resolved type of an item.

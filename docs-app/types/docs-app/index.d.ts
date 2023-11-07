@@ -6,7 +6,7 @@ import '@glint/environment-ember-template-imports';
 import 'ember-source/types';
 import 'ember-source/types/preview';
 
-import { ComponentLike, HelperLike } from '@glint/template';
+import type { ComponentLike, HelperLike } from '@glint/template';
 import type EmberContainerQueryRegistry from 'ember-container-query/template-registry';
 import type EmberSvgJarRegistry from 'ember-svg-jar/template-registry';
 import type EmberTruthHelpersRegistry from 'ember-truth-helpers/template-registry';
