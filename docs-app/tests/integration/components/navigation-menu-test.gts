@@ -1,5 +1,6 @@
 import { array, hash } from '@ember/helper';
 import { findAll, render } from '@ember/test-helpers';
+// eslint-disable-next-line import/no-unresolved
 import NavigationMenu from 'docs-app/components/navigation-menu';
 import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { a11yAudit } from 'ember-a11y-testing/test-support';

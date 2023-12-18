@@ -18,7 +18,7 @@
     "lint:fix": "pnpm --filter '*' lint:fix",
     "prepare": "pnpm build:addon",
     "release:changelog": "lerna-changelog",
-    "release:package": "pnpm --recursive publish",
+    "release:publish": "pnpm --recursive publish",
     "start": "concurrently \"npm:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "pnpm --filter ember-container-query start",
     "start:docs-app": "pnpm --filter docs-app start",
@@ -43,7 +43,7 @@
   },
   "pnpm": {
     "overrides": {
-      "eslint-plugin-import@2.29.0>tsconfig-paths": "^4.2.0"
+      "eslint-plugin-import@2.29.1>tsconfig-paths": "^4.2.0"
     }
   }
 }

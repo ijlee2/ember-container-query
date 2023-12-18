@@ -49,9 +49,7 @@ module.exports = {
         '@typescript-eslint/array-type': 'error',
         '@typescript-eslint/consistent-type-imports': 'error',
         '@typescript-eslint/no-empty-interface': 'off',
-        '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-import-type-side-effects': 'error',
-        '@typescript-eslint/no-non-null-assertion': 'off',
       },
     },
     // TypeScript and JavaScript files
@@ -59,7 +57,10 @@ module.exports = {
       files: ['**/*.{gjs,gts,js,ts}'],
       rules: {
         'import/no-duplicates': 'error',
-        'import/no-unresolved': 'off',
+        'import/no-unresolved': [
+          'error',
+          { ignore: ['^@ember', '^dummy/', '^ember', 'fetch'] },
+        ],
       },
     },
     // Node files

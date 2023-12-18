@@ -33,6 +33,7 @@ Here are some guidelines to help you and everyone else.
 
 
 <details>
+
 <summary>Run the demo app</summary>
 
 1. Once dependencies have been installed, you can run the demo app (also called `docs-app`).
