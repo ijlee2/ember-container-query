@@ -7,7 +7,7 @@ on:
   pull_request:
 
 env:
-  NODE_VERSION: 18.17
+  NODE_VERSION: 18
   PERCY_PARALLEL_NONCE: ${{ github.run_id }}-${{ github.run_number }}
   PERCY_PARALLEL_TOTAL: 9
 
@@ -32,7 +32,7 @@ jobs:
           version: latest
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           cache: 'pnpm'
           node-version: ${{ env.NODE_VERSION }}
@@ -59,7 +59,7 @@ jobs:
           version: latest
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           cache: 'pnpm'
           node-version: ${{ env.NODE_VERSION }}
@@ -124,7 +124,7 @@ jobs:
           version: latest
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           cache: 'pnpm'
           node-version: ${{ env.NODE_VERSION }}
@@ -167,7 +167,7 @@ jobs:
           version: latest
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           cache: 'pnpm'
           node-version: ${{ env.NODE_VERSION }}
@@ -190,6 +190,7 @@ jobs:
           - 'ember-lts-4.4'
           - 'ember-lts-4.8'
           - 'ember-lts-4.12'
+          - 'ember-lts-5.4'
           - 'ember-release'
           - 'ember-beta'
           - 'ember-canary'
@@ -206,7 +207,7 @@ jobs:
           version: latest
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           cache: 'pnpm'
           node-version: ${{ env.NODE_VERSION }}
