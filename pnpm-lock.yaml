@@ -430,6 +430,9 @@ importers:
       '@embroider/addon-shim':
         specifier: ^1.8.7
         version: 1.8.7
+      decorator-transforms:
+        specifier: ^1.0.1
+        version: 1.0.1(@babel/core@7.23.6)
       ember-element-helper:
         specifier: ^0.8.5
         version: 0.8.5(@glint/environment-ember-loose@1.2.1)(@glint/template@1.2.1)(ember-source@5.5.0)
@@ -443,15 +446,6 @@ importers:
       '@babel/core':
         specifier: ^7.23.6
         version: 7.23.6(supports-color@8.1.1)
-      '@babel/plugin-proposal-decorators':
-        specifier: ^7.23.6
-        version: 7.23.6(@babel/core@7.23.6)
-      '@babel/plugin-transform-class-properties':
-        specifier: ^7.23.3
-        version: 7.23.3(@babel/core@7.23.6)
-      '@babel/plugin-transform-class-static-block':
-        specifier: ^7.23.4
-        version: 7.23.4(@babel/core@7.23.6)
       '@babel/plugin-transform-typescript':
         specifier: ^7.23.6
         version: 7.23.6(@babel/core@7.23.6)
@@ -6751,6 +6745,15 @@ packages:
     dependencies:
       mimic-response: 1.0.1
     dev: true
+
+  /decorator-transforms@1.0.1(@babel/core@7.23.6):
+    resolution: {integrity: sha512-ZOaiw4tqiyhtqiMKCNzjS+nGsYPZltToqRAFc5rOUcc4u8d7MTlgelw1qXfL6ieg2l6xZcz6lTZ5M94Ohnk2xA==}
+    dependencies:
+      '@babel/plugin-syntax-decorators': 7.23.3(@babel/core@7.23.6)
+      babel-import-util: 2.0.1
+    transitivePeerDependencies:
+      - '@babel/core'
+    dev: false
 
   /deep-extend@0.6.0:
     resolution: {integrity: sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==}
