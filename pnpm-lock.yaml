@@ -61,11 +61,11 @@ importers:
         specifier: ^2.29.1
         version: 2.29.1(@typescript-eslint/parser@6.15.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
       eslint-plugin-n:
-        specifier: ^16.4.0
-        version: 16.4.0(eslint@8.56.0)
+        specifier: ^16.5.0
+        version: 16.5.0(eslint@8.56.0)
       eslint-plugin-prettier:
-        specifier: ^5.0.1
-        version: 5.0.1(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1)
+        specifier: ^5.1.0
+        version: 5.1.0(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1)
       eslint-plugin-qunit:
         specifier: ^8.0.1
         version: 8.0.1(eslint@8.56.0)
@@ -119,11 +119,11 @@ importers:
         specifier: ^2.29.1
         version: 2.29.1(@typescript-eslint/parser@6.15.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
       eslint-plugin-n:
-        specifier: ^16.4.0
-        version: 16.4.0(eslint@8.56.0)
+        specifier: ^16.5.0
+        version: 16.5.0(eslint@8.56.0)
       eslint-plugin-prettier:
-        specifier: ^5.0.1
-        version: 5.0.1(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1)
+        specifier: ^5.1.0
+        version: 5.1.0(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1)
       eslint-plugin-simple-import-sort:
         specifier: ^10.0.0
         version: 10.0.0(eslint@8.56.0)
@@ -193,8 +193,8 @@ importers:
   configs/typescript:
     dependencies:
       '@tsconfig/ember':
-        specifier: ^3.0.2
-        version: 3.0.2
+        specifier: ^3.0.3
+        version: 3.0.3
       '@tsconfig/node18':
         specifier: ^18.2.2
         version: 18.2.2
@@ -244,9 +244,6 @@ importers:
       '@embroider/webpack':
         specifier: ^3.2.1
         version: 3.2.1(@embroider/core@3.4.3)(webpack@5.89.0)
-      '@gavant/glint-template-types':
-        specifier: ^0.3.6
-        version: 0.3.6(ember-modifier@4.1.0)(ember-source@5.5.0)
       '@glimmer/component':
         specifier: ^1.1.2
         version: 1.1.2(@babel/core@7.23.6)
@@ -455,9 +452,6 @@ importers:
       '@embroider/addon-dev':
         specifier: ^4.1.3
         version: 4.1.3(@glint/template@1.2.1)(rollup@4.9.1)
-      '@gavant/glint-template-types':
-        specifier: ^0.3.6
-        version: 0.3.6(ember-modifier@4.1.0)(ember-source@5.5.0)
       '@glimmer/component':
         specifier: ^1.1.2
         version: 1.1.2(@babel/core@7.23.6)
@@ -551,9 +545,6 @@ importers:
       '@embroider/test-setup':
         specifier: ^3.0.3
         version: 3.0.3
-      '@gavant/glint-template-types':
-        specifier: ^0.3.6
-        version: 0.3.6(ember-modifier@4.1.0)(ember-source@5.5.0)
       '@glimmer/component':
         specifier: ^1.1.2
         version: 1.1.2(@babel/core@7.23.6)
@@ -2381,40 +2372,6 @@ packages:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
 
-  /@gavant/glint-template-types@0.3.6(ember-modifier@4.1.0)(ember-source@5.5.0):
-    resolution: {integrity: sha512-5eSY+bGmjsSvk3pceLXeQW0Vv13rk0ZxXg+SDoUUTFQ5Cjnk+lLLetsWnoFeufWP618T+XVCSXZjWelaZLsOzA==}
-    peerDependencies:
-      ember-animated: ^1.0.0
-      ember-basic-dropdown: ^6.0.1
-      ember-concurrency: ^2.0.3
-      ember-concurrency-async: ^1.0.0
-      ember-concurrency-ts: ^0.3.0
-      ember-intl: ^5.7.2
-      ember-modifier: ^3.2.7
-      ember-power-select: ^5.0.0
-      ember-source: ^3.28.0 || ^4.0.0 || ^5.0.0
-    peerDependenciesMeta:
-      ember-animated:
-        optional: true
-      ember-basic-dropdown:
-        optional: true
-      ember-concurrency:
-        optional: true
-      ember-concurrency-async:
-        optional: true
-      ember-concurrency-ts:
-        optional: true
-      ember-intl:
-        optional: true
-      ember-modifier:
-        optional: true
-      ember-power-select:
-        optional: true
-    dependencies:
-      ember-modifier: 4.1.0(ember-source@5.5.0)
-      ember-source: 5.5.0(@babel/core@7.23.6)(@glimmer/component@1.1.2)(@glint/template@1.2.1)(rsvp@4.8.5)(webpack@5.89.0)
-    dev: true
-
   /@glimmer/compiler@0.84.3:
     resolution: {integrity: sha512-cj9sGlnvExP9httxY6ZMivJRGulyaZ31DddCYB5h6LxupR4Nk2d1nAJCWPLsvuQJ8qR+eYw0y9aiY/VeT0krpQ==}
     dependencies:
@@ -3314,8 +3271,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /@tsconfig/ember@3.0.2:
-    resolution: {integrity: sha512-Whab2JuEA9r1RLke13tKWO7F95C7l3ivwVhxC37v98vOtFOmDA2BisY/6Fnhclmyydc5vOuVPwN3hi8UTboahw==}
+  /@tsconfig/ember@3.0.3:
+    resolution: {integrity: sha512-StVVkcg/VxA+eDzBcTQAcnmmcmg1OxaV41OqFYluqVHpUX28TOD91DGg58n2AMU9ia27zeBBeVQiLsfmzuIV7w==}
     dev: false
 
   /@tsconfig/node18@18.2.2:
@@ -8340,8 +8297,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-n@16.4.0(eslint@8.56.0):
-    resolution: {integrity: sha512-IkqJjGoWYGskVaJA7WQuN8PINIxc0N/Pk/jLeYT4ees6Fo5lAhpwGsYek6gS9tCUxgDC4zJ+OwY2bY/6/9OMKQ==}
+  /eslint-plugin-n@16.5.0(eslint@8.56.0):
+    resolution: {integrity: sha512-Hw02Bj1QrZIlKyj471Tb1jSReTl4ghIMHGuBGiMVmw+s0jOPbI4CBuYpGbZr+tdQ+VAvSK6FDSta3J4ib/SKHQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       eslint: '>=7.0.0'
@@ -8359,8 +8316,8 @@ packages:
       semver: 7.5.4
     dev: false
 
-  /eslint-plugin-prettier@5.0.1(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1):
-    resolution: {integrity: sha512-m3u5RnR56asrwV/lDC4GHorlW75DsFfmUcjfCYylTUs85dBRnB7VM6xG8eCMJdeDRnppzmxZVf1GEPJvl1JmNg==}
+  /eslint-plugin-prettier@5.1.0(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1):
+    resolution: {integrity: sha512-hQc+2zbnMeXcIkg+pKZtVa+3Yqx4WY7SMkn1PLZ4VbBEU7jJIpVn9347P8BBhTbz6ne85aXvQf30kvexcqBeWw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       '@types/eslint': '>=8.0.0'
