@@ -434,7 +434,7 @@ importers:
         specifier: ^0.8.5
         version: 0.8.5(@glint/environment-ember-loose@1.2.1)(@glint/template@1.2.1)(ember-source@5.5.0)
       ember-modifier:
-        specifier: ^4.1.0
+        specifier: ^3.2.7 || ^4.1.0
         version: 4.1.0(ember-source@5.5.0)
       ember-resize-observer-service:
         specifier: ^1.1.0
