@@ -68,7 +68,7 @@
     "@embroider/addon-shim": "^1.8.7",
     "decorator-transforms": "^1.0.1",
     "ember-element-helper": "^0.8.5",
-    "ember-modifier": "^4.1.0",
+    "ember-modifier": "^3.2.7 || ^4.1.0",
     "ember-resize-observer-service": "^1.1.0"
   },
   "devDependencies": {
