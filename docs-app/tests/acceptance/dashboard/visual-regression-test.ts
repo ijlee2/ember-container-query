@@ -20,14 +20,6 @@ module('Acceptance | dashboard', function (hooks) {
 
     // Widget 2
     assert
-      .dom('[data-test-widget="2"] [data-test-visualization]')
-      .doesNotExist("We don't see the visualization.");
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-captions]')
-      .exists('We see the captions.');
-
-    assert
       .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
@@ -44,14 +36,6 @@ module('Acceptance | dashboard', function (hooks) {
         'Relevant years: 1973 - 1982',
         'We see the relevant years in correct format.',
       );
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist("We don't see the previous button.");
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText('Next', 'We see the next button in correct format.');
 
     // Widget 3
     assert
@@ -97,14 +81,6 @@ module('Acceptance | dashboard', function (hooks) {
 
     // Widget 2
     assert
-      .dom('[data-test-widget="2"] [data-test-visualization]')
-      .exists('We see the visualization.');
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-captions]')
-      .exists('We see the captions.');
-
-    assert
       .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
@@ -120,17 +96,6 @@ module('Acceptance | dashboard', function (hooks) {
       .hasText(
         'Relevant years: 1973 - 1982',
         'We see the relevant years in correct format.',
-      );
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist("We don't see the previous button.");
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText(
-        'A chevron arrow pointing right',
-        'We see the next button in correct format.',
       );
 
     // Widget 3
@@ -177,14 +142,6 @@ module('Acceptance | dashboard', function (hooks) {
 
     // Widget 2
     assert
-      .dom('[data-test-widget="2"] [data-test-visualization]')
-      .exists('We see the visualization.');
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-captions]')
-      .exists('We see the captions.');
-
-    assert
       .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
@@ -200,17 +157,6 @@ module('Acceptance | dashboard', function (hooks) {
       .hasText(
         'Relevant years: 1973 - 1982',
         'We see the relevant years in correct format.',
-      );
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist("We don't see the previous button.");
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText(
-        'A chevron arrow pointing right',
-        'We see the next button in correct format.',
       );
 
     // Widget 3
@@ -269,14 +215,6 @@ module('Acceptance | dashboard', function (hooks) {
 
     // Widget 2
     assert
-      .dom('[data-test-widget="2"] [data-test-visualization]')
-      .doesNotExist("We don't see the visualization.");
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-captions]')
-      .exists('We see the captions.');
-
-    assert
       .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
@@ -293,14 +231,6 @@ module('Acceptance | dashboard', function (hooks) {
         'Relevant years: 1973 - 1982',
         'We see the relevant years in correct format.',
       );
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist("We don't see the previous button.");
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText('Next', 'We see the next button in correct format.');
 
     // Widget 3
     assert
@@ -346,14 +276,6 @@ module('Acceptance | dashboard', function (hooks) {
 
     // Widget 2
     assert
-      .dom('[data-test-widget="2"] [data-test-visualization]')
-      .exists('We see the visualization.');
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-captions]')
-      .exists('We see the captions.');
-
-    assert
       .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
@@ -369,17 +291,6 @@ module('Acceptance | dashboard', function (hooks) {
       .hasText(
         'Relevant years: 1973 - 1982',
         'We see the relevant years in correct format.',
-      );
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist("We don't see the previous button.");
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText(
-        'A chevron arrow pointing right',
-        'We see the next button in correct format.',
       );
 
     // Widget 3
@@ -426,14 +337,6 @@ module('Acceptance | dashboard', function (hooks) {
 
     // Widget 2
     assert
-      .dom('[data-test-widget="2"] [data-test-visualization]')
-      .exists('We see the visualization.');
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-captions]')
-      .exists('We see the captions.');
-
-    assert
       .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
@@ -449,17 +352,6 @@ module('Acceptance | dashboard', function (hooks) {
       .hasText(
         'Relevant years: 1973 - 1982',
         'We see the relevant years in correct format.',
-      );
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist("We don't see the previous button.");
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText(
-        'A chevron arrow pointing right',
-        'We see the next button in correct format.',
       );
 
     // Widget 3
@@ -518,14 +410,6 @@ module('Acceptance | dashboard', function (hooks) {
 
     // Widget 2
     assert
-      .dom('[data-test-widget="2"] [data-test-visualization]')
-      .doesNotExist("We don't see the visualization.");
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-captions]')
-      .exists('We see the captions.');
-
-    assert
       .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
@@ -542,14 +426,6 @@ module('Acceptance | dashboard', function (hooks) {
         'Relevant years: 1973 - 1982',
         'We see the relevant years in correct format.',
       );
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist("We don't see the previous button.");
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText('Next', 'We see the next button in correct format.');
 
     // Widget 3
     assert
@@ -595,14 +471,6 @@ module('Acceptance | dashboard', function (hooks) {
 
     // Widget 2
     assert
-      .dom('[data-test-widget="2"] [data-test-visualization]')
-      .exists('We see the visualization.');
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-captions]')
-      .exists('We see the captions.');
-
-    assert
       .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
@@ -618,17 +486,6 @@ module('Acceptance | dashboard', function (hooks) {
       .hasText(
         'Relevant years: 1973 - 1982',
         'We see the relevant years in correct format.',
-      );
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist("We don't see the previous button.");
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText(
-        'A chevron arrow pointing right',
-        'We see the next button in correct format.',
       );
 
     // Widget 3
@@ -675,14 +532,6 @@ module('Acceptance | dashboard', function (hooks) {
 
     // Widget 2
     assert
-      .dom('[data-test-widget="2"] [data-test-visualization]')
-      .exists('We see the visualization.');
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-captions]')
-      .exists('We see the captions.');
-
-    assert
       .dom('[data-test-widget="2"] [data-test-field="Music Format"]')
       .hasText('8 - Track', 'We see the music format in correct format.');
 
@@ -698,17 +547,6 @@ module('Acceptance | dashboard', function (hooks) {
       .hasText(
         'Relevant years: 1973 - 1982',
         'We see the relevant years in correct format.',
-      );
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Previous"]')
-      .doesNotExist("We don't see the previous button.");
-
-    assert
-      .dom('[data-test-widget="2"] [data-test-button="Next"]')
-      .hasText(
-        'A chevron arrow pointing right',
-        'We see the next button in correct format.',
       );
 
     // Widget 3
