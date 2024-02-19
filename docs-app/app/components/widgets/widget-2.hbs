@@ -13,15 +13,12 @@
   </header>
 
   {{#unless CQ.features.short}}
-    <div
-      class={{this.styles.visualization}}
-      data-test-visualization
-    >
+    <div class={{this.styles.visualization}}>
       <Widgets::Widget-2::StackedChart @data={{this.data}} />
     </div>
   {{/unless}}
 
-  <div class={{this.styles.captions}} data-test-captions>
+  <div class={{this.styles.captions}}>
     <Widgets::Widget-2::Captions
       @summaries={{this.summaries}}
     />
