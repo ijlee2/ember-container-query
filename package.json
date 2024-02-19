@@ -22,6 +22,7 @@
     "start": "concurrently \"npm:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "pnpm --filter ember-container-query start",
     "start:docs-app": "pnpm --filter docs-app start",
+    "start:test-app": "pnpm --filter test-app start",
     "test": "pnpm --filter '*' test"
   },
   "devDependencies": {

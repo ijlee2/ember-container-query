@@ -34,7 +34,7 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "lint:types": "glint",
-    "start": "ember serve",
+    "start": "ember serve --port=4300",
     "test": "ember test --test-port=0",
     "test:ember-compatibility": "./node_modules/.bin/ember try:one"
   },
@@ -43,6 +43,7 @@
     "@ember/optional-features": "^2.0.0",
     "@ember/string": "^3.1.1",
     "@ember/test-helpers": "^3.3.0",
+    "@embroider/broccoli-side-watch": "0.0.2-unstable.ba9fd29",
     "@embroider/test-setup": "^3.0.3",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",

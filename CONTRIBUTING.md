@@ -7,45 +7,10 @@ Here are some guidelines to help you and everyone else.
 
 ## Local development
 
-<details>
+You can get started in 2 steps:
 
-<summary>Install dependencies</summary>
-
-1. Fork and clone this repo.
-
-    ```sh
-    git clone git@github.com:<your-github-handle>/ember-container-query.git
-    ```
-
-1. Change directory.
-
-    ```sh
-    cd ember-container-query
-    ```
-
-1. Use [`pnpm`](https://pnpm.io/installation) to install dependencies.
-
-    ```sh
-    pnpm install
-    ```
-
-</details>
-
-
-<details>
-
-<summary>Run the demo app</summary>
-
-1. Once dependencies have been installed, you can run the demo app (also called `docs-app`).
-
-    ```sh
-    # From the workspace root
-    pnpm start
-    ```
-
-1. Open the app at [http://localhost:4200](http://localhost:4200).
-
-</details>
+1. Run `pnpm install` to install project dependencies. This will build the addon `ember-container-query`.
+1. Run `pnpm start` to start `docs-app` ([http://localhost:4200](http://localhost:4200)) and `test-app` ([http://localhost:4300/tests](http://localhost:4300/tests?hidepassed)).
 
 
 <details>

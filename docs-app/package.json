@@ -37,7 +37,7 @@
     "lint:js:fix": "eslint . --fix",
     "prelint:types": "type-css-modules --src app",
     "lint:types": "glint",
-    "start": "ember serve",
+    "start": "ember serve --port=4200",
     "test": "DEVICE='w3-h3' ember test --test-port=0",
     "test:device": "ember test"
   },
@@ -46,6 +46,7 @@
     "@ember/optional-features": "^2.0.0",
     "@ember/string": "^3.1.1",
     "@ember/test-helpers": "^3.3.0",
+    "@embroider/broccoli-side-watch": "0.0.2-unstable.ba9fd29",
     "@embroider/compat": "^3.4.4",
     "@embroider/core": "^3.4.4",
     "@embroider/macros": "^1.13.5",
