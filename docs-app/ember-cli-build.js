@@ -1,5 +1,6 @@
 'use strict';
 
+const sideWatch = require('@embroider/broccoli-side-watch');
 const { Webpack } = require('@embroider/webpack');
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
@@ -13,8 +14,15 @@ module.exports = function (defaults) {
     autoImport: {
       watchDependencies: ['ember-container-query'],
     },
+
     'ember-cli-babel': {
       enableTypeScriptTransform: true,
+    },
+
+    trees: {
+      app: sideWatch('app', {
+        watching: ['../ember-container-query/src'],
+      }),
     },
   });
 
@@ -28,8 +36,7 @@ module.exports = function (defaults) {
           mode: (resourcePath) => {
             // We want to enable the local mode only for our own host app.
             // All other addons should be loaded in the global mode.
-            const hostAppLocation =
-              'docs-app/node_modules/.embroider/rewritten-app';
+            const hostAppLocation = 'docs-app';
 
             return resourcePath.includes(hostAppLocation) ? 'local' : 'global';
           },
@@ -41,8 +48,7 @@ module.exports = function (defaults) {
         module: {
           rules: [
             {
-              exclude: /node_modules/,
-              test: /\.css$/i,
+              test: /(node_modules\/\.embroider\/rewritten-app\/)(.*\.css)$/i,
               use: [
                 {
                   loader: 'postcss-loader',
