@@ -9,6 +9,41 @@ Version overview
 - `v1.x`: [1.0.0](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#100-2020-05-29) - [1.1.9](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#119-2021-08-25)
 
 
+## 5.0.7 (2024-02-19)
+
+### Documentation
+* [#226](https://github.com/ijlee2/ember-container-query/pull/226) Removed flaky assertions ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#224](https://github.com/ijlee2/ember-container-query/pull/224) Updated project dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
+## 5.0.6 (2024-01-05)
+
+### Bug Fix
+* [#223](https://github.com/ijlee2/ember-container-query/pull/223) Updated decorator-transforms to address an issue with version skew ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
+## 5.0.5 (2024-01-04)
+
+### Bug Fix
+* [#220](https://github.com/ijlee2/ember-container-query/pull/220) Reverted the unintended change to ember-modifier support ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#222](https://github.com/ijlee2/ember-container-query/pull/222) Updated copyright information ([@ijlee2](https://github.com/ijlee2))
+* [#221](https://github.com/ijlee2/ember-container-query/pull/221) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#219](https://github.com/ijlee2/ember-container-query/pull/219) Added ember-lts-5.4 to ember-try scenarios ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 5.0.4 (2023-12-20)
 
 ### Internal
@@ -102,10 +137,10 @@ Version overview
 
 ## 4.0.4 (2023-06-13)
 
-#### Internal
+### Internal
 * [#199](https://github.com/ijlee2/ember-container-query/pull/199) Updated development dependencies ([@ijlee2](https://github.com/ijlee2))
 
-#### Committers: 1
+### Committers: 1
 - Isaac Lee ([@ijlee2](https://github.com/ijlee2))
 
 
