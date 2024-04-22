@@ -9,8 +9,8 @@ const RERENDER_TIME = 50;
 
 export function timeout(milliseconds = RERENDER_TIME): Promise<void> {
   return new Promise((resolve) => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore: Did type definition for `later` change in ember-source@5.1?
+    // @ts-expect-error: Did type definition for `later` change in ember-source@5.1?
+    // eslint-disable-next-line ember/no-runloop
     later(resolve, milliseconds);
   });
 }

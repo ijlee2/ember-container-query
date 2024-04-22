@@ -92,6 +92,7 @@ export default class ContainerQueryModifier<
     const element = resizeObserverEntry.target;
 
     if (this.debounce > 0) {
+      // eslint-disable-next-line ember/no-runloop
       _debounce(this, this.queryContainer, element, this.debounce);
       return;
     }

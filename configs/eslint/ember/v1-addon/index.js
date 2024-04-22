@@ -75,18 +75,16 @@ module.exports = {
     // Node files
     {
       files: [
-        './.eslintrc.{cjs,js}',
-        './.prettierrc.{cjs,js}',
-        './.stylelintrc.{cjs,js}',
-        './.template-lintrc.{cjs,js}',
+        './.eslintrc.js',
+        './.prettierrc.js',
+        './.stylelintrc.js',
+        './.template-lintrc.js',
         './ember-cli-build.js',
-        './postcss.config.js',
+        './index.js',
         './testem.js',
-        './vite.config.{js,mjs}',
         './blueprints/*/index.js',
         './config/**/*.js',
-        './lib/*/index.js',
-        './server/**/*.js',
+        './tests/dummy/config/**/*.js',
       ],
       env: {
         browser: false,

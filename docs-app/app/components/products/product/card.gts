@@ -7,6 +7,10 @@ import type { Product } from '../../../data';
 import styles from './card.css';
 import ProductsProductImage from './image';
 
+function formatPrice(price: number): string {
+  return `$${price}`;
+}
+
 interface ProductsProductCardSignature {
   Args: {
     product: Product;
@@ -41,7 +45,7 @@ const ProductsProductCardComponent: TOC<ProductsProductCardSignature> =
         </p>
 
         <p class={{styles.price}} data-test-field="Price">
-          \${{@product.price}}
+          {{formatPrice @product.price}}
         </p>
       </div>
 
