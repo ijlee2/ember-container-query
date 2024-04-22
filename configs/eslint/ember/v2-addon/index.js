@@ -38,7 +38,7 @@ module.exports = {
     },
   },
   overrides: [
-    // TypeScript files
+    // Ember files
     {
       files: ['**/*.{gts,ts}'],
       extends: [
@@ -52,7 +52,16 @@ module.exports = {
         '@typescript-eslint/no-import-type-side-effects': 'error',
       },
     },
-    // TypeScript and JavaScript files
+    {
+      files: ['**/*.gts'],
+      parser: 'ember-eslint-parser',
+      extends: ['plugin:ember/recommended-gts'],
+    },
+    {
+      files: ['**/*.gjs'],
+      parser: 'ember-eslint-parser',
+      extends: ['plugin:ember/recommended-gjs'],
+    },
     {
       files: ['**/*.{gjs,gts,js,ts}'],
       rules: {
@@ -63,33 +72,25 @@ module.exports = {
         ],
       },
     },
-    // Node files (v1 addon)
     {
-      files: [
-        './.eslintrc.js',
-        './.prettierrc.js',
-        './.stylelintrc.js',
-        './.template-lintrc.js',
-        './ember-cli-build.js',
-        './index.js',
-        './testem.js',
-        './blueprints/*/index.js',
-        './config/**/*.js',
-        './tests/dummy/config/**/*.js',
-      ],
-      env: {
-        browser: false,
-        node: true,
+      files: ['src/**/*.{gjs,gts,js,ts}'],
+      rules: {
+        'import/extensions': [
+          'error',
+          'always',
+          {
+            ignorePackages: true,
+          },
+        ],
       },
-      extends: ['plugin:n/recommended'],
     },
-    // Node files (v2 addon)
+    // Node files
     {
       files: [
-        './.eslintrc.js',
-        './.prettierrc.js',
-        './.stylelintrc.js',
-        './.template-lintrc.js',
+        './.eslintrc.{cjs,js}',
+        './.prettierrc.{cjs,js}',
+        './.stylelintrc.{cjs,js}',
+        './.template-lintrc.{cjs,js}',
         './addon-main.cjs',
         './blueprints/*/index.js',
         './rollup.config.mjs',
@@ -99,11 +100,6 @@ module.exports = {
         node: true,
       },
       extends: ['plugin:n/recommended'],
-    },
-    // Test files
-    {
-      files: ['tests/**/*-test.{gjs,gts,js,ts}'],
-      extends: ['plugin:qunit/recommended'],
     },
   ],
 };
