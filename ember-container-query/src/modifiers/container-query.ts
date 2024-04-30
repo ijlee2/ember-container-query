@@ -3,6 +3,7 @@ import { action } from '@ember/object';
 import type Owner from '@ember/owner';
 import { debounce as _debounce } from '@ember/runloop';
 import { inject as service } from '@ember/service';
+import { isTesting, macroCondition } from '@embroider/macros';
 import type { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
 import Modifier from 'ember-modifier';
 
@@ -120,13 +121,14 @@ export default class ContainerQueryModifier<
   }
 
   private measureDimensions(element: Element): void {
-    const height = element.clientHeight;
-    const width = element.clientWidth;
+    const scale = macroCondition(isTesting()) ? 2 : 1;
+
+    const { height, width } = element.getBoundingClientRect();
 
     this.dimensions = {
       aspectRatio: width / height,
-      height,
-      width,
+      height: scale * height,
+      width: scale * width,
     };
   }
 

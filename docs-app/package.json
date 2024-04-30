@@ -49,7 +49,7 @@
     "@embroider/broccoli-side-watch": "0.0.2-unstable.ba9fd29",
     "@embroider/compat": "^3.4.8",
     "@embroider/core": "^3.4.8",
-    "@embroider/macros": "^1.16.0",
+    "@embroider/macros": "^1.16.1",
     "@embroider/router": "^2.1.6",
     "@embroider/webpack": "^4.0.0",
     "@glimmer/component": "^1.1.2",
