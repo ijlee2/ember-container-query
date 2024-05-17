@@ -65,16 +65,16 @@
     "test": "echo 'A v2 addon does not have tests, run tests in test-app'"
   },
   "dependencies": {
-    "@embroider/addon-shim": "^1.8.7",
-    "decorator-transforms": "^1.2.1",
+    "@embroider/addon-shim": "^1.8.8",
+    "decorator-transforms": "^2.0.0",
     "ember-element-helper": "^0.8.6",
     "ember-modifier": "^3.2.7 || ^4.1.0",
     "ember-resize-observer-service": "^1.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.4",
-    "@babel/plugin-transform-typescript": "^7.24.4",
-    "@babel/runtime": "^7.24.4",
+    "@babel/core": "^7.24.5",
+    "@babel/plugin-transform-typescript": "^7.24.5",
+    "@babel/runtime": "^7.24.5",
     "@embroider/addon-dev": "^4.3.1",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
@@ -93,12 +93,12 @@
     "@types/ember__owner": "^4.0.9",
     "@types/ember__runloop": "^4.0.10",
     "@types/ember__service": "^4.0.9",
-    "babel-plugin-ember-template-compilation": "^2.2.2",
+    "babel-plugin-ember-template-compilation": "^2.2.5",
     "concurrently": "^8.2.2",
     "ember-template-lint": "^6.0.0",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
-    "rollup": "^4.16.1",
+    "rollup": "^4.17.2",
     "rollup-plugin-copy": "^3.5.0",
     "typescript": "^5.4.5"
   },
