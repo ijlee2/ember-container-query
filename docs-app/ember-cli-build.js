@@ -21,7 +21,7 @@ module.exports = function (defaults) {
 
     trees: {
       app: sideWatch('app', {
-        watching: ['../ember-container-query/src'],
+        watching: ['../packages/ember-container-query/src'],
       }),
     },
   });
