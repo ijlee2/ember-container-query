@@ -44,7 +44,8 @@
   },
   "pnpm": {
     "overrides": {
-      "eslint-plugin-import@2.29.1>tsconfig-paths": "^4.2.0"
+      "eslint-plugin-import@2.29.1>tsconfig-paths": "^4.2.0",
+      "prettier": "3.3.0"
     }
   }
 }
