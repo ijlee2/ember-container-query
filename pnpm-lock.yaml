@@ -357,7 +357,7 @@ importers:
         version: 0.4.1
       ember-container-query:
         specifier: workspace:*
-        version: link:../ember-container-query
+        version: link:../packages/ember-container-query
       ember-load-initializers:
         specifier: ^2.1.2
         version: 2.1.2(@babel/core@7.24.5)
@@ -428,7 +428,7 @@ importers:
         specifier: ^5.91.0
         version: 5.91.0
 
-  ember-container-query:
+  packages/ember-container-query:
     dependencies:
       '@embroider/addon-shim':
         specifier: ^1.8.8
@@ -481,16 +481,16 @@ importers:
         version: 6.0.4(@babel/core@7.24.5)(rollup@4.17.2)
       '@shared-configs/ember-template-lint':
         specifier: workspace:*
-        version: link:../configs/ember-template-lint
+        version: link:../../configs/ember-template-lint
       '@shared-configs/eslint-config-ember':
         specifier: workspace:*
-        version: link:../configs/eslint/ember
+        version: link:../../configs/eslint/ember
       '@shared-configs/prettier':
         specifier: workspace:*
-        version: link:../configs/prettier
+        version: link:../../configs/prettier
       '@shared-configs/typescript':
         specifier: workspace:*
-        version: link:../configs/typescript
+        version: link:../../configs/typescript
       '@types/ember__component':
         specifier: ^4.0.22
         version: 4.0.22(@babel/core@7.24.5)
@@ -625,7 +625,7 @@ importers:
         version: 2.1.0
       ember-container-query:
         specifier: workspace:*
-        version: link:../ember-container-query
+        version: link:../packages/ember-container-query
       ember-load-initializers:
         specifier: ^2.1.2
         version: 2.1.2(@babel/core@7.24.5)
