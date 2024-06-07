@@ -16,8 +16,8 @@
     "lint:js:fix": "prettier --write \"**/*.js\""
   },
   "dependencies": {
-    "@babel/core": "^7.24.5",
-    "@babel/eslint-parser": "7.24.5",
+    "@babel/core": "^7.24.7",
+    "@babel/eslint-parser": "7.24.7",
     "@rushstack/eslint-patch": "^1.10.3",
     "@typescript-eslint/eslint-plugin": "^7.12.0",
     "@typescript-eslint/parser": "^7.12.0",

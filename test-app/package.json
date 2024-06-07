@@ -39,7 +39,7 @@
     "test:ember-compatibility": "./node_modules/.bin/ember try:one"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.5",
+    "@babel/core": "^7.24.7",
     "@ember/optional-features": "^2.1.0",
     "@ember/string": "^3.1.1",
     "@ember/test-helpers": "^3.3.0",
