@@ -19,7 +19,7 @@ jobs:
       matrix:
         package-location:
           - 'docs-app'
-          - 'ember-container-query'
+          - 'packages/ember-container-query'
           - 'test-app'
     timeout-minutes: 5
     steps:
@@ -154,7 +154,7 @@ jobs:
     strategy:
       matrix:
         package-location:
-          - 'ember-container-query'
+          - 'packages/ember-container-query'
           - 'test-app'
     timeout-minutes: 5
     steps:

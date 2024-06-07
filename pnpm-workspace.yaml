@@ -1,5 +1,5 @@
 packages:
   - configs/**
   - docs-app
-  - ember-container-query
+  - packages/ember-container-query
   - test-app
