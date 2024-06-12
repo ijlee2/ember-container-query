@@ -554,6 +554,9 @@ importers:
       '@embroider/broccoli-side-watch':
         specifier: 0.0.2-unstable.ba9fd29
         version: 0.0.2-unstable.ba9fd29
+      '@embroider/macros':
+        specifier: ^1.16.3
+        version: 1.16.3(@glint/template@1.4.0)
       '@embroider/test-setup':
         specifier: ^4.0.0
         version: 4.0.0
@@ -1331,7 +1334,7 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.24.7(supports-color@8.1.1)
+      '@babel/core': 7.24.7
       '@babel/helper-plugin-utils': 7.24.7
 
   /@babel/plugin-syntax-private-property-in-object@7.14.5(@babel/core@7.24.7):
@@ -1925,7 +1928,7 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/core': 7.24.7(supports-color@8.1.1)
+      '@babel/core': 7.24.7
       '@babel/helper-plugin-utils': 7.24.7
 
   /@babel/plugin-transform-private-methods@7.24.7(@babel/core@7.24.7):
