@@ -11,6 +11,14 @@ function isProduction() {
 module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
     // Add options here
+    '@embroider/macros': {
+      setConfig: {
+        'ember-qunit': {
+          theme: 'ember',
+        },
+      },
+    },
+
     autoImport: {
       watchDependencies: ['ember-container-query'],
     },
