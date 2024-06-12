@@ -17,6 +17,7 @@ module.exports = async function () {
             '@types/ember-qunit': '6.1.1',
             'ember-a11y-testing': '5.2.1',
             'ember-qunit': '6.0.0',
+            'ember-resolver': '11.0.1',
             'ember-source': '~4.4.0',
           },
         },
@@ -25,6 +26,7 @@ module.exports = async function () {
         name: 'ember-lts-4.8',
         npm: {
           devDependencies: {
+            'ember-resolver': '11.0.1',
             'ember-source': '~4.8.0',
           },
         },
