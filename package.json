@@ -11,7 +11,7 @@
   "author": "Isaac J. Lee",
   "type": "module",
   "scripts": {
-    "build": "concurrently \"npm:build:*\"",
+    "build": "concurrently 'pnpm:build:*'",
     "build:addon": "pnpm --filter ember-container-query build",
     "build:docs-app": "pnpm --filter docs-app build",
     "lint": "pnpm --filter '*' lint",
@@ -19,7 +19,7 @@
     "prepare": "pnpm build:addon",
     "release:changelog": "lerna-changelog",
     "release:publish": "pnpm --recursive publish",
-    "start": "concurrently \"npm:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start": "concurrently 'pnpm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "pnpm --filter ember-container-query start",
     "start:docs-app": "pnpm --filter docs-app start",
     "start:test-app": "pnpm --filter test-app start",
