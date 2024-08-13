@@ -8,6 +8,24 @@ Version overview
 - `v2.x`: [2.0.0](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#200-2022-04-09) - [2.1.1](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#211-2022-12-02)
 - `v1.x`: [1.0.0](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#100-2020-05-29) - [1.1.9](https://github.com/ijlee2/ember-container-query/blob/main/CHANGELOG.md#119-2021-08-25)
 
+
+## 5.0.11 (2024-08-13)
+
+### Internal
+* `ember-container-query`
+  * [#240](https://github.com/ijlee2/ember-container-query/pull/240) Replaced @types/ember__* with native types ([@ijlee2](https://github.com/ijlee2))
+  * [#239](https://github.com/ijlee2/ember-container-query/pull/239) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+  * [#234](https://github.com/ijlee2/ember-container-query/pull/234) Updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+* Other
+  * [#238](https://github.com/ijlee2/ember-container-query/pull/238) Use pnpm@9 ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#236](https://github.com/ijlee2/ember-container-query/pull/236) Update CSS selector name in test helper ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 5.0.10 (2024-06-07)
 
 ### Internal
