@@ -5,7 +5,9 @@ import { and } from 'ember-truth-helpers';
 
 import styles from './widget-5.css';
 
-interface WidgetsWidget5Signature {}
+interface WidgetsWidget5Signature {
+  Args: {};
+}
 
 const WidgetsWidget5Component: TOC<WidgetsWidget5Signature> =
   <template>

@@ -7,7 +7,9 @@ import WidgetsWidget4MemoActions from './memo/actions';
 import WidgetsWidget4MemoBody from './memo/body';
 import WidgetsWidget4MemoHeader from './memo/header';
 
-interface WidgetsWidget4MemoSignature {}
+interface WidgetsWidget4MemoSignature {
+  Args: {};
+}
 
 const WidgetsWidget4MemoComponent: TOC<WidgetsWidget4MemoSignature> =
   <template>

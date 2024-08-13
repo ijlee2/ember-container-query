@@ -5,7 +5,6 @@ import { type Concert, concert } from '../../data';
 import styles from './widget-3.css';
 
 interface WidgetsWidget3Signature {
-  // eslint-disable-next-line @typescript-eslint/ban-types
   Args: {};
 }
 

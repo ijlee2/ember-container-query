@@ -10,7 +10,6 @@ import {
 import styles from './widget-2.css';
 
 interface WidgetsWidget2Signature {
-  // eslint-disable-next-line @typescript-eslint/ban-types
   Args: {};
 }
 

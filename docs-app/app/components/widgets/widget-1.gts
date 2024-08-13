@@ -5,7 +5,9 @@ import { aspectRatio, ContainerQuery } from 'ember-container-query';
 import styles from './widget-1.css';
 import WidgetsWidget1Item from './widget-1/item';
 
-interface WidgetsWidget1Signature {}
+interface WidgetsWidget1Signature {
+  Args: {};
+}
 
 const WidgetsWidget1Component: TOC<WidgetsWidget1Signature> =
   <template>
