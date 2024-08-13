@@ -30,7 +30,8 @@
     "lerna-changelog": "^2.2.0"
   },
   "engines": {
-    "node": "18.* || >= 20"
+    "node": "18.* || >= 20",
+    "pnpm": ">= 9"
   },
   "changelog": {
     "labels": {
