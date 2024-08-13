@@ -3,7 +3,9 @@ import type { TOC } from '@ember/component/template-only';
 import styles from './widget-4.css';
 import WidgetsWidget4Memo from './widget-4/memo';
 
-interface WidgetsWidget4Signature {}
+interface WidgetsWidget4Signature {
+  Args: {};
+}
 
 const WidgetsWidget4Component: TOC<WidgetsWidget4Signature> =
   <template>
