@@ -17,8 +17,8 @@
     "lint": "pnpm --filter '*' lint",
     "lint:fix": "pnpm --filter '*' lint:fix",
     "prepare": "pnpm build:addon",
-    "release:changelog": "lerna-changelog",
-    "release:publish": "pnpm --recursive publish",
+    "release:changelog": "changeset version; update-workspace-root-version",
+    "release:publish": "pnpm build && changeset publish",
     "start": "concurrently 'pnpm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "pnpm --filter ember-container-query start",
     "start:docs-app": "pnpm --filter docs-app start",
@@ -26,23 +26,15 @@
     "test": "pnpm --filter '*' test"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.7",
+    "@changesets/get-github-info": "^0.6.0",
     "concurrently": "^8.2.2",
-    "lerna-changelog": "^2.2.0"
+    "update-workspace-root-version": "^0.3.0"
   },
   "packageManager": "pnpm@9.7.0",
   "engines": {
     "node": "18.* || >= 20",
     "pnpm": ">= 9"
-  },
-  "changelog": {
-    "labels": {
-      "breaking": "Breaking Change",
-      "bug": "Bug Fix",
-      "enhance: code": "Enhancement",
-      "enhance: dependency": "Internal",
-      "enhance: documentation": "Documentation",
-      "user feedback": "User Feedback"
-    }
   },
   "pnpm": {
     "overrides": {
