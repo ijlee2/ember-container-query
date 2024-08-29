@@ -17,7 +17,7 @@
     "lint": "pnpm --filter '*' lint",
     "lint:fix": "pnpm --filter '*' lint:fix",
     "prepare": "pnpm build:addon",
-    "release:changelog": "changeset version",
+    "release:changelog": "changeset version; update-workspace-root-version",
     "release:publish": "pnpm build && changeset publish",
     "start": "concurrently 'pnpm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "pnpm --filter ember-container-query start",
@@ -28,7 +28,8 @@
   "devDependencies": {
     "@changesets/cli": "^2.27.7",
     "@changesets/get-github-info": "^0.6.0",
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "update-workspace-root-version": "^0.3.0"
   },
   "packageManager": "pnpm@9.7.0",
   "engines": {
