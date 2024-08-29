@@ -54,11 +54,21 @@ You can get started in 2 steps:
 
 1. Generate a [personal access token](https://github.com/settings/tokens/) in GitHub, with default values for scopes (none selected).
 
-1. Run the `release:changelog` script. This generates a text that you can add to `CHANGELOG.md`.
+1. Run the `release:changelog` script. This removes changesets, updates the package versions, and updates the `CHANGELOG`'s.
 
     ```sh
     # From the workspace root
-    GITHUB_AUTH=<YOUR_PERSONAL_ACCESS_TOKEN> pnpm release:changelog
+    GITHUB_TOKEN=<YOUR_PERSONAL_ACCESS_TOKEN> pnpm release:changelog
+    ```
+
+    The `release:changelog` script also updated the workspace root's version (by following the highest version formula). We will use it to name the tag that will be published.
+
+    ```
+    # Highest version formula
+    workspace root version = max(
+      max(all package versions),
+      workspace root version + 0.0.1,
+    );
     ```
 
 1. [Create a tag](https://github.com/ijlee2/ember-container-query/releases/new) and provide release notes. The tag name should match the package version.
