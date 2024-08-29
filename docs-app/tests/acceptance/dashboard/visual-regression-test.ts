@@ -25,17 +25,11 @@ module('Acceptance | dashboard', function (hooks) {
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
-      .hasText(
-        'Annual revenue: $2.3 billion',
-        'We see the annual revenue in correct format.',
-      );
+      .hasText('$2.3 billion', 'We see the annual revenue in correct format.');
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
-      .hasText(
-        'Relevant years: 1973 - 1982',
-        'We see the relevant years in correct format.',
-      );
+      .hasText('1973 - 1982', 'We see the relevant years in correct format.');
 
     // Widget 3
     assert
@@ -220,17 +214,11 @@ module('Acceptance | dashboard', function (hooks) {
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
-      .hasText(
-        'Annual revenue: $2.3 billion',
-        'We see the annual revenue in correct format.',
-      );
+      .hasText('$2.3 billion', 'We see the annual revenue in correct format.');
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
-      .hasText(
-        'Relevant years: 1973 - 1982',
-        'We see the relevant years in correct format.',
-      );
+      .hasText('1973 - 1982', 'We see the relevant years in correct format.');
 
     // Widget 3
     assert
@@ -415,17 +403,11 @@ module('Acceptance | dashboard', function (hooks) {
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Annual Revenue"]')
-      .hasText(
-        'Annual revenue: $2.3 billion',
-        'We see the annual revenue in correct format.',
-      );
+      .hasText('$2.3 billion', 'We see the annual revenue in correct format.');
 
     assert
       .dom('[data-test-widget="2"] [data-test-field="Relevant Years"]')
-      .hasText(
-        'Relevant years: 1973 - 1982',
-        'We see the relevant years in correct format.',
-      );
+      .hasText('1973 - 1982', 'We see the relevant years in correct format.');
 
     // Widget 3
     assert
