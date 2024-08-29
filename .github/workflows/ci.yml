@@ -13,6 +13,39 @@ env:
   PNPM_VERSION: 9
 
 jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package-location:
+          - 'docs-app'
+          - 'packages/ember-container-query'
+          - 'test-app'
+    timeout-minutes: 5
+    steps:
+      - name: Check out a copy of the repo
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        # with:
+        #   version: ${{ env.PNPM_VERSION }}
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+        working-directory: ${{ matrix.package-location }}
+
+
   build-docs-app:
     name: Build (docs-app)
     runs-on: ubuntu-latest
@@ -114,3 +147,76 @@ jobs:
           PERCY_PARALLEL_NONCE: ${{ env.PERCY_PARALLEL_NONCE }}
           PERCY_PARALLEL_TOTAL: ${{ env.PERCY_PARALLEL_TOTAL }}
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package-location:
+          - 'packages/ember-container-query'
+          - 'test-app'
+    timeout-minutes: 5
+    steps:
+      - name: Check out a copy of the repo
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        # with:
+        #   version: ${{ env.PNPM_VERSION }}
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Test
+        run: pnpm test
+        working-directory: ${{ matrix.package-location }}
+
+
+  test-compatibility:
+    name: Test compatibility
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario:
+          - 'ember-lts-4.4'
+          - 'ember-lts-4.8'
+          - 'ember-lts-4.12'
+          - 'ember-lts-5.4'
+          - 'ember-lts-5.8'
+          - 'ember-release'
+          - 'ember-beta'
+          - 'ember-canary'
+          - 'embroider-safe'
+          - 'embroider-optimized'
+    timeout-minutes: 5
+    steps:
+      - name: Check out a copy of the repo
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        # with:
+        #   version: ${{ env.PNPM_VERSION }}
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Test
+        run: pnpm test:ember-compatibility ${{ matrix.scenario }} --- pnpm test
+        working-directory: 'test-app'
