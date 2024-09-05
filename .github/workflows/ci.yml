@@ -10,7 +10,6 @@ env:
   NODE_VERSION: 18
   PERCY_PARALLEL_NONCE: ${{ github.run_id }}-${{ github.run_number }}
   PERCY_PARALLEL_TOTAL: 9
-  PNPM_VERSION: 9
 
 jobs:
   lint:
@@ -29,8 +28,6 @@ jobs:
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
-        # with:
-        #   version: ${{ env.PNPM_VERSION }}
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
@@ -56,8 +53,6 @@ jobs:
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
-        # with:
-        #   version: ${{ env.PNPM_VERSION }}
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
@@ -121,8 +116,6 @@ jobs:
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
-        # with:
-        #   version: ${{ env.PNPM_VERSION }}
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
@@ -164,8 +157,6 @@ jobs:
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
-        # with:
-        #   version: ${{ env.PNPM_VERSION }}
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
@@ -205,8 +196,6 @@ jobs:
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
-        # with:
-        #   version: ${{ env.PNPM_VERSION }}
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
