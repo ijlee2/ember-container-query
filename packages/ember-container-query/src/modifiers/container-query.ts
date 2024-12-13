@@ -48,7 +48,7 @@ interface ContainerQueryModifierSignature<T extends IndexSignatureParameter> {
 export default class ContainerQueryModifier<
   T extends IndexSignatureParameter,
 > extends Modifier<ContainerQueryModifierSignature<T>> {
-  @service private declare readonly resizeObserver;
+  @service declare private readonly resizeObserver;
 
   dimensions!: Dimensions;
   queryResults!: QueryResults<T>;

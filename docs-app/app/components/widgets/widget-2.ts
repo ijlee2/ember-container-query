@@ -1,3 +1,4 @@
+import type Owner from '@ember/owner';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
@@ -19,7 +20,7 @@ export default class WidgetsWidget2Component extends Component<WidgetsWidget2Sig
   @tracked data = [] as Data[];
   @tracked summaries = [] as Summary[];
 
-  constructor(owner: unknown, args: WidgetsWidget2Signature['Args']) {
+  constructor(owner: Owner, args: WidgetsWidget2Signature['Args']) {
     super(owner, args);
 
     this.loadData();
