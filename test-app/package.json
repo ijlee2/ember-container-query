@@ -1,6 +1,6 @@
 {
   "name": "test-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "test-app for ember-container-query",
   "keywords": [
