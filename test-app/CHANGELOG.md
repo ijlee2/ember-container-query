@@ -1,5 +1,12 @@
 # test-app
 
+## 1.0.2
+
+### Patch Changes
+
+- [#250](https://github.com/ijlee2/ember-container-query/pull/250) Updated eslint to v9 ([@ijlee2](https://github.com/ijlee2))
+- [#249](https://github.com/ijlee2/ember-container-query/pull/249) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 1.0.1
 
 ### Patch Changes
