@@ -8,5 +8,5 @@
   height: calc(100% - 1.2rem);
   padding: 0.6rem;
   width: calc(100% - 1.2rem);
-  word-break: break-word;
+  word-break: break-all;
 }
