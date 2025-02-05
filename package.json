@@ -11,19 +11,19 @@
   "author": "Isaac J. Lee",
   "type": "module",
   "scripts": {
-    "build": "concurrently 'pnpm:build:*'",
+    "build": "concurrently \"pnpm:build:*\"",
     "build:addon": "pnpm --filter ember-container-query build",
     "build:docs-app": "pnpm --filter docs-app build",
-    "lint": "pnpm --filter '*' lint",
-    "lint:fix": "pnpm --filter '*' lint:fix",
+    "lint": "pnpm --filter \"*\" lint",
+    "lint:fix": "pnpm --filter \"*\" lint:fix",
     "prepare": "pnpm build:addon",
     "release:changelog": "changeset version; update-workspace-root-version",
     "release:publish": "pnpm build && changeset publish",
-    "start": "concurrently 'pnpm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start": "concurrently \"pnpm:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "pnpm --filter ember-container-query start",
     "start:docs-app": "pnpm --filter docs-app start",
     "start:test-app": "pnpm --filter test-app start",
-    "test": "pnpm --filter '*' test"
+    "test": "pnpm --filter \"*\" test"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.12",
