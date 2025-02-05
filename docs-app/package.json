@@ -100,7 +100,7 @@
     "ember-test-selectors": "^7.0.0",
     "ember-truth-helpers": "^4.0.3",
     "embroider-css-modules": "^2.0.12",
-    "eslint": "^8.57.1",
+    "eslint": "^9.19.0",
     "loader.js": "^4.7.0",
     "postcss": "^8.5.1",
     "postcss-loader": "^8.1.1",
