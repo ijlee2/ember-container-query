@@ -54,7 +54,6 @@
     "@shared-configs/ember-template-lint": "workspace:*",
     "@shared-configs/eslint-config-ember": "workspace:*",
     "@shared-configs/prettier": "workspace:*",
-    "@shared-configs/testem": "workspace:*",
     "@shared-configs/typescript": "workspace:*",
     "@types/qunit": "^2.19.12",
     "broccoli-asset-rev": "^3.0.0",
