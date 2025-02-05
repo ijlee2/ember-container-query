@@ -16,15 +16,15 @@
     "lint:js:fix": "prettier --write \"**/*.js\""
   },
   "dependencies": {
-    "@rushstack/eslint-patch": "^1.10.4",
-    "@typescript-eslint/eslint-plugin": "^8.18.0",
-    "@typescript-eslint/parser": "^8.18.0",
-    "eslint-config-prettier": "^9.1.0",
+    "@rushstack/eslint-patch": "^1.10.5",
+    "@typescript-eslint/eslint-plugin": "^8.23.0",
+    "@typescript-eslint/parser": "^8.23.0",
+    "eslint-config-prettier": "^10.0.1",
     "eslint-import-resolver-typescript": "^3.7.0",
-    "eslint-plugin-ember": "^12.3.3",
+    "eslint-plugin-ember": "^12.5.0",
     "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-n": "^17.15.0",
-    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-n": "^17.15.1",
+    "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-qunit": "^8.1.2",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-typescript-sort-keys": "^3.3.0"
@@ -32,7 +32,7 @@
   "devDependencies": {
     "@shared-configs/eslint-config-node": "workspace:*",
     "@shared-configs/prettier": "workspace:*",
-    "concurrently": "^9.1.0",
+    "concurrently": "^9.1.2",
     "eslint": "^8.57.1",
     "prettier": "^3.4.2"
   },
