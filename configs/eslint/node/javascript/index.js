@@ -1,41 +1,84 @@
-'use strict';
+import babelEslintParser from '@babel/eslint-parser';
+import eslint from '@eslint/js';
+import eslintPluginImport from 'eslint-plugin-import';
+import eslintPluginN from 'eslint-plugin-n';
+import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
+import eslintPluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
+import globals from 'globals';
 
-module.exports = {
-  root: true,
-  parser: '@babel/eslint-parser',
-  parserOptions: {
-    ecmaVersion: 'latest',
-    requireConfigFile: false,
-    sourceType: 'module',
+const parserOptionsJs = {
+  babelOptions: {
+    plugins: [
+      [
+        '@babel/plugin-proposal-decorators',
+        {
+          decoratorsBeforeExport: true,
+        },
+      ],
+    ],
   },
-  plugins: ['simple-import-sort'],
-  extends: [
-    'eslint:recommended',
-    'plugin:import/recommended',
-    'plugin:n/recommended',
-    'plugin:prettier/recommended',
-  ],
-  rules: {
-    curly: 'error',
-    'simple-import-sort/exports': 'error',
-    'simple-import-sort/imports': 'error',
+  ecmaFeatures: {
+    modules: true,
   },
-  overrides: [
-    // JavaScript files
-    {
-      files: ['**/*.{cjs,js}'],
-      rules: {
-        'import/no-duplicates': 'error',
-      },
-    },
-    // Node files
-    {
-      files: ['./.eslintrc.{cjs,js}', './.prettierrc.{cjs,js}'],
-      env: {
-        browser: false,
-        node: true,
-      },
-      extends: ['plugin:n/recommended'],
-    },
-  ],
+  ecmaVersion: 'latest',
+  requireConfigFile: false,
 };
+
+export default [
+  {
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
+    },
+  },
+  {
+    plugins: {
+      'simple-import-sort': eslintPluginSimpleImportSort,
+    },
+    rules: {
+      curly: 'error',
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
+    },
+  },
+
+  eslint.configs.recommended,
+  eslintPluginImport.flatConfigs.recommended,
+  eslintPluginPrettier,
+
+  // JavaScript files
+  {
+    files: ['**/*.js'],
+    languageOptions: {
+      parser: babelEslintParser,
+      parserOptions: parserOptionsJs,
+    },
+    rules: {
+      'import/no-duplicates': 'error',
+    },
+  },
+
+  // Configuration files
+  {
+    files: ['**/*.cjs'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      globals: globals.node,
+      sourceType: 'script',
+    },
+    plugins: {
+      n: eslintPluginN,
+    },
+  },
+  {
+    files: ['**/*.mjs'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      globals: globals.node,
+      parserOptions: parserOptionsJs,
+      sourceType: 'module',
+    },
+    plugins: {
+      n: eslintPluginN,
+    },
+  },
+];

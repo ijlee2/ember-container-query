@@ -8,12 +8,13 @@
     "url": "https://github.com/ijlee2/ember-container-query.git"
   },
   "author": "Isaac J. Lee",
-  "main": ".template-lintrc.js",
+  "type": "module",
+  "main": ".template-lintrc.cjs",
   "scripts": {
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
     "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
-    "lint:js": "prettier --check \"**/*.js\"",
-    "lint:js:fix": "prettier --write \"**/*.js\""
+    "lint:js": "prettier . --check",
+    "lint:js:fix": "prettier . --write"
   },
   "dependencies": {
     "ember-template-lint-plugin-prettier": "^5.0.0"
