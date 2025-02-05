@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   min-height: 1.5rem;
-  word-break: break-word;
+  word-break: break-all;
 }
 
 .icon-explicit {

@@ -45,7 +45,7 @@
 .label {
   grid-area: label;
   overflow: hidden;
-  word-break: break-word;
+  word-break: break-all;
 }
 
 .field {

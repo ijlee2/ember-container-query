@@ -31,7 +31,7 @@
   font-size: 1rem;
   grid-area: music-format;
   margin-bottom: 0.5rem;
-  word-break: break-word;
+  word-break: break-all;
 }
 
 .marker {
