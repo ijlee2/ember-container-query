@@ -1,5 +1,4 @@
 packages:
-  - configs/**
   - docs-app
   - packages/ember-container-query
   - test-app
