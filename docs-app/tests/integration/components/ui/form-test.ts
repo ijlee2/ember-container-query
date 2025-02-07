@@ -18,6 +18,7 @@ module('Integration | Component | ui/form', function (hooks) {
   setupRenderingTest(hooks);
 
   test('The component renders a form', async function (this: TestContext, assert) {
+    // eslint-disable-next-line @typescript-eslint/require-await
     this.submitForm = async () => {
       assert.step('Submit form');
     };
@@ -111,6 +112,7 @@ module('Integration | Component | ui/form', function (hooks) {
   });
 
   test('We can submit the form', async function (this: TestContext, assert) {
+    // eslint-disable-next-line @typescript-eslint/require-await
     this.submitForm = async (data: Record<string, any>) => {
       assert.deepEqual(
         data,

@@ -67,7 +67,7 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component renders', async function (this: TestContext, assert) {
+    test('The component renders', function (this: TestContext, assert) {
       assertFeatures(assert, {
         small: undefined,
         medium: undefined,
@@ -180,7 +180,7 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component renders', async function (this: TestContext, assert) {
+    test('The component renders', function (this: TestContext, assert) {
       assertFeatures(assert, {
         small: true,
         medium: false,
@@ -331,7 +331,7 @@ module('Integration | Component | container-query', function (hooks) {
       });
     });
 
-    test('The component updates the features', async function (this: TestContext, assert) {
+    test('The component updates the features', function (this: TestContext, assert) {
       assertFeatures(assert, {
         small: undefined,
         medium: undefined,

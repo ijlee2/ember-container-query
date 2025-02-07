@@ -60,7 +60,7 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component has the <div> tag', async function (this: TestContext, assert) {
+    test('The component has the <div> tag', function (this: TestContext, assert) {
       assert
         .dom('[data-test-container-query]')
         .hasTagName('div', 'We see the correct tag name.');
@@ -130,7 +130,7 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component has the correct tag', async function (this: TestContext, assert) {
+    test('The component has the correct tag', function (this: TestContext, assert) {
       assert
         .dom('[data-test-container-query]')
         .hasTagName('section', 'We see the correct tag name.');
@@ -204,7 +204,7 @@ module('Integration | Component | container-query', function (hooks) {
       set(this, 'tagName', 'article');
     });
 
-    test("The component doesn't update the tag", async function (this: TestContext, assert) {
+    test("The component doesn't update the tag", function (this: TestContext, assert) {
       assert
         .dom('[data-test-container-query]')
         .hasTagName('section', 'We see the correct tag name.')

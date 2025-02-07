@@ -61,7 +61,7 @@ module('Integration | Component | container-query', function (hooks) {
       await timeout();
     });
 
-    test('The component creates data attributes when it is rendered', async function (this: TestContext, assert) {
+    test('The component creates data attributes when it is rendered', function (this: TestContext, assert) {
       assertDataAttributes(assert, {
         'data-container-query-small': '',
         'data-container-query-medium': undefined,
@@ -161,7 +161,7 @@ module('Integration | Component | container-query', function (hooks) {
         await timeout();
       });
 
-      test('The component creates data attributes when it is rendered', async function (this: TestContext, assert) {
+      test('The component creates data attributes when it is rendered', function (this: TestContext, assert) {
         assertDataAttributes(assert, {
           'data-small': '',
           'data-medium': undefined,
@@ -262,7 +262,7 @@ module('Integration | Component | container-query', function (hooks) {
         await timeout();
       });
 
-      test('The component creates data attributes when it is rendered', async function (this: TestContext, assert) {
+      test('The component creates data attributes when it is rendered', function (this: TestContext, assert) {
         assertDataAttributes(assert, {
           'data-cq-small': '',
           'data-cq-medium': undefined,
@@ -365,7 +365,7 @@ module('Integration | Component | container-query', function (hooks) {
       set(this, 'dataAttributePrefix', 'cq2');
     });
 
-    test('The component updates the data attributes', async function (this: TestContext, assert) {
+    test('The component updates the data attributes', function (this: TestContext, assert) {
       assertDataAttributes(assert, {
         'data-cq1-small': undefined,
         'data-cq1-medium': undefined,
