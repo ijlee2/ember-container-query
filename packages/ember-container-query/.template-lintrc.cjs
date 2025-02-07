@@ -1,3 +1,6 @@
 'use strict';
 
-module.exports = require('@shared-configs/ember-template-lint');
+module.exports = {
+  plugins: ['@ijlee2-frontend-configs/ember-template-lint'],
+  extends: ['@ijlee2-frontend-configs/ember-template-lint:recommended'],
+};
