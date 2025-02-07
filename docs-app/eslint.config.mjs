@@ -1,11 +1,12 @@
-import eslintConfigEmberApp from '@shared-configs/eslint-config-ember/app/index.js';
+import baseConfiguration from '@ijlee2-frontend-configs/eslint-config-ember/app';
 
 export default [
-  ...eslintConfigEmberApp,
+  ...baseConfiguration,
   {
     files: ['**/*.{gts,ts}'],
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
     },
   },
 ];

@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('@shared-configs/prettier');
+module.exports = require('@ijlee2-frontend-configs/prettier');

@@ -1,5 +1,3 @@
 'use strict';
 
-module.exports = {
-  extends: ['@shared-configs/stylelint'],
-};
+module.exports = require('@ijlee2-frontend-configs/stylelint/css-modules');

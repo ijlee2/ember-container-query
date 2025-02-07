@@ -109,7 +109,7 @@ function groupDataByMusicFormat(data: Data[]): GroupedData {
 
     if (accumulator[musicFormat]) {
       /* eslint-disable-next-line prefer-const */
-      let { data, relevantYears } = accumulator[musicFormat]!;
+      let { data, relevantYears } = accumulator[musicFormat];
 
       data.set(year, revenue);
 
