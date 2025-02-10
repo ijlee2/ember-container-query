@@ -1,5 +1,12 @@
 # docs-app
 
+## 1.0.3
+
+### Patch Changes
+
+- [#252](https://github.com/ijlee2/ember-container-query/pull/252) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#251](https://github.com/ijlee2/ember-container-query/pull/251) Simplified lint configurations ([@ijlee2](https://github.com/ijlee2))
+
 ## 1.0.2
 
 ### Patch Changes

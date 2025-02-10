@@ -1,5 +1,12 @@
 # ember-container-query
 
+## 5.0.15
+
+### Patch Changes
+
+- [#252](https://github.com/ijlee2/ember-container-query/pull/252) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#251](https://github.com/ijlee2/ember-container-query/pull/251) Simplified lint configurations ([@ijlee2](https://github.com/ijlee2))
+
 ## 5.0.14
 
 ### Patch Changes
