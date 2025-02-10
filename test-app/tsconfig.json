@@ -1,5 +1,5 @@
 {
-  "extends": "@tsconfig/ember/tsconfig.json",
+  "extends": "@ijlee2-frontend-configs/typescript/ember",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
