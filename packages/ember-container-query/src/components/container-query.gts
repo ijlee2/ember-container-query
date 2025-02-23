@@ -1,8 +1,10 @@
 import './container-query.css';
 
-import { action } from '@ember/object';
+import { hash } from '@ember/helper';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import { element } from 'ember-element-helper';
+import { default as containerQuery } from '../modifiers/container-query.ts';
 
 import type {
   Dimensions,
@@ -38,14 +40,31 @@ export default class ContainerQueryComponent<
   // The dynamic tag is restricted to be immutable
   tagName = this.args.tagName ?? 'div';
 
-  @action updateState({
-    dimensions,
-    queryResults,
-  }: {
-    dimensions: Dimensions;
-    queryResults: QueryResults<T>;
-  }): void {
+  updateState = (
+    { dimensions, queryResults }: { dimensions: Dimensions; queryResults: QueryResults<T> }
+  ): void => {
     this.dimensions = dimensions;
     this.queryResults = queryResults;
-  }
+  };
+
+  <template>
+    {{#let (element this.tagName) as |Tag|}}
+      <Tag
+        class="container-query"
+        {{containerQuery
+          dataAttributePrefix=@dataAttributePrefix
+          debounce=@debounce
+          features=@features
+          onQuery=this.updateState
+        }}
+        ...attributes
+      >
+        {{yield
+          (hash
+            dimensions=this.dimensions features=this.queryResults
+          )
+        }}
+      </Tag>
+    {{/let}}
+  </template>
 }
