@@ -4,7 +4,6 @@ import { hash } from '@ember/helper';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { element } from 'ember-element-helper';
-import { default as containerQuery } from '../modifiers/container-query.ts';
 
 import type {
   Dimensions,
@@ -12,6 +11,7 @@ import type {
   IndexSignatureParameter,
   QueryResults,
 } from '../modifiers/container-query.ts';
+import { default as containerQuery } from '../modifiers/container-query.ts';
 
 interface ContainerQuerySignature<T extends IndexSignatureParameter> {
   Args: {
@@ -40,9 +40,13 @@ export default class ContainerQueryComponent<
   // The dynamic tag is restricted to be immutable
   tagName = this.args.tagName ?? 'div';
 
-  updateState = (
-    { dimensions, queryResults }: { dimensions: Dimensions; queryResults: QueryResults<T> }
-  ): void => {
+  updateState = ({
+    dimensions,
+    queryResults,
+  }: {
+    dimensions: Dimensions;
+    queryResults: QueryResults<T>;
+  }): void => {
     this.dimensions = dimensions;
     this.queryResults = queryResults;
   };
@@ -59,11 +63,7 @@ export default class ContainerQueryComponent<
         }}
         ...attributes
       >
-        {{yield
-          (hash
-            dimensions=this.dimensions features=this.queryResults
-          )
-        }}
+        {{yield (hash dimensions=this.dimensions features=this.queryResults)}}
       </Tag>
     {{/let}}
   </template>

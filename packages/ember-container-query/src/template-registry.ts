@@ -1,4 +1,4 @@
-import type ContainerQueryComponent from './components/container-query.ts';
+import type ContainerQueryComponent from './components/container-query.gts';
 import type AspectRatioHelper from './helpers/aspect-ratio.ts';
 import type HeightHelper from './helpers/height.ts';
 import type WidthHelper from './helpers/width.ts';
