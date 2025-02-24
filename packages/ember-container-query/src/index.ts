@@ -1,4 +1,4 @@
-export { default as ContainerQuery } from './components/container-query.ts';
+export { default as ContainerQuery } from './components/container-query.gts';
 export { default as aspectRatio } from './helpers/aspect-ratio.ts';
 export { default as height } from './helpers/height.ts';
 export { default as width } from './helpers/width.ts';
