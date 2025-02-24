@@ -1,6 +1,5 @@
 import { Addon } from '@embroider/addon-dev/rollup';
 import { babel } from '@rollup/plugin-babel';
-import copy from 'rollup-plugin-copy';
 
 const addon = new Addon({
   srcDir: 'src',
@@ -64,13 +63,5 @@ export default {
 
     // Remove leftover build artifacts when starting a new build.
     addon.clean(),
-
-    // Copy Readme and License into published package
-    copy({
-      targets: [
-        { src: '../README.md', dest: '.' },
-        { src: '../LICENSE.md', dest: '.' },
-      ],
-    }),
   ],
 };
