@@ -1,5 +1,12 @@
 # test-app
 
+## 1.0.4
+
+### Patch Changes
+
+- [#254](https://github.com/ijlee2/ember-container-query/pull/254) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#253](https://github.com/ijlee2/ember-container-query/pull/253) Converted <ContainerQuery> to <template> tag component ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
 ## 1.0.3
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # ember-container-query
 
+## 5.1.0
+
+### Minor Changes
+
+- [#253](https://github.com/ijlee2/ember-container-query/pull/253) Converted <ContainerQuery> to <template> tag component ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+### Patch Changes
+
+- [#254](https://github.com/ijlee2/ember-container-query/pull/254) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 5.0.15
 
 ### Patch Changes
