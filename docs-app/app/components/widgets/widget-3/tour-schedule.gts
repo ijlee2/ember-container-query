@@ -47,7 +47,7 @@ const WidgetsWidget3TourScheduleComponent: TOC<WidgetsWidget3TourScheduleSignatu
         </div>
       </div>
     </ContainerQuery>
-  </template>
+  </template>;
 
 export default WidgetsWidget3TourScheduleComponent;
 

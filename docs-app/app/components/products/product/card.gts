@@ -37,10 +37,7 @@ const ProductsProductCardComponent: TOC<ProductsProductCardSignature> =
       </div>
 
       <div class={{styles.body}}>
-        <p
-          class={{styles.description}}
-          data-test-field="Short Description"
-        >
+        <p class={{styles.description}} data-test-field="Short Description">
           {{@product.shortDescription}}
         </p>
 
@@ -60,7 +57,7 @@ const ProductsProductCardComponent: TOC<ProductsProductCardSignature> =
         </LinkTo>
       </div>
     </ContainerQuery>
-  </template>
+  </template>;
 
 export default ProductsProductCardComponent;
 

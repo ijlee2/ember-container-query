@@ -18,12 +18,12 @@ interface UiFormFieldSignature {
     field: [
       {
         inputId: string;
-      }
+      },
     ];
     label: [
       {
         inputId: string;
-      }
+      },
     ];
   };
 }
@@ -51,20 +51,14 @@ export default class UiFormFieldComponent extends Component<UiFormFieldSignature
       </div>
 
       {{#if @errorMessage}}
-        <div
-          class={{local styles "feedback" "is-error"}}
-        >
+        <div class={{local styles "feedback" "is-error"}}>
           {{svgJar
             "alert"
             desc="A warning to indicate that the input field has an error"
             role="img"
           }}
 
-          <span
-            class={{styles.message}}
-            data-test-feedback
-            role="alert"
-          >
+          <span class={{styles.message}} data-test-feedback role="alert">
             {{@errorMessage}}
           </span>
         </div>

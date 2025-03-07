@@ -1,4 +1,4 @@
-import baseConfiguration from '@ijlee2-frontend-configs/eslint-config-ember/app';
+import baseConfiguration from '@ijlee2-frontend-configs/eslint-config-ember/v1-app';
 
 export default [
   ...baseConfiguration,

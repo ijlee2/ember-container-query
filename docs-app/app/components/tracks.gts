@@ -13,33 +13,28 @@ interface TracksSignature {
   };
 }
 
-const TracksComponent: TOC<TracksSignature> =
-  <template>
-    <ContainerQuery
-      @features={{hash
-        small=(width max=480)
-        medium=(width min=480 max=640)
-        large=(width min=640)
-        tall=(height min=320)
-      }}
-      as |CQ|
-    >
-      {{#if (and CQ.features.large CQ.features.tall)}}
-        <TracksTable @tracks={{@tracks}} />
+const TracksComponent: TOC<TracksSignature> = <template>
+  <ContainerQuery
+    @features={{hash
+      small=(width max=480)
+      medium=(width min=480 max=640)
+      large=(width min=640)
+      tall=(height min=320)
+    }}
+    as |CQ|
+  >
+    {{#if (and CQ.features.large CQ.features.tall)}}
+      <TracksTable @tracks={{@tracks}} />
 
-      {{else}}
-        <TracksList
-          @numColumns={{if
-            CQ.features.small
-            1
-            (if CQ.features.medium 2 3)
-          }}
-          @tracks={{@tracks}}
-        />
+    {{else}}
+      <TracksList
+        @numColumns={{if CQ.features.small 1 (if CQ.features.medium 2 3)}}
+        @tracks={{@tracks}}
+      />
 
-      {{/if}}
-    </ContainerQuery>
-  </template>
+    {{/if}}
+  </ContainerQuery>
+</template>;
 
 export default TracksComponent;
 
