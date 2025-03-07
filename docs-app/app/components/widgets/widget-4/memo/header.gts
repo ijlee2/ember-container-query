@@ -51,7 +51,7 @@ const WidgetsWidget4MemoHeaderComponent: TOC<WidgetsWidget4MemoHeaderSignature> 
         </div>
       </div>
     {{/let}}
-  </template>
+  </template>;
 
 export default WidgetsWidget4MemoHeaderComponent;
 

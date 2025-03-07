@@ -21,7 +21,7 @@ const WidgetsWidget2StackedChartComponent: TOC<WidgetsWidget2StackedChartSignatu
       <svg class={{styles.svg}}>
       </svg>
     </div>
-  </template>
+  </template>;
 
 export default WidgetsWidget2StackedChartComponent;
 

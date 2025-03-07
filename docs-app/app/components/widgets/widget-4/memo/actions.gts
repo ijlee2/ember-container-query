@@ -20,18 +20,11 @@ const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature
       class={{local
         styles
         "actions"
-        (if
-          (or @cqFeatures.small @cqFeatures.short)
-          "minimal-layout"
-        )
+        (if (or @cqFeatures.small @cqFeatures.short) "minimal-layout")
       }}
       data-test-memo-actions
     >
-      <button
-        aria-label="Comment"
-        class={{styles.button}}
-        type="button"
-      >
+      <button aria-label="Comment" class={{styles.button}} type="button">
         {{svgJar
           "message-processing-outline"
           class=(local styles "icon" "icon-comment")
@@ -40,11 +33,7 @@ const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature
         }}
       </button>
 
-      <button
-        aria-label="Repost"
-        class={{styles.button}}
-        type="button"
-      >
+      <button aria-label="Repost" class={{styles.button}} type="button">
         {{svgJar
           "sync"
           class=(local styles "icon" "icon-repost")
@@ -53,24 +42,11 @@ const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature
         }}
       </button>
 
-      <button
-        aria-label="Like"
-        class={{styles.button}}
-        type="button"
-      >
-        {{svgJar
-          "heart-outline"
-          class=styles.icon
-          desc="A heart"
-          role="img"
-        }}
+      <button aria-label="Like" class={{styles.button}} type="button">
+        {{svgJar "heart-outline" class=styles.icon desc="A heart" role="img"}}
       </button>
 
-      <button
-        aria-label="Share"
-        class={{styles.button}}
-        type="button"
-      >
+      <button aria-label="Share" class={{styles.button}} type="button">
         {{svgJar
           "share-variant-outline"
           class=styles.icon
@@ -79,7 +55,7 @@ const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature
         }}
       </button>
     </div>
-  </template>
+  </template>;
 
 export default WidgetsWidget4MemoActionsComponent;
 

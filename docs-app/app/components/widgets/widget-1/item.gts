@@ -8,14 +8,13 @@ interface WidgetsWidget1ItemSignature {
   };
 }
 
-const WidgetsWidget1ItemComponent: TOC<WidgetsWidget1ItemSignature> =
-  <template>
-    <div class={{styles.container}}>
-      <p data-test-title>
-        {{@title}}
-      </p>
-    </div>
-  </template>
+const WidgetsWidget1ItemComponent: TOC<WidgetsWidget1ItemSignature> = <template>
+  <div class={{styles.container}}>
+    <p data-test-title>
+      {{@title}}
+    </p>
+  </div>
+</template>;
 
 export default WidgetsWidget1ItemComponent;
 
