@@ -78,19 +78,19 @@
     "@glint/environment-ember-loose": "^1.5.2",
     "@glint/environment-ember-template-imports": "^1.5.2",
     "@glint/template": "^1.5.2",
-    "@ijlee2-frontend-configs/ember-template-lint": "^0.4.2",
-    "@ijlee2-frontend-configs/eslint-config-ember": "^0.2.3",
+    "@ijlee2-frontend-configs/ember-template-lint": "^0.5.0",
+    "@ijlee2-frontend-configs/eslint-config-ember": "^0.3.1",
     "@ijlee2-frontend-configs/prettier": "^0.2.1",
     "@ijlee2-frontend-configs/typescript": "^0.3.1",
     "@rollup/plugin-babel": "^6.0.4",
     "babel-plugin-ember-template-compilation": "^2.3.0",
     "concurrently": "^9.1.2",
     "ember-source": "^6.2.0",
-    "ember-template-lint": "^6.1.0",
+    "ember-template-lint": "^7.0.1",
     "eslint": "^9.21.0",
-    "prettier": "^3.5.2",
-    "rollup": "^4.34.8",
-    "typescript": "^5.7.3"
+    "prettier": "^3.5.3",
+    "rollup": "^4.34.9",
+    "typescript": "^5.8.2"
   },
   "engines": {
     "node": "18.* || >= 20"
