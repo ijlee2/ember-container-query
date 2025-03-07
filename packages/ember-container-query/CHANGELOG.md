@@ -1,5 +1,12 @@
 # ember-container-query
 
+## 5.1.1
+
+### Patch Changes
+
+- [#257](https://github.com/ijlee2/ember-container-query/pull/257) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#256](https://github.com/ijlee2/ember-container-query/pull/256) Removed `inject as service` ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
 ## 5.1.0
 
 ### Minor Changes

@@ -1,5 +1,12 @@
 # docs-app
 
+## 1.0.5
+
+### Patch Changes
+
+- [#257](https://github.com/ijlee2/ember-container-query/pull/257) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#255](https://github.com/ijlee2/ember-container-query/pull/255) Replaced staticComponents, staticHelpers, and staticModifiers (deprecated) with staticInvokables ([@ijlee2](https://github.com/ijlee2))
+
 ## 1.0.4
 
 ### Patch Changes
