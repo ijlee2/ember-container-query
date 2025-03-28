@@ -1,6 +1,5 @@
 import type { TOC } from '@ember/component/template-only';
 
-// eslint-disable-next-line import-x/default
 import drawStackedChart from '../../../modifiers/draw-stacked-chart';
 import type { Data } from '../../../utils/components/widgets/widget-2';
 import styles from './stacked-chart.css';
