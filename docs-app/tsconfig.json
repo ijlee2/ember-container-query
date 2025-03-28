@@ -7,7 +7,6 @@
       "docs-app/*": ["app/*"],
       "*": ["types/*"]
     },
-    "skipLibCheck": true,
     "types": [
       "ember-source/types"
     ]
