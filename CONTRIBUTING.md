@@ -50,9 +50,25 @@ You can get started in 2 steps:
 
 <details>
 
+<summary>Add changeset to pull request</code></summary>
+
+1. To record how a pull request affects packages, you will want to add a changeset.
+
+    The changeset provides a summary of the code change. It also describes how package versions should be updated (major, minor, or patch) as a result of the code change.
+
+    ```sh
+    # From the workspace root
+    pnpm changeset
+    ```
+
+</details>
+
+
+<details>
+
 <summary>Publish packages (for admins)</summary>
 
-1. Generate a [personal access token](https://github.com/settings/tokens/) in GitHub, with `repo` and `read:user` scopes enabled. This token will be used to retrieve pull request information.
+1. Generate a [personal access token](https://github.com/settings/tokens/) in GitHub, with default values for scopes (none selected).
 
 1. Run the `release:prepare` script. This removes changesets, updates package versions, and updates `CHANGELOG`s.
 
@@ -83,72 +99,3 @@ You can get started in 2 steps:
     ```
 
 </details>
-
-
-## How can I help?
-
-If you haven't before, I encourage you to watch [Sean Massa's mini-talk](https://www.youtube.com/watch?v=CcSKlsc_AhQ) on what it means to be a contributor. To sum up the talk, you can be a contributor in many ways. I want you to discover a path that meets your goals well!
-
-Here are some suggestions to help you start:
-
-
-<details>
-
-<summary>Give feedback 💞</summary>
-
-1. An open source project's value comes from people using the code and extending it to make greater things. Let me know how you use container queries in your Ember app or addon!
-
-1. You can **create an issue** to:
-
-    - Share how you used `ember-container-query`
-    - Share what you liked or didn't like about `ember-container-query`
-
-</details>
-
-
-<details>
-
-<summary>Help with marketing 📢</summary>
-
-1. Platforms include:
-
-    - Blog post
-    - GitHub star
-    - Meetup or conference talk
-    - Social media
-    - Word of mouth
-
-</details>
-
-
-<details>
-
-<summary>Join this project 👩‍💻👨‍💻</summary>
-
-1. Help me maintain the project! I have limited time and there is much that I don't know.
-
-    - Cut releases
-    - Research new ways to implement container queries
-    - Respond to issues
-    - Review pull requests
-
-</details>
-
-
-<details>
-
-<summary>Make issues 📝</summary>
-
-1. In addition to sharing feedback (described in `Give feedback`), you can create an issue to:
-
-    - Ask for better documentation
-    - Ask for new feature or refactor
-    - Report bug
-    - Report outdated dependency
-
-1. When reporting a bug, please provide details to help me understand what's going on. If possible, please use the latest version of `ember-container-query` and set up a public demo that I (and others) can check the code.
-
-</details>
-
-
-💡 Have ideas for contribution? Reach out to `@ijlee2` on [Discord](https://discord.com/invite/emberjs)!
