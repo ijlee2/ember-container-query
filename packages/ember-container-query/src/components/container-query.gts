@@ -34,9 +34,6 @@ interface ContainerQuerySignature<T extends IndexSignatureParameter> {
 export default class ContainerQueryComponent<
   T extends IndexSignatureParameter,
 > extends Component<ContainerQuerySignature<T>> {
-  @tracked dimensions?: Dimensions;
-  @tracked queryResults?: QueryResults<T>;
-
   // The dynamic tag is restricted to be immutable
   tagName = this.args.tagName ?? 'div';
 
@@ -50,6 +47,9 @@ export default class ContainerQueryComponent<
     this.dimensions = dimensions;
     this.queryResults = queryResults;
   };
+
+  @tracked dimensions?: Dimensions;
+  @tracked queryResults?: QueryResults<T>;
 
   <template>
     {{#let (element this.tagName) as |Tag|}}

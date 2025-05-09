@@ -19,11 +19,10 @@ const paletteColors = Object.values(COLOR_PALETTE);
 export default class DrawStackedChartModifier extends Modifier {
   @service resizeObserver;
 
-  height = 0;
-  width = 0;
-
   _element = undefined;
   _named = {};
+  height = 0;
+  width = 0;
 
   get color() {
     return scaleOrdinal().domain(musicFormats).range(paletteColors);
@@ -125,39 +124,8 @@ export default class DrawStackedChartModifier extends Modifier {
     });
   }
 
-  modify(element, _positional, named) {
-    this._named = named;
-
-    this.registerResizeObserver(element);
-    this.refreshChart(element);
-  }
-
-  @action onResize(resizeObserverEntry) {
-    const element = resizeObserverEntry.target;
-
-    this.refreshChart(element);
-  }
-
-  registerResizeObserver(element) {
-    this.resizeObserver.unobserve(this._element, this.onResize);
-
-    this._element = element;
-    this.resizeObserver.observe(element, this.onResize);
-  }
-
-  refreshChart(element) {
-    this.clearSvg(element);
-    this.measureDimensions(element);
-    this.drawChart(element);
-  }
-
   clearSvg(element) {
     element.querySelector('svg').innerHTML = '';
-  }
-
-  measureDimensions(element) {
-    this.height = element.clientHeight;
-    this.width = element.clientWidth;
   }
 
   drawChart(element) {
@@ -192,5 +160,36 @@ export default class DrawStackedChartModifier extends Modifier {
 
     svg.append('g').call(xAxis);
     svg.append('g').call(yAxis);
+  }
+
+  measureDimensions(element) {
+    this.height = element.clientHeight;
+    this.width = element.clientWidth;
+  }
+
+  modify(element, _positional, named) {
+    this._named = named;
+
+    this.registerResizeObserver(element);
+    this.refreshChart(element);
+  }
+
+  refreshChart(element) {
+    this.clearSvg(element);
+    this.measureDimensions(element);
+    this.drawChart(element);
+  }
+
+  registerResizeObserver(element) {
+    this.resizeObserver.unobserve(this._element, this.onResize);
+
+    this._element = element;
+    this.resizeObserver.observe(element, this.onResize);
+  }
+
+  @action onResize(resizeObserverEntry) {
+    const element = resizeObserverEntry.target;
+
+    this.refreshChart(element);
   }
 }
