@@ -1,5 +1,5 @@
 {
-  "extends": "@ijlee2-frontend-configs/typescript/ember",
+  "extends": "@tsconfig/ember/tsconfig.json",
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "allowJs": true,

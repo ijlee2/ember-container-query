@@ -360,7 +360,7 @@ For more examples, I encourage you to check out the code for my demo app. It is 
 ## Compatibility
 
 - Ember.js v4.12 or above
-- Node.js v18 or above
+- Node.js v20 or above
 
 
 ## Contributing
