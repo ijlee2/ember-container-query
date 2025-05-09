@@ -1,5 +1,17 @@
 # docs-app
 
+## 2.0.0
+
+### Major Changes
+
+- [#259](https://github.com/ijlee2/ember-container-query/pull/259) Dropped Node 18 support ([@ijlee2](https://github.com/ijlee2))
+
+## 1.0.6
+
+### Patch Changes
+
+- [#258](https://github.com/ijlee2/ember-container-query/pull/258) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 1.0.5
 
 ### Patch Changes

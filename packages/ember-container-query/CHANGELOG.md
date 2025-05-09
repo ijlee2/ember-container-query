@@ -1,5 +1,11 @@
 # ember-container-query
 
+## 6.0.0
+
+### Major Changes
+
+- [#259](https://github.com/ijlee2/ember-container-query/pull/259) Dropped Node 18 support ([@ijlee2](https://github.com/ijlee2))
+
 ## 5.1.1
 
 ### Patch Changes
