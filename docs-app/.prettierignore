@@ -8,3 +8,6 @@
 /coverage/
 !.*
 .*/
+*.html
+
+# specific to this package

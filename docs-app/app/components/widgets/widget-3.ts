@@ -10,9 +10,9 @@ interface WidgetsWidget3Signature {
 }
 
 export default class WidgetsWidget3Component extends Component<WidgetsWidget3Signature> {
-  styles = styles;
-
   @tracked concert = {} as Concert;
+
+  styles = styles;
 
   constructor(owner: Owner, args: WidgetsWidget3Signature['Args']) {
     super(owner, args);

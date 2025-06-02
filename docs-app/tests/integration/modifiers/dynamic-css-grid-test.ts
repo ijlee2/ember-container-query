@@ -8,13 +8,7 @@ module('Integration | Modifier | dynamic-css-grid', function (hooks) {
 
   test('We can dynamically style the CSS grid', async function (assert) {
     await render(hbs`
-      <div
-        data-test-list="Tracks"
-        {{dynamic-css-grid
-          numColumns=3
-          numRows=4
-        }}
-      >
+      <div data-test-list="Tracks" {{dynamic-css-grid numColumns=3 numRows=4}}>
       </div>
     `);
 

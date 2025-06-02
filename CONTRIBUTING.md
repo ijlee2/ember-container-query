@@ -15,16 +15,16 @@ You can get started in 2 steps:
 
 <details>
 
-<summary>Lint files</summary>
+<summary>Check and fix errors</summary>
 
-1. When you write code, please check that it meets the linting rules.
+1. As you write code, please check that it meets formatting and linting rules.
 
     ```sh
     # From the workspace root
     pnpm lint
     ```
 
-1. You can run `lint:fix` to automatically fix linting errors.
+1. You can run `lint:fix` to fix errors.
 
     ```sh
     # From the workspace root

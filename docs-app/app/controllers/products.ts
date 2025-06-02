@@ -8,13 +8,9 @@ import styles from './products.css';
 export default class ProductsController extends Controller {
   declare model: Model;
 
-  styles = styles;
-
   @tracked name: string | null = null;
 
-  get isPartOfNestProductDetailsExperiment() {
-    return true;
-  }
+  styles = styles;
 
   get filteredProducts() {
     const { model: products, name } = this;
@@ -30,6 +26,10 @@ export default class ProductsController extends Controller {
 
       return productName.includes(target);
     });
+  }
+
+  get isPartOfNestProductDetailsExperiment() {
+    return true;
   }
 
   @action updateQueryParameters({ key, value }: { key: string; value: any }) {

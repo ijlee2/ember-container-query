@@ -9,18 +9,18 @@ module('Integration | Component | container-query', function (hooks) {
   module('...attributes', function () {
     test('The component accepts splattributes', async function (assert) {
       await render(hbs`
-        {{!-- template-lint-disable no-inline-styles --}}
+        {{! template-lint-disable no-inline-styles }}
         <div style="width: 500px; height: 800px;">
           <ContainerQuery
             @features={{hash
-              small=(width max=300)
-              medium=(width min=300 max=600)
-              large=(width min=600 max=900)
+              large=(width max=900 min=600)
+              medium=(width max=600 min=300)
+              ratio-type-A=(aspect-ratio max=0.75 min=0.25)
+              ratio-type-B=(aspect-ratio max=1.5 min=0.5)
+              ratio-type-C=(aspect-ratio max=2 min=1.25)
               short=(height max=500)
+              small=(width max=300)
               tall=(height min=500)
-              ratio-type-A=(aspect-ratio min=0.25 max=0.75)
-              ratio-type-B=(aspect-ratio min=0.5 max=1.5)
-              ratio-type-C=(aspect-ratio min=1.25 max=2)
             }}
             class="unique-class-name"
             data-test-container-query
@@ -37,7 +37,11 @@ module('Integration | Component | container-query', function (hooks) {
             <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
             <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
 
-            <p data-test-width-height>{{CQ.dimensions.width}} x {{CQ.dimensions.height}}</p>
+            <p data-test-width-height>
+              {{CQ.dimensions.width}}
+              x
+              {{CQ.dimensions.height}}
+            </p>
             <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
           </ContainerQuery>
         </div>

@@ -15,8 +15,8 @@ interface WidgetsWidget3TourScheduleSignature {
 const WidgetsWidget3TourScheduleComponent: TOC<WidgetsWidget3TourScheduleSignature> =
   <template>
     <ContainerQuery
-      @features={{hash small=(width max=400)}}
       @dataAttributePrefix="cq"
+      @features={{hash small=(width max=400)}}
       class={{styles.container}}
     >
       <div class={{styles.splash}}>

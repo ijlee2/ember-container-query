@@ -65,9 +65,7 @@ module('Integration | Component | tracks/table', function (hooks) {
       this.tracks = [];
 
       await render<TestContext>(hbs`
-        <Tracks::Table
-          @tracks={{this.tracks}}
-        />
+        <Tracks::Table @tracks={{this.tracks}} />
       `);
 
       assert.dom('[data-test-row]').doesNotExist('There are 0 tracks.');
@@ -79,9 +77,7 @@ module('Integration | Component | tracks/table', function (hooks) {
       this.tracks = album.tracks;
 
       await render<TestContext>(hbs`
-        <Tracks::Table
-          @tracks={{this.tracks}}
-        />
+        <Tracks::Table @tracks={{this.tracks}} />
       `);
 
       const tracks = findAll('[data-test-row]');

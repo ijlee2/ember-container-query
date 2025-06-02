@@ -15,10 +15,10 @@ interface WidgetsWidget2Signature {
 }
 
 export default class WidgetsWidget2Component extends Component<WidgetsWidget2Signature> {
-  styles = styles;
-
   @tracked data = [] as Data[];
   @tracked summaries = [] as Summary[];
+
+  styles = styles;
 
   constructor(owner: Owner, args: WidgetsWidget2Signature['Args']) {
     super(owner, args);

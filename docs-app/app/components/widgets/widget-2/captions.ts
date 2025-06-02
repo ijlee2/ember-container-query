@@ -23,10 +23,10 @@ interface WidgetsWidget2CaptionsSignature {
 }
 
 export default class WidgetsWidget2CaptionsComponent extends Component<WidgetsWidget2CaptionsSignature> {
+  @tracked currentIndex = 0;
+
   colorSvg = colorSvg;
   styles = styles;
-
-  @tracked currentIndex = 0;
 
   get canShowNextButton(): boolean {
     return this.currentIndex < this.summaries.length - 1;
