@@ -57,17 +57,11 @@ module('Integration | Component | ui/form', function (hooks) {
         </div>
 
         <div>
-          <F.Textarea
-            @key="message"
-            @label="Message"
-          />
+          <F.Textarea @key="message" @label="Message" />
         </div>
 
         <div>
-          <F.Checkbox
-            @key="subscribe"
-            @label="Subscribe to The Ember Times?"
-          />
+          <F.Checkbox @key="subscribe" @label="Subscribe to The Ember Times?" />
         </div>
 
         <div>
@@ -161,17 +155,11 @@ module('Integration | Component | ui/form', function (hooks) {
         </div>
 
         <div>
-          <F.Textarea
-            @key="message"
-            @label="Message"
-          />
+          <F.Textarea @key="message" @label="Message" />
         </div>
 
         <div>
-          <F.Checkbox
-            @key="subscribe"
-            @label="Subscribe to The Ember Times?"
-          />
+          <F.Checkbox @key="subscribe" @label="Subscribe to The Ember Times?" />
         </div>
 
         <div>

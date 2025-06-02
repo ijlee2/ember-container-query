@@ -7,19 +7,10 @@
       "test-app/*": ["app/*"],
       "*": ["types/*"]
     },
-    "types": [
-      "ember-source/types"
-    ]
+    "types": ["ember-source/types"]
   },
-  "include": [
-    "app/**/*",
-    "tests/**/*",
-    "types/**/*"
-  ],
+  "include": ["app/**/*", "tests/**/*", "types/**/*"],
   "glint": {
-    "environment": [
-      "ember-loose",
-      "ember-template-imports"
-    ]
+    "environment": ["ember-loose", "ember-template-imports"]
   }
 }

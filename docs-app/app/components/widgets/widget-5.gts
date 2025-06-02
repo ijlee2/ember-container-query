@@ -25,8 +25,8 @@ const WidgetsWidget5Component: TOC<WidgetsWidget5Signature> = <template>
         <p class={{styles.highlight}}>
           <a
             href="https://github.com/ijlee2/ember-container-query"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             ember-container-query
           </a>

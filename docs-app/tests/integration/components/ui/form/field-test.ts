@@ -11,20 +11,13 @@ module('Integration | Component | ui/form/field', function (hooks) {
     await render(hbs`
       <Ui::Form::Field>
         <:label as |l|>
-          <label
-            data-test-label
-            for={{l.inputId}}
-          >
+          <label data-test-label for={{l.inputId}}>
             Name
           </label>
         </:label>
 
         <:field as |f|>
-          <input
-            data-test-field="Name"
-            id={{f.inputId}}
-            type="text"
-          />
+          <input data-test-field="Name" id={{f.inputId}} type="text" />
         </:field>
       </Ui::Form::Field>
     `);
@@ -44,25 +37,15 @@ module('Integration | Component | ui/form/field', function (hooks) {
 
   test('We can pass @errorMessage to show an error message', async function (assert) {
     await render(hbs`
-      <Ui::Form::Field
-        @errorMessage="Please provide a value."
-      >
+      <Ui::Form::Field @errorMessage="Please provide a value.">
         <:label as |l|>
-          <label
-            data-test-label
-            for={{l.inputId}}
-          >
+          <label data-test-label for={{l.inputId}}>
             Name
           </label>
         </:label>
 
         <:field as |f|>
-          <input
-            data-test-field="Name"
-            id={{f.inputId}}
-            required
-            type="text"
-          />
+          <input data-test-field="Name" id={{f.inputId}} required type="text" />
         </:field>
       </Ui::Form::Field>
     `);

@@ -12,8 +12,8 @@ interface WidgetsWidget1Signature {
 const WidgetsWidget1Component: TOC<WidgetsWidget1Signature> = <template>
   <ContainerQuery
     @features={{hash
+      square=(aspectRatio max=1.25 min=0.8)
       tall=(aspectRatio max=0.8)
-      square=(aspectRatio min=0.8 max=1.25)
       wide=(aspectRatio min=1.25)
     }}
     @tagName="section"

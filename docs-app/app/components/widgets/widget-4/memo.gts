@@ -14,9 +14,9 @@ interface WidgetsWidget4MemoSignature {
 const WidgetsWidget4MemoComponent: TOC<WidgetsWidget4MemoSignature> = <template>
   <ContainerQuery
     @features={{hash
-      small=(width max=200)
       large=(width min=200)
       short=(height max=200)
+      small=(width max=200)
     }}
     @tagName="article"
     class={{styles.container}}

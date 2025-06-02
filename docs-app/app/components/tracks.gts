@@ -16,9 +16,9 @@ interface TracksSignature {
 const TracksComponent: TOC<TracksSignature> = <template>
   <ContainerQuery
     @features={{hash
-      small=(width max=480)
-      medium=(width min=480 max=640)
       large=(width min=640)
+      medium=(width max=640 min=480)
+      small=(width max=480)
       tall=(height min=320)
     }}
     as |CQ|

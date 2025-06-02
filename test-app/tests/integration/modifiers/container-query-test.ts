@@ -8,15 +8,9 @@ module('Integration | Modifier | container-query', function (hooks) {
 
   test('We can call the modifier without passing arguments', async function (assert) {
     await render(hbs`
-      {{!-- template-lint-disable no-inline-styles --}}
-      <div
-        data-test-parent-element
-        style="width: 250px; height: 500px;"
-      >
-        <div
-          style="width: 100%; height: 100%;"
-          {{container-query}}
-        >
+      {{! template-lint-disable no-inline-styles }}
+      <div data-test-parent-element style="width: 250px; height: 500px;">
+        <div style="width: 100%; height: 100%;" {{container-query}}>
         </div>
       </div>
     `);

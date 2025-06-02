@@ -22,7 +22,7 @@ module('Integration | Helper | aspect-ratio', function (hooks) {
 
   test('if min and max are provided, returns them as they are', async function (assert) {
     await render(hbs`
-      {{#let (aspect-ratio min=0.25 max=0.75) as |output|}}
+      {{#let (aspect-ratio max=0.75 min=0.25) as |output|}}
         <p data-test-value="dimension">{{output.dimension}}</p>
         <p data-test-value="min">{{output.min}}</p>
         <p data-test-value="max">{{output.max}}</p>

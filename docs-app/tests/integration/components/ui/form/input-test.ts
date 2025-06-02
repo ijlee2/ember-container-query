@@ -164,8 +164,8 @@ module('Integration | Component | ui/form/input', function (hooks) {
         @changeset={{this.changeset}}
         @key="email"
         @label="Email"
-        @type="email"
         @onUpdate={{this.updateChangeset}}
+        @type="email"
       />
     `);
 
