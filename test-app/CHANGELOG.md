@@ -1,5 +1,12 @@
 # test-app
 
+## 2.0.1
+
+### Patch Changes
+
+- [#261](https://github.com/ijlee2/ember-container-query/pull/261) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#260](https://github.com/ijlee2/ember-container-query/pull/260) Separated formatting and linting ([@ijlee2](https://github.com/ijlee2))
+
 ## 2.0.0
 
 ### Major Changes
