@@ -35,10 +35,10 @@
     "sort-package-json": "^3.4.0",
     "update-workspace-root-version": "^2.0.1"
   },
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@10.14.0",
   "engines": {
     "node": "20.* || >= 22",
-    "pnpm": ">= 9"
+    "pnpm": ">= 10"
   },
   "pnpm": {
     "patchedDependencies": {
