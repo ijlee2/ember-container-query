@@ -4,42 +4,42 @@
 }
 
 .container:not(.is-wide, .no-feedback) {
-  grid-column-gap: 0;
-  grid-row-gap: 0.5rem;
+  column-gap: 0;
   grid-template-areas:
     "label"
     "field"
     "feedback";
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
+  row-gap: 0.5rem;
 }
 
 .container:not(.is-wide).no-feedback {
-  grid-column-gap: 0;
-  grid-row-gap: 0.5rem;
+  column-gap: 0;
   grid-template-areas:
     "label"
     "field";
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
+  row-gap: 0.5rem;
 }
 
 .container.is-wide:not(.no-feedback) {
-  grid-column-gap: 1rem;
-  grid-row-gap: 0.5rem;
+  column-gap: 1rem;
   grid-template-areas:
     "label field"
     "label feedback";
   grid-template-columns: 10rem 1fr;
   grid-template-rows: 1fr auto;
+  row-gap: 0.5rem;
 }
 
 .container.is-wide.no-feedback {
-  grid-column-gap: 1rem;
-  grid-row-gap: 0.5rem;
+  column-gap: 1rem;
   grid-template-areas: "label field";
   grid-template-columns: 10rem 1fr;
   grid-template-rows: 1fr;
+  row-gap: 0.5rem;
 }
 
 .label {
@@ -69,19 +69,19 @@
 
 /* Exceptions for mobile */
 .container.is-inline:not(.is-wide, .no-feedback) {
-  grid-column-gap: 1rem;
-  grid-row-gap: 0.5rem;
+  column-gap: 1rem;
   grid-template-areas:
     "field label"
     "feedback feedback";
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr auto;
+  row-gap: 0.5rem;
 }
 
 .container.is-inline:not(.is-wide).no-feedback {
-  grid-column-gap: 1rem;
-  grid-row-gap: 0;
+  column-gap: 1rem;
   grid-template-areas: "field label";
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
+  row-gap: 0;
 }

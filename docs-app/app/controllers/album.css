@@ -39,7 +39,7 @@
 }
 
 .with-lyrics {
-  grid-column-gap: 2rem;
+  column-gap: 2rem;
   grid-template-areas:
     "album-summary track-lyrics"
     "album-tracks track-lyrics";

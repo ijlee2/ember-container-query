@@ -19,6 +19,7 @@ export function assertDimensions(assert: Assert, dimensions: Dimensions): void {
   // Check aspect ratio
   const targetElement = find('[data-test-aspect-ratio]') as HTMLElement;
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
   const aspectRatio = parseFloat(targetElement.textContent!.trim());
   const expectedAspectRatio = expectedWidth / expectedHeight;
   const tolerance = 0.001;
