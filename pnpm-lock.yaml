@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   ember-a11y-refocus:
-    hash: iqpsmfzfozxsyi7yruczbhox3q
+    hash: 5251bf5aa57cd30b393f895afdc7f7f7fb3b96d334de9a7c4703a082237a4203
     path: patches/ember-a11y-refocus.patch
 
 importers:
@@ -129,7 +129,7 @@ importers:
         version: 3.2.0
       ember-a11y-refocus:
         specifier: ^5.0.0
-        version: 5.0.0(patch_hash=iqpsmfzfozxsyi7yruczbhox3q)(@babel/core@7.28.0)(ember-source@6.6.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
+        version: 5.0.0(patch_hash=5251bf5aa57cd30b393f895afdc7f7f7fb3b96d334de9a7c4703a082237a4203)(@babel/core@7.28.0)(ember-source@6.6.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
       ember-a11y-testing:
         specifier: ^7.1.2
         version: 7.1.2(@ember/test-helpers@5.2.2(@babel/core@7.28.0)(@glint/template@1.5.2))(@glint/template@1.5.2)(qunit@2.24.1)(webpack@5.101.0)
@@ -11385,7 +11385,7 @@ snapshots:
 
   electron-to-chromium@1.5.194: {}
 
-  ember-a11y-refocus@5.0.0(patch_hash=iqpsmfzfozxsyi7yruczbhox3q)(@babel/core@7.28.0)(ember-source@6.6.0(@glimmer/component@2.0.0)(rsvp@4.8.5)):
+  ember-a11y-refocus@5.0.0(patch_hash=5251bf5aa57cd30b393f895afdc7f7f7fb3b96d334de9a7c4703a082237a4203)(@babel/core@7.28.0)(ember-source@6.6.0(@glimmer/component@2.0.0)(rsvp@4.8.5)):
     dependencies:
       '@embroider/addon-shim': 1.10.0
       '@glimmer/component': 2.0.0
