@@ -1,6 +1,6 @@
 .widgets {
   display: grid;
-  grid-gap: 1rem;
+  gap: 1rem;
   grid-template-areas:
     "widget-1"
     "widget-2"

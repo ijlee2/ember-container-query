@@ -1,0 +1,14 @@
+diff --git a/package.json b/package.json
+index 45bb7a7c95ce6cfdbb2cd105b4bbe70574af5891..2c5ad8ee324af895c28c3d3bbd84ba39ab9ad917 100644
+--- a/package.json
++++ b/package.json
+@@ -25,7 +25,8 @@
+       "types": "./declarations/*.d.ts",
+       "default": "./dist/*.js"
+     },
+-    "./addon-main.js": "./addon-main.cjs"
++    "./addon-main.js": "./addon-main.cjs",
++    "./styles.css": "./dist/styles/navigation-narrator.css"
+   },
+   "typesVersions": {
+     "*": {

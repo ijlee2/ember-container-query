@@ -1,11 +1,12 @@
 .header {
+  column-gap: 0;
   display: grid;
-  grid-gap: 0.25rem 0;
   grid-template-areas:
     "avatar-container name"
     "avatar-container metadata";
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto;
+  row-gap: 0.25rem;
 }
 
 .avatar-container {
@@ -41,10 +42,11 @@
 }
 
 .header.horizontal-layout {
-  grid-gap: 0 0.6rem;
+  column-gap: 0.6rem;
   grid-template-areas: "name metadata";
   grid-template-columns: 1fr auto;
   grid-template-rows: 1fr;
+  row-gap: 0;
 }
 
 .header.minimal-layout .name {
