@@ -39,5 +39,10 @@
   "engines": {
     "node": "20.* || >= 22",
     "pnpm": ">= 9"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "ember-a11y-refocus": "patches/ember-a11y-refocus.patch"
+    }
   }
 }

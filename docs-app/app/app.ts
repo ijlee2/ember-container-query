@@ -1,3 +1,4 @@
+import 'ember-a11y-refocus/styles.css';
 import './assets/app.css';
 
 import Application from '@ember/application';
