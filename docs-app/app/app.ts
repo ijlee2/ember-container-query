@@ -1,5 +1,6 @@
 import 'ember-a11y-refocus/styles.css';
 import './assets/app.css';
+import './ember-inspector';
 
 import Application from '@ember/application';
 import loadInitializers from 'ember-load-initializers';
