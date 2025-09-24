@@ -64,6 +64,7 @@
   },
   "dependencies": {
     "@embroider/addon-shim": "^1.10.0",
+    "@glimmer/component": "^2.0.0",
     "decorator-transforms": "^2.3.0",
     "ember-element-helper": "^0.8.8",
     "ember-modifier": "^4.2.2",
@@ -74,7 +75,6 @@
     "@babel/plugin-transform-typescript": "^7.28.0",
     "@babel/runtime": "^7.28.4",
     "@embroider/addon-dev": "^8.1.0",
-    "@glimmer/component": "^2.0.0",
     "@glimmer/tracking": "^1.1.2",
     "@glint/core": "^1.5.2",
     "@glint/environment-ember-loose": "^1.5.2",
