@@ -1,6 +1,6 @@
 {
   "name": "ember-container-query",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "description": "Make container queries that harness the power of Ember",
   "keywords": [
     "container-queries",

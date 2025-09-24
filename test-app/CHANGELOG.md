@@ -1,5 +1,12 @@
 # test-app
 
+## 2.0.3
+
+### Patch Changes
+
+- [#265](https://github.com/ijlee2/ember-container-query/pull/265) Listed @glimmer/component as a dependency to account for the change in ember-auto-import@2.10.1 ([@ijlee2](https://github.com/ijlee2))
+- [#265](https://github.com/ijlee2/ember-container-query/pull/265) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 2.0.2
 
 ### Patch Changes
