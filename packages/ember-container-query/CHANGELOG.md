@@ -1,5 +1,11 @@
 # ember-container-query
 
+## 6.0.4
+
+### Patch Changes
+
+- [#268](https://github.com/ijlee2/ember-container-query/pull/268) Moved @glimmer/component back to devDependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 6.0.3
 
 ### Patch Changes

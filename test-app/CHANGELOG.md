@@ -1,5 +1,11 @@
 # test-app
 
+## 2.0.4
+
+### Patch Changes
+
+- [#268](https://github.com/ijlee2/ember-container-query/pull/268) Pinned ember-auto-import to 2.10.0 ([@ijlee2](https://github.com/ijlee2))
+
 ## 2.0.3
 
 ### Patch Changes
