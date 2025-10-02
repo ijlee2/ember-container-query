@@ -39,5 +39,10 @@
   "engines": {
     "node": "20.* || >= 22",
     "pnpm": ">= 10"
+  },
+  "pnpm": {
+    "overrides": {
+      "ember-auto-import": "2.10.0"
+    }
   }
 }
