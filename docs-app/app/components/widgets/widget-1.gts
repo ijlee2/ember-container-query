@@ -40,9 +40,3 @@ const WidgetsWidget1Component: TOC<WidgetsWidget1Signature> = <template>
 </template>;
 
 export default WidgetsWidget1Component;
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Widgets::Widget-1': typeof WidgetsWidget1Component;
-  }
-}

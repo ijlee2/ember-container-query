@@ -50,9 +50,3 @@ const WidgetsWidget3TourScheduleComponent: TOC<WidgetsWidget3TourScheduleSignatu
   </template>;
 
 export default WidgetsWidget3TourScheduleComponent;
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Widgets::Widget-3::TourSchedule': typeof WidgetsWidget3TourScheduleComponent;
-  }
-}

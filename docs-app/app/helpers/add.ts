@@ -14,9 +14,3 @@ const AddHelper = helper<AddHelperSignature>((positional) => {
 });
 
 export default AddHelper;
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    add: typeof AddHelper;
-  }
-}

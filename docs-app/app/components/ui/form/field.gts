@@ -66,9 +66,3 @@ export default class UiFormFieldComponent extends Component<UiFormFieldSignature
     </div>
   </template>
 }
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Ui::Form::Field': typeof UiFormFieldComponent;
-  }
-}

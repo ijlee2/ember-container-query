@@ -37,9 +37,3 @@ const WidgetsWidget4MemoComponent: TOC<WidgetsWidget4MemoSignature> = <template>
 </template>;
 
 export default WidgetsWidget4MemoComponent;
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Widgets::Widget-4::Memo': typeof WidgetsWidget4MemoComponent;
-  }
-}
