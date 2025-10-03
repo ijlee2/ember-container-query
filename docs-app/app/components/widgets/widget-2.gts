@@ -11,6 +11,8 @@ import {
   createSummariesForCaptions,
 } from '../../utils/components/widgets/widget-2';
 import styles from './widget-2.css';
+import WidgetsWidget2Captions from './widget-2/captions';
+import WidgetsWidget2StackedChart from './widget-2/stacked-chart';
 
 interface WidgetsWidget2Signature {
   Args: {};
@@ -50,12 +52,12 @@ export default class WidgetsWidget2Component extends Component<WidgetsWidget2Sig
 
       {{#unless CQ.features.short}}
         <div class={{this.styles.visualization}}>
-          <Widgets::Widget-2::StackedChart @data={{this.data}} />
+          <WidgetsWidget2StackedChart @data={{this.data}} />
         </div>
       {{/unless}}
 
       <div class={{this.styles.captions}}>
-        <Widgets::Widget-2::Captions @summaries={{this.summaries}} />
+        <WidgetsWidget2Captions @summaries={{this.summaries}} />
       </div>
     </ContainerQuery>
   </template>

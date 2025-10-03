@@ -38,7 +38,7 @@ module('Integration | Component | ui/form/number', function (hooks) {
         <UiFormNumber
           @changeset={{self.changeset}}
           @key="donation"
-          @label="Donation amount (\$)"
+          @label="Donation amount ($)"
           @minValue={{0}}
           @onUpdate={{self.updateChangeset}}
           @placeholder="100"
@@ -73,7 +73,7 @@ module('Integration | Component | ui/form/number', function (hooks) {
           @changeset={{self.changeset}}
           @isDisabled={{true}}
           @key="donation"
-          @label="Donation amount (\$)"
+          @label="Donation amount ($)"
           @minValue={{0}}
           @onUpdate={{self.updateChangeset}}
           @placeholder="100"
@@ -95,7 +95,7 @@ module('Integration | Component | ui/form/number', function (hooks) {
           @changeset={{self.changeset}}
           @isReadOnly={{true}}
           @key="donation"
-          @label="Donation amount (\$)"
+          @label="Donation amount ($)"
           @minValue={{0}}
           @onUpdate={{self.updateChangeset}}
           @placeholder="100"
@@ -118,7 +118,7 @@ module('Integration | Component | ui/form/number', function (hooks) {
           @changeset={{self.changeset}}
           @isRequired={{true}}
           @key="donation"
-          @label="Donation amount (\$)"
+          @label="Donation amount ($)"
           @minValue={{0}}
           @onUpdate={{self.updateChangeset}}
           @placeholder="100"
@@ -161,7 +161,7 @@ module('Integration | Component | ui/form/number', function (hooks) {
           @changeset={{self.changeset}}
           @isRequired={{true}}
           @key="donation"
-          @label="Donation amount (\$)"
+          @label="Donation amount ($)"
           @minValue={{0}}
           @onUpdate={{self.updateChangeset}}
           @placeholder="100"

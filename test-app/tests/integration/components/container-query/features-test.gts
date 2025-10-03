@@ -38,8 +38,7 @@ module('Integration | Component | container-query', function (hooks) {
   setupRenderingTest(hooks);
 
   module('When @features is undefined', function (hooks) {
-    hooks.beforeEach(async function () {
-      /* @ts-expect-error: We are testing a special case (@features is undefined) */
+    hooks.beforeEach(async function (this: TestContext) {
       this.features = undefined;
 
       const self = this;

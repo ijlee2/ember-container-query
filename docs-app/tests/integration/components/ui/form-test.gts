@@ -74,7 +74,7 @@ module('Integration | Component | ui/form', function (hooks) {
           <div>
             <F.Number
               @key="donation"
-              @label="Donation amount (\$)"
+              @label="Donation amount ($)"
               @minValue={{0}}
               @placeholder="100"
               @step={{10}}
@@ -179,7 +179,7 @@ module('Integration | Component | ui/form', function (hooks) {
           <div>
             <F.Number
               @key="donation"
-              @label="Donation amount (\$)"
+              @label="Donation amount ($)"
               @minValue={{0}}
               @placeholder="100"
               @step={{10}}
