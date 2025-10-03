@@ -1,10 +1,9 @@
 import { on } from '@ember/modifier';
+import { action, get } from '@ember/object';
+import Component from '@glimmer/component';
 import UiFormField from 'docs-app/components/ui/form/field';
 import { or } from 'ember-truth-helpers';
 import { local } from 'embroider-css-modules';
-
-import { action, get } from '@ember/object';
-import Component from '@glimmer/component';
 
 import { generateErrorMessage } from '../../../utils/components/ui/form';
 import styles from './textarea.css';
@@ -49,43 +48,39 @@ export default class UiFormTextareaComponent extends Component<UiFormTextareaSig
     onUpdate({ key, value });
   }
 
-
   <template>
-  <UiFormField
-  @errorMessage={{this.errorMessage}}
-  @isWide={{@isWide}}
-  >
-  <:label as |l|>
-  <label data-test-label for={{l.inputId}}>
-    {{@label}}
+    <UiFormField @errorMessage={{this.errorMessage}} @isWide={{@isWide}}>
+      <:label as |l|>
+        <label data-test-label for={{l.inputId}}>
+          {{@label}}
 
-    {{#if @isRequired}}
-      <span aria-hidden="true">
-        *
-      </span>
-    {{/if}}
-  </label>
-  </:label>
+          {{#if @isRequired}}
+            <span aria-hidden="true">
+              *
+            </span>
+          {{/if}}
+        </label>
+      </:label>
 
-  <:field as |f|>
-  <textarea
-    class={{local
-      this.styles
-      "textarea"
-      (if (or @isDisabled @isReadOnly) "is-disabled")
-    }}
-    data-test-field={{@label}}
-    disabled={{@isDisabled}}
-    id={{f.inputId}}
-    placeholder={{@placeholder}}
-    readonly={{@isReadOnly}}
-    required={{@isRequired}}
-    rows="4"
-    value={{this.value}}
-    {{on "input" this.updateValue}}
-  ></textarea>
-  </:field>
-  </UiFormField>
+      <:field as |f|>
+        <textarea
+          class={{local
+            this.styles
+            "textarea"
+            (if (or @isDisabled @isReadOnly) "is-disabled")
+          }}
+          data-test-field={{@label}}
+          disabled={{@isDisabled}}
+          id={{f.inputId}}
+          placeholder={{@placeholder}}
+          readonly={{@isReadOnly}}
+          required={{@isRequired}}
+          rows="4"
+          value={{this.value}}
+          {{on "input" this.updateValue}}
+        ></textarea>
+      </:field>
+    </UiFormField>
   </template>
 }
 

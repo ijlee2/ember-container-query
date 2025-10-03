@@ -24,28 +24,22 @@ export default class WidgetsWidget3Component extends Component<WidgetsWidget3Sig
     this.concert = concert;
   }
 
-
   <template>
-  <section class={{this.styles.container}}>
-  <header class={{this.styles.header}}>
-  <h2>Widget 3</h2>
+    <section class={{this.styles.container}}>
+      <header class={{this.styles.header}}>
+        <h2>Widget 3</h2>
 
-  <div class={{this.styles.actions}}>
-    <a data-test-link="All tours" href="#">
-      All tours
-    </a>
-  </div>
-  </header>
+        <div class={{this.styles.actions}}>
+          <a data-test-link="All tours" href="#">
+            All tours
+          </a>
+        </div>
+      </header>
 
-  <div
-  class={{this.styles.tour-schedule}}
-  data-test-tour-schedule
-  >
-  <Widgets::Widget-3::TourSchedule
-    @concert={{this.concert}}
-  />
-  </div>
-  </section>
+      <div class={{this.styles.tour-schedule}} data-test-tour-schedule>
+        <Widgets::Widget-3::TourSchedule @concert={{this.concert}} />
+      </div>
+    </section>
   </template>
 }
 

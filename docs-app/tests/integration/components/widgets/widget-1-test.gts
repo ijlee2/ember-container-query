@@ -6,9 +6,7 @@ module('Integration | Component | widgets/widget-1', function (hooks) {
   setupRenderingTest(hooks);
 
   test('The component renders', async function (assert) {
-    await render(<template>
-    <Widgets::Widget-1 />
-    </template>);
+    await render(<template><Widgets::Widget-1 /></template>);
 
     const titles = findAll('[data-test-title]');
 

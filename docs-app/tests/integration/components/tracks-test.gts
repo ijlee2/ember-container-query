@@ -1,9 +1,8 @@
-import Tracks from 'docs-app/components/tracks';
-
 import {
   render,
   type TestContext as BaseTestContext,
 } from '@ember/test-helpers';
+import Tracks from 'docs-app/components/tracks';
 import { type Album, album } from 'docs-app/data';
 import { resizeContainer, setupRenderingTest } from 'docs-app/tests/helpers';
 import { module, test } from 'qunit';
@@ -22,16 +21,15 @@ module('Integration | Component | tracks', function (hooks) {
   test('uses container queries to render tracks', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
     // Features: small, short
-    await render(<template>
-    {{! template-lint-disable no-inline-styles }}
-    <div data-test-parent-element style="width: 240px; height: 240px;">
-    <Tracks @tracks={{self.album.tracks}} />
-    </div>
-    </template>);
+    await render(
+      <template>
+        {{! template-lint-disable no-inline-styles }}
+        <div data-test-parent-element style="width: 240px; height: 240px;">
+          <Tracks @tracks={{self.album.tracks}} />
+        </div>
+      </template>,
+    );
 
     assert
       .dom('[data-test-list="Tracks"]')

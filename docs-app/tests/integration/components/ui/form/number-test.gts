@@ -1,11 +1,10 @@
-import UiFormNumber from 'docs-app/components/ui/form/number';
-
 import { set } from '@ember/object';
 import {
   fillIn,
   render,
   type TestContext as BaseTestContext,
 } from '@ember/test-helpers';
+import UiFormNumber from 'docs-app/components/ui/form/number';
 import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { module, test } from 'qunit';
 
@@ -34,19 +33,18 @@ module('Integration | Component | ui/form/number', function (hooks) {
   test('The component renders a label and an input', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormNumber
-    @changeset={{self.changeset}}
-    @key="donation"
-    @label="Donation amount (\$)"
-    @minValue={{0}}
-    @onUpdate={{self.updateChangeset}}
-    @placeholder="100"
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormNumber
+          @changeset={{self.changeset}}
+          @key="donation"
+          @label="Donation amount (\$)"
+          @minValue={{0}}
+          @onUpdate={{self.updateChangeset}}
+          @placeholder="100"
+        />
+      </template>,
+    );
 
     assert
       .dom('[data-test-label]')
@@ -69,20 +67,19 @@ module('Integration | Component | ui/form/number', function (hooks) {
   test('We can pass @isDisabled to disable the input', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormNumber
-    @changeset={{self.changeset}}
-    @isDisabled={{true}}
-    @key="donation"
-    @label="Donation amount (\$)"
-    @minValue={{0}}
-    @onUpdate={{self.updateChangeset}}
-    @placeholder="100"
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormNumber
+          @changeset={{self.changeset}}
+          @isDisabled={{true}}
+          @key="donation"
+          @label="Donation amount (\$)"
+          @minValue={{0}}
+          @onUpdate={{self.updateChangeset}}
+          @placeholder="100"
+        />
+      </template>,
+    );
 
     assert
       .dom('[data-test-field="Donation amount ($)"]')
@@ -92,20 +89,19 @@ module('Integration | Component | ui/form/number', function (hooks) {
   test('We can pass @isReadOnly to display the value', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormNumber
-    @changeset={{self.changeset}}
-    @isReadOnly={{true}}
-    @key="donation"
-    @label="Donation amount (\$)"
-    @minValue={{0}}
-    @onUpdate={{self.updateChangeset}}
-    @placeholder="100"
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormNumber
+          @changeset={{self.changeset}}
+          @isReadOnly={{true}}
+          @key="donation"
+          @label="Donation amount (\$)"
+          @minValue={{0}}
+          @onUpdate={{self.updateChangeset}}
+          @placeholder="100"
+        />
+      </template>,
+    );
 
     assert
       .dom('[data-test-field="Donation amount ($)"]')
@@ -116,20 +112,19 @@ module('Integration | Component | ui/form/number', function (hooks) {
   test('We can pass @isRequired to require a value', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormNumber
-    @changeset={{self.changeset}}
-    @isRequired={{true}}
-    @key="donation"
-    @label="Donation amount (\$)"
-    @minValue={{0}}
-    @onUpdate={{self.updateChangeset}}
-    @placeholder="100"
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormNumber
+          @changeset={{self.changeset}}
+          @isRequired={{true}}
+          @key="donation"
+          @label="Donation amount (\$)"
+          @minValue={{0}}
+          @onUpdate={{self.updateChangeset}}
+          @placeholder="100"
+        />
+      </template>,
+    );
 
     assert
       .dom('[data-test-label]')
@@ -160,20 +155,19 @@ module('Integration | Component | ui/form/number', function (hooks) {
 
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormNumber
-    @changeset={{self.changeset}}
-    @isRequired={{true}}
-    @key="donation"
-    @label="Donation amount (\$)"
-    @minValue={{0}}
-    @onUpdate={{self.updateChangeset}}
-    @placeholder="100"
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormNumber
+          @changeset={{self.changeset}}
+          @isRequired={{true}}
+          @key="donation"
+          @label="Donation amount (\$)"
+          @minValue={{0}}
+          @onUpdate={{self.updateChangeset}}
+          @placeholder="100"
+        />
+      </template>,
+    );
 
     // Update the value
     await fillIn('[data-test-field="Donation amount ($)"]', '');

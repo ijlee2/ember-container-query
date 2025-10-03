@@ -1,11 +1,10 @@
-import UiFormInput from 'docs-app/components/ui/form/input';
-
 import { set } from '@ember/object';
 import {
   fillIn,
   render,
   type TestContext as BaseTestContext,
 } from '@ember/test-helpers';
+import UiFormInput from 'docs-app/components/ui/form/input';
 import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { module, test } from 'qunit';
 
@@ -33,17 +32,16 @@ module('Integration | Component | ui/form/input', function (hooks) {
   test('The component renders a label and an input', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormInput
-    @changeset={{self.changeset}}
-    @key="name"
-    @label="Name"
-    @onUpdate={{self.updateChangeset}}
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormInput
+          @changeset={{self.changeset}}
+          @key="name"
+          @label="Name"
+          @onUpdate={{self.updateChangeset}}
+        />
+      </template>,
+    );
 
     assert
       .dom('[data-test-label]')
@@ -66,18 +64,17 @@ module('Integration | Component | ui/form/input', function (hooks) {
   test('We can pass @isDisabled to disable the input', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormInput
-    @changeset={{self.changeset}}
-    @isDisabled={{true}}
-    @key="name"
-    @label="Name"
-    @onUpdate={{self.updateChangeset}}
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormInput
+          @changeset={{self.changeset}}
+          @isDisabled={{true}}
+          @key="name"
+          @label="Name"
+          @onUpdate={{self.updateChangeset}}
+        />
+      </template>,
+    );
 
     assert.dom('[data-test-field="Name"]').isDisabled('The input is disabled.');
   });
@@ -85,18 +82,17 @@ module('Integration | Component | ui/form/input', function (hooks) {
   test('We can pass @isReadOnly to display the value', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormInput
-    @changeset={{self.changeset}}
-    @isReadOnly={{true}}
-    @key="name"
-    @label="Name"
-    @onUpdate={{self.updateChangeset}}
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormInput
+          @changeset={{self.changeset}}
+          @isReadOnly={{true}}
+          @key="name"
+          @label="Name"
+          @onUpdate={{self.updateChangeset}}
+        />
+      </template>,
+    );
 
     assert
       .dom('[data-test-field="Name"]')
@@ -107,18 +103,17 @@ module('Integration | Component | ui/form/input', function (hooks) {
   test('We can pass @isRequired to require a value', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormInput
-    @changeset={{self.changeset}}
-    @isRequired={{true}}
-    @key="name"
-    @label="Name"
-    @onUpdate={{self.updateChangeset}}
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormInput
+          @changeset={{self.changeset}}
+          @isRequired={{true}}
+          @key="name"
+          @label="Name"
+          @onUpdate={{self.updateChangeset}}
+        />
+      </template>,
+    );
 
     assert
       .dom('[data-test-label]')
@@ -144,18 +139,17 @@ module('Integration | Component | ui/form/input', function (hooks) {
 
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormInput
-    @changeset={{self.changeset}}
-    @isRequired={{true}}
-    @key="name"
-    @label="Name"
-    @onUpdate={{self.updateChangeset}}
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormInput
+          @changeset={{self.changeset}}
+          @isRequired={{true}}
+          @key="name"
+          @label="Name"
+          @onUpdate={{self.updateChangeset}}
+        />
+      </template>,
+    );
 
     // Update the value
     await fillIn('[data-test-field="Name"]', '');
@@ -187,18 +181,17 @@ module('Integration | Component | ui/form/input', function (hooks) {
   test('We can pass @type to create an email input', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormInput
-    @changeset={{self.changeset}}
-    @key="email"
-    @label="Email"
-    @onUpdate={{self.updateChangeset}}
-    @type="email"
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormInput
+          @changeset={{self.changeset}}
+          @key="email"
+          @label="Email"
+          @onUpdate={{self.updateChangeset}}
+          @type="email"
+        />
+      </template>,
+    );
 
     assert
       .dom('[data-test-label]')

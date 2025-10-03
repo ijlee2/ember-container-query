@@ -6,45 +6,45 @@ import { pageTitle } from 'ember-page-title';
 import { local } from 'embroider-css-modules';
 
 <template>
-{{pageTitle "Products"}}
+  {{pageTitle "Products"}}
 
-<UiPage @title="Products">
-  <div
-    class={{local
-      @controller.styles
-      (if
-        @controller.isPartOfNestProductDetailsExperiment
-        (array "shared-layout" "products-with-details")
-        (array "shared-layout" "products")
-      )
-      "sticky-container"
-    }}
-  >
-    <div class={{@controller.styles.filters}}>
-      <div class={{@controller.styles.filter}}>
-        <UiFormInput
-          @changeset={{hash name=@controller.name}}
-          @key="name"
-          @label="Filter by"
-          @onUpdate={{@controller.updateQueryParameters}}
-          @placeholder="Cake, pasta, etc."
-        />
+  <UiPage @title="Products">
+    <div
+      class={{local
+        @controller.styles
+        (if
+          @controller.isPartOfNestProductDetailsExperiment
+          (array "shared-layout" "products-with-details")
+          (array "shared-layout" "products")
+        )
+        "sticky-container"
+      }}
+    >
+      <div class={{@controller.styles.filters}}>
+        <div class={{@controller.styles.filter}}>
+          <UiFormInput
+            @changeset={{hash name=@controller.name}}
+            @key="name"
+            @label="Filter by"
+            @onUpdate={{@controller.updateQueryParameters}}
+            @placeholder="Cake, pasta, etc."
+          />
+        </div>
+      </div>
+
+      <div class={{@controller.styles.list}}>
+        {{#each @controller.filteredProducts as |product|}}
+          <ProductsProductCard @product={{product}} />
+        {{else}}
+          <p>
+            No products found.
+          </p>
+        {{/each}}
+      </div>
+
+      <div class={{@controller.styles.product-details}}>
+        {{outlet}}
       </div>
     </div>
-
-    <div class={{@controller.styles.list}}>
-      {{#each @controller.filteredProducts as |product|}}
-        <ProductsProductCard @product={{product}} />
-      {{else}}
-        <p>
-          No products found.
-        </p>
-      {{/each}}
-    </div>
-
-    <div class={{@controller.styles.product-details}}>
-      {{outlet}}
-    </div>
-  </div>
-</UiPage>
+  </UiPage>
 </template>

@@ -1,6 +1,5 @@
-import UiFormField from 'docs-app/components/ui/form/field';
-
 import { render } from '@ember/test-helpers';
+import UiFormField from 'docs-app/components/ui/form/field';
 import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { a11yAudit } from 'ember-a11y-testing/test-support';
 import { module, test } from 'qunit';
@@ -9,19 +8,21 @@ module('Integration | Component | ui/form/field', function (hooks) {
   setupRenderingTest(hooks);
 
   test('The component handles the field layout', async function (assert) {
-    await render(<template>
-    <UiFormField>
-    <:label as |l|>
-      <label data-test-label for={{l.inputId}}>
-        Name
-      </label>
-    </:label>
+    await render(
+      <template>
+        <UiFormField>
+          <:label as |l|>
+            <label data-test-label for={{l.inputId}}>
+              Name
+            </label>
+          </:label>
 
-    <:field as |f|>
-      <input data-test-field="Name" id={{f.inputId}} type="text" />
-    </:field>
-    </UiFormField>
-    </template>);
+          <:field as |f|>
+            <input data-test-field="Name" id={{f.inputId}} type="text" />
+          </:field>
+        </UiFormField>
+      </template>,
+    );
 
     assert.dom('[data-test-label]').hasText('Name', 'We see the label.');
 
@@ -37,19 +38,26 @@ module('Integration | Component | ui/form/field', function (hooks) {
   });
 
   test('We can pass @errorMessage to show an error message', async function (assert) {
-    await render(<template>
-    <UiFormField @errorMessage="Please provide a value.">
-    <:label as |l|>
-      <label data-test-label for={{l.inputId}}>
-        Name
-      </label>
-    </:label>
+    await render(
+      <template>
+        <UiFormField @errorMessage="Please provide a value.">
+          <:label as |l|>
+            <label data-test-label for={{l.inputId}}>
+              Name
+            </label>
+          </:label>
 
-    <:field as |f|>
-      <input data-test-field="Name" id={{f.inputId}} required type="text" />
-    </:field>
-    </UiFormField>
-    </template>);
+          <:field as |f|>
+            <input
+              data-test-field="Name"
+              id={{f.inputId}}
+              required
+              type="text"
+            />
+          </:field>
+        </UiFormField>
+      </template>,
+    );
 
     assert
       .dom('[data-test-feedback]')

@@ -1,11 +1,15 @@
 import { hash } from '@ember/helper';
-import { ContainerQuery, aspectRatio, height, width } from 'ember-container-query';
-
 import { set } from '@ember/object';
 import {
   render,
   type TestContext as BaseTestContext,
 } from '@ember/test-helpers';
+import {
+  aspectRatio,
+  ContainerQuery,
+  height,
+  width,
+} from 'ember-container-query';
 import { module, test } from 'qunit';
 import {
   resizeContainer,
@@ -22,43 +26,51 @@ module('Integration | Component | container-query', function (hooks) {
 
   module('When @tagName is undefined', function (hooks) {
     hooks.beforeEach(async function () {
-      await render(<template>
-      {{! template-lint-disable no-inline-styles }}
-      <div data-test-parent-element style="width: 250px; height: 500px;">
-      <ContainerQuery
-      @features={{hash
-        large=(width max=900 min=600)
-        medium=(width max=600 min=300)
-        ratio-type-A=(aspectRatio max=0.75 min=0.25)
-        ratio-type-B=(aspectRatio max=1.5 min=0.5)
-        ratio-type-C=(aspectRatio max=2 min=1.25)
-        short=(height max=500)
-        small=(width max=300)
-        tall=(height min=500)
-      }}
-      data-test-container-query
-      as |CQ|
-      >
-      <p data-test-feature="small">{{CQ.features.small}}</p>
-      <p data-test-feature="medium">{{CQ.features.medium}}</p>
-      <p data-test-feature="large">{{CQ.features.large}}</p>
+      await render(
+        <template>
+          {{! template-lint-disable no-inline-styles }}
+          <div data-test-parent-element style="width: 250px; height: 500px;">
+            <ContainerQuery
+              @features={{hash
+                large=(width max=900 min=600)
+                medium=(width max=600 min=300)
+                ratio-type-A=(aspectRatio max=0.75 min=0.25)
+                ratio-type-B=(aspectRatio max=1.5 min=0.5)
+                ratio-type-C=(aspectRatio max=2 min=1.25)
+                short=(height max=500)
+                small=(width max=300)
+                tall=(height min=500)
+              }}
+              data-test-container-query
+              as |CQ|
+            >
+              <p data-test-feature="small">{{CQ.features.small}}</p>
+              <p data-test-feature="medium">{{CQ.features.medium}}</p>
+              <p data-test-feature="large">{{CQ.features.large}}</p>
 
-      <p data-test-feature="short">{{CQ.features.short}}</p>
-      <p data-test-feature="tall">{{CQ.features.tall}}</p>
+              <p data-test-feature="short">{{CQ.features.short}}</p>
+              <p data-test-feature="tall">{{CQ.features.tall}}</p>
 
-      <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
-      <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
-      <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
+              <p
+                data-test-feature="ratio-type-A"
+              >{{CQ.features.ratio-type-A}}</p>
+              <p
+                data-test-feature="ratio-type-B"
+              >{{CQ.features.ratio-type-B}}</p>
+              <p
+                data-test-feature="ratio-type-C"
+              >{{CQ.features.ratio-type-C}}</p>
 
-      <p data-test-width-height>
-        {{CQ.dimensions.width}}
-        x
-        {{CQ.dimensions.height}}
-      </p>
-      <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
-      </ContainerQuery>
-      </div>
-      </template>);
+              <p data-test-width-height>
+                {{CQ.dimensions.width}}
+                x
+                {{CQ.dimensions.height}}
+              </p>
+              <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
+            </ContainerQuery>
+          </div>
+        </template>,
+      );
 
       await timeout();
     });
@@ -92,44 +104,52 @@ module('Integration | Component | container-query', function (hooks) {
 
   module('When @tagName is passed', function (hooks) {
     hooks.beforeEach(async function () {
-      await render(<template>
-      {{! template-lint-disable no-inline-styles }}
-      <div data-test-parent-element style="width: 250px; height: 500px;">
-      <ContainerQuery
-      @features={{hash
-        large=(width max=900 min=600)
-        medium=(width max=600 min=300)
-        ratio-type-A=(aspectRatio max=0.75 min=0.25)
-        ratio-type-B=(aspectRatio max=1.5 min=0.5)
-        ratio-type-C=(aspectRatio max=2 min=1.25)
-        short=(height max=500)
-        small=(width max=300)
-        tall=(height min=500)
-      }}
-      @tagName="section"
-      data-test-container-query
-      as |CQ|
-      >
-      <p data-test-feature="small">{{CQ.features.small}}</p>
-      <p data-test-feature="medium">{{CQ.features.medium}}</p>
-      <p data-test-feature="large">{{CQ.features.large}}</p>
+      await render(
+        <template>
+          {{! template-lint-disable no-inline-styles }}
+          <div data-test-parent-element style="width: 250px; height: 500px;">
+            <ContainerQuery
+              @features={{hash
+                large=(width max=900 min=600)
+                medium=(width max=600 min=300)
+                ratio-type-A=(aspectRatio max=0.75 min=0.25)
+                ratio-type-B=(aspectRatio max=1.5 min=0.5)
+                ratio-type-C=(aspectRatio max=2 min=1.25)
+                short=(height max=500)
+                small=(width max=300)
+                tall=(height min=500)
+              }}
+              @tagName="section"
+              data-test-container-query
+              as |CQ|
+            >
+              <p data-test-feature="small">{{CQ.features.small}}</p>
+              <p data-test-feature="medium">{{CQ.features.medium}}</p>
+              <p data-test-feature="large">{{CQ.features.large}}</p>
 
-      <p data-test-feature="short">{{CQ.features.short}}</p>
-      <p data-test-feature="tall">{{CQ.features.tall}}</p>
+              <p data-test-feature="short">{{CQ.features.short}}</p>
+              <p data-test-feature="tall">{{CQ.features.tall}}</p>
 
-      <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
-      <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
-      <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
+              <p
+                data-test-feature="ratio-type-A"
+              >{{CQ.features.ratio-type-A}}</p>
+              <p
+                data-test-feature="ratio-type-B"
+              >{{CQ.features.ratio-type-B}}</p>
+              <p
+                data-test-feature="ratio-type-C"
+              >{{CQ.features.ratio-type-C}}</p>
 
-      <p data-test-width-height>
-        {{CQ.dimensions.width}}
-        x
-        {{CQ.dimensions.height}}
-      </p>
-      <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
-      </ContainerQuery>
-      </div>
-      </template>);
+              <p data-test-width-height>
+                {{CQ.dimensions.width}}
+                x
+                {{CQ.dimensions.height}}
+              </p>
+              <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
+            </ContainerQuery>
+          </div>
+        </template>,
+      );
 
       await timeout();
     });
@@ -167,47 +187,52 @@ module('Integration | Component | container-query', function (hooks) {
 
       const self = this;
 
+      await render(
+        <template>
+          {{! template-lint-disable no-inline-styles }}
+          <div data-test-parent-element style="width: 250px; height: 500px;">
+            <ContainerQuery
+              @features={{hash
+                large=(width max=900 min=600)
+                medium=(width max=600 min=300)
+                ratio-type-A=(aspectRatio max=0.75 min=0.25)
+                ratio-type-B=(aspectRatio max=1.5 min=0.5)
+                ratio-type-C=(aspectRatio max=2 min=1.25)
+                short=(height max=500)
+                small=(width max=300)
+                tall=(height min=500)
+              }}
+              @tagName={{self.tagName}}
+              data-test-container-query
+              as |CQ|
+            >
+              <p data-test-feature="small">{{CQ.features.small}}</p>
+              <p data-test-feature="medium">{{CQ.features.medium}}</p>
+              <p data-test-feature="large">{{CQ.features.large}}</p>
 
+              <p data-test-feature="short">{{CQ.features.short}}</p>
+              <p data-test-feature="tall">{{CQ.features.tall}}</p>
 
+              <p
+                data-test-feature="ratio-type-A"
+              >{{CQ.features.ratio-type-A}}</p>
+              <p
+                data-test-feature="ratio-type-B"
+              >{{CQ.features.ratio-type-B}}</p>
+              <p
+                data-test-feature="ratio-type-C"
+              >{{CQ.features.ratio-type-C}}</p>
 
-      await render(<template>
-      {{! template-lint-disable no-inline-styles }}
-      <div data-test-parent-element style="width: 250px; height: 500px;">
-      <ContainerQuery
-      @features={{hash
-        large=(width max=900 min=600)
-        medium=(width max=600 min=300)
-        ratio-type-A=(aspectRatio max=0.75 min=0.25)
-        ratio-type-B=(aspectRatio max=1.5 min=0.5)
-        ratio-type-C=(aspectRatio max=2 min=1.25)
-        short=(height max=500)
-        small=(width max=300)
-        tall=(height min=500)
-      }}
-      @tagName={{self.tagName}}
-      data-test-container-query
-      as |CQ|
-      >
-      <p data-test-feature="small">{{CQ.features.small}}</p>
-      <p data-test-feature="medium">{{CQ.features.medium}}</p>
-      <p data-test-feature="large">{{CQ.features.large}}</p>
-
-      <p data-test-feature="short">{{CQ.features.short}}</p>
-      <p data-test-feature="tall">{{CQ.features.tall}}</p>
-
-      <p data-test-feature="ratio-type-A">{{CQ.features.ratio-type-A}}</p>
-      <p data-test-feature="ratio-type-B">{{CQ.features.ratio-type-B}}</p>
-      <p data-test-feature="ratio-type-C">{{CQ.features.ratio-type-C}}</p>
-
-      <p data-test-width-height>
-        {{CQ.dimensions.width}}
-        x
-        {{CQ.dimensions.height}}
-      </p>
-      <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
-      </ContainerQuery>
-      </div>
-      </template>);
+              <p data-test-width-height>
+                {{CQ.dimensions.width}}
+                x
+                {{CQ.dimensions.height}}
+              </p>
+              <p data-test-aspect-ratio>{{CQ.dimensions.aspectRatio}}</p>
+            </ContainerQuery>
+          </div>
+        </template>,
+      );
 
       await timeout();
 

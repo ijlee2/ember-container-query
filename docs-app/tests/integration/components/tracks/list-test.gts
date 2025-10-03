@@ -1,10 +1,9 @@
-import TracksList from 'docs-app/components/tracks/list';
-
 import {
   findAll,
   render,
   type TestContext as BaseTestContext,
 } from '@ember/test-helpers';
+import TracksList from 'docs-app/components/tracks/list';
 import { album, type Track } from 'docs-app/data';
 import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { module, test } from 'qunit';
@@ -60,12 +59,7 @@ module('Integration | Component | tracks/list', function (hooks) {
 
       const self = this;
 
-
-
-
-      await render(<template>
-      <TracksList @tracks={{self.tracks}} />
-      </template>);
+      await render(<template><TracksList @tracks={{self.tracks}} /></template>);
 
       assert.dom('[data-test-item]').doesNotExist('There are 0 tracks.');
     });
@@ -77,12 +71,7 @@ module('Integration | Component | tracks/list', function (hooks) {
 
       const self = this;
 
-
-
-
-      await render(<template>
-      <TracksList @tracks={{self.tracks}} />
-      </template>);
+      await render(<template><TracksList @tracks={{self.tracks}} /></template>);
 
       const tracks = findAll('[data-test-item]');
 

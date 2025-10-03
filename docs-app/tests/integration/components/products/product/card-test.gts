@@ -1,9 +1,8 @@
-import ProductsProductCard from 'docs-app/components/products/product/card';
-
 import {
   render,
   type TestContext as BaseTestContext,
 } from '@ember/test-helpers';
+import ProductsProductCard from 'docs-app/components/products/product/card';
 import type { Product } from 'docs-app/data';
 import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { a11yAudit } from 'ember-a11y-testing/test-support';
@@ -33,15 +32,14 @@ module('Integration | Component | products/product/card', function (hooks) {
   test('it renders', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
-    await render(<template>
-    <ProductsProductCard
-    @product={{self.product}}
-    @redirectTo="products.product"
-    />
-    </template>);
+    await render(
+      <template>
+        <ProductsProductCard
+          @product={{self.product}}
+          @redirectTo="products.product"
+        />
+      </template>,
+    );
 
     assert
       .dom('[data-test-field="Name"]')

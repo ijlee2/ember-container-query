@@ -1,11 +1,10 @@
-import UiFormTextarea from 'docs-app/components/ui/form/textarea';
-
 import { set } from '@ember/object';
 import {
   fillIn,
   render,
   type TestContext as BaseTestContext,
 } from '@ember/test-helpers';
+import UiFormTextarea from 'docs-app/components/ui/form/textarea';
 import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { module, test } from 'qunit';
 
@@ -33,17 +32,16 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
   test('The component renders a label and a textarea', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormTextarea
-    @changeset={{self.changeset}}
-    @key="message"
-    @label="Message"
-    @onUpdate={{self.updateChangeset}}
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormTextarea
+          @changeset={{self.changeset}}
+          @key="message"
+          @label="Message"
+          @onUpdate={{self.updateChangeset}}
+        />
+      </template>,
+    );
 
     assert
       .dom('[data-test-label]')
@@ -65,18 +63,17 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
   test('We can pass @isDisabled to disable the text area', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormTextarea
-    @changeset={{self.changeset}}
-    @isDisabled={{true}}
-    @key="message"
-    @label="Message"
-    @onUpdate={{self.updateChangeset}}
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormTextarea
+          @changeset={{self.changeset}}
+          @isDisabled={{true}}
+          @key="message"
+          @label="Message"
+          @onUpdate={{self.updateChangeset}}
+        />
+      </template>,
+    );
 
     assert
       .dom('[data-test-field="Message"]')
@@ -86,18 +83,17 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
   test('We can pass @isReadOnly to display the value', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormTextarea
-    @changeset={{self.changeset}}
-    @isReadOnly={{true}}
-    @key="message"
-    @label="Message"
-    @onUpdate={{self.updateChangeset}}
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormTextarea
+          @changeset={{self.changeset}}
+          @isReadOnly={{true}}
+          @key="message"
+          @label="Message"
+          @onUpdate={{self.updateChangeset}}
+        />
+      </template>,
+    );
 
     assert
       .dom('[data-test-field="Message"]')
@@ -108,18 +104,17 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
   test('We can pass @isRequired to require a value', async function (this: TestContext, assert) {
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormTextarea
-    @changeset={{self.changeset}}
-    @isRequired={{true}}
-    @key="message"
-    @label="Message"
-    @onUpdate={{self.updateChangeset}}
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormTextarea
+          @changeset={{self.changeset}}
+          @isRequired={{true}}
+          @key="message"
+          @label="Message"
+          @onUpdate={{self.updateChangeset}}
+        />
+      </template>,
+    );
 
     assert
       .dom('[data-test-label]')
@@ -147,18 +142,17 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
 
     const self = this;
 
-
-
-
-    await render(<template>
-    <UiFormTextarea
-    @changeset={{self.changeset}}
-    @isRequired={{true}}
-    @key="message"
-    @label="Message"
-    @onUpdate={{self.updateChangeset}}
-    />
-    </template>);
+    await render(
+      <template>
+        <UiFormTextarea
+          @changeset={{self.changeset}}
+          @isRequired={{true}}
+          @key="message"
+          @label="Message"
+          @onUpdate={{self.updateChangeset}}
+        />
+      </template>,
+    );
 
     // Update the value
     await fillIn('[data-test-field="Message"]', '');
