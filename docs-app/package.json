@@ -51,7 +51,7 @@
     "@embroider/broccoli-side-watch": "^1.1.0",
     "@embroider/compat": "^3.9.0",
     "@embroider/core": "^3.5.6",
-    "@embroider/macros": "^1.18.1",
+    "@embroider/macros": "^1.19.1",
     "@embroider/router": "^2.1.8",
     "@embroider/webpack": "^4.1.1",
     "@glimmer/component": "^2.0.0",
@@ -61,7 +61,7 @@
     "@glint/environment-ember-template-imports": "^1.5.2",
     "@glint/template": "^1.5.2",
     "@ijlee2-frontend-configs/ember-template-lint": "^2.2.0",
-    "@ijlee2-frontend-configs/eslint-config-ember": "^2.2.1",
+    "@ijlee2-frontend-configs/eslint-config-ember": "^2.3.0",
     "@ijlee2-frontend-configs/prettier": "^2.2.0",
     "@ijlee2-frontend-configs/stylelint": "^2.1.1",
     "@percy/cli": "^1.31.2",
@@ -110,8 +110,8 @@
     "qunit-dom": "^3.5.0",
     "stylelint": "^16.24.0",
     "type-css-modules": "^2.0.4",
-    "typescript": "^5.9.2",
-    "webpack": "^5.101.3"
+    "typescript": "^5.9.3",
+    "webpack": "^5.102.0"
   },
   "engines": {
     "node": "20.* || >= 22"
