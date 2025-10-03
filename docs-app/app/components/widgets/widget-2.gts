@@ -62,9 +62,3 @@ export default class WidgetsWidget2Component extends Component<WidgetsWidget2Sig
     </ContainerQuery>
   </template>
 }
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Widgets::Widget-2': typeof WidgetsWidget2Component;
-  }
-}

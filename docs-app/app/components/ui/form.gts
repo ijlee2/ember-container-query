@@ -126,9 +126,3 @@ export default class UiFormComponent extends Component<UiFormSignature> {
     </form>
   </template>
 }
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Ui::Form': typeof UiFormComponent;
-  }
-}

@@ -60,9 +60,3 @@ const ProductsProductCardComponent: TOC<ProductsProductCardSignature> =
   </template>;
 
 export default ProductsProductCardComponent;
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Products::Product::Card': typeof ProductsProductCardComponent;
-  }
-}

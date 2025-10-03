@@ -97,10 +97,3 @@ export default class UiFormNumberComponent extends Component<UiFormNumberSignatu
     </UiFormField>
   </template>
 }
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Ui::Form::Number': typeof UiFormNumberComponent;
-    'ui/form/number': typeof UiFormNumberComponent;
-  }
-}

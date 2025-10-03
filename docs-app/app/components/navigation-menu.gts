@@ -35,9 +35,3 @@ const NavigationMenuComponent: TOC<NavigationMenuSignature> = <template>
 </template>;
 
 export default NavigationMenuComponent;
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    NavigationMenu: typeof NavigationMenuComponent;
-  }
-}

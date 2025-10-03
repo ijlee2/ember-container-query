@@ -25,9 +25,3 @@ const ProductsProductImageComponent: TOC<ProductsProductImageSignature> =
   </template>;
 
 export default ProductsProductImageComponent;
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Products::Product::Image': typeof ProductsProductImageComponent;
-  }
-}

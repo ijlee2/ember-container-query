@@ -24,9 +24,3 @@ const WidgetsWidget2StackedChartComponent: TOC<WidgetsWidget2StackedChartSignatu
   </template>;
 
 export default WidgetsWidget2StackedChartComponent;
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Widgets::Widget-2::StackedChart': typeof WidgetsWidget2StackedChartComponent;
-  }
-}

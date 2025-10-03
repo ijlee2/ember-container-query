@@ -43,9 +43,3 @@ const TracksTableComponent: TOC<TracksTableSignature> = <template>
 </template>;
 
 export default TracksTableComponent;
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Tracks::Table': typeof TracksTableComponent;
-  }
-}
