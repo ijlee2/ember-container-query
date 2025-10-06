@@ -50,6 +50,9 @@ importers:
       '@embroider/core':
         specifier: ^3.5.6
         version: 3.5.7(@glint/template@1.5.2)
+      '@embroider/legacy-inspector-support':
+        specifier: ^0.1.2
+        version: 0.1.2
       '@embroider/macros':
         specifier: ^1.19.1
         version: 1.19.1(@glint/template@1.5.2)
@@ -1249,6 +1252,9 @@ packages:
     peerDependencies:
       '@embroider/core': ^3.5.7
       webpack: ^5
+
+  '@embroider/legacy-inspector-support@0.1.2':
+    resolution: {integrity: sha512-mKQCEciMtylTnOyBI/B7q5+MFFt6n8RRVXu8sQvAZ05ZRz+MmYEW8nIjV24rRCUAS/irLicjDGrBwNVZFOPCfA==}
 
   '@embroider/macros@1.16.13':
     resolution: {integrity: sha512-2oGZh0m1byBYQFWEa8b2cvHJB2LzaF3DdMCLCqcRAccABMROt1G3sultnNCT30NhfdGWMEsJOT3Jm4nFxXmTRw==}
@@ -8787,6 +8793,12 @@ snapshots:
     dependencies:
       '@embroider/core': 3.5.7(@glint/template@1.5.2)
       webpack: 5.102.0
+
+  '@embroider/legacy-inspector-support@0.1.2':
+    dependencies:
+      '@embroider/addon-shim': 1.10.0
+    transitivePeerDependencies:
+      - supports-color
 
   '@embroider/macros@1.16.13(@glint/template@1.5.2)':
     dependencies:
