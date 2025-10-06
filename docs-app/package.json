@@ -51,6 +51,7 @@
     "@embroider/broccoli-side-watch": "^1.1.0",
     "@embroider/compat": "^3.9.0",
     "@embroider/core": "^3.5.6",
+    "@embroider/legacy-inspector-support": "^0.1.2",
     "@embroider/macros": "^1.19.1",
     "@embroider/router": "^2.1.8",
     "@embroider/webpack": "^4.1.1",
