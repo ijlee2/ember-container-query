@@ -2,7 +2,7 @@ import { helper } from '@ember/component/helper';
 
 import type { Metadata } from '../modifiers/container-query.ts';
 
-interface WidthHelperSignature {
+interface WidthSignature {
   Args: {
     Named: {
       max?: number;
@@ -13,7 +13,7 @@ interface WidthHelperSignature {
   Return: Metadata;
 }
 
-const WidthHelper = helper<WidthHelperSignature>((_positional, named) => {
+const Width = helper<WidthSignature>((_positional, named) => {
   const dimension = 'width';
   const max = named.max ?? Infinity;
   const min = named.min ?? 0;
@@ -21,4 +21,4 @@ const WidthHelper = helper<WidthHelperSignature>((_positional, named) => {
   return { dimension, max, min };
 });
 
-export default WidthHelper;
+export default Width;
