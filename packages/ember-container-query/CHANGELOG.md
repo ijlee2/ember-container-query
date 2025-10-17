@@ -1,5 +1,11 @@
 # ember-container-query
 
+## 6.1.0
+
+### Minor Changes
+
+- [#271](https://github.com/ijlee2/ember-container-query/pull/271) Updated helpers to follow the function approach ([@ijlee2](https://github.com/ijlee2))
+
 ## 6.0.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # test-app
 
+## 2.0.5
+
+### Patch Changes
+
+- [#269](https://github.com/ijlee2/ember-container-query/pull/269) Converted to <template> tag ([@ijlee2](https://github.com/ijlee2))
+
 ## 2.0.4
 
 ### Patch Changes
