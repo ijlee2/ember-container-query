@@ -1,24 +1,14 @@
-import { helper } from '@ember/component/helper';
-
 import type { Metadata } from '../modifiers/container-query.ts';
 
-interface HeightHelperSignature {
-  Args: {
-    Named: {
-      max?: number;
-      min?: number;
-    };
-    Positional: [];
-  };
-  Return: Metadata;
-}
+type Named = {
+  max?: number;
+  min?: number;
+};
 
-const HeightHelper = helper<HeightHelperSignature>((_positional, named) => {
+export default function height(named?: Named): Metadata {
   const dimension = 'height';
-  const max = named.max ?? Infinity;
-  const min = named.min ?? 0;
+  const max = named?.max ?? Infinity;
+  const min = named?.min ?? 0;
 
   return { dimension, max, min };
-});
-
-export default HeightHelper;
+}

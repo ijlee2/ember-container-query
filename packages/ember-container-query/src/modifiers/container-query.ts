@@ -26,7 +26,7 @@ type Features<T extends IndexSignatureParameter> = Record<T, Metadata>;
 
 type QueryResults<T extends IndexSignatureParameter> = Record<T, boolean>;
 
-interface ContainerQueryModifierSignature<T extends IndexSignatureParameter> {
+interface ContainerQuerySignature<T extends IndexSignatureParameter> {
   Args: {
     Named: {
       dataAttributePrefix?: string;
@@ -45,14 +45,14 @@ interface ContainerQueryModifierSignature<T extends IndexSignatureParameter> {
   Element: Element;
 }
 
-export default class ContainerQueryModifier<
+export default class ContainerQuery<
   T extends IndexSignatureParameter,
-> extends Modifier<ContainerQueryModifierSignature<T>> {
+> extends Modifier<ContainerQuerySignature<T>> {
   @service declare private readonly resizeObserver;
 
   private _dataAttributes: string[] = [];
   private _element?: Element;
-  private _named!: NamedArgs<ContainerQueryModifierSignature<T>>;
+  private _named!: NamedArgs<ContainerQuerySignature<T>>;
 
   dimensions!: Dimensions;
   queryResults!: QueryResults<T>;
@@ -69,7 +69,7 @@ export default class ContainerQueryModifier<
     return this._named.features ?? ({} as Features<T>);
   }
 
-  constructor(owner: Owner, args: ArgsFor<ContainerQueryModifierSignature<T>>) {
+  constructor(owner: Owner, args: ArgsFor<ContainerQuerySignature<T>>) {
     super(owner, args);
 
     registerDestructor(this, () => {
@@ -105,8 +105,8 @@ export default class ContainerQueryModifier<
 
   modify(
     element: Element,
-    _positional: PositionalArgs<ContainerQueryModifierSignature<T>>,
-    named: NamedArgs<ContainerQueryModifierSignature<T>>,
+    _positional: PositionalArgs<ContainerQuerySignature<T>>,
+    named: NamedArgs<ContainerQuerySignature<T>>,
   ): void {
     this._named = named;
 

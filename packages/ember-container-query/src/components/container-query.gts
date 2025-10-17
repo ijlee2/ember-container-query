@@ -31,7 +31,7 @@ interface ContainerQuerySignature<T extends IndexSignatureParameter> {
   Element: Element;
 }
 
-export default class ContainerQueryComponent<
+export default class ContainerQuery<
   T extends IndexSignatureParameter,
 > extends Component<ContainerQuerySignature<T>> {
   @tracked dimensions?: Dimensions;
