@@ -1,24 +1,14 @@
-import { helper } from '@ember/component/helper';
-
 import type { Metadata } from '../modifiers/container-query.ts';
 
-interface AspectRatioSignature {
-  Args: {
-    Named: {
-      max?: number;
-      min?: number;
-    };
-    Positional: [];
-  };
-  Return: Metadata;
-}
+type Named = {
+  max?: number;
+  min?: number;
+};
 
-const AspectRatio = helper<AspectRatioSignature>((_positional, named) => {
+export default function aspectRatio(named?: Named): Metadata {
   const dimension = 'aspectRatio';
-  const max = named.max ?? Infinity;
-  const min = named.min ?? 0;
+  const max = named?.max ?? Infinity;
+  const min = named?.min ?? 0;
 
   return { dimension, max, min };
-});
-
-export default AspectRatio;
+}
