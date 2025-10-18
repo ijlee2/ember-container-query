@@ -1,6 +1,6 @@
 type Options = {
   isRequired?: boolean;
-  value: any;
+  value: unknown;
   valueType: 'boolean' | 'number' | 'string';
 };
 

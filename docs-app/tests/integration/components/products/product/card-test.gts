@@ -3,7 +3,7 @@ import {
   type TestContext as BaseTestContext,
 } from '@ember/test-helpers';
 import ProductsProductCard from 'docs-app/components/products/product/card';
-import type { Product } from 'docs-app/data';
+import type { Product } from 'docs-app/data/products';
 import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { a11yAudit } from 'ember-a11y-testing/test-support';
 import { module, test } from 'qunit';
@@ -30,39 +30,30 @@ module('Integration | Component | products/product/card', function (hooks) {
   });
 
   test('it renders', async function (this: TestContext, assert) {
-    const self = this;
+    const { product } = this;
 
     await render(
       <template>
         <ProductsProductCard
-          @product={{self.product}}
+          @product={{product}}
           @redirectTo="products.product"
         />
       </template>,
     );
 
-    assert
-      .dom('[data-test-field="Name"]')
-      .hasText('Vanilla Ice Cream Cake', 'We see the product name.');
+    assert.dom('[data-test-field="Name"]').hasText('Vanilla Ice Cream Cake');
 
     assert
       .dom('[data-test-field="Short Description"]')
-      .hasText(
-        'Made with organic herbs',
-        'We see the product short description.',
-      );
+      .hasText('Made with organic herbs');
 
-    assert
-      .dom('[data-test-field="Price"]')
-      .hasText('$40', 'We see the product price.');
+    assert.dom('[data-test-field="Price"]').hasText('$40');
 
     assert
       .dom('[data-test-link="Learn More"]')
-      .hasTagName('a', 'We see the correct tag name.')
-      .hasText('Learn more', 'We see the learn more link.');
+      .hasTagName('a')
+      .hasText('Learn more');
 
     await a11yAudit();
-
-    assert.ok(true, 'We passed the accessibility audit.');
   });
 });

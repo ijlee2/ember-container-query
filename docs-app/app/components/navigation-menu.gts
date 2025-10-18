@@ -16,7 +16,7 @@ interface NavigationMenuSignature {
   };
 }
 
-const NavigationMenuComponent: TOC<NavigationMenuSignature> = <template>
+const NavigationMenu: TOC<NavigationMenuSignature> = <template>
   <nav aria-label={{@name}} data-test-nav={{@name}}>
     <ul class={{styles.list}}>
       {{#each @menuItems as |menuItem|}}
@@ -34,4 +34,4 @@ const NavigationMenuComponent: TOC<NavigationMenuSignature> = <template>
   </nav>
 </template>;
 
-export default NavigationMenuComponent;
+export default NavigationMenu;

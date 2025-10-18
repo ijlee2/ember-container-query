@@ -1,15 +1,10 @@
-import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
 import { aspectRatio, ContainerQuery } from 'ember-container-query';
 
 import styles from './widget-1.module.css';
 import WidgetsWidget1Item from './widget-1/item';
 
-interface WidgetsWidget1Signature {
-  Args: {};
-}
-
-const WidgetsWidget1Component: TOC<WidgetsWidget1Signature> = <template>
+const WidgetsWidget1 = <template>
   <ContainerQuery
     @features={{hash
       square=(aspectRatio max=1.25 min=0.8)
@@ -39,4 +34,4 @@ const WidgetsWidget1Component: TOC<WidgetsWidget1Signature> = <template>
   </ContainerQuery>
 </template>;
 
-export default WidgetsWidget1Component;
+export default WidgetsWidget1;

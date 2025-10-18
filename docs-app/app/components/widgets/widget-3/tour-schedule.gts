@@ -1,8 +1,8 @@
 import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
+import type { Concert } from 'docs-app/data/concert';
 import { ContainerQuery, width } from 'ember-container-query';
 
-import type { Concert } from '../../../data';
 import styles from './tour-schedule.module.css';
 import WidgetsWidget3TourScheduleResponsiveImage from './tour-schedule/responsive-image';
 
@@ -12,7 +12,7 @@ interface WidgetsWidget3TourScheduleSignature {
   };
 }
 
-const WidgetsWidget3TourScheduleComponent: TOC<WidgetsWidget3TourScheduleSignature> =
+const WidgetsWidget3TourSchedule: TOC<WidgetsWidget3TourScheduleSignature> =
   <template>
     <ContainerQuery
       @dataAttributePrefix="cq"
@@ -25,10 +25,8 @@ const WidgetsWidget3TourScheduleComponent: TOC<WidgetsWidget3TourScheduleSignatu
             <WidgetsWidget3TourScheduleResponsiveImage
               @images={{@concert.images}}
             />
-
           {{else}}
             <div class={{styles.placeholder-image}}></div>
-
           {{/if}}
         </div>
 
@@ -49,4 +47,4 @@ const WidgetsWidget3TourScheduleComponent: TOC<WidgetsWidget3TourScheduleSignatu
     </ContainerQuery>
   </template>;
 
-export default WidgetsWidget3TourScheduleComponent;
+export default WidgetsWidget3TourSchedule;

@@ -6,7 +6,7 @@ import { module, test } from 'qunit';
 module('Integration | Modifier | dynamic-css-grid', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('We can dynamically style the CSS grid', async function (assert) {
+  test('it renders', async function (assert) {
     await render(
       <template>
         <div data-test-list="Tracks" {{dynamicCssGrid numColumns=3 numRows=4}}>

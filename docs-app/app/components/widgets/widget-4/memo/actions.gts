@@ -14,7 +14,7 @@ interface WidgetsWidget4MemoActionsSignature {
   };
 }
 
-const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature> =
+const WidgetsWidget4MemoActions: TOC<WidgetsWidget4MemoActionsSignature> =
   <template>
     <div
       class={{local
@@ -57,4 +57,4 @@ const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature
     </div>
   </template>;
 
-export default WidgetsWidget4MemoActionsComponent;
+export default WidgetsWidget4MemoActions;

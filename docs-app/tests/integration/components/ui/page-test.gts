@@ -11,19 +11,15 @@ module('Integration | Component | ui/page', function (hooks) {
     await render(
       <template>
         <UiPage @title="Form">
-          <div data-test-content>
-            Content goes here.
-          </div>
+          Render a section here.
         </UiPage>
       </template>,
     );
 
-    assert.dom('h1').hasText('Form', 'We see the title.');
+    assert.dom('[data-test-page-title]').hasTagName('h1').hasText('Form');
 
-    assert.dom('[data-test-content]').exists('We see the yielded content.');
+    assert.dom('[data-test-page-content]').hasText('Render a section here.');
 
     await a11yAudit();
-
-    assert.ok(true, 'We passed the accessibility audit.');
   });
 });

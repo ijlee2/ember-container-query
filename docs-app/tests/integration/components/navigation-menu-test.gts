@@ -20,24 +20,15 @@ module('Integration | Component | navigation-menu', function (hooks) {
 
     assert
       .dom('[data-test-nav="Main Navigation"]')
-      .hasAria(
-        'label',
-        'Main Navigation',
-        'We can pass @name to specify the navigation.',
-      )
-      .hasTagName('nav', 'We see the correct tag name.');
+      .hasAria('label', 'Main Navigation')
+      .hasTagName('nav');
 
     const links = findAll('[data-test-link]');
 
-    assert.strictEqual(links.length, 1, 'We see 1 link.');
+    assert.strictEqual(links.length, 1);
 
-    assert
-      .dom(links[0])
-      .hasAttribute('href', '/', 'We see the correct href for the 1st link.')
-      .hasText('Home', 'We see the correct label for the 1st link.');
+    assert.dom(links[0]).hasAttribute('href', '/').hasText('Home');
 
     await a11yAudit();
-
-    assert.ok(true, 'We passed the accessibility audit.');
   });
 });

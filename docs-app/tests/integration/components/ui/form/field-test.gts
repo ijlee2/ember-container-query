@@ -1,5 +1,6 @@
 import { render } from '@ember/test-helpers';
 import UiFormField from 'docs-app/components/ui/form/field';
+import styles from 'docs-app/components/ui/form/field.module.css';
 import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { a11yAudit } from 'ember-a11y-testing/test-support';
 import { module, test } from 'qunit';
@@ -7,7 +8,7 @@ import { module, test } from 'qunit';
 module('Integration | Component | ui/form/field', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('The component handles the field layout', async function (assert) {
+  test('it renders', async function (assert) {
     await render(
       <template>
         <UiFormField>
@@ -24,17 +25,20 @@ module('Integration | Component | ui/form/field', function (hooks) {
       </template>,
     );
 
-    assert.dom('[data-test-label]').hasText('Name', 'We see the label.');
-
-    assert.dom('[data-test-field="Name"]').hasValue('', 'We see the field.');
-
     assert
-      .dom('[data-test-feedback]')
-      .doesNotExist('We should not see an error message.');
+      .dom('[data-test-field-container]')
+      .hasClass(styles['container'])
+      .doesNotHaveClass(styles['is-inline'])
+      .doesNotHaveClass(styles['is-wide'])
+      .hasClass(styles['no-feedback']);
+
+    assert.dom('[data-test-label]').hasText('Name');
+
+    assert.dom('[data-test-field="Name"]').hasNoValue();
+
+    assert.dom('[data-test-error-message]').doesNotExist();
 
     await a11yAudit();
-
-    assert.ok(true, 'We passed the accessibility audit.');
   });
 
   test('We can pass @errorMessage to show an error message', async function (assert) {
@@ -60,7 +64,12 @@ module('Integration | Component | ui/form/field', function (hooks) {
     );
 
     assert
-      .dom('[data-test-feedback]')
-      .hasText('Please provide a value.', 'We see the error message.');
+      .dom('[data-test-field-container]')
+      .hasClass(styles['container'])
+      .doesNotHaveClass(styles['is-inline'])
+      .doesNotHaveClass(styles['is-wide'])
+      .doesNotHaveClass(styles['no-feedback']);
+
+    assert.dom('[data-test-error-message]').hasText('Please provide a value.');
   });
 });

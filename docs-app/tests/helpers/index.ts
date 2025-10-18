@@ -51,6 +51,7 @@ function setupTest(hooks: NestedHooks, options?: SetupTestOptions): void {
 
 export { setupApplicationTest, setupRenderingTest, setupTest };
 
+export { UiForm } from './components/ui/form';
 export * from './percy';
 export * from './reset-viewport';
 export * from './resize-container';

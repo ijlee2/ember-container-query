@@ -4,7 +4,7 @@ import {
   type TestContext as BaseTestContext,
 } from '@ember/test-helpers';
 import TracksList from 'docs-app/components/tracks/list';
-import { album, type Track } from 'docs-app/data';
+import { album, type Track } from 'docs-app/data/album';
 import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { module, test } from 'qunit';
 
@@ -33,19 +33,11 @@ module('Integration | Component | tracks/list', function (hooks) {
     assert.isTrackCorrect = (trackElement, trackProperties) => {
       const { explicit, title, trackNumber } = trackProperties;
 
-      assert
-        .dom('[data-test-field="Title"]', trackElement)
-        .hasText(
-          title,
-          `For track #${trackNumber}, the Title field is correct.`,
-        );
+      assert.dom('[data-test-field="Title"]', trackElement).hasText(title);
 
       assert
         .dom('[data-test-field="Explicit"]', trackElement)
-        .exists(
-          { count: explicit ? 1 : 0 },
-          `For track #${trackNumber}, the Explicit field is correct.`,
-        );
+        .exists({ count: explicit ? 1 : 0 });
     };
   });
 
@@ -54,19 +46,19 @@ module('Integration | Component | tracks/list', function (hooks) {
   });
 
   module('When @tracks is an empty array', function () {
-    test('The component renders an empty list', async function (this: TestContext, assert: CustomAssert) {
+    test('it renders', async function (this: TestContext, assert: CustomAssert) {
       this.tracks = [];
 
       const self = this;
 
       await render(<template><TracksList @tracks={{self.tracks}} /></template>);
 
-      assert.dom('[data-test-item]').doesNotExist('There are 0 tracks.');
+      assert.dom('[data-test-item]').doesNotExist();
     });
   });
 
   module('When @tracks is a non-empty array', function () {
-    test('The component renders a non-empty list', async function (this: TestContext, assert: CustomAssert) {
+    test('it renders', async function (this: TestContext, assert: CustomAssert) {
       this.tracks = album.tracks;
 
       const self = this;
@@ -75,7 +67,7 @@ module('Integration | Component | tracks/list', function (hooks) {
 
       const tracks = findAll('[data-test-item]');
 
-      assert.strictEqual(tracks.length, 11, 'There are 11 tracks.');
+      assert.strictEqual(tracks.length, 11);
 
       assert.isTrackCorrect!(tracks[0]!, {
         trackNumber: 1,

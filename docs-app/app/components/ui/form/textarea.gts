@@ -1,30 +1,28 @@
 import { on } from '@ember/modifier';
 import { action, get } from '@ember/object';
 import Component from '@glimmer/component';
-import UiFormField from 'docs-app/components/ui/form/field';
+import { generateErrorMessage } from 'docs-app/utils/components/ui/form';
 import { or } from 'ember-truth-helpers';
 import { local } from 'embroider-css-modules';
 
-import { generateErrorMessage } from '../../../utils/components/ui/form';
+import UiFormField from './field';
 import styles from './textarea.module.css';
 
 interface UiFormTextareaSignature {
   Args: {
-    changeset: Record<string, any>;
+    data: Record<string, unknown>;
     isDisabled?: boolean;
     isReadOnly?: boolean;
     isRequired?: boolean;
     isWide?: boolean;
     key: string;
     label: string;
-    onUpdate: ({ key, value }: { key: string; value: any }) => void;
+    onUpdate: ({ key, value }: { key: string; value: unknown }) => void;
     placeholder?: string;
   };
 }
 
-export default class UiFormTextareaComponent extends Component<UiFormTextareaSignature> {
-  styles = styles;
-
+export default class UiFormTextarea extends Component<UiFormTextareaSignature> {
   get errorMessage(): string | undefined {
     const { isRequired } = this.args;
 
@@ -36,9 +34,9 @@ export default class UiFormTextareaComponent extends Component<UiFormTextareaSig
   }
 
   get value(): string {
-    const { changeset, key } = this.args;
+    const { data, key } = this.args;
 
-    return ((get(changeset, key) as string) ?? '').toString();
+    return ((get(data, key) as string) ?? '').toString();
   }
 
   @action updateValue(event: Event): void {
@@ -65,7 +63,7 @@ export default class UiFormTextareaComponent extends Component<UiFormTextareaSig
       <:field as |f|>
         <textarea
           class={{local
-            this.styles
+            styles
             "textarea"
             (if (or @isDisabled @isReadOnly) "is-disabled")
           }}
