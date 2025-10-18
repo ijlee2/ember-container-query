@@ -1,11 +1,13 @@
 import UiPage from 'docs-app/components/ui/page';
 
+import styles from './index.module.css';
+
 <template>
   <UiPage @title="Welcome!">
     <p>
       Thanks for trying out
       <a
-        class={{@controller.styles.code}}
+        class={{styles.code}}
         data-test-link="ember-container-query"
         href="https://github.com/ijlee2/ember-container-query"
         rel="noopener noreferrer"

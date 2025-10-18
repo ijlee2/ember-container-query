@@ -4,6 +4,8 @@ import { ContainerQuery, width } from 'ember-container-query';
 import { pageTitle } from 'ember-page-title';
 import { local } from 'embroider-css-modules';
 
+import styles from './not-found.module.css';
+
 <template>
   {{pageTitle "Page Not Found"}}
 
@@ -11,19 +13,19 @@ import { local } from 'embroider-css-modules';
     <p>Feeling lost? Un<em>contained</em>?</p>
     <p>Don't worry. We all have our off days.</p>
 
-    <div class={{@controller.styles.animation}}>
+    <div class={{styles.animation}}>
       <ContainerQuery @features={{hash small=(width max=350)}} as |CQ|>
         <div
           class={{local
-            @controller.styles
+            styles
             "metaphor"
             (if CQ.features.small "small-layout")
           }}
         >
-          <div class={{@controller.styles.mental-block}}>
+          <div class={{styles.mental-block}}>
           </div>
 
-          <div aria-hidden="true" class={{@controller.styles.the-next-idea}}>
+          <div aria-hidden="true" class={{styles.the-next-idea}}>
             ember-<br />container-<br />query
           </div>
         </div>
