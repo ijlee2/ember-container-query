@@ -10,7 +10,7 @@ import {
   createDataForVisualization,
   createSummariesForCaptions,
 } from '../../utils/components/widgets/widget-2';
-import styles from './widget-2.css';
+import styles from './widget-2.module.css';
 import WidgetsWidget2Captions from './widget-2/captions';
 import WidgetsWidget2StackedChart from './widget-2/stacked-chart';
 

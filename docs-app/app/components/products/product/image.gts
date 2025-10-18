@@ -1,7 +1,7 @@
 import type { TOC } from '@ember/component/template-only';
 import config from 'docs-app/config/environment';
 
-import styles from './image.css';
+import styles from './image.module.css';
 
 const isTestEnvironment = config.environment === 'test';
 

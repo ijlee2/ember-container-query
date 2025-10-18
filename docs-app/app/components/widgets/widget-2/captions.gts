@@ -10,7 +10,7 @@ import { or } from 'ember-truth-helpers';
 import { local } from 'embroider-css-modules';
 
 import type { Summary } from '../../../utils/components/widgets/widget-2';
-import styles from './captions.css';
+import styles from './captions.module.css';
 
 const colorSvg = modifier((container: Element, [color]: [string]) => {
   const svgElement = container.querySelector('svg');

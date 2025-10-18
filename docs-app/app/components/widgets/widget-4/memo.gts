@@ -2,7 +2,7 @@ import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
 import { ContainerQuery, height, width } from 'ember-container-query';
 
-import styles from './memo.css';
+import styles from './memo.module.css';
 import WidgetsWidget4MemoActions from './memo/actions';
 import WidgetsWidget4MemoBody from './memo/body';
 import WidgetsWidget4MemoHeader from './memo/header';

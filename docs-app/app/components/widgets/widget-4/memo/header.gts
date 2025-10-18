@@ -3,7 +3,7 @@ import type { QueryResults } from 'ember-container-query';
 import { and, or } from 'ember-truth-helpers';
 import { local } from 'embroider-css-modules';
 
-import styles from './header.css';
+import styles from './header.module.css';
 
 interface WidgetsWidget4MemoHeaderSignature {
   Args: {

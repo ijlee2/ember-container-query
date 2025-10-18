@@ -2,7 +2,7 @@ import type { TOC } from '@ember/component/template-only';
 import { LinkTo } from '@ember/routing';
 import { local } from 'embroider-css-modules';
 
-import styles from './navigation-menu.css';
+import styles from './navigation-menu.module.css';
 
 type MenuItem = {
   label: string;

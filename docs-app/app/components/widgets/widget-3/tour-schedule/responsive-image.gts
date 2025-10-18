@@ -5,7 +5,7 @@ import { containerQuery, type Dimensions } from 'ember-container-query';
 
 import type { ConcertImage } from '../../../../data';
 import { findBestFittingImage } from '../../../../utils/components/widgets/widget-3';
-import styles from './responsive-image.css';
+import styles from './responsive-image.module.css';
 
 interface WidgetsWidget3TourScheduleResponsiveImageSignature {
   Args: {

@@ -4,7 +4,7 @@ import { LinkTo } from '@ember/routing';
 import { ContainerQuery, width } from 'ember-container-query';
 
 import type { Product } from '../../../data';
-import styles from './card.css';
+import styles from './card.module.css';
 import ProductsProductImage from './image';
 
 function formatPrice(price: number): string {

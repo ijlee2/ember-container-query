@@ -1,6 +1,6 @@
 import type { TOC } from '@ember/component/template-only';
 
-import styles from './page.css';
+import styles from './page.module.css';
 
 interface UiPageSignature {
   Args: {
