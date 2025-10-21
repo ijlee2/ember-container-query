@@ -1,4 +1,4 @@
-import type { MusicRevenue } from '../../../data';
+import type { Revenue } from 'docs-app/data/music-revenue';
 
 export type Data = {
   musicFormat: string;
@@ -81,7 +81,7 @@ export function formatRevenue(revenue: number): string {
 /*
   Transform the raw data into something useful for visualization
 */
-export function createDataForVisualization(rawData: MusicRevenue[]): Data[] {
+export function createDataForVisualization(rawData: Revenue[]): Data[] {
   return rawData.map((datum) => {
     return {
       musicFormat: datum['Format'],
@@ -143,11 +143,11 @@ function sanitizeData(groupedData: GroupedData): GroupedData {
 
   Object.keys(groupedData).forEach((musicFormat) => {
     const { data, relevantYears } = groupedData[musicFormat]!;
-    const relevantData = new Map();
+    const relevantData = new Map<number, number>();
 
     // Remove data points outside of the relevant years
     for (let year = relevantYears.min; year <= relevantYears.max; year++) {
-      const revenue = data.get(year);
+      const revenue = data.get(year)!;
       relevantData.set(year, revenue);
     }
 

@@ -1,12 +1,11 @@
-import { hash } from '@ember/helper';
-import { guidFor } from '@ember/object/internals';
-import Component from '@glimmer/component';
+import type { TOC } from '@ember/component/template-only';
+import { hash, uniqueId } from '@ember/helper';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: Could not find a declaration file for module 'ember-svg-jar/helpers/svg-jar'.
 import svgJar from 'ember-svg-jar/helpers/svg-jar';
 import { local } from 'embroider-css-modules';
 
-import styles from './field.css';
+import styles from './field.module.css';
 
 interface UiFormFieldSignature {
   Args: {
@@ -28,10 +27,8 @@ interface UiFormFieldSignature {
   };
 }
 
-export default class UiFormFieldComponent extends Component<UiFormFieldSignature> {
-  inputId = guidFor(this);
-
-  <template>
+const UiFormField: TOC<UiFormFieldSignature> = <template>
+  {{#let (uniqueId) as |inputId|}}
     <div
       class={{local
         styles
@@ -43,11 +40,11 @@ export default class UiFormFieldComponent extends Component<UiFormFieldSignature
       data-test-field-container
     >
       <div class={{styles.label}}>
-        {{yield (hash inputId=this.inputId) to="label"}}
+        {{yield (hash inputId=inputId) to="label"}}
       </div>
 
       <div class={{styles.field}}>
-        {{yield (hash inputId=this.inputId) to="field"}}
+        {{yield (hash inputId=inputId) to="field"}}
       </div>
 
       {{#if @errorMessage}}
@@ -58,11 +55,13 @@ export default class UiFormFieldComponent extends Component<UiFormFieldSignature
             role="img"
           }}
 
-          <span class={{styles.message}} data-test-feedback role="alert">
+          <span class={{styles.message}} data-test-error-message role="alert">
             {{@errorMessage}}
           </span>
         </div>
       {{/if}}
     </div>
-  </template>
-}
+  {{/let}}
+</template>;
+
+export default UiFormField;

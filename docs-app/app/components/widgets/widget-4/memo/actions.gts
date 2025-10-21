@@ -6,7 +6,7 @@ import svgJar from 'ember-svg-jar/helpers/svg-jar';
 import { or } from 'ember-truth-helpers';
 import { local } from 'embroider-css-modules';
 
-import styles from './actions.css';
+import styles from './actions.module.css';
 
 interface WidgetsWidget4MemoActionsSignature {
   Args: {
@@ -14,7 +14,7 @@ interface WidgetsWidget4MemoActionsSignature {
   };
 }
 
-const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature> =
+const WidgetsWidget4MemoActions: TOC<WidgetsWidget4MemoActionsSignature> =
   <template>
     <div
       class={{local
@@ -57,4 +57,4 @@ const WidgetsWidget4MemoActionsComponent: TOC<WidgetsWidget4MemoActionsSignature
     </div>
   </template>;
 
-export default WidgetsWidget4MemoActionsComponent;
+export default WidgetsWidget4MemoActions;

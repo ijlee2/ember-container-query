@@ -2,17 +2,17 @@ import { concat } from '@ember/helper';
 import { on } from '@ember/modifier';
 import { action, get } from '@ember/object';
 import Component from '@glimmer/component';
-import UiFormField from 'docs-app/components/ui/form/field';
+import { generateErrorMessage } from 'docs-app/utils/components/ui/form';
 import svgJar from 'ember-svg-jar/helpers/svg-jar';
 import { or } from 'ember-truth-helpers';
 import { local } from 'embroider-css-modules';
 
-import { generateErrorMessage } from '../../../utils/components/ui/form';
-import styles from './checkbox.css';
+import styles from './checkbox.module.css';
+import UiFormField from './field';
 
 interface UiFormCheckboxSignature {
   Args: {
-    changeset: Record<string, any>;
+    data: Record<string, unknown>;
     isDisabled?: boolean;
     isInline?: boolean;
     isReadOnly?: boolean;
@@ -20,13 +20,11 @@ interface UiFormCheckboxSignature {
     isWide?: boolean;
     key: string;
     label: string;
-    onUpdate: ({ key, value }: { key: string; value: any }) => void;
+    onUpdate: ({ key, value }: { key: string; value: unknown }) => void;
   };
 }
 
-export default class UiFormCheckboxComponent extends Component<UiFormCheckboxSignature> {
-  styles = styles;
-
+export default class UiFormCheckbox extends Component<UiFormCheckboxSignature> {
   get errorMessage(): string | undefined {
     const { isRequired } = this.args;
 
@@ -38,9 +36,9 @@ export default class UiFormCheckboxComponent extends Component<UiFormCheckboxSig
   }
 
   get isChecked(): boolean {
-    const { changeset, key } = this.args;
+    const { data, key } = this.args;
 
-    return (get(changeset, key) as boolean) ?? false;
+    return (get(data, key) as boolean) ?? false;
   }
 
   @action updateValue(): void {
@@ -87,7 +85,7 @@ export default class UiFormCheckboxComponent extends Component<UiFormCheckboxSig
           aria-readonly={{if @isReadOnly "true" "false"}}
           aria-required={{if @isRequired "true" "false"}}
           class={{local
-            this.styles
+            styles
             "checkbox"
             (if this.isChecked "is-checked")
             (if (or @isDisabled @isReadOnly) "is-disabled")
@@ -101,7 +99,7 @@ export default class UiFormCheckboxComponent extends Component<UiFormCheckboxSig
           {{#if this.isChecked}}
             {{svgJar
               "check"
-              class=this.styles.checkmark-icon
+              class=styles.checkmark-icon
               desc="A checkmark to indicate that the input field is checked"
               role="img"
             }}

@@ -1,10 +1,10 @@
 import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
 import { LinkTo } from '@ember/routing';
+import type { Product } from 'docs-app/data/products';
 import { ContainerQuery, width } from 'ember-container-query';
 
-import type { Product } from '../../../data';
-import styles from './card.css';
+import styles from './card.module.css';
 import ProductsProductImage from './image';
 
 function formatPrice(price: number): string {
@@ -18,45 +18,44 @@ interface ProductsProductCardSignature {
   };
 }
 
-const ProductsProductCardComponent: TOC<ProductsProductCardSignature> =
-  <template>
-    <ContainerQuery
-      @features={{hash wide=(width min=320)}}
-      @tagName="article"
-      class={{styles.container}}
-      data-test-product-card
-    >
-      <header class={{styles.header}}>
-        <h2 class={{styles.name}} data-test-field="Name">
-          {{@product.name}}
-        </h2>
-      </header>
+const ProductsProductCard: TOC<ProductsProductCardSignature> = <template>
+  <ContainerQuery
+    @features={{hash wide=(width min=320)}}
+    @tagName="article"
+    class={{styles.container}}
+    data-test-product-card
+  >
+    <header class={{styles.header}}>
+      <h2 class={{styles.name}} data-test-field="Name">
+        {{@product.name}}
+      </h2>
+    </header>
 
-      <div class={{styles.image-container}}>
-        <ProductsProductImage @src={{@product.imageUrl}} />
-      </div>
+    <div class={{styles.image-container}}>
+      <ProductsProductImage @src={{@product.imageUrl}} />
+    </div>
 
-      <div class={{styles.body}}>
-        <p class={{styles.description}} data-test-field="Short Description">
-          {{@product.shortDescription}}
-        </p>
+    <div class={{styles.body}}>
+      <p class={{styles.description}} data-test-field="Short Description">
+        {{@product.shortDescription}}
+      </p>
 
-        <p class={{styles.price}} data-test-field="Price">
-          {{formatPrice @product.price}}
-        </p>
-      </div>
+      <p class={{styles.price}} data-test-field="Price">
+        {{formatPrice @product.price}}
+      </p>
+    </div>
 
-      <div class={{styles.actions}}>
-        <LinkTo
-          @model={{@product.id}}
-          @route={{@redirectTo}}
-          class={{styles.link}}
-          data-test-link="Learn More"
-        >
-          Learn more
-        </LinkTo>
-      </div>
-    </ContainerQuery>
-  </template>;
+    <div class={{styles.actions}}>
+      <LinkTo
+        @model={{@product.id}}
+        @route={{@redirectTo}}
+        class={{styles.link}}
+        data-test-link="Learn More"
+      >
+        Learn more
+      </LinkTo>
+    </div>
+  </ContainerQuery>
+</template>;
 
-export default ProductsProductCardComponent;
+export default ProductsProductCard;

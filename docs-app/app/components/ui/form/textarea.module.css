@@ -1,5 +1,5 @@
-.input {
-  composes: input from "./input.css";
+.textarea {
+  composes: input from "./input.module.css";
 }
 
 .is-disabled {

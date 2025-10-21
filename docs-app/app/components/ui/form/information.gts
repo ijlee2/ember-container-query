@@ -2,7 +2,7 @@ import type { TOC } from '@ember/component/template-only';
 import { concat } from '@ember/helper';
 import { or } from 'ember-truth-helpers';
 
-import styles from './information.css';
+import styles from './information.module.css';
 
 interface UiFormInformationSignature {
   Args: {
@@ -12,7 +12,7 @@ interface UiFormInformationSignature {
   };
 }
 
-const UiFormInformationComponent: TOC<UiFormInformationSignature> = <template>
+const UiFormInformation: TOC<UiFormInformationSignature> = <template>
   {{#if (or @title @instructions)}}
     <div class={{styles.container}}>
       {{#if @title}}
@@ -38,4 +38,4 @@ const UiFormInformationComponent: TOC<UiFormInformationSignature> = <template>
   {{/if}}
 </template>;
 
-export default UiFormInformationComponent;
+export default UiFormInformation;

@@ -1,9 +1,9 @@
 import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
+import type { Track } from 'docs-app/data/album';
 import { ContainerQuery, height, width } from 'ember-container-query';
 import { and } from 'ember-truth-helpers';
 
-import type { Track } from '../data';
 import TracksList from './tracks/list';
 import TracksTable from './tracks/table';
 
@@ -13,7 +13,7 @@ interface TracksSignature {
   };
 }
 
-const TracksComponent: TOC<TracksSignature> = <template>
+const Tracks: TOC<TracksSignature> = <template>
   <ContainerQuery
     @features={{hash
       large=(width min=640)
@@ -25,15 +25,13 @@ const TracksComponent: TOC<TracksSignature> = <template>
   >
     {{#if (and CQ.features.large CQ.features.tall)}}
       <TracksTable @tracks={{@tracks}} />
-
     {{else}}
       <TracksList
         @numColumns={{if CQ.features.small 1 (if CQ.features.medium 2 3)}}
         @tracks={{@tracks}}
       />
-
     {{/if}}
   </ContainerQuery>
 </template>;
 
-export default TracksComponent;
+export default Tracks;

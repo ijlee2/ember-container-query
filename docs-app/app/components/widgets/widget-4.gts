@@ -1,13 +1,7 @@
-import type { TOC } from '@ember/component/template-only';
-
-import styles from './widget-4.css';
+import styles from './widget-4.module.css';
 import WidgetsWidget4Memo from './widget-4/memo';
 
-interface WidgetsWidget4Signature {
-  Args: {};
-}
-
-const WidgetsWidget4Component: TOC<WidgetsWidget4Signature> = <template>
+const WidgetsWidget4 = <template>
   <section class={{styles.container}}>
     <header class={{styles.header}}>
       <h2>Widget 4</h2>
@@ -25,4 +19,4 @@ const WidgetsWidget4Component: TOC<WidgetsWidget4Signature> = <template>
   </section>
 </template>;
 
-export default WidgetsWidget4Component;
+export default WidgetsWidget4;

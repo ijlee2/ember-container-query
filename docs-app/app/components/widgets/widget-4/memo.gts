@@ -2,16 +2,14 @@ import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
 import { ContainerQuery, height, width } from 'ember-container-query';
 
-import styles from './memo.css';
+import styles from './memo.module.css';
 import WidgetsWidget4MemoActions from './memo/actions';
 import WidgetsWidget4MemoBody from './memo/body';
 import WidgetsWidget4MemoHeader from './memo/header';
 
-interface WidgetsWidget4MemoSignature {
-  Args: {};
-}
+interface WidgetsWidget4MemoSignature {}
 
-const WidgetsWidget4MemoComponent: TOC<WidgetsWidget4MemoSignature> = <template>
+const WidgetsWidget4Memo: TOC<WidgetsWidget4MemoSignature> = <template>
   <ContainerQuery
     @features={{hash
       large=(width min=200)
@@ -36,4 +34,4 @@ const WidgetsWidget4MemoComponent: TOC<WidgetsWidget4MemoSignature> = <template>
   </ContainerQuery>
 </template>;
 
-export default WidgetsWidget4MemoComponent;
+export default WidgetsWidget4Memo;

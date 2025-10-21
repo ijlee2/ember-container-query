@@ -2,7 +2,7 @@ import type { TOC } from '@ember/component/template-only';
 import { LinkTo } from '@ember/routing';
 import { local } from 'embroider-css-modules';
 
-import styles from './navigation-menu.css';
+import styles from './navigation-menu.module.css';
 
 type MenuItem = {
   label: string;
@@ -16,7 +16,7 @@ interface NavigationMenuSignature {
   };
 }
 
-const NavigationMenuComponent: TOC<NavigationMenuSignature> = <template>
+const NavigationMenu: TOC<NavigationMenuSignature> = <template>
   <nav aria-label={{@name}} data-test-nav={{@name}}>
     <ul class={{styles.list}}>
       {{#each @menuItems as |menuItem|}}
@@ -34,4 +34,4 @@ const NavigationMenuComponent: TOC<NavigationMenuSignature> = <template>
   </nav>
 </template>;
 
-export default NavigationMenuComponent;
+export default NavigationMenu;

@@ -1,4 +1,3 @@
-import { set } from '@ember/object';
 import {
   click,
   render,
@@ -6,250 +5,181 @@ import {
   triggerKeyEvent,
 } from '@ember/test-helpers';
 import UiFormCheckbox from 'docs-app/components/ui/form/checkbox';
-import { setupRenderingTest } from 'docs-app/tests/helpers';
+import { setupRenderingTest, UiForm } from 'docs-app/tests/helpers';
 import { module, test } from 'qunit';
 
 interface TestContext extends BaseTestContext {
-  changeset: Record<string, any>;
-  updateChangeset: ({ key, value }: { key: string; value: any }) => void;
+  parent: UiForm;
 }
 
 module('Integration | Component | ui/form/checkbox', function (hooks) {
   setupRenderingTest(hooks);
 
   hooks.beforeEach(function (this: TestContext) {
-    this.changeset = {
-      email: 'zoey@emberjs.com',
-      message: 'I 🧡 container queries!',
-      name: 'Zoey',
-      subscribe: true,
-    };
-
-    this.updateChangeset = () => {
-      // Do nothing
-    };
+    this.parent = new UiForm();
   });
 
-  test('The component renders a label and a checkbox', async function (this: TestContext, assert) {
-    const self = this;
+  test('it renders', async function (this: TestContext, assert) {
+    const { parent } = this;
 
     await render(
       <template>
         <UiFormCheckbox
-          @changeset={{self.changeset}}
+          @data={{parent.data}}
           @key="subscribe"
           @label="Subscribe to The Ember Times?"
-          @onUpdate={{self.updateChangeset}}
+          @onUpdate={{parent.updateData}}
         />
       </template>,
     );
 
-    assert
-      .dom('[data-test-label]')
-      .hasText('Subscribe to The Ember Times?', 'We see the correct label.');
+    assert.dom('[data-test-label]').hasText('Subscribe to The Ember Times?');
 
     assert
-      .dom('[data-test-field="Subscribe to The Ember Times?"]')
-      .hasAria('checked', 'true', 'We see the correct value.')
-      .hasAria('disabled', 'false', 'The checkbox should be enabled.')
-      .hasAria('readonly', 'false', 'The checkbox should not be readonly.')
-      .hasAria('required', 'false', 'The checkbox should not be required.')
-      .hasAttribute('role', 'checkbox', 'We see the correct role.')
-      .hasAttribute('tabindex', '0', 'The checkbox is focusable.')
-      .hasTagName('span', 'We see the correct tag name.');
+      .dom('[data-test-field]')
+      .hasAria('checked', 'true')
+      .hasAria('disabled', 'false')
+      .hasAria('readonly', 'false')
+      .hasAria('required', 'false')
+      .hasAttribute('role', 'checkbox')
+      .hasAttribute('tabindex', '0')
+      .hasTagName('span');
 
-    assert
-      .dom('[data-test-feedback]')
-      .doesNotExist('We should not see an error message.');
+    assert.dom('[data-test-error-message]').doesNotExist();
   });
 
   test('We can pass @isDisabled to disable the checkbox', async function (this: TestContext, assert) {
-    const self = this;
+    const { parent } = this;
 
     await render(
       <template>
         <UiFormCheckbox
-          @changeset={{self.changeset}}
+          @data={{parent.data}}
           @isDisabled={{true}}
           @key="subscribe"
           @label="Subscribe to The Ember Times?"
-          @onUpdate={{self.updateChangeset}}
+          @onUpdate={{parent.updateData}}
         />
       </template>,
     );
 
     assert
-      .dom('[data-test-field="Subscribe to The Ember Times?"]')
-      .doesNotHaveAttribute('tabindex', 'The checkbox should not be focusable.')
-      .hasAria('disabled', 'true', 'The checkbox is disabled.');
+      .dom('[data-test-field]')
+      .doesNotHaveAttribute('tabindex')
+      .hasAria('disabled', 'true');
   });
 
   test('We can pass @isReadOnly to display the value', async function (this: TestContext, assert) {
-    const self = this;
+    const { parent } = this;
 
     await render(
       <template>
         <UiFormCheckbox
-          @changeset={{self.changeset}}
+          @data={{parent.data}}
           @isReadOnly={{true}}
           @key="subscribe"
           @label="Subscribe to The Ember Times?"
-          @onUpdate={{self.updateChangeset}}
+          @onUpdate={{parent.updateData}}
         />
       </template>,
     );
 
     assert
-      .dom('[data-test-field="Subscribe to The Ember Times?"]')
-      .hasAria('checked', 'true', 'We see the correct value.')
-      .hasAria('readonly', 'true', 'We see the aria-readonly attribute.')
-      .hasAttribute('tabindex', '0', 'The checkbox is focusable.');
+      .dom('[data-test-field]')
+      .hasAria('checked', 'true')
+      .hasAria('readonly', 'true')
+      .hasAttribute('tabindex', '0');
   });
 
   test('We can pass @isRequired to require a value', async function (this: TestContext, assert) {
-    const self = this;
+    const { parent } = this;
 
     await render(
       <template>
         <UiFormCheckbox
-          @changeset={{self.changeset}}
+          @data={{parent.data}}
           @isRequired={{true}}
           @key="subscribe"
           @label="Subscribe to The Ember Times?"
-          @onUpdate={{self.updateChangeset}}
+          @onUpdate={{parent.updateData}}
         />
       </template>,
     );
 
-    assert
-      .dom('[data-test-label]')
-      .hasText(
-        'Subscribe to The Ember Times? *',
-        'The label shows that the field is required.',
-      );
+    assert.dom('[data-test-label]').hasText('Subscribe to The Ember Times? *');
 
-    assert
-      .dom('[data-test-field="Subscribe to The Ember Times?"]')
-      .hasAria('required', 'true', 'The checkbox is required.');
+    assert.dom('[data-test-field]').hasAria('required', 'true');
   });
 
   test('We can click on the checkbox to toggle the value', async function (this: TestContext, assert) {
-    let expectedValue = false;
-
-    this.updateChangeset = ({ key, value }) => {
-      assert.step('onUpdate');
-
-      assert.strictEqual(
-        value,
-        expectedValue,
-        'The changeset has the correct value.',
-      );
-
-      set(this.changeset, key, value);
-    };
-
-    const self = this;
+    const { parent } = this;
 
     await render(
       <template>
         <UiFormCheckbox
-          @changeset={{self.changeset}}
+          @data={{parent.data}}
           @isRequired={{true}}
           @key="subscribe"
           @label="Subscribe to The Ember Times?"
-          @onUpdate={{self.updateChangeset}}
+          @onUpdate={{parent.updateData}}
         />
       </template>,
     );
 
     // Click the checkbox
-    await click('[data-test-field="Subscribe to The Ember Times?"]');
+    await click('[data-test-field]');
+
+    assert.dom('[data-test-field]').hasAria('checked', 'false');
 
     assert
-      .dom('[data-test-field="Subscribe to The Ember Times?"]')
-      .hasAria('checked', 'false', 'We see the correct value.');
+      .dom('[data-test-error-message]')
+      .hasText('Please select the checkbox.');
 
-    assert
-      .dom('[data-test-feedback]')
-      .hasText('Please select the checkbox.', 'We see an error message.');
+    assert.false(parent.data['subscribe']);
 
     // Click the checkbox again
-    expectedValue = true;
+    await click('[data-test-field]');
 
-    await click('[data-test-field="Subscribe to The Ember Times?"]');
+    assert.dom('[data-test-field]').hasAria('checked', 'true');
 
-    assert
-      .dom('[data-test-field="Subscribe to The Ember Times?"]')
-      .hasAria('checked', 'true', 'We see the correct value.');
+    assert.dom('[data-test-error-message]').doesNotExist();
 
-    assert
-      .dom('[data-test-feedback]')
-      .doesNotExist('We should not see an error message.');
-
-    assert.verifySteps(['onUpdate', 'onUpdate']);
+    assert.true(parent.data['subscribe']);
   });
 
   test('We can press the Space key to toggle the value', async function (this: TestContext, assert) {
-    let expectedValue = false;
-
-    this.updateChangeset = ({ key, value }) => {
-      assert.step('onUpdate');
-
-      assert.strictEqual(
-        value,
-        expectedValue,
-        'The changeset has the correct value.',
-      );
-
-      set(this.changeset, key, value);
-    };
-
-    const self = this;
+    const { parent } = this;
 
     await render(
       <template>
         <UiFormCheckbox
-          @changeset={{self.changeset}}
+          @data={{parent.data}}
           @isRequired={{true}}
           @key="subscribe"
           @label="Subscribe to The Ember Times?"
-          @onUpdate={{self.updateChangeset}}
+          @onUpdate={{parent.updateData}}
         />
       </template>,
     );
 
     // Press the Space key
-    await triggerKeyEvent(
-      '[data-test-field="Subscribe to The Ember Times?"]',
-      'keypress',
-      'Space',
-    );
+    await triggerKeyEvent('[data-test-field]', 'keypress', 'Space');
+
+    assert.dom('[data-test-field]').hasAria('checked', 'false');
 
     assert
-      .dom('[data-test-field="Subscribe to The Ember Times?"]')
-      .hasAria('checked', 'false', 'We see the correct value.');
+      .dom('[data-test-error-message]')
+      .hasText('Please select the checkbox.');
 
-    assert
-      .dom('[data-test-feedback]')
-      .hasText('Please select the checkbox.', 'We see an error message.');
+    assert.false(parent.data['subscribe']);
 
     // Press the Space key again
-    expectedValue = true;
+    await triggerKeyEvent('[data-test-field]', 'keypress', 'Space');
 
-    await triggerKeyEvent(
-      '[data-test-field="Subscribe to The Ember Times?"]',
-      'keypress',
-      'Space',
-    );
+    assert.dom('[data-test-field]').hasAria('checked', 'true');
 
-    assert
-      .dom('[data-test-field="Subscribe to The Ember Times?"]')
-      .hasAria('checked', 'true', 'We see the correct value.');
+    assert.dom('[data-test-error-message]').doesNotExist();
 
-    assert
-      .dom('[data-test-feedback]')
-      .doesNotExist('We should not see an error message.');
-
-    assert.verifySteps(['onUpdate', 'onUpdate']);
+    assert.true(parent.data['subscribe']);
   });
 });

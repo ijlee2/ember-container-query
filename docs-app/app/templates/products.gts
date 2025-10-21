@@ -1,9 +1,20 @@
+import type { TOC } from '@ember/component/template-only';
 import { array, hash } from '@ember/helper';
 import ProductsProductCard from 'docs-app/components/products/product/card';
 import UiFormInput from 'docs-app/components/ui/form/input';
 import UiPage from 'docs-app/components/ui/page';
+import type ProductsController from 'docs-app/controllers/products';
 import { pageTitle } from 'ember-page-title';
 import { local } from 'embroider-css-modules';
+
+import styles from './products.module.css';
+
+interface ProductsSignature {
+  Args: {
+    controller: ProductsController;
+    model: unknown;
+  };
+}
 
 <template>
   {{pageTitle "Products"}}
@@ -11,7 +22,7 @@ import { local } from 'embroider-css-modules';
   <UiPage @title="Products">
     <div
       class={{local
-        @controller.styles
+        styles
         (if
           @controller.isPartOfNestProductDetailsExperiment
           (array "shared-layout" "products-with-details")
@@ -20,10 +31,10 @@ import { local } from 'embroider-css-modules';
         "sticky-container"
       }}
     >
-      <div class={{@controller.styles.filters}}>
-        <div class={{@controller.styles.filter}}>
+      <div class={{styles.filters}}>
+        <div class={{styles.filter}}>
           <UiFormInput
-            @changeset={{hash name=@controller.name}}
+            @data={{hash name=@controller.name}}
             @key="name"
             @label="Filter by"
             @onUpdate={{@controller.updateQueryParameters}}
@@ -32,7 +43,7 @@ import { local } from 'embroider-css-modules';
         </div>
       </div>
 
-      <div class={{@controller.styles.list}}>
+      <div class={{styles.list}}>
         {{#each @controller.filteredProducts as |product|}}
           <ProductsProductCard @product={{product}} />
         {{else}}
@@ -42,9 +53,9 @@ import { local } from 'embroider-css-modules';
         {{/each}}
       </div>
 
-      <div class={{@controller.styles.product-details}}>
+      <div class={{styles.product-details}}>
         {{outlet}}
       </div>
     </div>
   </UiPage>
-</template>
+</template> satisfies TOC<ProductsSignature>;

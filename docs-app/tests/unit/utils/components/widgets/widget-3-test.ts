@@ -1,5 +1,5 @@
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
-import { concert } from 'docs-app/data';
+import { concert } from 'docs-app/data/concert';
 import {
   type ContainerDimensions,
   findBestFittingImage,
@@ -104,7 +104,6 @@ module('Unit | Utility | components/widgets/widget-3', function () {
           assert.strictEqual(
             findBestFittingImage(images, containerDimensions),
             expectedUrls.get(key),
-            `Container dimensions: ${key}`,
           );
         });
       });
@@ -112,7 +111,7 @@ module('Unit | Utility | components/widgets/widget-3', function () {
 
     module('When images is an array with more than 1 element', function () {
       test('returns the image that fits the container well', function (this: TestContext, assert) {
-        const images = concert.images;
+        const { images } = concert;
 
         const expectedUrls = new Map([
           ['h100,w50', '/images/widgets/widget-3/venue-square@1x.jpg'],
@@ -162,7 +161,6 @@ module('Unit | Utility | components/widgets/widget-3', function () {
           assert.strictEqual(
             findBestFittingImage(images, containerDimensions),
             expectedUrls.get(key),
-            `Container dimensions: ${key}`,
           );
         });
       });
