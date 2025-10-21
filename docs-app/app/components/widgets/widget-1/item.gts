@@ -8,7 +8,7 @@ interface WidgetsWidget1ItemSignature {
   };
 }
 
-const WidgetsWidget1ItemComponent: TOC<WidgetsWidget1ItemSignature> = <template>
+const WidgetsWidget1Item: TOC<WidgetsWidget1ItemSignature> = <template>
   <div class={{styles.container}}>
     <p data-test-title>
       {{@title}}
@@ -16,4 +16,4 @@ const WidgetsWidget1ItemComponent: TOC<WidgetsWidget1ItemSignature> = <template>
   </div>
 </template>;
 
-export default WidgetsWidget1ItemComponent;
+export default WidgetsWidget1Item;

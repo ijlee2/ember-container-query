@@ -11,7 +11,7 @@ interface WidgetsWidget4MemoHeaderSignature {
   };
 }
 
-const WidgetsWidget4MemoHeaderComponent: TOC<WidgetsWidget4MemoHeaderSignature> =
+const WidgetsWidget4MemoHeader: TOC<WidgetsWidget4MemoHeaderSignature> =
   <template>
     {{#let
       (and @cqFeatures.large @cqFeatures.short)
@@ -29,15 +29,12 @@ const WidgetsWidget4MemoHeaderComponent: TOC<WidgetsWidget4MemoHeaderSignature> 
       >
         {{#unless showMinimalLayout}}
           <div class={{styles.avatar-container}}>
-            {{! template-lint-disable no-redundant-role }}
             <img
               alt=""
               class={{styles.avatar}}
               data-test-image="Avatar"
-              role="presentation"
               src="/images/widgets/widget-4/avatar.jpg"
             />
-            {{! template-lint-enable no-redundant-role }}
           </div>
         {{/unless}}
 
@@ -53,4 +50,4 @@ const WidgetsWidget4MemoHeaderComponent: TOC<WidgetsWidget4MemoHeaderSignature> 
     {{/let}}
   </template>;
 
-export default WidgetsWidget4MemoHeaderComponent;
+export default WidgetsWidget4MemoHeader;

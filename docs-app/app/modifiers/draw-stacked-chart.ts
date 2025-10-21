@@ -1,23 +1,35 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+/* eslint-disable @typescript-eslint/unbound-method, @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return */
 import { registerDestructor } from '@ember/destroyable';
 import { action } from '@ember/object';
-import { service } from '@ember/service';
+import { type Registry as Services, service } from '@ember/service';
 import { extent, max, rollup, ticks } from 'd3-array';
 import { axisBottom, axisLeft } from 'd3-axis';
 import { scaleBand, scaleLinear, scaleOrdinal } from 'd3-scale';
 import { select } from 'd3-selection';
 import { stack, stackOrderReverse } from 'd3-shape';
-import Modifier from 'ember-modifier';
-
 import {
   COLOR_PALETTE,
+  type Data,
   formatRevenue,
-} from '../utils/components/widgets/widget-2';
+} from 'docs-app/utils/components/widgets/widget-2';
+import Modifier from 'ember-modifier';
 
 const musicFormats = Object.keys(COLOR_PALETTE);
 const paletteColors = Object.values(COLOR_PALETTE);
 
-export default class DrawStackedChartModifier extends Modifier {
-  @service resizeObserver;
+interface DrawStackedChartSignature {
+  Args: {
+    Named: {
+      data?: Data[];
+    };
+  };
+  Element: Element;
+}
+
+export default class DrawStackedChartModifier extends Modifier<DrawStackedChartSignature> {
+  @service declare resizeObserver: Services['resize-observer'];
 
   _element = undefined;
   _named = {};

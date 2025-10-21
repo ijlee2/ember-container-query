@@ -12,7 +12,7 @@ interface UiFormInformationSignature {
   };
 }
 
-const UiFormInformationComponent: TOC<UiFormInformationSignature> = <template>
+const UiFormInformation: TOC<UiFormInformationSignature> = <template>
   {{#if (or @title @instructions)}}
     <div class={{styles.container}}>
       {{#if @title}}
@@ -38,4 +38,4 @@ const UiFormInformationComponent: TOC<UiFormInformationSignature> = <template>
   {{/if}}
 </template>;
 
-export default UiFormInformationComponent;
+export default UiFormInformation;

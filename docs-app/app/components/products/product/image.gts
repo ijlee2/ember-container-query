@@ -1,9 +1,7 @@
 import type { TOC } from '@ember/component/template-only';
-import config from 'docs-app/config/environment';
+import { isTesting, macroCondition } from '@embroider/macros';
 
 import styles from './image.module.css';
-
-const isTestEnvironment = config.environment === 'test';
 
 interface ProductsProductImageSignature {
   Args: {
@@ -11,17 +9,12 @@ interface ProductsProductImageSignature {
   };
 }
 
-const ProductsProductImageComponent: TOC<ProductsProductImageSignature> =
-  <template>
-    {{#if isTestEnvironment}}
+const ProductsProductImage: TOC<ProductsProductImageSignature> = macroCondition(
+  isTesting(),
+)
+  ? <template>
       <div class={{styles.placeholder-image}}></div>
+    </template>
+  : <template><img alt="" class={{styles.image}} src={{@src}} /></template>;
 
-    {{else}}
-      {{! template-lint-disable no-redundant-role }}
-      <img alt="" class={{styles.image}} role="presentation" src={{@src}} />
-      {{! template-lint-enable no-redundant-role }}
-
-    {{/if}}
-  </template>;
-
-export default ProductsProductImageComponent;
+export default ProductsProductImage;

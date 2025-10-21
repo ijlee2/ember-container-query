@@ -1,19 +1,19 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import type { Image } from 'docs-app/data/concert';
+import { findBestFittingImage } from 'docs-app/utils/components/widgets/widget-3';
 import { containerQuery, type Dimensions } from 'ember-container-query';
 
-import type { ConcertImage } from '../../../../data';
-import { findBestFittingImage } from '../../../../utils/components/widgets/widget-3';
 import styles from './responsive-image.module.css';
 
 interface WidgetsWidget3TourScheduleResponsiveImageSignature {
   Args: {
-    images: ConcertImage[];
+    images: Image[];
   };
 }
 
-export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends Component<WidgetsWidget3TourScheduleResponsiveImageSignature> {
+export default class WidgetsWidget3TourScheduleResponsiveImage extends Component<WidgetsWidget3TourScheduleResponsiveImageSignature> {
   @tracked imageSource?: string;
 
   @action setImageSource({ dimensions }: { dimensions: Dimensions }): void {
@@ -28,15 +28,12 @@ export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends 
       {{containerQuery debounce=300 onQuery=this.setImageSource}}
     >
       {{#if this.imageSource}}
-        {{! template-lint-disable no-redundant-role }}
         <img
           alt=""
           class={{styles.image}}
           data-test-image="Concert"
-          role="presentation"
           src={{this.imageSource}}
         />
-        {{! template-lint-enable no-redundant-role }}
       {{/if}}
     </div>
   </template>

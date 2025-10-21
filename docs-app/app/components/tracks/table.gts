@@ -1,7 +1,7 @@
 import type { TOC } from '@ember/component/template-only';
+import type { Track } from 'docs-app/data/album';
+import add from 'docs-app/helpers/add';
 
-import type { Track } from '../../data';
-import add from '../../helpers/add';
 import styles from './table.module.css';
 
 interface TracksTableSignature {
@@ -10,7 +10,7 @@ interface TracksTableSignature {
   };
 }
 
-const TracksTableComponent: TOC<TracksTableSignature> = <template>
+const TracksTable: TOC<TracksTableSignature> = <template>
   <table data-test-table="Tracks">
     <thead>
       <tr>
@@ -42,4 +42,4 @@ const TracksTableComponent: TOC<TracksTableSignature> = <template>
   </table>
 </template>;
 
-export default TracksTableComponent;
+export default TracksTable;

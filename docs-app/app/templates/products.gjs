@@ -23,7 +23,7 @@ import { local } from 'embroider-css-modules';
       <div class={{@controller.styles.filters}}>
         <div class={{@controller.styles.filter}}>
           <UiFormInput
-            @changeset={{hash name=@controller.name}}
+            @data={{hash name=@controller.name}}
             @key="name"
             @label="Filter by"
             @onUpdate={{@controller.updateQueryParameters}}
