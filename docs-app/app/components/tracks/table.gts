@@ -2,7 +2,7 @@ import type { TOC } from '@ember/component/template-only';
 
 import type { Track } from '../../data';
 import add from '../../helpers/add';
-import styles from './table.css';
+import styles from './table.module.css';
 
 interface TracksTableSignature {
   Args: {

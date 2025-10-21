@@ -2,7 +2,7 @@ import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
 import { aspectRatio, ContainerQuery } from 'ember-container-query';
 
-import styles from './widget-1.css';
+import styles from './widget-1.module.css';
 import WidgetsWidget1Item from './widget-1/item';
 
 interface WidgetsWidget1Signature {

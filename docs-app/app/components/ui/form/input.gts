@@ -7,7 +7,7 @@ import { or } from 'ember-truth-helpers';
 import { local } from 'embroider-css-modules';
 
 import { generateErrorMessage } from '../../../utils/components/ui/form';
-import styles from './input.css';
+import styles from './input.module.css';
 
 interface UiFormInputSignature {
   Args: {

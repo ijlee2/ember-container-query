@@ -3,7 +3,7 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
 import type { Model } from '../routes/products';
-import styles from './products.css';
+import styles from './products.module.css';
 
 export default class ProductsController extends Controller {
   declare model: Model;

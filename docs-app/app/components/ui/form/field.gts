@@ -6,7 +6,7 @@ import Component from '@glimmer/component';
 import svgJar from 'ember-svg-jar/helpers/svg-jar';
 import { local } from 'embroider-css-modules';
 
-import styles from './field.css';
+import styles from './field.module.css';
 
 interface UiFormFieldSignature {
   Args: {

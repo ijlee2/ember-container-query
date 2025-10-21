@@ -12,7 +12,7 @@ import UiFormNumber from 'docs-app/components/ui/form/number';
 import UiFormTextarea from 'docs-app/components/ui/form/textarea';
 import { ContainerQuery, width } from 'ember-container-query';
 
-import styles from './form.css';
+import styles from './form.module.css';
 import type UiFormCheckboxComponent from './form/checkbox';
 import type UiFormInputComponent from './form/input';
 import type UiFormNumberComponent from './form/number';

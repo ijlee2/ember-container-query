@@ -4,7 +4,7 @@ import dynamicCssGrid from 'docs-app/modifiers/dynamic-css-grid';
 import svgJar from 'ember-svg-jar/helpers/svg-jar';
 
 import type { Track } from '../../data';
-import styles from './list.css';
+import styles from './list.module.css';
 
 interface TracksListSignature {
   Args: {

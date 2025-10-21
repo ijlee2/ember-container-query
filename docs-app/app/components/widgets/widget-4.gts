@@ -1,6 +1,6 @@
 import type { TOC } from '@ember/component/template-only';
 
-import styles from './widget-4.css';
+import styles from './widget-4.module.css';
 import WidgetsWidget4Memo from './widget-4/memo';
 
 interface WidgetsWidget4Signature {

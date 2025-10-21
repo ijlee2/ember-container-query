@@ -3,7 +3,7 @@ import { hash } from '@ember/helper';
 import { ContainerQuery, width } from 'ember-container-query';
 
 import type { Concert } from '../../../data';
-import styles from './tour-schedule.css';
+import styles from './tour-schedule.module.css';
 import WidgetsWidget3TourScheduleResponsiveImage from './tour-schedule/responsive-image';
 
 interface WidgetsWidget3TourScheduleSignature {
