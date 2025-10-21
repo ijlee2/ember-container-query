@@ -83,15 +83,15 @@
     "@ijlee2-frontend-configs/ember-template-lint": "^2.2.0",
     "@ijlee2-frontend-configs/eslint-config-ember": "^2.3.0",
     "@ijlee2-frontend-configs/prettier": "^2.2.0",
-    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-babel": "^6.1.0",
     "@tsconfig/ember": "^3.0.11",
     "babel-plugin-ember-template-compilation": "^3.0.1",
     "concurrently": "^9.2.1",
     "ember-source": "^6.7.0",
     "ember-template-lint": "^7.9.3",
-    "eslint": "^9.36.0",
+    "eslint": "^9.38.0",
     "prettier": "^3.6.2",
-    "rollup": "^4.52.4",
+    "rollup": "^4.52.5",
     "typescript": "^5.9.3"
   },
   "engines": {
