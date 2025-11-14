@@ -1,5 +1,17 @@
 # docs-app
 
+## 2.1.0
+
+### Minor Changes
+
+- [#272](https://github.com/ijlee2/ember-container-query/pull/272) Modernized code ([@ijlee2](https://github.com/ijlee2))
+
+### Patch Changes
+
+- [#275](https://github.com/ijlee2/ember-container-query/pull/275) Replaced @glint/core with @glint/ember-tsc ([@ijlee2](https://github.com/ijlee2))
+- [#274](https://github.com/ijlee2/ember-container-query/pull/274) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#273](https://github.com/ijlee2/ember-container-query/pull/273) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 2.0.5
 
 ### Patch Changes

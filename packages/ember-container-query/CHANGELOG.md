@@ -1,5 +1,13 @@
 # ember-container-query
 
+## 6.1.1
+
+### Patch Changes
+
+- [#276](https://github.com/ijlee2/ember-container-query/pull/276) Updated README ([@ijlee2](https://github.com/ijlee2))
+- [#275](https://github.com/ijlee2/ember-container-query/pull/275) Replaced @glint/core with @glint/ember-tsc ([@ijlee2](https://github.com/ijlee2))
+- [#274](https://github.com/ijlee2/ember-container-query/pull/274) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 6.1.0
 
 ### Minor Changes
