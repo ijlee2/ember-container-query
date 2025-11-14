@@ -9,50 +9,28 @@ _Make container queries that harness the power of Ember_
 ## Installation
 
 ```sh
-ember install ember-container-query
+pnpm add -D ember-container-query
 ```
 
 <details>
-<summary>Use Glint or <code>&lt;template&gt;</code> tag? ✨</summary>
 
-- Update your template registry to extend this addon's. Check the [Glint documentation](https://typed-ember.gitbook.io/glint/using-glint/ember/using-addons#using-glint-enabled-addons) for more information.
+<summary>Use Glint and <code>*.hbs</code> files?</summary>
 
-    ```ts
-    /* types/index.d.ts */
+Extend this addon's template registry to get native types.
 
-    import '@glint/environment-ember-loose';
+```ts
+/* types/index.d.ts */
+import '@glint/environment-ember-loose';
+import '@glint/environment-ember-template-imports';
 
-    import type EmberContainerQueryRegistry from 'ember-container-query/template-registry';
+import type EmberContainerQueryRegistry from 'ember-container-query/template-registry';
 
-    declare module '@glint/environment-ember-loose/registry' {
-      export default interface Registry extends EmberContainerQueryRegistry, /* other addon registries */ {
-        // local entries
-      }
-    }
-    ```
-
-- If you are using [`<template>` tag](https://github.com/ember-template-imports/ember-template-imports), you are good to go! Use the named import to consume things.
-
-    ```ts
-    /* app/components/tracks.{gjs,gts} */
-
-    import { hash } from '@ember/helper';
-    import { ContainerQuery, height, width } from 'ember-container-query';
-
-    <template>
-      <ContainerQuery
-        @features={{hash
-          small=(width max=480)
-          medium=(width min=480 max=640)
-          large=(width min=640)
-          tall=(height min=320)
-        }}
-        as |CQ|
-      >
-        ...
-      </ContainerQuery>
-    </template>
-    ```
+declare module '@glint/environment-ember-loose/registry' {
+  export default interface Registry extends EmberContainerQueryRegistry, /* other addon registries */ {
+    // local entries
+  }
+}
+```
 
 </details>
 
@@ -62,6 +40,7 @@ ember install ember-container-query
 Where can you use container queries? Here are real-life (and some theoretical) applications!
 
 <details>
+
 <summary>Create reusable components that are independent of screen size ♻️</summary>
 
 1. Components form a core of an Ember app. We love components!
@@ -86,6 +65,7 @@ Where can you use container queries? Here are real-life (and some theoretical) a
 
 
 <details>
+
 <summary>To table or not to table? That is the question. 🤔</summary>
 
 1. A table is great for showing structured data. On mobile, with a limited width, not so much.
@@ -98,6 +78,7 @@ Where can you use container queries? Here are real-life (and some theoretical) a
 
 
 <details>
+
 <summary>Create a customizable dashboard 🎛️ 🎚️</summary>
 
 1. It's difficult to create dashboard widgets that can be placed anywhere and look good.
@@ -105,10 +86,12 @@ Where can you use container queries? Here are real-life (and some theoretical) a
 1. As a result, you may artificially constrain your users from customizing their dashboard.
 
 1. If you _combine_ media and container queries, you can better meet the wants of designers, developers, and users.
+
 </details>
 
 
 <details>
+
 <summary>Responsive images, videos, and D3 visualizations 🖼️ 📽️ 📈</summary>
 
 1. Currently, you have to use [`srcset`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset) to load images with the optimal file size. Alternatively, you can [use container queries to decide which images to load](https://crunchingnumbers.live/2020/06/03/container-queries-adaptive-images/).
@@ -116,27 +99,32 @@ Where can you use container queries? Here are real-life (and some theoretical) a
 2. Similarly, for videos, you could use container queries to decide format and display resolution.
 
 3. D3 components can use container queries to decide what's the best way to show data. Do you show larger chart elements, show legends, allow scrolling, show text summary? etc.
+
 </details>
 
 
 <details>
+
 <summary>Create beautiful, printable pages 🖨️</summary>
 
 1. You may be able to compose this addon with others to arrive at something ambitious and unique.
 
 1. For example, [`ember-printable-pages`](https://github.com/forge512/ember-printable-pages) lets us reuse components to make a printable document. The components could focus on presenting data with container queries, while `ember-printable-pages` could focus on deciding page layouts and lazily rendering components.
+
 </details>
 
 
 <details>
+
 <summary>Hide secrets in games 🎮</summary>
 
 1. You're designing [a game in Ember](https://www.youtube.com/watch?v=Ld1xnQWkqPU).
 
 1. Maybe a secret, most powerful item appears when the game world is at a certain size? :)
+
 </details>
 
-Not convinced? Open the [demo app](https://ember-container-query.netlify.app/) to see `ember-container-query` in action. (There's even a 404 page!)
+You will find plenty of examples in [`docs-app`](https://github.com/ijlee2/ember-container-query/tree/main/docs-app). Visit https://ember-container-query.netlify.app/ to see the app in action!
 
 <div align="left">
   <img alt="A demo of ember-container-query shows a smooth transition when using a list or table to display data" src="https://user-images.githubusercontent.com/16869656/82177207-72699c00-989e-11ea-9cb6-2e388c5e98c0.gif" width="600" />
@@ -161,6 +149,7 @@ Expand the items below to learn more about the API.
 
 
 <details>
+
 <summary><code>&lt;ContainerQuery&gt;</code></summary>
 
 ### Arguments
@@ -189,7 +178,7 @@ You _may_<sup>1</sup> pass attributes to the component for these reasons:
 
 <sup>2. When an [ARIA attribute has multiple values](https://github.com/ijlee2/ember-container-query/issues/38#issuecomment-647017665), the order of values can matter. At the moment, splattributes doesn't guarantee the order.</sup>
 
-### Outputs
+### Output
 
 You can consume these values in your app or addon.
 
@@ -203,6 +192,7 @@ You can consume these values in your app or addon.
 
 
 <details>
+
 <summary><code>{{aspect-ratio}}</code>, <code>{{height}}</code>, <code>{{width}}</code></summary>
 
 ### Arguments
@@ -222,6 +212,7 @@ All helpers accept these arguments:
 
 
 <details>
+
 <summary><code>{{container-query}}</code></summary>
 
 ### Arguments
@@ -236,23 +227,22 @@ You can pass these arguments to the modifier.
 For more information, refer to [the arguments of `<ContainerQuery>` component](#arguments).
 
 
-### Outputs
+### Output
 
-The outputs are similar to [those of `<ContainerQuery>` component](#outputs).
+The output is similar to [those of `<ContainerQuery>` component](#output).
 
 Data attributes are automatically applied to the HTML element. To get `dimensions` and `features`, you will need to pass the argument `@onQuery` (a function) to the modifier.
 
 ```ts
 /* app/components/chart.gts */
-
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { containerQuery, type Dimensions } from 'ember-container-query';
 
-export default class ChartComponent extends Component {
-  @tracked height!: number;
-  @tracked width!: number;
+export default class Chart extends Component {
+  @tracked height: number;
+  @tracked width: number;
 
   @action updateDimensions({ dimensions }: { dimensions: Dimensions }) {
     const { height, width } = dimensions;
@@ -272,89 +262,6 @@ export default class ChartComponent extends Component {
 ```
 
 </details>
-
-
-## Example
-
-Let's look at the code that created the video demo above.
-
-<details>
-<summary><code>app/templates/album.hbs</code></summary>
-
-```hbs
-<ContainerQuery
-  @features={{hash
-    large=(width min=960)
-    tall=(height min=400)
-  }}
-  as |CQ|
->
-  {{#let
-    (and CQ.features.large CQ.features.tall)
-    as |showLyrics|
-  }}
-    <section local-class="container {{if showLyrics "with-lyrics"}}">
-      <header local-class="album-header">
-        <h1>{{@model.name}}</h1>
-        <p>by <strong>{{@model.band.name}}</strong></p>
-      </header>
-
-      <div local-class="album-tracks">
-        <Tracks
-          @tracks={{@model.tracks}}
-        />
-      </div>
-
-      {{#if showLyrics}}
-        <div local-class="track-lyrics" tabindex="0">
-          <Lyrics
-            @lyrics={{this.currentTrack.lyrics}}
-          />
-        </div>
-      {{/if}}
-    </section>
-  {{/let}}
-</ContainerQuery>
-```
-
-</details>
-
-<details>
-<summary><code>app/components/tracks.hbs</code></summary>
-
-```hbs
-<ContainerQuery
-  @features={{hash
-    small=(width max=480)
-    medium=(width min=480 max=640)
-    large=(width min=640)
-    tall=(height min=320)
-  }}
-  as |CQ|
->
-  {{#if (and CQ.features.large CQ.features.tall)}}
-    <Tracks::Table
-      @tracks={{@tracks}}
-    />
-
-  {{else}}
-    <Tracks::List
-      @numColumns={{
-        if CQ.features.small 1
-        (if CQ.features.medium 2 3)
-      }}
-      @tracks={{@tracks}}
-    />
-
-  {{/if}}
-</ContainerQuery>
-```
-
-</details>
-
-You can see that the album page uses 2 `<ContainerQuery>` components. Rest assured, they act independently of each other. When you pair `<ContainerQuery>` with some CSS, you can create layouts beyond the dreams of others! 🙌
-
-For more examples, I encourage you to check out the code for my demo app. It is located under the [`docs-app`](https://github.com/ijlee2/ember-container-query/tree/main/docs-app) folder and is structured like a typical Ember app.
 
 
 ## Compatibility
