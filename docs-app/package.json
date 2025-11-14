@@ -38,7 +38,7 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "prelint:types": "type-css-modules --src app",
-    "lint:types": "glint",
+    "lint:types": "ember-tsc --noEmit",
     "start": "ember serve --port=4200",
     "test": "DEVICE=\"w3-h3\" ember test --test-port=0",
     "test:device": "ember test"
