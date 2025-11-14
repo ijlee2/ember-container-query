@@ -68,7 +68,7 @@ jobs:
         working-directory: 'docs-app'
 
       - name: Upload docs-app
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: dist
           path: docs-app/dist
