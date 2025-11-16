@@ -1,4 +1,5 @@
 import { registerDestructor } from '@ember/destroyable';
+import { action } from '@ember/object';
 import type Owner from '@ember/owner';
 import { debounce as _debounce } from '@ember/runloop';
 import type { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
@@ -52,31 +53,7 @@ export default class ContainerQuery<
   private _named!: NamedArgs<ContainerQuerySignature<T>>;
 
   #resizeObserver = resizeObserver(this);
-
   dimensions!: Dimensions;
-
-  private onResize = (resizeObserverEntry: ResizeObserverEntry): void => {
-    const element = resizeObserverEntry.target;
-
-    if (this.debounce > 0) {
-      // eslint-disable-next-line ember/no-runloop
-      _debounce(this, this.queryContainer, element, this.debounce);
-      return;
-    }
-
-    this.queryContainer(element);
-  };
-  private queryContainer = (element: Element): void => {
-    this.measureDimensions(element);
-    this.evaluateQueries();
-    this.resetDataAttributes(element);
-    this.setDataAttributes(element);
-
-    this._named.onQuery?.({
-      dimensions: this.dimensions,
-      queryResults: this.queryResults,
-    });
-  };
   queryResults!: QueryResults<T>;
 
   get dataAttributePrefix(): string {
@@ -138,6 +115,18 @@ export default class ContainerQuery<
     this.queryContainer(element);
   }
 
+  private queryContainer(element: Element): void {
+    this.measureDimensions(element);
+    this.evaluateQueries();
+    this.resetDataAttributes(element);
+    this.setDataAttributes(element);
+
+    this._named.onQuery?.({
+      dimensions: this.dimensions,
+      queryResults: this.queryResults,
+    });
+  }
+
   private registerResizeObserver(element: Element): void {
     if (this._element) {
       this.#resizeObserver.unobserve(this._element, this.onResize);
@@ -173,6 +162,18 @@ export default class ContainerQuery<
 
       this._dataAttributes.push(dataAttribute);
     }
+  }
+
+  @action private onResize(resizeObserverEntry: ResizeObserverEntry): void {
+    const element = resizeObserverEntry.target;
+
+    if (this.debounce > 0) {
+      // eslint-disable-next-line ember/no-runloop
+      _debounce(this, this.queryContainer, element, this.debounce);
+      return;
+    }
+
+    this.queryContainer(element);
   }
 }
 
