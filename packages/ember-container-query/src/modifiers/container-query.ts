@@ -54,6 +54,29 @@ export default class ContainerQuery<
   #resizeObserver = resizeObserver(this);
 
   dimensions!: Dimensions;
+
+  private onResize = (resizeObserverEntry: ResizeObserverEntry): void => {
+    const element = resizeObserverEntry.target;
+
+    if (this.debounce > 0) {
+      // eslint-disable-next-line ember/no-runloop
+      _debounce(this, this.queryContainer, element, this.debounce);
+      return;
+    }
+
+    this.queryContainer(element);
+  };
+  private queryContainer = (element: Element): void => {
+    this.measureDimensions(element);
+    this.evaluateQueries();
+    this.resetDataAttributes(element);
+    this.setDataAttributes(element);
+
+    this._named.onQuery?.({
+      dimensions: this.dimensions,
+      queryResults: this.queryResults,
+    });
+  };
   queryResults!: QueryResults<T>;
 
   get dataAttributePrefix(): string {
@@ -72,33 +95,12 @@ export default class ContainerQuery<
     super(owner, args);
 
     registerDestructor(this, () => {
-      this.#resizeObserver.unobserve(this._element, this.#onResize);
+      if (this._element) {
+        this.#resizeObserver.unobserve(this._element, this.onResize);
+      }
     });
   }
 
-  #onResize(resizeObserverEntry: ResizeObserverEntry): void {
-    const element = resizeObserverEntry.target;
-
-    if (this.debounce > 0) {
-      // eslint-disable-next-line ember/no-runloop
-      _debounce(this, this.#queryContainer, element, this.debounce);
-      return;
-    }
-
-    this.#queryContainer(element);
-  }
-
-  #queryContainer(element: Element): void {
-    this.measureDimensions(element);
-    this.evaluateQueries();
-    this.resetDataAttributes(element);
-    this.setDataAttributes(element);
-
-    this._named.onQuery?.({
-      dimensions: this.dimensions,
-      queryResults: this.queryResults,
-    });
-  }
   private evaluateQueries(): void {
     const queryResults = {} as QueryResults<T>;
 
@@ -133,14 +135,16 @@ export default class ContainerQuery<
     this._named = named;
 
     this.registerResizeObserver(element);
-    this.#queryContainer(element);
+    this.queryContainer(element);
   }
 
   private registerResizeObserver(element: Element): void {
-    this.#resizeObserver.unobserve(this._element, this.#onResize);
+    if (this._element) {
+      this.#resizeObserver.unobserve(this._element, this.onResize);
+    }
 
     this._element = element;
-    this.#resizeObserver.observe(this._element, this.#onResize);
+    this.#resizeObserver.observe(this._element, this.onResize);
   }
 
   private resetDataAttributes(element: Element): void {
