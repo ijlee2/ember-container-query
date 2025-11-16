@@ -1,10 +1,9 @@
 import { registerDestructor } from '@ember/destroyable';
-import { action } from '@ember/object';
 import type Owner from '@ember/owner';
 import { debounce as _debounce } from '@ember/runloop';
-import { service } from '@ember/service';
 import type { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
 import Modifier from 'ember-modifier';
+import { resizeObserver } from 'ember-primitives/resize-observer';
 
 type IndexSignatureParameter = string | number | symbol;
 type ObjectEntry<T> = [keyof T, T[keyof T]];
@@ -48,11 +47,11 @@ interface ContainerQuerySignature<T extends IndexSignatureParameter> {
 export default class ContainerQuery<
   T extends IndexSignatureParameter,
 > extends Modifier<ContainerQuerySignature<T>> {
-  @service declare private readonly resizeObserver;
-
   private _dataAttributes: string[] = [];
   private _element?: Element;
   private _named!: NamedArgs<ContainerQuerySignature<T>>;
+
+  #resizeObserver = resizeObserver(this);
 
   dimensions!: Dimensions;
   queryResults!: QueryResults<T>;
@@ -73,10 +72,33 @@ export default class ContainerQuery<
     super(owner, args);
 
     registerDestructor(this, () => {
-      this.resizeObserver.unobserve(this._element, this.onResize);
+      this.#resizeObserver.unobserve(this._element, this.#onResize);
     });
   }
 
+  #onResize(resizeObserverEntry: ResizeObserverEntry): void {
+    const element = resizeObserverEntry.target;
+
+    if (this.debounce > 0) {
+      // eslint-disable-next-line ember/no-runloop
+      _debounce(this, this.#queryContainer, element, this.debounce);
+      return;
+    }
+
+    this.#queryContainer(element);
+  }
+
+  #queryContainer(element: Element): void {
+    this.measureDimensions(element);
+    this.evaluateQueries();
+    this.resetDataAttributes(element);
+    this.setDataAttributes(element);
+
+    this._named.onQuery?.({
+      dimensions: this.dimensions,
+      queryResults: this.queryResults,
+    });
+  }
   private evaluateQueries(): void {
     const queryResults = {} as QueryResults<T>;
 
@@ -111,26 +133,14 @@ export default class ContainerQuery<
     this._named = named;
 
     this.registerResizeObserver(element);
-    this.queryContainer(element);
-  }
-
-  private queryContainer(element: Element): void {
-    this.measureDimensions(element);
-    this.evaluateQueries();
-    this.resetDataAttributes(element);
-    this.setDataAttributes(element);
-
-    this._named.onQuery?.({
-      dimensions: this.dimensions,
-      queryResults: this.queryResults,
-    });
+    this.#queryContainer(element);
   }
 
   private registerResizeObserver(element: Element): void {
-    this.resizeObserver.unobserve(this._element, this.onResize);
+    this.#resizeObserver.unobserve(this._element, this.#onResize);
 
     this._element = element;
-    this.resizeObserver.observe(this._element, this.onResize);
+    this.#resizeObserver.observe(this._element, this.#onResize);
   }
 
   private resetDataAttributes(element: Element): void {
@@ -159,18 +169,6 @@ export default class ContainerQuery<
 
       this._dataAttributes.push(dataAttribute);
     }
-  }
-
-  @action private onResize(resizeObserverEntry: ResizeObserverEntry): void {
-    const element = resizeObserverEntry.target;
-
-    if (this.debounce > 0) {
-      // eslint-disable-next-line ember/no-runloop
-      _debounce(this, this.queryContainer, element, this.debounce);
-      return;
-    }
-
-    this.queryContainer(element);
   }
 }
 
