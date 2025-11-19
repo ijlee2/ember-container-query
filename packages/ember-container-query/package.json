@@ -78,6 +78,7 @@
     "@glimmer/tracking": "^1.1.2",
     "@glint/ember-tsc": "^1.0.8",
     "@glint/template": "^1.7.3",
+    "@glint/tsserver-plugin": "^2.0.8",
     "@ijlee2-frontend-configs/ember-template-lint": "^2.2.0",
     "@ijlee2-frontend-configs/eslint-config-ember": "^2.3.1",
     "@ijlee2-frontend-configs/prettier": "^2.2.0",

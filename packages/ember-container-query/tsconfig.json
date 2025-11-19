@@ -7,6 +7,11 @@
     "declarationMap": true,
     "emitDeclarationOnly": true,
     "noEmit": false,
+    "plugins": [
+      {
+        "name": "@glint/tsserver-plugin"
+      }
+    ],
     "rootDir": "./src",
     "types": ["ember-source/types", "@glint/ember-tsc/types"]
   },
