@@ -1,5 +1,12 @@
 # test-app
 
+## 2.1.1
+
+### Patch Changes
+
+- [#278](https://github.com/ijlee2/ember-container-query/pull/278) Patched #275 ([@ijlee2](https://github.com/ijlee2))
+- [#277](https://github.com/ijlee2/ember-container-query/pull/277) Replaced ember-resize-observer-service with ember-primitives/resize-observer ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
 ## 2.1.0
 
 ### Minor Changes
