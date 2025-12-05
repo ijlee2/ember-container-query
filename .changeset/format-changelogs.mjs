@@ -1,4 +1,6 @@
-const { getInfo } = require('@changesets/get-github-info');
+import { EOL } from 'node:os';
+
+import { getInfo } from '@changesets/get-github-info';
 
 const repo = 'ijlee2/ember-container-query';
 
@@ -10,7 +12,7 @@ async function analyze(changeset) {
 
   const contributor = info.user ? `(${info.user})` : undefined;
   const link = info.pull ?? info.commit ?? undefined;
-  const summary = (changeset.summary ?? '').split('\n')[0].trim();
+  const summary = (changeset.summary ?? '').split(EOL)[0].trim();
 
   return {
     contributor,
@@ -31,7 +33,7 @@ async function getDependencyReleaseLine(changesets) {
   try {
     const lines = await Promise.all(changesets.map(summarize));
 
-    return lines.join('\n');
+    return lines.join(EOL);
   } catch (error) {
     console.error(`ERROR: getDependencyReleaseLine (${error.message})`);
 
@@ -49,7 +51,7 @@ async function getReleaseLine(changeset) {
   }
 }
 
-module.exports = {
+export default {
   getDependencyReleaseLine,
   getReleaseLine,
 };
