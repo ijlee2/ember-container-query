@@ -1,5 +1,12 @@
 # ember-container-query
 
+## 6.1.3
+
+### Patch Changes
+
+- [#279](https://github.com/ijlee2/ember-container-query/pull/279) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#280](https://github.com/ijlee2/ember-container-query/pull/280) Renamed private variable ([@ijlee2](https://github.com/ijlee2))
+
 ## 6.1.2
 
 ### Patch Changes
