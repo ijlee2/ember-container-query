@@ -33,7 +33,6 @@ export default class DrawStackedChartModifier extends Modifier<DrawStackedChartS
   _named = {};
   height = 0;
   resizeObserver = resizeObserver(this);
-
   width = 0;
 
   get color() {
