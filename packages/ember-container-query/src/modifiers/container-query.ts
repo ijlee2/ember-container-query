@@ -51,8 +51,8 @@ export default class ContainerQuery<
   private _dataAttributes: string[] = [];
   private _element?: Element;
   private _named!: NamedArgs<ContainerQuerySignature<T>>;
+  private _resizeObserver = resizeObserver(this);
 
-  #resizeObserver = resizeObserver(this);
   dimensions!: Dimensions;
   queryResults!: QueryResults<T>;
 
@@ -73,7 +73,7 @@ export default class ContainerQuery<
 
     registerDestructor(this, () => {
       if (this._element) {
-        this.#resizeObserver.unobserve(this._element, this.onResize);
+        this._resizeObserver.unobserve(this._element, this.onResize);
       }
     });
   }
@@ -129,11 +129,11 @@ export default class ContainerQuery<
 
   private registerResizeObserver(element: Element): void {
     if (this._element) {
-      this.#resizeObserver.unobserve(this._element, this.onResize);
+      this._resizeObserver.unobserve(this._element, this.onResize);
     }
 
     this._element = element;
-    this.#resizeObserver.observe(this._element, this.onResize);
+    this._resizeObserver.observe(this._element, this.onResize);
   }
 
   private resetDataAttributes(element: Element): void {
