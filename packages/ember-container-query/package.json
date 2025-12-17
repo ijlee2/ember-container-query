@@ -16,7 +16,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ijlee2/ember-container-query.git"
+    "url": "https://github.com/ijlee2/ember-container-query.git",
+    "directory": "packages/ember-container-query"
   },
   "license": "MIT",
   "author": "Isaac J. Lee",

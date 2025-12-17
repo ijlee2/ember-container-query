@@ -124,7 +124,7 @@ Where can you use container queries? Here are real-life (and some theoretical) a
 
 </details>
 
-You will find plenty of examples in [`docs-app`](https://github.com/ijlee2/ember-container-query/tree/main/docs-app). Visit https://ember-container-query.netlify.app/ to see the app in action!
+You will find plenty of examples in [`docs-app`](./docs-app). Visit https://ember-container-query.netlify.app/ to see the app in action!
 
 <div align="left">
   <img alt="A demo of ember-container-query shows a smooth transition when using a list or table to display data" src="https://user-images.githubusercontent.com/16869656/82177207-72699c00-989e-11ea-9cb6-2e388c5e98c0.gif" width="600" />
@@ -272,7 +272,7 @@ export default class Chart extends Component {
 
 ## Contributing
 
-See the [Contributing](CONTRIBUTING.md) guide for details.
+See the [Contributing](./CONTRIBUTING.md) guide for details.
 
 
 ## Credits
@@ -282,4 +282,4 @@ Much thanks goes to [Chad Carbert (@chadian)](https://github.com/chadian), who i
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed under the [MIT License](./LICENSE.md).
