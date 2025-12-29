@@ -1,5 +1,12 @@
 # ember-container-query
 
+## 6.1.5
+
+### Patch Changes
+
+- [#283](https://github.com/ijlee2/ember-container-query/pull/283) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#282](https://github.com/ijlee2/ember-container-query/pull/282) Added repository.directory ([@ijlee2](https://github.com/ijlee2))
+
 ## 6.1.4
 
 ### Patch Changes
