@@ -29,7 +29,7 @@ module('Integration | Component | tracks/table', function (hooks) {
   setupRenderingTest(hooks);
 
   hooks.beforeEach(function (assert: CustomAssert) {
-    assert.isTrackCorrect = (trackElement, trackProperties) => {
+    assert.isTrackCorrect = (trackElement, trackProperties): void => {
       const { explicit, length, title } = trackProperties;
 
       assert.dom('[data-test-column="Title"]', trackElement).hasText(title);

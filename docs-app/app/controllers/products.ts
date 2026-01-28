@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import type { Product } from 'docs-app/data/products';
 import type { Model } from 'docs-app/routes/products';
 
 export default class ProductsController extends Controller {
@@ -8,7 +9,7 @@ export default class ProductsController extends Controller {
 
   @tracked name: string | null = null;
 
-  get filteredProducts() {
+  get filteredProducts(): Product[] {
     const { model: products, name } = this;
 
     if (!name) {
@@ -24,11 +25,17 @@ export default class ProductsController extends Controller {
     });
   }
 
-  get isPartOfNestProductDetailsExperiment() {
+  get isPartOfNestProductDetailsExperiment(): boolean {
     return true;
   }
 
-  @action updateQueryParameters({ key, value }: { key: string; value: any }) {
+  @action updateQueryParameters({
+    key,
+    value,
+  }: {
+    key: string;
+    value: any;
+  }): void {
     if (key !== 'name') {
       return;
     }

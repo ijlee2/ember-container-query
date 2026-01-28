@@ -24,7 +24,7 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
       subscribe: false,
     };
 
-    this.updateData = () => {
+    this.updateData = (): void => {
       // Do nothing
     };
   });
@@ -120,7 +120,13 @@ module('Integration | Component | ui/form/textarea', function (hooks) {
 
     let expectedValue = '';
 
-    const updateData = ({ key, value }: { key: string; value: unknown }) => {
+    const updateData = ({
+      key,
+      value,
+    }: {
+      key: string;
+      value: unknown;
+    }): void => {
       assert.step('onUpdate');
 
       assert.strictEqual(value, expectedValue);
