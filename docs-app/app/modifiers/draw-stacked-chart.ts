@@ -35,15 +35,20 @@ export default class DrawStackedChartModifier extends Modifier<DrawStackedChartS
   resizeObserver = resizeObserver(this);
   width = 0;
 
-  get color() {
+  get color(): unknown {
     return scaleOrdinal().domain(musicFormats).range(paletteColors);
   }
 
-  get data() {
+  get data(): Data[] {
     return this._named.data ?? [];
   }
 
-  get margin() {
+  get margin(): {
+    bottom: number;
+    left: number;
+    right: number;
+    top: number;
+  } {
     return {
       top: 20,
       right: 15,
@@ -52,7 +57,7 @@ export default class DrawStackedChartModifier extends Modifier<DrawStackedChartS
     };
   }
 
-  get series() {
+  get series(): unknown {
     const series = stack()
       .keys(musicFormats)
       .value((group, key) => group.get(key).revenue)
@@ -70,7 +75,7 @@ export default class DrawStackedChartModifier extends Modifier<DrawStackedChartS
     );
   }
 
-  get xAxis() {
+  get xAxis(): unknown {
     const { height, margin, xScale } = this;
 
     const xTicks = ticks(...extent(xScale.domain()), 5);
@@ -81,7 +86,7 @@ export default class DrawStackedChartModifier extends Modifier<DrawStackedChartS
         .call(axisBottom(xScale).tickValues(xTicks).tickSizeOuter(0));
   }
 
-  get xScale() {
+  get xScale(): unknown {
     const { data, margin, width } = this;
 
     const xDomain = data.map((d) => d.year);
@@ -91,7 +96,7 @@ export default class DrawStackedChartModifier extends Modifier<DrawStackedChartS
       .rangeRound([margin.left, width - margin.right]);
   }
 
-  get yAxis() {
+  get yAxis(): unknown {
     const { data, margin, yScale } = this;
 
     const yTicks = ticks(...extent(yScale.domain()), 5);
@@ -116,7 +121,7 @@ export default class DrawStackedChartModifier extends Modifier<DrawStackedChartS
         );
   }
 
-  get yScale() {
+  get yScale(): unknown {
     const { height, margin, series } = this;
 
     const yDomain = [0, max(series, (d) => max(d, (d) => d[1]))];
@@ -135,11 +140,11 @@ export default class DrawStackedChartModifier extends Modifier<DrawStackedChartS
     });
   }
 
-  clearSvg(element) {
+  clearSvg(element): void {
     element.querySelector('svg').innerHTML = '';
   }
 
-  drawChart(element) {
+  drawChart(element): void {
     const { color, height, series, width, xAxis, xScale, yAxis, yScale } = this;
 
     const svg = select(element.querySelector('svg'));
@@ -173,32 +178,32 @@ export default class DrawStackedChartModifier extends Modifier<DrawStackedChartS
     svg.append('g').call(yAxis);
   }
 
-  measureDimensions(element) {
+  measureDimensions(element): void {
     this.height = element.clientHeight;
     this.width = element.clientWidth;
   }
 
-  modify(element, _positional, named) {
+  modify(element, _positional, named): void {
     this._named = named;
 
     this.registerResizeObserver(element);
     this.refreshChart(element);
   }
 
-  refreshChart(element) {
+  refreshChart(element): void {
     this.clearSvg(element);
     this.measureDimensions(element);
     this.drawChart(element);
   }
 
-  registerResizeObserver(element) {
+  registerResizeObserver(element): void {
     this.resizeObserver.unobserve(this._element, this.onResize);
 
     this._element = element;
     this.resizeObserver.observe(element, this.onResize);
   }
 
-  @action onResize(resizeObserverEntry) {
+  @action onResize(resizeObserverEntry): void {
     const element = resizeObserverEntry.target;
 
     this.refreshChart(element);

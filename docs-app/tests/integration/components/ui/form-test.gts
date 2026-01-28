@@ -9,7 +9,7 @@ module('Integration | Component | ui/form', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    const doNothing = () => {};
+    const doNothing = (): void => {};
 
     await render(
       <template>
