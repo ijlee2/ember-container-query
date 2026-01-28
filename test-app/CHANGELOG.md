@@ -1,5 +1,12 @@
 # test-app
 
+## 2.1.5
+
+### Patch Changes
+
+- [#285](https://github.com/ijlee2/ember-container-query/pull/285) Added ember-source@6.8 to ember-try scenarios ([@ijlee2](https://github.com/ijlee2))
+- [#284](https://github.com/ijlee2/ember-container-query/pull/284) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 2.1.4
 
 ### Patch Changes
