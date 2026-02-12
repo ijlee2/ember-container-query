@@ -25,9 +25,11 @@
 .call-to-action a {
   border: 0.0625rem solid white;
   display: block;
+  /* stylelint-disable-next-line declaration-property-value-no-unknown */
   height: calc(100% - 2 * (0.2rem + 0.0625rem));
   padding: 0.2rem 0.5rem;
   text-decoration: none;
+  /* stylelint-disable-next-line declaration-property-value-no-unknown */
   width: calc(100% - 2 * (0.5rem + 0.0625rem));
 }
 

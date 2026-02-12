@@ -35,6 +35,7 @@
   height: calc(4.5rem - 2 * (0.2rem + 0.0625rem));
   line-height: 1.25;
   padding: 0.2rem 0.5rem;
+  /* stylelint-disable-next-line declaration-property-value-no-unknown */
   width: calc(100% - 2 * (0.5rem + 0.0625rem));
 }
 
