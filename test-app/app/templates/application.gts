@@ -22,7 +22,7 @@ export default RouteTemplate(
           >
             Isaac J. Lee
           </a>
-          © 2025
+          © 2026
         </span>
       </footer>
     </div>

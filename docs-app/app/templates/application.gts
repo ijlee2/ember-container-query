@@ -41,7 +41,7 @@ import styles from './application.module.css';
         >
           Isaac J. Lee
         </a>
-        © 2025
+        © 2026
       </span>
     </footer>
   </div>
