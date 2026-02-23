@@ -1,5 +1,21 @@
 # test-app
 
+## 3.0.0
+
+### Major Changes
+
+- [#289](https://github.com/ijlee2/ember-container-query/pull/289) Replaced ember-try with @embroider/try ([@ijlee2](https://github.com/ijlee2))
+- [#289](https://github.com/ijlee2/ember-container-query/pull/289) Migrated to Vite ([@ijlee2](https://github.com/ijlee2))
+
+### Minor Changes
+
+- [#290](https://github.com/ijlee2/ember-container-query/pull/290) Dropped support for Node 20 ([@ijlee2](https://github.com/ijlee2))
+
+### Patch Changes
+
+- [#291](https://github.com/ijlee2/ember-container-query/pull/291) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#288](https://github.com/ijlee2/ember-container-query/pull/288) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 2.1.6
 
 ### Patch Changes

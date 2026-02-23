@@ -1,5 +1,15 @@
 # ember-container-query
 
+## 7.0.0
+
+### Major Changes
+
+- [#290](https://github.com/ijlee2/ember-container-query/pull/290) Dropped support for Node 20 ([@ijlee2](https://github.com/ijlee2))
+
+### Patch Changes
+
+- [#291](https://github.com/ijlee2/ember-container-query/pull/291) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 6.1.7
 
 ### Patch Changes
