@@ -267,7 +267,7 @@ export default class Chart extends Component {
 ## Compatibility
 
 - Ember.js v4.12 or above
-- Node.js v20 or above
+- Node.js v22 or above
 
 
 ## Contributing
