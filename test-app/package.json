@@ -49,6 +49,7 @@
     "@embroider/config-meta-loader": "^1.0.0",
     "@embroider/core": "^4.4.3",
     "@embroider/router": "^3.0.6",
+    "@embroider/try": "^1.0.1",
     "@embroider/vite": "^1.5.1",
     "@glimmer/component": "^2.0.0",
     "@glimmer/tracking": "^1.1.2",

@@ -351,6 +351,9 @@ importers:
       '@embroider/router':
         specifier: ^3.0.6
         version: 3.0.6(@babel/core@7.29.0)(@embroider/core@4.4.3(@glint/template@1.7.4))(@glint/template@1.7.4)
+      '@embroider/try':
+        specifier: ^1.0.1
+        version: 1.0.1
       '@embroider/vite':
         specifier: ^1.5.1
         version: 1.5.2(@embroider/core@4.4.3(@glint/template@1.7.4))(@glint/template@1.7.4)(rollup@4.59.0)(vite@7.3.1(@types/node@25.3.0)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2))
@@ -1312,6 +1315,10 @@ packages:
   '@embroider/shared-internals@3.0.2':
     resolution: {integrity: sha512-/SusdG+zgosc3t+9sPFVKSFOYyiSgLfXOT6lYNWoG1YtnhWDxlK4S8leZ0jhcVjemdaHln5rTyxCnq8oFLxqpQ==}
     engines: {node: 12.* || 14.* || >= 16}
+
+  '@embroider/try@1.0.1':
+    resolution: {integrity: sha512-nGocbIshzndQEHuEAYFXMB3KIrfpPNg5TUBrZ20zJXRcNpoi1NRFMyjyMPAsGZ1/D7MsDu5i99qidUzuU0u1sg==}
+    hasBin: true
 
   '@embroider/vite@1.5.2':
     resolution: {integrity: sha512-vaD2rSugRGAsBgoF6a098JqyL8grPAoPTx627wvxfUhE5uW19hGi7ybpTD3Zlkn4pKNKR9k9tPW3sP1Cnvbm4A==}
@@ -9402,6 +9409,8 @@ snapshots:
       typescript-memoize: 1.1.1
     transitivePeerDependencies:
       - supports-color
+
+  '@embroider/try@1.0.1': {}
 
   '@embroider/vite@1.5.2(@embroider/core@4.4.3(@glint/template@1.7.4))(@glint/template@1.7.4)(rollup@4.59.0)(vite@7.3.1(@types/node@25.3.0)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2))':
     dependencies:

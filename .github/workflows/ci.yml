@@ -193,7 +193,7 @@ jobs:
 
       - id: set-test-matrix
         name: Set test matrix
-        run: echo "matrix=$(pnpx -s @embroider/try list)" >> $GITHUB_OUTPUT
+        run: echo "matrix=$(pnpm try list)" >> $GITHUB_OUTPUT
         working-directory: 'test-app'
 
 
@@ -219,7 +219,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Make file changes
-        run: pnpm dlx @embroider/try apply ${{ matrix.name }}
+        run: pnpm try apply ${{ matrix.name }}
         working-directory: 'test-app'
 
       - name: Install dependencies
