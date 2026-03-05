@@ -1,0 +1,15 @@
+diff --git a/package.json b/package.json
+index a8b93ee7b54ea8712b517539ca0eb2b2a1eb8c54..38933c3a8f5603d864e63640506246b226dad682 100644
+--- a/package.json
++++ b/package.json
+@@ -7,7 +7,9 @@
+   "license": "MIT",
+   "author": "Edward Faulkner <edward@eaf4.com>",
+   "type": "module",
+-  "bin": "cli.js",
++  "bin": {
++    "embroider-try": "cli.js"
++  },
+   "devDependencies": {
+     "release-plan": "^0.17.4"
+   },

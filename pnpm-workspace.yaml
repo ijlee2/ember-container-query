@@ -2,3 +2,6 @@ packages:
   - docs-app
   - packages/ember-container-query
   - test-app
+
+patchedDependencies:
+  '@embroider/try': patches/@embroider__try.patch
