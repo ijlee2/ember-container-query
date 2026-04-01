@@ -103,9 +103,12 @@ importers:
 
   configs/typescript:
     dependencies:
-      '@tsconfig/ember':
-        specifier: ^3.0.12
-        version: 3.0.12
+      '@ember/app-tsconfig':
+        specifier: ^2.0.0
+        version: 2.0.0
+      '@ember/library-tsconfig':
+        specifier: ^2.0.0
+        version: 2.0.0
     devDependencies:
       '@shared-configs/prettier':
         specifier: workspace:*
@@ -1293,8 +1296,14 @@ packages:
   '@ember/app-blueprint@6.11.2':
     resolution: {integrity: sha512-qbj9Irg70OX+t0yJvdB9aUxktpuuSrMV0vYiFHj8Kn7sbE8eyeV4ge+NSB+KxTg9Kmw7Ugq0wFefBZWuAxFG0Q==}
 
+  '@ember/app-tsconfig@2.0.0':
+    resolution: {integrity: sha512-NmD1OZFtCF49k4WDaPdhGP4OKoRbPaXpTBO3AsJe0okIJeCVUiEiC8YUpfTJmld9EJOEa9mW/p0tJQS70GktOA==}
+
   '@ember/edition-utils@1.2.0':
     resolution: {integrity: sha512-VmVq/8saCaPdesQmftPqbFtxJWrzxNGSQ+e8x8LLe3Hjm36pJ04Q8LeORGZkAeOhldoUX9seLGmSaHeXkIqoog==}
+
+  '@ember/library-tsconfig@2.0.0':
+    resolution: {integrity: sha512-DTGt9TYZ3bhObUviQXx4C0v46oWM7HsRrUTbgONw2QBhJVHlmXA89uXenlvuqVrCQkA0g5kz7wwyOlcjIZ8h0w==}
 
   '@ember/optional-features@3.0.0':
     resolution: {integrity: sha512-HMQqZoBb16I4NyHfQglIYjopSG6folcEJah2WPa0FuolWRA/8cS5ozQmFK5BQx7cijTQJxj6viLpQK9KrXuYdw==}
@@ -2220,10 +2229,6 @@ packages:
 
   '@tootallnate/quickjs-emscripten@0.23.0':
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
-
-  '@tsconfig/ember@3.0.12':
-    resolution: {integrity: sha512-ypFTXqIzQAB5HpYPi4TwDElDcUheWrKsEaYXgjiCAvsH6zxcQ4zUeuJqmfT+FoUlHTPZ3Xyel81OxrcjI+rilw==}
-    deprecated: Please use @ember/app-tsconfig or @ember/library-tsconfig instead. These live at https://github.com/ember-cli/tsconfigs
 
   '@tybys/wasm-util@0.10.1':
     resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
@@ -9127,7 +9132,11 @@ snapshots:
       sort-package-json: 3.6.1
       walk-sync: 3.0.0
 
+  '@ember/app-tsconfig@2.0.0': {}
+
   '@ember/edition-utils@1.2.0': {}
+
+  '@ember/library-tsconfig@2.0.0': {}
 
   '@ember/optional-features@3.0.0(@types/node@25.5.0)':
     dependencies:
@@ -10478,8 +10487,6 @@ snapshots:
   '@socket.io/component-emitter@3.1.2': {}
 
   '@tootallnate/quickjs-emscripten@0.23.0': {}
-
-  '@tsconfig/ember@3.0.12': {}
 
   '@tybys/wasm-util@0.10.1':
     dependencies:
