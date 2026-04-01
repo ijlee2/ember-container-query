@@ -73,6 +73,7 @@ export default class ContainerQuery<
 
     registerDestructor(this, () => {
       if (this._element) {
+        // eslint-disable-next-line @typescript-eslint/unbound-method
         this._resizeObserver.unobserve(this._element, this.onResize);
       }
     });
@@ -129,10 +130,12 @@ export default class ContainerQuery<
 
   private registerResizeObserver(element: Element): void {
     if (this._element) {
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       this._resizeObserver.unobserve(this._element, this.onResize);
     }
 
     this._element = element;
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     this._resizeObserver.observe(this._element, this.onResize);
   }
 
@@ -168,7 +171,7 @@ export default class ContainerQuery<
     const element = resizeObserverEntry.target;
 
     if (this.debounce > 0) {
-      // eslint-disable-next-line ember/no-runloop
+      // eslint-disable-next-line @typescript-eslint/unbound-method, ember/no-runloop
       _debounce(this, this.queryContainer, element, this.debounce);
       return;
     }

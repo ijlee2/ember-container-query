@@ -9,7 +9,7 @@ import { setupRenderingTest } from 'docs-app/tests/helpers';
 import { module, test } from 'qunit';
 
 interface TestContext extends BaseTestContext {
-  data: Record<string, any>;
+  data: Record<string, unknown>;
   updateData: ({ key, value }: { key: string; value: unknown }) => void;
 }
 
