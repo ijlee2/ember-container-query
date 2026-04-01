@@ -1,1 +1,1 @@
-export { default } from '@ijlee2-frontend-configs/eslint-config-ember/v2-app';
+export { default } from '@shared-configs/eslint-config-ember/v2-app';

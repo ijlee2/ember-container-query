@@ -34,7 +34,7 @@ export default class ProductsController extends Controller {
     value,
   }: {
     key: string;
-    value: any;
+    value: unknown;
   }): void {
     if (key !== 'name') {
       return;
@@ -46,6 +46,6 @@ export default class ProductsController extends Controller {
       return;
     }
 
-    this[key] = value;
+    this[key] = value as string;
   }
 }

@@ -1,0 +1,50 @@
+{
+  "name": "@shared-configs/eslint-config-ember",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Configuration for eslint (Ember)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ijlee2/ember-container-query.git"
+  },
+  "author": "Isaac J. Lee",
+  "type": "module",
+  "exports": {
+    "./v1-app": "./v1-app/index.mjs",
+    "./v2-addon": "./v2-addon/index.mjs",
+    "./v2-app": "./v2-app/index.mjs"
+  },
+  "scripts": {
+    "format": "prettier . --cache --write",
+    "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\"",
+    "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\" && pnpm format",
+    "lint:format": "prettier . --cache --check",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@ijlee2-frontend-configs/eslint-config-ember": "^3.1.1"
+  },
+  "devDependencies": {
+    "@shared-configs/eslint-config-node": "workspace:*",
+    "@shared-configs/prettier": "workspace:*",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.39.4",
+    "prettier": "^3.8.1"
+  },
+  "peerDependencies": {
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": false
+    },
+    "typescript": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": "22.* || >= 24"
+  }
+}
