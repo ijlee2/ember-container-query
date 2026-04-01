@@ -1,5 +1,13 @@
 # ember-container-query
 
+## 7.0.1
+
+### Patch Changes
+
+- [#296](https://github.com/ijlee2/ember-container-query/pull/296) Replaced @tsconfig/ember with @ember/library-tsconfig ([@ijlee2](https://github.com/ijlee2))
+- [#294](https://github.com/ijlee2/ember-container-query/pull/294) Skipped ember-beta and ember-canary to avoid issues with 7.0 pre-release ([@ijlee2](https://github.com/ijlee2))
+- [#293](https://github.com/ijlee2/ember-container-query/pull/293) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 7.0.0
 
 ### Major Changes

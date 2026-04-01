@@ -1,5 +1,12 @@
 # docs-app
 
+## 2.2.1
+
+### Patch Changes
+
+- [#296](https://github.com/ijlee2/ember-container-query/pull/296) Replaced @tsconfig/ember with @ember/app-tsconfig ([@ijlee2](https://github.com/ijlee2))
+- [#293](https://github.com/ijlee2/ember-container-query/pull/293) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 2.2.0
 
 ### Minor Changes
