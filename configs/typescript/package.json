@@ -1,0 +1,37 @@
+{
+  "name": "@shared-configs/typescript",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Configuration for typescript",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ijlee2/ember-container-query.git"
+  },
+  "author": "Isaac J. Lee",
+  "type": "module",
+  "exports": {
+    "./ember": "./ember/index.json"
+  },
+  "scripts": {
+    "lint:js": "prettier \"**/*.{json,mjs}\" --cache --check",
+    "lint:js:fix": "prettier \"**/*.{json,mjs}\" --cache --write"
+  },
+  "dependencies": {
+    "@tsconfig/ember": "^3.0.12"
+  },
+  "devDependencies": {
+    "@shared-configs/prettier": "workspace:*",
+    "prettier": "^3.8.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": false
+    }
+  },
+  "engines": {
+    "node": "22.* || >= 24"
+  }
+}
