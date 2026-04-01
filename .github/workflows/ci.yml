@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Set up pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v6
@@ -52,7 +52,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Set up pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v6
@@ -68,7 +68,7 @@ jobs:
         working-directory: 'docs-app'
 
       - name: Upload docs-app
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: dist
           path: docs-app/dist
@@ -115,7 +115,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Set up pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v6
@@ -127,7 +127,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Download docs-app
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: dist
           path: docs-app/dist
@@ -156,7 +156,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Set up pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v6
@@ -183,7 +183,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Set up pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v6
@@ -193,7 +193,7 @@ jobs:
 
       - id: set-test-matrix
         name: Set test matrix
-        run: echo "matrix=$(pnpx -s @embroider/try list)" >> $GITHUB_OUTPUT
+        run: echo "matrix=$(pnpx @embroider/try list)" >> $GITHUB_OUTPUT
         working-directory: 'test-app'
 
 
@@ -210,7 +210,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Set up pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v6
@@ -219,7 +219,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Make file changes
-        run: pnpm dlx @embroider/try apply ${{ matrix.name }}
+        run: pnpx @embroider/try apply ${{ matrix.name }}
         working-directory: 'test-app'
 
       - name: Install dependencies
