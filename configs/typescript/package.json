@@ -10,14 +10,16 @@
   "author": "Isaac J. Lee",
   "type": "module",
   "exports": {
-    "./ember": "./ember/index.json"
+    "./ember-addon": "./ember-addon/index.json",
+    "./ember-app": "./ember-app/index.json"
   },
   "scripts": {
     "lint:js": "prettier \"**/*.{json,mjs}\" --cache --check",
     "lint:js:fix": "prettier \"**/*.{json,mjs}\" --cache --write"
   },
   "dependencies": {
-    "@tsconfig/ember": "^3.0.12"
+    "@ember/app-tsconfig": "^2.0.0",
+    "@ember/library-tsconfig": "^2.0.0"
   },
   "devDependencies": {
     "@shared-configs/prettier": "workspace:*",
