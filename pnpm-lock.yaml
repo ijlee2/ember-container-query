@@ -24,6 +24,96 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1
 
+  configs/ember-template-lint:
+    dependencies:
+      '@ijlee2-frontend-configs/ember-template-lint':
+        specifier: ^3.0.0
+        version: 3.0.0(ember-template-lint@7.9.3)
+    devDependencies:
+      '@shared-configs/prettier':
+        specifier: workspace:*
+        version: link:../prettier
+      prettier:
+        specifier: ^3.8.1
+        version: 3.8.1
+
+  configs/eslint/ember:
+    dependencies:
+      '@ijlee2-frontend-configs/eslint-config-ember':
+        specifier: ^3.1.1
+        version: 3.1.1(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
+    devDependencies:
+      '@shared-configs/eslint-config-node':
+        specifier: workspace:*
+        version: link:../node
+      '@shared-configs/prettier':
+        specifier: workspace:*
+        version: link:../../prettier
+      concurrently:
+        specifier: ^9.2.1
+        version: 9.2.1
+      eslint:
+        specifier: ^9.39.4
+        version: 9.39.4(jiti@2.6.1)
+      prettier:
+        specifier: ^3.8.1
+        version: 3.8.1
+
+  configs/eslint/node:
+    dependencies:
+      '@ijlee2-frontend-configs/eslint-config-node':
+        specifier: ^3.1.1
+        version: 3.1.1(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
+    devDependencies:
+      '@shared-configs/prettier':
+        specifier: workspace:*
+        version: link:../../prettier
+      concurrently:
+        specifier: ^9.2.1
+        version: 9.2.1
+      eslint:
+        specifier: ^9.39.4
+        version: 9.39.4(jiti@2.6.1)
+      prettier:
+        specifier: ^3.8.1
+        version: 3.8.1
+
+  configs/prettier:
+    dependencies:
+      '@ijlee2-frontend-configs/prettier':
+        specifier: ^3.0.1
+        version: 3.0.1(prettier@3.8.1)
+    devDependencies:
+      prettier:
+        specifier: ^3.8.1
+        version: 3.8.1
+
+  configs/stylelint:
+    dependencies:
+      '@ijlee2-frontend-configs/stylelint':
+        specifier: ^3.1.1
+        version: 3.1.1(stylelint@17.6.0(typescript@5.9.3))
+    devDependencies:
+      '@shared-configs/prettier':
+        specifier: workspace:*
+        version: link:../prettier
+      prettier:
+        specifier: ^3.8.1
+        version: 3.8.1
+
+  configs/typescript:
+    dependencies:
+      '@tsconfig/ember':
+        specifier: ^3.0.12
+        version: 3.0.12
+    devDependencies:
+      '@shared-configs/prettier':
+        specifier: workspace:*
+        version: link:../prettier
+      prettier:
+        specifier: ^3.8.1
+        version: 3.8.1
+
   docs-app:
     devDependencies:
       '@babel/core':
@@ -77,27 +167,27 @@ importers:
       '@glint/tsserver-plugin':
         specifier: ^2.3.1
         version: 2.3.1
-      '@ijlee2-frontend-configs/ember-template-lint':
-        specifier: ^3.0.0
-        version: 3.0.0(ember-template-lint@7.9.3)
-      '@ijlee2-frontend-configs/eslint-config-ember':
-        specifier: ^3.1.1
-        version: 3.1.1(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
-      '@ijlee2-frontend-configs/prettier':
-        specifier: ^3.0.1
-        version: 3.0.1(prettier@3.8.1)
-      '@ijlee2-frontend-configs/stylelint':
-        specifier: ^3.1.1
-        version: 3.1.1(stylelint@17.6.0(typescript@5.9.3))
       '@percy/cli':
         specifier: ^1.31.11
         version: 1.31.11(typescript@5.9.3)
       '@percy/ember':
         specifier: ^5.0.0
         version: 5.0.0(@babel/core@7.29.0)(@glint/template@1.7.7)(webpack@5.105.4)
-      '@tsconfig/ember':
-        specifier: ^3.0.12
-        version: 3.0.12
+      '@shared-configs/ember-template-lint':
+        specifier: workspace:*
+        version: link:../configs/ember-template-lint
+      '@shared-configs/eslint-config-ember':
+        specifier: workspace:*
+        version: link:../configs/eslint/ember
+      '@shared-configs/prettier':
+        specifier: workspace:*
+        version: link:../configs/prettier
+      '@shared-configs/stylelint':
+        specifier: workspace:*
+        version: link:../configs/stylelint
+      '@shared-configs/typescript':
+        specifier: workspace:*
+        version: link:../configs/typescript
       '@types/qunit':
         specifier: ^2.19.13
         version: 2.19.13
@@ -279,21 +369,21 @@ importers:
       '@glint/tsserver-plugin':
         specifier: ^2.3.1
         version: 2.3.1
-      '@ijlee2-frontend-configs/ember-template-lint':
-        specifier: ^3.0.0
-        version: 3.0.0(ember-template-lint@7.9.3)
-      '@ijlee2-frontend-configs/eslint-config-ember':
-        specifier: ^3.1.1
-        version: 3.1.1(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
-      '@ijlee2-frontend-configs/prettier':
-        specifier: ^3.0.1
-        version: 3.0.1(prettier@3.8.1)
       '@rollup/plugin-babel':
         specifier: ^7.0.0
         version: 7.0.0(@babel/core@7.29.0)(rollup@4.60.1)
-      '@tsconfig/ember':
-        specifier: ^3.0.12
-        version: 3.0.12
+      '@shared-configs/ember-template-lint':
+        specifier: workspace:*
+        version: link:../../configs/ember-template-lint
+      '@shared-configs/eslint-config-ember':
+        specifier: workspace:*
+        version: link:../../configs/eslint/ember
+      '@shared-configs/prettier':
+        specifier: workspace:*
+        version: link:../../configs/prettier
+      '@shared-configs/typescript':
+        specifier: workspace:*
+        version: link:../../configs/typescript
       babel-plugin-ember-template-compilation:
         specifier: ^4.0.0
         version: 4.0.0
@@ -369,21 +459,21 @@ importers:
       '@glint/tsserver-plugin':
         specifier: ^2.3.1
         version: 2.3.1
-      '@ijlee2-frontend-configs/ember-template-lint':
-        specifier: ^3.0.0
-        version: 3.0.0(ember-template-lint@7.9.3)
-      '@ijlee2-frontend-configs/eslint-config-ember':
-        specifier: ^3.1.1
-        version: 3.1.1(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
-      '@ijlee2-frontend-configs/prettier':
-        specifier: ^3.0.1
-        version: 3.0.1(prettier@3.8.1)
       '@rollup/plugin-babel':
         specifier: ^7.0.0
         version: 7.0.0(@babel/core@7.29.0)(rollup@4.60.1)
-      '@tsconfig/ember':
-        specifier: ^3.0.12
-        version: 3.0.12
+      '@shared-configs/ember-template-lint':
+        specifier: workspace:*
+        version: link:../configs/ember-template-lint
+      '@shared-configs/eslint-config-ember':
+        specifier: workspace:*
+        version: link:../configs/eslint/ember
+      '@shared-configs/prettier':
+        specifier: workspace:*
+        version: link:../configs/prettier
+      '@shared-configs/typescript':
+        specifier: workspace:*
+        version: link:../configs/typescript
       '@types/qunit':
         specifier: ^2.19.13
         version: 2.19.13
@@ -1510,6 +1600,16 @@ packages:
 
   '@ijlee2-frontend-configs/eslint-config-ember@3.1.1':
     resolution: {integrity: sha512-XmS8w/8PWG1JFZh+je+cDU/RMKYUtrXpT06YKh8UtIxmYgx3IIFjokd+CZ+hw066j0bhO5Ca5RZhqiwYq4Qb6A==}
+    engines: {node: 22.* || >= 24}
+    peerDependencies:
+      eslint: ^9.39.4
+      typescript: ^5.9.3
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  '@ijlee2-frontend-configs/eslint-config-node@3.1.1':
+    resolution: {integrity: sha512-49ZCF0a8ZErW7DEf1+aLPf3z50iURsqw93tzKw0zExSk63+1sIhQxwgwnVeP/Q0gqWmgV949BruWMg9htePcPQ==}
     engines: {node: 22.* || >= 24}
     peerDependencies:
       eslint: ^9.39.4
@@ -9727,6 +9827,30 @@ snapshots:
       eslint-plugin-import-x: 4.16.2(@typescript-eslint/utils@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-n: 17.24.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
       eslint-plugin-qunit: 8.2.6(eslint@9.39.4(jiti@2.6.1))
+      eslint-plugin-simple-import-sort: 12.1.1(eslint@9.39.4(jiti@2.6.1))
+      eslint-plugin-sort-class-members: 1.21.0(eslint@9.39.4(jiti@2.6.1))
+      eslint-plugin-typescript-sort-keys: 3.3.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
+      globals: 17.4.0
+      typescript-eslint: 8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
+    optionalDependencies:
+      typescript: 5.9.3
+    transitivePeerDependencies:
+      - '@typescript-eslint/parser'
+      - '@typescript-eslint/utils'
+      - eslint-import-resolver-node
+      - eslint-plugin-import
+      - supports-color
+
+  '@ijlee2-frontend-configs/eslint-config-node@3.1.1(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)':
+    dependencies:
+      '@babel/core': 7.29.0(supports-color@8.1.1)
+      '@babel/eslint-parser': 7.28.6(@babel/core@7.29.0)(eslint@9.39.4(jiti@2.6.1))
+      '@eslint/js': 9.39.4
+      eslint: 9.39.4(jiti@2.6.1)
+      eslint-config-prettier: 10.1.8(eslint@9.39.4(jiti@2.6.1))
+      eslint-import-resolver-typescript: 4.4.4(eslint-plugin-import-x@4.16.2(@typescript-eslint/utils@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1)))(eslint@9.39.4(jiti@2.6.1))
+      eslint-plugin-import-x: 4.16.2(@typescript-eslint/utils@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))
+      eslint-plugin-n: 17.24.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
       eslint-plugin-simple-import-sort: 12.1.1(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-sort-class-members: 1.21.0(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-typescript-sort-keys: 3.3.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
