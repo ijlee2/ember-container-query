@@ -1,1 +1,1 @@
-export { default } from '@ijlee2-frontend-configs/stylelint/css-modules';
+export { default } from '@shared-configs/stylelint';

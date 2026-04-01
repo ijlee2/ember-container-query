@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('@ijlee2-frontend-configs/ember-template-lint');
+module.exports = require('@shared-configs/ember-template-lint');
