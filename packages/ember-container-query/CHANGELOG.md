@@ -1,5 +1,12 @@
 # ember-container-query
 
+## 7.0.2
+
+### Patch Changes
+
+- [#297](https://github.com/ijlee2/ember-container-query/pull/297) Updated project configurations ([@ijlee2](https://github.com/ijlee2))
+- [#297](https://github.com/ijlee2/ember-container-query/pull/297) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 7.0.1
 
 ### Patch Changes
