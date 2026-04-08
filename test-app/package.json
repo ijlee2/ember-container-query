@@ -50,11 +50,11 @@
     "@embroider/core": "^4.4.7",
     "@embroider/router": "^3.0.6",
     "@embroider/vite": "^1.7.2",
-    "@glimmer/component": "^2.0.0",
+    "@glimmer/component": "^2.1.1",
     "@glimmer/tracking": "^1.1.2",
-    "@glint/ember-tsc": "^1.4.0",
+    "@glint/ember-tsc": "^1.5.0",
     "@glint/template": "^1.7.7",
-    "@glint/tsserver-plugin": "^2.3.1",
+    "@glint/tsserver-plugin": "^2.4.0",
     "@rollup/plugin-babel": "^7.0.0",
     "@shared-configs/ember-template-lint": "workspace:*",
     "@shared-configs/eslint-config-ember": "workspace:*",
@@ -84,7 +84,7 @@
     "qunit": "^2.25.0",
     "qunit-dom": "^3.5.0",
     "typescript": "^5.9.3",
-    "vite": "^8.0.3"
+    "vite": "^8.0.7"
   },
   "engines": {
     "node": "22.* || >= 24"
