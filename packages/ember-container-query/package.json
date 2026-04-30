@@ -65,10 +65,10 @@
   },
   "dependencies": {
     "@embroider/addon-shim": "^1.10.2",
-    "decorator-transforms": "^2.3.1",
+    "decorator-transforms": "^2.3.2",
     "ember-element-helper": "^0.8.8",
     "ember-modifier": "^4.3.0",
-    "ember-primitives": "^0.55.1"
+    "ember-primitives": "^0.57.0"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
@@ -87,11 +87,11 @@
     "@shared-configs/typescript": "workspace:*",
     "babel-plugin-ember-template-compilation": "^4.0.0",
     "concurrently": "^9.2.1",
-    "ember-source": "~6.11.0",
+    "ember-source": "~6.12.0",
     "ember-template-lint": "^7.9.3",
     "eslint": "^9.39.4",
-    "prettier": "^3.8.1",
-    "rollup": "^4.60.1",
+    "prettier": "^3.8.3",
+    "rollup": "^4.60.2",
     "typescript": "^5.9.3"
   },
   "engines": {
