@@ -45,7 +45,7 @@ interface UiFormSignature {
 }
 
 export default class UiForm extends Component<UiFormSignature> {
-  @tracked data = this.args.data ?? ({} as Record<string, unknown>);
+  @tracked data = this.args.data ?? {};
 
   @action async submitForm(event: SubmitEvent): Promise<void> {
     event.preventDefault();
