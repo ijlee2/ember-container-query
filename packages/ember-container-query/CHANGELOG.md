@@ -1,5 +1,11 @@
 # ember-container-query
 
+## 7.0.4
+
+### Patch Changes
+
+- [#300](https://github.com/ijlee2/ember-container-query/pull/300) Began testing ember-lts-6.12, ember-beta, and ember-canary scenarios ([@ijlee2](https://github.com/ijlee2))
+
 ## 7.0.3
 
 ### Patch Changes
