@@ -16,6 +16,7 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         package-location:
           - 'docs-app'
@@ -79,6 +80,7 @@ jobs:
     needs: [build-docs-app]
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         device:
           - 'w1-h1'
@@ -146,6 +148,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         package-location:
           - 'packages/ember-container-query'
