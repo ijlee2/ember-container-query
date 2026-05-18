@@ -77,9 +77,9 @@
     "@embroider/addon-dev": "^8.3.0",
     "@glimmer/component": "^2.1.1",
     "@glimmer/tracking": "^1.1.2",
-    "@glint/ember-tsc": "^1.5.0",
+    "@glint/ember-tsc": "^1.7.4",
     "@glint/template": "^1.7.7",
-    "@glint/tsserver-plugin": "^2.4.0",
+    "@glint/tsserver-plugin": "^2.5.4",
     "@rollup/plugin-babel": "^7.0.0",
     "@shared-configs/ember-template-lint": "workspace:*",
     "@shared-configs/eslint-config-ember": "workspace:*",
@@ -91,7 +91,7 @@
     "ember-template-lint": "^7.9.3",
     "eslint": "^9.39.4",
     "prettier": "^3.8.3",
-    "rollup": "^4.60.3",
+    "rollup": "^4.60.4",
     "typescript": "^5.9.3"
   },
   "engines": {
