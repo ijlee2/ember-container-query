@@ -73,11 +73,11 @@
     "ember-resolver": "^13.2.0",
     "ember-source": "~6.12.0",
     "ember-template-lint": "^7.9.3",
-    "ember-test-selectors": "^7.1.0",
     "eslint": "^9.39.4",
     "prettier": "^3.8.3",
     "qunit": "^2.26.0",
     "qunit-dom": "^3.5.1",
+    "strip-test-selectors": "^0.1.0",
     "typescript": "^5.9.3",
     "vite": "^8.0.16"
   },
