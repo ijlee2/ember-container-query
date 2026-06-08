@@ -1,5 +1,16 @@
 # test-app
 
+## 3.1.0
+
+### Minor Changes
+
+- [#307](https://github.com/ijlee2/ember-container-query/pull/307) Updated ember-source to 7.0.0 ([@ijlee2](https://github.com/ijlee2))
+- [#305](https://github.com/ijlee2/ember-container-query/pull/305) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Patch Changes
+
+- [#306](https://github.com/ijlee2/ember-container-query/pull/306) Standardized configurations ([@ijlee2](https://github.com/ijlee2))
+
 ## 3.0.6
 
 ### Patch Changes

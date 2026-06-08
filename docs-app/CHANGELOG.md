@@ -1,5 +1,16 @@
 # docs-app
 
+## 3.0.0
+
+### Major Changes
+
+- [#306](https://github.com/ijlee2/ember-container-query/pull/306) Migrated to Vite ([@ijlee2](https://github.com/ijlee2))
+
+### Minor Changes
+
+- [#307](https://github.com/ijlee2/ember-container-query/pull/307) Updated ember-source to 7.0.0 ([@ijlee2](https://github.com/ijlee2))
+- [#305](https://github.com/ijlee2/ember-container-query/pull/305) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 2.2.6
 
 ### Patch Changes
