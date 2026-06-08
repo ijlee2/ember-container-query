@@ -87,7 +87,7 @@
     "@shared-configs/typescript": "workspace:*",
     "babel-plugin-ember-template-compilation": "^4.0.0",
     "concurrently": "^10.0.3",
-    "ember-source": "~6.12.0",
+    "ember-source": "~7.0.0",
     "ember-template-lint": "^7.9.3",
     "eslint": "^9.39.4",
     "prettier": "^3.8.3",

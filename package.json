@@ -39,5 +39,10 @@
   "engines": {
     "node": "22.* || >= 24",
     "pnpm": ">= 10"
+  },
+  "pnpm": {
+    "overrides": {
+      "ember-cli-htmlbars": "^7.0.1"
+    }
   }
 }
