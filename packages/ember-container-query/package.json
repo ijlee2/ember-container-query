@@ -64,7 +64,7 @@
     "test": "echo \"A v2 addon does not have tests, run tests in test-app\""
   },
   "dependencies": {
-    "@embroider/addon-shim": "^1.10.2",
+    "@embroider/addon-shim": "^1.10.3",
     "decorator-transforms": "^2.3.2",
     "ember-element-helper": "^0.8.8",
     "ember-modifier": "^4.3.0",
@@ -80,18 +80,18 @@
     "@glint/ember-tsc": "^1.8.0",
     "@glint/template": "^1.7.7",
     "@glint/tsserver-plugin": "^2.5.6",
-    "@rollup/plugin-babel": "^7.0.0",
+    "@rollup/plugin-babel": "^7.1.0",
     "@shared-configs/ember-template-lint": "workspace:*",
     "@shared-configs/eslint-config-ember": "workspace:*",
     "@shared-configs/prettier": "workspace:*",
     "@shared-configs/typescript": "workspace:*",
     "babel-plugin-ember-template-compilation": "^4.0.0",
-    "concurrently": "^10.0.0",
+    "concurrently": "^10.0.3",
     "ember-source": "~6.12.0",
     "ember-template-lint": "^7.9.3",
     "eslint": "^9.39.4",
     "prettier": "^3.8.3",
-    "rollup": "^4.60.4",
+    "rollup": "^4.61.1",
     "typescript": "^5.9.3"
   },
   "engines": {
