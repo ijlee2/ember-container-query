@@ -24,7 +24,7 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build --environment=production",
+    "build": "ember build --environment=production && ./post-build.sh",
     "build:test": "ember build --environment=test",
     "format": "prettier . --cache --write",
     "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\"",
@@ -86,7 +86,6 @@
     "ember-cli-clean-css": "^3.0.0",
     "ember-cli-htmlbars": "^7.0.1",
     "ember-cli-inject-live-reload": "^2.1.0",
-    "ember-cli-netlify": "^0.4.1",
     "ember-container-query": "workspace:*",
     "ember-load-initializers": "^3.0.1",
     "ember-modifier": "^4.3.0",

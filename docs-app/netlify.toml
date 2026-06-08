@@ -1,0 +1,8 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+    [redirects.rate_limit]
+    window_limit = 50
+    window_size = 60
+    aggregate_by = ["domain", "ip"]
