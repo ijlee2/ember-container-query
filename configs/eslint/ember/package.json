@@ -10,7 +10,6 @@
   "author": "Isaac J. Lee",
   "type": "module",
   "exports": {
-    "./v1-app": "./v1-app/index.mjs",
     "./v2-addon": "./v2-addon/index.mjs",
     "./v2-app": "./v2-app/index.mjs"
   },
