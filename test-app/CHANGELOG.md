@@ -1,5 +1,11 @@
 # test-app
 
+## 3.1.1
+
+### Patch Changes
+
+- [#308](https://github.com/ijlee2/ember-container-query/pull/308) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 3.1.0
 
 ### Minor Changes
