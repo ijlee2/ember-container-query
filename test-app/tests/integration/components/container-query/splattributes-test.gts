@@ -16,7 +16,7 @@ module('Integration | Component | container-query', function (hooks) {
     test('The component accepts splattributes', async function (assert) {
       await render(
         <template>
-          {{! template-lint-disable no-inline-styles }}
+          {{! eslint-disable-next-line ember/template-no-inline-styles }}
           <div style="width: 500px; height: 800px;">
             <ContainerQuery
               @features={{hash

@@ -9,8 +9,9 @@ module('Integration | Modifier | container-query', function (hooks) {
   test('We can call the modifier without passing arguments', async function (assert) {
     await render(
       <template>
-        {{! template-lint-disable no-inline-styles }}
+        {{! eslint-disable-next-line ember/template-no-inline-styles }}
         <div data-test-parent-element style="width: 250px; height: 500px;">
+          {{! eslint-disable-next-line ember/template-no-inline-styles }}
           <div style="width: 100%; height: 100%;" {{containerQuery}}>
           </div>
         </div>

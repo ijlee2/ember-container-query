@@ -28,7 +28,7 @@ module('Integration | Component | container-query', function (hooks) {
     hooks.beforeEach(async function () {
       await render(
         <template>
-          {{! template-lint-disable no-inline-styles }}
+          {{! eslint-disable-next-line ember/template-no-inline-styles }}
           <div data-test-parent-element style="width: 250px; height: 500px;">
             <ContainerQuery
               @features={{hash
@@ -106,7 +106,7 @@ module('Integration | Component | container-query', function (hooks) {
     hooks.beforeEach(async function () {
       await render(
         <template>
-          {{! template-lint-disable no-inline-styles }}
+          {{! eslint-disable-next-line ember/template-no-inline-styles }}
           <div data-test-parent-element style="width: 250px; height: 500px;">
             <ContainerQuery
               @features={{hash
@@ -189,7 +189,7 @@ module('Integration | Component | container-query', function (hooks) {
 
       await render(
         <template>
-          {{! template-lint-disable no-inline-styles }}
+          {{! eslint-disable-next-line ember/template-no-inline-styles }}
           <div data-test-parent-element style="width: 250px; height: 500px;">
             <ContainerQuery
               @features={{hash
