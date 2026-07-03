@@ -1,5 +1,12 @@
 # ember-container-query
 
+## 7.0.9
+
+### Patch Changes
+
+- [#309](https://github.com/ijlee2/ember-container-query/pull/309) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#309](https://github.com/ijlee2/ember-container-query/pull/309) Removed ember-template-lint ([@ijlee2](https://github.com/ijlee2))
+
 ## 7.0.8
 
 ### Patch Changes
