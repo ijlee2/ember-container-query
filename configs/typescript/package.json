@@ -14,8 +14,8 @@
     "./ember-app": "./ember-app/index.json"
   },
   "scripts": {
-    "lint:js": "prettier \"**/*.{json,mjs}\" --cache --check",
-    "lint:js:fix": "prettier \"**/*.{json,mjs}\" --cache --write"
+    "lint": "prettier \"**/*.{json,mjs}\" --cache --check",
+    "lint:fix": "prettier \"**/*.{json,mjs}\" --cache --write"
   },
   "dependencies": {
     "@ember/app-tsconfig": "^2.0.0",
