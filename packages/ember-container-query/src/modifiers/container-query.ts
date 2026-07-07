@@ -6,7 +6,7 @@ import type { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
 import Modifier from 'ember-modifier';
 import { resizeObserver } from 'ember-primitives/resize-observer';
 
-type IndexSignatureParameter = string | number | symbol;
+type IndexSignatureParameter = number | string | symbol;
 type ObjectEntry<T> = [keyof T, T[keyof T]];
 type ObjectEntries<T> = ObjectEntry<T>[];
 

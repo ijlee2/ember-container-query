@@ -21,14 +21,14 @@ import {
 } from 'test-app/tests/helpers';
 
 type FeatureNames =
-  | 'small'
-  | 'medium'
   | 'large'
-  | 'short'
-  | 'tall'
+  | 'medium'
   | 'ratio-type-A'
   | 'ratio-type-B'
-  | 'ratio-type-C';
+  | 'ratio-type-C'
+  | 'short'
+  | 'small'
+  | 'tall';
 
 interface TestContext extends BaseTestContext {
   features?: Features<FeatureNames>;

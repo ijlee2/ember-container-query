@@ -7,7 +7,7 @@ import type { Model } from 'docs-app/routes/products';
 export default class ProductsController extends Controller {
   declare model: Model;
 
-  @tracked name: string | null = null;
+  @tracked name: null | string = null;
 
   get filteredProducts(): Product[] {
     const { model: products, name } = this;

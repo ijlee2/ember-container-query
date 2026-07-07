@@ -7,7 +7,7 @@ import styles from './body.module.css';
 
 interface WidgetsWidget4MemoBodySignature {
   Args: {
-    cqFeatures?: QueryResults<'small' | 'large' | 'short'>;
+    cqFeatures?: QueryResults<'large' | 'short' | 'small'>;
   };
 }
 

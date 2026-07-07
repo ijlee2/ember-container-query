@@ -21,7 +21,7 @@ interface UiFormNumberSignature {
     minValue?: number;
     onUpdate: ({ key, value }: { key: string; value: unknown }) => void;
     placeholder?: string;
-    step?: number | 'any';
+    step?: 'any' | number;
     type?: string;
   };
 }
