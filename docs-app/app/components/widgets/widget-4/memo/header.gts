@@ -7,7 +7,7 @@ import styles from './header.module.css';
 
 interface WidgetsWidget4MemoHeaderSignature {
   Args: {
-    cqFeatures?: QueryResults<'small' | 'large' | 'short'>;
+    cqFeatures?: QueryResults<'large' | 'short' | 'small'>;
   };
 }
 

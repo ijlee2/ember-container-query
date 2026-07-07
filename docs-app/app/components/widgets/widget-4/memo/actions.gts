@@ -10,7 +10,7 @@ import styles from './actions.module.css';
 
 interface WidgetsWidget4MemoActionsSignature {
   Args: {
-    cqFeatures?: QueryResults<'small' | 'large' | 'short'>;
+    cqFeatures?: QueryResults<'large' | 'short' | 'small'>;
   };
 }
 

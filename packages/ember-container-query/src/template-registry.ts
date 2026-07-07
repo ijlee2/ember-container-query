@@ -5,9 +5,9 @@ import type WidthHelper from './helpers/width.ts';
 import type ContainerQueryModifier from './modifiers/container-query.ts';
 
 export default interface EmberContainerQueryRegistry {
-  ContainerQuery: typeof ContainerQueryComponent;
   'aspect-ratio': typeof AspectRatioHelper;
   'container-query': typeof ContainerQueryModifier;
+  ContainerQuery: typeof ContainerQueryComponent;
   height: typeof HeightHelper;
   width: typeof WidthHelper;
 }
