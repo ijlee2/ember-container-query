@@ -22,29 +22,12 @@
   "include": ["app/**/*", "tests/**/*", "types/**/*", "vite.config.mts"],
   "glint": {
     "additionalSpecialForms": {
-      "imports": {
-        "ember-truth-helpers": {
-          "and": "&&",
-          "eq": "===",
-          "not": "!",
-          "not-eq": "!==",
-          "or": "||"
-        },
-        "ember-truth-helpers/helpers/and": {
-          "default": "&&"
-        },
-        "ember-truth-helpers/helpers/eq": {
-          "default": "==="
-        },
-        "ember-truth-helpers/helpers/not": {
-          "default": "!"
-        },
-        "ember-truth-helpers/helpers/not-eq": {
-          "default": "!=="
-        },
-        "ember-truth-helpers/helpers/or": {
-          "default": "||"
-        }
+      "globals": {
+        "and": "&&",
+        "eq": "===",
+        "not": "!",
+        "neq": "!==",
+        "or": "||"
       }
     }
   }

@@ -95,7 +95,6 @@
     "ember-source": "~7.1.0",
     "ember-svg-jar": "^2.7.1",
     "ember-template-imports": "^4.4.0",
-    "ember-truth-helpers": "^5.0.0",
     "embroider-css-modules": "^4.0.10",
     "eslint": "^10.6.0",
     "loader.js": "^4.7.0",
