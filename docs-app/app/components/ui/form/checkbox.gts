@@ -4,7 +4,6 @@ import { action, get } from '@ember/object';
 import Component from '@glimmer/component';
 import { generateErrorMessage } from 'docs-app/utils/components/ui/form';
 import svgJar from 'ember-svg-jar/helpers/svg-jar';
-import { or } from 'ember-truth-helpers';
 import { local } from 'embroider-css-modules';
 
 import styles from './checkbox.module.css';

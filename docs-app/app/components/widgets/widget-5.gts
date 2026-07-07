@@ -1,6 +1,5 @@
 import { hash } from '@ember/helper';
 import { ContainerQuery, height, width } from 'ember-container-query';
-import { and } from 'ember-truth-helpers';
 
 import styles from './widget-5.module.css';
 

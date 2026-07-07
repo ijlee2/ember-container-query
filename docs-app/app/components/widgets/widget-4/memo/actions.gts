@@ -3,7 +3,6 @@ import type { QueryResults } from 'ember-container-query';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: Could not find a declaration file for module 'ember-svg-jar/helpers/svg-jar'.
 import svgJar from 'ember-svg-jar/helpers/svg-jar';
-import { or } from 'ember-truth-helpers';
 import { local } from 'embroider-css-modules';
 
 import styles from './actions.module.css';

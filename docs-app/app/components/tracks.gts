@@ -2,7 +2,6 @@ import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
 import type { Track } from 'docs-app/data/album';
 import { ContainerQuery, height, width } from 'ember-container-query';
-import { and } from 'ember-truth-helpers';
 
 import TracksList from './tracks/list';
 import TracksTable from './tracks/table';
