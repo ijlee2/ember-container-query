@@ -1,5 +1,12 @@
 # test-app
 
+## 3.3.0
+
+### Minor Changes
+
+- [#311](https://github.com/ijlee2/ember-container-query/pull/311) Updated dependencies (babel@v8) ([@ijlee2](https://github.com/ijlee2))
+- [#311](https://github.com/ijlee2/ember-container-query/pull/311) Updated dependencies (eslint@v10, typescript@v6) ([@ijlee2](https://github.com/ijlee2))
+
 ## 3.2.0
 
 ### Minor Changes
