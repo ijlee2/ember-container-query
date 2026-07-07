@@ -7,7 +7,6 @@ import type { Summary } from 'docs-app/utils/components/widgets/widget-2';
 import { ContainerQuery, height, width } from 'ember-container-query';
 import { modifier } from 'ember-modifier';
 import svgJar from 'ember-svg-jar/helpers/svg-jar';
-import { or } from 'ember-truth-helpers';
 import { local } from 'embroider-css-modules';
 
 import styles from './captions.module.css';

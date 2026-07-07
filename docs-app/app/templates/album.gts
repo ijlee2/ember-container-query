@@ -5,7 +5,6 @@ import UiPage from 'docs-app/components/ui/page';
 import type { Model } from 'docs-app/routes/album';
 import { ContainerQuery, height, width } from 'ember-container-query';
 import { pageTitle } from 'ember-page-title';
-import { and } from 'ember-truth-helpers';
 import { local } from 'embroider-css-modules';
 
 import styles from './album.module.css';
