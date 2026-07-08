@@ -24,14 +24,14 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       update-workspace-root-version:
-        specifier: ^3.0.3
-        version: 3.0.3
+        specifier: ^3.0.4
+        version: 3.0.4
 
   configs/eslint/ember:
     dependencies:
       '@ijlee2-frontend-configs/eslint-config-ember':
-        specifier: ^4.0.0
-        version: 4.0.0(@typescript-eslint/parser@8.63.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3))(@typescript-eslint/utils@8.63.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3))(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3)
+        specifier: ^4.1.0
+        version: 4.1.0(@typescript-eslint/parser@8.63.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3))(@typescript-eslint/utils@8.63.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3))(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3)
     devDependencies:
       '@shared-configs/eslint-config-node':
         specifier: workspace:*
@@ -52,8 +52,8 @@ importers:
   configs/eslint/node:
     dependencies:
       '@ijlee2-frontend-configs/eslint-config-node':
-        specifier: ^4.0.0
-        version: 4.0.0(@typescript-eslint/utils@8.63.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3))(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3)
+        specifier: ^4.1.0
+        version: 4.1.0(@typescript-eslint/utils@8.63.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3))(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3)
     devDependencies:
       '@shared-configs/prettier':
         specifier: workspace:*
@@ -1274,12 +1274,12 @@ packages:
     engines: {node: '>=0.1.95'}
     hasBin: true
 
-  '@codemod-utils/files@4.0.1':
-    resolution: {integrity: sha512-zIj3UC3kY0JAyPkkQXwuAiX7bz7+HU/PK9XqytWeaN262JSK858nfFyja0wGqou4rO3O3a3yw1HY7TTEuJZivQ==}
+  '@codemod-utils/files@4.1.0':
+    resolution: {integrity: sha512-/zZQj6o3/fA9V+cDUFNi0nqDw/oxaLktNB38izWm0Msr7EqhBnzWYJ7zkW4Gw5W6oHhYLYQykJfbUqMrYeS6xQ==}
     engines: {node: 22.* || >= 24}
 
-  '@codemod-utils/package-json@4.0.3':
-    resolution: {integrity: sha512-WYlqur3Bma0L6tQy/y0ug3QKVlw+KS3lUwf37y2FruUzqwncLJZ/TX20mQ2PxdOwYsMxwbUpFvlGTkUMsgH9fg==}
+  '@codemod-utils/package-json@4.1.0':
+    resolution: {integrity: sha512-i3cvBZu6i8bz+OVsQB8tw6rcHQtINLCy/0O9TaVhxZEzWb1xHhbmZORu49O2Dm8RHUzxYcRBix3qVO66sSYp0Q==}
     engines: {node: 22.* || >= 24}
 
   '@csstools/color-helpers@5.1.0':
@@ -1606,8 +1606,8 @@ packages:
     peerDependencies:
       '@changesets/cli': ^2.31.0
 
-  '@ijlee2-frontend-configs/eslint-config-ember@4.0.0':
-    resolution: {integrity: sha512-SrEYr25YWxK52K6CUHfSKeRuaWuVFQaUachJ9RkWTFoYi2/ufQy17Q79mxVnFnAUe3KYYjaJ3nhMtLUv8ya+Kw==}
+  '@ijlee2-frontend-configs/eslint-config-ember@4.1.0':
+    resolution: {integrity: sha512-GcqziZ0q2z/30SnHpiqfMS7bZEV4Oa7F0mUcHVwJ8t9FeOPl9pjCLX/6A/XlDK/ft9MPG9L6QxmQNwB3i/omdA==}
     engines: {node: 22.* || >= 24}
     peerDependencies:
       eslint: ^10.6.0
@@ -1616,8 +1616,8 @@ packages:
       typescript:
         optional: true
 
-  '@ijlee2-frontend-configs/eslint-config-node@4.0.0':
-    resolution: {integrity: sha512-X/2eeZ8fvUf2jOqu/W4ctsEtdc+egBx8q8Cefo4in9cFoWm7uKb1y8HGag3lISU9t3rujlkmC6VYJz5kudFqAQ==}
+  '@ijlee2-frontend-configs/eslint-config-node@4.1.0':
+    resolution: {integrity: sha512-wuNPL6xAyCjYUmY6xHU4paSaigyIbGD8kWBBBnu5pM+3EGKtYNS7LH4RPlbakma7O8aKkhiBmPMnsdLKu6tazQ==}
     engines: {node: 22.* || >= 24}
     peerDependencies:
       eslint: ^10.6.0
@@ -4071,8 +4071,8 @@ packages:
     resolution: {integrity: sha512-clKkw4C7nJ22mGgoVcCg6V/W/TxdNyIOTr89k2ONZu81qqkddPFDF0LXcbAwhzPD8DjkiRCjzuiO6Y+fkpD4vg==}
     engines: {node: '>=10.2.0'}
 
-  enhanced-resolve@5.24.1:
-    resolution: {integrity: sha512-7DdUaTjmNwMcH2gLr1qycesKII3BK4RLy/mdAb7x10Lq7bR4aNKHt1BR1ZALSv0rPM/hF5wYF0PhGop/rJm8vw==}
+  enhanced-resolve@5.24.2:
+    resolution: {integrity: sha512-rpsZEGT1jFuve6QlpyRp9ckQ+kN61hvF9BzCPyMdaKTm8UJce96KBn3sorXOFXlzjPrs3Vc4T1NsSroZ3PxlFw==}
     engines: {node: '>=10.13.0'}
 
   enquirer@2.4.1:
@@ -4250,12 +4250,6 @@ packages:
     resolution: {integrity: sha512-McAc+/Nlvcg4byY/CABGH8kqnefWBj8s3JA2okEtz8ixbECQgU46p0HkTUKa4YS7wvgGceimlc34p1nXqbWqtA==}
     peerDependencies:
       eslint: '>=5.0.0'
-
-  eslint-plugin-sort-class-members@1.22.1:
-    resolution: {integrity: sha512-TC76+m06fjpiAYPrEcyyvvWzp1aMHNBVGROLu9ijQuPDZPWJjhNTheha4f6f7eUTWabloczLZagoZ+mb6Cv0ZQ==}
-    engines: {node: '>=4.0.0'}
-    peerDependencies:
-      eslint: '>=0.8.0'
 
   eslint-scope@9.1.2:
     resolution: {integrity: sha512-xS90H51cKw0jltxmvmHy2Iai1LIqrfbw57b79w/J7MfvDfkIkFZ+kj6zC3BjtUwh150HsSSdxXZcsuv72miDFQ==}
@@ -7018,8 +7012,8 @@ packages:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
 
-  type-fest@5.7.0:
-    resolution: {integrity: sha512-1URUxUqfHFM1c+zfSPsa3gnkO7Aq21qyH75SIduNYz4SzY964rn1X2vCMQaHSHhktiw+0kPa2iyb6PUpXqB6Vg==}
+  type-fest@5.8.0:
+    resolution: {integrity: sha512-YGYEVz3Fm5iy/AybuA0oyNFq7H4CgQNfRp/qfe8nurE1kuCeNm3/vfm9X4Mtl+qLyaKJUh5xrFZwogr41SMjYA==}
     engines: {node: '>=20'}
 
   type-is@2.1.0:
@@ -7141,8 +7135,8 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
-  update-workspace-root-version@3.0.3:
-    resolution: {integrity: sha512-Zqap3PHtW+4WFQ2wgXD9kXoQgkbkH7cljA2enQN/XLVyQvZsr5dZpB91hB1c4EGUNw9kRxSB31BWTPF6PEzs5A==}
+  update-workspace-root-version@3.0.4:
+    resolution: {integrity: sha512-OLj1pUS/LkP0oTbIqVVXcK9HJeagil9lg7zs3EZv6zizBx0SGn//++dMB8LoLBn5OuHdaXajvBKDQVv9jSqkIw==}
     engines: {node: 22.* || >= 24}
     hasBin: true
 
@@ -9148,13 +9142,13 @@ snapshots:
       exec-sh: 0.3.6
       minimist: 1.2.8
 
-  '@codemod-utils/files@4.0.1':
+  '@codemod-utils/files@4.1.0':
     dependencies:
       glob: 13.0.6
 
-  '@codemod-utils/package-json@4.0.3':
+  '@codemod-utils/package-json@4.1.0':
     dependencies:
-      type-fest: 5.7.0
+      type-fest: 5.8.0
 
   '@csstools/color-helpers@5.1.0': {}
 
@@ -9743,7 +9737,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@ijlee2-frontend-configs/eslint-config-ember@4.0.0(@typescript-eslint/parser@8.63.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3))(@typescript-eslint/utils@8.63.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3))(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3)':
+  '@ijlee2-frontend-configs/eslint-config-ember@4.1.0(@typescript-eslint/parser@8.63.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3))(@typescript-eslint/utils@8.63.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3))(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3)':
     dependencies:
       '@babel/core': 8.0.1
       '@babel/eslint-parser': 8.0.1(@babel/core@8.0.1)(eslint@10.6.0(jiti@2.6.1))
@@ -9758,7 +9752,6 @@ snapshots:
       eslint-plugin-perfectionist: 5.10.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3)
       eslint-plugin-qunit: 8.2.6(eslint@10.6.0(jiti@2.6.1))
       eslint-plugin-simple-import-sort: 13.0.0(eslint@10.6.0(jiti@2.6.1))
-      eslint-plugin-sort-class-members: 1.22.1(eslint@10.6.0(jiti@2.6.1))
       globals: 17.7.0
       typescript-eslint: 8.63.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3)
     optionalDependencies:
@@ -9771,7 +9764,7 @@ snapshots:
       - supports-color
       - ts-declaration-location
 
-  '@ijlee2-frontend-configs/eslint-config-node@4.0.0(@typescript-eslint/utils@8.63.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3))(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3)':
+  '@ijlee2-frontend-configs/eslint-config-node@4.1.0(@typescript-eslint/utils@8.63.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3))(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3)':
     dependencies:
       '@babel/core': 8.0.1
       '@babel/eslint-parser': 8.0.1(@babel/core@8.0.1)(eslint@10.6.0(jiti@2.6.1))
@@ -9783,7 +9776,6 @@ snapshots:
       eslint-plugin-n: 18.2.1(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3)
       eslint-plugin-perfectionist: 5.10.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3)
       eslint-plugin-simple-import-sort: 13.0.0(eslint@10.6.0(jiti@2.6.1))
-      eslint-plugin-sort-class-members: 1.22.1(eslint@10.6.0(jiti@2.6.1))
       globals: 17.7.0
       typescript-eslint: 8.63.0(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3)
     optionalDependencies:
@@ -12108,7 +12100,7 @@ snapshots:
 
   dot-prop@10.1.0:
     dependencies:
-      type-fest: 5.7.0
+      type-fest: 5.8.0
 
   dunder-proto@1.0.1:
     dependencies:
@@ -12717,7 +12709,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  enhanced-resolve@5.24.1:
+  enhanced-resolve@5.24.2:
     dependencies:
       graceful-fs: 4.2.11
       tapable: 2.3.3
@@ -12936,7 +12928,7 @@ snapshots:
   eslint-plugin-n@18.2.1(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3):
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@10.6.0(jiti@2.6.1))
-      enhanced-resolve: 5.24.1
+      enhanced-resolve: 5.24.2
       eslint: 10.6.0(jiti@2.6.1)
       eslint-plugin-es-x: 7.8.0(eslint@10.6.0(jiti@2.6.1))
       get-tsconfig: 4.14.0
@@ -12963,10 +12955,6 @@ snapshots:
       requireindex: 1.2.0
 
   eslint-plugin-simple-import-sort@13.0.0(eslint@10.6.0(jiti@2.6.1)):
-    dependencies:
-      eslint: 10.6.0(jiti@2.6.1)
-
-  eslint-plugin-sort-class-members@1.22.1(eslint@10.6.0(jiti@2.6.1)):
     dependencies:
       eslint: 10.6.0(jiti@2.6.1)
 
@@ -16123,14 +16111,14 @@ snapshots:
 
   type-css-modules@3.2.7:
     dependencies:
-      '@codemod-utils/files': 4.0.1
+      '@codemod-utils/files': 4.1.0
       css-selector-parser: 3.3.0
       postcss: 8.5.16
       yargs: 18.0.0
 
   type-fest@4.41.0: {}
 
-  type-fest@5.7.0:
+  type-fest@5.8.0:
     dependencies:
       tagged-tag: 1.0.0
 
@@ -16275,10 +16263,10 @@ snapshots:
       escalade: 3.2.0
       picocolors: 1.1.1
 
-  update-workspace-root-version@3.0.3:
+  update-workspace-root-version@3.0.4:
     dependencies:
-      '@codemod-utils/files': 4.0.1
-      '@codemod-utils/package-json': 4.0.3
+      '@codemod-utils/files': 4.1.0
+      '@codemod-utils/package-json': 4.1.0
       yargs: 18.0.0
 
   uri-js@4.4.1:
