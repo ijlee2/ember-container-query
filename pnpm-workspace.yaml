@@ -1,5 +1,29 @@
+allowBuilds:
+  "@percy/core": true
+  core-js: false
+  protobufjs: false
+  unrs-resolver: false
+
+autoInstallPeers: false
+
+minimumReleaseAgeExclude:
+  - "@codemod-utils/*"
+  - "@ijlee2-frontend-configs/*"
+
+overrides:
+  ember-cli-htmlbars: ^7.0.1
+
 packages:
-  - configs/**
-  - docs-app
-  - packages/ember-container-query
-  - test-app
+  - "configs/**"
+  - "docs-app"
+  - "packages/ember-container-query"
+  - "test-app"
+
+publicHoistPattern:
+  - "*eslint*"
+  - "*prettier*"
+  - "*stylelint*"
+
+resolvePeersFromWorkspaceRoot: false
+
+verifyDepsBeforeRun: "warn"
