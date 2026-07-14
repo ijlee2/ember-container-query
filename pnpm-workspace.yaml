@@ -9,6 +9,8 @@ autoInstallPeers: false
 minimumReleaseAgeExclude:
   - "@codemod-utils/*"
   - "@ijlee2-frontend-configs/*"
+  - "@typescript-eslint/*"
+  - typescript-eslint
 
 overrides:
   ember-cli-htmlbars: ^7.0.1
