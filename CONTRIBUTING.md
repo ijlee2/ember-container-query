@@ -95,7 +95,7 @@ You can get started in 2 steps:
 
     ```sh
     # From the workspace root
-    pnpm release:publish
+    pnpm release:publish --otp <YOUR_ONE_TIME_PASSWORD>
     ```
 
 </details>
