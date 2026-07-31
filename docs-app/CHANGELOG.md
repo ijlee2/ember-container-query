@@ -1,5 +1,11 @@
 # docs-app
 
+## 3.2.2
+
+### Patch Changes
+
+- [#316](https://github.com/ijlee2/ember-container-query/pull/316) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 3.2.1
 
 ### Patch Changes
