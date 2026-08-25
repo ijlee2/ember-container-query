@@ -14,15 +14,7 @@ Before you make a new issue, please search for similar issues. It's possible tha
 
 ## List outdated dependencies 🔗
 
-When you ran `pnpm outdated -r`, what did you see?
-
-```sh
-┌───────────────┬─────────┬────────┬───────────────────────┐
-│ Package       │ Current │ Latest │ Dependents            │
-├───────────────┼─────────┼────────┼───────────────────────┤
-│ rollup (dev)  │ 3.21.3  │ 3.22.0 │ ember-container-query │
-└───────────────┴─────────┴────────┴───────────────────────┘
-```
+When you ran `pnpm outdated -r`, what did you see? Please provide the table output.
 
 
 ## Risk analysis ⚠️

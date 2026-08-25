@@ -66,7 +66,7 @@
     "decorator-transforms": "^2.4.0",
     "ember-element-helper": "^0.8.8",
     "ember-modifier": "^4.3.0",
-    "ember-primitives": "^0.61.1"
+    "ember-primitives": "^0.62.0"
   },
   "devDependencies": {
     "@babel/core": "^8.0.1",
@@ -75,19 +75,19 @@
     "@embroider/addon-dev": "^8.3.1",
     "@glimmer/component": "^2.1.1",
     "@glimmer/tracking": "^1.1.2",
-    "@glint/ember-tsc": "^1.10.0",
+    "@glint/ember-tsc": "^1.10.1",
     "@glint/template": "^1.8.0",
-    "@glint/tsserver-plugin": "^2.7.0",
+    "@glint/tsserver-plugin": "^2.7.1",
     "@rollup/plugin-babel": "^7.1.0",
     "@shared-configs/eslint-config-ember": "workspace:*",
     "@shared-configs/prettier": "workspace:*",
     "@shared-configs/typescript": "workspace:*",
     "babel-plugin-ember-template-compilation": "^4.0.0",
-    "concurrently": "^10.0.4",
+    "concurrently": "^10.0.5",
     "ember-source": "~7.2.0",
-    "eslint": "^10.8.1",
+    "eslint": "^10.9.1",
     "prettier": "^3.9.6",
-    "rollup": "^4.62.4",
+    "rollup": "^4.62.5",
     "typescript": "^6.0.3"
   },
   "engines": {
