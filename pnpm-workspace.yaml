@@ -13,10 +13,7 @@ minimumReleaseAge: 720
 minimumReleaseAgeExclude:
   - "@codemod-utils/*"
   - "@ijlee2-frontend-configs/*"
-
-overrides:
-  # Due to ember-svg-jar
-  ember-cli-htmlbars: ^7.0.1
+  - "ember-testem"
 
 packages:
   - "configs/**"
