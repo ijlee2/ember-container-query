@@ -135,7 +135,7 @@ jobs:
           path: docs-app/dist
 
       - name: Test (w/ visual regression)
-        run: npx percy exec -- pnpm test:device --path=dist --test-port=${{ matrix.test-port }}
+        run: npx percy exec -- pnpm ember-test --port=${{ matrix.test-port }}
         working-directory: 'docs-app'
         env:
           DEVICE: ${{ matrix.device }}

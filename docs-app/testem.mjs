@@ -1,5 +1,3 @@
-'use strict';
-
 /*
   The filter expressions mean the following in practice:
 
@@ -44,7 +42,7 @@ const filter = encodeURIComponent(FILTERS[DEVICE]);
 const windowSize = WINDOW_SIZES[DEVICE];
 const [width, height] = windowSize.split(',');
 
-module.exports = {
+export default {
   browser_args: {
     Chrome: {
       ci: [

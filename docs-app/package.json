@@ -29,7 +29,7 @@
   },
   "scripts": {
     "build": "vite build && ./post-build.sh",
-    "build:test": "NODE_ENV=development vite build --mode development",
+    "build:test": "NODE_ENV=development vite build --config vite.test.config.mts --mode development",
     "format": "prettier . --cache --write",
     "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\"",
     "lint:css": "stylelint \"app/**/*.css\" --cache",
@@ -41,8 +41,8 @@
     "prelint:types": "type-css-modules --src app",
     "lint:types": "ember-tsc --noEmit",
     "start": "vite",
-    "test": "pnpm build:test && DEVICE=\"w3-h3\" NODE_ENV=development ember test --test-port=0",
-    "test:device": "NODE_ENV=development ember test"
+    "test": "pnpm build:test && DEVICE=\"w3-h3\" ember-test --port 0",
+    "test:watch": "concurrently \"pnpm build:test --watch\" && \" DEVICE=\"w3-h3\" pnpm ember-test --server\" --names build,test"
   },
   "devDependencies": {
     "@babel/core": "^8.0.6",
@@ -93,6 +93,7 @@
     "ember-resolver": "^13.2.0",
     "ember-source": "~7.3.0",
     "ember-svg-jar": "^3.0.0",
+    "ember-testem": "^0.3.0",
     "embroider-css-modules": "^4.1.4",
     "eslint": "^10.11.0",
     "loader.js": "^4.7.0",
