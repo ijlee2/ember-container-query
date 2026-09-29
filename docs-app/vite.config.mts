@@ -14,6 +14,7 @@ export default defineConfig({
     babel({
       babelHelpers: 'runtime',
       extensions,
+      parallel: true,
     }),
   ],
 });
