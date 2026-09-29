@@ -4,6 +4,8 @@ allowBuilds:
   protobufjs: false
   unrs-resolver: false
 
+autoDedupe: true
+
 autoInstallPeers: false
 
 minimumReleaseAge: 720
