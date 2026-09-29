@@ -151,7 +151,6 @@ jobs:
       fail-fast: false
       matrix:
         package-location:
-          - 'packages/ember-container-query'
           - 'test-app'
     timeout-minutes: 5
     steps:
