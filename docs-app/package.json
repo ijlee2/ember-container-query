@@ -64,7 +64,7 @@
     "@glint/template": "^1.9.0",
     "@glint/tsserver-plugin": "^2.7.9",
     "@percy/cli": "^1.32.11",
-    "@percy/ember": "^5.0.2",
+    "@percy/ember": "github:ijlee2/percy-ember#convert-to-v2-addon",
     "@rollup/plugin-babel": "^7.1.0",
     "@shared-configs/eslint-config-ember": "workspace:*",
     "@shared-configs/prettier": "workspace:*",
