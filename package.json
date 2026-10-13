@@ -30,12 +30,12 @@
   },
   "devDependencies": {
     "@changesets/cli": "^3.0.3",
-    "@ijlee2-frontend-configs/changesets": "^3.0.2",
-    "concurrently": "^10.0.5",
+    "@ijlee2-frontend-configs/changesets": "^3.0.3",
+    "concurrently": "^10.0.6",
     "sort-package-json": "^4.0.0",
     "update-workspace-root-version": "^3.0.6"
   },
-  "packageManager": "pnpm@12.6.0",
+  "packageManager": "pnpm@12.11.2",
   "engines": {
     "node": "22.* || >= 24",
     "pnpm": ">= 12"
