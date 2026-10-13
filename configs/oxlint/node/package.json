@@ -1,0 +1,48 @@
+{
+  "name": "@shared-configs/oxlint-node",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Configuration for oxlint (Node)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ijlee2/ember-container-query.git"
+  },
+  "author": "Isaac J. Lee",
+  "type": "module",
+  "exports": {
+    "./javascript": "./src/javascript.js",
+    "./typescript": "./src/typescript.js"
+  },
+  "scripts": {
+    "format": "prettier . --cache --write",
+    "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\"",
+    "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\" && pnpm format",
+    "lint:format": "prettier . --cache --check",
+    "lint:js": "oxlint --config oxlint.config.mjs",
+    "lint:js:fix": "oxlint --config oxlint.config.mjs --fix"
+  },
+  "dependencies": {
+    "@ijlee2-frontend-configs/oxlint-node": "^0.2.0"
+  },
+  "devDependencies": {
+    "@shared-configs/prettier": "workspace:*",
+    "concurrently": "^10.0.6",
+    "oxlint": "^1.87.0",
+    "prettier": "^3.9.10"
+  },
+  "peerDependencies": {
+    "oxlint": "^1.87.0",
+    "oxlint-tsgolint": "^7.0.2004"
+  },
+  "peerDependenciesMeta": {
+    "oxlint": {
+      "optional": false
+    },
+    "oxlint-tsgolint": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": "22.* || >= 24"
+  }
+}
