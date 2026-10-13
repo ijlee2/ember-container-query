@@ -1,6 +1,6 @@
 allowBuilds:
   "@percy/core": true
-  "@percy/ember@https://codeload.github.com/ijlee2/percy-ember/tar.gz/c42f9793a99386edca27496194e94b8e07a17e73": true
+  "@percy/ember@https://codeload.github.com/ijlee2/percy-ember/tar.gz/e0de3dd8b2f35895eb4a00e96ca1a84a68cf86d5": true
   core-js: false
   protobufjs: false
   unrs-resolver: false
