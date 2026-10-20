@@ -33,6 +33,8 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: "some-token" # Fork of @percy/ember uses yarn@v1, which requires NODE_AUTH_TOKEN
 
       - name: Publish
         run: pnpm release:publish
