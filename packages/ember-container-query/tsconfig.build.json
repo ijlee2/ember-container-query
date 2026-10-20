@@ -1,0 +1,14 @@
+{
+  "extends": "@shared-configs/typescript/ember-addon",
+  "compilerOptions": {
+    "declarationDir": "declarations",
+    "plugins": [
+      {
+        "name": "@glint/tsserver-plugin"
+      }
+    ],
+    "rootDir": "./src",
+    "types": ["@glint/ember-tsc/types", "ember-source/types"]
+  },
+  "include": ["src/**/*", "unpublished-development-types/**/*"]
+}

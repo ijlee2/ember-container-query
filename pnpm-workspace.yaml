@@ -9,6 +9,9 @@ autoDedupe: true
 
 autoInstallPeers: false
 
+lockfile:
+  includeResolutionSettings: true
+
 minimumReleaseAge: 720
 
 minimumReleaseAgeExclude:

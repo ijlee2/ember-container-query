@@ -20,7 +20,7 @@
       "vite/client"
     ]
   },
-  "include": ["app/**/*", "tests/**/*", "types/**/*", "**/*.mts"],
+  "include": ["app/**/*", "tests/**/*", "types/**/*", "*.mts"],
   "glint": {
     "additionalSpecialForms": {
       "globals": {
