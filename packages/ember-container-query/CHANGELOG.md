@@ -1,5 +1,13 @@
 # ember-container-query
 
+## 7.1.6
+
+### Patch Changes
+
+- [#325](https://github.com/ijlee2/ember-container-query/pull/325) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#324](https://github.com/ijlee2/ember-container-query/pull/324) Introduced trusted publishing ([@ijlee2](https://github.com/ijlee2))
+- [#323](https://github.com/ijlee2/ember-container-query/pull/323) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 7.1.5
 
 ### Patch Changes

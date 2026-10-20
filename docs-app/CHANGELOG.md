@@ -1,5 +1,18 @@
 # docs-app
 
+## 3.3.0
+
+### Minor Changes
+
+- [#322](https://github.com/ijlee2/ember-container-query/pull/322) Installed @percy/ember as v2 addon ([@ijlee2](https://github.com/ijlee2))
+- [#321](https://github.com/ijlee2/ember-container-query/pull/321) Installed ember-testem ([@ijlee2](https://github.com/ijlee2))
+
+### Patch Changes
+
+- [#325](https://github.com/ijlee2/ember-container-query/pull/325) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#323](https://github.com/ijlee2/ember-container-query/pull/323) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#320](https://github.com/ijlee2/ember-container-query/pull/320) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 3.2.5
 
 ### Patch Changes
