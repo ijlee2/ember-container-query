@@ -10,8 +10,8 @@
   "author": "Isaac J. Lee",
   "type": "module",
   "exports": {
-    "./v2-addon": "./v2-addon/index.mjs",
-    "./v2-app": "./v2-app/index.mjs"
+    "./v2-addon": "./src/v2-addon.ts",
+    "./v2-app": "./src/v2-app.ts"
   },
   "scripts": {
     "format": "prettier . --cache --write",

@@ -10,8 +10,8 @@
   "author": "Isaac J. Lee",
   "type": "module",
   "exports": {
-    "./javascript": "./javascript/index.mjs",
-    "./typescript": "./typescript/index.mjs"
+    "./javascript": "./src/javascript.ts",
+    "./typescript": "./src/typescript.ts"
   },
   "scripts": {
     "format": "prettier . --cache --write",

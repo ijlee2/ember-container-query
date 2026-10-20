@@ -7,8 +7,8 @@
         "name": "@glint/tsserver-plugin"
       }
     ],
-    "rootDir": "./src",
-    "types": ["ember-source/types", "@glint/ember-tsc/types"]
+    "rootDir": ".",
+    "types": ["@glint/ember-tsc/types", "ember-source/types"]
   },
-  "include": ["src/**/*", "unpublished-development-types/**/*"]
+  "include": ["src/**/*", "unpublished-development-types/**/*", "*.mts"]
 }
