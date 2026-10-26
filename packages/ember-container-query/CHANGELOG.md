@@ -1,5 +1,11 @@
 # ember-container-query
 
+## 7.1.7
+
+### Patch Changes
+
+- [#327](https://github.com/ijlee2/ember-container-query/pull/327) Updated @embroider/addon-shim to 1.11.0 ([@ijlee2](https://github.com/ijlee2))
+
 ## 7.1.6
 
 ### Patch Changes
