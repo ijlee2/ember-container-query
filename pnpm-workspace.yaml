@@ -19,6 +19,9 @@ minimumReleaseAgeExclude:
   - "@ijlee2-frontend-configs/*"
   - "ember-testem"
 
+overrides:
+  "testem": "^4.0.0-beta.1" # Due to ember-cli
+
 packages:
   - "configs/**"
   - "docs-app"
