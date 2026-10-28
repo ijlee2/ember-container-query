@@ -8,39 +8,46 @@
   The command `DEVICE='w3-h3' ember test` runs all application, rendering, and
   unit tests, as long as they are not marked with @w1, @w2, @h1, or @h2.
 */
-const FILTERS = {
+type Device =
+  | 'w1-h1'
+  | 'w1-h2'
+  | 'w1-h3'
+  | 'w2-h1'
+  | 'w2-h2'
+  | 'w2-h3'
+  | 'w3-h1'
+  | 'w3-h2'
+  | 'w3-h3';
+
+const FILTERS: Record<Device, string> = {
   'w1-h1': '/^(?=(.*Acceptance))(?!(.*@w2|.*@w3|.*@h2|.*@h3))/',
-  'w2-h1': '/^(?=(.*Acceptance))(?!(.*@w1|.*@w3|.*@h2|.*@h3))/',
-  'w3-h1': '/^(?=(.*Acceptance))(?!(.*@w1|.*@w2|.*@h2|.*@h3))/',
-
   'w1-h2': '/^(?=(.*Acceptance))(?!(.*@w2|.*@w3|.*@h1|.*@h3))/',
-  'w2-h2': '/^(?=(.*Acceptance))(?!(.*@w1|.*@w3|.*@h1|.*@h3))/',
-  'w3-h2': '/^(?=(.*Acceptance))(?!(.*@w1|.*@w2|.*@h1|.*@h3))/',
-
   'w1-h3': '/^(?=(.*Acceptance))(?!(.*@w2|.*@w3|.*@h1|.*@h2))/',
+  'w2-h1': '/^(?=(.*Acceptance))(?!(.*@w1|.*@w3|.*@h2|.*@h3))/',
+  'w2-h2': '/^(?=(.*Acceptance))(?!(.*@w1|.*@w3|.*@h1|.*@h3))/',
   'w2-h3': '/^(?=(.*Acceptance))(?!(.*@w1|.*@w3|.*@h1|.*@h2))/',
+  'w3-h1': '/^(?=(.*Acceptance))(?!(.*@w1|.*@w2|.*@h2|.*@h3))/',
+  'w3-h2': '/^(?=(.*Acceptance))(?!(.*@w1|.*@w2|.*@h1|.*@h3))/',
   'w3-h3': '/^(?!(.*@w1|.*@w2|.*@h1|.*@h2))/',
 };
 
-const WINDOW_SIZES = {
+const WINDOW_SIZES: Record<Device, string> = {
   'w1-h1': '400,300',
-  'w2-h1': '900,300',
-  'w3-h1': '1400,300',
-
   'w1-h2': '400,600',
-  'w2-h2': '900,600',
-  'w3-h2': '1400,600',
-
   'w1-h3': '400,900',
+  'w2-h1': '900,300',
+  'w2-h2': '900,600',
   'w2-h3': '900,900',
+  'w3-h1': '1400,300',
+  'w3-h2': '1400,600',
   'w3-h3': '1400,900',
 };
 
-const { DEVICE = 'w3-h3' } = process.env;
+const DEVICE = (process.env['DEVICE'] as Device | undefined) ?? 'w3-h3';
 
 const filter = encodeURIComponent(FILTERS[DEVICE]);
 const windowSize = WINDOW_SIZES[DEVICE];
-const [width, height] = windowSize.split(',');
+const [width, height] = windowSize.split(',') as [string, string];
 
 export default {
   browser_args: {
