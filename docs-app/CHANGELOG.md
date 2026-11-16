@@ -1,5 +1,12 @@
 # docs-app
 
+## 3.3.2
+
+### Patch Changes
+
+- [#329](https://github.com/ijlee2/ember-container-query/pull/329) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#328](https://github.com/ijlee2/ember-container-query/pull/328) Converted testem config to TypeScript ([@ijlee2](https://github.com/ijlee2))
+
 ## 3.3.1
 
 ### Patch Changes
